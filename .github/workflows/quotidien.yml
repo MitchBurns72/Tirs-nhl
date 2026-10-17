@@ -1,0 +1,44 @@
+name: Calcul quotidien
+
+# 10 h, 14 h, 17 h 45 heure de l'Est (cron en UTC)
+on:
+  schedule:
+    - cron: "7 14 * * *"
+    - cron: "7 18 * * *"
+    - cron: "47 21 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: calcul
+  cancel-in-progress: false
+
+jobs:
+  calcul:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      # Installation depuis un cell : déballe le zip une seule fois.
+      # .github est exclu : le jeton de l'Action n'a pas le droit de toucher aux workflows.
+      - name: Déballer le zip (première installation seulement)
+        run: |
+          if [ -f tirs-nhl.zip ]; then
+            unzip -oq tirs-nhl.zip -x 'tirs-nhl/.github/*' -d /tmp/x
+            cp -a /tmp/x/tirs-nhl/. .
+            git rm -q tirs-nhl.zip
+          fi
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Grader, prédire, publier
+        run: python src/run.py
+      - name: Committer les résultats
+        run: |
+          git config user.name "patente-bot"
+          git config user.email "patente-bot@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Calcul $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
