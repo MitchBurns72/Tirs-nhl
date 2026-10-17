@@ -1,0 +1,11321 @@
+{
+ "date": "2026-10-17",
+ "entries": [
+  {
+   "pid": 8475231,
+   "name": "Casey Cizikas",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    4,
+    0,
+    2,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.3158,
+     "lam": 1.1464,
+     "detail": {
+      "rate60": 5.351,
+      "toi": 12.392,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.928
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477407,
+   "name": "Anthony Duclair",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    4,
+    0,
+    0,
+    2,
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.3166,
+     "lam": 1.1429
+    },
+    "v1": {
+     "p": 0.4081,
+     "lam": 1.4188,
+     "detail": {
+      "rate60": 5.761,
+      "toi": 12.157,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.087
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8485388,
+   "name": "Victor Eklund",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    1,
+    2,
+    0,
+    0,
+    3,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.3166,
+     "lam": 1.1429
+    },
+    "v1": {
+     "p": 0.4609,
+     "lam": 1.5858,
+     "detail": {
+      "rate60": 5.855,
+      "toi": 13.779,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.055
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482476,
+   "name": "Emil Heineman",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    1,
+    0,
+    1,
+    2,
+    3,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 12,
+   "preds": {
+    "v0": {
+     "p": 0.3681,
+     "lam": 1.2857
+    },
+    "v1": {
+     "p": 0.6354,
+     "lam": 2.2445,
+     "detail": {
+      "rate60": 6.742,
+      "toi": 15.536,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481601,
+   "name": "Simon Holmstrom",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    4,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.4456,
+     "lam": 1.5364,
+     "detail": {
+      "rate60": 4.753,
+      "toi": 15.285,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.135
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477500,
+   "name": "Bo Horvat",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 7,
+   "l10_shots": [
+    4,
+    4,
+    2,
+    4,
+    3,
+    3,
+    4
+   ],
+   "vs_gp": 3,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.8564,
+     "lam": 3.4286
+    },
+    "v1": {
+     "p": 0.8257,
+     "lam": 3.4157,
+     "detail": {
+      "rate60": 9.28,
+      "toi": 19.888,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.993
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481711,
+   "name": "Matias Maccelli",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    2,
+    1,
+    2,
+    0,
+    5,
+    2
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.5539,
+     "lam": 1.8571
+    },
+    "v1": {
+     "p": 0.4955,
+     "lam": 1.7015,
+     "detail": {
+      "rate60": 6.027,
+      "toi": 15.677,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.966
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476419,
+   "name": "Jean-Gabriel Pageau",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    2,
+    0,
+    0,
+    1,
+    2,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.3166,
+     "lam": 1.1429
+    },
+    "v1": {
+     "p": 0.4045,
+     "lam": 1.4078,
+     "detail": {
+      "rate60": 4.808,
+      "toi": 14.988,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.048
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476292,
+   "name": "Ondrej Palat",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    4,
+    1,
+    0,
+    0,
+    0,
+    2
+   ],
+   "vs_gp": 5,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.3681,
+     "lam": 1.2857
+    },
+    "v1": {
+     "p": 0.4457,
+     "lam": 1.5366,
+     "detail": {
+      "rate60": 5.511,
+      "toi": 13.222,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.132
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475151,
+   "name": "Kyle Palmieri",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 7,
+   "l10_shots": [
+    4,
+    2,
+    2,
+    1,
+    0,
+    2,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.4658,
+     "lam": 1.5714
+    },
+    "v1": {
+     "p": 0.6429,
+     "lam": 2.278,
+     "detail": {
+      "rate60": 7.231,
+      "toi": 15.942,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.06
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484221,
+   "name": "Calum Ritchie",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    1,
+    2,
+    0,
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 12,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.4577,
+     "lam": 1.5753,
+     "detail": {
+      "rate60": 5.405,
+      "toi": 13.601,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475170,
+   "name": "Brayden Schenn",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    4,
+    2,
+    1,
+    2,
+    3,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.594,
+     "lam": 2.0
+    },
+    "v1": {
+     "p": 0.5484,
+     "lam": 1.8904,
+     "detail": {
+      "rate60": 6.208,
+      "toi": 16.234,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.007
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477950,
+   "name": "Tony DeAngelo",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    3,
+    1,
+    0,
+    2,
+    3,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.3681,
+     "lam": 1.2857
+    },
+    "v1": {
+     "p": 0.4962,
+     "lam": 1.7039,
+     "detail": {
+      "rate60": 5.272,
+      "toi": 16.258,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.067
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482516,
+   "name": "Matthew Kessel",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 2,
+   "l10_shots": [
+    1,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.1522,
+     "lam": 0.6897
+    },
+    "v1": {
+     "p": 0.2249,
+     "lam": 0.8901,
+     "detail": {
+      "rate60": 3.784,
+      "toi": 12.356,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.022
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476917,
+   "name": "Adam Pelech",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    0,
+    0,
+    2,
+    0,
+    5,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.3166,
+     "lam": 1.1429
+    },
+    "v1": {
+     "p": 0.4798,
+     "lam": 1.6483,
+     "detail": {
+      "rate60": 3.892,
+      "toi": 20.935,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.086
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477506,
+   "name": "Ryan Pulock",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.0093,
+     "lam": 0.1429
+    },
+    "v1": {
+     "p": 0.1912,
+     "lam": 0.7951,
+     "detail": {
+      "rate60": 2.653,
+      "toi": 18.919,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.85
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8485366,
+   "name": "Matthew Schaefer",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 7,
+   "l10_shots": [
+    3,
+    2,
+    2,
+    4,
+    8,
+    4,
+    3
+   ],
+   "vs_gp": 4,
+   "vs_shots": 11,
+   "preds": {
+    "v0": {
+     "p": 0.8851,
+     "lam": 3.7143
+    },
+    "v1": {
+     "p": 0.822,
+     "lam": 3.3828,
+     "detail": {
+      "rate60": 6.902,
+      "toi": 26.442,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.995
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479378,
+   "name": "Logan Stanley",
+   "team": "NYI",
+   "opp": "TOR",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    1,
+    1,
+    0,
+    2,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.1126,
+     "lam": 0.5714
+    },
+    "v1": {
+     "p": 0.3456,
+     "lam": 1.2323,
+     "detail": {
+      "rate60": 3.474,
+      "toi": 21.456,
+      "f_opp": 1.153,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.887
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476927,
+   "name": "Teddy Blueger",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    3
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.2184,
+     "lam": 0.875
+    },
+    "v1": {
+     "p": 0.2691,
+     "lam": 1.0139,
+     "detail": {
+      "rate60": 5.4,
+      "toi": 12.067,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.923
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484158,
+   "name": "Easton Cowan",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    3,
+    0,
+    3,
+    4,
+    2,
+    2,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.6268,
+     "lam": 2.125
+    },
+    "v1": {
+     "p": 0.5039,
+     "lam": 1.7303,
+     "detail": {
+      "rate60": 6.684,
+      "toi": 15.622,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.983
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479520,
+   "name": "Brandon Duhaime",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    2,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.1302,
+     "lam": 0.625
+    },
+    "v1": {
+     "p": 0.203,
+     "lam": 0.8283,
+     "detail": {
+      "rate60": 4.545,
+      "toi": 11.111,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.973
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479772,
+   "name": "Zack MacEwen",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 2,
+   "l10_shots": [
+    0,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.3849,
+     "lam": 1.3333
+    },
+    "v1": {
+     "p": 0.1452,
+     "lam": 0.6624,
+     "detail": {
+      "rate60": 6.193,
+      "toi": 5.883,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.079
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480893,
+   "name": "Kirill Marchenko",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 8,
+   "l10_shots": [
+    4,
+    3,
+    2,
+    3,
+    3,
+    0,
+    2,
+    3
+   ],
+   "vs_gp": 5,
+   "vs_shots": 13,
+   "preds": {
+    "v0": {
+     "p": 0.7127,
+     "lam": 2.5
+    },
+    "v1": {
+     "p": 0.7094,
+     "lam": 2.6096,
+     "detail": {
+      "rate60": 8.242,
+      "toi": 18.886,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.995
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479318,
+   "name": "Auston Matthews",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 8,
+   "l10_shots": [
+    3,
+    1,
+    6,
+    4,
+    2,
+    5,
+    4,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.8352,
+     "lam": 3.25
+    },
+    "v1": {
+     "p": 0.8387,
+     "lam": 3.5371,
+     "detail": {
+      "rate60": 9.418,
+      "toi": 22.13,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.007
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8486067,
+   "name": "Gavin McKenna",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    1,
+    1,
+    4,
+    1,
+    2,
+    2,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.4831,
+     "lam": 1.625
+    },
+    "v1": {
+     "p": 0.4451,
+     "lam": 1.5347,
+     "detail": {
+      "rate60": 6.86,
+      "toi": 13.735,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.966
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477939,
+   "name": "William Nylander",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 8,
+   "l10_shots": [
+    5,
+    1,
+    2,
+    1,
+    5,
+    4,
+    4,
+    5
+   ],
+   "vs_gp": 3,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.8503,
+     "lam": 3.375
+    },
+    "v1": {
+     "p": 0.7199,
+     "lam": 2.6686,
+     "detail": {
+      "rate60": 8.156,
+      "toi": 21.129,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.919
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477426,
+   "name": "Nick Paul",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    1,
+    2,
+    2,
+    2,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.4749,
+     "lam": 1.6319,
+     "detail": {
+      "rate60": 5.312,
+      "toi": 15.848,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478458,
+   "name": "Jack Roslovic",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 8,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    2,
+    2,
+    4,
+    3,
+    5,
+    2,
+    5
+   ],
+   "vs_gp": 3,
+   "vs_shots": 8,
+   "preds": {
+    "v0": {
+     "p": 0.8188,
+     "lam": 3.125
+    },
+    "v1": {
+     "p": 0.7225,
+     "lam": 2.6832,
+     "detail": {
+      "rate60": 8.623,
+      "toi": 17.24,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.071
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476925,
+   "name": "Colton Sissons",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    2,
+    4,
+    2,
+    0,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.3101,
+     "lam": 1.125
+    },
+    "v1": {
+     "p": 0.4011,
+     "lam": 1.3975,
+     "detail": {
+      "rate60": 5.379,
+      "toi": 15.481,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.996
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475166,
+   "name": "John Tavares",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 7,
+   "l10_shots": [
+    4,
+    1,
+    3,
+    6,
+    0,
+    3,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.6977,
+     "lam": 2.4286
+    },
+    "v1": {
+     "p": 0.5687,
+     "lam": 1.9673,
+     "detail": {
+      "rate60": 7.832,
+      "toi": 16.459,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.905
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483565,
+   "name": "Nick Blankenburg",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 3,
+   "l10_shots": [
+    1,
+    0,
+    2
+   ],
+   "vs_gp": 1,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.2748,
+     "lam": 1.03,
+     "detail": {
+      "rate60": 4.146,
+      "toi": 14.383,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.025
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475171,
+   "name": "Oliver Ekman-Larsson",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.055,
+     "lam": 0.375
+    },
+    "v1": {
+     "p": 0.2571,
+     "lam": 0.9802,
+     "detail": {
+      "rate60": 3.158,
+      "toi": 16.9,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.09
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476931,
+   "name": "Jake McCabe",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.1734,
+     "lam": 0.75
+    },
+    "v1": {
+     "p": 0.2527,
+     "lam": 0.968,
+     "detail": {
+      "rate60": 2.712,
+      "toi": 21.021,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.007
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478178,
+   "name": "Darren Raddysh",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 8,
+   "l10_shots": [
+    3,
+    4,
+    2,
+    2,
+    1,
+    0,
+    3,
+    3
+   ],
+   "vs_gp": 4,
+   "vs_shots": 11,
+   "preds": {
+    "v0": {
+     "p": 0.6575,
+     "lam": 2.25
+    },
+    "v1": {
+     "p": 0.7113,
+     "lam": 2.6204,
+     "detail": {
+      "rate60": 6.258,
+      "toi": 24.372,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.019
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476853,
+   "name": "Morgan Rielly",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    0,
+    1,
+    3
+   ],
+   "vs_gp": 4,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.3554,
+     "lam": 1.25
+    },
+    "v1": {
+     "p": 0.3719,
+     "lam": 1.3095,
+     "detail": {
+      "rate60": 4.481,
+      "toi": 19.158,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.905
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483546,
+   "name": "Marshall Rifai",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": true,
+   "l10_hits": 0,
+   "l10_n": 1,
+   "l10_shots": [
+    0
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.1148,
+     "lam": 0.5704,
+     "detail": {
+      "rate60": 3.612,
+      "toi": 9.368,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479442,
+   "name": "Troy Stecher",
+   "team": "TOR",
+   "opp": "NYI",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020125,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    0,
+    2,
+    1,
+    1,
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 5,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.1734,
+     "lam": 0.75
+    },
+    "v1": {
+     "p": 0.1828,
+     "lam": 0.7712,
+     "detail": {
+      "rate60": 3.101,
+      "toi": 17.36,
+      "f_opp": 0.982,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.85
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484145,
+   "name": "Zach Benson",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    1,
+    2,
+    4,
+    1,
+    2,
+    0,
+    4
+   ],
+   "vs_gp": 5,
+   "vs_shots": 13,
+   "preds": {
+    "v0": {
+     "p": 0.5591,
+     "lam": 1.875
+    },
+    "v1": {
+     "p": 0.6311,
+     "lam": 2.2253,
+     "detail": {
+      "rate60": 6.367,
+      "toi": 19.73,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.113
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475842,
+   "name": "Sam Carrick",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 4,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.0265,
+     "lam": 0.25
+    },
+    "v1": {
+     "p": 0.1627,
+     "lam": 0.7135,
+     "detail": {
+      "rate60": 5.711,
+      "toi": 7.383,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.063
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479941,
+   "name": "Justin Danforth",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 5,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.0175,
+     "lam": 0.2
+    },
+    "v1": {
+     "p": 0.1301,
+     "lam": 0.6172,
+     "detail": {
+      "rate60": 4.532,
+      "toi": 9.273,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.923
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482659,
+   "name": "Josh Doan",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    3,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 8,
+   "preds": {
+    "v0": {
+     "p": 0.4422,
+     "lam": 1.5
+    },
+    "v1": {
+     "p": 0.4975,
+     "lam": 1.7081,
+     "detail": {
+      "rate60": 6.89,
+      "toi": 16.353,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.953
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484797,
+   "name": "Konsta Helenius",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    3,
+    0,
+    1,
+    1,
+    0,
+    4
+   ],
+   "vs_gp": 3,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.4658,
+     "lam": 1.5714
+    },
+    "v1": {
+     "p": 0.4538,
+     "lam": 1.5626,
+     "detail": {
+      "rate60": 6.824,
+      "toi": 14.271,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.008
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481522,
+   "name": "Peyton Krebs",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    1,
+    1,
+    1,
+    2,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 5,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.1734,
+     "lam": 0.75
+    },
+    "v1": {
+     "p": 0.2445,
+     "lam": 0.9449,
+     "detail": {
+      "rate60": 4.739,
+      "toi": 14.744,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.85
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483468,
+   "name": "Jiri Kulich",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": true,
+   "l10_hits": 3,
+   "l10_n": 6,
+   "l10_shots": [
+    1,
+    1,
+    2,
+    0,
+    2,
+    2
+   ],
+   "vs_gp": 2,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.3849,
+     "lam": 1.3333
+    },
+    "v1": {
+     "p": 0.3985,
+     "lam": 1.3896,
+     "detail": {
+      "rate60": 6.33,
+      "toi": 13.625,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.013
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479359,
+   "name": "Beck Malenstyn",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.0072,
+     "lam": 0.125
+    },
+    "v1": {
+     "p": 0.1776,
+     "lam": 0.7564,
+     "detail": {
+      "rate60": 4.331,
+      "toi": 10.098,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.087
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480802,
+   "name": "Ryan McLeod",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    1,
+    1,
+    1,
+    0,
+    2,
+    0,
+    2
+   ],
+   "vs_gp": 5,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.2184,
+     "lam": 0.875
+    },
+    "v1": {
+     "p": 0.2656,
+     "lam": 1.0042,
+     "detail": {
+      "rate60": 4.22,
+      "toi": 15.998,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.935
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480064,
+   "name": "Josh Norris",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    1,
+    0,
+    3,
+    0,
+    2,
+    1,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.3454,
+     "lam": 1.2318,
+     "detail": {
+      "rate60": 5.484,
+      "toi": 14.201,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.994
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483500,
+   "name": "Noah Ostlund",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 8,
+   "l10_shots": [
+    3,
+    2,
+    2,
+    2,
+    5,
+    3,
+    1,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.6861,
+     "lam": 2.375
+    },
+    "v1": {
+     "p": 0.4931,
+     "lam": 1.6933,
+     "detail": {
+      "rate60": 5.905,
+      "toi": 18.96,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.95
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482097,
+   "name": "Jack Quinn",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 8,
+   "l10_shots": [
+    4,
+    5,
+    2,
+    1,
+    2,
+    1,
+    3,
+    4
+   ],
+   "vs_gp": 5,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.7603,
+     "lam": 2.75
+    },
+    "v1": {
+     "p": 0.6623,
+     "lam": 2.3685,
+     "detail": {
+      "rate60": 8.386,
+      "toi": 18.895,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.94
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479420,
+   "name": "Tage Thompson",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 8,
+   "l10_shots": [
+    4,
+    4,
+    9,
+    6,
+    6,
+    1,
+    1,
+    6
+   ],
+   "vs_gp": 5,
+   "vs_shots": 13,
+   "preds": {
+    "v0": {
+     "p": 0.9449,
+     "lam": 4.625
+    },
+    "v1": {
+     "p": 0.7993,
+     "lam": 3.1944,
+     "detail": {
+      "rate60": 10.995,
+      "toi": 20.102,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.908
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481806,
+   "name": "Louis Crevier",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    1,
+    2,
+    0,
+    1,
+    2,
+    1,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.3101,
+     "lam": 1.125
+    },
+    "v1": {
+     "p": 0.321,
+     "lam": 1.1612,
+     "detail": {
+      "rate60": 4.704,
+      "toi": 14.74,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.052
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478502,
+   "name": "Dennis Gilbert",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 2,
+   "l10_shots": [
+    0,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.0265,
+     "lam": 0.25
+    },
+    "v1": {
+     "p": 0.1046,
+     "lam": 0.5387,
+     "detail": {
+      "rate60": 3.284,
+      "toi": 11.169,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.923
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484305,
+   "name": "Zach Metsa",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.0265,
+     "lam": 0.25
+    },
+    "v1": {
+     "p": 0.116,
+     "lam": 0.5743,
+     "detail": {
+      "rate60": 2.648,
+      "toi": 13.4,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.017
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482671,
+   "name": "Owen Power",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    1,
+    2,
+    2,
+    0,
+    1,
+    0,
+    2
+   ],
+   "vs_gp": 5,
+   "vs_shots": 11,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.4676,
+     "lam": 1.6077,
+     "detail": {
+      "rate60": 3.296,
+      "toi": 26.659,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480807,
+   "name": "Mattias Samuelsson",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    0,
+    3
+   ],
+   "vs_gp": 5,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.3995,
+     "lam": 1.375
+    },
+    "v1": {
+     "p": 0.3889,
+     "lam": 1.3604,
+     "detail": {
+      "rate60": 3.694,
+      "toi": 23.29,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.994
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482803,
+   "name": "Olen Zellweger",
+   "team": "BUF",
+   "opp": "MTL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    0,
+    0,
+    0,
+    6,
+    4,
+    6
+   ],
+   "vs_gp": 3,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.6977,
+     "lam": 2.4286
+    },
+    "v1": {
+     "p": 0.6054,
+     "lam": 2.1147,
+     "detail": {
+      "rate60": 5.851,
+      "toi": 20.611,
+      "f_opp": 0.984,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.102
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476981,
+   "name": "Josh Anderson",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 7,
+   "l10_shots": [
+    3,
+    3,
+    0,
+    4,
+    0,
+    2,
+    3
+   ],
+   "vs_gp": 5,
+   "vs_shots": 8,
+   "preds": {
+    "v0": {
+     "p": 0.6313,
+     "lam": 2.1429
+    },
+    "v1": {
+     "p": 0.4612,
+     "lam": 1.5868,
+     "detail": {
+      "rate60": 6.61,
+      "toi": 13.826,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.014
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483424,
+   "name": "Owen Beck",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 2,
+   "l10_shots": [
+    1,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.1675,
+     "lam": 0.7333
+    },
+    "v1": {
+     "p": 0.2124,
+     "lam": 0.8549,
+     "detail": {
+      "rate60": 6.368,
+      "toi": 8.282,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.947
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482737,
+   "name": "Zachary Bolduc",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    0,
+    3,
+    2,
+    3,
+    1,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.4658,
+     "lam": 1.5714
+    },
+    "v1": {
+     "p": 0.4064,
+     "lam": 1.4136,
+     "detail": {
+      "rate60": 6.196,
+      "toi": 14.275,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.934
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481540,
+   "name": "Cole Caufield",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 7,
+   "l10_shots": [
+    3,
+    3,
+    1,
+    6,
+    6,
+    5,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 18,
+   "preds": {
+    "v0": {
+     "p": 0.8564,
+     "lam": 3.4286
+    },
+    "v1": {
+     "p": 0.8415,
+     "lam": 3.5646,
+     "detail": {
+      "rate60": 9.737,
+      "toi": 20.05,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.067
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481523,
+   "name": "Kirby Dach",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.0338,
+     "lam": 0.2857
+    },
+    "v1": {
+     "p": 0.1459,
+     "lam": 0.6643,
+     "detail": {
+      "rate60": 4.963,
+      "toi": 9.046,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.864
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476479,
+   "name": "Phillip Danault",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    0,
+    3,
+    2,
+    1,
+    3,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.418,
+     "lam": 1.4286
+    },
+    "v1": {
+     "p": 0.4196,
+     "lam": 1.4544,
+     "detail": {
+      "rate60": 5.265,
+      "toi": 16.586,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.973
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478133,
+   "name": "Jake Evans",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    2,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 13,
+   "preds": {
+    "v0": {
+     "p": 0.2119,
+     "lam": 0.8571
+    },
+    "v1": {
+     "p": 0.3403,
+     "lam": 1.2169,
+     "detail": {
+      "rate60": 4.679,
+      "toi": 13.211,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475184,
+   "name": "Chris Kreider",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    1,
+    1,
+    0,
+    2,
+    0,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.1608,
+     "lam": 0.7143
+    },
+    "v1": {
+     "p": 0.4095,
+     "lam": 1.4231,
+     "detail": {
+      "rate60": 5.573,
+      "toi": 15.17,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.983
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481618,
+   "name": "Alex Newhook",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    2,
+    0,
+    1,
+    0,
+    1,
+    3
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.3166,
+     "lam": 1.1429
+    },
+    "v1": {
+     "p": 0.4298,
+     "lam": 1.4863,
+     "detail": {
+      "rate60": 5.566,
+      "toi": 16.31,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.956
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483515,
+   "name": "Juraj Slafkovský",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    1,
+    2,
+    5,
+    5,
+    3,
+    4
+   ],
+   "vs_gp": 5,
+   "vs_shots": 15,
+   "preds": {
+    "v0": {
+     "p": 0.8212,
+     "lam": 3.1429
+    },
+    "v1": {
+     "p": 0.7466,
+     "lam": 2.8276,
+     "detail": {
+      "rate60": 7.879,
+      "toi": 19.534,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.073
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480018,
+   "name": "Nick Suzuki",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    4,
+    2,
+    1,
+    3,
+    5,
+    3
+   ],
+   "vs_gp": 5,
+   "vs_shots": 13,
+   "preds": {
+    "v0": {
+     "p": 0.7785,
+     "lam": 2.8571
+    },
+    "v1": {
+     "p": 0.725,
+     "lam": 2.6979,
+     "detail": {
+      "rate60": 6.945,
+      "toi": 22.335,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.016
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480074,
+   "name": "Alexandre Texier",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    1,
+    2,
+    5,
+    2
+   ],
+   "vs_gp": 3,
+   "vs_shots": 8,
+   "preds": {
+    "v0": {
+     "p": 0.4658,
+     "lam": 1.5714
+    },
+    "v1": {
+     "p": 0.5246,
+     "lam": 1.8032,
+     "detail": {
+      "rate60": 6.666,
+      "toi": 13.741,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478851,
+   "name": "Alexandre Carrier",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    3,
+    0,
+    1,
+    1,
+    1,
+    2,
+    1
+   ],
+   "vs_gp": 5,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.3681,
+     "lam": 1.2857
+    },
+    "v1": {
+     "p": 0.3274,
+     "lam": 1.1796,
+     "detail": {
+      "rate60": 3.232,
+      "toi": 19.654,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.085
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480865,
+   "name": "Noah Dobson",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    1,
+    2,
+    2,
+    1,
+    2,
+    5
+   ],
+   "vs_gp": 5,
+   "vs_shots": 10,
+   "preds": {
+    "v0": {
+     "p": 0.594,
+     "lam": 2.0
+    },
+    "v1": {
+     "p": 0.5612,
+     "lam": 1.9387,
+     "detail": {
+      "rate60": 5.128,
+      "toi": 21.384,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.033
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483686,
+   "name": "Adam Engstrom",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 4,
+   "l10_shots": [
+    0,
+    1,
+    2,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.1734,
+     "lam": 0.75
+    },
+    "v1": {
+     "p": 0.1916,
+     "lam": 0.7963,
+     "detail": {
+      "rate60": 3.829,
+      "toi": 11.008,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.103
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482087,
+   "name": "Kaiden Guhle",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 3,
+   "l10_shots": [
+    0,
+    2,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.3849,
+     "lam": 1.3333
+    },
+    "v1": {
+     "p": 0.2961,
+     "lam": 1.0902,
+     "detail": {
+      "rate60": 3.482,
+      "toi": 21.111,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.866
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483457,
+   "name": "Lane Hutson",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    3,
+    2,
+    4,
+    2,
+    2,
+    3
+   ],
+   "vs_gp": 5,
+   "vs_shots": 11,
+   "preds": {
+    "v0": {
+     "p": 0.6658,
+     "lam": 2.2857
+    },
+    "v1": {
+     "p": 0.612,
+     "lam": 2.1428,
+     "detail": {
+      "rate60": 4.372,
+      "toi": 26.409,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.084
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482964,
+   "name": "Arber Xhekaj",
+   "team": "MTL",
+   "opp": "BUF",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020126,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.0338,
+     "lam": 0.2857
+    },
+    "v1": {
+     "p": 0.0932,
+     "lam": 0.5018,
+     "detail": {
+      "rate60": 2.958,
+      "toi": 11.66,
+      "f_opp": 0.997,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.85
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478020,
+   "name": "Michael Amadio",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    2,
+    0,
+    3,
+    1,
+    2,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.3101,
+     "lam": 1.125
+    },
+    "v1": {
+     "p": 0.4231,
+     "lam": 1.4653,
+     "detail": {
+      "rate60": 4.768,
+      "toi": 15.951,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480208,
+   "name": "Drake Batherson",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    2,
+    2,
+    3,
+    3,
+    2,
+    1,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.6268,
+     "lam": 2.125
+    },
+    "v1": {
+     "p": 0.6047,
+     "lam": 2.1121,
+     "detail": {
+      "rate60": 7.159,
+      "toi": 18.018,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.977
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477444,
+   "name": "Andre Burakovsky",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 4,
+   "l10_shots": [
+    0,
+    0,
+    0,
+    2
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.0902,
+     "lam": 0.5
+    },
+    "v1": {
+     "p": 0.2431,
+     "lam": 0.9409,
+     "detail": {
+      "rate60": 4.48,
+      "toi": 13.704,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.915
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476393,
+   "name": "Nick Cousins",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.055,
+     "lam": 0.375
+    },
+    "v1": {
+     "p": 0.2388,
+     "lam": 0.9289,
+     "detail": {
+      "rate60": 4.903,
+      "toi": 9.834,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481528,
+   "name": "Dylan Cozens",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    4,
+    1,
+    1,
+    3,
+    1,
+    2,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.5591,
+     "lam": 1.875
+    },
+    "v1": {
+     "p": 0.6042,
+     "lam": 2.1098,
+     "detail": {
+      "rate60": 7.506,
+      "toi": 18.279,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.918
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477998,
+   "name": "Warren Foegele",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.0902,
+     "lam": 0.5
+    },
+    "v1": {
+     "p": 0.2996,
+     "lam": 1.1001,
+     "detail": {
+      "rate60": 5.721,
+      "toi": 11.587,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.991
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8473512,
+   "name": "Claude Giroux",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    4,
+    1,
+    0,
+    1,
+    2,
+    0,
+    2,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.4422,
+     "lam": 1.5
+    },
+    "v1": {
+     "p": 0.4965,
+     "lam": 1.7048,
+     "detail": {
+      "rate60": 5.964,
+      "toi": 17.795,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.959
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482092,
+   "name": "Ridly Greig",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 6,
+   "l10_shots": [
+    2,
+    3,
+    0,
+    1,
+    1,
+    3
+   ],
+   "vs_gp": 4,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.4963,
+     "lam": 1.6667
+    },
+    "v1": {
+     "p": 0.4738,
+     "lam": 1.6284,
+     "detail": {
+      "rate60": 6.148,
+      "toi": 17.121,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.924
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483676,
+   "name": "Stephen Halliday",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    0,
+    2,
+    1,
+    0,
+    2,
+    0,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.3545,
+     "lam": 1.2581,
+     "detail": {
+      "rate60": 6.494,
+      "toi": 11.634,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.994
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481596,
+   "name": "Shane Pinto",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    4,
+    2,
+    1,
+    2,
+    0,
+    1,
+    1,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 8,
+   "preds": {
+    "v0": {
+     "p": 0.4831,
+     "lam": 1.625
+    },
+    "v1": {
+     "p": 0.5883,
+     "lam": 2.0449,
+     "detail": {
+      "rate60": 6.235,
+      "toi": 19.962,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.981
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482116,
+   "name": "Tim Stützle",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    3,
+    2,
+    0,
+    4,
+    1,
+    1,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.5591,
+     "lam": 1.875
+    },
+    "v1": {
+     "p": 0.6284,
+     "lam": 2.2135,
+     "detail": {
+      "rate60": 6.307,
+      "toi": 22.383,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.936
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480188,
+   "name": "Fabian Zetterlund",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    2,
+    0,
+    3,
+    0,
+    4,
+    4,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.5591,
+     "lam": 1.875
+    },
+    "v1": {
+     "p": 0.4805,
+     "lam": 1.6507,
+     "detail": {
+      "rate60": 7.637,
+      "toi": 12.342,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.045
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478469,
+   "name": "Thomas Chabot",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    1,
+    5,
+    4,
+    3,
+    2,
+    1,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.6575,
+     "lam": 2.25
+    },
+    "v1": {
+     "p": 0.6269,
+     "lam": 2.2068,
+     "detail": {
+      "rate60": 4.675,
+      "toi": 27.401,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.028
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480075,
+   "name": "Cameron Crotty",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 3,
+   "l10_shots": [
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.0012,
+     "lam": 0.05
+    },
+    "v1": {
+     "p": 0.1041,
+     "lam": 0.5369,
+     "detail": {
+      "rate60": 2.872,
+      "toi": 11.161,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482095,
+   "name": "Tyler Kleven",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    1,
+    2,
+    0,
+    1,
+    2,
+    0,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.3467,
+     "lam": 1.2354,
+     "detail": {
+      "rate60": 3.776,
+      "toi": 20.893,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.935
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481606,
+   "name": "Jordan Spence",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    1,
+    1,
+    0,
+    2,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.2184,
+     "lam": 0.875
+    },
+    "v1": {
+     "p": 0.3893,
+     "lam": 1.3617,
+     "detail": {
+      "rate60": 3.674,
+      "toi": 22.434,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.986
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484759,
+   "name": "Carter Yakemchuk",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    2,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.3995,
+     "lam": 1.375
+    },
+    "v1": {
+     "p": 0.4298,
+     "lam": 1.4861,
+     "detail": {
+      "rate60": 4.326,
+      "toi": 19.207,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.068
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482245,
+   "name": "Artem Zub",
+   "team": "OTT",
+   "opp": "PHI",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 1,
+   "l10_shots": [
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.3141,
+     "lam": 1.1358
+    },
+    "v1": {
+     "p": 0.304,
+     "lam": 1.1125,
+     "detail": {
+      "rate60": 3.45,
+      "toi": 19.638,
+      "f_opp": 1.036,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.98
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478569,
+   "name": "Noel Acciari",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 9,
+   "l10_shots": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.0739,
+     "lam": 0.4444
+    },
+    "v1": {
+     "p": 0.2499,
+     "lam": 0.9601,
+     "detail": {
+      "rate60": 4.915,
+      "toi": 13.522,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.928
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484142,
+   "name": "Denver Barkey",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 6,
+   "l10_shots": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.0446,
+     "lam": 0.3333
+    },
+    "v1": {
+     "p": 0.2246,
+     "lam": 0.8892,
+     "detail": {
+      "rate60": 4.193,
+      "toi": 14.313,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.952
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478047,
+   "name": "Michael Bunting",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 5,
+   "l10_shots": [
+    2,
+    0,
+    1,
+    0,
+    3
+   ],
+   "vs_gp": 3,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.3374,
+     "lam": 1.2
+    },
+    "v1": {
+     "p": 0.2947,
+     "lam": 1.0862,
+     "detail": {
+      "rate60": 6.915,
+      "toi": 10.833,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.932
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480220,
+   "name": "Noah Cates",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 9,
+   "l10_shots": [
+    1,
+    2,
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.305,
+     "lam": 1.1111
+    },
+    "v1": {
+     "p": 0.3012,
+     "lam": 1.1047,
+     "detail": {
+      "rate60": 5.897,
+      "toi": 12.767,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.943
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476461,
+   "name": "Sean Couturier",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 9,
+   "l10_shots": [
+    0,
+    2,
+    0,
+    1,
+    4,
+    0,
+    1,
+    2,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.305,
+     "lam": 1.1111
+    },
+    "v1": {
+     "p": 0.419,
+     "lam": 1.4526,
+     "detail": {
+      "rate60": 5.173,
+      "toi": 17.309,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.042
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477989,
+   "name": "Christian Dvorak",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 9,
+   "l10_shots": [
+    2,
+    1,
+    1,
+    1,
+    0,
+    0,
+    3,
+    1,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.3525,
+     "lam": 1.2524,
+     "detail": {
+      "rate60": 5.341,
+      "toi": 17.304,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.871
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482159,
+   "name": "Tyson Foerster",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 9,
+   "l10_shots": [
+    1,
+    2,
+    3,
+    4,
+    3,
+    1,
+    1,
+    2,
+    2
+   ],
+   "vs_gp": 2,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.6232,
+     "lam": 2.1111
+    },
+    "v1": {
+     "p": 0.5486,
+     "lam": 1.8911,
+     "detail": {
+      "rate60": 7.135,
+      "toi": 17.03,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8485406,
+   "name": "Porter Martone",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 9,
+   "l10_shots": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    3,
+    0,
+    1,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.1832,
+     "lam": 0.7778
+    },
+    "v1": {
+     "p": 0.3145,
+     "lam": 1.1426,
+     "detail": {
+      "rate60": 5.97,
+      "toi": 13.32,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.923
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484387,
+   "name": "Matvei Michkov",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 9,
+   "l10_shots": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.4771,
+     "lam": 1.6393,
+     "detail": {
+      "rate60": 6.559,
+      "toi": 14.636,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.097
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480021,
+   "name": "Jack Studnicka",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 2,
+   "l10_shots": [
+    1,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.2064,
+     "lam": 0.8421
+    },
+    "v1": {
+     "p": 0.2249,
+     "lam": 0.89,
+     "detail": {
+      "rate60": 6.354,
+      "toi": 7.877,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.143
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480015,
+   "name": "Owen Tippett",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 9,
+   "l10_shots": [
+    4,
+    2,
+    3,
+    0,
+    4,
+    3,
+    3,
+    1,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.6768,
+     "lam": 2.3333
+    },
+    "v1": {
+     "p": 0.6344,
+     "lam": 2.2399,
+     "detail": {
+      "rate60": 8.736,
+      "toi": 16.89,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.975
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481533,
+   "name": "Trevor Zegras",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 9,
+   "l10_shots": [
+    1,
+    1,
+    0,
+    0,
+    3,
+    0,
+    1,
+    5,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.3849,
+     "lam": 1.3333
+    },
+    "v1": {
+     "p": 0.4549,
+     "lam": 1.5664,
+     "detail": {
+      "rate60": 5.795,
+      "toi": 18.303,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.949
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481122,
+   "name": "Simon Benoit",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    4,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.1302,
+     "lam": 0.625
+    },
+    "v1": {
+     "p": 0.1403,
+     "lam": 0.6477,
+     "detail": {
+      "rate60": 3.0,
+      "toi": 14.259,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.973
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484148,
+   "name": "Oliver Bonk",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 3,
+   "l10_shots": [
+    2,
+    1,
+    2
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.4963,
+     "lam": 1.6667
+    },
+    "v1": {
+     "p": 0.3738,
+     "lam": 1.3152,
+     "detail": {
+      "rate60": 4.489,
+      "toi": 18.822,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482142,
+   "name": "Jamie Drysdale",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 9,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    0,
+    3,
+    2,
+    1,
+    2,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.3626,
+     "lam": 1.2822,
+     "detail": {
+      "rate60": 3.299,
+      "toi": 23.011,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.085
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483460,
+   "name": "David Jiricek",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.2119,
+     "lam": 0.8571
+    },
+    "v1": {
+     "p": 0.2323,
+     "lam": 0.9107,
+     "detail": {
+      "rate60": 3.426,
+      "toi": 15.746,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.085
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477948,
+   "name": "Travis Sanheim",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 9,
+   "l10_shots": [
+    3,
+    3,
+    1,
+    2,
+    1,
+    0,
+    1,
+    3,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.4963,
+     "lam": 1.6667
+    },
+    "v1": {
+     "p": 0.4092,
+     "lam": 1.4223,
+     "detail": {
+      "rate60": 3.532,
+      "toi": 25.555,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.013
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476372,
+   "name": "Nick Seeler",
+   "team": "PHI",
+   "opp": "OTT",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020128,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 9,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    3
+   ],
+   "vs_gp": 4,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.1832,
+     "lam": 0.7778
+    },
+    "v1": {
+     "p": 0.2307,
+     "lam": 0.9062,
+     "detail": {
+      "rate60": 3.374,
+      "toi": 20.303,
+      "f_opp": 0.907,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.85
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481013,
+   "name": "Jonatan Berggren",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    3,
+    0,
+    0,
+    2,
+    1,
+    2
+   ],
+   "vs_gp": 2,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.3166,
+     "lam": 1.1429
+    },
+    "v1": {
+     "p": 0.4047,
+     "lam": 1.4084,
+     "detail": {
+      "rate60": 5.265,
+      "toi": 14.708,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.046
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477402,
+   "name": "Pavel Buchnevich",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": true,
+   "l10_hits": 3,
+   "l10_n": 6,
+   "l10_shots": [
+    0,
+    2,
+    2,
+    1,
+    2,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 13,
+   "preds": {
+    "v0": {
+     "p": 0.3849,
+     "lam": 1.3333
+    },
+    "v1": {
+     "p": 0.5778,
+     "lam": 2.0028,
+     "detail": {
+      "rate60": 5.676,
+      "toi": 17.653,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482784,
+   "name": "Zach Dean",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 3,
+   "l10_shots": [
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.0012,
+     "lam": 0.05
+    },
+    "v1": {
+     "p": 0.2079,
+     "lam": 0.8423,
+     "detail": {
+      "rate60": 4.86,
+      "toi": 9.972,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484164,
+   "name": "Dalibor Dvorsky",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    3,
+    1,
+    2,
+    1,
+    1,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.4658,
+     "lam": 1.5714
+    },
+    "v1": {
+     "p": 0.3758,
+     "lam": 1.3213,
+     "detail": {
+      "rate60": 6.164,
+      "toi": 12.98,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.95
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482077,
+   "name": "Dylan Holloway",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    2,
+    1,
+    2,
+    3,
+    1,
+    3
+   ],
+   "vs_gp": 1,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.5539,
+     "lam": 1.8571
+    },
+    "v1": {
+     "p": 0.6822,
+     "lam": 2.4665,
+     "detail": {
+      "rate60": 7.749,
+      "toi": 17.809,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.028
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477527,
+   "name": "Ross Johnston",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 6,
+   "l10_shots": [
+    0,
+    1,
+    1,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.0902,
+     "lam": 0.5
+    },
+    "v1": {
+     "p": 0.1378,
+     "lam": 0.6405,
+     "detail": {
+      "rate60": 4.34,
+      "toi": 8.142,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.043
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481580,
+   "name": "Connor McMichael",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    2,
+    5,
+    2,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.4658,
+     "lam": 1.5714
+    },
+    "v1": {
+     "p": 0.5456,
+     "lam": 1.88,
+     "detail": {
+      "rate60": 6.351,
+      "toi": 16.374,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.04
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482745,
+   "name": "Mason McTavish",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 7,
+   "l10_shots": [
+    3,
+    3,
+    2,
+    5,
+    4,
+    6,
+    4
+   ],
+   "vs_gp": 3,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.8974,
+     "lam": 3.8571
+    },
+    "v1": {
+     "p": 0.6759,
+     "lam": 2.435,
+     "detail": {
+      "rate60": 9.398,
+      "toi": 15.866,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.94
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482089,
+   "name": "Jake Neighbours",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    1,
+    0,
+    2,
+    2,
+    3,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.418,
+     "lam": 1.4286
+    },
+    "v1": {
+     "p": 0.4229,
+     "lam": 1.4646,
+     "detail": {
+      "rate60": 5.551,
+      "toi": 14.514,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.046
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482121,
+   "name": "Dylan Peterson",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 2,
+   "l10_shots": [
+    0,
+    0
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.5158,
+     "lam": 1.7293
+    },
+    "v1": {
+     "p": 0.1998,
+     "lam": 0.8195,
+     "detail": {
+      "rate60": 5.498,
+      "toi": 8.575,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483516,
+   "name": "Jimmy Snuggerud",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 7,
+   "l10_shots": [
+    4,
+    1,
+    3,
+    1,
+    3,
+    2,
+    3
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.6977,
+     "lam": 2.4286
+    },
+    "v1": {
+     "p": 0.6282,
+     "lam": 2.2123,
+     "detail": {
+      "rate60": 8.206,
+      "toi": 17.454,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.889
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480459,
+   "name": "Pius Suter",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    4,
+    0,
+    0,
+    2,
+    1,
+    4,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.4658,
+     "lam": 1.5714
+    },
+    "v1": {
+     "p": 0.3982,
+     "lam": 1.3885,
+     "detail": {
+      "rate60": 6.101,
+      "toi": 13.788,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.95
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480023,
+   "name": "Robert Thomas",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    0,
+    3,
+    2,
+    0,
+    1,
+    3
+   ],
+   "vs_gp": 3,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.3681,
+     "lam": 1.2857
+    },
+    "v1": {
+     "p": 0.5093,
+     "lam": 1.7492,
+     "detail": {
+      "rate60": 4.959,
+      "toi": 19.985,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.015
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482111,
+   "name": "Justin Barron",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 4,
+   "l10_shots": [
+    1,
+    2,
+    0,
+    2
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.3554,
+     "lam": 1.25
+    },
+    "v1": {
+     "p": 0.2403,
+     "lam": 0.9331,
+     "detail": {
+      "rate60": 3.302,
+      "toi": 16.258,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481598,
+   "name": "Philip Broberg",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    3,
+    1,
+    2,
+    1,
+    1,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.3681,
+     "lam": 1.2857
+    },
+    "v1": {
+     "p": 0.3745,
+     "lam": 1.3173,
+     "detail": {
+      "rate60": 3.367,
+      "toi": 22.795,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.988
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478443,
+   "name": "Brandon Carlo",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    2,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.1126,
+     "lam": 0.5714
+    },
+    "v1": {
+     "p": 0.2971,
+     "lam": 1.0929,
+     "detail": {
+      "rate60": 3.237,
+      "toi": 17.808,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.091
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475764,
+   "name": "Cam Fowler",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    1,
+    2,
+    0,
+    1,
+    0,
+    3
+   ],
+   "vs_gp": 4,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.3681,
+     "lam": 1.2857
+    },
+    "v1": {
+     "p": 0.3367,
+     "lam": 1.2065,
+     "detail": {
+      "rate60": 3.406,
+      "toi": 22.122,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.921
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484790,
+   "name": "Adam Jiricek",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    1,
+    2,
+    1,
+    3,
+    3,
+    1
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.5539,
+     "lam": 1.8571
+    },
+    "v1": {
+     "p": 0.4555,
+     "lam": 1.5682,
+     "detail": {
+      "rate60": 5.608,
+      "toi": 16.089,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476892,
+   "name": "Colton Parayko",
+   "team": "STL",
+   "opp": "NSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    2,
+    2,
+    0,
+    1,
+    1,
+    3
+   ],
+   "vs_gp": 4,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.4658,
+     "lam": 1.5714
+    },
+    "v1": {
+     "p": 0.4059,
+     "lam": 1.4122,
+     "detail": {
+      "rate60": 3.947,
+      "toi": 22.23,
+      "f_opp": 1.075,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.926
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479525,
+   "name": "Ross Colton",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    0,
+    2,
+    1,
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 8,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.5632,
+     "lam": 1.9464,
+     "detail": {
+      "rate60": 8.087,
+      "toi": 12.431,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.132
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480835,
+   "name": "Jack Drury",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    0,
+    1,
+    2,
+    1,
+    2,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.2119,
+     "lam": 0.8571
+    },
+    "v1": {
+     "p": 0.324,
+     "lam": 1.1698,
+     "detail": {
+      "rate60": 4.84,
+      "toi": 16.629,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.85
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481726,
+   "name": "Adam Edstrom",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    4,
+    3,
+    2,
+    0,
+    1,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.5112,
+     "lam": 1.7143
+    },
+    "v1": {
+     "p": 0.4496,
+     "lam": 1.5493,
+     "detail": {
+      "rate60": 6.767,
+      "toi": 13.355,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.003
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476887,
+   "name": "Filip Forsberg",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    1,
+    2,
+    3,
+    1,
+    7,
+    6
+   ],
+   "vs_gp": 4,
+   "vs_shots": 13,
+   "preds": {
+    "v0": {
+     "p": 0.8212,
+     "lam": 3.1429
+    },
+    "v1": {
+     "p": 0.8223,
+     "lam": 3.3854,
+     "detail": {
+      "rate60": 8.764,
+      "toi": 21.622,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.045
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481535,
+   "name": "Nils Hoglander",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    2,
+    2,
+    1,
+    2,
+    1,
+    2
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.418,
+     "lam": 1.4286
+    },
+    "v1": {
+     "p": 0.3319,
+     "lam": 1.1925,
+     "detail": {
+      "rate60": 6.226,
+      "toi": 11.283,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.993
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477021,
+   "name": "Alexander Kerfoot",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.1608,
+     "lam": 0.7143
+    },
+    "v1": {
+     "p": 0.2701,
+     "lam": 1.0168,
+     "detail": {
+      "rate60": 4.14,
+      "toi": 16.755,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.857
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476539,
+   "name": "Jonathan Marchessault",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    3,
+    2,
+    0,
+    3,
+    2,
+    2
+   ],
+   "vs_gp": 3,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.5112,
+     "lam": 1.7143
+    },
+    "v1": {
+     "p": 0.5516,
+     "lam": 1.9023,
+     "detail": {
+      "rate60": 7.014,
+      "toi": 16.809,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.944
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475158,
+   "name": "Ryan O'Reilly",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 7,
+   "l10_shots": [
+    4,
+    1,
+    1,
+    2,
+    0,
+    2,
+    4
+   ],
+   "vs_gp": 4,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.594,
+     "lam": 2.0
+    },
+    "v1": {
+     "p": 0.5785,
+     "lam": 2.0056,
+     "detail": {
+      "rate60": 5.762,
+      "toi": 22.017,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.925
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8486189,
+   "name": "Vitali Pinchuk",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 3,
+   "l10_shots": [
+    0,
+    3,
+    0
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.3119,
+     "lam": 1.1351,
+     "detail": {
+      "rate60": 6.438,
+      "toi": 10.311,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483513,
+   "name": "Reid Schaefer",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 4,
+   "l10_shots": [
+    1,
+    2,
+    1,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.2723,
+     "lam": 1.0229,
+     "detail": {
+      "rate60": 5.784,
+      "toi": 10.629,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.973
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8474564,
+   "name": "Steven Stamkos",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    4,
+    3,
+    2,
+    0,
+    1,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 15,
+   "preds": {
+    "v0": {
+     "p": 0.5539,
+     "lam": 1.8571
+    },
+    "v1": {
+     "p": 0.7429,
+     "lam": 2.8046,
+     "detail": {
+      "rate60": 7.223,
+      "toi": 19.745,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484241,
+   "name": "Matthew Wood",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    3,
+    1,
+    1,
+    4,
+    0,
+    3
+   ],
+   "vs_gp": 4,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.5112,
+     "lam": 1.7143
+    },
+    "v1": {
+     "p": 0.4914,
+     "lam": 1.6874,
+     "detail": {
+      "rate60": 6.796,
+      "toi": 15.93,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.911
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482072,
+   "name": "Jack Ahcan",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": true,
+   "l10_hits": 0,
+   "l10_n": 3,
+   "l10_shots": [
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.0012,
+     "lam": 0.05
+    },
+    "v1": {
+     "p": 0.0692,
+     "lam": 0.4202,
+     "detail": {
+      "rate60": 3.231,
+      "toi": 7.606,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479980,
+   "name": "Nicolas Hague",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    4
+   ],
+   "vs_gp": 3,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.2119,
+     "lam": 0.8571
+    },
+    "v1": {
+     "p": 0.1837,
+     "lam": 0.7739,
+     "detail": {
+      "rate60": 3.035,
+      "toi": 17.541,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.85
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8474600,
+   "name": "Roman Josi",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 7,
+   "l10_shots": [
+    3,
+    0,
+    1,
+    2,
+    2,
+    2,
+    8
+   ],
+   "vs_gp": 4,
+   "vs_shots": 12,
+   "preds": {
+    "v0": {
+     "p": 0.727,
+     "lam": 2.5714
+    },
+    "v1": {
+     "p": 0.7436,
+     "lam": 2.8088,
+     "detail": {
+      "rate60": 5.841,
+      "toi": 25.902,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.086
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480246,
+   "name": "Nick Perbix",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.0694,
+     "lam": 0.4286
+    },
+    "v1": {
+     "p": 0.2102,
+     "lam": 0.8488,
+     "detail": {
+      "rate60": 2.757,
+      "toi": 18.434,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.977
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476869,
+   "name": "Brady Skjei",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    2,
+    0,
+    0,
+    1,
+    3,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.3956,
+     "lam": 1.3806,
+     "detail": {
+      "rate60": 3.457,
+      "toi": 20.307,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481593,
+   "name": "Jayden Struble",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 6,
+   "l10_shots": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.0012,
+     "lam": 0.05
+    },
+    "v1": {
+     "p": 0.0665,
+     "lam": 0.4105,
+     "detail": {
+      "rate60": 1.892,
+      "toi": 14.807,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.857
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482482,
+   "name": "Adam Wilsby",
+   "team": "NSH",
+   "opp": "STL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020131,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    1,
+    2,
+    0,
+    2,
+    2,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.2974,
+     "lam": 1.0939,
+     "detail": {
+      "rate60": 3.565,
+      "toi": 18.957,
+      "f_opp": 0.996,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.947
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479987,
+   "name": "Morgan Geekie",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    0,
+    1,
+    3,
+    1,
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.5466,
+     "lam": 1.8835,
+     "detail": {
+      "rate60": 6.091,
+      "toi": 17.679,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8485395,
+   "name": "James Hagens",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    1,
+    3,
+    2,
+    0,
+    4,
+    0,
+    2
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.4831,
+     "lam": 1.625
+    },
+    "v1": {
+     "p": 0.3858,
+     "lam": 1.351,
+     "detail": {
+      "rate60": 7.065,
+      "toi": 12.573,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479661,
+   "name": "Tanner Jeannot",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.0265,
+     "lam": 0.25
+    },
+    "v1": {
+     "p": 0.2341,
+     "lam": 0.9159,
+     "detail": {
+      "rate60": 4.341,
+      "toi": 12.065,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480355,
+   "name": "Mark Kastelic",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    1,
+    1,
+    0,
+    1,
+    2,
+    1,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.2184,
+     "lam": 0.875
+    },
+    "v1": {
+     "p": 0.2708,
+     "lam": 1.0189,
+     "detail": {
+      "rate60": 5.706,
+      "toi": 11.399,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.03
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482177,
+   "name": "Marat Khusnutdinov",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    0,
+    1,
+    0,
+    1,
+    3,
+    1,
+    2
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.2564,
+     "lam": 0.9783,
+     "detail": {
+      "rate60": 4.721,
+      "toi": 13.87,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.982
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477496,
+   "name": "Elias Lindholm",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    5,
+    2,
+    2,
+    0,
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.3995,
+     "lam": 1.375
+    },
+    "v1": {
+     "p": 0.3631,
+     "lam": 1.2836,
+     "detail": {
+      "rate60": 5.611,
+      "toi": 16.295,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.923
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483489,
+   "name": "Fraser Minten",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 8,
+   "l10_shots": [
+    3,
+    1,
+    3,
+    1,
+    4,
+    3,
+    4,
+    2
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.7374,
+     "lam": 2.625
+    },
+    "v1": {
+     "p": 0.4733,
+     "lam": 1.6267,
+     "detail": {
+      "rate60": 7.036,
+      "toi": 16.214,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.938
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479999,
+   "name": "Casey Mittelstadt",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    3,
+    2,
+    1,
+    0,
+    1,
+    2,
+    2,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.4422,
+     "lam": 1.5
+    },
+    "v1": {
+     "p": 0.2608,
+     "lam": 0.9908,
+     "detail": {
+      "rate60": 5.508,
+      "toi": 12.812,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.923
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477956,
+   "name": "David Pastrnak",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 8,
+   "l10_n": 8,
+   "l10_shots": [
+    4,
+    4,
+    5,
+    2,
+    4,
+    4,
+    4,
+    4
+   ],
+   "vs_gp": 2,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.8988,
+     "lam": 3.875
+    },
+    "v1": {
+     "p": 0.7347,
+     "lam": 2.7548,
+     "detail": {
+      "rate60": 9.99,
+      "toi": 19.355,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.937
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482175,
+   "name": "JJ Peterka",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    5,
+    2,
+    0,
+    0,
+    2,
+    1,
+    2
+   ],
+   "vs_gp": 3,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.4831,
+     "lam": 1.625
+    },
+    "v1": {
+     "p": 0.3896,
+     "lam": 1.3625,
+     "detail": {
+      "rate60": 6.765,
+      "toi": 15.19,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.872
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483505,
+   "name": "Matthew Poitras",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 5,
+   "l10_shots": [
+    0,
+    2,
+    1,
+    3,
+    2
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.4751,
+     "lam": 1.6
+    },
+    "v1": {
+     "p": 0.3668,
+     "lam": 1.2943,
+     "detail": {
+      "rate60": 7.919,
+      "toi": 10.747,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478401,
+   "name": "Pavel Zacha",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    3,
+    3,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.4422,
+     "lam": 1.5
+    },
+    "v1": {
+     "p": 0.4498,
+     "lam": 1.5497,
+     "detail": {
+      "rate60": 5.775,
+      "toi": 18.074,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.976
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478840,
+   "name": "Will Borgen",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.055,
+     "lam": 0.375
+    },
+    "v1": {
+     "p": 0.2132,
+     "lam": 0.8571,
+     "detail": {
+      "rate60": 2.577,
+      "toi": 19.02,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483017,
+   "name": "Frederic Brunet",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 5,
+   "l10_shots": [
+    1,
+    2,
+    2,
+    0,
+    2
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.4082,
+     "lam": 1.4
+    },
+    "v1": {
+     "p": 0.3188,
+     "lam": 1.1548,
+     "detail": {
+      "rate60": 4.453,
+      "toi": 17.05,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476854,
+   "name": "Hampus Lindholm",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    2,
+    0,
+    2,
+    1,
+    0,
+    3,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.3068,
+     "lam": 1.1206,
+     "detail": {
+      "rate60": 3.647,
+      "toi": 20.913,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.966
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482511,
+   "name": "Mason Lohrei",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    0,
+    0,
+    2,
+    2,
+    1,
+    1,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.1734,
+     "lam": 0.75
+    },
+    "v1": {
+     "p": 0.1897,
+     "lam": 0.7908,
+     "detail": {
+      "rate60": 3.241,
+      "toi": 17.239,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.931
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479325,
+   "name": "Charlie McAvoy",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 2,
+   "l10_shots": [
+    3,
+    2
+   ],
+   "vs_gp": 1,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.4779,
+     "lam": 1.6087
+    },
+    "v1": {
+     "p": 0.5031,
+     "lam": 1.7277,
+     "detail": {
+      "rate60": 4.236,
+      "toi": 25.091,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.069
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477507,
+   "name": "Nikita Zadorov",
+   "team": "BOS",
+   "opp": "LAK",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    0,
+    2,
+    1,
+    1,
+    4,
+    1,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.3554,
+     "lam": 1.25
+    },
+    "v1": {
+     "p": 0.3249,
+     "lam": 1.1723,
+     "detail": {
+      "rate60": 3.816,
+      "toi": 19.99,
+      "f_opp": 0.98,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.011
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476469,
+   "name": "Joel Armia",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 5,
+   "l10_shots": [
+    2,
+    2,
+    0,
+    0,
+    2
+   ],
+   "vs_gp": 1,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.3374,
+     "lam": 1.2
+    },
+    "v1": {
+     "p": 0.455,
+     "lam": 1.5667,
+     "detail": {
+      "rate60": 5.948,
+      "toi": 13.433,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.072
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482124,
+   "name": "Quinton Byfield",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 5,
+   "l10_shots": [
+    3,
+    4,
+    0,
+    3,
+    3
+   ],
+   "vs_gp": 2,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.7326,
+     "lam": 2.6
+    },
+    "v1": {
+     "p": 0.7069,
+     "lam": 2.5959,
+     "detail": {
+      "rate60": 6.967,
+      "toi": 20.883,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.976
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475287,
+   "name": "Erik Haula",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 5,
+   "l10_shots": [
+    3,
+    2,
+    3,
+    2,
+    4
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.7689,
+     "lam": 2.8
+    },
+    "v1": {
+     "p": 0.5423,
+     "lam": 1.8675,
+     "detail": {
+      "rate60": 6.923,
+      "toi": 15.923,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.926
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482726,
+   "name": "Samuel Helenius",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 3,
+   "l10_shots": [
+    1,
+    0,
+    2
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.2136,
+     "lam": 0.8583,
+     "detail": {
+      "rate60": 6.121,
+      "toi": 8.306,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.923
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477960,
+   "name": "Adrian Kempe",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 5,
+   "l10_shots": [
+    3,
+    6,
+    3,
+    3,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.8288,
+     "lam": 3.2
+    },
+    "v1": {
+     "p": 0.792,
+     "lam": 3.1385,
+     "detail": {
+      "rate60": 8.378,
+      "toi": 21.143,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.969
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482155,
+   "name": "Alex Laferriere",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 5,
+   "l10_shots": [
+    2,
+    0,
+    3,
+    2,
+    2
+   ],
+   "vs_gp": 2,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.5372,
+     "lam": 1.8
+    },
+    "v1": {
+     "p": 0.6318,
+     "lam": 2.2284,
+     "detail": {
+      "rate60": 7.516,
+      "toi": 17.25,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.94
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476872,
+   "name": "Scott Laughton",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 5,
+   "l10_shots": [
+    3,
+    0,
+    2,
+    2,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.4751,
+     "lam": 1.6
+    },
+    "v1": {
+     "p": 0.5088,
+     "lam": 1.7474,
+     "detail": {
+      "rate60": 6.402,
+      "toi": 14.383,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.037
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481732,
+   "name": "Andre Lee",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 3,
+   "l10_shots": [
+    1,
+    1,
+    1
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.2741,
+     "lam": 1.0281,
+     "detail": {
+      "rate60": 6.359,
+      "toi": 8.839,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479675,
+   "name": "Trevor Moore",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 5,
+   "l10_shots": [
+    2,
+    2,
+    2,
+    1,
+    4
+   ],
+   "vs_gp": 2,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.6454,
+     "lam": 2.2
+    },
+    "v1": {
+     "p": 0.6624,
+     "lam": 2.3693,
+     "detail": {
+      "rate60": 7.88,
+      "toi": 16.363,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.005
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478550,
+   "name": "Artemi Panarin",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 5,
+   "l10_shots": [
+    2,
+    4,
+    4,
+    5,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 8,
+   "preds": {
+    "v0": {
+     "p": 0.8288,
+     "lam": 3.2
+    },
+    "v1": {
+     "p": 0.7746,
+     "lam": 3.0122,
+     "detail": {
+      "rate60": 8.113,
+      "toi": 21.633,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.938
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8470621,
+   "name": "Corey Perry",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 4,
+   "l10_shots": [
+    3,
+    0,
+    1,
+    2
+   ],
+   "vs_gp": 3,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.4422,
+     "lam": 1.5
+    },
+    "v1": {
+     "p": 0.4963,
+     "lam": 1.704,
+     "detail": {
+      "rate60": 6.899,
+      "toi": 12.321,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.096
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479998,
+   "name": "Mikey Anderson",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 5,
+   "l10_shots": [
+    2,
+    1,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.1912,
+     "lam": 0.8
+    },
+    "v1": {
+     "p": 0.2155,
+     "lam": 0.8637,
+     "detail": {
+      "rate60": 2.712,
+      "toi": 17.443,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.998
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476879,
+   "name": "Cody Ceci",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 5,
+   "l10_shots": [
+    1,
+    2,
+    0,
+    0,
+    3
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.3374,
+     "lam": 1.2
+    },
+    "v1": {
+     "p": 0.2466,
+     "lam": 0.9509,
+     "detail": {
+      "rate60": 3.153,
+      "toi": 17.613,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.936
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482730,
+   "name": "Brandt Clarke",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 5,
+   "l10_shots": [
+    1,
+    5,
+    0,
+    3,
+    6
+   ],
+   "vs_gp": 2,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.8009,
+     "lam": 3.0
+    },
+    "v1": {
+     "p": 0.6156,
+     "lam": 2.1578,
+     "detail": {
+      "rate60": 6.329,
+      "toi": 19.41,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.96
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8474563,
+   "name": "Drew Doughty",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 5,
+   "l10_shots": [
+    1,
+    0,
+    0,
+    0,
+    2
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.1219,
+     "lam": 0.6
+    },
+    "v1": {
+     "p": 0.3273,
+     "lam": 1.1791,
+     "detail": {
+      "rate60": 3.217,
+      "toi": 20.427,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.981
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475208,
+   "name": "Brian Dumoulin",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 5,
+   "l10_shots": [
+    2,
+    0,
+    1,
+    1,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.1912,
+     "lam": 0.8
+    },
+    "v1": {
+     "p": 0.2177,
+     "lam": 0.8697,
+     "detail": {
+      "rate60": 2.936,
+      "toi": 15.827,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.023
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476441,
+   "name": "Joel Edmundson",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 5,
+   "l10_shots": [
+    1,
+    1,
+    2,
+    0,
+    3
+   ],
+   "vs_gp": 2,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.4082,
+     "lam": 1.4
+    },
+    "v1": {
+     "p": 0.3235,
+     "lam": 1.1685,
+     "detail": {
+      "rate60": 4.423,
+      "toi": 14.377,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.005
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476979,
+   "name": "Erik Gustafsson",
+   "team": "LAK",
+   "opp": "BOS",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020132,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 3,
+   "l10_shots": [
+    2,
+    0,
+    2
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.3849,
+     "lam": 1.3333
+    },
+    "v1": {
+     "p": 0.3943,
+     "lam": 1.3768,
+     "detail": {
+      "rate60": 4.192,
+      "toi": 17.956,
+      "f_opp": 1.065,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477450,
+   "name": "Jason Dickinson",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": true,
+   "l10_hits": 0,
+   "l10_n": 3,
+   "l10_shots": [
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.1443,
+     "lam": 0.6667
+    },
+    "v1": {
+     "p": 0.2164,
+     "lam": 0.8661,
+     "detail": {
+      "rate60": 4.837,
+      "toi": 12.206,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.996
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477934,
+   "name": "Leon Draisaitl",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 7,
+   "l10_shots": [
+    5,
+    5,
+    6,
+    2,
+    3,
+    3,
+    3
+   ],
+   "vs_gp": 2,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.8974,
+     "lam": 3.8571
+    },
+    "v1": {
+     "p": 0.7429,
+     "lam": 2.8046,
+     "detail": {
+      "rate60": 8.694,
+      "toi": 21.583,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.015
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480029,
+   "name": "Alex Formenton",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    0,
+    2,
+    0,
+    2,
+    1,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.3166,
+     "lam": 1.1429
+    },
+    "v1": {
+     "p": 0.3286,
+     "lam": 1.1829,
+     "detail": {
+      "rate60": 5.476,
+      "toi": 14.87,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.987
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479365,
+   "name": "Trent Frederic",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    2,
+    0,
+    0,
+    3,
+    1,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.1927,
+     "lam": 0.7993,
+     "detail": {
+      "rate60": 5.947,
+      "toi": 10.166,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.898
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480842,
+   "name": "Filip Hallander",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 5,
+   "l10_shots": [
+    3,
+    0,
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.2852,
+     "lam": 1.0595,
+     "detail": {
+      "rate60": 6.502,
+      "toi": 11.16,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.992
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483455,
+   "name": "Isaac Howard",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 7,
+   "l10_shots": [
+    1,
+    3,
+    1,
+    0,
+    0,
+    1,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.2534,
+     "lam": 0.97,
+     "detail": {
+      "rate60": 6.707,
+      "toi": 9.333,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.052
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479368,
+   "name": "Max Jones",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 5,
+   "l10_shots": [
+    2,
+    1,
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.2215,
+     "lam": 0.8805,
+     "detail": {
+      "rate60": 6.595,
+      "toi": 10.46,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.867
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478472,
+   "name": "Mathieu Joseph",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    2,
+    1,
+    0,
+    1,
+    3,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.2033,
+     "lam": 0.8294,
+     "detail": {
+      "rate60": 4.461,
+      "toi": 14.853,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.85
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477953,
+   "name": "Kasperi Kapanen",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 7,
+   "l10_shots": [
+    3,
+    1,
+    1,
+    3,
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.418,
+     "lam": 1.4286
+    },
+    "v1": {
+     "p": 0.4027,
+     "lam": 1.4023,
+     "detail": {
+      "rate60": 5.978,
+      "toi": 17.273,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.922
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478402,
+   "name": "Connor McDavid",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    3,
+    4,
+    1,
+    4,
+    2,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 13,
+   "preds": {
+    "v0": {
+     "p": 0.6658,
+     "lam": 2.2857
+    },
+    "v1": {
+     "p": 0.7478,
+     "lam": 2.835,
+     "detail": {
+      "rate60": 7.742,
+      "toi": 24.239,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.026
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8486161,
+   "name": "Owen Michaels",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    1,
+    3,
+    1,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.2119,
+     "lam": 0.8571
+    },
+    "v1": {
+     "p": 0.2537,
+     "lam": 0.9707,
+     "detail": {
+      "rate60": 5.183,
+      "toi": 13.779,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.923
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481617,
+   "name": "Vasily Podkolzin",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 7,
+   "l10_shots": [
+    7,
+    4,
+    2,
+    3,
+    1,
+    3,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.8212,
+     "lam": 3.1429
+    },
+    "v1": {
+     "p": 0.5528,
+     "lam": 1.9069,
+     "detail": {
+      "rate60": 7.606,
+      "toi": 19.797,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.86
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484509,
+   "name": "Josh Samanski",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 6,
+   "l10_shots": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.0012,
+     "lam": 0.05
+    },
+    "v1": {
+     "p": 0.0485,
+     "lam": 0.3422,
+     "detail": {
+      "rate60": 3.558,
+      "toi": 7.619,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.857
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480803,
+   "name": "Evan Bouchard",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 7,
+   "l10_shots": [
+    6,
+    4,
+    2,
+    4,
+    1,
+    1,
+    6
+   ],
+   "vs_gp": 4,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.8564,
+     "lam": 3.4286
+    },
+    "v1": {
+     "p": 0.6765,
+     "lam": 2.438,
+     "detail": {
+      "rate60": 6.696,
+      "toi": 25.486,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.97
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475218,
+   "name": "Mattias Ekholm",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    0,
+    0,
+    1,
+    2,
+    0,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 8,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.4058,
+     "lam": 1.4118,
+     "detail": {
+      "rate60": 3.871,
+      "toi": 22.03,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.124
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480834,
+   "name": "Ty Emberson",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 5,
+   "l10_shots": [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.0175,
+     "lam": 0.2
+    },
+    "v1": {
+     "p": 0.0964,
+     "lam": 0.5122,
+     "detail": {
+      "rate60": 2.563,
+      "toi": 11.8,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482166,
+   "name": "Shakir Mukhamadullin",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 5,
+   "l10_shots": [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.0175,
+     "lam": 0.2
+    },
+    "v1": {
+     "p": 0.1137,
+     "lam": 0.5673,
+     "detail": {
+      "rate60": 3.13,
+      "toi": 11.863,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.038
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476473,
+   "name": "Connor Murphy",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 7,
+   "l10_shots": [
+    2,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 5,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.1126,
+     "lam": 0.5714
+    },
+    "v1": {
+     "p": 0.2377,
+     "lam": 0.926,
+     "detail": {
+      "rate60": 2.691,
+      "toi": 21.418,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 1.091
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478854,
+   "name": "Ryan Shea",
+   "team": "EDM",
+   "opp": "UTA",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 7,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    2,
+    0,
+    1,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.1608,
+     "lam": 0.7143
+    },
+    "v1": {
+     "p": 0.1923,
+     "lam": 0.7981,
+     "detail": {
+      "rate60": 2.699,
+      "toi": 22.972,
+      "f_opp": 0.911,
+      "f_lieu": 0.97,
+      "f_b2b": 1.0,
+      "f_vs": 0.874
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484388,
+   "name": "Daniil But",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    0,
+    0,
+    0,
+    3,
+    2,
+    2,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.3101,
+     "lam": 1.125
+    },
+    "v1": {
+     "p": 0.3172,
+     "lam": 1.1504,
+     "detail": {
+      "rate60": 6.695,
+      "toi": 10.564,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.987
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483431,
+   "name": "Logan Cooley",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    3,
+    3
+   ],
+   "vs_gp": 4,
+   "vs_shots": 8,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.5151,
+     "lam": 1.7695,
+     "detail": {
+      "rate60": 5.481,
+      "toi": 18.592,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.054
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478474,
+   "name": "Lawson Crouse",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    2,
+    5,
+    1,
+    1,
+    1,
+    1,
+    3
+   ],
+   "vs_gp": 4,
+   "vs_shots": 11,
+   "preds": {
+    "v0": {
+     "p": 0.5591,
+     "lam": 1.875
+    },
+    "v1": {
+     "p": 0.5376,
+     "lam": 1.8502,
+     "detail": {
+      "rate60": 6.706,
+      "toi": 15.258,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.097
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482699,
+   "name": "Dylan Guenther",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 8,
+   "l10_shots": [
+    5,
+    5,
+    2,
+    5,
+    0,
+    5,
+    2,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 10,
+   "preds": {
+    "v0": {
+     "p": 0.8352,
+     "lam": 3.25
+    },
+    "v1": {
+     "p": 0.7209,
+     "lam": 2.6744,
+     "detail": {
+      "rate60": 10.234,
+      "toi": 16.686,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.95
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480849,
+   "name": "Barrett Hayton",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    4,
+    0,
+    1,
+    2,
+    3,
+    1,
+    2,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.5221,
+     "lam": 1.75
+    },
+    "v1": {
+     "p": 0.4464,
+     "lam": 1.5391,
+     "detail": {
+      "rate60": 7.14,
+      "toi": 13.744,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.952
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479343,
+   "name": "Clayton Keller",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 8,
+   "l10_shots": [
+    4,
+    2,
+    2,
+    3,
+    4,
+    2,
+    0,
+    4
+   ],
+   "vs_gp": 4,
+   "vs_shots": 12,
+   "preds": {
+    "v0": {
+     "p": 0.7374,
+     "lam": 2.625
+    },
+    "v1": {
+     "p": 0.6862,
+     "lam": 2.4869,
+     "detail": {
+      "rate60": 8.36,
+      "toi": 17.678,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.021
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475314,
+   "name": "Anders Lee",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    4,
+    1,
+    1,
+    2,
+    1,
+    3,
+    2,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.5221,
+     "lam": 1.75
+    },
+    "v1": {
+     "p": 0.4915,
+     "lam": 1.6878,
+     "detail": {
+      "rate60": 8.442,
+      "toi": 13.085,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.927
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480855,
+   "name": "Jack McBain",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    0,
+    2,
+    1,
+    3,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.2184,
+     "lam": 0.875
+    },
+    "v1": {
+     "p": 0.2678,
+     "lam": 1.0104,
+     "detail": {
+      "rate60": 5.716,
+      "toi": 12.621,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.85
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477951,
+   "name": "Nick Schmaltz",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    8,
+    3,
+    4,
+    3,
+    4,
+    1,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "p": 0.8503,
+     "lam": 3.375
+    },
+    "v1": {
+     "p": 0.6914,
+     "lam": 2.514,
+     "detail": {
+      "rate60": 8.58,
+      "toi": 18.805,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.946
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478831,
+   "name": "Kevin Stenlund",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    2,
+    0,
+    1,
+    1,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.1302,
+     "lam": 0.625
+    },
+    "v1": {
+     "p": 0.1805,
+     "lam": 0.7645,
+     "detail": {
+      "rate60": 3.866,
+      "toi": 14.117,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.85
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476389,
+   "name": "Vincent Trocheck",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    0,
+    2,
+    1,
+    3,
+    0,
+    3,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.3554,
+     "lam": 1.25
+    },
+    "v1": {
+     "p": 0.358,
+     "lam": 1.2686,
+     "detail": {
+      "rate60": 5.153,
+      "toi": 16.186,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.923
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479977,
+   "name": "Kailer Yamamoto",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 3,
+   "l10_shots": [
+    2,
+    2,
+    4
+   ],
+   "vs_gp": 3,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.7452,
+     "lam": 2.6667
+    },
+    "v1": {
+     "p": 0.4595,
+     "lam": 1.5814,
+     "detail": {
+      "rate60": 6.511,
+      "toi": 14.122,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.044
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478507,
+   "name": "John Marino",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 8,
+   "l10_shots": [
+    1,
+    0,
+    1,
+    0,
+    1,
+    2,
+    1,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.1734,
+     "lam": 0.75
+    },
+    "v1": {
+     "p": 0.1692,
+     "lam": 0.7323,
+     "detail": {
+      "rate60": 2.44,
+      "toi": 20.127,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.905
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479369,
+   "name": "Andrew Peeke",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    2,
+    3,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.2184,
+     "lam": 0.875
+    },
+    "v1": {
+     "p": 0.1726,
+     "lam": 0.7419,
+     "detail": {
+      "rate60": 3.475,
+      "toi": 15.009,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.863
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477220,
+   "name": "Nate Schmidt",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    0,
+    3,
+    2,
+    2,
+    1,
+    1,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.3995,
+     "lam": 1.375
+    },
+    "v1": {
+     "p": 0.3541,
+     "lam": 1.257,
+     "detail": {
+      "rate60": 3.597,
+      "toi": 20.959,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.012
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479410,
+   "name": "Mikhail Sergachev",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 8,
+   "l10_shots": [
+    3,
+    4,
+    3,
+    2,
+    0,
+    3,
+    2,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.6861,
+     "lam": 2.375
+    },
+    "v1": {
+     "p": 0.5293,
+     "lam": 1.8202,
+     "detail": {
+      "rate60": 5.337,
+      "toi": 22.492,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.92
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484386,
+   "name": "Dmitri Simashev",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    0,
+    0,
+    0,
+    2,
+    2,
+    1,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.2184,
+     "lam": 0.875
+    },
+    "v1": {
+     "p": 0.1988,
+     "lam": 0.8165,
+     "detail": {
+      "rate60": 3.722,
+      "toi": 14.338,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.928
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477346,
+   "name": "MacKenzie Weegar",
+   "team": "UTA",
+   "opp": "EDM",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020133,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    1,
+    0,
+    3,
+    2,
+    2,
+    3,
+    0
+   ],
+   "vs_gp": 7,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "p": 0.4831,
+     "lam": 1.625
+    },
+    "v1": {
+     "p": 0.4047,
+     "lam": 1.4084,
+     "detail": {
+      "rate60": 4.797,
+      "toi": 20.728,
+      "f_opp": 0.96,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.86
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482475,
+   "name": "Egor Chinakhov",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": true,
+   "l10_hits": 5,
+   "l10_n": 7,
+   "l10_shots": [
+    3,
+    2,
+    0,
+    2,
+    3,
+    2,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 10,
+   "preds": {
+    "v0": {
+     "p": 0.5539,
+     "lam": 1.8571
+    },
+    "v1": {
+     "p": 0.5593,
+     "lam": 1.9313,
+     "detail": {
+      "rate60": 7.805,
+      "toi": 15.516,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.14
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8471675,
+   "name": "Sidney Crosby",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 8,
+   "l10_shots": [
+    3,
+    2,
+    5,
+    2,
+    3,
+    1,
+    2,
+    2
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.7127,
+     "lam": 2.5
+    },
+    "v1": {
+     "p": 0.5895,
+     "lam": 2.0496,
+     "detail": {
+      "rate60": 7.311,
+      "toi": 20.036,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8480980,
+   "name": "Connor Dewar",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    1,
+    4,
+    0,
+    0,
+    3,
+    2,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.3554,
+     "lam": 1.25
+    },
+    "v1": {
+     "p": 0.239,
+     "lam": 0.9297,
+     "detail": {
+      "rate60": 6.094,
+      "toi": 12.721,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.857
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8485414,
+   "name": "Ben Kindel",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 7,
+   "l10_shots": [
+    5,
+    2,
+    2,
+    3,
+    2,
+    2,
+    2
+   ],
+   "vs_gp": 2,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.727,
+     "lam": 2.5714
+    },
+    "v1": {
+     "p": 0.5864,
+     "lam": 2.0371,
+     "detail": {
+      "rate60": 7.912,
+      "toi": 17.543,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.049
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8482758,
+   "name": "Ville Koivunen",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 6,
+   "l10_shots": [
+    2,
+    1,
+    1,
+    0,
+    1,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.2642,
+     "lam": 1.0
+    },
+    "v1": {
+     "p": 0.2651,
+     "lam": 1.0027,
+     "detail": {
+      "rate60": 5.037,
+      "toi": 13.588,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.047
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483808,
+   "name": "Andrei Kuzmenko",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 4,
+   "l10_shots": [
+    2,
+    1,
+    1,
+    2
+   ],
+   "vs_gp": 4,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.4422,
+     "lam": 1.5
+    },
+    "v1": {
+     "p": 0.2362,
+     "lam": 0.9217,
+     "detail": {
+      "rate60": 6.041,
+      "toi": 11.742,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.929
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481481,
+   "name": "Blake Lizotte",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 8,
+   "l10_shots": [
+    4,
+    0,
+    2,
+    1,
+    1,
+    0,
+    2,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.3995,
+     "lam": 1.375
+    },
+    "v1": {
+     "p": 0.1952,
+     "lam": 0.8063,
+     "detail": {
+      "rate60": 5.183,
+      "toi": 12.971,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.857
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8471215,
+   "name": "Evgeni Malkin",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    1,
+    4,
+    1,
+    3,
+    2,
+    3,
+    2
+   ],
+   "vs_gp": 1,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.6575,
+     "lam": 2.25
+    },
+    "v1": {
+     "p": 0.6011,
+     "lam": 2.0968,
+     "detail": {
+      "rate60": 8.062,
+      "toi": 18.263,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.018
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478438,
+   "name": "Tommy Novak",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    0,
+    3,
+    2,
+    3,
+    1,
+    1,
+    0,
+    4
+   ],
+   "vs_gp": 2,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.5221,
+     "lam": 1.75
+    },
+    "v1": {
+     "p": 0.349,
+     "lam": 1.2421,
+     "detail": {
+      "rate60": 6.71,
+      "toi": 15.434,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.857
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476483,
+   "name": "Rickard Rakell",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    2,
+    2,
+    3,
+    0,
+    1,
+    4,
+    5
+   ],
+   "vs_gp": 2,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.6861,
+     "lam": 2.375
+    },
+    "v1": {
+     "p": 0.6252,
+     "lam": 2.1992,
+     "detail": {
+      "rate60": 7.838,
+      "toi": 20.004,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.002
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481582,
+   "name": "Nick Robertson",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    4,
+    1,
+    1,
+    1,
+    1,
+    2,
+    3,
+    3
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.594,
+     "lam": 2.0
+    },
+    "v1": {
+     "p": 0.3078,
+     "lam": 1.1235,
+     "detail": {
+      "rate60": 8.069,
+      "toi": 11.061,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.9
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475810,
+   "name": "Bryan Rust",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 5,
+   "l10_shots": [
+    3,
+    2,
+    0,
+    1,
+    2
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.4751,
+     "lam": 1.6
+    },
+    "v1": {
+     "p": 0.4773,
+     "lam": 1.64,
+     "detail": {
+      "rate60": 6.84,
+      "toi": 18.603,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.921
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481725,
+   "name": "Elmer Soderblom",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 3,
+   "l10_shots": [
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.0012,
+     "lam": 0.05
+    },
+    "v1": {
+     "p": 0.2469,
+     "lam": 0.9517,
+     "detail": {
+      "rate60": 5.664,
+      "toi": 10.644,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.128
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483398,
+   "name": "Declan Carlile",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    3,
+    3,
+    0,
+    1,
+    0,
+    2,
+    1
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.4422,
+     "lam": 1.5
+    },
+    "v1": {
+     "p": 0.2848,
+     "lam": 1.0582,
+     "detail": {
+      "rate60": 3.989,
+      "toi": 18.958,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479398,
+   "name": "Samuel Girard",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    2,
+    3,
+    1,
+    1,
+    0,
+    2,
+    1,
+    2
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.4422,
+     "lam": 1.5
+    },
+    "v1": {
+     "p": 0.2392,
+     "lam": 0.93,
+     "detail": {
+      "rate60": 3.38,
+      "toi": 19.597,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.004
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8474578,
+   "name": "Erik Karlsson",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 4,
+   "l10_n": 8,
+   "l10_shots": [
+    3,
+    0,
+    1,
+    4,
+    0,
+    2,
+    1,
+    2
+   ],
+   "vs_gp": 2,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.4831,
+     "lam": 1.625
+    },
+    "v1": {
+     "p": 0.4883,
+     "lam": 1.6769,
+     "detail": {
+      "rate60": 4.979,
+      "toi": 23.255,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.035
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481527,
+   "name": "Kaedan Korczak",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 8,
+   "l10_shots": [
+    3,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.3101,
+     "lam": 1.125
+    },
+    "v1": {
+     "p": 0.214,
+     "lam": 0.8595,
+     "detail": {
+      "rate60": 3.39,
+      "toi": 18.122,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8471724,
+   "name": "Kris Letang",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 8,
+   "l10_shots": [
+    4,
+    3,
+    2,
+    3,
+    2,
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.594,
+     "lam": 2.0
+    },
+    "v1": {
+     "p": 0.3739,
+     "lam": 1.3155,
+     "detail": {
+      "rate60": 4.665,
+      "toi": 19.568,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 1.03
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481056,
+   "name": "Spencer Stastney",
+   "team": "PIT",
+   "opp": "VGK",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020134,
+   "b2b": true,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 3,
+   "l10_shots": [
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.1443,
+     "lam": 0.6667
+    },
+    "v1": {
+     "p": 0.1371,
+     "lam": 0.6383,
+     "detail": {
+      "rate60": 3.37,
+      "toi": 14.667,
+      "f_opp": 0.902,
+      "f_lieu": 0.97,
+      "f_b2b": 0.96,
+      "f_vs": 0.923
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477964,
+   "name": "Ivan Barbashev",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 9,
+   "l10_shots": [
+    1,
+    1,
+    0,
+    2,
+    4,
+    0,
+    1,
+    1,
+    4
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.4606,
+     "lam": 1.5556
+    },
+    "v1": {
+     "p": 0.4648,
+     "lam": 1.5985,
+     "detail": {
+      "rate60": 6.056,
+      "toi": 16.82,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.905
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483890,
+   "name": "Braeden Bowman",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 9,
+   "l10_shots": [
+    1,
+    3,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    5
+   ],
+   "vs_gp": 2,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "p": 0.3454,
+     "lam": 1.2222
+    },
+    "v1": {
+     "p": 0.4503,
+     "lam": 1.5515,
+     "detail": {
+      "rate60": 5.904,
+      "toi": 14.214,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.066
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8484803,
+   "name": "Trevor Connelly",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 9,
+   "l10_shots": [
+    4,
+    0,
+    2,
+    0,
+    3,
+    6,
+    0,
+    2,
+    1
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.594,
+     "lam": 2.0
+    },
+    "v1": {
+     "p": 0.5848,
+     "lam": 2.0306,
+     "detail": {
+      "rate60": 7.948,
+      "toi": 14.728,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475343,
+   "name": "Nic Dowd",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 1,
+   "l10_n": 9,
+   "l10_shots": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.0739,
+     "lam": 0.4444
+    },
+    "v1": {
+     "p": 0.1566,
+     "lam": 0.6958,
+     "detail": {
+      "rate60": 3.869,
+      "toi": 12.096,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.857
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478403,
+   "name": "Jack Eichel",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 9,
+   "l10_n": 9,
+   "l10_shots": [
+    2,
+    2,
+    2,
+    2,
+    6,
+    4,
+    2,
+    4,
+    4
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.8168,
+     "lam": 3.1111
+    },
+    "v1": {
+     "p": 0.7655,
+     "lam": 2.95,
+     "detail": {
+      "rate60": 9.105,
+      "toi": 20.613,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.906
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8483553,
+   "name": "Marc Gatcomb",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 3,
+   "l10_n": 9,
+   "l10_shots": [
+    3,
+    1,
+    1,
+    3,
+    1,
+    5,
+    0,
+    1,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.5305,
+     "lam": 1.7778
+    },
+    "v1": {
+     "p": 0.3841,
+     "lam": 1.346,
+     "detail": {
+      "rate60": 7.849,
+      "toi": 10.958,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.902
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476881,
+   "name": "Tomas Hertl",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 9,
+   "l10_shots": [
+    4,
+    5,
+    2,
+    3,
+    3,
+    0,
+    0,
+    2,
+    3
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.7011,
+     "lam": 2.4444
+    },
+    "v1": {
+     "p": 0.6156,
+     "lam": 2.1578,
+     "detail": {
+      "rate60": 8.43,
+      "toi": 16.141,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.914
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479353,
+   "name": "Brett Howden",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 9,
+   "l10_shots": [
+    3,
+    3,
+    1,
+    0,
+    3,
+    0,
+    3,
+    2,
+    1
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.5305,
+     "lam": 1.7778
+    },
+    "v1": {
+     "p": 0.406,
+     "lam": 1.4123,
+     "detail": {
+      "rate60": 5.715,
+      "toi": 15.432,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.923
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8476448,
+   "name": "William Karlsson",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 9,
+   "l10_shots": [
+    1,
+    2,
+    2,
+    1,
+    1,
+    3,
+    3,
+    2,
+    1
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.5305,
+     "lam": 1.7778
+    },
+    "v1": {
+     "p": 0.5743,
+     "lam": 1.9892,
+     "detail": {
+      "rate60": 6.613,
+      "toi": 17.342,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8481534,
+   "name": "Raphael Lavoie",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 0,
+   "l10_n": 5,
+   "l10_shots": [
+    0,
+    1,
+    1,
+    1,
+    1
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.1912,
+     "lam": 0.8
+    },
+    "v1": {
+     "p": 0.2804,
+     "lam": 1.0459,
+     "detail": {
+      "rate60": 5.765,
+      "toi": 10.46,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478483,
+   "name": "Mitch Marner",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 6,
+   "l10_n": 9,
+   "l10_shots": [
+    4,
+    1,
+    3,
+    2,
+    5,
+    3,
+    2,
+    1,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "p": 0.7011,
+     "lam": 2.4444
+    },
+    "v1": {
+     "p": 0.6685,
+     "lam": 2.3987,
+     "detail": {
+      "rate60": 6.65,
+      "toi": 20.105,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.034
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475913,
+   "name": "Mark Stone",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 9,
+   "l10_shots": [
+    1,
+    0,
+    3,
+    4,
+    5,
+    1,
+    2,
+    0,
+    3
+   ],
+   "vs_gp": 2,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.6232,
+     "lam": 2.1111
+    },
+    "v1": {
+     "p": 0.5448,
+     "lam": 1.877,
+     "detail": {
+      "rate60": 6.773,
+      "toi": 18.639,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.857
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478397,
+   "name": "Rasmus Andersson",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 7,
+   "l10_n": 9,
+   "l10_shots": [
+    2,
+    2,
+    1,
+    0,
+    3,
+    2,
+    4,
+    2,
+    3
+   ],
+   "vs_gp": 3,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "p": 0.6232,
+     "lam": 2.1111
+    },
+    "v1": {
+     "p": 0.4938,
+     "lam": 1.6955,
+     "detail": {
+      "rate60": 5.795,
+      "toi": 18.775,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.898
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8479639,
+   "name": "Dylan Coghlan",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 3,
+   "l10_shots": [
+    0,
+    3,
+    3
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "p": 0.594,
+     "lam": 2.0
+    },
+    "v1": {
+     "p": 0.377,
+     "lam": 1.3248,
+     "detail": {
+      "rate60": 5.243,
+      "toi": 14.567,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.0
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478396,
+   "name": "Noah Hanifin",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 9,
+   "l10_shots": [
+    3,
+    1,
+    1,
+    1,
+    1,
+    2,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.305,
+     "lam": 1.1111
+    },
+    "v1": {
+     "p": 0.3819,
+     "lam": 1.3394,
+     "detail": {
+      "rate60": 4.194,
+      "toi": 20.289,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.907
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8478468,
+   "name": "Jeremy Lauzon",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 9,
+   "l10_shots": [
+    3,
+    3,
+    0,
+    0,
+    2,
+    2,
+    2,
+    1,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "p": 0.4234,
+     "lam": 1.4444
+    },
+    "v1": {
+     "p": 0.324,
+     "lam": 1.1697,
+     "detail": {
+      "rate60": 4.248,
+      "toi": 17.349,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.915
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8475188,
+   "name": "Brayden McNabb",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 2,
+   "l10_n": 9,
+   "l10_shots": [
+    1,
+    0,
+    1,
+    2,
+    1,
+    0,
+    2,
+    0,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "p": 0.2235,
+     "lam": 0.8889
+    },
+    "v1": {
+     "p": 0.3565,
+     "lam": 1.2641,
+     "detail": {
+      "rate60": 3.478,
+      "toi": 18.219,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 1.15
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  },
+  {
+   "pid": 8477447,
+   "name": "Shea Theodore",
+   "team": "VGK",
+   "opp": "PIT",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020134,
+   "b2b": false,
+   "incertain": false,
+   "l10_hits": 5,
+   "l10_n": 9,
+   "l10_shots": [
+    1,
+    4,
+    2,
+    4,
+    3,
+    1,
+    1,
+    2,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "p": 0.6232,
+     "lam": 2.1111
+    },
+    "v1": {
+     "p": 0.5181,
+     "lam": 1.7802,
+     "detail": {
+      "rate60": 5.136,
+      "toi": 21.251,
+      "f_opp": 1.01,
+      "f_lieu": 1.03,
+      "f_b2b": 1.0,
+      "f_vs": 0.94
+     }
+    }
+   },
+   "result": null,
+   "played": null
+  }
+ ],
+ "versions": [
+  "v0",
+  "v1"
+ ],
+ "maj": "2026-10-17T23:10+00:00"
+}

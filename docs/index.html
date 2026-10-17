@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>La Patente à Tirs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Mise en page : tableau de bord une colonne pensé pour le cell, style tableau indicateur d'aréna.
+   Rouge = lumière de but (ce qui compte), bleu glace = info secondaire. */
+:root{
+  --bg:#EEF3F6; --surface:#FFFFFF; --ink:#0E1A24; --muted:#56687A; --line:#D5DEE5;
+  --goal:#C8202A; --ice:#1D5F8E; --good:#1A8048; --good-bg:#E2F3E9; --bad:#A33A2E; --bad-bg:#F8E6E3;
+  --chip:#E3EAF0;
+  --f-display:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --f-body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0A1117; --surface:#111B23; --ink:#E5ECF1; --muted:#8B9DAC; --line:#22313C;
+  --goal:#FF4B4B; --ice:#5DA9E0; --good:#3BD184; --good-bg:#12301F; --bad:#FF7F6E; --bad-bg:#3A1A16;
+  --chip:#1A2731; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0A1117; --surface:#111B23; --ink:#E5ECF1; --muted:#8B9DAC; --line:#22313C;
+  --goal:#FF4B4B; --ice:#5DA9E0; --good:#3BD184; --good-bg:#12301F; --bad:#FF7F6E; --bad-bg:#3A1A16;
+  --chip:#1A2731; color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0 40px;font-variant-numeric:tabular-nums}
+.wrap{max-width:720px;margin:0 auto}
+header{padding-block:max(18px,env(safe-area-inset-top,0px)) 10px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{font:800 34px/0.95 var(--f-display);letter-spacing:.01em;margin:0;text-transform:uppercase;text-wrap:balance}
+h1 span{color:var(--goal)}
+.maj{color:var(--muted);font-size:12px;text-align:right}
+h2{font:800 22px/1 var(--f-display);text-transform:uppercase;letter-spacing:.02em;margin:0}
+.lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+nav.tabs{display:flex;gap:4px;border-bottom:2px solid var(--line);margin-bottom:14px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+nav.tabs button{flex:1;border:0;background:none;color:var(--muted);font:800 18px/1 var(--f-display);text-transform:uppercase;padding:12px 4px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--goal)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+
+.ctrls{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font:600 13px var(--f-body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+select{font:600 14px var(--f-body);padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:100%}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--ice);outline-offset:2px}
+
+.liste{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.j{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:4px 10px;padding:12px;border-top:1px solid var(--line);align-items:center}
+.j:first-child{border-top:0}
+.rk{font:800 20px/1 var(--f-display);color:var(--muted);align-self:start;padding-top:2px}
+.nom{font-weight:700;font-size:15px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.meta{color:var(--muted);font-size:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tag{font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:1px 6px;border-radius:4px;background:var(--chip);color:var(--muted)}
+.tag.warn{color:var(--goal)}
+.pct{font:800 30px/1 var(--f-display);text-align:right}
+.pct small{font-size:16px}
+.lam{font-size:11.5px;color:var(--muted);text-align:right}
+.sub{grid-column:2 / 4;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.l10{display:flex;gap:2px;align-items:flex-end;height:22px}
+.l10 i{display:block;width:6px;background:var(--line);border-radius:1px}
+.l10 i.ok{background:var(--ice)}
+.l10txt{font-size:11.5px;color:var(--muted);margin-left:6px}
+.cote{display:flex;align-items:center;gap:6px}
+.cote input{width:66px;font:600 15px var(--f-body);padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-align:center}
+.ev{font-size:12px;font-weight:700;padding:3px 7px;border-radius:6px;white-space:nowrap}
+.ev.pos{background:var(--good-bg);color:var(--good)}
+.ev.mince{background:var(--chip);color:var(--muted)}
+.ev.neg{background:var(--bad-bg);color:var(--bad)}
+.res{font-size:12px;font-weight:700}
+.res.ok{color:var(--good)} .res.ko{color:var(--bad)}
+details.why{grid-column:2 / 4;font-size:12.5px;color:var(--muted)}
+details.why summary{cursor:pointer;width:max-content}
+.fx{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:4px 12px;margin-top:6px}
+.fx b{color:var(--ink);font-weight:600}
+.vide{padding:28px 16px;text-align:center;color:var(--muted)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.card.main{border-color:var(--goal)}
+.score{display:flex;align-items:baseline;gap:10px}
+.note{font:800 64px/0.9 var(--f-display)}
+.note small{font-size:22px;color:var(--muted)}
+.kv{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.kv div{display:flex;flex-direction:column;gap:2px}
+.kv b{font-size:17px}
+.calib{display:flex;flex-direction:column;gap:7px}
+.cb{display:grid;grid-template-columns:62px minmax(0,1fr) 76px;white-space:nowrap;gap:8px;align-items:center;font-size:12px}
+.bar{position:relative;height:14px;background:var(--chip);border-radius:3px}
+.bar .r{position:absolute;inset:0 auto 0 0;background:var(--ice);border-radius:3px}
+.bar .p{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--goal)}
+.legende{font-size:11.5px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap}
+.legende i{display:inline-block;width:10px;height:10px;margin-right:4px;vertical-align:-1px;border-radius:2px}
+.soirs{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th,td{padding:5px 6px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:600;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.guide{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:13.5px;max-width:65ch}
+.guide p{margin:6px 0}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:no-preference){.j{transition:background .15s}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>La Patente<br>à <span>Tirs</span></h1>
+    <div class="maj" id="maj">Chargement…</div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" id="t-soir" aria-selected="true" aria-controls="p-soir">Ce soir</button>
+    <button role="tab" id="t-suivi" aria-selected="false" aria-controls="p-suivi">Suivi</button>
+  </nav>
+
+  <section id="p-soir" role="tabpanel" aria-labelledby="t-soir">
+    <div class="ctrls">
+      <div class="row">
+        <select id="f-match" aria-label="Filtrer par match"></select>
+        <span class="row" id="f-pos">
+          <button class="chip" data-v="all" aria-pressed="true">Tous</button>
+          <button class="chip" data-v="F" aria-pressed="false">Avants</button>
+          <button class="chip" data-v="D" aria-pressed="false">Défenseurs</button>
+        </span>
+      </div>
+      <div class="row">
+        <span class="lbl">Trier</span>
+        <span class="row" id="f-tri">
+          <button class="chip" data-v="p" aria-pressed="true">Probabilité</button>
+          <button class="chip" data-v="ev" aria-pressed="false">Valeur vs cote</button>
+        </span>
+        <span class="lbl" style="margin-left:8px">Algo</span>
+        <span class="row" id="f-ver"></span>
+      </div>
+    </div>
+    <div class="liste" id="liste"></div>
+  </section>
+
+  <section id="p-suivi" role="tabpanel" aria-labelledby="t-suivi" hidden>
+    <div class="cards" id="cards"></div>
+    <div class="guide">
+      <h2>Comment lire ça</h2>
+      <p><b>Note /100</b> : 50 = pas mieux que dire le même % à tout le monde. 100 = parfait, ça n'arrive pas. En sport, 55 à 60 c'est un bon modèle. Sous 50, la version est à jeter.</p>
+      <p><b>Calibration</b> : la barre bleue est le % réel de 2+ tirs dans chaque tranche, le trait rouge est le % prédit moyen. Barre qui arrête au trait = le modèle dit vrai. Barre plus courte = trop optimiste.</p>
+      <p><b>Top 10</b> : sur les 10 meilleurs choix de chaque soir, combien ont fait 2+ tirs vs combien le modèle en attendait.</p>
+      <p><b>Brier</b> : erreur moyenne au carré, plus bas = mieux. Les scratchés ne comptent pas.</p>
+      <p>Avec moins de 500 prédictions gradées, les différences entre versions peuvent être de la chance.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+// ---- État de la page -----------------------------------------------------------
+// Les cotes que tu tapes restent sur ton appareil (localStorage) : la page est publique
+// mais tes mises, elles, ne regardent que toi.
+let D = null;
+const S = { match: "all", pos: "all", tri: "p", ver: null };
+
+const $ = (s) => document.querySelector(s);
+const pct = (x) => Math.round(x * 100);
+const store = {
+  get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+  set(k,v){ try { v === "" ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch(e){} }
+};
+const cleCote = (pid) => `cote:${D.date}:${pid}`;
+
+function lireCote(pid){
+  const v = parseFloat((store.get(cleCote(pid)) || "").replace(",", "."));
+  return v > 1 ? v : null;
+}
+
+// Valeur espérée par 1 $ misé : p × cote − 1.
+// Ex. p = 80 %, cote 1.45 -> 0.8 × 1.45 − 1 = +16 %. La cote 1.45 implique 69 %.
+function ev(p, cote){ return cote ? p * cote - 1 : null; }
+
+function classeEV(e){
+  // Seuil +5 % : la marge du bookie et l'erreur du modèle mangent les petits edges.
+  if (e === null) return "";
+  return e >= 0.05 ? "pos" : e >= 0 ? "mince" : "neg";
+}
+
+// ---- Rendu : Ce soir -----------------------------------------------------------
+function heure(iso){
+  return new Date(iso).toLocaleTimeString("fr-CA", { hour: "2-digit", minute: "2-digit" });
+}
+
+function construireFiltres(){
+  const sel = $("#f-match");
+  sel.innerHTML = `<option value="all">Tous les matchs (${D.matchs.length})</option>` +
+    D.matchs.map(m => `<option value="${m.id}">${m.away} @ ${m.home} · ${heure(m.start)}</option>`).join("");
+  sel.value = S.match;
+  $("#f-ver").innerHTML = D.versions.map(v =>
+    `<button class="chip" data-v="${v.id}" aria-pressed="${v.id === S.ver}" title="${v.desc}">${v.id}</button>`).join("");
+}
+
+function liste(){
+  const v = S.ver;
+  let js = D.joueurs.filter(j => j.preds[v])
+    .filter(j => S.match === "all" || String(j.gameId) === S.match)
+    .filter(j => S.pos === "all" || j.pos === S.pos)
+    .map(j => ({ ...j, p: j.preds[v].p, lam: j.preds[v].lam, cote: lireCote(j.pid) }))
+    .map(j => ({ ...j, e: ev(j.p, j.cote) }));
+
+  js.sort((a, b) => {
+    if (S.tri === "ev") {
+      // Les joueurs avec une cote entrée montent en haut, triés par valeur
+      if ((a.e === null) !== (b.e === null)) return a.e === null ? 1 : -1;
+      if (a.e !== null) return b.e - a.e;
+    }
+    return b.p - a.p;
+  });
+
+  if (!js.length){
+    $("#liste").innerHTML = `<div class="vide">Pas de joueurs pour ce filtre. Les prédictions arrivent vers 10 h les jours de match.</div>`;
+    return;
+  }
+
+  $("#liste").innerHTML = js.map((j, i) => {
+    const barres = j.l10_shots.map(s => `<i class="${s >= 2 ? "ok" : ""}" style="height:${Math.min(22, 4 + s * 4)}px"></i>`).join("");
+    const det = j.preds[v].detail;
+    const fx = det ? `<details class="why"><summary>Pourquoi ce %</summary><div class="fx">
+        <span>Tirs/60 : <b>${det.rate60.toFixed(1)}</b></span>
+        <span>TOI projeté : <b>${det.toi.toFixed(1)} min</b></span>
+        <span>Adversaire : <b>×${det.f_opp.toFixed(2)}</b></span>
+        <span>${j.home ? "Domicile" : "Visiteur"} : <b>×${det.f_lieu.toFixed(2)}</b></span>
+        <span>Back-to-back : <b>×${det.f_b2b.toFixed(2)}</b></span>
+        <span>Vs ${j.opp} (${j.vs_gp} m.) : <b>×${det.f_vs.toFixed(2)}</b></span>
+      </div></details>` : "";
+    let res = "";
+    if (j.played === false) res = `<span class="res">Scratché · annulé</span>`;
+    else if (j.result !== null && j.result !== undefined)
+      res = `<span class="res ${j.result >= 2 ? "ok" : "ko"}">${j.result} tir${j.result > 1 ? "s" : ""} · ${j.result >= 2 ? "réussi" : "raté"}</span>`;
+    const evTxt = j.e === null ? "" :
+      `<span class="ev ${classeEV(j.e)}">${j.e >= 0 ? "+" : ""}${pct(j.e)} % · implicite ${pct(1 / j.cote)} %</span>`;
+    return `<div class="j">
+      <div class="rk">${i + 1}</div>
+      <div style="min-width:0">
+        <div class="nom">${j.name}</div>
+        <div class="meta"><span class="tag">${j.team} ${j.home ? "vs" : "@"} ${j.opp}</span><span>${j.pos === "D" ? "Déf." : "Avant"}</span>
+          ${j.b2b ? '<span class="tag">B2B</span>' : ""}${j.incertain ? '<span class="tag warn">Absent dernier match</span>' : ""}</div>
+      </div>
+      <div><div class="pct">${pct(j.p)}<small>%</small></div><div class="lam">${j.lam.toFixed(1)} tirs att.</div></div>
+      <div class="sub">
+        <span style="display:flex;align-items:flex-end">
+          <span class="l10" aria-label="Tirs sur les 10 derniers matchs">${barres}</span>
+          <span class="l10txt">${j.l10_hits}/${j.l10_n} à 2+</span>
+        </span>
+        <span class="cote">${res}${evTxt}
+          <input id="c-${j.pid}" data-pid="${j.pid}" inputmode="decimal" placeholder="cote" aria-label="Cote Mise-o-jeu pour ${j.name}" value="${j.cote ?? ""}">
+        </span>
+      </div>
+      ${fx}
+    </div>`;
+  }).join("");
+}
+
+// ---- Rendu : Suivi -------------------------------------------------------------
+function suivi(){
+  const cards = D.versions.slice().reverse().map(({ id, desc }) => {
+    const s = D.stats[id];
+    if (!s || !s.n) return `<div class="card"><h2>${id}</h2><p class="lbl">${desc}</p>
+      <div class="vide">Pas encore de prédictions gradées. Les premiers résultats arrivent le lendemain du premier soir.</div></div>`;
+    const calib = s.calib.map(c => `<div class="cb">
+        <span>${c.tranche} %</span>
+        <span class="bar"><span class="r" style="width:${pct(c.reel)}%"></span><span class="p" style="left:${pct(c.predit)}%"></span></span>
+        <span style="text-align:right">${pct(c.reel)} % <span style="color:var(--muted)">(${c.n})</span></span>
+      </div>`).join("");
+    const soirs = s.soirs.slice().reverse().map(x =>
+      `<tr><td>${x.date}</td><td>${x.hits}/${x.n}</td><td>${x.attendu.toFixed(1)}</td></tr>`).join("");
+    const t = s.top10;
+    return `<div class="card ${id === D.principale ? "main" : ""}">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+        <h2>${id}${id === D.principale ? ' <span class="lbl" style="color:var(--goal)">principale</span>' : ""}</h2>
+      </div>
+      <p class="lbl" style="margin:-8px 0 0;text-transform:none;letter-spacing:0;font-weight:500">${desc}</p>
+      <div class="score"><span class="note">${s.note.toFixed(1)}<small>/100</small></span></div>
+      <div class="kv">
+        <div><span class="lbl">Gradées</span><b>${s.n}</b></div>
+        <div><span class="lbl">Brier</span><b>${s.brier.toFixed(3)}</b></div>
+        <div><span class="lbl">Top 10</span><b>${pct(t.hits / t.n)} %</b><span class="lbl" style="text-transform:none;letter-spacing:0">${t.hits}/${t.n}, attendu ${t.attendu.toFixed(0)}</span></div>
+      </div>
+      <div class="calib"><span class="lbl">Calibration · prédit vs réel</span>${calib}
+        <div class="legende"><span><i style="background:var(--ice)"></i>Réel</span><span><i style="background:var(--goal)"></i>Prédit</span><span>(n) = joueurs</span></div>
+      </div>
+      <div class="soirs"><span class="lbl">Top 10 par soir</span>
+        <table><thead><tr><th>Soir</th><th>Réussis</th><th>Attendus</th></tr></thead><tbody>${soirs}</tbody></table>
+      </div>
+    </div>`;
+  });
+  $("#cards").innerHTML = cards.join("");
+}
+
+// ---- Événements ----------------------------------------------------------------
+function chips(groupe, cle){
+  $(groupe).addEventListener("click", (ev) => {
+    const b = ev.target.closest("button[data-v]");
+    if (!b) return;
+    S[cle] = b.dataset.v;
+    $(groupe).querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    liste();
+  });
+}
+
+function brancher(){
+  chips("#f-pos", "pos");
+  chips("#f-tri", "tri");
+  chips("#f-ver", "ver");
+  $("#f-match").addEventListener("change", (e) => { S.match = e.target.value; liste(); });
+  // On recalcule à la sortie du champ (pas à chaque touche) pour ne pas
+  // réordonner la liste pendant que tu tapes.
+  $("#liste").addEventListener("change", (e) => {
+    if (!e.target.dataset.pid) return;
+    store.set(cleCote(e.target.dataset.pid), e.target.value.trim());
+    liste();
+  });
+  document.querySelectorAll("nav.tabs button").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll("nav.tabs button").forEach(x => x.setAttribute("aria-selected", x === b));
+    $("#p-soir").hidden = b.id !== "t-soir";
+    $("#p-suivi").hidden = b.id !== "t-suivi";
+  }));
+}
+
+async function init(){
+  try {
+    // ?v=heure : contourne le cache de GitHub Pages pour toujours avoir le dernier calcul
+    const r = await fetch("data.json?v=" + Date.now());
+    D = await r.json();
+  } catch (e) {
+    $("#maj").textContent = "Données introuvables. La première exécution n'a peut-être pas encore roulé.";
+    return;
+  }
+  S.ver = D.principale;
+  const g = new Date(D.genere);
+  $("#maj").innerHTML = `${new Date(D.date + "T12:00").toLocaleDateString("fr-CA", { weekday: "long", day: "numeric", month: "long" })}<br>Calculé à ${g.toLocaleTimeString("fr-CA", { hour: "2-digit", minute: "2-digit" })}`;
+  construireFiltres();
+  brancher();
+  liste();
+  suivi();
+}
+init();
+</script>
+</body>
+</html>
