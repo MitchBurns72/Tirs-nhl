@@ -97,6 +97,12 @@ def standings_now():
     return get_json("/standings/now")
 
 
+def club_schedule(team, season=None):
+    """Tous les matchs d'une équipe avec les scores. Sert au modèle de match :
+    buts pour/contre, 10 derniers, duels directs."""
+    return get_json(f"/club-schedule-season/{team}/{season or 'now'}")
+
+
 def boxscore(game_id):
     """Feuille de match : sert à grader les prédictions (champ `sog` par joueur)."""
     return get_json(f"/gamecenter/{game_id}/boxscore")

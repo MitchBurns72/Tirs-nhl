@@ -1,14 +1,14 @@
 {
- "genere": "2026-10-18T00:13+00:00",
+ "genere": "2026-10-18T01:26+00:00",
  "date": "2026-10-17",
  "versions": [
   {
    "id": "v0",
-   "desc": "Baseline : moyenne tirs/match + Poisson"
+   "desc": "Baseline : moyennes de la saison, aucun ajustement"
   },
   {
    "id": "v1",
-   "desc": "Forme L10, temps de glace, adversaire, domicile, back-to-back, historique vs équipe"
+   "desc": "Forme L10, temps de glace, adversaire, gardiens, domicile, back-to-back, duels directs"
   }
  ],
  "principale": "v1",
@@ -42,7 +42,7 @@
    "away": "SEA",
    "home": "FLA",
    "start": "2026-10-17T22:00:00Z",
-   "state": "LIVE",
+   "state": "OFF",
    "season": 20262027
   },
   {
@@ -106,7 +106,7 @@
    "away": "BOS",
    "home": "LAK",
    "start": "2026-10-18T01:00:00Z",
-   "state": "FUT",
+   "state": "LIVE",
    "season": 20262027
   },
   {
@@ -124,6 +124,132 @@
    "start": "2026-10-18T02:00:00Z",
    "state": "FUT",
    "season": 20262027
+  }
+ ],
+ "games": [
+  {
+   "gameId": 2026020133,
+   "home": "UTA",
+   "away": "EDM",
+   "start": "2026-10-18T02:00:00Z",
+   "b2b_home": false,
+   "b2b_away": false,
+   "forme": {
+    "home": {
+     "gf": 31,
+     "ga": 21,
+     "n": 8,
+     "v": 6
+    },
+    "away": {
+     "gf": 31,
+     "ga": 22,
+     "n": 7,
+     "v": 5
+    }
+   },
+   "h2h": {
+    "gp": 4,
+    "gf_home": 15,
+    "gf_away": 18
+   },
+   "preds": {
+    "v0": {
+     "p_home": 0.4974,
+     "p_egal60": 0.1533,
+     "lam_home": 3.5089,
+     "lam_away": 3.5268,
+     "total": 7.0357,
+     "p_over": {
+      "5.5": 0.7038,
+      "6.5": 0.5556
+     }
+    },
+    "v1": {
+     "p_home": 0.5388,
+     "p_egal60": 0.1532,
+     "lam_home": 3.6166,
+     "lam_away": 3.375,
+     "total": 6.9916,
+     "p_over": {
+      "5.5": 0.6982,
+      "6.5": 0.549
+     },
+     "detail": {
+      "att_h": 3.4495,
+      "def_h": 2.9298,
+      "att_a": 3.6616,
+      "def_a": 3.25,
+      "h2h_h": 1.029,
+      "h2h_a": 1.0763,
+      "mu": 3.3015
+     }
+    }
+   },
+   "result": null,
+   "cotes": null
+  },
+  {
+   "gameId": 2026020134,
+   "home": "VGK",
+   "away": "PIT",
+   "start": "2026-10-18T02:00:00Z",
+   "b2b_home": false,
+   "b2b_away": true,
+   "forme": {
+    "home": {
+     "gf": 36,
+     "ga": 22,
+     "n": 9,
+     "v": 7
+    },
+    "away": {
+     "gf": 27,
+     "ga": 27,
+     "n": 8,
+     "v": 3
+    }
+   },
+   "h2h": {
+    "gp": 2,
+    "gf_home": 6,
+    "gf_away": 7
+   },
+   "preds": {
+    "v0": {
+     "p_home": 0.6169,
+     "p_egal60": 0.152,
+     "lam_home": 3.6875,
+     "lam_away": 2.9097,
+     "total": 6.5972,
+     "p_over": {
+      "5.5": 0.6449,
+      "6.5": 0.4887
+     }
+    },
+    "v1": {
+     "p_home": 0.622,
+     "p_egal60": 0.1535,
+     "lam_home": 3.6185,
+     "lam_away": 2.8355,
+     "total": 6.454,
+     "p_over": {
+      "5.5": 0.6242,
+      "6.5": 0.4662
+     },
+     "detail": {
+      "att_h": 3.4862,
+      "def_h": 2.9193,
+      "att_a": 3.4519,
+      "def_a": 3.3067,
+      "h2h_h": 0.9721,
+      "h2h_a": 1.0028,
+      "mu": 3.3015
+     }
+    }
+   },
+   "result": null,
+   "cotes": null
   }
  ],
  "joueurs": [
@@ -8168,10 +8294,18 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": true,
-   "l10_hits": 0,
-   "l10_n": 3,
    "l10_shots": [
     1,
+    0,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
     0,
     1
    ],
@@ -8179,24 +8313,52 @@
    "vs_shots": 5,
    "preds": {
     "v0": {
-     "p": 0.1443,
-     "lam": 0.6667
+     "tirs": {
+      "p": 0.1443,
+      "lam": 0.6667
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
     },
     "v1": {
-     "p": 0.2189,
-     "lam": 0.8732,
-     "detail": {
-      "rate60": 4.889,
-      "toi": 12.206,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 0.994
+     "tirs": {
+      "p": 0.2195,
+      "lam": 0.8748,
+      "detail": {
+       "rate60": 4.903,
+       "toi": 12.2056,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 0.9929
+      }
+     },
+     "buts": {
+      "p": 0.1022,
+      "lam": 0.1078,
+      "detail": {
+       "sh": 0.1218,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.2,
+      "lam": 0.2231,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8477934,
@@ -8208,8 +8370,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 7,
-   "l10_n": 7,
    "l10_shots": [
     5,
     5,
@@ -8219,28 +8379,74 @@
     3,
     3
    ],
+   "l10_goals": [
+    0,
+    2,
+    1,
+    0,
+    0,
+    1,
+    1
+   ],
+   "l10_assists": [
+    1,
+    1,
+    0,
+    4,
+    0,
+    1,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 7,
    "preds": {
     "v0": {
-     "p": 0.8974,
-     "lam": 3.8571
+     "tirs": {
+      "p": 0.8974,
+      "lam": 3.8571
+     },
+     "buts": {
+      "p": 0.5105,
+      "lam": 0.7143
+     },
+     "passes": {
+      "p": 0.6321,
+      "lam": 1.0
+     }
     },
     "v1": {
-     "p": 0.7446,
-     "lam": 2.8152,
-     "detail": {
-      "rate60": 8.733,
-      "toi": 21.583,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 1.014
+     "tirs": {
+      "p": 0.745,
+      "lam": 2.8172,
+      "detail": {
+       "rate60": 8.743,
+       "toi": 21.5834,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 1.0141
+      }
+     },
+     "buts": {
+      "p": 0.379,
+      "lam": 0.4764,
+      "detail": {
+       "sh": 0.1671,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.5447,
+      "lam": 0.7869,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8480029,
@@ -8252,8 +8458,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 3,
-   "l10_n": 7,
    "l10_shots": [
     2,
     0,
@@ -8263,28 +8467,74 @@
     1,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 1,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.3166,
-     "lam": 1.1429
+     "tirs": {
+      "p": 0.3166,
+      "lam": 1.1429
+     },
+     "buts": {
+      "p": 0.1331,
+      "lam": 0.1429
+     },
+     "passes": {
+      "p": 0.2485,
+      "lam": 0.2857
+     }
     },
     "v1": {
-     "p": 0.335,
-     "lam": 1.2016,
-     "detail": {
-      "rate60": 5.568,
-      "toi": 14.87,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 0.985
+     "tirs": {
+      "p": 0.3366,
+      "lam": 1.2061,
+      "detail": {
+       "rate60": 5.5922,
+       "toi": 14.8704,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 0.9852
+      }
+     },
+     "buts": {
+      "p": 0.1525,
+      "lam": 0.1654,
+      "detail": {
+       "sh": 0.1355,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.2809,
+      "lam": 0.3297,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8479365,
@@ -8296,8 +8546,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 2,
-   "l10_n": 7,
    "l10_shots": [
     1,
     2,
@@ -8307,28 +8555,74 @@
     1,
     0
    ],
+   "l10_goals": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 3,
    "vs_shots": 2,
    "preds": {
     "v0": {
-     "p": 0.2642,
-     "lam": 1.0
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.1331,
+      "lam": 0.1429
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
     },
     "v1": {
-     "p": 0.1948,
-     "lam": 0.8053,
-     "detail": {
-      "rate60": 5.997,
-      "toi": 10.166,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 0.897
+     "tirs": {
+      "p": 0.1953,
+      "lam": 0.8066,
+      "detail": {
+       "rate60": 6.01,
+       "toi": 10.1658,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 0.8968
+      }
+     },
+     "buts": {
+      "p": 0.0866,
+      "lam": 0.0906,
+      "detail": {
+       "sh": 0.111,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.1246,
+      "lam": 0.1331,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8480842,
@@ -8340,8 +8634,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 1,
-   "l10_n": 5,
    "l10_shots": [
     3,
     0,
@@ -8349,28 +8641,70 @@
     0,
     1
    ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    2,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 1,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.2642,
-     "lam": 1.0
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.1813,
+      "lam": 0.2
+     },
+     "passes": {
+      "p": 0.3297,
+      "lam": 0.4
+     }
     },
     "v1": {
-     "p": 0.2905,
-     "lam": 1.0743,
-     "detail": {
-      "rate60": 6.6,
-      "toi": 11.16,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 0.991
+     "tirs": {
+      "p": 0.2917,
+      "lam": 1.0778,
+      "detail": {
+       "rate60": 6.6249,
+       "toi": 11.16,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 0.9903
+      }
+     },
+     "buts": {
+      "p": 0.1317,
+      "lam": 0.1412,
+      "detail": {
+       "sh": 0.1295,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.2412,
+      "lam": 0.276,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8483455,
@@ -8382,8 +8716,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 1,
-   "l10_n": 7,
    "l10_shots": [
     1,
     3,
@@ -8393,28 +8725,74 @@
     1,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 3,
    "preds": {
     "v0": {
-     "p": 0.2642,
-     "lam": 1.0
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.2485,
+      "lam": 0.2857
+     }
     },
     "v1": {
-     "p": 0.2567,
-     "lam": 0.9792,
-     "detail": {
-      "rate60": 6.786,
-      "toi": 9.333,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 1.05
+     "tirs": {
+      "p": 0.2575,
+      "lam": 0.9814,
+      "detail": {
+       "rate60": 6.8065,
+       "toi": 9.3328,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 1.0494
+      }
+     },
+     "buts": {
+      "p": 0.1067,
+      "lam": 0.1128,
+      "detail": {
+       "sh": 0.1136,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.187,
+      "lam": 0.207,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8479368,
@@ -8426,8 +8804,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 1,
-   "l10_n": 5,
    "l10_shots": [
     2,
     1,
@@ -8435,28 +8811,70 @@
     0,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 3,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.2642,
-     "lam": 1.0
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
     },
     "v1": {
-     "p": 0.2258,
-     "lam": 0.8927,
-     "detail": {
-      "rate60": 6.694,
-      "toi": 10.46,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 0.866
+     "tirs": {
+      "p": 0.2269,
+      "lam": 0.8956,
+      "detail": {
+       "rate60": 6.7193,
+       "toi": 10.46,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 0.8656
+      }
+     },
+     "buts": {
+      "p": 0.1107,
+      "lam": 0.1173,
+      "detail": {
+       "sh": 0.1295,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.1764,
+      "lam": 0.1941,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8478472,
@@ -8468,8 +8886,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 2,
-   "l10_n": 7,
    "l10_shots": [
     0,
     2,
@@ -8479,28 +8895,74 @@
     3,
     0
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
    "vs_gp": 5,
    "vs_shots": 2,
    "preds": {
     "v0": {
-     "p": 0.2642,
-     "lam": 1.0
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.3486,
+      "lam": 0.4286
+     }
     },
     "v1": {
-     "p": 0.2068,
-     "lam": 0.8391,
-     "detail": {
-      "rate60": 4.513,
-      "toi": 14.853,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 0.85
+     "tirs": {
+      "p": 0.2076,
+      "lam": 0.8414,
+      "detail": {
+       "rate60": 4.5271,
+       "toi": 14.8532,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 0.85
+      }
+     },
+     "buts": {
+      "p": 0.0922,
+      "lam": 0.0967,
+      "detail": {
+       "sh": 0.1136,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.2812,
+      "lam": 0.3301,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8477953,
@@ -8512,8 +8974,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 2,
-   "l10_n": 7,
    "l10_shots": [
     3,
     1,
@@ -8523,28 +8983,74 @@
     0,
     1
    ],
+   "l10_goals": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 3,
    "vs_shots": 3,
    "preds": {
     "v0": {
-     "p": 0.418,
-     "lam": 1.4286
+     "tirs": {
+      "p": 0.418,
+      "lam": 1.4286
+     },
+     "buts": {
+      "p": 0.2485,
+      "lam": 0.2857
+     },
+     "passes": {
+      "p": 0.1331,
+      "lam": 0.1429
+     }
     },
     "v1": {
-     "p": 0.406,
-     "lam": 1.4125,
-     "detail": {
-      "rate60": 6.028,
-      "toi": 17.273,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 0.921
+     "tirs": {
+      "p": 0.4068,
+      "lam": 1.4148,
+      "detail": {
+       "rate60": 6.0408,
+       "toi": 17.2733,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 0.921
+      }
+     },
+     "buts": {
+      "p": 0.1795,
+      "lam": 0.1978,
+      "detail": {
+       "sh": 0.1382,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.2637,
+      "lam": 0.3062,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8478402,
@@ -8556,8 +9062,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 5,
-   "l10_n": 7,
    "l10_shots": [
     0,
     3,
@@ -8567,28 +9071,74 @@
     2,
     2
    ],
+   "l10_goals": [
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0
+   ],
+   "l10_assists": [
+    2,
+    4,
+    1,
+    2,
+    1,
+    3,
+    1
+   ],
    "vs_gp": 4,
    "vs_shots": 13,
    "preds": {
     "v0": {
-     "p": 0.6658,
-     "lam": 2.2857
+     "tirs": {
+      "p": 0.6658,
+      "lam": 2.2857
+     },
+     "buts": {
+      "p": 0.4353,
+      "lam": 0.5714
+     },
+     "passes": {
+      "p": 0.8647,
+      "lam": 2.0
+     }
     },
     "v1": {
-     "p": 0.7494,
-     "lam": 2.8451,
-     "detail": {
-      "rate60": 7.779,
-      "toi": 24.239,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 1.025
+     "tirs": {
+      "p": 0.7497,
+      "lam": 2.8469,
+      "detail": {
+       "rate60": 7.7887,
+       "toi": 24.2391,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 1.0243
+      }
+     },
+     "buts": {
+      "p": 0.3626,
+      "lam": 0.4503,
+      "detail": {
+       "sh": 0.1563,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.6859,
+      "lam": 1.158,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8486161,
@@ -8600,8 +9150,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 1,
-   "l10_n": 7,
    "l10_shots": [
     0,
     1,
@@ -8611,28 +9159,74 @@
     0,
     0
    ],
+   "l10_goals": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
    "vs_gp": 1,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.2119,
-     "lam": 0.8571
+     "tirs": {
+      "p": 0.2119,
+      "lam": 0.8571
+     },
+     "buts": {
+      "p": 0.2485,
+      "lam": 0.2857
+     },
+     "passes": {
+      "p": 0.1331,
+      "lam": 0.1429
+     }
     },
     "v1": {
-     "p": 0.2603,
-     "lam": 0.9893,
-     "detail": {
-      "rate60": 5.282,
-      "toi": 13.779,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 0.923
+     "tirs": {
+      "p": 0.2619,
+      "lam": 0.9939,
+      "detail": {
+       "rate60": 5.3082,
+       "toi": 13.7787,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 0.9231
+      }
+     },
+     "buts": {
+      "p": 0.1403,
+      "lam": 0.1512,
+      "detail": {
+       "sh": 0.1503,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.242,
+      "lam": 0.2771,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8481617,
@@ -8644,8 +9238,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 6,
-   "l10_n": 7,
    "l10_shots": [
     7,
     4,
@@ -8655,28 +9247,74 @@
     3,
     2
    ],
+   "l10_goals": [
+    2,
+    1,
+    0,
+    1,
+    1,
+    2,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 4,
    "vs_shots": 4,
    "preds": {
     "v0": {
-     "p": 0.8212,
-     "lam": 3.1429
+     "tirs": {
+      "p": 0.8212,
+      "lam": 3.1429
+     },
+     "buts": {
+      "p": 0.6321,
+      "lam": 1.0
+     },
+     "passes": {
+      "p": 0.2485,
+      "lam": 0.2857
+     }
     },
     "v1": {
-     "p": 0.5552,
-     "lam": 1.9157,
-     "detail": {
-      "rate60": 7.646,
-      "toi": 19.797,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 0.859
+     "tirs": {
+      "p": 0.5556,
+      "lam": 1.9174,
+      "detail": {
+       "rate60": 7.6562,
+       "toi": 19.7972,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 0.8593
+      }
+     },
+     "buts": {
+      "p": 0.2668,
+      "lam": 0.3103,
+      "detail": {
+       "sh": 0.1599,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.3059,
+      "lam": 0.3652,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8484509,
@@ -8688,8 +9326,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 0,
-   "l10_n": 6,
    "l10_shots": [
     0,
     0,
@@ -8698,28 +9334,72 @@
     0,
     0
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.0012,
-     "lam": 0.05
+     "tirs": {
+      "p": 0.0012,
+      "lam": 0.05
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
     },
     "v1": {
-     "p": 0.0508,
-     "lam": 0.3511,
-     "detail": {
-      "rate60": 3.651,
-      "toi": 7.619,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 0.857
+     "tirs": {
+      "p": 0.0513,
+      "lam": 0.3533,
+      "detail": {
+       "rate60": 3.6747,
+       "toi": 7.6193,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 0.8571
+      }
+     },
+     "buts": {
+      "p": 0.0492,
+      "lam": 0.0505,
+      "detail": {
+       "sh": 0.1412,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.1458,
+      "lam": 0.1576,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8480803,
@@ -8731,8 +9411,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 5,
-   "l10_n": 7,
    "l10_shots": [
     6,
     4,
@@ -8742,28 +9420,74 @@
     1,
     6
    ],
+   "l10_goals": [
+    3,
+    1,
+    0,
+    2,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    2,
+    2,
+    0,
+    1,
+    1,
+    2,
+    1
+   ],
    "vs_gp": 4,
    "vs_shots": 9,
    "preds": {
     "v0": {
-     "p": 0.8564,
-     "lam": 3.4286
+     "tirs": {
+      "p": 0.8564,
+      "lam": 3.4286
+     },
+     "buts": {
+      "p": 0.5756,
+      "lam": 0.8571
+     },
+     "passes": {
+      "p": 0.7235,
+      "lam": 1.2857
+     }
     },
     "v1": {
-     "p": 0.6756,
-     "lam": 2.4338,
-     "detail": {
-      "rate60": 6.68,
-      "toi": 25.486,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 0.971
+     "tirs": {
+      "p": 0.6772,
+      "lam": 2.4413,
+      "detail": {
+       "rate60": 6.7096,
+       "toi": 25.4861,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 0.9698
+      }
+     },
+     "buts": {
+      "p": 0.2197,
+      "lam": 0.2481,
+      "detail": {
+       "sh": 0.1004,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.565,
+      "lam": 0.8325,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8475218,
@@ -8775,8 +9499,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 3,
-   "l10_n": 7,
    "l10_shots": [
     2,
     0,
@@ -8786,28 +9508,74 @@
     0,
     2
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 4,
    "vs_shots": 8,
    "preds": {
     "v0": {
-     "p": 0.2642,
-     "lam": 1.0
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.1331,
+      "lam": 0.1429
+     },
+     "passes": {
+      "p": 0.1331,
+      "lam": 0.1429
+     }
     },
     "v1": {
-     "p": 0.4045,
-     "lam": 1.4079,
-     "detail": {
-      "rate60": 3.855,
-      "toi": 22.03,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 1.126
+     "tirs": {
+      "p": 0.4069,
+      "lam": 1.4151,
+      "detail": {
+       "rate60": 3.8863,
+       "toi": 22.0301,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 1.1227
+      }
+     },
+     "buts": {
+      "p": 0.0814,
+      "lam": 0.0849,
+      "detail": {
+       "sh": 0.0593,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.2904,
+      "lam": 0.343,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8480834,
@@ -8819,8 +9587,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 0,
-   "l10_n": 5,
    "l10_shots": [
     0,
     0,
@@ -8828,28 +9594,70 @@
     0,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
    "vs_gp": 4,
    "vs_shots": 5,
    "preds": {
     "v0": {
-     "p": 0.0175,
-     "lam": 0.2
+     "tirs": {
+      "p": 0.0175,
+      "lam": 0.2
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1813,
+      "lam": 0.2
+     }
     },
     "v1": {
-     "p": 0.0951,
-     "lam": 0.5081,
-     "detail": {
-      "rate60": 2.543,
-      "toi": 11.8,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 1.15
+     "tirs": {
+      "p": 0.0975,
+      "lam": 0.5158,
+      "detail": {
+       "rate60": 2.582,
+       "toi": 11.8,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 1.15
+      }
+     },
+     "buts": {
+      "p": 0.0299,
+      "lam": 0.0303,
+      "detail": {
+       "sh": 0.0581,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.148,
+      "lam": 0.1601,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8482166,
@@ -8861,8 +9669,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 0,
-   "l10_n": 5,
    "l10_shots": [
     0,
     0,
@@ -8870,28 +9676,70 @@
     0,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 3,
    "vs_shots": 3,
    "preds": {
     "v0": {
-     "p": 0.0175,
-     "lam": 0.2
+     "tirs": {
+      "p": 0.0175,
+      "lam": 0.2
+     },
+     "buts": {
+      "p": 0.1813,
+      "lam": 0.2
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
     },
     "v1": {
-     "p": 0.1128,
-     "lam": 0.5643,
-     "detail": {
-      "rate60": 3.109,
-      "toi": 11.863,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 1.039
+     "tirs": {
+      "p": 0.1146,
+      "lam": 0.5698,
+      "detail": {
+       "rate60": 3.1489,
+       "toi": 11.8633,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 1.0361
+      }
+     },
+     "buts": {
+      "p": 0.0456,
+      "lam": 0.0467,
+      "detail": {
+       "sh": 0.081,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.1265,
+      "lam": 0.1352,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8476473,
@@ -8903,8 +9751,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 1,
-   "l10_n": 7,
    "l10_shots": [
     2,
     1,
@@ -8914,28 +9760,74 @@
     0,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
    "vs_gp": 5,
    "vs_shots": 6,
    "preds": {
     "v0": {
-     "p": 0.1126,
-     "lam": 0.5714
+     "tirs": {
+      "p": 0.1126,
+      "lam": 0.5714
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1331,
+      "lam": 0.1429
+     }
     },
     "v1": {
-     "p": 0.2364,
-     "lam": 0.9224,
-     "detail": {
-      "rate60": 2.674,
-      "toi": 21.418,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 1.094
+     "tirs": {
+      "p": 0.2388,
+      "lam": 0.9291,
+      "detail": {
+       "rate60": 2.7055,
+       "toi": 21.4178,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 1.0891
+      }
+     },
+     "buts": {
+      "p": 0.0579,
+      "lam": 0.0596,
+      "detail": {
+       "sh": 0.0634,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.2177,
+      "lam": 0.2455,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8478854,
@@ -8947,8 +9839,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 1,
-   "l10_n": 7,
    "l10_shots": [
     0,
     1,
@@ -8958,28 +9848,74 @@
     1,
     1
    ],
+   "l10_goals": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 3,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.1608,
-     "lam": 0.7143
+     "tirs": {
+      "p": 0.1608,
+      "lam": 0.7143
+     },
+     "buts": {
+      "p": 0.1331,
+      "lam": 0.1429
+     },
+     "passes": {
+      "p": 0.2485,
+      "lam": 0.2857
+     }
     },
     "v1": {
-     "p": 0.1908,
-     "lam": 0.7939,
-     "detail": {
-      "rate60": 2.683,
-      "toi": 22.972,
-      "f_opp": 0.911,
-      "f_lieu": 0.97,
-      "f_b2b": 1.0,
-      "f_vs": 0.875
+     "tirs": {
+      "p": 0.1936,
+      "lam": 0.8019,
+      "detail": {
+       "rate60": 2.7134,
+       "toi": 22.9719,
+       "f_opp": 0.9106,
+       "f_lieu": 0.97,
+       "f_b2b": 1.0,
+       "f_vs": 0.8738
+      }
+     },
+     "buts": {
+      "p": 0.0588,
+      "lam": 0.0607,
+      "detail": {
+       "sh": 0.0748,
+       "f_gardien": 1.0118
+      }
+     },
+     "passes": {
+      "p": 0.3149,
+      "lam": 0.3781,
+      "detail": {
+       "f_equipe": 1.0223
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8484388,
@@ -8991,8 +9927,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 3,
-   "l10_n": 8,
    "l10_shots": [
     1,
     0,
@@ -9003,28 +9937,76 @@
     2,
     1
    ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 1,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.3101,
-     "lam": 1.125
+     "tirs": {
+      "p": 0.3101,
+      "lam": 1.125
+     },
+     "buts": {
+      "p": 0.2212,
+      "lam": 0.25
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
     },
     "v1": {
-     "p": 0.3211,
-     "lam": 1.1614,
-     "detail": {
-      "rate60": 6.764,
-      "toi": 10.564,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.986
+     "tirs": {
+      "p": 0.322,
+      "lam": 1.1639,
+      "detail": {
+       "rate60": 6.7817,
+       "toi": 10.5643,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9862
+      }
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667,
+      "detail": {
+       "sh": 0.1306,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.1692,
+      "lam": 0.1853,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8483431,
@@ -9036,8 +10018,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 2,
-   "l10_n": 8,
    "l10_shots": [
     0,
     1,
@@ -9048,28 +10028,76 @@
     3,
     3
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "l10_assists": [
+    1,
+    2,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
    "vs_gp": 4,
    "vs_shots": 8,
    "preds": {
     "v0": {
-     "p": 0.2642,
-     "lam": 1.0
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.1175,
+      "lam": 0.125
+     },
+     "passes": {
+      "p": 0.5831,
+      "lam": 0.875
+     }
     },
     "v1": {
-     "p": 0.5177,
-     "lam": 1.7786,
-     "detail": {
-      "rate60": 5.52,
-      "toi": 18.592,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 1.052
+     "tirs": {
+      "p": 0.5182,
+      "lam": 1.7805,
+      "detail": {
+       "rate60": 5.5305,
+       "toi": 18.5917,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 1.0511
+      }
+     },
+     "buts": {
+      "p": 0.2855,
+      "lam": 0.3362,
+      "detail": {
+       "sh": 0.1721,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.4329,
+      "lam": 0.5672,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8478474,
@@ -9081,8 +10109,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 3,
-   "l10_n": 8,
    "l10_shots": [
     1,
     2,
@@ -9093,28 +10119,76 @@
     1,
     3
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
    "vs_gp": 4,
    "vs_shots": 11,
    "preds": {
     "v0": {
-     "p": 0.5591,
-     "lam": 1.875
+     "tirs": {
+      "p": 0.5591,
+      "lam": 1.875
+     },
+     "buts": {
+      "p": 0.1175,
+      "lam": 0.125
+     },
+     "passes": {
+      "p": 0.2212,
+      "lam": 0.25
+     }
     },
     "v1": {
-     "p": 0.5397,
-     "lam": 1.858,
-     "detail": {
-      "rate60": 6.747,
-      "toi": 15.258,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 1.095
+     "tirs": {
+      "p": 0.5401,
+      "lam": 1.8596,
+      "detail": {
+       "rate60": 6.7582,
+       "toi": 15.2575,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 1.0947
+      }
+     },
+     "buts": {
+      "p": 0.2554,
+      "lam": 0.2949,
+      "detail": {
+       "sh": 0.1446,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.2687,
+      "lam": 0.313,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8482699,
@@ -9126,8 +10200,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 7,
-   "l10_n": 8,
    "l10_shots": [
     5,
     5,
@@ -9138,28 +10210,76 @@
     2,
     2
    ],
+   "l10_goals": [
+    2,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "l10_assists": [
+    0,
+    2,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1
+   ],
    "vs_gp": 4,
    "vs_shots": 10,
    "preds": {
     "v0": {
-     "p": 0.8352,
-     "lam": 3.25
+     "tirs": {
+      "p": 0.8352,
+      "lam": 3.25
+     },
+     "buts": {
+      "p": 0.3935,
+      "lam": 0.5
+     },
+     "passes": {
+      "p": 0.4647,
+      "lam": 0.625
+     }
     },
     "v1": {
-     "p": 0.7224,
-     "lam": 2.6828,
-     "detail": {
-      "rate60": 10.274,
-      "toi": 16.686,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.95
+     "tirs": {
+      "p": 0.7227,
+      "lam": 2.6842,
+      "detail": {
+       "rate60": 10.285,
+       "toi": 16.6857,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9495
+      }
+     },
+     "buts": {
+      "p": 0.3643,
+      "lam": 0.453,
+      "detail": {
+       "sh": 0.1539,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.3838,
+      "lam": 0.4842,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8480849,
@@ -9171,8 +10291,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 4,
-   "l10_n": 8,
    "l10_shots": [
     4,
     0,
@@ -9183,28 +10301,76 @@
     2,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    2,
+    1,
+    0
+   ],
    "vs_gp": 3,
    "vs_shots": 3,
    "preds": {
     "v0": {
-     "p": 0.5221,
-     "lam": 1.75
+     "tirs": {
+      "p": 0.5221,
+      "lam": 1.75
+     },
+     "buts": {
+      "p": 0.1175,
+      "lam": 0.125
+     },
+     "passes": {
+      "p": 0.4647,
+      "lam": 0.625
+     }
     },
     "v1": {
-     "p": 0.4489,
-     "lam": 1.5468,
-     "detail": {
-      "rate60": 7.183,
-      "toi": 13.744,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.951
+     "tirs": {
+      "p": 0.4494,
+      "lam": 1.5484,
+      "detail": {
+       "rate60": 7.1941,
+       "toi": 13.7438,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9507
+      }
+     },
+     "buts": {
+      "p": 0.1708,
+      "lam": 0.1873,
+      "detail": {
+       "sh": 0.1103,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.3051,
+      "lam": 0.3639,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8479343,
@@ -9216,8 +10382,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 7,
-   "l10_n": 8,
    "l10_shots": [
     4,
     2,
@@ -9228,28 +10392,76 @@
     0,
     4
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    2
+   ],
+   "l10_assists": [
+    2,
+    2,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0
+   ],
    "vs_gp": 4,
    "vs_shots": 12,
    "preds": {
     "v0": {
-     "p": 0.7374,
-     "lam": 2.625
+     "tirs": {
+      "p": 0.7374,
+      "lam": 2.625
+     },
+     "buts": {
+      "p": 0.3127,
+      "lam": 0.375
+     },
+     "passes": {
+      "p": 0.6321,
+      "lam": 1.0
+     }
     },
     "v1": {
-     "p": 0.6879,
-     "lam": 2.4956,
-     "detail": {
-      "rate60": 8.4,
-      "toi": 17.678,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 1.02
+     "tirs": {
+      "p": 0.6882,
+      "lam": 2.4972,
+      "detail": {
+       "rate60": 8.4103,
+       "toi": 17.6782,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 1.0196
+      }
+     },
+     "buts": {
+      "p": 0.2921,
+      "lam": 0.3455,
+      "detail": {
+       "sh": 0.1261,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.5042,
+      "lam": 0.7015,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8475314,
@@ -9261,8 +10473,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 4,
-   "l10_n": 8,
    "l10_shots": [
     4,
     1,
@@ -9273,28 +10483,76 @@
     2,
     0
    ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
    "vs_gp": 3,
    "vs_shots": 4,
    "preds": {
     "v0": {
-     "p": 0.5221,
-     "lam": 1.75
+     "tirs": {
+      "p": 0.5221,
+      "lam": 1.75
+     },
+     "buts": {
+      "p": 0.2212,
+      "lam": 0.25
+     },
+     "passes": {
+      "p": 0.3127,
+      "lam": 0.375
+     }
     },
     "v1": {
-     "p": 0.4937,
-     "lam": 1.6953,
-     "detail": {
-      "rate60": 8.485,
-      "toi": 13.085,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.927
+     "tirs": {
+      "p": 0.4942,
+      "lam": 1.6968,
+      "detail": {
+       "rate60": 8.4965,
+       "toi": 13.0848,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9265
+      }
+     },
+     "buts": {
+      "p": 0.194,
+      "lam": 0.2157,
+      "detail": {
+       "sh": 0.1159,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.2713,
+      "lam": 0.3165,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8480855,
@@ -9306,8 +10564,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 2,
-   "l10_n": 8,
    "l10_shots": [
     0,
     0,
@@ -9318,28 +10574,76 @@
     1,
     0
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
    "vs_gp": 3,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.2184,
-     "lam": 0.875
+     "tirs": {
+      "p": 0.2184,
+      "lam": 0.875
+     },
+     "buts": {
+      "p": 0.1175,
+      "lam": 0.125
+     },
+     "passes": {
+      "p": 0.1175,
+      "lam": 0.125
+     }
     },
     "v1": {
-     "p": 0.2706,
-     "lam": 1.0181,
-     "detail": {
-      "rate60": 5.76,
-      "toi": 12.621,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.85
+     "tirs": {
+      "p": 0.2712,
+      "lam": 1.0199,
+      "detail": {
+       "rate60": 5.771,
+       "toi": 12.6207,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.85
+      }
+     },
+     "buts": {
+      "p": 0.123,
+      "lam": 0.1313,
+      "detail": {
+       "sh": 0.1173,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.2182,
+      "lam": 0.2461,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8477951,
@@ -9351,8 +10655,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 7,
-   "l10_n": 8,
    "l10_shots": [
     2,
     8,
@@ -9363,28 +10665,76 @@
     1,
     2
    ],
+   "l10_goals": [
+    1,
+    2,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    1,
+    2
+   ],
    "vs_gp": 4,
    "vs_shots": 9,
    "preds": {
     "v0": {
-     "p": 0.8503,
-     "lam": 3.375
+     "tirs": {
+      "p": 0.8503,
+      "lam": 3.375
+     },
+     "buts": {
+      "p": 0.5276,
+      "lam": 0.75
+     },
+     "passes": {
+      "p": 0.4647,
+      "lam": 0.625
+     }
     },
     "v1": {
-     "p": 0.6932,
-     "lam": 2.5231,
-     "detail": {
-      "rate60": 8.619,
-      "toi": 18.805,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.945
+     "tirs": {
+      "p": 0.6935,
+      "lam": 2.5248,
+      "detail": {
+       "rate60": 8.629,
+       "toi": 18.8047,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9445
+      }
+     },
+     "buts": {
+      "p": 0.3565,
+      "lam": 0.4408,
+      "detail": {
+       "sh": 0.1592,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.4175,
+      "lam": 0.5404,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8478831,
@@ -9396,8 +10746,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 1,
-   "l10_n": 8,
    "l10_shots": [
     0,
     2,
@@ -9408,28 +10756,76 @@
     1,
     0
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
    "vs_gp": 4,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.1302,
-     "lam": 0.625
+     "tirs": {
+      "p": 0.1302,
+      "lam": 0.625
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.2212,
+      "lam": 0.25
+     }
     },
     "v1": {
-     "p": 0.1834,
-     "lam": 0.7729,
-     "detail": {
-      "rate60": 3.909,
-      "toi": 14.117,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.85
+     "tirs": {
+      "p": 0.1841,
+      "lam": 0.7749,
+      "detail": {
+       "rate60": 3.9201,
+       "toi": 14.1165,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.85
+      }
+     },
+     "buts": {
+      "p": 0.0889,
+      "lam": 0.0931,
+      "detail": {
+       "sh": 0.1096,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.2433,
+      "lam": 0.2788,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8476389,
@@ -9441,8 +10837,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 3,
-   "l10_n": 8,
    "l10_shots": [
     1,
     0,
@@ -9453,28 +10847,76 @@
     3,
     0
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
    "vs_gp": 1,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.3554,
-     "lam": 1.25
+     "tirs": {
+      "p": 0.3554,
+      "lam": 1.25
+     },
+     "buts": {
+      "p": 0.2212,
+      "lam": 0.25
+     },
+     "passes": {
+      "p": 0.2212,
+      "lam": 0.25
+     }
     },
     "v1": {
-     "p": 0.3614,
-     "lam": 1.2786,
-     "detail": {
-      "rate60": 5.193,
-      "toi": 16.186,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.923
+     "tirs": {
+      "p": 0.3622,
+      "lam": 1.2808,
+      "detail": {
+       "rate60": 5.204,
+       "toi": 16.1855,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9231
+      }
+     },
+     "buts": {
+      "p": 0.1813,
+      "lam": 0.2,
+      "detail": {
+       "sh": 0.1424,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.329,
+      "lam": 0.399,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8479977,
@@ -9486,35 +10928,71 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 3,
-   "l10_n": 3,
    "l10_shots": [
     2,
     2,
     4
    ],
+   "l10_goals": [
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    1,
+    1
+   ],
    "vs_gp": 3,
    "vs_shots": 6,
    "preds": {
     "v0": {
-     "p": 0.7452,
-     "lam": 2.6667
+     "tirs": {
+      "p": 0.7452,
+      "lam": 2.6667
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.6321,
+      "lam": 1.0
+     }
     },
     "v1": {
-     "p": 0.463,
-     "lam": 1.5926,
-     "detail": {
-      "rate60": 6.571,
-      "toi": 14.122,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 1.041
+     "tirs": {
+      "p": 0.4637,
+      "lam": 1.5951,
+      "detail": {
+       "rate60": 6.5871,
+       "toi": 14.1222,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 1.0408
+      }
+     },
+     "buts": {
+      "p": 0.2391,
+      "lam": 0.2732,
+      "detail": {
+       "sh": 0.1562,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.3121,
+      "lam": 0.3741,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8478507,
@@ -9526,8 +11004,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 1,
-   "l10_n": 8,
    "l10_shots": [
     1,
     0,
@@ -9538,28 +11014,76 @@
     1,
     0
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
    "vs_gp": 4,
    "vs_shots": 2,
    "preds": {
     "v0": {
-     "p": 0.1734,
-     "lam": 0.75
+     "tirs": {
+      "p": 0.1734,
+      "lam": 0.75
+     },
+     "buts": {
+      "p": 0.1175,
+      "lam": 0.125
+     },
+     "passes": {
+      "p": 0.3127,
+      "lam": 0.375
+     }
     },
     "v1": {
-     "p": 0.1679,
-     "lam": 0.7284,
-     "detail": {
-      "rate60": 2.424,
-      "toi": 20.127,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.906
+     "tirs": {
+      "p": 0.1704,
+      "lam": 0.7357,
+      "detail": {
+       "rate60": 2.4541,
+       "toi": 20.1268,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9042
+      }
+     },
+     "buts": {
+      "p": 0.0556,
+      "lam": 0.0572,
+      "detail": {
+       "sh": 0.0709,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.3248,
+      "lam": 0.3927,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8479369,
@@ -9571,8 +11095,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 2,
-   "l10_n": 8,
    "l10_shots": [
     0,
     2,
@@ -9583,28 +11105,76 @@
     0,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
    "vs_gp": 3,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.2184,
-     "lam": 0.875
+     "tirs": {
+      "p": 0.2184,
+      "lam": 0.875
+     },
+     "buts": {
+      "p": 0.1175,
+      "lam": 0.125
+     },
+     "passes": {
+      "p": 0.2212,
+      "lam": 0.25
+     }
     },
     "v1": {
-     "p": 0.1714,
-     "lam": 0.7385,
-     "detail": {
-      "rate60": 3.458,
-      "toi": 15.009,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.863
+     "tirs": {
+      "p": 0.1736,
+      "lam": 0.7449,
+      "detail": {
+       "rate60": 3.4914,
+       "toi": 15.009,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.8628
+      }
+     },
+     "buts": {
+      "p": 0.0531,
+      "lam": 0.0545,
+      "detail": {
+       "sh": 0.0668,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.1864,
+      "lam": 0.2063,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8477220,
@@ -9616,8 +11186,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 4,
-   "l10_n": 8,
    "l10_shots": [
     0,
     0,
@@ -9628,28 +11196,76 @@
     1,
     2
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 4,
    "vs_shots": 5,
    "preds": {
     "v0": {
-     "p": 0.3995,
-     "lam": 1.375
+     "tirs": {
+      "p": 0.3995,
+      "lam": 1.375
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1175,
+      "lam": 0.125
+     }
     },
     "v1": {
-     "p": 0.3527,
-     "lam": 1.253,
-     "detail": {
-      "rate60": 3.581,
-      "toi": 20.959,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 1.013
+     "tirs": {
+      "p": 0.3552,
+      "lam": 1.2604,
+      "detail": {
+       "rate60": 3.611,
+       "toi": 20.9585,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 1.0109
+      }
+     },
+     "buts": {
+      "p": 0.0749,
+      "lam": 0.0778,
+      "detail": {
+       "sh": 0.0563,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.2329,
+      "lam": 0.2651,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8479410,
@@ -9661,8 +11277,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 7,
-   "l10_n": 8,
    "l10_shots": [
     3,
     4,
@@ -9673,28 +11287,76 @@
     2,
     2
    ],
+   "l10_goals": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "l10_assists": [
+    1,
+    1,
+    0,
+    3,
+    0,
+    1,
+    1,
+    0
+   ],
    "vs_gp": 4,
    "vs_shots": 6,
    "preds": {
     "v0": {
-     "p": 0.6861,
-     "lam": 2.375
+     "tirs": {
+      "p": 0.6861,
+      "lam": 2.375
+     },
+     "buts": {
+      "p": 0.2212,
+      "lam": 0.25
+     },
+     "passes": {
+      "p": 0.5831,
+      "lam": 0.875
+     }
     },
     "v1": {
-     "p": 0.5281,
-     "lam": 1.816,
-     "detail": {
-      "rate60": 5.322,
-      "toi": 22.492,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.921
+     "tirs": {
+      "p": 0.5302,
+      "lam": 1.8236,
+      "detail": {
+       "rate60": 5.3508,
+       "toi": 22.4922,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9198
+      }
+     },
+     "buts": {
+      "p": 0.1263,
+      "lam": 0.135,
+      "detail": {
+       "sh": 0.0675,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.4644,
+      "lam": 0.6243,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8484386,
@@ -9706,8 +11368,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 3,
-   "l10_n": 8,
    "l10_shots": [
     2,
     0,
@@ -9718,28 +11378,76 @@
     1,
     0
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.2184,
-     "lam": 0.875
+     "tirs": {
+      "p": 0.2184,
+      "lam": 0.875
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.2212,
+      "lam": 0.25
+     }
     },
     "v1": {
-     "p": 0.1971,
-     "lam": 0.8116,
-     "detail": {
-      "rate60": 3.698,
-      "toi": 14.338,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.929
+     "tirs": {
+      "p": 0.2003,
+      "lam": 0.8208,
+      "detail": {
+       "rate60": 3.7443,
+       "toi": 14.338,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9281
+      }
+     },
+     "buts": {
+      "p": 0.0444,
+      "lam": 0.0454,
+      "detail": {
+       "sh": 0.0505,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.1899,
+      "lam": 0.2106,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8477346,
@@ -9751,8 +11459,6 @@
    "gameId": 2026020133,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 5,
-   "l10_n": 8,
    "l10_shots": [
     2,
     1,
@@ -9763,28 +11469,76 @@
     3,
     0
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 7,
    "vs_shots": 7,
    "preds": {
     "v0": {
-     "p": 0.4831,
-     "lam": 1.625
+     "tirs": {
+      "p": 0.4831,
+      "lam": 1.625
+     },
+     "buts": {
+      "p": 0.2212,
+      "lam": 0.25
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
     },
     "v1": {
-     "p": 0.4036,
-     "lam": 1.4051,
-     "detail": {
-      "rate60": 4.782,
-      "toi": 20.728,
-      "f_opp": 0.96,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.86
+     "tirs": {
+      "p": 0.4056,
+      "lam": 1.4112,
+      "detail": {
+       "rate60": 4.8114,
+       "toi": 20.728,
+       "f_opp": 0.9596,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.8589
+      }
+     },
+     "buts": {
+      "p": 0.0791,
+      "lam": 0.0824,
+      "detail": {
+       "sh": 0.0532,
+       "f_gardien": 1.0969
+      }
+     },
+     "passes": {
+      "p": 0.221,
+      "lam": 0.2497,
+      "detail": {
+       "f_equipe": 1.0955
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8482475,
@@ -9796,8 +11550,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": true,
-   "l10_hits": 5,
-   "l10_n": 7,
    "l10_shots": [
     3,
     2,
@@ -9807,28 +11559,74 @@
     2,
     1
    ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 3,
    "vs_shots": 10,
    "preds": {
     "v0": {
-     "p": 0.5539,
-     "lam": 1.8571
+     "tirs": {
+      "p": 0.5539,
+      "lam": 1.8571
+     },
+     "buts": {
+      "p": 0.1331,
+      "lam": 0.1429
+     },
+     "passes": {
+      "p": 0.1331,
+      "lam": 0.1429
+     }
     },
     "v1": {
-     "p": 0.5612,
-     "lam": 1.9387,
-     "detail": {
-      "rate60": 7.847,
-      "toi": 15.516,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 1.138
+     "tirs": {
+      "p": 0.5616,
+      "lam": 1.9401,
+      "detail": {
+       "rate60": 7.8583,
+       "toi": 15.5161,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.1375
+      }
+     },
+     "buts": {
+      "p": 0.2356,
+      "lam": 0.2686,
+      "detail": {
+       "sh": 0.1376,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.2314,
+      "lam": 0.2631,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8471675,
@@ -9840,8 +11638,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 7,
-   "l10_n": 8,
    "l10_shots": [
     3,
     2,
@@ -9852,28 +11648,76 @@
     2,
     2
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0
+   ],
+   "l10_assists": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
    "vs_gp": 0,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.7127,
-     "lam": 2.5
+     "tirs": {
+      "p": 0.7127,
+      "lam": 2.5
+     },
+     "buts": {
+      "p": 0.2212,
+      "lam": 0.25
+     },
+     "passes": {
+      "p": 0.3127,
+      "lam": 0.375
+     }
     },
     "v1": {
-     "p": 0.5921,
-     "lam": 2.0603,
-     "detail": {
-      "rate60": 7.349,
-      "toi": 20.036,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 1.0
+     "tirs": {
+      "p": 0.5927,
+      "lam": 2.0625,
+      "detail": {
+       "rate60": 7.3589,
+       "toi": 20.0362,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.2711,
+      "lam": 0.3163,
+      "detail": {
+       "sh": 0.1524,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.357,
+      "lam": 0.4417,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8480980,
@@ -9885,8 +11729,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 3,
-   "l10_n": 8,
    "l10_shots": [
     0,
     1,
@@ -9897,28 +11739,76 @@
     2,
     0
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.3554,
-     "lam": 1.25
+     "tirs": {
+      "p": 0.3554,
+      "lam": 1.25
+     },
+     "buts": {
+      "p": 0.1175,
+      "lam": 0.125
+     },
+     "passes": {
+      "p": 0.1175,
+      "lam": 0.125
+     }
     },
     "v1": {
-     "p": 0.2414,
-     "lam": 0.9363,
-     "detail": {
-      "rate60": 6.137,
-      "toi": 12.721,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 0.857
+     "tirs": {
+      "p": 0.2419,
+      "lam": 0.9378,
+      "detail": {
+       "rate60": 6.1481,
+       "toi": 12.7215,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8571
+      }
+     },
+     "buts": {
+      "p": 0.1159,
+      "lam": 0.1232,
+      "detail": {
+       "sh": 0.1305,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.1736,
+      "lam": 0.1907,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8485414,
@@ -9930,8 +11820,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 7,
-   "l10_n": 7,
    "l10_shots": [
     5,
     2,
@@ -9941,28 +11829,74 @@
     2,
     2
    ],
+   "l10_goals": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 5,
    "preds": {
     "v0": {
-     "p": 0.727,
-     "lam": 2.5714
+     "tirs": {
+      "p": 0.727,
+      "lam": 2.5714
+     },
+     "buts": {
+      "p": 0.2485,
+      "lam": 0.2857
+     },
+     "passes": {
+      "p": 0.2485,
+      "lam": 0.2857
+     }
     },
     "v1": {
-     "p": 0.5886,
-     "lam": 2.0459,
-     "detail": {
-      "rate60": 7.954,
-      "toi": 17.543,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 1.048
+     "tirs": {
+      "p": 0.589,
+      "lam": 2.0476,
+      "detail": {
+       "rate60": 7.9646,
+       "toi": 17.5433,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0476
+      }
+     },
+     "buts": {
+      "p": 0.2247,
+      "lam": 0.2545,
+      "detail": {
+       "sh": 0.1235,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.2482,
+      "lam": 0.2853,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8482758,
@@ -9974,8 +11908,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 1,
-   "l10_n": 6,
    "l10_shots": [
     2,
     1,
@@ -9984,28 +11916,72 @@
     1,
     1
    ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
    "vs_gp": 1,
    "vs_shots": 2,
    "preds": {
     "v0": {
-     "p": 0.2642,
-     "lam": 1.0
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
     },
     "v1": {
-     "p": 0.2689,
-     "lam": 1.0135,
-     "detail": {
-      "rate60": 5.098,
-      "toi": 13.588,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 1.046
+     "tirs": {
+      "p": 0.2698,
+      "lam": 1.016,
+      "detail": {
+       "rate60": 5.1145,
+       "toi": 13.5876,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0452
+      }
+     },
+     "buts": {
+      "p": 0.1194,
+      "lam": 0.1271,
+      "detail": {
+       "sh": 0.1243,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.2071,
+      "lam": 0.2321,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8483808,
@@ -10017,36 +11993,74 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 2,
-   "l10_n": 4,
    "l10_shots": [
     2,
     1,
     1,
     2
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 4,
    "vs_shots": 4,
    "preds": {
     "v0": {
-     "p": 0.4422,
-     "lam": 1.5
+     "tirs": {
+      "p": 0.4422,
+      "lam": 1.5
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
     },
     "v1": {
-     "p": 0.2386,
-     "lam": 0.9286,
-     "detail": {
-      "rate60": 6.096,
-      "toi": 11.742,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 0.927
+     "tirs": {
+      "p": 0.2392,
+      "lam": 0.9301,
+      "detail": {
+       "rate60": 6.1107,
+       "toi": 11.7417,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9267
+      }
+     },
+     "buts": {
+      "p": 0.1266,
+      "lam": 0.1354,
+      "detail": {
+       "sh": 0.1446,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.1654,
+      "lam": 0.1808,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8481481,
@@ -10058,8 +12072,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 3,
-   "l10_n": 8,
    "l10_shots": [
     4,
     0,
@@ -10070,28 +12082,76 @@
     2,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.3995,
-     "lam": 1.375
+     "tirs": {
+      "p": 0.3995,
+      "lam": 1.375
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.3127,
+      "lam": 0.375
+     }
     },
     "v1": {
-     "p": 0.1978,
-     "lam": 0.8136,
-     "detail": {
-      "rate60": 5.23,
-      "toi": 12.971,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 0.857
+     "tirs": {
+      "p": 0.1984,
+      "lam": 0.8153,
+      "detail": {
+       "rate60": 5.2425,
+       "toi": 12.971,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8571
+      }
+     },
+     "buts": {
+      "p": 0.0974,
+      "lam": 0.1025,
+      "detail": {
+       "sh": 0.1249,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.2138,
+      "lam": 0.2406,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8471215,
@@ -10103,8 +12163,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 6,
-   "l10_n": 8,
    "l10_shots": [
     2,
     1,
@@ -10115,28 +12173,76 @@
     3,
     2
    ],
+   "l10_goals": [
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "l10_assists": [
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 1,
    "vs_shots": 3,
    "preds": {
     "v0": {
-     "p": 0.6575,
-     "lam": 2.25
+     "tirs": {
+      "p": 0.6575,
+      "lam": 2.25
+     },
+     "buts": {
+      "p": 0.3935,
+      "lam": 0.5
+     },
+     "passes": {
+      "p": 0.2212,
+      "lam": 0.25
+     }
     },
     "v1": {
-     "p": 0.6033,
-     "lam": 2.1061,
-     "detail": {
-      "rate60": 8.101,
-      "toi": 18.263,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 1.017
+     "tirs": {
+      "p": 0.6038,
+      "lam": 2.108,
+      "detail": {
+       "rate60": 8.1111,
+       "toi": 18.2628,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0173
+      }
+     },
+     "buts": {
+      "p": 0.2601,
+      "lam": 0.3013,
+      "detail": {
+       "sh": 0.142,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.3491,
+      "lam": 0.4294,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8478438,
@@ -10148,8 +12254,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 4,
-   "l10_n": 8,
    "l10_shots": [
     0,
     3,
@@ -10160,28 +12264,76 @@
     0,
     4
    ],
+   "l10_goals": [
+    0,
+    2,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.5221,
-     "lam": 1.75
+     "tirs": {
+      "p": 0.5221,
+      "lam": 1.75
+     },
+     "buts": {
+      "p": 0.3127,
+      "lam": 0.375
+     },
+     "passes": {
+      "p": 0.2212,
+      "lam": 0.25
+     }
     },
     "v1": {
-     "p": 0.3516,
-     "lam": 1.2497,
-     "detail": {
-      "rate60": 6.752,
-      "toi": 15.434,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 0.857
+     "tirs": {
+      "p": 0.3522,
+      "lam": 1.2514,
+      "detail": {
+       "rate60": 6.7625,
+       "toi": 15.4337,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8571
+      }
+     },
+     "buts": {
+      "p": 0.1594,
+      "lam": 0.1737,
+      "detail": {
+       "sh": 0.1379,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.2452,
+      "lam": 0.2812,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8476483,
@@ -10193,8 +12345,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 6,
-   "l10_n": 8,
    "l10_shots": [
     2,
     2,
@@ -10205,28 +12355,76 @@
     4,
     5
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 5,
    "preds": {
     "v0": {
-     "p": 0.6861,
-     "lam": 2.375
+     "tirs": {
+      "p": 0.6861,
+      "lam": 2.375
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.2212,
+      "lam": 0.25
+     }
     },
     "v1": {
-     "p": 0.6273,
-     "lam": 2.2084,
-     "detail": {
-      "rate60": 7.876,
-      "toi": 20.004,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 1.002
+     "tirs": {
+      "p": 0.6277,
+      "lam": 2.2102,
+      "detail": {
+       "rate60": 7.8861,
+       "toi": 20.0038,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0016
+      }
+     },
+     "buts": {
+      "p": 0.2444,
+      "lam": 0.2802,
+      "detail": {
+       "sh": 0.126,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.2869,
+      "lam": 0.3382,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8481582,
@@ -10238,8 +12436,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 4,
-   "l10_n": 8,
    "l10_shots": [
     4,
     1,
@@ -10250,28 +12446,76 @@
     3,
     3
    ],
+   "l10_goals": [
+    2,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.594,
-     "lam": 2.0
+     "tirs": {
+      "p": 0.594,
+      "lam": 2.0
+     },
+     "buts": {
+      "p": 0.3935,
+      "lam": 0.5
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
     },
     "v1": {
-     "p": 0.3099,
-     "lam": 1.1294,
-     "detail": {
-      "rate60": 8.113,
-      "toi": 11.061,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 0.899
+     "tirs": {
+      "p": 0.3103,
+      "lam": 1.1306,
+      "detail": {
+       "rate60": 8.1245,
+       "toi": 11.0608,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8994
+      }
+     },
+     "buts": {
+      "p": 0.1509,
+      "lam": 0.1636,
+      "detail": {
+       "sh": 0.1437,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.1453,
+      "lam": 0.1571,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8475810,
@@ -10283,8 +12527,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 3,
-   "l10_n": 5,
    "l10_shots": [
     3,
     2,
@@ -10292,28 +12534,70 @@
     1,
     2
    ],
+   "l10_goals": [
+    1,
+    1,
+    0,
+    0,
+    1
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 2,
    "preds": {
     "v0": {
-     "p": 0.4751,
-     "lam": 1.6
+     "tirs": {
+      "p": 0.4751,
+      "lam": 1.6
+     },
+     "buts": {
+      "p": 0.4512,
+      "lam": 0.6
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
     },
     "v1": {
-     "p": 0.4803,
-     "lam": 1.6499,
-     "detail": {
-      "rate60": 6.885,
-      "toi": 18.603,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 0.921
+     "tirs": {
+      "p": 0.4809,
+      "lam": 1.6521,
+      "detail": {
+       "rate60": 6.8965,
+       "toi": 18.6033,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9206
+      }
+     },
+     "buts": {
+      "p": 0.2315,
+      "lam": 0.2633,
+      "detail": {
+       "sh": 0.1584,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.2722,
+      "lam": 0.3178,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8481725,
@@ -10325,9 +12609,17 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 0,
-   "l10_n": 3,
    "l10_shots": [
+    0,
+    0,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
     0,
     0,
     0
@@ -10336,24 +12628,52 @@
    "vs_shots": 4,
    "preds": {
     "v0": {
-     "p": 0.0012,
-     "lam": 0.05
+     "tirs": {
+      "p": 0.0012,
+      "lam": 0.05
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
     },
     "v1": {
-     "p": 0.2498,
-     "lam": 0.96,
-     "detail": {
-      "rate60": 5.728,
-      "toi": 10.644,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 1.125
+     "tirs": {
+      "p": 0.2505,
+      "lam": 0.9619,
+      "detail": {
+       "rate60": 5.7451,
+       "toi": 10.6444,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.1244
+      }
+     },
+     "buts": {
+      "p": 0.1148,
+      "lam": 0.122,
+      "detail": {
+       "sh": 0.126,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.1403,
+      "lam": 0.1512,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8483398,
@@ -10365,8 +12685,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 4,
-   "l10_n": 8,
    "l10_shots": [
     2,
     3,
@@ -10377,28 +12695,76 @@
     2,
     1
    ],
+   "l10_goals": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 0,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.4422,
-     "lam": 1.5
+     "tirs": {
+      "p": 0.4422,
+      "lam": 1.5
+     },
+     "buts": {
+      "p": 0.2212,
+      "lam": 0.25
+     },
+     "passes": {
+      "p": 0.2212,
+      "lam": 0.25
+     }
     },
     "v1": {
-     "p": 0.283,
-     "lam": 1.0532,
-     "detail": {
-      "rate60": 3.971,
-      "toi": 18.958,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 1.0
+     "tirs": {
+      "p": 0.2863,
+      "lam": 1.0626,
+      "detail": {
+       "rate60": 4.007,
+       "toi": 18.9577,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.0717,
+      "lam": 0.0744,
+      "detail": {
+       "sh": 0.0695,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.1764,
+      "lam": 0.194,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8479398,
@@ -10410,8 +12776,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 4,
-   "l10_n": 8,
    "l10_shots": [
     2,
     3,
@@ -10422,28 +12786,76 @@
     1,
     2
    ],
+   "l10_goals": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    2,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1
+   ],
    "vs_gp": 2,
    "vs_shots": 2,
    "preds": {
     "v0": {
-     "p": 0.4422,
-     "lam": 1.5
+     "tirs": {
+      "p": 0.4422,
+      "lam": 1.5
+     },
+     "buts": {
+      "p": 0.1175,
+      "lam": 0.125
+     },
+     "passes": {
+      "p": 0.5276,
+      "lam": 0.75
+     }
     },
     "v1": {
-     "p": 0.2378,
-     "lam": 0.9263,
-     "detail": {
-      "rate60": 3.364,
-      "toi": 19.597,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 1.004
+     "tirs": {
+      "p": 0.2403,
+      "lam": 0.9333,
+      "detail": {
+       "rate60": 3.3946,
+       "toi": 19.5968,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0029
+      }
+     },
+     "buts": {
+      "p": 0.0611,
+      "lam": 0.063,
+      "detail": {
+       "sh": 0.0671,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.298,
+      "lam": 0.3538,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8474578,
@@ -10455,8 +12867,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 4,
-   "l10_n": 8,
    "l10_shots": [
     3,
     0,
@@ -10467,28 +12877,76 @@
     1,
     2
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    2,
+    1,
+    0,
+    1,
+    0,
+    2,
+    1
+   ],
    "vs_gp": 2,
    "vs_shots": 5,
    "preds": {
     "v0": {
-     "p": 0.4831,
-     "lam": 1.625
+     "tirs": {
+      "p": 0.4831,
+      "lam": 1.625
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.6321,
+      "lam": 1.0
+     }
     },
     "v1": {
-     "p": 0.4871,
-     "lam": 1.6727,
-     "detail": {
-      "rate60": 4.964,
-      "toi": 23.255,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 1.036
+     "tirs": {
+      "p": 0.4893,
+      "lam": 1.6803,
+      "detail": {
+       "rate60": 4.9932,
+       "toi": 23.255,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0345
+      }
+     },
+     "buts": {
+      "p": 0.1106,
+      "lam": 0.1172,
+      "detail": {
+       "sh": 0.0693,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.4257,
+      "lam": 0.5546,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8481527,
@@ -10500,8 +12958,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 1,
-   "l10_n": 8,
    "l10_shots": [
     3,
     1,
@@ -10512,28 +12968,76 @@
     1,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    2,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 0,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.3101,
-     "lam": 1.125
+     "tirs": {
+      "p": 0.3101,
+      "lam": 1.125
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.3935,
+      "lam": 0.5
+     }
     },
     "v1": {
-     "p": 0.2126,
-     "lam": 0.8554,
-     "detail": {
-      "rate60": 3.373,
-      "toi": 18.122,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 1.0
+     "tirs": {
+      "p": 0.2153,
+      "lam": 0.8631,
+      "detail": {
+       "rate60": 3.4049,
+       "toi": 18.1223,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.0467,
+      "lam": 0.0478,
+      "detail": {
+       "sh": 0.055,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.2308,
+      "lam": 0.2624,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8471724,
@@ -10545,8 +13049,6 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 5,
-   "l10_n": 8,
    "l10_shots": [
     4,
     3,
@@ -10557,28 +13059,76 @@
     0,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 4,
    "preds": {
     "v0": {
-     "p": 0.594,
-     "lam": 2.0
+     "tirs": {
+      "p": 0.594,
+      "lam": 2.0
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.3127,
+      "lam": 0.375
+     }
     },
     "v1": {
-     "p": 0.3727,
-     "lam": 1.3118,
-     "detail": {
-      "rate60": 4.649,
-      "toi": 19.568,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 1.031
+     "tirs": {
+      "p": 0.3749,
+      "lam": 1.3186,
+      "detail": {
+       "rate60": 4.6793,
+       "toi": 19.568,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0295
+      }
+     },
+     "buts": {
+      "p": 0.057,
+      "lam": 0.0587,
+      "detail": {
+       "sh": 0.0442,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.2582,
+      "lam": 0.2987,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8481056,
@@ -10590,35 +13140,71 @@
    "gameId": 2026020134,
    "b2b": true,
    "incertain": false,
-   "l10_hits": 0,
-   "l10_n": 3,
    "l10_shots": [
     1,
     0,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0
+   ],
    "vs_gp": 1,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.1443,
-     "lam": 0.6667
+     "tirs": {
+      "p": 0.1443,
+      "lam": 0.6667
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
     },
     "v1": {
-     "p": 0.1358,
-     "lam": 0.6343,
-     "detail": {
-      "rate60": 3.348,
-      "toi": 14.667,
-      "f_opp": 0.902,
-      "f_lieu": 0.97,
-      "f_b2b": 0.96,
-      "f_vs": 0.923
+     "tirs": {
+      "p": 0.1383,
+      "lam": 0.6419,
+      "detail": {
+       "rate60": 3.3893,
+       "toi": 14.6667,
+       "f_opp": 0.9013,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9231
+      }
+     },
+     "buts": {
+      "p": 0.0349,
+      "lam": 0.0355,
+      "detail": {
+       "sh": 0.055,
+       "f_gardien": 1.0064
+      }
+     },
+     "passes": {
+      "p": 0.1325,
+      "lam": 0.1421,
+      "detail": {
+       "f_equipe": 0.8589
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8477964,
@@ -10630,8 +13216,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 3,
-   "l10_n": 9,
    "l10_shots": [
     1,
     1,
@@ -10643,28 +13227,78 @@
     1,
     4
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    2,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    3
+   ],
    "vs_gp": 2,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.4606,
-     "lam": 1.5556
+     "tirs": {
+      "p": 0.4606,
+      "lam": 1.5556
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.5406,
+      "lam": 0.7778
+     }
     },
     "v1": {
-     "p": 0.4678,
-     "lam": 1.6084,
-     "detail": {
-      "rate60": 6.096,
-      "toi": 16.82,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.904
+     "tirs": {
+      "p": 0.4684,
+      "lam": 1.6105,
+      "detail": {
+       "rate60": 6.1059,
+       "toi": 16.8196,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9043
+      }
+     },
+     "buts": {
+      "p": 0.2062,
+      "lam": 0.2309,
+      "detail": {
+       "sh": 0.1397,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.4319,
+      "lam": 0.5654,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8483890,
@@ -10676,8 +13310,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 2,
-   "l10_n": 9,
    "l10_shots": [
     1,
     3,
@@ -10689,28 +13321,78 @@
     0,
     5
    ],
+   "l10_goals": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 4,
    "preds": {
     "v0": {
-     "p": 0.3454,
-     "lam": 1.2222
+     "tirs": {
+      "p": 0.3454,
+      "lam": 1.2222
+     },
+     "buts": {
+      "p": 0.1993,
+      "lam": 0.2222
+     },
+     "passes": {
+      "p": 0.1052,
+      "lam": 0.1111
+     }
     },
     "v1": {
-     "p": 0.4533,
-     "lam": 1.561,
-     "detail": {
-      "rate60": 5.949,
-      "toi": 14.214,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 1.064
+     "tirs": {
+      "p": 0.4539,
+      "lam": 1.5631,
+      "detail": {
+       "rate60": 5.9612,
+       "toi": 14.2137,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 1.0638
+      }
+     },
+     "buts": {
+      "p": 0.1905,
+      "lam": 0.2113,
+      "detail": {
+       "sh": 0.1317,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.2663,
+      "lam": 0.3097,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8484803,
@@ -10722,8 +13404,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 5,
-   "l10_n": 9,
    "l10_shots": [
     4,
     0,
@@ -10735,28 +13415,78 @@
     2,
     1
    ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 0,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.594,
-     "lam": 2.0
+     "tirs": {
+      "p": 0.594,
+      "lam": 2.0
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.1993,
+      "lam": 0.2222
+     }
     },
     "v1": {
-     "p": 0.5901,
-     "lam": 2.0521,
-     "detail": {
-      "rate60": 8.033,
-      "toi": 14.728,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 1.0
+     "tirs": {
+      "p": 0.5914,
+      "lam": 2.0572,
+      "detail": {
+       "rate60": 8.0546,
+       "toi": 14.7284,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.2592,
+      "lam": 0.3,
+      "detail": {
+       "sh": 0.1421,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.284,
+      "lam": 0.3341,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8475343,
@@ -10768,8 +13498,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 1,
-   "l10_n": 9,
    "l10_shots": [
     0,
     1,
@@ -10781,28 +13509,78 @@
     0,
     0
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.0739,
-     "lam": 0.4444
+     "tirs": {
+      "p": 0.0739,
+      "lam": 0.4444
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1993,
+      "lam": 0.2222
+     }
     },
     "v1": {
-     "p": 0.1593,
-     "lam": 0.7036,
-     "detail": {
-      "rate60": 3.912,
-      "toi": 12.096,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.857
+     "tirs": {
+      "p": 0.1599,
+      "lam": 0.7054,
+      "detail": {
+       "rate60": 3.9236,
+       "toi": 12.0962,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.8571
+      }
+     },
+     "buts": {
+      "p": 0.0797,
+      "lam": 0.0831,
+      "detail": {
+       "sh": 0.1148,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.2236,
+      "lam": 0.2531,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8478403,
@@ -10814,8 +13592,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 9,
-   "l10_n": 9,
    "l10_shots": [
     2,
     2,
@@ -10827,28 +13603,78 @@
     4,
     4
    ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1
+   ],
+   "l10_assists": [
+    2,
+    2,
+    1,
+    3,
+    1,
+    0,
+    0,
+    0,
+    2
+   ],
    "vs_gp": 2,
    "vs_shots": 2,
    "preds": {
     "v0": {
-     "p": 0.8168,
-     "lam": 3.1111
+     "tirs": {
+      "p": 0.8168,
+      "lam": 3.1111
+     },
+     "buts": {
+      "p": 0.4262,
+      "lam": 0.5556
+     },
+     "passes": {
+      "p": 0.7054,
+      "lam": 1.2222
+     }
     },
     "v1": {
-     "p": 0.7672,
-     "lam": 2.9612,
-     "detail": {
-      "rate60": 9.142,
-      "toi": 20.613,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.906
+     "tirs": {
+      "p": 0.7675,
+      "lam": 2.9633,
+      "detail": {
+       "rate60": 9.1511,
+       "toi": 20.6131,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9059
+      }
+     },
+     "buts": {
+      "p": 0.3134,
+      "lam": 0.376,
+      "detail": {
+       "sh": 0.1236,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.5827,
+      "lam": 0.8739,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8483553,
@@ -10860,8 +13686,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 3,
-   "l10_n": 9,
    "l10_shots": [
     3,
     1,
@@ -10873,28 +13697,78 @@
     1,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.5305,
-     "lam": 1.7778
+     "tirs": {
+      "p": 0.5305,
+      "lam": 1.7778
+     },
+     "buts": {
+      "p": 0.1052,
+      "lam": 0.1111
+     },
+     "passes": {
+      "p": 0.1052,
+      "lam": 0.1111
+     }
     },
     "v1": {
-     "p": 0.3873,
-     "lam": 1.3556,
-     "detail": {
-      "rate60": 7.908,
-      "toi": 10.958,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.902
+     "tirs": {
+      "p": 0.388,
+      "lam": 1.3578,
+      "detail": {
+       "rate60": 7.9235,
+       "toi": 10.958,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9018
+      }
+     },
+     "buts": {
+      "p": 0.1406,
+      "lam": 0.1515,
+      "detail": {
+       "sh": 0.1087,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.1831,
+      "lam": 0.2022,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8476881,
@@ -10906,8 +13780,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 7,
-   "l10_n": 9,
    "l10_shots": [
     4,
     5,
@@ -10919,28 +13791,78 @@
     2,
     3
    ],
+   "l10_goals": [
+    0,
+    1,
+    0,
+    2,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 2,
    "preds": {
     "v0": {
-     "p": 0.7011,
-     "lam": 2.4444
+     "tirs": {
+      "p": 0.7011,
+      "lam": 2.4444
+     },
+     "buts": {
+      "p": 0.3588,
+      "lam": 0.4444
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
     },
     "v1": {
-     "p": 0.6178,
-     "lam": 2.1672,
-     "detail": {
-      "rate60": 8.47,
-      "toi": 16.141,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.914
+     "tirs": {
+      "p": 0.6182,
+      "lam": 2.1691,
+      "detail": {
+       "rate60": 8.4799,
+       "toi": 16.1406,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9139
+      }
+     },
+     "buts": {
+      "p": 0.2556,
+      "lam": 0.2952,
+      "detail": {
+       "sh": 0.1326,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.3315,
+      "lam": 0.4027,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8479353,
@@ -10952,8 +13874,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 5,
-   "l10_n": 9,
    "l10_shots": [
     3,
     3,
@@ -10965,28 +13885,78 @@
     2,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0
+   ],
    "vs_gp": 1,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.5305,
-     "lam": 1.7778
+     "tirs": {
+      "p": 0.5305,
+      "lam": 1.7778
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
     },
     "v1": {
-     "p": 0.4092,
-     "lam": 1.4223,
-     "detail": {
-      "rate60": 5.756,
-      "toi": 15.432,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.923
+     "tirs": {
+      "p": 0.4099,
+      "lam": 1.4245,
+      "detail": {
+       "rate60": 5.7665,
+       "toi": 15.4324,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9231
+      }
+     },
+     "buts": {
+      "p": 0.2021,
+      "lam": 0.2258,
+      "detail": {
+       "sh": 0.1545,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.2711,
+      "lam": 0.3162,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8476448,
@@ -10998,8 +13968,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 5,
-   "l10_n": 9,
    "l10_shots": [
     1,
     2,
@@ -11011,28 +13979,78 @@
     2,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
    "vs_gp": 0,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.5305,
-     "lam": 1.7778
+     "tirs": {
+      "p": 0.5305,
+      "lam": 1.7778
+     },
+     "buts": {
+      "p": 0.1993,
+      "lam": 0.2222
+     },
+     "passes": {
+      "p": 0.1993,
+      "lam": 0.2222
+     }
     },
     "v1": {
-     "p": 0.5788,
-     "lam": 2.007,
-     "detail": {
-      "rate60": 6.672,
-      "toi": 17.342,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 1.0
+     "tirs": {
+      "p": 0.5799,
+      "lam": 2.0111,
+      "detail": {
+       "rate60": 6.6875,
+       "toi": 17.3424,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.2423,
+      "lam": 0.2775,
+      "detail": {
+       "sh": 0.1345,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.2953,
+      "lam": 0.3499,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8481534,
@@ -11044,8 +14062,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 0,
-   "l10_n": 5,
    "l10_shots": [
     0,
     1,
@@ -11053,28 +14069,70 @@
     1,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    1,
+    0
+   ],
    "vs_gp": 0,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.1912,
-     "lam": 0.8
+     "tirs": {
+      "p": 0.1912,
+      "lam": 0.8
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.3297,
+      "lam": 0.4
+     }
     },
     "v1": {
-     "p": 0.2886,
-     "lam": 1.069,
-     "detail": {
-      "rate60": 5.892,
-      "toi": 10.46,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 1.0
+     "tirs": {
+      "p": 0.2907,
+      "lam": 1.0748,
+      "detail": {
+       "rate60": 5.9253,
+       "toi": 10.46,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.1337,
+      "lam": 0.1435,
+      "detail": {
+       "sh": 0.1301,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.2503,
+      "lam": 0.2881,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8478483,
@@ -11086,8 +14144,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 6,
-   "l10_n": 9,
    "l10_shots": [
     4,
     1,
@@ -11099,28 +14155,78 @@
     1,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    2
+   ],
    "vs_gp": 2,
    "vs_shots": 5,
    "preds": {
     "v0": {
-     "p": 0.7011,
-     "lam": 2.4444
+     "tirs": {
+      "p": 0.7011,
+      "lam": 2.4444
+     },
+     "buts": {
+      "p": 0.1993,
+      "lam": 0.2222
+     },
+     "passes": {
+      "p": 0.5406,
+      "lam": 0.7778
+     }
     },
     "v1": {
-     "p": 0.6707,
-     "lam": 2.4095,
-     "detail": {
-      "rate60": 6.686,
-      "toi": 20.105,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 1.033
+     "tirs": {
+      "p": 0.6712,
+      "lam": 2.4117,
+      "detail": {
+       "rate60": 6.6955,
+       "toi": 20.1053,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 1.0331
+      }
+     },
+     "buts": {
+      "p": 0.2842,
+      "lam": 0.3343,
+      "detail": {
+       "sh": 0.1351,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.4935,
+      "lam": 0.6802,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8475913,
@@ -11132,8 +14238,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 5,
-   "l10_n": 9,
    "l10_shots": [
     1,
     0,
@@ -11145,28 +14249,78 @@
     0,
     3
    ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    3
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    2,
+    0,
+    1,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.6232,
-     "lam": 2.1111
+     "tirs": {
+      "p": 0.6232,
+      "lam": 2.1111
+     },
+     "buts": {
+      "p": 0.4866,
+      "lam": 0.6667
+     },
+     "passes": {
+      "p": 0.4262,
+      "lam": 0.5556
+     }
     },
     "v1": {
-     "p": 0.5476,
-     "lam": 1.8874,
-     "detail": {
-      "rate60": 6.811,
-      "toi": 18.639,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.857
+     "tirs": {
+      "p": 0.5482,
+      "lam": 1.8896,
+      "detail": {
+       "rate60": 6.8205,
+       "toi": 18.6393,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.8571
+      }
+     },
+     "buts": {
+      "p": 0.3063,
+      "lam": 0.3656,
+      "detail": {
+       "sh": 0.1886,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.4574,
+      "lam": 0.6114,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8478397,
@@ -11178,8 +14332,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 7,
-   "l10_n": 9,
    "l10_shots": [
     2,
     2,
@@ -11191,28 +14343,78 @@
     2,
     3
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    2,
+    0
+   ],
    "vs_gp": 3,
    "vs_shots": 3,
    "preds": {
     "v0": {
-     "p": 0.6232,
-     "lam": 2.1111
+     "tirs": {
+      "p": 0.6232,
+      "lam": 2.1111
+     },
+     "buts": {
+      "p": 0.1052,
+      "lam": 0.1111
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
     },
     "v1": {
-     "p": 0.4926,
-     "lam": 1.6914,
-     "detail": {
-      "rate60": 5.78,
-      "toi": 18.775,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.899
+     "tirs": {
+      "p": 0.4947,
+      "lam": 1.6988,
+      "detail": {
+       "rate60": 5.8096,
+       "toi": 18.7749,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.8981
+      }
+     },
+     "buts": {
+      "p": 0.1262,
+      "lam": 0.1349,
+      "detail": {
+       "sh": 0.0774,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.287,
+      "lam": 0.3383,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8479639,
@@ -11224,35 +14426,71 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 2,
-   "l10_n": 3,
    "l10_shots": [
     0,
     3,
     3
    ],
+   "l10_goals": [
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0
+   ],
    "vs_gp": 0,
    "vs_shots": 0,
    "preds": {
     "v0": {
-     "p": 0.594,
-     "lam": 2.0
+     "tirs": {
+      "p": 0.594,
+      "lam": 2.0
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
     },
     "v1": {
-     "p": 0.3726,
-     "lam": 1.3115,
-     "detail": {
-      "rate60": 5.191,
-      "toi": 14.567,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 1.0
+     "tirs": {
+      "p": 0.3811,
+      "lam": 1.3369,
+      "detail": {
+       "rate60": 5.2924,
+       "toi": 14.5667,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.0765,
+      "lam": 0.0796,
+      "detail": {
+       "sh": 0.058,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.2292,
+      "lam": 0.2603,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8478396,
@@ -11264,8 +14502,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 2,
-   "l10_n": 9,
    "l10_shots": [
     3,
     1,
@@ -11277,28 +14513,78 @@
     1,
     0
    ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
    "vs_gp": 2,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.305,
-     "lam": 1.1111
+     "tirs": {
+      "p": 0.305,
+      "lam": 1.1111
+     },
+     "buts": {
+      "p": 0.1052,
+      "lam": 0.1111
+     },
+     "passes": {
+      "p": 0.1993,
+      "lam": 0.2222
+     }
     },
     "v1": {
-     "p": 0.3804,
-     "lam": 1.3348,
-     "detail": {
-      "rate60": 4.179,
-      "toi": 20.289,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.908
+     "tirs": {
+      "p": 0.3832,
+      "lam": 1.3432,
+      "detail": {
+       "rate60": 4.2082,
+       "toi": 20.2889,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9072
+      }
+     },
+     "buts": {
+      "p": 0.0639,
+      "lam": 0.066,
+      "detail": {
+       "sh": 0.0479,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.2748,
+      "lam": 0.3213,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8478468,
@@ -11310,8 +14596,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 5,
-   "l10_n": 9,
    "l10_shots": [
     3,
     3,
@@ -11323,28 +14607,78 @@
     1,
     0
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 1,
    "preds": {
     "v0": {
-     "p": 0.4234,
-     "lam": 1.4444
+     "tirs": {
+      "p": 0.4234,
+      "lam": 1.4444
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
     },
     "v1": {
-     "p": 0.3226,
-     "lam": 1.1656,
-     "detail": {
-      "rate60": 4.232,
-      "toi": 17.349,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.915
+     "tirs": {
+      "p": 0.3252,
+      "lam": 1.1733,
+      "detail": {
+       "rate60": 4.2629,
+       "toi": 17.3493,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.9148
+      }
+     },
+     "buts": {
+      "p": 0.0502,
+      "lam": 0.0516,
+      "detail": {
+       "sh": 0.0428,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.1754,
+      "lam": 0.1928,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8475188,
@@ -11356,8 +14690,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 2,
-   "l10_n": 9,
    "l10_shots": [
     1,
     0,
@@ -11369,28 +14701,78 @@
     0,
     1
    ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    2,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 6,
    "preds": {
     "v0": {
-     "p": 0.2235,
-     "lam": 0.8889
+     "tirs": {
+      "p": 0.2235,
+      "lam": 0.8889
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.4262,
+      "lam": 0.5556
+     }
     },
     "v1": {
-     "p": 0.3546,
-     "lam": 1.2584,
-     "detail": {
-      "rate60": 3.463,
-      "toi": 18.219,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 1.15
+     "tirs": {
+      "p": 0.3582,
+      "lam": 1.269,
+      "detail": {
+       "rate60": 3.4927,
+       "toi": 18.2187,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 1.15
+      }
+     },
+     "buts": {
+      "p": 0.0736,
+      "lam": 0.0765,
+      "detail": {
+       "sh": 0.0587,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.2755,
+      "lam": 0.3223,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   },
   {
    "pid": 8477447,
@@ -11402,8 +14784,6 @@
    "gameId": 2026020134,
    "b2b": false,
    "incertain": false,
-   "l10_hits": 5,
-   "l10_n": 9,
    "l10_shots": [
     1,
     4,
@@ -11415,36 +14795,143 @@
     2,
     1
    ],
+   "l10_goals": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
    "vs_gp": 2,
    "vs_shots": 2,
    "preds": {
     "v0": {
-     "p": 0.6232,
-     "lam": 2.1111
+     "tirs": {
+      "p": 0.6232,
+      "lam": 2.1111
+     },
+     "buts": {
+      "p": 0.1052,
+      "lam": 0.1111
+     },
+     "passes": {
+      "p": 0.1993,
+      "lam": 0.2222
+     }
     },
     "v1": {
-     "p": 0.5168,
-     "lam": 1.7756,
-     "detail": {
-      "rate60": 5.122,
-      "toi": 21.251,
-      "f_opp": 1.01,
-      "f_lieu": 1.03,
-      "f_b2b": 1.0,
-      "f_vs": 0.941
+     "tirs": {
+      "p": 0.5192,
+      "lam": 1.7841,
+      "detail": {
+       "rate60": 5.15,
+       "toi": 21.2508,
+       "f_opp": 1.0102,
+       "f_lieu": 1.03,
+       "f_b2b": 1.0,
+       "f_vs": 0.94
+      }
+     },
+     "buts": {
+      "p": 0.116,
+      "lam": 0.1233,
+      "detail": {
+       "sh": 0.0674,
+       "f_gardien": 1.0261
+      }
+     },
+     "passes": {
+      "p": 0.2948,
+      "lam": 0.3493,
+      "detail": {
+       "f_equipe": 1.096
+      }
      }
     }
    },
    "result": null,
-   "played": null
+   "played": null,
+   "cotes": null
   }
  ],
  "stats": {
-  "v0": {
-   "n": 0
+  "joueurs": {
+   "tirs": {
+    "v0": {
+     "n": 0
+    },
+    "v1": {
+     "n": 0
+    }
+   },
+   "buts": {
+    "v0": {
+     "n": 0
+    },
+    "v1": {
+     "n": 0
+    }
+   },
+   "passes": {
+    "v0": {
+     "n": 0
+    },
+    "v1": {
+     "n": 0
+    }
+   }
   },
-  "v1": {
-   "n": 0
+  "matchs": {
+   "victoire": {
+    "v0": {
+     "n": 0
+    },
+    "v1": {
+     "n": 0
+    }
+   },
+   "total55": {
+    "v0": {
+     "n": 0
+    },
+    "v1": {
+     "n": 0
+    }
+   },
+   "total65": {
+    "v0": {
+     "n": 0
+    },
+    "v1": {
+     "n": 0
+    }
+   }
+  },
+  "global": {
+   "v0": {
+    "n": 0,
+    "note": null
+   },
+   "v1": {
+    "n": 0,
+    "note": null
+   }
   }
- }
+ },
+ "cotes_quota": null
 }

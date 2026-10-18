@@ -13,7 +13,7 @@
 :root{
   --bg:#EEF3F6; --surface:#FFFFFF; --ink:#0E1A24; --muted:#56687A; --line:#D5DEE5;
   --goal:#C8202A; --ice:#1D5F8E; --good:#1A8048; --good-bg:#E2F3E9; --bad:#A33A2E; --bad-bg:#F8E6E3;
-  --chip:#E3EAF0;
+  --chip:#E3EAF0; --us:#6B4FA0; --us-bg:#EFEAF7;
   --f-display:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
   --f-body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   color-scheme:light;
@@ -21,11 +21,11 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0A1117; --surface:#111B23; --ink:#E5ECF1; --muted:#8B9DAC; --line:#22313C;
   --goal:#FF4B4B; --ice:#5DA9E0; --good:#3BD184; --good-bg:#12301F; --bad:#FF7F6E; --bad-bg:#3A1A16;
-  --chip:#1A2731; color-scheme:dark}}
+  --chip:#1A2731; --us:#B9A2E8; --us-bg:#251E36; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0A1117; --surface:#111B23; --ink:#E5ECF1; --muted:#8B9DAC; --line:#22313C;
   --goal:#FF4B4B; --ice:#5DA9E0; --good:#3BD184; --good-bg:#12301F; --bad:#FF7F6E; --bad-bg:#3A1A16;
-  --chip:#1A2731; color-scheme:dark}
+  --chip:#1A2731; --us:#B9A2E8; --us-bg:#251E36; color-scheme:dark}
 
 *{box-sizing:border-box}
 html,body{margin:0}
@@ -49,6 +49,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font:600 13px var(--f-body);cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip.big{font:800 16px/1 var(--f-display);text-transform:uppercase;letter-spacing:.03em;padding:9px 14px}
 select{font:600 14px var(--f-body);padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:100%}
 button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--ice);outline-offset:2px}
 
@@ -63,17 +64,18 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
 .pct{font:800 30px/1 var(--f-display);text-align:right}
 .pct small{font-size:16px}
 .lam{font-size:11.5px;color:var(--muted);text-align:right}
-.sub{grid-column:2 / 4;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.sub{grid-column:2 / 4;display:flex;gap:8px 10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .l10{display:flex;gap:2px;align-items:flex-end;height:22px}
 .l10 i{display:block;width:6px;background:var(--line);border-radius:1px}
 .l10 i.ok{background:var(--ice)}
 .l10txt{font-size:11.5px;color:var(--muted);margin-left:6px}
-.cote{display:flex;align-items:center;gap:6px}
-.cote input{width:66px;font:600 15px var(--f-body);padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-align:center}
+.cote{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.cote input,.mcote input{width:64px;font:600 15px var(--f-body);padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-align:center}
 .ev{font-size:12px;font-weight:700;padding:3px 7px;border-radius:6px;white-space:nowrap}
 .ev.pos{background:var(--good-bg);color:var(--good)}
 .ev.mince{background:var(--chip);color:var(--muted)}
 .ev.neg{background:var(--bad-bg);color:var(--bad)}
+.us{font-size:11.5px;font-weight:600;padding:2px 6px;border-radius:5px;background:var(--us-bg);color:var(--us);white-space:nowrap}
 .res{font-size:12px;font-weight:700}
 .res.ok{color:var(--good)} .res.ko{color:var(--bad)}
 details.why{grid-column:2 / 4;font-size:12.5px;color:var(--muted)}
@@ -82,10 +84,34 @@ details.why summary{cursor:pointer;width:max-content}
 .fx b{color:var(--ink);font-weight:600}
 .vide{padding:28px 16px;text-align:center;color:var(--muted)}
 
+/* Matchs */
+.matchs{display:flex;flex-direction:column;gap:12px}
+.m{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.m-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.duel{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center}
+.eq{display:flex;flex-direction:column;gap:2px;min-width:0}
+.eq.d{text-align:right;align-items:flex-end}
+.eq .ab{font:800 30px/1 var(--f-display);letter-spacing:.02em}
+.eq .wp{font:800 24px/1 var(--f-display)}
+.eq .wp.fav{color:var(--goal)}
+.eq .xg{font-size:12px;color:var(--muted)}
+.vs{font:600 13px var(--f-display);color:var(--muted);text-transform:uppercase}
+.wbar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--chip)}
+.wbar span{display:block;height:100%}
+.wbar .a{background:var(--muted)} .wbar .h{background:var(--goal)}
+.kv3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.kv3 div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.kv3 b{font-size:17px}
+.mini{font-size:12px;color:var(--muted);display:flex;gap:6px 14px;flex-wrap:wrap}
+.mini b{color:var(--ink);font-weight:600}
+.mcotes{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:10px}
+.mcote{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px}
+.mcote .who{font-weight:700;min-width:44px}
+
+/* Suivi */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:14px;min-width:0}
 .card.main{border-color:var(--goal)}
-.score{display:flex;align-items:baseline;gap:10px}
 .note{font:800 64px/0.9 var(--f-display)}
 .note small{font-size:22px;color:var(--muted)}
 .kv{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
@@ -98,15 +124,16 @@ details.why summary{cursor:pointer;width:max-content}
 .bar .p{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--goal)}
 .legende{font-size:11.5px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap}
 .legende i{display:inline-block;width:10px;height:10px;margin-right:4px;vertical-align:-1px;border-radius:2px}
-.soirs{overflow-x:auto}
+.tbl{overflow-x:auto}
 table{border-collapse:collapse;width:100%;font-size:12.5px}
 th,td{padding:5px 6px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
 th:first-child,td:first-child{text-align:left}
 th{font-weight:600;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+tr.sel td{font-weight:700}
 .guide{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:13.5px;max-width:65ch}
 .guide p{margin:6px 0}
+.quota{font-size:12px;color:var(--muted);margin-top:10px}
 [hidden]{display:none!important}
-@media (prefers-reduced-motion:no-preference){.j{transition:background .15s}}
 </style>
 </head>
 <body>
@@ -117,18 +144,24 @@ th{font-weight:600;color:var(--muted);font-size:11px;text-transform:uppercase;le
   </header>
 
   <nav class="tabs" role="tablist">
-    <button role="tab" id="t-soir" aria-selected="true" aria-controls="p-soir">Ce soir</button>
+    <button role="tab" id="t-joueurs" aria-selected="true" aria-controls="p-joueurs">Joueurs</button>
+    <button role="tab" id="t-matchs" aria-selected="false" aria-controls="p-matchs">Matchs</button>
     <button role="tab" id="t-suivi" aria-selected="false" aria-controls="p-suivi">Suivi</button>
   </nav>
 
-  <section id="p-soir" role="tabpanel" aria-labelledby="t-soir">
+  <section id="p-joueurs" role="tabpanel" aria-labelledby="t-joueurs">
     <div class="ctrls">
+      <div class="row" id="f-marche">
+        <button class="chip big" data-v="tirs" aria-pressed="true">Tirs 2+</button>
+        <button class="chip big" data-v="buts" aria-pressed="false">But</button>
+        <button class="chip big" data-v="passes" aria-pressed="false">Passe</button>
+      </div>
       <div class="row">
         <select id="f-match" aria-label="Filtrer par match"></select>
         <span class="row" id="f-pos">
           <button class="chip" data-v="all" aria-pressed="true">Tous</button>
           <button class="chip" data-v="F" aria-pressed="false">Avants</button>
-          <button class="chip" data-v="D" aria-pressed="false">Défenseurs</button>
+          <button class="chip" data-v="D" aria-pressed="false">Déf.</button>
         </span>
       </div>
       <div class="row">
@@ -138,31 +171,51 @@ th{font-weight:600;color:var(--muted);font-size:11px;text-transform:uppercase;le
           <button class="chip" data-v="ev" aria-pressed="false">Valeur vs cote</button>
         </span>
         <span class="lbl" style="margin-left:8px">Algo</span>
-        <span class="row" id="f-ver"></span>
+        <span class="row f-ver"></span>
       </div>
     </div>
     <div class="liste" id="liste"></div>
   </section>
 
+  <section id="p-matchs" role="tabpanel" aria-labelledby="t-matchs" hidden>
+    <div class="ctrls"><div class="row"><span class="lbl">Algo</span><span class="row f-ver"></span></div></div>
+    <div class="matchs" id="matchs"></div>
+  </section>
+
   <section id="p-suivi" role="tabpanel" aria-labelledby="t-suivi" hidden>
+    <div class="ctrls">
+      <div class="row" id="f-smarche">
+        <button class="chip" data-v="tirs" aria-pressed="true">Tirs 2+</button>
+        <button class="chip" data-v="buts" aria-pressed="false">But</button>
+        <button class="chip" data-v="passes" aria-pressed="false">Passe</button>
+        <button class="chip" data-v="victoire" aria-pressed="false">Victoire</button>
+        <button class="chip" data-v="total55" aria-pressed="false">+5.5 buts</button>
+        <button class="chip" data-v="total65" aria-pressed="false">+6.5 buts</button>
+      </div>
+    </div>
     <div class="cards" id="cards"></div>
     <div class="guide">
       <h2>Comment lire ça</h2>
-      <p><b>Note /100</b> : 50 = pas mieux que dire le même % à tout le monde. 100 = parfait, ça n'arrive pas. En sport, 55 à 60 c'est un bon modèle. Sous 50, la version est à jeter.</p>
-      <p><b>Calibration</b> : la barre bleue est le % réel de 2+ tirs dans chaque tranche, le trait rouge est le % prédit moyen. Barre qui arrête au trait = le modèle dit vrai. Barre plus courte = trop optimiste.</p>
-      <p><b>Top 10</b> : sur les 10 meilleurs choix de chaque soir, combien ont fait 2+ tirs vs combien le modèle en attendait.</p>
+      <p><b>Note /100</b> : 50 = pas mieux que dire le même % à tout le monde. 100 = parfait, ça n'arrive pas. Pour les joueurs, 55 à 60 c'est un bon modèle. Pour les victoires, même les meilleurs modèles publics tournent autour de 52-55 : le hockey est très aléatoire. Sous 50, la version est à jeter pour ce marché.</p>
+      <p><b>Note globale</b> : moyenne des notes de tous les marchés, pondérée par le nombre de prédictions.</p>
+      <p><b>Calibration</b> : la barre bleue est le % réel dans chaque tranche, le trait rouge le % prédit moyen. La barre arrête au trait : le modèle dit vrai. Plus courte : trop optimiste.</p>
+      <p><b>Bon côté</b> : % de fois où le côté jugé favori (50 % et plus) est arrivé. Pour les matchs, c'est le % de bons gagnants.</p>
       <p><b>Brier</b> : erreur moyenne au carré, plus bas = mieux. Les scratchés ne comptent pas.</p>
-      <p>Avec moins de 500 prédictions gradées, les différences entre versions peuvent être de la chance.</p>
+      <p>Avec moins de 500 prédictions gradées (ou 150 matchs), les écarts entre versions peuvent être de la chance.</p>
     </div>
   </section>
 </div>
 
 <script>
 // ---- État de la page -----------------------------------------------------------
-// Les cotes que tu tapes restent sur ton appareil (localStorage) : la page est publique
-// mais tes mises, elles, ne regardent que toi.
+// Les cotes Mise-o-jeu que tu tapes restent sur ton appareil (localStorage) :
+// la page est publique, tes mises ne regardent que toi.
 let D = null;
-const S = { match: "all", pos: "all", tri: "p", ver: null };
+const S = { marche: "tirs", match: "all", pos: "all", tri: "p", ver: null, smarche: "tirs" };
+const SEUIL = { tirs: 2, buts: 1, passes: 1 };
+const L10 = { tirs: "l10_shots", buts: "l10_goals", passes: "l10_assists" };
+const MOT = { tirs: ["tir", "tirs", "tirs att."], buts: ["but", "buts", "buts att."], passes: ["passe", "passes", "passes att."] };
+const NOM_MARCHE = { tirs: "Tirs 2+", buts: "But", passes: "Passe", victoire: "Victoire", total55: "+5.5 buts", total65: "+6.5 buts" };
 
 const $ = (s) => document.querySelector(s);
 const pct = (x) => Math.round(x * 100);
@@ -170,76 +223,105 @@ const store = {
   get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
   set(k,v){ try { v === "" ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch(e){} }
 };
-const cleCote = (pid) => `cote:${D.date}:${pid}`;
-
-function lireCote(pid){
-  const v = parseFloat((store.get(cleCote(pid)) || "").replace(",", "."));
+const cle = (...p) => ["cote", D.date, ...p].join(":");
+function lireCote(k){
+  const v = parseFloat((store.get(k) || "").replace(",", "."));
   return v > 1 ? v : null;
 }
 
-// Valeur espérée par 1 $ misé : p × cote − 1.
-// Ex. p = 80 %, cote 1.45 -> 0.8 × 1.45 − 1 = +16 %. La cote 1.45 implique 69 %.
-function ev(p, cote){ return cote ? p * cote - 1 : null; }
-
-function classeEV(e){
-  // Seuil +5 % : la marge du bookie et l'erreur du modèle mangent les petits edges.
-  if (e === null) return "";
-  return e >= 0.05 ? "pos" : e >= 0 ? "mince" : "neg";
+// Prédiction d'un joueur pour un marché. Les entrées du 17 octobre sont dans
+// l'ancien format (tirs seulement : preds[v] = {p, lam}).
+function pred(j, v, m){
+  const pv = j.preds[v];
+  if (!pv) return null;
+  if (pv[m]) return pv[m];
+  return (m === "tirs" && pv.p != null) ? pv : null;
+}
+function resultat(j, m){
+  if (j.result == null) return null;
+  if (typeof j.result === "number") return m === "tirs" ? j.result : null;
+  return j.result[m] ?? null;
 }
 
-// ---- Rendu : Ce soir -----------------------------------------------------------
+// Valeur espérée par 1 $ misé : p × cote − 1.
+// Ex. p = 80 %, cote 1.45 -> +16 %. La cote 1.45 implique 69 %.
+const ev = (p, c) => c ? p * c - 1 : null;
+// Seuil +5 % : la marge du bookie et l'erreur du modèle mangent les petits edges.
+const classeEV = (e) => e === null ? "" : e >= 0.05 ? "pos" : e >= 0 ? "mince" : "neg";
+const badgeEV = (e, c, src) => e === null ? "" :
+  `<span class="ev ${classeEV(e)}" title="Cote ${src}">${e >= 0 ? "+" : ""}${pct(e)} % <small>${src}</small></span>`;
+
 function heure(iso){
   return new Date(iso).toLocaleTimeString("fr-CA", { hour: "2-digit", minute: "2-digit" });
 }
 
+// ---- Joueurs -------------------------------------------------------------------
 function construireFiltres(){
   const sel = $("#f-match");
   sel.innerHTML = `<option value="all">Tous les matchs (${D.matchs.length})</option>` +
     D.matchs.map(m => `<option value="${m.id}">${m.away} @ ${m.home} · ${heure(m.start)}</option>`).join("");
   sel.value = S.match;
-  $("#f-ver").innerHTML = D.versions.map(v =>
-    `<button class="chip" data-v="${v.id}" aria-pressed="${v.id === S.ver}" title="${v.desc}">${v.id}</button>`).join("");
+  document.querySelectorAll(".f-ver").forEach(el => el.innerHTML = D.versions.map(v =>
+    `<button class="chip" data-v="${v.id}" aria-pressed="${v.id === S.ver}" title="${v.desc}">${v.id}</button>`).join(""));
 }
 
 function liste(){
-  const v = S.ver;
-  let js = D.joueurs.filter(j => j.preds[v])
+  const v = S.ver, m = S.marche;
+  let js = D.joueurs
     .filter(j => S.match === "all" || String(j.gameId) === S.match)
     .filter(j => S.pos === "all" || j.pos === S.pos)
-    .map(j => ({ ...j, p: j.preds[v].p, lam: j.preds[v].lam, cote: lireCote(j.pid) }))
-    .map(j => ({ ...j, e: ev(j.p, j.cote) }));
+    .map(j => {
+      const pr = pred(j, v, m);
+      if (!pr) return null;
+      const manuelle = lireCote(cle(j.pid, m));
+      const auto = j.cotes?.[m]?.prix ?? null;
+      // La cote Mise-o-jeu tapée à la main a priorité : c'est là que tu mises.
+      const c = manuelle || auto;
+      return { ...j, pr, manuelle, auto, e: ev(pr.p, c), src: manuelle ? "MOJ" : "US" };
+    }).filter(Boolean);
 
   js.sort((a, b) => {
     if (S.tri === "ev") {
-      // Les joueurs avec une cote entrée montent en haut, triés par valeur
       if ((a.e === null) !== (b.e === null)) return a.e === null ? 1 : -1;
       if (a.e !== null) return b.e - a.e;
     }
-    return b.p - a.p;
+    return b.pr.p - a.pr.p;
   });
 
   if (!js.length){
-    $("#liste").innerHTML = `<div class="vide">Pas de joueurs pour ce filtre. Les prédictions arrivent vers 10 h les jours de match.</div>`;
+    $("#liste").innerHTML = `<div class="vide">Pas de joueurs pour ce filtre. ${m !== "tirs" ? "Les buts et passes sont calculés à partir du prochain calcul." : "Les prédictions arrivent vers 10 h les jours de match."}</div>`;
     return;
   }
 
+  const [un, plusieurs, att] = MOT[m];
   $("#liste").innerHTML = js.map((j, i) => {
-    const barres = j.l10_shots.map(s => `<i class="${s >= 2 ? "ok" : ""}" style="height:${Math.min(22, 4 + s * 4)}px"></i>`).join("");
-    const det = j.preds[v].detail;
-    const fx = det ? `<details class="why"><summary>Pourquoi ce %</summary><div class="fx">
+    const serie = j[L10[m]] || [];
+    const hits = serie.filter(x => x >= SEUIL[m]).length;
+    const echelle = m === "tirs" ? 4 : 8;
+    const barres = serie.map(x => `<i class="${x >= SEUIL[m] ? "ok" : ""}" style="height:${Math.min(22, 4 + x * echelle)}px"></i>`).join("");
+    const det = j.pr.detail;
+    let fx = "";
+    if (det && m === "tirs") fx = `
         <span>Tirs/60 : <b>${det.rate60.toFixed(1)}</b></span>
         <span>TOI projeté : <b>${det.toi.toFixed(1)} min</b></span>
         <span>Adversaire : <b>×${det.f_opp.toFixed(2)}</b></span>
         <span>${j.home ? "Domicile" : "Visiteur"} : <b>×${det.f_lieu.toFixed(2)}</b></span>
         <span>Back-to-back : <b>×${det.f_b2b.toFixed(2)}</b></span>
-        <span>Vs ${j.opp} (${j.vs_gp} m.) : <b>×${det.f_vs.toFixed(2)}</b></span>
-      </div></details>` : "";
+        <span>Vs ${j.opp} (${j.vs_gp} m.) : <b>×${det.f_vs.toFixed(2)}</b></span>`;
+    if (det && m === "buts") fx = `
+        <span>Tirs attendus : <b>${pred(j, v, "tirs").lam.toFixed(1)}</b></span>
+        <span>% de tir régressé : <b>${(det.sh * 100).toFixed(1)} %</b></span>
+        <span>Gardiens ${j.opp} : <b>×${det.f_gardien.toFixed(2)}</b></span>`;
+    if (det && m === "passes") fx = `
+        <span>Buts attendus de ${j.team} : <b>×${det.f_equipe.toFixed(2)}</b> la moyenne</span>`;
+    fx = fx ? `<details class="why"><summary>Pourquoi ce %</summary><div class="fx">${fx}</div></details>` : "";
+
     let res = "";
+    const r = resultat(j, m);
     if (j.played === false) res = `<span class="res">Scratché · annulé</span>`;
-    else if (j.result !== null && j.result !== undefined)
-      res = `<span class="res ${j.result >= 2 ? "ok" : "ko"}">${j.result} tir${j.result > 1 ? "s" : ""} · ${j.result >= 2 ? "réussi" : "raté"}</span>`;
-    const evTxt = j.e === null ? "" :
-      `<span class="ev ${classeEV(j.e)}">${j.e >= 0 ? "+" : ""}${pct(j.e)} % · implicite ${pct(1 / j.cote)} %</span>`;
+    else if (r !== null) res = `<span class="res ${r >= SEUIL[m] ? "ok" : "ko"}">${r} ${r > 1 ? plusieurs : un} · ${r >= SEUIL[m] ? "réussi" : "raté"}</span>`;
+
+    const us = j.auto ? `<span class="us" title="Cote médiane des bookies US">US ${j.auto.toFixed(2)} · ${pct(1 / j.auto)} %</span>` : "";
     return `<div class="j">
       <div class="rk">${i + 1}</div>
       <div style="min-width:0">
@@ -247,14 +329,14 @@ function liste(){
         <div class="meta"><span class="tag">${j.team} ${j.home ? "vs" : "@"} ${j.opp}</span><span>${j.pos === "D" ? "Déf." : "Avant"}</span>
           ${j.b2b ? '<span class="tag">B2B</span>' : ""}${j.incertain ? '<span class="tag warn">Absent dernier match</span>' : ""}</div>
       </div>
-      <div><div class="pct">${pct(j.p)}<small>%</small></div><div class="lam">${j.lam.toFixed(1)} tirs att.</div></div>
+      <div><div class="pct">${pct(j.pr.p)}<small>%</small></div><div class="lam">${j.pr.lam.toFixed(m === "tirs" ? 1 : 2)} ${att}</div></div>
       <div class="sub">
         <span style="display:flex;align-items:flex-end">
-          <span class="l10" aria-label="Tirs sur les 10 derniers matchs">${barres}</span>
-          <span class="l10txt">${j.l10_hits}/${j.l10_n} à 2+</span>
+          <span class="l10" aria-label="10 derniers matchs">${barres}</span>
+          <span class="l10txt">${serie.length ? `${hits}/${serie.length}` : ""}</span>
         </span>
-        <span class="cote">${res}${evTxt}
-          <input id="c-${j.pid}" data-pid="${j.pid}" inputmode="decimal" placeholder="cote" aria-label="Cote Mise-o-jeu pour ${j.name}" value="${j.cote ?? ""}">
+        <span class="cote">${res}${us}${badgeEV(j.e, null, j.src)}
+          <input id="c-${j.pid}-${m}" data-k="${cle(j.pid, m)}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu pour ${j.name}" value="${j.manuelle ?? ""}">
         </span>
       </div>
       ${fx}
@@ -262,69 +344,145 @@ function liste(){
   }).join("");
 }
 
-// ---- Rendu : Suivi -------------------------------------------------------------
-function suivi(){
-  const cards = D.versions.slice().reverse().map(({ id, desc }) => {
-    const s = D.stats[id];
-    if (!s || !s.n) return `<div class="card"><h2>${id}</h2><p class="lbl">${desc}</p>
-      <div class="vide">Pas encore de prédictions gradées. Les premiers résultats arrivent le lendemain du premier soir.</div></div>`;
-    const calib = s.calib.map(c => `<div class="cb">
-        <span>${c.tranche} %</span>
-        <span class="bar"><span class="r" style="width:${pct(c.reel)}%"></span><span class="p" style="left:${pct(c.predit)}%"></span></span>
-        <span style="text-align:right">${pct(c.reel)} % <span style="color:var(--muted)">(${c.n})</span></span>
-      </div>`).join("");
-    const soirs = s.soirs.slice().reverse().map(x =>
-      `<tr><td>${x.date}</td><td>${x.hits}/${x.n}</td><td>${x.attendu.toFixed(1)}</td></tr>`).join("");
-    const t = s.top10;
-    return `<div class="card ${id === D.principale ? "main" : ""}">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
-        <h2>${id}${id === D.principale ? ' <span class="lbl" style="color:var(--goal)">principale</span>' : ""}</h2>
+// ---- Matchs --------------------------------------------------------------------
+function matchs(){
+  const v = S.ver;
+  if (!D.games?.length){
+    $("#matchs").innerHTML = `<div class="liste"><div class="vide">Les prédictions de matchs commencent au prochain calcul.</div></div>`;
+    return;
+  }
+  $("#matchs").innerHTML = D.games.slice().sort((a, b) => a.start.localeCompare(b.start)).map(g => {
+    const p = g.preds[v];
+    if (!p) return "";
+    const ph = p.p_home, pa = 1 - ph;
+    const c = g.cotes || {};
+    // Cote utilisée pour la valeur : Mise-o-jeu tapée > médiane US
+    const cH = lireCote(cle("m", g.gameId, "h")) || c.home || null;
+    const cA = lireCote(cle("m", g.gameId, "a")) || c.away || null;
+    const srcH = lireCote(cle("m", g.gameId, "h")) ? "MOJ" : "US";
+    const srcA = lireCote(cle("m", g.gameId, "a")) ? "MOJ" : "US";
+    const f = g.forme;
+    let res = "";
+    if (g.result){
+      const h = g.result.home, a = g.result.away, bon = (h > a) === (ph >= 0.5);
+      res = `<span class="res ${bon ? "ok" : "ko"}">Final ${g.away} ${a} – ${h} ${g.home} · ${bon ? "bon gagnant" : "raté"}</span>`;
+    }
+    const ligneTot = c.ligne && p.p_over[String(c.ligne)] != null
+      ? `<div class="mcote"><span class="who">Total</span><span class="us">US ${c.ligne} · plus ${c.over?.toFixed(2)} / moins ${c.under?.toFixed(2)}</span>
+         ${badgeEV(ev(p.p_over[String(c.ligne)], c.over), null, "plus")}${badgeEV(ev(1 - p.p_over[String(c.ligne)], c.under), null, "moins")}</div>`
+      : c.ligne ? `<div class="mcote"><span class="who">Total</span><span class="us">US ${c.ligne} · plus ${c.over?.toFixed(2)} / moins ${c.under?.toFixed(2)}</span></div>` : "";
+    return `<div class="m">
+      <div class="m-top"><span class="lbl">${heure(g.start)}${g.b2b_away ? ` · ${g.away} B2B` : ""}${g.b2b_home ? ` · ${g.home} B2B` : ""}</span>${res}</div>
+      <div class="duel">
+        <div class="eq"><span class="ab">${g.away}</span><span class="wp ${pa > ph ? "fav" : ""}">${pct(pa)} %</span><span class="xg">${p.lam_away.toFixed(1)} buts att.</span></div>
+        <span class="vs">@</span>
+        <div class="eq d"><span class="ab">${g.home}</span><span class="wp ${ph >= pa ? "fav" : ""}">${pct(ph)} %</span><span class="xg">${p.lam_home.toFixed(1)} buts att.</span></div>
       </div>
-      <p class="lbl" style="margin:-8px 0 0;text-transform:none;letter-spacing:0;font-weight:500">${desc}</p>
-      <div class="score"><span class="note">${s.note.toFixed(1)}<small>/100</small></span></div>
-      <div class="kv">
-        <div><span class="lbl">Gradées</span><b>${s.n}</b></div>
-        <div><span class="lbl">Brier</span><b>${s.brier.toFixed(3)}</b></div>
-        <div><span class="lbl">Top 10</span><b>${pct(t.hits / t.n)} %</b><span class="lbl" style="text-transform:none;letter-spacing:0">${t.hits}/${t.n}, attendu ${t.attendu.toFixed(0)}</span></div>
+      <div class="wbar" aria-hidden="true"><span class="a" style="width:${pct(pa)}%"></span><span class="h" style="width:${pct(ph)}%"></span></div>
+      <div class="kv3">
+        <div><span class="lbl">Total projeté</span><b>${p.total.toFixed(1)}</b></div>
+        <div><span class="lbl">Plus de 5.5</span><b>${pct(p.p_over["5.5"])} %</b></div>
+        <div><span class="lbl">Plus de 6.5</span><b>${pct(p.p_over["6.5"])} %</b></div>
       </div>
-      <div class="calib"><span class="lbl">Calibration · prédit vs réel</span>${calib}
-        <div class="legende"><span><i style="background:var(--ice)"></i>Réel</span><span><i style="background:var(--goal)"></i>Prédit</span><span>(n) = joueurs</span></div>
+      <div class="mini">
+        <span>${g.away} 10 derniers : <b>${f.away.v}-${f.away.n - f.away.v}</b>, ${f.away.gf} BP / ${f.away.ga} BC</span>
+        <span>${g.home} 10 derniers : <b>${f.home.v}-${f.home.n - f.home.v}</b>, ${f.home.gf} BP / ${f.home.ga} BC</span>
+        <span>Duels directs (${g.h2h.gp}) : <b>${g.away} ${g.h2h.gf_away} – ${g.h2h.gf_home} ${g.home}</b></span>
       </div>
-      <div class="soirs"><span class="lbl">Top 10 par soir</span>
-        <table><thead><tr><th>Soir</th><th>Réussis</th><th>Attendus</th></tr></thead><tbody>${soirs}</tbody></table>
+      <div class="mcotes">
+        ${c.p_home_marche ? `<div class="mcote"><span class="lbl">Marché US sans marge : ${g.away} ${pct(1 - c.p_home_marche)} % · ${g.home} ${pct(c.p_home_marche)} %</span></div>` : ""}
+        <div class="mcote"><span class="who">${g.away}</span>${c.away ? `<span class="us">US ${c.away.toFixed(2)}</span>` : ""}${badgeEV(ev(pa, cA), null, srcA)}
+          <input id="m-${g.gameId}-a" data-k="${cle("m", g.gameId, "a")}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu ${g.away}" value="${lireCote(cle("m", g.gameId, "a")) ?? ""}"></div>
+        <div class="mcote"><span class="who">${g.home}</span>${c.home ? `<span class="us">US ${c.home.toFixed(2)}</span>` : ""}${badgeEV(ev(ph, cH), null, srcH)}
+          <input id="m-${g.gameId}-h" data-k="${cle("m", g.gameId, "h")}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu ${g.home}" value="${lireCote(cle("m", g.gameId, "h")) ?? ""}"></div>
+        ${ligneTot}
       </div>
     </div>`;
-  });
-  $("#cards").innerHTML = cards.join("");
+  }).join("");
+}
+
+// ---- Suivi ---------------------------------------------------------------------
+function blocStats(v){
+  const m = S.smarche;
+  const st = D.stats;
+  return (st.joueurs?.[m] || st.matchs?.[m] || {})[v] || { n: 0 };
+}
+
+function suivi(){
+  const st = D.stats || {};
+  const marches = ["tirs", "buts", "passes", "victoire", "total55", "total65"];
+  $("#cards").innerHTML = D.versions.slice().reverse().map(({ id, desc }) => {
+    const g = st.global?.[id];
+    const s = blocStats(id);
+    const lignes = marches.map(m => {
+      const x = (st.joueurs?.[m] || st.matchs?.[m] || {})[id] || { n: 0 };
+      return `<tr class="${m === S.smarche ? "sel" : ""}"><td>${NOM_MARCHE[m]}</td><td>${x.n || "–"}</td>
+        <td>${x.n ? x.note.toFixed(1) : "–"}</td><td>${x.n ? pct(x.precision) + " %" : "–"}</td></tr>`;
+    }).join("");
+    let detail = `<div class="vide">Pas encore de résultats pour « ${NOM_MARCHE[S.smarche]} ». Les premiers arrivent le lendemain du premier soir.</div>`;
+    if (s.n){
+      const calib = s.calib.map(c => `<div class="cb">
+          <span>${c.tranche} %</span>
+          <span class="bar"><span class="r" style="width:${pct(c.reel)}%"></span><span class="p" style="left:${pct(c.predit)}%"></span></span>
+          <span style="text-align:right">${pct(c.reel)} % <span style="color:var(--muted)">(${c.n})</span></span>
+        </div>`).join("");
+      const joueur = !!st.joueurs?.[S.smarche];
+      const soirs = s.soirs.slice().reverse().map(x =>
+        `<tr><td>${x.date}</td><td>${x.hits}/${x.n}</td><td>${x.attendu.toFixed(1)}</td></tr>`).join("");
+      detail = `
+        <div class="kv">
+          <div><span class="lbl">Note</span><b>${s.note.toFixed(1)}</b></div>
+          <div><span class="lbl">Brier</span><b>${s.brier.toFixed(3)}</b></div>
+          <div><span class="lbl">${s.mae_total != null ? "Erreur total" : "Réel moyen"}</span><b>${s.mae_total != null ? s.mae_total.toFixed(2) + " b." : pct(s.base) + " %"}</b></div>
+        </div>
+        <div class="calib"><span class="lbl">Calibration · prédit vs réel</span>${calib}
+          <div class="legende"><span><i style="background:var(--ice)"></i>Réel</span><span><i style="background:var(--goal)"></i>Prédit</span><span>(n) = ${joueur ? "joueurs" : "matchs"}</span></div>
+        </div>
+        <div class="tbl"><span class="lbl">${joueur ? "Top 10 par soir" : "Par soir (domicile / plus)"}</span>
+          <table><thead><tr><th>Soir</th><th>Réussis</th><th>Attendus</th></tr></thead><tbody>${soirs}</tbody></table>
+        </div>`;
+    }
+    return `<div class="card ${id === D.principale ? "main" : ""}">
+      <h2>${id}${id === D.principale ? ' <span class="lbl" style="color:var(--goal)">principale</span>' : ""}</h2>
+      <p class="lbl" style="margin:-8px 0 0;text-transform:none;letter-spacing:0;font-weight:500">${desc}</p>
+      <div><span class="lbl">Note globale</span><div class="note">${g?.note != null ? g.note.toFixed(1) : "–"}<small>/100</small></div></div>
+      <div class="tbl"><table><thead><tr><th>Marché</th><th>Gradées</th><th>Note</th><th>Bon côté</th></tr></thead><tbody>${lignes}</tbody></table></div>
+      <span class="lbl" style="color:var(--ink)">Détail · ${NOM_MARCHE[S.smarche]}</span>
+      ${detail}
+    </div>`;
+  }).join("") + (D.cotes_quota ? `<div class="quota">Cotes US : ${D.cotes_quota.restants ?? "?"} crédits restants ce mois-ci${D.cotes_quota.erreur ? ` · dernière erreur : ${D.cotes_quota.erreur}` : ""}</div>` : "");
 }
 
 // ---- Événements ----------------------------------------------------------------
-function chips(groupe, cle){
-  $(groupe).addEventListener("click", (ev) => {
+function chips(sel, cleS, apres){
+  document.querySelectorAll(sel).forEach(groupe => groupe.addEventListener("click", (ev) => {
     const b = ev.target.closest("button[data-v]");
     if (!b) return;
-    S[cle] = b.dataset.v;
-    $(groupe).querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
-    liste();
-  });
+    S[cleS] = b.dataset.v;
+    document.querySelectorAll(sel + " button").forEach(x => x.setAttribute("aria-pressed", x.dataset.v === S[cleS]));
+    apres();
+  }));
 }
 
+function tout(){ liste(); matchs(); suivi(); }
+
 function brancher(){
-  chips("#f-pos", "pos");
-  chips("#f-tri", "tri");
-  chips("#f-ver", "ver");
+  chips("#f-marche", "marche", liste);
+  chips("#f-pos", "pos", liste);
+  chips("#f-tri", "tri", liste);
+  chips(".f-ver", "ver", tout);
+  chips("#f-smarche", "smarche", suivi);
   $("#f-match").addEventListener("change", (e) => { S.match = e.target.value; liste(); });
-  // On recalcule à la sortie du champ (pas à chaque touche) pour ne pas
+  // Recalcul à la sortie du champ (pas à chaque touche) pour ne pas
   // réordonner la liste pendant que tu tapes.
-  $("#liste").addEventListener("change", (e) => {
-    if (!e.target.dataset.pid) return;
-    store.set(cleCote(e.target.dataset.pid), e.target.value.trim());
-    liste();
+  document.addEventListener("change", (e) => {
+    if (!e.target.dataset?.k) return;
+    store.set(e.target.dataset.k, e.target.value.trim());
+    liste(); matchs();
   });
   document.querySelectorAll("nav.tabs button").forEach(b => b.addEventListener("click", () => {
     document.querySelectorAll("nav.tabs button").forEach(x => x.setAttribute("aria-selected", x === b));
-    $("#p-soir").hidden = b.id !== "t-soir";
-    $("#p-suivi").hidden = b.id !== "t-suivi";
+    for (const id of ["joueurs", "matchs", "suivi"]) $("#p-" + id).hidden = b.id !== "t-" + id;
   }));
 }
 
@@ -337,13 +495,13 @@ async function init(){
     $("#maj").textContent = "Données introuvables. La première exécution n'a peut-être pas encore roulé.";
     return;
   }
+  D.joueurs = D.joueurs || []; D.games = D.games || []; D.versions = D.versions || [];
   S.ver = D.principale;
   const g = new Date(D.genere);
   $("#maj").innerHTML = `${new Date(D.date + "T12:00").toLocaleDateString("fr-CA", { weekday: "long", day: "numeric", month: "long" })}<br>Calculé à ${g.toLocaleTimeString("fr-CA", { hour: "2-digit", minute: "2-digit" })}`;
   construireFiltres();
   brancher();
-  liste();
-  suivi();
+  tout();
 }
 init();
 </script>

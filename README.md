@@ -1,6 +1,19 @@
 # La Patente à Tirs
 
-Classe chaque soir les joueurs de la NHL selon leur probabilité de faire **2 tirs au but ou plus**, compare avec les cotes Mise-o-jeu, et garde le compte de la réussite de chaque version de l'algo.
+Chaque soir de match NHL :
+- **Joueurs** : probabilité de 2+ tirs au but, d'un but, d'une passe
+- **Matchs** : % de victoire, buts attendus, total projeté, P(plus de 5.5 / 6.5)
+- **Cotes** : médiane des bookies US en auto (The Odds API) + champ Mise-o-jeu manuel
+- **Suivi** : note /100, calibration et bon côté par marché, pour chaque version de l'algo
+
+## Cotes automatiques
+
+1. Compte gratuit sur the-odds-api.com, la clé arrive par courriel.
+2. Repo → Settings → Secrets and variables → Actions → New repository secret : nom `ODDS_API_KEY`, valeur = ta clé.
+3. Les cotes sont prises au calcul de 17 h 45 et aux lancements manuels seulement (budget de 500 crédits/mois).
+4. Par défaut : matchs + tirs. Pour buts et passes en auto, il faut le plan payant ; change `ODDS_PROPS` dans le workflow.
+
+Ce sont les cotes US (DraftKings, FanDuel...), pas Mise-o-jeu : Loto-Québec n'a pas d'API publique.
 
 ## Comment ça marche
 
