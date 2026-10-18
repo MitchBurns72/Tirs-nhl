@@ -1,5 +1,5 @@
 {
- "genere": "2026-10-18T01:26+00:00",
+ "genere": "2026-10-18T02:05+00:00",
  "date": "2026-10-17",
  "versions": [
   {
@@ -50,7 +50,7 @@
    "away": "NYI",
    "home": "TOR",
    "start": "2026-10-17T23:00:00Z",
-   "state": "LIVE",
+   "state": "OFF",
    "season": 20262027
   },
   {
@@ -58,7 +58,7 @@
    "away": "BUF",
    "home": "MTL",
    "start": "2026-10-17T23:00:00Z",
-   "state": "LIVE",
+   "state": "FINAL",
    "season": 20262027
   },
   {
@@ -66,7 +66,7 @@
    "away": "SJS",
    "home": "DET",
    "start": "2026-10-17T23:00:00Z",
-   "state": "LIVE",
+   "state": "FINAL",
    "season": 20262027
   },
   {
@@ -74,7 +74,7 @@
    "away": "OTT",
    "home": "PHI",
    "start": "2026-10-17T23:00:00Z",
-   "state": "LIVE",
+   "state": "FINAL",
    "season": 20262027
   },
   {
@@ -82,7 +82,7 @@
    "away": "NYR",
    "home": "CBJ",
    "start": "2026-10-17T23:00:00Z",
-   "state": "LIVE",
+   "state": "FINAL",
    "season": 20262027
   },
   {
@@ -90,7 +90,7 @@
    "away": "DAL",
    "home": "CHI",
    "start": "2026-10-17T23:00:00Z",
-   "state": "LIVE",
+   "state": "OFF",
    "season": 20262027
   },
   {
@@ -114,7 +114,7 @@
    "away": "EDM",
    "home": "UTA",
    "start": "2026-10-18T02:00:00Z",
-   "state": "FUT",
+   "state": "PRE",
    "season": 20262027
   },
   {
@@ -122,7 +122,7 @@
    "away": "PIT",
    "home": "VGK",
    "start": "2026-10-18T02:00:00Z",
-   "state": "FUT",
+   "state": "PRE",
    "season": 20262027
   }
  ],
@@ -166,23 +166,23 @@
      }
     },
     "v1": {
-     "p_home": 0.5388,
-     "p_egal60": 0.1532,
-     "lam_home": 3.6166,
-     "lam_away": 3.375,
-     "total": 6.9916,
+     "p_home": 0.5396,
+     "p_egal60": 0.1507,
+     "lam_home": 3.7349,
+     "lam_away": 3.4839,
+     "total": 7.2187,
      "p_over": {
-      "5.5": 0.6982,
-      "6.5": 0.549
+      "5.5": 0.7264,
+      "6.5": 0.5823
      },
      "detail": {
-      "att_h": 3.4495,
-      "def_h": 2.9298,
-      "att_a": 3.6616,
-      "def_a": 3.25,
-      "h2h_h": 1.029,
-      "h2h_a": 1.0763,
-      "mu": 3.3015
+      "att_h": 3.4091,
+      "def_h": 2.8894,
+      "att_a": 3.6197,
+      "def_a": 3.2081,
+      "h2h_h": 1.0333,
+      "h2h_a": 1.0811,
+      "mu": 3.1318
      }
     }
    },
@@ -228,23 +228,23 @@
      }
     },
     "v1": {
-     "p_home": 0.622,
-     "p_egal60": 0.1535,
-     "lam_home": 3.6185,
-     "lam_away": 2.8355,
-     "total": 6.454,
+     "p_home": 0.6244,
+     "p_egal60": 0.1508,
+     "lam_home": 3.7332,
+     "lam_away": 2.9217,
+     "total": 6.6549,
      "p_over": {
-      "5.5": 0.6242,
-      "6.5": 0.4662
+      "5.5": 0.6531,
+      "6.5": 0.4977
      },
      "detail": {
-      "att_h": 3.4862,
-      "def_h": 2.9193,
-      "att_a": 3.4519,
-      "def_a": 3.3067,
-      "h2h_h": 0.9721,
-      "h2h_a": 1.0028,
-      "mu": 3.3015
+      "att_h": 3.4472,
+      "def_h": 2.8803,
+      "att_a": 3.4115,
+      "def_a": 3.2663,
+      "h2h_h": 0.9741,
+      "h2h_a": 1.0052,
+      "mu": 3.1318
      }
     }
    },
@@ -294,8 +294,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477407,
@@ -338,8 +342,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8485388,
@@ -382,8 +390,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482476,
@@ -426,8 +438,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481601,
@@ -470,8 +486,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 2,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477500,
@@ -514,8 +534,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8481711,
@@ -558,8 +582,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476419,
@@ -602,8 +630,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8476292,
@@ -646,8 +678,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8475151,
@@ -690,8 +726,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8484221,
@@ -734,8 +774,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8475170,
@@ -778,8 +822,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477950,
@@ -822,8 +870,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482516,
@@ -861,8 +913,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476917,
@@ -905,8 +961,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477506,
@@ -949,8 +1009,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8485366,
@@ -993,8 +1057,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8479378,
@@ -1037,8 +1105,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476927,
@@ -1082,8 +1154,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8484158,
@@ -1127,8 +1203,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8479520,
@@ -1172,8 +1252,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8479772,
@@ -1211,8 +1295,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480893,
@@ -1256,8 +1344,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8479318,
@@ -1301,8 +1393,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8486067,
@@ -1346,8 +1442,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477939,
@@ -1391,8 +1491,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477426,
@@ -1436,8 +1540,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478458,
@@ -1481,8 +1589,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476925,
@@ -1526,8 +1638,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8475166,
@@ -1570,8 +1686,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8483565,
@@ -1610,8 +1726,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8475171,
@@ -1655,8 +1775,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476931,
@@ -1700,8 +1824,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478178,
@@ -1745,8 +1873,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476853,
@@ -1790,8 +1922,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483546,
@@ -1828,8 +1964,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8479442,
@@ -1873,8 +2009,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8484145,
@@ -1918,8 +2058,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8475842,
@@ -1959,8 +2103,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8479941,
@@ -2001,8 +2145,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482659,
@@ -2046,8 +2194,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8484797,
@@ -2090,8 +2242,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8481522,
@@ -2135,8 +2291,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483468,
@@ -2178,8 +2338,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8479359,
@@ -2223,8 +2387,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480802,
@@ -2268,8 +2436,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480064,
@@ -2313,8 +2485,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483500,
@@ -2358,8 +2534,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482097,
@@ -2403,8 +2583,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8479420,
@@ -2448,8 +2632,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481806,
@@ -2493,8 +2681,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478502,
@@ -2532,8 +2724,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8484305,
@@ -2577,8 +2773,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482671,
@@ -2622,8 +2822,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480807,
@@ -2667,8 +2871,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8482803,
@@ -2711,8 +2919,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476981,
@@ -2755,8 +2967,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483424,
@@ -2794,8 +3010,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8482737,
@@ -2838,8 +3054,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481540,
@@ -2882,8 +3102,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 2,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481523,
@@ -2926,8 +3150,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476479,
@@ -2970,8 +3198,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478133,
@@ -3014,8 +3246,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8475184,
@@ -3058,8 +3294,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481618,
@@ -3102,8 +3342,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483515,
@@ -3146,8 +3390,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 2
+   },
+   "played": true
   },
   {
    "pid": 8480018,
@@ -3190,8 +3438,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8480074,
@@ -3234,8 +3486,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478851,
@@ -3278,8 +3534,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 2
+   },
+   "played": true
   },
   {
    "pid": 8480865,
@@ -3322,8 +3582,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483686,
@@ -3363,8 +3627,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8482087,
@@ -3403,8 +3667,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8483457,
@@ -3447,8 +3715,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482964,
@@ -3491,8 +3763,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478020,
@@ -3536,8 +3812,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480208,
@@ -3581,8 +3861,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477444,
@@ -3622,8 +3906,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476393,
@@ -3667,8 +3955,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481528,
@@ -3712,8 +4004,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477998,
@@ -3757,8 +4053,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8473512,
@@ -3802,8 +4102,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8482092,
@@ -3845,8 +4149,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483676,
@@ -3890,8 +4198,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481596,
@@ -3935,8 +4247,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482116,
@@ -3980,8 +4296,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8480188,
@@ -4025,8 +4345,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478469,
@@ -4070,8 +4394,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480075,
@@ -4110,8 +4438,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8482095,
@@ -4155,8 +4483,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481606,
@@ -4200,8 +4532,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8484759,
@@ -4245,8 +4581,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482245,
@@ -4283,8 +4623,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478569,
@@ -4329,8 +4673,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8484142,
@@ -4372,8 +4720,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478047,
@@ -4414,8 +4766,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480220,
@@ -4460,8 +4816,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476461,
@@ -4506,8 +4866,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8477989,
@@ -4552,8 +4916,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8482159,
@@ -4598,8 +4966,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8485406,
@@ -4644,8 +5016,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8484387,
@@ -4690,8 +5066,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8480021,
@@ -4729,8 +5109,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480015,
@@ -4775,8 +5159,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8481533,
@@ -4821,8 +5205,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481122,
@@ -4866,8 +5254,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8484148,
@@ -4906,8 +5298,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482142,
@@ -4952,8 +5348,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483460,
@@ -4996,8 +5396,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8477948,
@@ -5042,8 +5446,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476372,
@@ -5088,8 +5496,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481013,
@@ -8328,30 +8740,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2195,
-      "lam": 0.8748,
+      "p": 0.2198,
+      "lam": 0.8757,
       "detail": {
-       "rate60": 4.903,
+       "rate60": 4.9093,
        "toi": 12.2056,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.9929
+       "f_vs": 0.9926
       }
      },
      "buts": {
-      "p": 0.1022,
-      "lam": 0.1078,
+      "p": 0.1023,
+      "lam": 0.1079,
       "detail": {
-       "sh": 0.1218,
-       "f_gardien": 1.0118
+       "sh": 0.1217,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2,
-      "lam": 0.2231,
+      "p": 0.2159,
+      "lam": 0.2433,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8416,30 +8828,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.745,
-      "lam": 2.8172,
+      "p": 0.7452,
+      "lam": 2.8188,
       "detail": {
-       "rate60": 8.743,
+       "rate60": 8.7477,
        "toi": 21.5834,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 1.0141
+       "f_vs": 1.014
       }
      },
      "buts": {
-      "p": 0.379,
-      "lam": 0.4764,
+      "p": 0.3793,
+      "lam": 0.4769,
       "detail": {
        "sh": 0.1671,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.5447,
-      "lam": 0.7869,
+      "p": 0.5755,
+      "lam": 0.8569,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8504,30 +8916,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3366,
-      "lam": 1.2061,
+      "p": 0.3374,
+      "lam": 1.2085,
       "detail": {
-       "rate60": 5.5922,
+       "rate60": 5.6033,
        "toi": 14.8704,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.9852
+       "f_vs": 0.9851
       }
      },
      "buts": {
-      "p": 0.1525,
-      "lam": 0.1654,
+      "p": 0.1527,
+      "lam": 0.1657,
       "detail": {
-       "sh": 0.1355,
-       "f_gardien": 1.0118
+       "sh": 0.1354,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2809,
-      "lam": 0.3297,
+      "p": 0.302,
+      "lam": 0.3595,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8592,30 +9004,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.1953,
-      "lam": 0.8066,
+      "p": 0.1956,
+      "lam": 0.8075,
       "detail": {
-       "rate60": 6.01,
+       "rate60": 6.016,
        "toi": 10.1658,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.8968
+       "f_vs": 0.8967
       }
      },
      "buts": {
-      "p": 0.0866,
-      "lam": 0.0906,
+      "p": 0.0867,
+      "lam": 0.0907,
       "detail": {
-       "sh": 0.111,
-       "f_gardien": 1.0118
+       "sh": 0.1109,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.1246,
-      "lam": 0.1331,
+      "p": 0.1351,
+      "lam": 0.1452,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8674,30 +9086,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2917,
-      "lam": 1.0778,
+      "p": 0.2924,
+      "lam": 1.0797,
       "detail": {
-       "rate60": 6.6249,
+       "rate60": 6.6366,
        "toi": 11.16,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.9903
+       "f_vs": 0.9902
       }
      },
      "buts": {
-      "p": 0.1317,
-      "lam": 0.1412,
+      "p": 0.1319,
+      "lam": 0.1414,
       "detail": {
-       "sh": 0.1295,
-       "f_gardien": 1.0118
+       "sh": 0.1294,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2412,
-      "lam": 0.276,
+      "p": 0.2599,
+      "lam": 0.3009,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8762,30 +9174,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2575,
-      "lam": 0.9814,
+      "p": 0.2579,
+      "lam": 0.9826,
       "detail": {
-       "rate60": 6.8065,
+       "rate60": 6.8159,
        "toi": 9.3328,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 1.0494
+       "f_vs": 1.0492
       }
      },
      "buts": {
-      "p": 0.1067,
-      "lam": 0.1128,
+      "p": 0.1068,
+      "lam": 0.1129,
       "detail": {
-       "sh": 0.1136,
-       "f_gardien": 1.0118
+       "sh": 0.1135,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.187,
-      "lam": 0.207,
+      "p": 0.202,
+      "lam": 0.2256,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8844,30 +9256,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2269,
-      "lam": 0.8956,
+      "p": 0.2274,
+      "lam": 0.8972,
       "detail": {
-       "rate60": 6.7193,
+       "rate60": 6.7312,
        "toi": 10.46,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.8656
+       "f_vs": 0.8655
       }
      },
      "buts": {
-      "p": 0.1107,
-      "lam": 0.1173,
+      "p": 0.1109,
+      "lam": 0.1175,
       "detail": {
-       "sh": 0.1295,
-       "f_gardien": 1.0118
+       "sh": 0.1294,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.1764,
-      "lam": 0.1941,
+      "p": 0.1908,
+      "lam": 0.2118,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8932,30 +9344,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2076,
-      "lam": 0.8414,
+      "p": 0.2081,
+      "lam": 0.8427,
       "detail": {
-       "rate60": 4.5271,
+       "rate60": 4.5334,
        "toi": 14.8532,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 0.85
       }
      },
      "buts": {
-      "p": 0.0922,
-      "lam": 0.0967,
+      "p": 0.0923,
+      "lam": 0.0968,
       "detail": {
-       "sh": 0.1136,
-       "f_gardien": 1.0118
+       "sh": 0.1135,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2812,
-      "lam": 0.3301,
+      "p": 0.3022,
+      "lam": 0.3598,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9020,30 +9432,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4068,
-      "lam": 1.4148,
+      "p": 0.4072,
+      "lam": 1.4161,
       "detail": {
-       "rate60": 6.0408,
+       "rate60": 6.0468,
        "toi": 17.2733,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.921
+       "f_vs": 0.9209
       }
      },
      "buts": {
-      "p": 0.1795,
-      "lam": 0.1978,
+      "p": 0.1797,
+      "lam": 0.198,
       "detail": {
-       "sh": 0.1382,
-       "f_gardien": 1.0118
+       "sh": 0.1381,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2637,
-      "lam": 0.3062,
+      "p": 0.2838,
+      "lam": 0.3338,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9108,30 +9520,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.7497,
-      "lam": 2.8469,
+      "p": 0.7499,
+      "lam": 2.8484,
       "detail": {
-       "rate60": 7.7887,
+       "rate60": 7.7932,
        "toi": 24.2391,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 1.0243
+       "f_vs": 1.0242
       }
      },
      "buts": {
-      "p": 0.3626,
-      "lam": 0.4503,
+      "p": 0.3629,
+      "lam": 0.4508,
       "detail": {
        "sh": 0.1563,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.6859,
-      "lam": 1.158,
+      "p": 0.7166,
+      "lam": 1.2609,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9196,30 +9608,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2619,
-      "lam": 0.9939,
+      "p": 0.2628,
+      "lam": 0.9963,
       "detail": {
-       "rate60": 5.3082,
+       "rate60": 5.3202,
        "toi": 13.7787,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 0.9231
       }
      },
      "buts": {
-      "p": 0.1403,
-      "lam": 0.1512,
+      "p": 0.1406,
+      "lam": 0.1515,
       "detail": {
-       "sh": 0.1503,
-       "f_gardien": 1.0118
+       "sh": 0.1502,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.242,
-      "lam": 0.2771,
+      "p": 0.2608,
+      "lam": 0.3022,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9284,115 +9696,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5556,
-      "lam": 1.9174,
+      "p": 0.556,
+      "lam": 1.9187,
       "detail": {
-       "rate60": 7.6562,
+       "rate60": 7.661,
        "toi": 19.7972,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.8593
+       "f_vs": 0.8592
       }
      },
      "buts": {
-      "p": 0.2668,
-      "lam": 0.3103,
+      "p": 0.267,
+      "lam": 0.3106,
       "detail": {
        "sh": 0.1599,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.3059,
-      "lam": 0.3652,
+      "p": 0.3283,
+      "lam": 0.398,
       "detail": {
-       "f_equipe": 1.0223
-      }
-     }
-    }
-   },
-   "result": null,
-   "played": null,
-   "cotes": null
-  },
-  {
-   "pid": 8484509,
-   "name": "Josh Samanski",
-   "team": "EDM",
-   "opp": "UTA",
-   "home": false,
-   "pos": "F",
-   "gameId": 2026020133,
-   "b2b": false,
-   "incertain": false,
-   "l10_shots": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "l10_goals": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "l10_assists": [
-    0,
-    0,
-    0,
-    1,
-    0,
-    0
-   ],
-   "vs_gp": 2,
-   "vs_shots": 0,
-   "preds": {
-    "v0": {
-     "tirs": {
-      "p": 0.0012,
-      "lam": 0.05
-     },
-     "buts": {
-      "p": 0.01,
-      "lam": 0.01
-     },
-     "passes": {
-      "p": 0.1535,
-      "lam": 0.1667
-     }
-    },
-    "v1": {
-     "tirs": {
-      "p": 0.0513,
-      "lam": 0.3533,
-      "detail": {
-       "rate60": 3.6747,
-       "toi": 7.6193,
-       "f_opp": 0.9106,
-       "f_lieu": 0.97,
-       "f_b2b": 1.0,
-       "f_vs": 0.8571
-      }
-     },
-     "buts": {
-      "p": 0.0492,
-      "lam": 0.0505,
-      "detail": {
-       "sh": 0.1412,
-       "f_gardien": 1.0118
-      }
-     },
-     "passes": {
-      "p": 0.1458,
-      "lam": 0.1576,
-      "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9458,29 +9785,29 @@
     "v1": {
      "tirs": {
       "p": 0.6772,
-      "lam": 2.4413,
+      "lam": 2.4416,
       "detail": {
        "rate60": 6.7096,
        "toi": 25.4861,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 0.9698
       }
      },
      "buts": {
-      "p": 0.2197,
-      "lam": 0.2481,
+      "p": 0.2199,
+      "lam": 0.2483,
       "detail": {
        "sh": 0.1004,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.565,
-      "lam": 0.8325,
+      "p": 0.5958,
+      "lam": 0.9059,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9546,29 +9873,29 @@
     "v1": {
      "tirs": {
       "p": 0.4069,
-      "lam": 1.4151,
+      "lam": 1.4152,
       "detail": {
        "rate60": 3.8863,
        "toi": 22.0301,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 1.1227
       }
      },
      "buts": {
-      "p": 0.0814,
-      "lam": 0.0849,
+      "p": 0.0815,
+      "lam": 0.085,
       "detail": {
        "sh": 0.0593,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2904,
-      "lam": 0.343,
+      "p": 0.3115,
+      "lam": 0.3733,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9628,11 +9955,11 @@
     "v1": {
      "tirs": {
       "p": 0.0975,
-      "lam": 0.5158,
+      "lam": 0.5159,
       "detail": {
        "rate60": 2.582,
        "toi": 11.8,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 1.15
@@ -9640,17 +9967,17 @@
      },
      "buts": {
       "p": 0.0299,
-      "lam": 0.0303,
+      "lam": 0.0304,
       "detail": {
        "sh": 0.0581,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.148,
-      "lam": 0.1601,
+      "p": 0.1599,
+      "lam": 0.1743,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9710,29 +10037,29 @@
     "v1": {
      "tirs": {
       "p": 0.1146,
-      "lam": 0.5698,
+      "lam": 0.5699,
       "detail": {
        "rate60": 3.1489,
        "toi": 11.8633,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 1.0361
       }
      },
      "buts": {
-      "p": 0.0456,
+      "p": 0.0457,
       "lam": 0.0467,
       "detail": {
        "sh": 0.081,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.1265,
-      "lam": 0.1352,
+      "p": 0.1368,
+      "lam": 0.1472,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9797,12 +10124,12 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2388,
-      "lam": 0.9291,
+      "p": 0.2389,
+      "lam": 0.9292,
       "detail": {
        "rate60": 2.7055,
        "toi": 21.4178,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 1.0891
@@ -9810,17 +10137,17 @@
      },
      "buts": {
       "p": 0.0579,
-      "lam": 0.0596,
+      "lam": 0.0597,
       "detail": {
        "sh": 0.0634,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2177,
-      "lam": 0.2455,
+      "p": 0.2344,
+      "lam": 0.2671,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9890,25 +10217,25 @@
       "detail": {
        "rate60": 2.7134,
        "toi": 22.9719,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 0.8738
       }
      },
      "buts": {
-      "p": 0.0588,
+      "p": 0.0589,
       "lam": 0.0607,
       "detail": {
        "sh": 0.0748,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.3149,
-      "lam": 0.3781,
+      "p": 0.3373,
+      "lam": 0.4115,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9976,30 +10303,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.322,
-      "lam": 1.1639,
+      "p": 0.3225,
+      "lam": 1.1654,
       "detail": {
-       "rate60": 6.7817,
+       "rate60": 6.7899,
        "toi": 10.5643,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 0.9862
+       "f_vs": 0.9861
       }
      },
      "buts": {
-      "p": 0.1535,
-      "lam": 0.1667,
+      "p": 0.1534,
+      "lam": 0.1665,
       "detail": {
-       "sh": 0.1306,
-       "f_gardien": 1.0969
+       "sh": 0.1305,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.1692,
-      "lam": 0.1853,
+      "p": 0.1831,
+      "lam": 0.2023,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10067,30 +10394,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5182,
-      "lam": 1.7805,
+      "p": 0.5186,
+      "lam": 1.7817,
       "detail": {
-       "rate60": 5.5305,
+       "rate60": 5.5352,
        "toi": 18.5917,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.0511
+       "f_vs": 1.0509
       }
      },
      "buts": {
-      "p": 0.2855,
-      "lam": 0.3362,
+      "p": 0.2852,
+      "lam": 0.3358,
       "detail": {
        "sh": 0.1721,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.4329,
-      "lam": 0.5672,
+      "p": 0.461,
+      "lam": 0.618,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10158,30 +10485,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5401,
-      "lam": 1.8596,
+      "p": 0.5404,
+      "lam": 1.8607,
       "detail": {
-       "rate60": 6.7582,
+       "rate60": 6.7632,
        "toi": 15.2575,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.0947
+       "f_vs": 1.0945
       }
      },
      "buts": {
-      "p": 0.2554,
-      "lam": 0.2949,
+      "p": 0.2551,
+      "lam": 0.2945,
       "detail": {
-       "sh": 0.1446,
-       "f_gardien": 1.0969
+       "sh": 0.1445,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.2687,
-      "lam": 0.313,
+      "p": 0.2891,
+      "lam": 0.3412,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10249,30 +10576,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.7227,
-      "lam": 2.6842,
+      "p": 0.7229,
+      "lam": 2.6855,
       "detail": {
-       "rate60": 10.285,
+       "rate60": 10.2899,
        "toi": 16.6857,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 0.9495
+       "f_vs": 0.9494
       }
      },
      "buts": {
-      "p": 0.3643,
-      "lam": 0.453,
+      "p": 0.3639,
+      "lam": 0.4524,
       "detail": {
-       "sh": 0.1539,
-       "f_gardien": 1.0969
+       "sh": 0.1538,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.3838,
-      "lam": 0.4842,
+      "p": 0.41,
+      "lam": 0.5276,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10340,30 +10667,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4494,
-      "lam": 1.5484,
+      "p": 0.4497,
+      "lam": 1.5495,
       "detail": {
-       "rate60": 7.1941,
+       "rate60": 7.1992,
        "toi": 13.7438,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 0.9507
+       "f_vs": 0.9505
       }
      },
      "buts": {
-      "p": 0.1708,
-      "lam": 0.1873,
+      "p": 0.1706,
+      "lam": 0.187,
       "detail": {
-       "sh": 0.1103,
-       "f_gardien": 1.0969
+       "sh": 0.1102,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.3051,
-      "lam": 0.3639,
+      "p": 0.3274,
+      "lam": 0.3967,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10431,30 +10758,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.6882,
-      "lam": 2.4972,
+      "p": 0.6884,
+      "lam": 2.4985,
       "detail": {
-       "rate60": 8.4103,
+       "rate60": 8.4151,
        "toi": 17.6782,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.0196
+       "f_vs": 1.0194
       }
      },
      "buts": {
-      "p": 0.2921,
-      "lam": 0.3455,
+      "p": 0.2918,
+      "lam": 0.345,
       "detail": {
        "sh": 0.1261,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.5042,
-      "lam": 0.7015,
+      "p": 0.5343,
+      "lam": 0.7643,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10522,30 +10849,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4942,
-      "lam": 1.6968,
+      "p": 0.4945,
+      "lam": 1.6979,
       "detail": {
-       "rate60": 8.4965,
+       "rate60": 8.5017,
        "toi": 13.0848,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 0.9265
+       "f_vs": 0.9264
       }
      },
      "buts": {
-      "p": 0.194,
-      "lam": 0.2157,
+      "p": 0.1938,
+      "lam": 0.2154,
       "detail": {
        "sh": 0.1159,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.2713,
-      "lam": 0.3165,
+      "p": 0.2918,
+      "lam": 0.345,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10613,30 +10940,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2712,
-      "lam": 1.0199,
+      "p": 0.2715,
+      "lam": 1.0209,
       "detail": {
-       "rate60": 5.771,
+       "rate60": 5.7762,
        "toi": 12.6207,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.85
       }
      },
      "buts": {
-      "p": 0.123,
-      "lam": 0.1313,
+      "p": 0.1229,
+      "lam": 0.1311,
       "detail": {
        "sh": 0.1173,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.2182,
-      "lam": 0.2461,
+      "p": 0.2354,
+      "lam": 0.2684,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10704,30 +11031,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.6935,
-      "lam": 2.5248,
+      "p": 0.6938,
+      "lam": 2.5261,
       "detail": {
-       "rate60": 8.629,
+       "rate60": 8.6337,
        "toi": 18.8047,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 0.9445
+       "f_vs": 0.9444
       }
      },
      "buts": {
-      "p": 0.3565,
-      "lam": 0.4408,
+      "p": 0.3561,
+      "lam": 0.4403,
       "detail": {
-       "sh": 0.1592,
-       "f_gardien": 1.0969
+       "sh": 0.1591,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.4175,
-      "lam": 0.5404,
+      "p": 0.445,
+      "lam": 0.5889,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10795,30 +11122,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.1841,
-      "lam": 0.7749,
+      "p": 0.1845,
+      "lam": 0.776,
       "detail": {
-       "rate60": 3.9201,
+       "rate60": 3.9252,
        "toi": 14.1165,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.85
       }
      },
      "buts": {
-      "p": 0.0889,
-      "lam": 0.0931,
+      "p": 0.0888,
+      "lam": 0.093,
       "detail": {
-       "sh": 0.1096,
-       "f_gardien": 1.0969
+       "sh": 0.1095,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.2433,
-      "lam": 0.2788,
+      "p": 0.2621,
+      "lam": 0.304,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10886,30 +11213,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3622,
-      "lam": 1.2808,
+      "p": 0.3626,
+      "lam": 1.2822,
       "detail": {
-       "rate60": 5.204,
+       "rate60": 5.2089,
        "toi": 16.1855,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9231
       }
      },
      "buts": {
-      "p": 0.1813,
-      "lam": 0.2,
+      "p": 0.1811,
+      "lam": 0.1998,
       "detail": {
-       "sh": 0.1424,
-       "f_gardien": 1.0969
+       "sh": 0.1423,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.329,
-      "lam": 0.399,
+      "p": 0.3526,
+      "lam": 0.4349,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10962,30 +11289,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4637,
-      "lam": 1.5951,
+      "p": 0.4642,
+      "lam": 1.5966,
       "detail": {
-       "rate60": 6.5871,
+       "rate60": 6.5943,
        "toi": 14.1222,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.0408
+       "f_vs": 1.0406
       }
      },
      "buts": {
-      "p": 0.2391,
-      "lam": 0.2732,
+      "p": 0.2389,
+      "lam": 0.2729,
       "detail": {
-       "sh": 0.1562,
-       "f_gardien": 1.0969
+       "sh": 0.1561,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.3121,
-      "lam": 0.3741,
+      "p": 0.3349,
+      "lam": 0.4078,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -11053,30 +11380,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.1704,
-      "lam": 0.7357,
+      "p": 0.1705,
+      "lam": 0.7358,
       "detail": {
        "rate60": 2.4541,
        "toi": 20.1268,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9042
       }
      },
      "buts": {
-      "p": 0.0556,
-      "lam": 0.0572,
+      "p": 0.0555,
+      "lam": 0.0571,
       "detail": {
        "sh": 0.0709,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.3248,
-      "lam": 0.3927,
+      "p": 0.3479,
+      "lam": 0.4275,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -11149,25 +11476,25 @@
       "detail": {
        "rate60": 3.4914,
        "toi": 15.009,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.8628
       }
      },
      "buts": {
-      "p": 0.0531,
+      "p": 0.053,
       "lam": 0.0545,
       "detail": {
        "sh": 0.0668,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.1864,
-      "lam": 0.2063,
+      "p": 0.2012,
+      "lam": 0.2246,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -11235,30 +11562,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3552,
-      "lam": 1.2604,
+      "p": 0.3553,
+      "lam": 1.2605,
       "detail": {
        "rate60": 3.611,
        "toi": 20.9585,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 1.0109
       }
      },
      "buts": {
-      "p": 0.0749,
-      "lam": 0.0778,
+      "p": 0.0748,
+      "lam": 0.0777,
       "detail": {
        "sh": 0.0563,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.2329,
-      "lam": 0.2651,
+      "p": 0.2507,
+      "lam": 0.2886,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -11326,30 +11653,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5302,
-      "lam": 1.8236,
+      "p": 0.5303,
+      "lam": 1.8237,
       "detail": {
        "rate60": 5.3508,
        "toi": 22.4922,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9198
       }
      },
      "buts": {
-      "p": 0.1263,
-      "lam": 0.135,
+      "p": 0.1261,
+      "lam": 0.1348,
       "detail": {
        "sh": 0.0675,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.4644,
-      "lam": 0.6243,
+      "p": 0.4932,
+      "lam": 0.6797,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -11422,25 +11749,25 @@
       "detail": {
        "rate60": 3.7443,
        "toi": 14.338,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9281
       }
      },
      "buts": {
-      "p": 0.0444,
+      "p": 0.0443,
       "lam": 0.0454,
       "detail": {
        "sh": 0.0505,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.1899,
-      "lam": 0.2106,
+      "p": 0.2049,
+      "lam": 0.2293,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -11509,29 +11836,29 @@
     "v1": {
      "tirs": {
       "p": 0.4056,
-      "lam": 1.4112,
+      "lam": 1.4113,
       "detail": {
        "rate60": 4.8114,
        "toi": 20.728,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.8589
       }
      },
      "buts": {
-      "p": 0.0791,
-      "lam": 0.0824,
+      "p": 0.079,
+      "lam": 0.0822,
       "detail": {
        "sh": 0.0532,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.221,
-      "lam": 0.2497,
+      "p": 0.238,
+      "lam": 0.2718,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -11596,30 +11923,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5616,
-      "lam": 1.9401,
+      "p": 0.5619,
+      "lam": 1.9411,
       "detail": {
-       "rate60": 7.8583,
+       "rate60": 7.8635,
        "toi": 15.5161,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 1.1375
+       "f_vs": 1.1372
       }
      },
      "buts": {
-      "p": 0.2356,
-      "lam": 0.2686,
+      "p": 0.2354,
+      "lam": 0.2684,
       "detail": {
-       "sh": 0.1376,
-       "f_gardien": 1.0064
+       "sh": 0.1375,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2314,
-      "lam": 0.2631,
+      "p": 0.2489,
+      "lam": 0.2862,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -11687,30 +12014,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5927,
-      "lam": 2.0625,
+      "p": 0.593,
+      "lam": 2.0639,
       "detail": {
-       "rate60": 7.3589,
+       "rate60": 7.3635,
        "toi": 20.0362,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.2711,
-      "lam": 0.3163,
+      "p": 0.271,
+      "lam": 0.3161,
       "detail": {
-       "sh": 0.1524,
-       "f_gardien": 1.0064
+       "sh": 0.1523,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.357,
-      "lam": 0.4417,
+      "p": 0.3814,
+      "lam": 0.4803,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -11778,30 +12105,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2419,
-      "lam": 0.9378,
+      "p": 0.2422,
+      "lam": 0.9386,
       "detail": {
-       "rate60": 6.1481,
+       "rate60": 6.1533,
        "toi": 12.7215,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 0.8571
       }
      },
      "buts": {
-      "p": 0.1159,
-      "lam": 0.1232,
+      "p": 0.1158,
+      "lam": 0.1231,
       "detail": {
        "sh": 0.1305,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.1736,
-      "lam": 0.1907,
+      "p": 0.1873,
+      "lam": 0.2074,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -11866,30 +12193,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.589,
-      "lam": 2.0476,
+      "p": 0.5893,
+      "lam": 2.0488,
       "detail": {
-       "rate60": 7.9646,
+       "rate60": 7.9696,
        "toi": 17.5433,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 1.0476
+       "f_vs": 1.0475
       }
      },
      "buts": {
-      "p": 0.2247,
-      "lam": 0.2545,
+      "p": 0.2245,
+      "lam": 0.2543,
       "detail": {
        "sh": 0.1235,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2482,
-      "lam": 0.2853,
+      "p": 0.2668,
+      "lam": 0.3104,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -11951,30 +12278,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2698,
-      "lam": 1.016,
+      "p": 0.2703,
+      "lam": 1.0174,
       "detail": {
-       "rate60": 5.1145,
+       "rate60": 5.1219,
        "toi": 13.5876,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 1.0452
+       "f_vs": 1.045
       }
      },
      "buts": {
-      "p": 0.1194,
+      "p": 0.1193,
       "lam": 0.1271,
       "detail": {
-       "sh": 0.1243,
-       "f_gardien": 1.0064
+       "sh": 0.1242,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2071,
-      "lam": 0.2321,
+      "p": 0.2232,
+      "lam": 0.2525,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12030,30 +12357,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2392,
-      "lam": 0.9301,
+      "p": 0.2395,
+      "lam": 0.931,
       "detail": {
-       "rate60": 6.1107,
+       "rate60": 6.1174,
        "toi": 11.7417,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 0.9267
+       "f_vs": 0.9265
       }
      },
      "buts": {
-      "p": 0.1266,
-      "lam": 0.1354,
+      "p": 0.1265,
+      "lam": 0.1353,
       "detail": {
        "sh": 0.1446,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.1654,
-      "lam": 0.1808,
+      "p": 0.1786,
+      "lam": 0.1967,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12121,12 +12448,12 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.1984,
-      "lam": 0.8153,
+      "p": 0.1987,
+      "lam": 0.8163,
       "detail": {
-       "rate60": 5.2425,
+       "rate60": 5.2482,
        "toi": 12.971,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 0.8571
@@ -12134,17 +12461,17 @@
      },
      "buts": {
       "p": 0.0974,
-      "lam": 0.1025,
+      "lam": 0.1024,
       "detail": {
-       "sh": 0.1249,
-       "f_gardien": 1.0064
+       "sh": 0.1248,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2138,
-      "lam": 0.2406,
+      "p": 0.2303,
+      "lam": 0.2617,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12212,30 +12539,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.6038,
-      "lam": 2.108,
+      "p": 0.604,
+      "lam": 2.1092,
       "detail": {
-       "rate60": 8.1111,
+       "rate60": 8.1159,
        "toi": 18.2628,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 1.0173
+       "f_vs": 1.0172
       }
      },
      "buts": {
-      "p": 0.2601,
-      "lam": 0.3013,
+      "p": 0.2599,
+      "lam": 0.301,
       "detail": {
        "sh": 0.142,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.3491,
-      "lam": 0.4294,
+      "p": 0.373,
+      "lam": 0.4668,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12303,30 +12630,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3522,
-      "lam": 1.2514,
+      "p": 0.3525,
+      "lam": 1.2524,
       "detail": {
-       "rate60": 6.7625,
+       "rate60": 6.7675,
        "toi": 15.4337,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 0.8571
       }
      },
      "buts": {
-      "p": 0.1594,
-      "lam": 0.1737,
+      "p": 0.1593,
+      "lam": 0.1736,
       "detail": {
        "sh": 0.1379,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2452,
-      "lam": 0.2812,
+      "p": 0.2635,
+      "lam": 0.3059,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12394,30 +12721,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.6277,
-      "lam": 2.2102,
+      "p": 0.628,
+      "lam": 2.2114,
       "detail": {
-       "rate60": 7.8861,
+       "rate60": 7.8907,
        "toi": 20.0038,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 1.0016
+       "f_vs": 1.0015
       }
      },
      "buts": {
-      "p": 0.2444,
-      "lam": 0.2802,
+      "p": 0.2442,
+      "lam": 0.28,
       "detail": {
-       "sh": 0.126,
-       "f_gardien": 1.0064
+       "sh": 0.1259,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2869,
-      "lam": 0.3382,
+      "p": 0.3078,
+      "lam": 0.3678,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12485,30 +12812,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3103,
-      "lam": 1.1306,
+      "p": 0.3106,
+      "lam": 1.1314,
       "detail": {
-       "rate60": 8.1245,
+       "rate60": 8.1298,
        "toi": 11.0608,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 0.8994
       }
      },
      "buts": {
-      "p": 0.1509,
-      "lam": 0.1636,
+      "p": 0.1508,
+      "lam": 0.1634,
       "detail": {
        "sh": 0.1437,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.1453,
-      "lam": 0.1571,
+      "p": 0.1571,
+      "lam": 0.1709,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12567,30 +12894,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4809,
-      "lam": 1.6521,
+      "p": 0.4813,
+      "lam": 1.6534,
       "detail": {
-       "rate60": 6.8965,
+       "rate60": 6.9019,
        "toi": 18.6033,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 0.9206
+       "f_vs": 0.9205
       }
      },
      "buts": {
-      "p": 0.2315,
-      "lam": 0.2633,
+      "p": 0.2314,
+      "lam": 0.2632,
       "detail": {
-       "sh": 0.1584,
-       "f_gardien": 1.0064
+       "sh": 0.1583,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2722,
-      "lam": 0.3178,
+      "p": 0.2923,
+      "lam": 0.3457,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12643,30 +12970,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2505,
-      "lam": 0.9619,
+      "p": 0.2509,
+      "lam": 0.9629,
       "detail": {
-       "rate60": 5.7451,
+       "rate60": 5.7529,
        "toi": 10.6444,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 1.1244
+       "f_vs": 1.124
       }
      },
      "buts": {
       "p": 0.1148,
-      "lam": 0.122,
+      "lam": 0.1219,
       "detail": {
-       "sh": 0.126,
-       "f_gardien": 1.0064
+       "sh": 0.1259,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.1403,
-      "lam": 0.1512,
+      "p": 0.1517,
+      "lam": 0.1646,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12734,30 +13061,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2863,
-      "lam": 1.0626,
+      "p": 0.2864,
+      "lam": 1.0627,
       "detail": {
        "rate60": 4.007,
        "toi": 18.9577,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.0717,
-      "lam": 0.0744,
+      "p": 0.0716,
+      "lam": 0.0743,
       "detail": {
        "sh": 0.0695,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.1764,
-      "lam": 0.194,
+      "p": 0.19,
+      "lam": 0.2108,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12830,25 +13157,25 @@
       "detail": {
        "rate60": 3.3946,
        "toi": 19.5968,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 1.0029
       }
      },
      "buts": {
-      "p": 0.0611,
-      "lam": 0.063,
+      "p": 0.061,
+      "lam": 0.0629,
       "detail": {
        "sh": 0.0671,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.298,
-      "lam": 0.3538,
+      "p": 0.3191,
+      "lam": 0.3843,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12917,29 +13244,29 @@
     "v1": {
      "tirs": {
       "p": 0.4893,
-      "lam": 1.6803,
+      "lam": 1.6804,
       "detail": {
        "rate60": 4.9932,
        "toi": 23.255,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 1.0345
       }
      },
      "buts": {
-      "p": 0.1106,
-      "lam": 0.1172,
+      "p": 0.1105,
+      "lam": 0.1171,
       "detail": {
        "sh": 0.0693,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.4257,
-      "lam": 0.5546,
+      "p": 0.4525,
+      "lam": 0.6025,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -13008,29 +13335,29 @@
     "v1": {
      "tirs": {
       "p": 0.2153,
-      "lam": 0.8631,
+      "lam": 0.8632,
       "detail": {
        "rate60": 3.4049,
        "toi": 18.1223,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.0467,
-      "lam": 0.0478,
+      "p": 0.0466,
+      "lam": 0.0477,
       "detail": {
        "sh": 0.055,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2308,
-      "lam": 0.2624,
+      "p": 0.248,
+      "lam": 0.285,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -13098,30 +13425,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3749,
-      "lam": 1.3186,
+      "p": 0.375,
+      "lam": 1.3187,
       "detail": {
        "rate60": 4.6793,
        "toi": 19.568,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 1.0295
       }
      },
      "buts": {
-      "p": 0.057,
-      "lam": 0.0587,
+      "p": 0.0569,
+      "lam": 0.0586,
       "detail": {
        "sh": 0.0442,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2582,
-      "lam": 0.2987,
+      "p": 0.277,
+      "lam": 0.3244,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -13179,25 +13506,25 @@
       "detail": {
        "rate60": 3.3893,
        "toi": 14.6667,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 0.9231
       }
      },
      "buts": {
-      "p": 0.0349,
+      "p": 0.0348,
       "lam": 0.0355,
       "detail": {
        "sh": 0.055,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.1325,
-      "lam": 0.1421,
+      "p": 0.143,
+      "lam": 0.1544,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -13268,30 +13595,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4684,
-      "lam": 1.6105,
+      "p": 0.4688,
+      "lam": 1.6116,
       "detail": {
-       "rate60": 6.1059,
+       "rate60": 6.1106,
        "toi": 16.8196,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9043
       }
      },
      "buts": {
-      "p": 0.2062,
-      "lam": 0.2309,
+      "p": 0.2058,
+      "lam": 0.2304,
       "detail": {
        "sh": 0.1397,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.4319,
-      "lam": 0.5654,
+      "p": 0.4596,
+      "lam": 0.6155,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13362,30 +13689,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4539,
-      "lam": 1.5631,
+      "p": 0.4542,
+      "lam": 1.5641,
       "detail": {
-       "rate60": 5.9612,
+       "rate60": 5.9666,
        "toi": 14.2137,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.0638
+       "f_vs": 1.0636
       }
      },
      "buts": {
-      "p": 0.1905,
-      "lam": 0.2113,
+      "p": 0.19,
+      "lam": 0.2108,
       "detail": {
        "sh": 0.1317,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2663,
-      "lam": 0.3097,
+      "p": 0.2863,
+      "lam": 0.3373,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13456,30 +13783,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5914,
-      "lam": 2.0572,
+      "p": 0.592,
+      "lam": 2.0596,
       "detail": {
-       "rate60": 8.0546,
+       "rate60": 8.0648,
        "toi": 14.7284,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.2592,
-      "lam": 0.3,
+      "p": 0.2587,
+      "lam": 0.2994,
       "detail": {
-       "sh": 0.1421,
-       "f_gardien": 1.0261
+       "sh": 0.142,
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.284,
-      "lam": 0.3341,
+      "p": 0.3052,
+      "lam": 0.3641,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13550,30 +13877,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.1599,
-      "lam": 0.7054,
+      "p": 0.1602,
+      "lam": 0.7063,
       "detail": {
-       "rate60": 3.9236,
+       "rate60": 3.9287,
        "toi": 12.0962,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.8571
       }
      },
      "buts": {
-      "p": 0.0797,
-      "lam": 0.0831,
+      "p": 0.0796,
+      "lam": 0.0829,
       "detail": {
-       "sh": 0.1148,
-       "f_gardien": 1.0261
+       "sh": 0.1147,
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2236,
-      "lam": 0.2531,
+      "p": 0.241,
+      "lam": 0.2757,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13644,30 +13971,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.7675,
-      "lam": 2.9633,
+      "p": 0.7676,
+      "lam": 2.9644,
       "detail": {
-       "rate60": 9.1511,
+       "rate60": 9.1554,
        "toi": 20.6131,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9059
       }
      },
      "buts": {
-      "p": 0.3134,
-      "lam": 0.376,
+      "p": 0.3127,
+      "lam": 0.375,
       "detail": {
        "sh": 0.1236,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.5827,
-      "lam": 0.8739,
+      "p": 0.6137,
+      "lam": 0.9511,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13738,30 +14065,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.388,
-      "lam": 1.3578,
+      "p": 0.3884,
+      "lam": 1.3589,
       "detail": {
-       "rate60": 7.9235,
+       "rate60": 7.9306,
        "toi": 10.958,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9018
       }
      },
      "buts": {
-      "p": 0.1406,
-      "lam": 0.1515,
+      "p": 0.1403,
+      "lam": 0.1511,
       "detail": {
        "sh": 0.1087,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.1831,
-      "lam": 0.2022,
+      "p": 0.1978,
+      "lam": 0.2204,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13832,30 +14159,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.6182,
-      "lam": 2.1691,
+      "p": 0.6185,
+      "lam": 2.1701,
       "detail": {
-       "rate60": 8.4799,
+       "rate60": 8.4846,
        "toi": 16.1406,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9139
       }
      },
      "buts": {
-      "p": 0.2556,
-      "lam": 0.2952,
+      "p": 0.2551,
+      "lam": 0.2945,
       "detail": {
        "sh": 0.1326,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.3315,
-      "lam": 0.4027,
+      "p": 0.355,
+      "lam": 0.4385,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13926,30 +14253,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4099,
-      "lam": 1.4245,
+      "p": 0.4103,
+      "lam": 1.4256,
       "detail": {
-       "rate60": 5.7665,
+       "rate60": 5.7714,
        "toi": 15.4324,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9231
       }
      },
      "buts": {
-      "p": 0.2021,
-      "lam": 0.2258,
+      "p": 0.2017,
+      "lam": 0.2253,
       "detail": {
-       "sh": 0.1545,
-       "f_gardien": 1.0261
+       "sh": 0.1544,
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2711,
-      "lam": 0.3162,
+      "p": 0.2914,
+      "lam": 0.3444,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14020,30 +14347,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5799,
-      "lam": 2.0111,
+      "p": 0.5804,
+      "lam": 2.0132,
       "detail": {
-       "rate60": 6.6875,
+       "rate60": 6.6946,
        "toi": 17.3424,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.2423,
-      "lam": 0.2775,
+      "p": 0.2419,
+      "lam": 0.2769,
       "detail": {
-       "sh": 0.1345,
-       "f_gardien": 1.0261
+       "sh": 0.1344,
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2953,
-      "lam": 0.3499,
+      "p": 0.317,
+      "lam": 0.3813,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14102,30 +14429,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2907,
-      "lam": 1.0748,
+      "p": 0.2916,
+      "lam": 1.0775,
       "detail": {
-       "rate60": 5.9253,
+       "rate60": 5.9406,
        "toi": 10.46,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.1337,
-      "lam": 0.1435,
+      "p": 0.1335,
+      "lam": 0.1434,
       "detail": {
-       "sh": 0.1301,
-       "f_gardien": 1.0261
+       "sh": 0.13,
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2503,
-      "lam": 0.2881,
+      "p": 0.2695,
+      "lam": 0.314,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14196,30 +14523,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.6712,
-      "lam": 2.4117,
+      "p": 0.6714,
+      "lam": 2.4128,
       "detail": {
-       "rate60": 6.6955,
+       "rate60": 6.6998,
        "toi": 20.1053,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.0331
+       "f_vs": 1.033
       }
      },
      "buts": {
-      "p": 0.2842,
-      "lam": 0.3343,
+      "p": 0.2836,
+      "lam": 0.3335,
       "detail": {
        "sh": 0.1351,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.4935,
-      "lam": 0.6802,
+      "p": 0.5231,
+      "lam": 0.7404,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14290,30 +14617,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5482,
-      "lam": 1.8896,
+      "p": 0.5485,
+      "lam": 1.8907,
       "detail": {
-       "rate60": 6.8205,
+       "rate60": 6.825,
        "toi": 18.6393,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.8571
       }
      },
      "buts": {
-      "p": 0.3063,
-      "lam": 0.3656,
+      "p": 0.3057,
+      "lam": 0.3648,
       "detail": {
-       "sh": 0.1886,
-       "f_gardien": 1.0261
+       "sh": 0.1885,
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.4574,
-      "lam": 0.6114,
+      "p": 0.486,
+      "lam": 0.6656,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14385,29 +14712,29 @@
     "v1": {
      "tirs": {
       "p": 0.4947,
-      "lam": 1.6988,
+      "lam": 1.6987,
       "detail": {
        "rate60": 5.8096,
        "toi": 18.7749,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.8981
       }
      },
      "buts": {
-      "p": 0.1262,
-      "lam": 0.1349,
+      "p": 0.1259,
+      "lam": 0.1345,
       "detail": {
        "sh": 0.0774,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.287,
-      "lam": 0.3383,
+      "p": 0.3078,
+      "lam": 0.3679,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14460,30 +14787,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3811,
-      "lam": 1.3369,
+      "p": 0.381,
+      "lam": 1.3368,
       "detail": {
        "rate60": 5.2924,
        "toi": 14.5667,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.0765,
-      "lam": 0.0796,
+      "p": 0.0763,
+      "lam": 0.0793,
       "detail": {
        "sh": 0.058,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2292,
-      "lam": 0.2603,
+      "p": 0.2466,
+      "lam": 0.2831,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14554,30 +14881,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3832,
-      "lam": 1.3432,
+      "p": 0.3831,
+      "lam": 1.3431,
       "detail": {
        "rate60": 4.2082,
        "toi": 20.2889,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9072
       }
      },
      "buts": {
-      "p": 0.0639,
-      "lam": 0.066,
+      "p": 0.0637,
+      "lam": 0.0659,
       "detail": {
        "sh": 0.0479,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2748,
-      "lam": 0.3213,
+      "p": 0.2949,
+      "lam": 0.3494,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14649,29 +14976,29 @@
     "v1": {
      "tirs": {
       "p": 0.3252,
-      "lam": 1.1733,
+      "lam": 1.1732,
       "detail": {
        "rate60": 4.2629,
        "toi": 17.3493,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9148
       }
      },
      "buts": {
-      "p": 0.0502,
-      "lam": 0.0516,
+      "p": 0.0501,
+      "lam": 0.0514,
       "detail": {
        "sh": 0.0428,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.1754,
-      "lam": 0.1928,
+      "p": 0.1892,
+      "lam": 0.2097,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14742,30 +15069,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3582,
-      "lam": 1.269,
+      "p": 0.3581,
+      "lam": 1.2689,
       "detail": {
        "rate60": 3.4927,
        "toi": 18.2187,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 1.15
       }
      },
      "buts": {
-      "p": 0.0736,
-      "lam": 0.0765,
+      "p": 0.0734,
+      "lam": 0.0763,
       "detail": {
        "sh": 0.0587,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2755,
-      "lam": 0.3223,
+      "p": 0.2957,
+      "lam": 0.3505,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14837,29 +15164,29 @@
     "v1": {
      "tirs": {
       "p": 0.5192,
-      "lam": 1.7841,
+      "lam": 1.784,
       "detail": {
        "rate60": 5.15,
        "toi": 21.2508,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.94
       }
      },
      "buts": {
-      "p": 0.116,
-      "lam": 0.1233,
+      "p": 0.1157,
+      "lam": 0.123,
       "detail": {
        "sh": 0.0674,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2948,
-      "lam": 0.3493,
+      "p": 0.3161,
+      "lam": 0.3799,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14873,65 +15200,1802 @@
   "joueurs": {
    "tirs": {
     "v0": {
-     "n": 0
+     "n": 4233,
+     "base": 0.4238128986534373,
+     "brier": 0.22776829761162298,
+     "bss": 0.06727079841943417,
+     "precision": 0.6416253248287267,
+     "note": 53.36353992097171,
+     "logloss": 0.6692075021502214,
+     "calib": [
+      {
+       "tranche": "0-10",
+       "n": 314,
+       "predit": 0.04837961783439491,
+       "reel": 0.23885350318471338
+      },
+      {
+       "tranche": "10-20",
+       "n": 469,
+       "predit": 0.15873773987206824,
+       "reel": 0.26439232409381663
+      },
+      {
+       "tranche": "20-30",
+       "n": 605,
+       "predit": 0.25257586776859503,
+       "reel": 0.31900826446280994
+      },
+      {
+       "tranche": "30-40",
+       "n": 691,
+       "predit": 0.3530465991316932,
+       "reel": 0.33719247467438496
+      },
+      {
+       "tranche": "40-50",
+       "n": 603,
+       "predit": 0.45190547263681596,
+       "reel": 0.4228855721393035
+      },
+      {
+       "tranche": "50-60",
+       "n": 558,
+       "predit": 0.5553381720430107,
+       "reel": 0.44086021505376344
+      },
+      {
+       "tranche": "60-70",
+       "n": 382,
+       "predit": 0.6537193717277486,
+       "reel": 0.5916230366492147
+      },
+      {
+       "tranche": "70-80",
+       "n": 316,
+       "predit": 0.7446800632911392,
+       "reel": 0.7056962025316456
+      },
+      {
+       "tranche": "80-90",
+       "n": 238,
+       "predit": 0.8421172268907563,
+       "reel": 0.7394957983193278
+      },
+      {
+       "tranche": "90-100",
+       "n": 57,
+       "predit": 0.9369649122807018,
+       "reel": 0.7543859649122807
+      }
+     ],
+     "top": {
+      "n": 190,
+      "hits": 146,
+      "attendu": 164.0671
+     },
+     "soirs": [
+      {
+       "date": "2026-10-04",
+       "n": 10,
+       "hits": 8,
+       "attendu": 8.3612
+      },
+      {
+       "date": "2026-10-05",
+       "n": 10,
+       "hits": 7,
+       "attendu": 8.0632
+      },
+      {
+       "date": "2026-10-06",
+       "n": 10,
+       "hits": 9,
+       "attendu": 8.9473
+      },
+      {
+       "date": "2026-10-07",
+       "n": 10,
+       "hits": 8,
+       "attendu": 8.991
+      },
+      {
+       "date": "2026-10-08",
+       "n": 10,
+       "hits": 8,
+       "attendu": 9.249
+      },
+      {
+       "date": "2026-10-09",
+       "n": 10,
+       "hits": 6,
+       "attendu": 8.8558
+      },
+      {
+       "date": "2026-10-10",
+       "n": 10,
+       "hits": 8,
+       "attendu": 9.4069
+      },
+      {
+       "date": "2026-10-11",
+       "n": 10,
+       "hits": 8,
+       "attendu": 8.2186
+      },
+      {
+       "date": "2026-10-12",
+       "n": 10,
+       "hits": 8,
+       "attendu": 8.7578
+      },
+      {
+       "date": "2026-10-13",
+       "n": 10,
+       "hits": 6,
+       "attendu": 9.3323
+      },
+      {
+       "date": "2026-10-14",
+       "n": 10,
+       "hits": 7,
+       "attendu": 8.1505
+      },
+      {
+       "date": "2026-10-15",
+       "n": 10,
+       "hits": 10,
+       "attendu": 9.1915
+      },
+      {
+       "date": "2026-10-16",
+       "n": 10,
+       "hits": 8,
+       "attendu": 7.8584
+      },
+      {
+       "date": "2026-10-17",
+       "n": 10,
+       "hits": 7,
+       "attendu": 8.4071
+      }
+     ]
     },
     "v1": {
-     "n": 0
+     "n": 4233,
+     "base": 0.4238128986534373,
+     "brier": 0.21373600537680132,
+     "bss": 0.12473414546893369,
+     "precision": 0.6600519725962675,
+     "note": 56.23670727344668,
+     "logloss": 0.6161558370440403,
+     "calib": [
+      {
+       "tranche": "0-10",
+       "n": 30,
+       "predit": 0.08781666666666667,
+       "reel": 0.06666666666666667
+      },
+      {
+       "tranche": "10-20",
+       "n": 315,
+       "predit": 0.16110126984126982,
+       "reel": 0.16825396825396827
+      },
+      {
+       "tranche": "20-30",
+       "n": 771,
+       "predit": 0.25407613488975356,
+       "reel": 0.26329442282749677
+      },
+      {
+       "tranche": "30-40",
+       "n": 881,
+       "predit": 0.3501516458569807,
+       "reel": 0.34506242905788875
+      },
+      {
+       "tranche": "40-50",
+       "n": 817,
+       "predit": 0.44741468788249694,
+       "reel": 0.4222766217870257
+      },
+      {
+       "tranche": "50-60",
+       "n": 571,
+       "predit": 0.5474096322241682,
+       "reel": 0.5148861646234676
+      },
+      {
+       "tranche": "60-70",
+       "n": 465,
+       "predit": 0.6459791397849461,
+       "reel": 0.6172043010752688
+      },
+      {
+       "tranche": "70-80",
+       "n": 288,
+       "predit": 0.7420374999999999,
+       "reel": 0.7881944444444444
+      },
+      {
+       "tranche": "80-90",
+       "n": 94,
+       "predit": 0.8386117021276596,
+       "reel": 0.8404255319148937
+      },
+      {
+       "tranche": "90-100",
+       "n": 1,
+       "predit": 0.911,
+       "reel": 0.0
+      }
+     ],
+     "top": {
+      "n": 190,
+      "hits": 155,
+      "attendu": 149.6126
+     },
+     "soirs": [
+      {
+       "date": "2026-10-04",
+       "n": 10,
+       "hits": 9,
+       "attendu": 7.7388
+      },
+      {
+       "date": "2026-10-05",
+       "n": 10,
+       "hits": 9,
+       "attendu": 7.6493
+      },
+      {
+       "date": "2026-10-06",
+       "n": 10,
+       "hits": 10,
+       "attendu": 8.1092
+      },
+      {
+       "date": "2026-10-07",
+       "n": 10,
+       "hits": 8,
+       "attendu": 7.7094000000000005
+      },
+      {
+       "date": "2026-10-08",
+       "n": 10,
+       "hits": 8,
+       "attendu": 8.2273
+      },
+      {
+       "date": "2026-10-09",
+       "n": 10,
+       "hits": 6,
+       "attendu": 7.9464
+      },
+      {
+       "date": "2026-10-10",
+       "n": 10,
+       "hits": 7,
+       "attendu": 8.4848
+      },
+      {
+       "date": "2026-10-11",
+       "n": 10,
+       "hits": 9,
+       "attendu": 7.0043
+      },
+      {
+       "date": "2026-10-12",
+       "n": 10,
+       "hits": 7,
+       "attendu": 7.7572
+      },
+      {
+       "date": "2026-10-13",
+       "n": 10,
+       "hits": 7,
+       "attendu": 8.394
+      },
+      {
+       "date": "2026-10-14",
+       "n": 10,
+       "hits": 7,
+       "attendu": 7.1261
+      },
+      {
+       "date": "2026-10-15",
+       "n": 10,
+       "hits": 9,
+       "attendu": 8.5986
+      },
+      {
+       "date": "2026-10-16",
+       "n": 10,
+       "hits": 7,
+       "attendu": 7.4474
+      },
+      {
+       "date": "2026-10-17",
+       "n": 10,
+       "hits": 7,
+       "attendu": 7.7525
+      }
+     ]
     }
    },
    "buts": {
     "v0": {
-     "n": 0
+     "n": 4130,
+     "base": 0.15157384987893463,
+     "brier": 0.13411210872154963,
+     "bss": -0.0428687740038769,
+     "precision": 0.8389830508474576,
+     "note": 47.85656129980615,
+     "logloss": 0.48124476695415924,
+     "calib": [
+      {
+       "tranche": "0-10",
+       "n": 1820,
+       "predit": 0.02506791208791209,
+       "reel": 0.1043956043956044
+      },
+      {
+       "tranche": "10-20",
+       "n": 915,
+       "predit": 0.15355092896174863,
+       "reel": 0.16174863387978142
+      },
+      {
+       "tranche": "20-30",
+       "n": 842,
+       "predit": 0.2470332541567696,
+       "reel": 0.167458432304038
+      },
+      {
+       "tranche": "30-40",
+       "n": 327,
+       "predit": 0.3563119266055046,
+       "reel": 0.24464831804281345
+      },
+      {
+       "tranche": "40-50",
+       "n": 141,
+       "predit": 0.4596730496453901,
+       "reel": 0.3120567375886525
+      },
+      {
+       "tranche": "50-60",
+       "n": 44,
+       "predit": 0.5365454545454544,
+       "reel": 0.20454545454545456
+      },
+      {
+       "tranche": "60-70",
+       "n": 36,
+       "predit": 0.6421583333333333,
+       "reel": 0.3055555555555556
+      },
+      {
+       "tranche": "70-80",
+       "n": 5,
+       "predit": 0.7353400000000001,
+       "reel": 0.6
+      }
+     ],
+     "top": {
+      "n": 180,
+      "hits": 59,
+      "attendu": 88.2443
+     },
+     "soirs": [
+      {
+       "date": "2026-10-03",
+       "n": 10,
+       "hits": 4,
+       "attendu": 4.3805
+      },
+      {
+       "date": "2026-10-04",
+       "n": 10,
+       "hits": 4,
+       "attendu": 4.8286
+      },
+      {
+       "date": "2026-10-05",
+       "n": 10,
+       "hits": 3,
+       "attendu": 3.9701
+      },
+      {
+       "date": "2026-10-06",
+       "n": 10,
+       "hits": 4,
+       "attendu": 5.4284
+      },
+      {
+       "date": "2026-10-07",
+       "n": 10,
+       "hits": 6,
+       "attendu": 5.6978
+      },
+      {
+       "date": "2026-10-08",
+       "n": 10,
+       "hits": 0,
+       "attendu": 6.2979
+      },
+      {
+       "date": "2026-10-09",
+       "n": 10,
+       "hits": 3,
+       "attendu": 5.5069
+      },
+      {
+       "date": "2026-10-10",
+       "n": 10,
+       "hits": 4,
+       "attendu": 5.9081
+      },
+      {
+       "date": "2026-10-11",
+       "n": 10,
+       "hits": 5,
+       "attendu": 4.7120999999999995
+      },
+      {
+       "date": "2026-10-12",
+       "n": 10,
+       "hits": 2,
+       "attendu": 4.5706
+      },
+      {
+       "date": "2026-10-13",
+       "n": 10,
+       "hits": 3,
+       "attendu": 6.2645
+      },
+      {
+       "date": "2026-10-14",
+       "n": 10,
+       "hits": 2,
+       "attendu": 4.3508000000000004
+      },
+      {
+       "date": "2026-10-15",
+       "n": 10,
+       "hits": 3,
+       "attendu": 6.0676
+      },
+      {
+       "date": "2026-10-16",
+       "n": 10,
+       "hits": 6,
+       "attendu": 4.2674
+      }
+     ]
     },
     "v1": {
-     "n": 0
+     "n": 4130,
+     "base": 0.15157384987893463,
+     "brier": 0.12108054936561743,
+     "bss": 0.05846589635833799,
+     "precision": 0.8484261501210654,
+     "note": 52.9232948179169,
+     "logloss": 0.3955337181776986,
+     "calib": [
+      {
+       "tranche": "0-10",
+       "n": 1260,
+       "predit": 0.062400555555555556,
+       "reel": 0.05317460317460317
+      },
+      {
+       "tranche": "10-20",
+       "n": 1657,
+       "predit": 0.14949094749547376,
+       "reel": 0.15268557634278818
+      },
+      {
+       "tranche": "20-30",
+       "n": 878,
+       "predit": 0.241101138952164,
+       "reel": 0.21298405466970388
+      },
+      {
+       "tranche": "30-40",
+       "n": 288,
+       "predit": 0.3379173611111111,
+       "reel": 0.3402777777777778
+      },
+      {
+       "tranche": "40-50",
+       "n": 47,
+       "predit": 0.4327617021276596,
+       "reel": 0.44680851063829785
+      }
+     ],
+     "top": {
+      "n": 180,
+      "hits": 60,
+      "attendu": 65.54899999999999
+     },
+     "soirs": [
+      {
+       "date": "2026-10-03",
+       "n": 10,
+       "hits": 3,
+       "attendu": 3.988
+      },
+      {
+       "date": "2026-10-04",
+       "n": 10,
+       "hits": 3,
+       "attendu": 3.4932
+      },
+      {
+       "date": "2026-10-05",
+       "n": 10,
+       "hits": 4,
+       "attendu": 3.7168
+      },
+      {
+       "date": "2026-10-06",
+       "n": 10,
+       "hits": 3,
+       "attendu": 3.6572999999999998
+      },
+      {
+       "date": "2026-10-07",
+       "n": 10,
+       "hits": 4,
+       "attendu": 3.7218
+      },
+      {
+       "date": "2026-10-08",
+       "n": 10,
+       "hits": 4,
+       "attendu": 3.9461
+      },
+      {
+       "date": "2026-10-09",
+       "n": 10,
+       "hits": 4,
+       "attendu": 3.4434
+      },
+      {
+       "date": "2026-10-10",
+       "n": 10,
+       "hits": 2,
+       "attendu": 4.1951
+      },
+      {
+       "date": "2026-10-11",
+       "n": 10,
+       "hits": 3,
+       "attendu": 3.1853
+      },
+      {
+       "date": "2026-10-12",
+       "n": 10,
+       "hits": 4,
+       "attendu": 3.3719
+      },
+      {
+       "date": "2026-10-13",
+       "n": 10,
+       "hits": 5,
+       "attendu": 4.0454
+      },
+      {
+       "date": "2026-10-14",
+       "n": 10,
+       "hits": 2,
+       "attendu": 3.0796
+      },
+      {
+       "date": "2026-10-15",
+       "n": 10,
+       "hits": 6,
+       "attendu": 4.2261
+      },
+      {
+       "date": "2026-10-16",
+       "n": 10,
+       "hits": 3,
+       "attendu": 3.2595
+      }
+     ]
     }
    },
    "passes": {
     "v0": {
-     "n": 0
+     "n": 4130,
+     "base": 0.2469733656174334,
+     "brier": 0.1906291571598063,
+     "bss": -0.025011812230975483,
+     "precision": 0.747457627118644,
+     "note": 48.74940938845123,
+     "logloss": 0.6322705842847353,
+     "calib": [
+      {
+       "tranche": "0-10",
+       "n": 965,
+       "predit": 0.022106321243523314,
+       "reel": 0.1772020725388601
+      },
+      {
+       "tranche": "10-20",
+       "n": 862,
+       "predit": 0.1585800464037123,
+       "reel": 0.2099767981438515
+      },
+      {
+       "tranche": "20-30",
+       "n": 1023,
+       "predit": 0.2533399804496579,
+       "reel": 0.2238514173998045
+      },
+      {
+       "tranche": "30-40",
+       "n": 640,
+       "predit": 0.35545734375000004,
+       "reel": 0.2734375
+      },
+      {
+       "tranche": "40-50",
+       "n": 311,
+       "predit": 0.46255369774919614,
+       "reel": 0.35691318327974275
+      },
+      {
+       "tranche": "50-60",
+       "n": 181,
+       "predit": 0.5429707182320441,
+       "reel": 0.4585635359116022
+      },
+      {
+       "tranche": "60-70",
+       "n": 116,
+       "predit": 0.637973275862069,
+       "reel": 0.4827586206896552
+      },
+      {
+       "tranche": "70-80",
+       "n": 22,
+       "predit": 0.7413590909090909,
+       "reel": 0.2727272727272727
+      },
+      {
+       "tranche": "80-90",
+       "n": 9,
+       "predit": 0.8491222222222222,
+       "reel": 0.7777777777777778
+      },
+      {
+       "tranche": "90-100",
+       "n": 1,
+       "predit": 0.903,
+       "reel": 1.0
+      }
+     ],
+     "top": {
+      "n": 180,
+      "hits": 86,
+      "attendu": 111.4703
+     },
+     "soirs": [
+      {
+       "date": "2026-10-03",
+       "n": 10,
+       "hits": 7,
+       "attendu": 6.1582
+      },
+      {
+       "date": "2026-10-04",
+       "n": 10,
+       "hits": 7,
+       "attendu": 6.0865
+      },
+      {
+       "date": "2026-10-05",
+       "n": 10,
+       "hits": 2,
+       "attendu": 5.2839
+      },
+      {
+       "date": "2026-10-06",
+       "n": 10,
+       "hits": 4,
+       "attendu": 6.8876
+      },
+      {
+       "date": "2026-10-07",
+       "n": 10,
+       "hits": 3,
+       "attendu": 6.6007
+      },
+      {
+       "date": "2026-10-08",
+       "n": 10,
+       "hits": 2,
+       "attendu": 7.1741
+      },
+      {
+       "date": "2026-10-09",
+       "n": 10,
+       "hits": 5,
+       "attendu": 6.5536
+      },
+      {
+       "date": "2026-10-10",
+       "n": 10,
+       "hits": 6,
+       "attendu": 7.4533000000000005
+      },
+      {
+       "date": "2026-10-11",
+       "n": 10,
+       "hits": 3,
+       "attendu": 5.8389
+      },
+      {
+       "date": "2026-10-12",
+       "n": 10,
+       "hits": 4,
+       "attendu": 5.6402
+      },
+      {
+       "date": "2026-10-13",
+       "n": 10,
+       "hits": 6,
+       "attendu": 7.313
+      },
+      {
+       "date": "2026-10-14",
+       "n": 10,
+       "hits": 2,
+       "attendu": 5.3685
+      },
+      {
+       "date": "2026-10-15",
+       "n": 10,
+       "hits": 6,
+       "attendu": 7.0776
+      },
+      {
+       "date": "2026-10-16",
+       "n": 10,
+       "hits": 8,
+       "attendu": 5.5485999999999995
+      }
+     ]
     },
     "v1": {
-     "n": 0
+     "n": 4130,
+     "base": 0.2469733656174334,
+     "brier": 0.17442735992978206,
+     "bss": 0.06210515239067538,
+     "precision": 0.7576271186440678,
+     "note": 53.105257619533766,
+     "logloss": 0.5296281518228343,
+     "calib": [
+      {
+       "tranche": "0-10",
+       "n": 20,
+       "predit": 0.091975,
+       "reel": 0.0
+      },
+      {
+       "tranche": "10-20",
+       "n": 1202,
+       "predit": 0.16438086522462564,
+       "reel": 0.15391014975041598
+      },
+      {
+       "tranche": "20-30",
+       "n": 1758,
+       "predit": 0.24524465301478954,
+       "reel": 0.2235494880546075
+      },
+      {
+       "tranche": "30-40",
+       "n": 832,
+       "predit": 0.34172908653846157,
+       "reel": 0.3401442307692308
+      },
+      {
+       "tranche": "40-50",
+       "n": 221,
+       "predit": 0.4399036199095023,
+       "reel": 0.45701357466063347
+      },
+      {
+       "tranche": "50-60",
+       "n": 73,
+       "predit": 0.5299232876712329,
+       "reel": 0.5342465753424658
+      },
+      {
+       "tranche": "60-70",
+       "n": 20,
+       "predit": 0.6293,
+       "reel": 0.75
+      },
+      {
+       "tranche": "70-80",
+       "n": 4,
+       "predit": 0.73275,
+       "reel": 1.0
+      }
+     ],
+     "top": {
+      "n": 180,
+      "hits": 94,
+      "attendu": 88.95009999999999
+     },
+     "soirs": [
+      {
+       "date": "2026-10-03",
+       "n": 10,
+       "hits": 6,
+       "attendu": 5.5078
+      },
+      {
+       "date": "2026-10-04",
+       "n": 10,
+       "hits": 5,
+       "attendu": 4.4919
+      },
+      {
+       "date": "2026-10-05",
+       "n": 10,
+       "hits": 3,
+       "attendu": 5.0478
+      },
+      {
+       "date": "2026-10-06",
+       "n": 10,
+       "hits": 8,
+       "attendu": 4.568
+      },
+      {
+       "date": "2026-10-07",
+       "n": 10,
+       "hits": 5,
+       "attendu": 5.2449
+      },
+      {
+       "date": "2026-10-08",
+       "n": 10,
+       "hits": 5,
+       "attendu": 5.4872
+      },
+      {
+       "date": "2026-10-09",
+       "n": 10,
+       "hits": 5,
+       "attendu": 4.5931
+      },
+      {
+       "date": "2026-10-10",
+       "n": 10,
+       "hits": 3,
+       "attendu": 5.8481000000000005
+      },
+      {
+       "date": "2026-10-11",
+       "n": 10,
+       "hits": 6,
+       "attendu": 3.9156
+      },
+      {
+       "date": "2026-10-12",
+       "n": 10,
+       "hits": 6,
+       "attendu": 4.2829
+      },
+      {
+       "date": "2026-10-13",
+       "n": 10,
+       "hits": 6,
+       "attendu": 5.6936
+      },
+      {
+       "date": "2026-10-14",
+       "n": 10,
+       "hits": 2,
+       "attendu": 4.4004
+      },
+      {
+       "date": "2026-10-15",
+       "n": 10,
+       "hits": 6,
+       "attendu": 6.0097
+      },
+      {
+       "date": "2026-10-16",
+       "n": 10,
+       "hits": 7,
+       "attendu": 4.9582
+      }
+     ]
     }
    }
   },
   "matchs": {
    "victoire": {
     "v0": {
-     "n": 0
+     "n": 120,
+     "base": 0.55,
+     "brier": 0.2434310905,
+     "bss": 0.01644003838383834,
+     "precision": 0.5416666666666666,
+     "note": 50.82200191919192,
+     "logloss": 0.6787678912295545,
+     "calib": [
+      {
+       "tranche": "0-10",
+       "n": 1,
+       "predit": 0.0927,
+       "reel": 0.0
+      },
+      {
+       "tranche": "10-20",
+       "n": 2,
+       "predit": 0.1799,
+       "reel": 0.0
+      },
+      {
+       "tranche": "20-30",
+       "n": 8,
+       "predit": 0.2723,
+       "reel": 0.5
+      },
+      {
+       "tranche": "30-40",
+       "n": 11,
+       "predit": 0.36743636363636367,
+       "reel": 0.45454545454545453
+      },
+      {
+       "tranche": "40-50",
+       "n": 39,
+       "predit": 0.45435384615384616,
+       "reel": 0.5641025641025641
+      },
+      {
+       "tranche": "50-60",
+       "n": 37,
+       "predit": 0.5423729729729729,
+       "reel": 0.5405405405405406
+      },
+      {
+       "tranche": "60-70",
+       "n": 14,
+       "predit": 0.6226714285714285,
+       "reel": 0.6428571428571429
+      },
+      {
+       "tranche": "70-80",
+       "n": 7,
+       "predit": 0.7516999999999999,
+       "reel": 0.8571428571428571
+      },
+      {
+       "tranche": "80-90",
+       "n": 1,
+       "predit": 0.824,
+       "reel": 0.0
+      }
+     ],
+     "top": {
+      "n": 120,
+      "hits": 66,
+      "attendu": 59.2636
+     },
+     "soirs": [
+      {
+       "date": "2026-10-03",
+       "n": 13,
+       "hits": 10,
+       "attendu": 6.546
+      },
+      {
+       "date": "2026-10-04",
+       "n": 5,
+       "hits": 3,
+       "attendu": 2.6207000000000003
+      },
+      {
+       "date": "2026-10-05",
+       "n": 4,
+       "hits": 2,
+       "attendu": 2.4076999999999997
+      },
+      {
+       "date": "2026-10-06",
+       "n": 9,
+       "hits": 5,
+       "attendu": 4.3953
+      },
+      {
+       "date": "2026-10-07",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.1985000000000001
+      },
+      {
+       "date": "2026-10-08",
+       "n": 10,
+       "hits": 6,
+       "attendu": 4.8419
+      },
+      {
+       "date": "2026-10-09",
+       "n": 4,
+       "hits": 2,
+       "attendu": 1.8178999999999998
+      },
+      {
+       "date": "2026-10-10",
+       "n": 14,
+       "hits": 7,
+       "attendu": 6.6656
+      },
+      {
+       "date": "2026-10-11",
+       "n": 3,
+       "hits": 1,
+       "attendu": 1.3551
+      },
+      {
+       "date": "2026-10-12",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.2443
+      },
+      {
+       "date": "2026-10-13",
+       "n": 16,
+       "hits": 7,
+       "attendu": 7.6453
+      },
+      {
+       "date": "2026-10-14",
+       "n": 2,
+       "hits": 1,
+       "attendu": 1.1561
+      },
+      {
+       "date": "2026-10-15",
+       "n": 11,
+       "hits": 8,
+       "attendu": 5.748
+      },
+      {
+       "date": "2026-10-16",
+       "n": 2,
+       "hits": 1,
+       "attendu": 0.9895
+      }
+     ]
     },
     "v1": {
-     "n": 0
+     "n": 120,
+     "base": 0.55,
+     "brier": 0.22554177183333335,
+     "bss": 0.08872011380471378,
+     "precision": 0.6416666666666667,
+     "note": 54.43600569023569,
+     "logloss": 0.6429070008162713,
+     "calib": [
+      {
+       "tranche": "20-30",
+       "n": 3,
+       "predit": 0.26056666666666667,
+       "reel": 0.3333333333333333
+      },
+      {
+       "tranche": "30-40",
+       "n": 9,
+       "predit": 0.36496666666666666,
+       "reel": 0.3333333333333333
+      },
+      {
+       "tranche": "40-50",
+       "n": 37,
+       "predit": 0.46248378378378374,
+       "reel": 0.40540540540540543
+      },
+      {
+       "tranche": "50-60",
+       "n": 34,
+       "predit": 0.5588705882352941,
+       "reel": 0.6176470588235294
+      },
+      {
+       "tranche": "60-70",
+       "n": 27,
+       "predit": 0.6450703703703703,
+       "reel": 0.7037037037037037
+      },
+      {
+       "tranche": "70-80",
+       "n": 10,
+       "predit": 0.7461,
+       "reel": 0.7
+      }
+     ],
+     "top": {
+      "n": 120,
+      "hits": 66,
+      "attendu": 65.0578
+     },
+     "soirs": [
+      {
+       "date": "2026-10-03",
+       "n": 13,
+       "hits": 10,
+       "attendu": 7.3578
+      },
+      {
+       "date": "2026-10-04",
+       "n": 5,
+       "hits": 3,
+       "attendu": 2.7344
+      },
+      {
+       "date": "2026-10-05",
+       "n": 4,
+       "hits": 2,
+       "attendu": 2.4645
+      },
+      {
+       "date": "2026-10-06",
+       "n": 9,
+       "hits": 5,
+       "attendu": 4.4873
+      },
+      {
+       "date": "2026-10-07",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.4388
+      },
+      {
+       "date": "2026-10-08",
+       "n": 10,
+       "hits": 6,
+       "attendu": 5.6912
+      },
+      {
+       "date": "2026-10-09",
+       "n": 4,
+       "hits": 2,
+       "attendu": 1.9953
+      },
+      {
+       "date": "2026-10-10",
+       "n": 14,
+       "hits": 7,
+       "attendu": 7.1804
+      },
+      {
+       "date": "2026-10-11",
+       "n": 3,
+       "hits": 1,
+       "attendu": 1.6249
+      },
+      {
+       "date": "2026-10-12",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.6832
+      },
+      {
+       "date": "2026-10-13",
+       "n": 16,
+       "hits": 7,
+       "attendu": 8.5146
+      },
+      {
+       "date": "2026-10-14",
+       "n": 2,
+       "hits": 1,
+       "attendu": 1.1722000000000001
+      },
+      {
+       "date": "2026-10-15",
+       "n": 11,
+       "hits": 8,
+       "attendu": 6.3855
+      },
+      {
+       "date": "2026-10-16",
+       "n": 2,
+       "hits": 1,
+       "attendu": 1.1219999999999999
+      }
+     ]
     }
    },
    "total55": {
     "v0": {
-     "n": 0
+     "n": 120,
+     "base": 0.5583333333333333,
+     "brier": 0.25905319233333335,
+     "bss": -0.05051139667699256,
+     "precision": 0.5416666666666666,
+     "note": 47.47443016615037,
+     "logloss": 0.7156690773953067,
+     "calib": [
+      {
+       "tranche": "20-30",
+       "n": 1,
+       "predit": 0.2759,
+       "reel": 0.0
+      },
+      {
+       "tranche": "30-40",
+       "n": 4,
+       "predit": 0.376325,
+       "reel": 0.5
+      },
+      {
+       "tranche": "40-50",
+       "n": 17,
+       "predit": 0.4569294117647059,
+       "reel": 0.5882352941176471
+      },
+      {
+       "tranche": "50-60",
+       "n": 51,
+       "predit": 0.5586627450980393,
+       "reel": 0.5490196078431373
+      },
+      {
+       "tranche": "60-70",
+       "n": 34,
+       "predit": 0.6349264705882353,
+       "reel": 0.6176470588235294
+      },
+      {
+       "tranche": "70-80",
+       "n": 10,
+       "predit": 0.73674,
+       "reel": 0.5
+      },
+      {
+       "tranche": "80-90",
+       "n": 3,
+       "predit": 0.8380333333333333,
+       "reel": 0.3333333333333333
+      }
+     ],
+     "top": {
+      "n": 120,
+      "hits": 67,
+      "attendu": 69.5098
+     },
+     "soirs": [
+      {
+       "date": "2026-10-03",
+       "n": 13,
+       "hits": 5,
+       "attendu": 7.712
+      },
+      {
+       "date": "2026-10-04",
+       "n": 5,
+       "hits": 2,
+       "attendu": 2.9612
+      },
+      {
+       "date": "2026-10-05",
+       "n": 4,
+       "hits": 0,
+       "attendu": 2.2934
+      },
+      {
+       "date": "2026-10-06",
+       "n": 9,
+       "hits": 7,
+       "attendu": 4.5839
+      },
+      {
+       "date": "2026-10-07",
+       "n": 3,
+       "hits": 2,
+       "attendu": 2.0867
+      },
+      {
+       "date": "2026-10-08",
+       "n": 10,
+       "hits": 5,
+       "attendu": 5.731
+      },
+      {
+       "date": "2026-10-09",
+       "n": 4,
+       "hits": 2,
+       "attendu": 2.2309
+      },
+      {
+       "date": "2026-10-10",
+       "n": 14,
+       "hits": 6,
+       "attendu": 8.249
+      },
+      {
+       "date": "2026-10-11",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.7827000000000002
+      },
+      {
+       "date": "2026-10-12",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.3578999999999999
+      },
+      {
+       "date": "2026-10-13",
+       "n": 16,
+       "hits": 11,
+       "attendu": 9.1275
+      },
+      {
+       "date": "2026-10-14",
+       "n": 2,
+       "hits": 1,
+       "attendu": 1.1853
+      },
+      {
+       "date": "2026-10-15",
+       "n": 11,
+       "hits": 7,
+       "attendu": 6.4268
+      },
+      {
+       "date": "2026-10-16",
+       "n": 2,
+       "hits": 2,
+       "attendu": 1.2848
+      }
+     ],
+     "mae_total": 1.8635258333333333
     },
     "v1": {
-     "n": 0
+     "n": 120,
+     "base": 0.5583333333333333,
+     "brier": 0.2559162428333333,
+     "bss": -0.037790452492255655,
+     "precision": 0.525,
+     "note": 48.11047737538722,
+     "logloss": 0.7061781257788222,
+     "calib": [
+      {
+       "tranche": "40-50",
+       "n": 12,
+       "predit": 0.46669166666666667,
+       "reel": 0.6666666666666666
+      },
+      {
+       "tranche": "50-60",
+       "n": 54,
+       "predit": 0.5482259259259259,
+       "reel": 0.5185185185185185
+      },
+      {
+       "tranche": "60-70",
+       "n": 43,
+       "predit": 0.6522720930232558,
+       "reel": 0.5581395348837209
+      },
+      {
+       "tranche": "70-80",
+       "n": 10,
+       "predit": 0.74029,
+       "reel": 0.6
+      },
+      {
+       "tranche": "80-90",
+       "n": 1,
+       "predit": 0.8171,
+       "reel": 1.0
+      }
+     ],
+     "top": {
+      "n": 120,
+      "hits": 67,
+      "attendu": 71.4722
+     },
+     "soirs": [
+      {
+       "date": "2026-10-03",
+       "n": 13,
+       "hits": 5,
+       "attendu": 7.9467
+      },
+      {
+       "date": "2026-10-04",
+       "n": 5,
+       "hits": 2,
+       "attendu": 2.7958
+      },
+      {
+       "date": "2026-10-05",
+       "n": 4,
+       "hits": 0,
+       "attendu": 2.5307
+      },
+      {
+       "date": "2026-10-06",
+       "n": 9,
+       "hits": 7,
+       "attendu": 5.0508
+      },
+      {
+       "date": "2026-10-07",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.9801000000000002
+      },
+      {
+       "date": "2026-10-08",
+       "n": 10,
+       "hits": 5,
+       "attendu": 5.9052
+      },
+      {
+       "date": "2026-10-09",
+       "n": 4,
+       "hits": 2,
+       "attendu": 2.4354
+      },
+      {
+       "date": "2026-10-10",
+       "n": 14,
+       "hits": 6,
+       "attendu": 8.3582
+      },
+      {
+       "date": "2026-10-11",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.5920999999999998
+      },
+      {
+       "date": "2026-10-12",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.6219000000000001
+      },
+      {
+       "date": "2026-10-13",
+       "n": 16,
+       "hits": 11,
+       "attendu": 9.361
+      },
+      {
+       "date": "2026-10-14",
+       "n": 2,
+       "hits": 1,
+       "attendu": 1.1575
+      },
+      {
+       "date": "2026-10-15",
+       "n": 11,
+       "hits": 7,
+       "attendu": 6.9108
+      },
+      {
+       "date": "2026-10-16",
+       "n": 2,
+       "hits": 2,
+       "attendu": 1.4225
+      }
+     ],
+     "mae_total": 1.8350883333333334
     }
    },
    "total65": {
     "v0": {
-     "n": 0
+     "n": 120,
+     "base": 0.45,
+     "brier": 0.25728931208333333,
+     "bss": -0.03955277609427599,
+     "precision": 0.525,
+     "note": 48.0223611952862,
+     "logloss": 0.7090776387310264,
+     "calib": [
+      {
+       "tranche": "10-20",
+       "n": 1,
+       "predit": 0.1533,
+       "reel": 0.0
+      },
+      {
+       "tranche": "20-30",
+       "n": 12,
+       "predit": 0.2633583333333333,
+       "reel": 0.5
+      },
+      {
+       "tranche": "30-40",
+       "n": 33,
+       "predit": 0.35802121212121213,
+       "reel": 0.42424242424242425
+      },
+      {
+       "tranche": "40-50",
+       "n": 55,
+       "predit": 0.4452218181818182,
+       "reel": 0.4727272727272727
+      },
+      {
+       "tranche": "50-60",
+       "n": 12,
+       "predit": 0.5503583333333334,
+       "reel": 0.5
+      },
+      {
+       "tranche": "60-70",
+       "n": 5,
+       "predit": 0.64114,
+       "reel": 0.2
+      },
+      {
+       "tranche": "70-80",
+       "n": 2,
+       "predit": 0.747,
+       "reel": 0.5
+      }
+     ],
+     "top": {
+      "n": 120,
+      "hits": 54,
+      "attendu": 50.9195
+     },
+     "soirs": [
+      {
+       "date": "2026-10-03",
+       "n": 13,
+       "hits": 4,
+       "attendu": 5.6413
+      },
+      {
+       "date": "2026-10-04",
+       "n": 5,
+       "hits": 1,
+       "attendu": 2.2331
+      },
+      {
+       "date": "2026-10-05",
+       "n": 4,
+       "hits": 0,
+       "attendu": 1.6562999999999999
+      },
+      {
+       "date": "2026-10-06",
+       "n": 9,
+       "hits": 6,
+       "attendu": 3.1807
+      },
+      {
+       "date": "2026-10-07",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.6717
+      },
+      {
+       "date": "2026-10-08",
+       "n": 10,
+       "hits": 5,
+       "attendu": 4.2033000000000005
+      },
+      {
+       "date": "2026-10-09",
+       "n": 4,
+       "hits": 1,
+       "attendu": 1.6028
+      },
+      {
+       "date": "2026-10-10",
+       "n": 14,
+       "hits": 4,
+       "attendu": 6.1942
+      },
+      {
+       "date": "2026-10-11",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.3072
+      },
+      {
+       "date": "2026-10-12",
+       "n": 3,
+       "hits": 1,
+       "attendu": 0.8936
+      },
+      {
+       "date": "2026-10-13",
+       "n": 16,
+       "hits": 9,
+       "attendu": 6.6325
+      },
+      {
+       "date": "2026-10-14",
+       "n": 2,
+       "hits": 1,
+       "attendu": 0.8672
+      },
+      {
+       "date": "2026-10-15",
+       "n": 11,
+       "hits": 6,
+       "attendu": 4.7002
+      },
+      {
+       "date": "2026-10-16",
+       "n": 2,
+       "hits": 1,
+       "attendu": 0.9785
+      }
+     ]
     },
     "v1": {
-     "n": 0
+     "n": 120,
+     "base": 0.45,
+     "brier": 0.25308116941666664,
+     "bss": -0.02255017946127924,
+     "precision": 0.5583333333333333,
+     "note": 48.87249102693604,
+     "logloss": 0.7003443065830007,
+     "calib": [
+      {
+       "tranche": "20-30",
+       "n": 3,
+       "predit": 0.2710333333333333,
+       "reel": 0.6666666666666666
+      },
+      {
+       "tranche": "30-40",
+       "n": 45,
+       "predit": 0.36307333333333336,
+       "reel": 0.4888888888888889
+      },
+      {
+       "tranche": "40-50",
+       "n": 37,
+       "predit": 0.44214864864864867,
+       "reel": 0.32432432432432434
+      },
+      {
+       "tranche": "50-60",
+       "n": 29,
+       "predit": 0.5322034482758621,
+       "reel": 0.5172413793103449
+      },
+      {
+       "tranche": "60-70",
+       "n": 6,
+       "predit": 0.6350833333333333,
+       "reel": 0.5
+      }
+     ],
+     "top": {
+      "n": 120,
+      "hits": 54,
+      "attendu": 52.7553
+     },
+     "soirs": [
+      {
+       "date": "2026-10-03",
+       "n": 13,
+       "hits": 4,
+       "attendu": 5.9125
+      },
+      {
+       "date": "2026-10-04",
+       "n": 5,
+       "hits": 1,
+       "attendu": 2.0172
+      },
+      {
+       "date": "2026-10-05",
+       "n": 4,
+       "hits": 0,
+       "attendu": 1.9062
+      },
+      {
+       "date": "2026-10-06",
+       "n": 9,
+       "hits": 6,
+       "attendu": 3.6393999999999997
+      },
+      {
+       "date": "2026-10-07",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.5453
+      },
+      {
+       "date": "2026-10-08",
+       "n": 10,
+       "hits": 5,
+       "attendu": 4.3465
+      },
+      {
+       "date": "2026-10-09",
+       "n": 4,
+       "hits": 1,
+       "attendu": 1.8122
+      },
+      {
+       "date": "2026-10-10",
+       "n": 14,
+       "hits": 4,
+       "attendu": 6.1843
+      },
+      {
+       "date": "2026-10-11",
+       "n": 3,
+       "hits": 2,
+       "attendu": 1.1117
+      },
+      {
+       "date": "2026-10-12",
+       "n": 3,
+       "hits": 1,
+       "attendu": 1.1404
+      },
+      {
+       "date": "2026-10-13",
+       "n": 16,
+       "hits": 9,
+       "attendu": 6.8344
+      },
+      {
+       "date": "2026-10-14",
+       "n": 2,
+       "hits": 1,
+       "attendu": 0.8503000000000001
+      },
+      {
+       "date": "2026-10-15",
+       "n": 11,
+       "hits": 6,
+       "attendu": 5.2262
+      },
+      {
+       "date": "2026-10-16",
+       "n": 2,
+       "hits": 1,
+       "attendu": 1.1288
+      }
+     ]
     }
    }
   },
   "global": {
    "v0": {
-    "n": 0,
-    "note": null
+    "n": 12853,
+    "note": 49.982788346818
    },
    "v1": {
-    "n": 0,
-    "note": null
+    "n": 12853,
+    "note": 54.00437099091871
    }
-  }
+  },
+  "soirs_retro": 18,
+  "soirs_direct": 1
  },
- "cotes_quota": null
+ "cotes_quota": {
+  "restants": null,
+  "utilises": null,
+  "erreur": null,
+  "quand": "2026-10-18T02:05+00:00"
+ }
 }

@@ -13,7 +13,7 @@
 :root{
   --bg:#EEF3F6; --surface:#FFFFFF; --ink:#0E1A24; --muted:#56687A; --line:#D5DEE5;
   --goal:#C8202A; --ice:#1D5F8E; --good:#1A8048; --good-bg:#E2F3E9; --bad:#A33A2E; --bad-bg:#F8E6E3;
-  --chip:#E3EAF0; --us:#6B4FA0; --us-bg:#EFEAF7;
+  --chip:#E3EAF0; --us:#6B4FA0; --us-bg:#EFEAF7; --warn:#A86A00; --warn-bg:#FFF3D6;
   --f-display:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
   --f-body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   color-scheme:light;
@@ -21,11 +21,11 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0A1117; --surface:#111B23; --ink:#E5ECF1; --muted:#8B9DAC; --line:#22313C;
   --goal:#FF4B4B; --ice:#5DA9E0; --good:#3BD184; --good-bg:#12301F; --bad:#FF7F6E; --bad-bg:#3A1A16;
-  --chip:#1A2731; --us:#B9A2E8; --us-bg:#251E36; color-scheme:dark}}
+  --chip:#1A2731; --us:#B9A2E8; --us-bg:#251E36; --warn:#F2C14E; --warn-bg:#332A12; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0A1117; --surface:#111B23; --ink:#E5ECF1; --muted:#8B9DAC; --line:#22313C;
   --goal:#FF4B4B; --ice:#5DA9E0; --good:#3BD184; --good-bg:#12301F; --bad:#FF7F6E; --bad-bg:#3A1A16;
-  --chip:#1A2731; --us:#B9A2E8; --us-bg:#251E36; color-scheme:dark}
+  --chip:#1A2731; --us:#B9A2E8; --us-bg:#251E36; --warn:#F2C14E; --warn-bg:#332A12; color-scheme:dark}
 
 *{box-sizing:border-box}
 html,body{margin:0}
@@ -133,6 +133,21 @@ tr.sel td{font-weight:700}
 .guide{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:13.5px;max-width:65ch}
 .guide p{margin:6px 0}
 .quota{font-size:12px;color:var(--muted);margin-top:10px}
+/* Live : bande de couleur à gauche + teinte légère. Vert = acquis, jaune = en cours, rouge = raté */
+.livebtn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font:800 15px/1 var(--f-display);letter-spacing:.06em;cursor:pointer}
+.livebtn i{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.livebtn[aria-pressed="true"]{border-color:var(--goal);color:var(--goal)}
+.livebtn[aria-pressed="true"] i{background:var(--goal)}
+@media (prefers-reduced-motion:no-preference){.livebtn[aria-pressed="true"] i{animation:pulse 1.4s infinite}}
+@keyframes pulse{50%{opacity:.25}}
+.livestat{font-size:12px;color:var(--muted);margin:-4px 0 10px}
+.j.st-ok{box-shadow:inset 4px 0 var(--good);background:var(--good-bg)}
+.j.st-cours{box-shadow:inset 4px 0 var(--warn);background:var(--warn-bg)}
+.j.st-ko{box-shadow:inset 4px 0 var(--bad);background:var(--bad-bg)}
+.lv{font-size:12px;font-weight:700;white-space:nowrap}
+.lv.ok{color:var(--good)} .lv.cours{color:var(--warn)} .lv.ko{color:var(--bad)}
+.m.st-cours{border-color:var(--warn)}
+.score-live{font:800 18px/1 var(--f-display);letter-spacing:.02em}
 [hidden]{display:none!important}
 </style>
 </head>
@@ -140,8 +155,12 @@ tr.sel td{font-weight:700}
 <div class="wrap">
   <header>
     <h1>La Patente<br>à <span>Tirs</span></h1>
-    <div class="maj" id="maj">Chargement…</div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+      <button class="livebtn" id="live" aria-pressed="false"><i></i>LIVE</button>
+      <div class="maj" id="maj">Chargement…</div>
+    </div>
   </header>
+  <div class="livestat" id="livestat" hidden></div>
 
   <nav class="tabs" role="tablist">
     <button role="tab" id="t-joueurs" aria-selected="true" aria-controls="p-joueurs">Joueurs</button>
@@ -255,6 +274,92 @@ function heure(iso){
   return new Date(iso).toLocaleTimeString("fr-CA", { hour: "2-digit", minute: "2-digit" });
 }
 
+// ---- Live ----------------------------------------------------------------------
+// Deux sources, la meilleure gagne :
+//  1. directement l'API NHL depuis ton navigateur (temps réel), si elle l'accepte
+//  2. sinon docs/live.json, mis à jour par GitHub aux ~5 minutes pendant les matchs
+let LIVE = null, directOK = true, minuterie = null, sourceLive = "";
+const IDX = { tirs: 0, buts: 1, passes: 2 };
+const FINIS = ["OFF", "FINAL"];
+
+function etatMatch(box){
+  // Même structure que src/live.py, pour traiter les deux sources pareil
+  const pb = box.playerByGameStats || {}, joueurs = {}, buts = { awayTeam: 0, homeTeam: 0 };
+  for (const cote of ["awayTeam", "homeTeam"])
+    for (const grp of ["forwards", "defense"])
+      for (const j of (pb[cote]?.[grp] || [])){
+        joueurs[String(j.playerId)] = [j.sog ?? 0, j.goals ?? 0, j.assists ?? 0];
+        buts[cote] += j.goals ?? 0;
+      }
+  return { state: box.gameState, period: box.periodDescriptor?.number, periodType: box.periodDescriptor?.periodType,
+           clock: box.clock?.timeRemaining, intermission: !!box.clock?.inIntermission,
+           hs: box.homeTeam?.score ?? buts.homeTeam, as: box.awayTeam?.score ?? buts.awayTeam, joueurs };
+}
+
+async function rafraichirLive(){
+  let data = null;
+  try {
+    const r = await fetch("live.json?v=" + Date.now());
+    if (r.ok) data = await r.json();
+  } catch (e) {}
+  if (data && data.date !== D.date) data = null;
+  sourceLive = data ? "via GitHub" : "";
+  let maj = data ? new Date(data.maj) : null;
+
+  // Essai direct NHL pour les matchs commencés et pas finis. Si le navigateur
+  // bloque (CORS), on arrête d'essayer pour le reste de la visite.
+  if (directOK && $("#live").getAttribute("aria-pressed") === "true"){
+    const maintenant = Date.now();
+    const cibles = D.matchs.filter(m => new Date(m.start).getTime() <= maintenant &&
+      !FINIS.includes(data?.games?.[m.id]?.state));
+    if (cibles.length){
+      try {
+        const res = await Promise.all(cibles.map(m =>
+          fetch(`https://api-web.nhle.com/v1/gamecenter/${m.id}/boxscore`).then(r => r.json())));
+        data = data || { date: D.date, games: {} };
+        cibles.forEach((m, i) => { if (res[i].gameState) data.games[m.id] = etatMatch(res[i]); });
+        sourceLive = "direct NHL"; maj = new Date();
+      } catch (e) { directOK = false; }
+    }
+  }
+  LIVE = data;
+  const st = $("#livestat");
+  if (LIVE && Object.keys(LIVE.games || {}).length){
+    st.hidden = false;
+    st.textContent = `Live ${sourceLive} · données de ${maj.toLocaleTimeString("fr-CA", { hour: "2-digit", minute: "2-digit" })}` +
+      (sourceLive === "via GitHub" ? " (aux ~5 min)" : "");
+  } else {
+    st.hidden = $("#live").getAttribute("aria-pressed") !== "true";
+    st.textContent = "Live : aucun match commencé pour l'instant.";
+  }
+  liste(); matchs();
+}
+
+function periode(L){
+  if (FINIS.includes(L.state)) return "final";
+  const p = L.periodType === "OT" ? "Prol." : L.periodType === "SO" ? "Tirs de barrage" : `P${L.period ?? "?"}`;
+  return L.intermission ? `Entracte après ${p}` : `${p}${L.clock ? " " + L.clock : ""}`;
+}
+
+// Statut d'un joueur pour un marché : classe de couleur + petit texte
+function statut(j, m){
+  const [un, plusieurs] = MOT[m];
+  const mot = (n) => n > 1 ? plusieurs : un;
+  if (j.played === false) return { cls: "", badge: `<span class="res">Scratché · annulé</span>` };
+  const r = resultat(j, m);
+  if (r !== null) return r >= SEUIL[m]
+    ? { cls: "st-ok", badge: `<span class="lv ok">${r} ${mot(r)} · réussi</span>` }
+    : { cls: "st-ko", badge: `<span class="lv ko">${r} ${mot(r)} · raté</span>` };
+  const L = LIVE?.games?.[j.gameId];
+  if (!L) return { cls: "", badge: "" };
+  const val = L.joueurs?.[String(j.pid)]?.[IDX[m]];
+  const fini = FINIS.includes(L.state);
+  if (val == null) return { cls: "", badge: `<span class="res">${fini ? "N'a pas joué" : "Pas dans l'alignement"}</span>` };
+  if (val >= SEUIL[m]) return { cls: "st-ok", badge: `<span class="lv ok">${val} ${mot(val)} · réussi</span>` };
+  if (fini) return { cls: "st-ko", badge: `<span class="lv ko">${val} ${mot(val)} · raté</span>` };
+  return { cls: "st-cours", badge: `<span class="lv cours">${val} ${mot(val)} · ${periode(L)}</span>` };
+}
+
 // ---- Joueurs -------------------------------------------------------------------
 function construireFiltres(){
   const sel = $("#f-match");
@@ -316,13 +421,11 @@ function liste(){
         <span>Buts attendus de ${j.team} : <b>×${det.f_equipe.toFixed(2)}</b> la moyenne</span>`;
     fx = fx ? `<details class="why"><summary>Pourquoi ce %</summary><div class="fx">${fx}</div></details>` : "";
 
-    let res = "";
-    const r = resultat(j, m);
-    if (j.played === false) res = `<span class="res">Scratché · annulé</span>`;
-    else if (r !== null) res = `<span class="res ${r >= SEUIL[m] ? "ok" : "ko"}">${r} ${r > 1 ? plusieurs : un} · ${r >= SEUIL[m] ? "réussi" : "raté"}</span>`;
+    const st = statut(j, m);
+    const res = st.badge;
 
     const us = j.auto ? `<span class="us" title="Cote médiane des bookies US">US ${j.auto.toFixed(2)} · ${pct(1 / j.auto)} %</span>` : "";
-    return `<div class="j">
+    return `<div class="j ${st.cls}">
       <div class="rk">${i + 1}</div>
       <div style="min-width:0">
         <div class="nom">${j.name}</div>
@@ -362,7 +465,12 @@ function matchs(){
     const srcH = lireCote(cle("m", g.gameId, "h")) ? "MOJ" : "US";
     const srcA = lireCote(cle("m", g.gameId, "a")) ? "MOJ" : "US";
     const f = g.forme;
-    let res = "";
+    let res = "", cls = "";
+    const L = LIVE?.games?.[g.gameId];
+    if (!g.result && L){
+      cls = FINIS.includes(L.state) ? "" : "st-cours";
+      res = `<span class="score-live">${g.away} ${L.as} – ${L.hs} ${g.home}</span> <span class="lv ${cls ? "cours" : ""}">${periode(L)}</span>`;
+    }
     if (g.result){
       const h = g.result.home, a = g.result.away, bon = (h > a) === (ph >= 0.5);
       res = `<span class="res ${bon ? "ok" : "ko"}">Final ${g.away} ${a} – ${h} ${g.home} · ${bon ? "bon gagnant" : "raté"}</span>`;
@@ -371,7 +479,7 @@ function matchs(){
       ? `<div class="mcote"><span class="who">Total</span><span class="us">US ${c.ligne} · plus ${c.over?.toFixed(2)} / moins ${c.under?.toFixed(2)}</span>
          ${badgeEV(ev(p.p_over[String(c.ligne)], c.over), null, "plus")}${badgeEV(ev(1 - p.p_over[String(c.ligne)], c.under), null, "moins")}</div>`
       : c.ligne ? `<div class="mcote"><span class="who">Total</span><span class="us">US ${c.ligne} · plus ${c.over?.toFixed(2)} / moins ${c.under?.toFixed(2)}</span></div>` : "";
-    return `<div class="m">
+    return `<div class="m ${cls}">
       <div class="m-top"><span class="lbl">${heure(g.start)}${g.b2b_away ? ` · ${g.away} B2B` : ""}${g.b2b_home ? ` · ${g.home} B2B` : ""}</span>${res}</div>
       <div class="duel">
         <div class="eq"><span class="ab">${g.away}</span><span class="wp ${pa > ph ? "fav" : ""}">${pct(pa)} %</span><span class="xg">${p.lam_away.toFixed(1)} buts att.</span></div>
@@ -502,6 +610,17 @@ async function init(){
   construireFiltres();
   brancher();
   tout();
+  // Le bouton LIVE : rafraîchit aux 30 s tant qu'il est allumé. Son état est retenu.
+  const btn = $("#live");
+  const allumer = (on) => {
+    btn.setAttribute("aria-pressed", on);
+    store.set("live", on ? "1" : "");
+    clearInterval(minuterie);
+    if (on) minuterie = setInterval(rafraichirLive, 30000);
+    rafraichirLive();
+  };
+  btn.addEventListener("click", () => allumer(btn.getAttribute("aria-pressed") !== "true"));
+  allumer(store.get("live") === "1");
 }
 init();
 </script>

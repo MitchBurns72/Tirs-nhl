@@ -102,7 +102,7 @@ def jouer(d, matchs=None, cible_logs=None, cible_box=None, cible_scores=None, ci
         if sc[away] == sc[home]:
             sc[home if rng.random() < 0.52 else away] += 1   # prolongation/fusillade
         cible_scores[gid] = sc
-        cible_box[gid] = {"gameState": "OFF", "playerByGameStats": stats,
+        cible_box[gid] = {"gameState": "OFF", "gameDate": d, "playerByGameStats": stats,
                     "awayTeam": {"abbrev": away, "score": sc[away]}, "homeTeam": {"abbrev": home, "score": sc[home]}}
         cible_etat[gid] = "OFF"
 
@@ -164,7 +164,7 @@ def faux_get_json(path, retries=4):
                               for g, a, h in cal_prev if t in (a, h)]}
         games = []
         for d, (gid, a, h) in jeux_finis(t):
-            games.append({"gameType": 2, "gameState": "OFF", "gameDate": d,
+            games.append({"id": gid, "startTimeUTC": f"{d}T23:00:00Z", "gameType": 2, "gameState": "OFF", "gameDate": d,
                           "homeTeam": {"abbrev": h, "score": scores[gid][h]},
                           "awayTeam": {"abbrev": a, "score": scores[gid][a]}})
         return {"games": games}
@@ -218,6 +218,20 @@ def main():
         run.main()
         if d != jours[-1]:
             jouer(d)
+
+    # --- Rétroactif : 3 soirs « manqués » doivent être rejoués et gradés ---
+    effaces = jours[4:7]
+    for d in effaces:
+        (run.DIR_PRED / f"{d}.json").unlink()
+    api._cache.clear()
+    sys.argv = ["run.py", jours[-1]]
+    run.main()
+    for d in effaces:
+        f = json.loads((run.DIR_PRED / f"{d}.json").read_text())
+        assert f.get("retro") is True, f"{d} pas marqué rétroactif"
+        assert any(e.get("played") for e in f["entries"]), f"{d} pas gradé"
+        assert all(g.get("result") for g in f["games"]), f"{d} matchs pas gradés"
+    print("rétroactif OK :", effaces)
 
     out = json.loads(run.SORTIE.read_text())
     st = out["stats"]

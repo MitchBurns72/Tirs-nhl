@@ -1,0 +1,6681 @@
+{
+ "date": "2026-10-14",
+ "retro": true,
+ "versions": [
+  "v0",
+  "v1"
+ ],
+ "maj": "2026-10-18T02:05+00:00",
+ "entries": [
+  {
+   "pid": 8473994,
+   "name": "Jamie Benn",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    2,
+    4,
+    0,
+    1,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.3849,
+      "lam": 1.3333
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2555,
+      "lam": 0.9758,
+      "detail": {
+       "rate60": 5.9739,
+       "toi": 12.7193,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8766
+      }
+     },
+     "buts": {
+      "p": 0.1323,
+      "lam": 0.1419,
+      "detail": {
+       "sh": 0.1615,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.2015,
+      "lam": 0.2251,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8476278,
+   "name": "Colin Blackwell",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    2,
+    0,
+    3
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.3554,
+      "lam": 1.25
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.1506,
+      "lam": 0.6782,
+      "detail": {
+       "rate60": 5.4354,
+       "toi": 9.675,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8804
+      }
+     },
+     "buts": {
+      "p": 0.069,
+      "lam": 0.0715,
+      "detail": {
+       "sh": 0.1171,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.1219,
+      "lam": 0.13,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8480840,
+   "name": "Oskar Bäck",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    2,
+    1,
+    0,
+    1,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.1443,
+      "lam": 0.6667
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.1251,
+      "lam": 0.6021,
+      "detail": {
+       "rate60": 3.778,
+       "toi": 12.7998,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.85
+      }
+     },
+     "buts": {
+      "p": 0.0698,
+      "lam": 0.0724,
+      "detail": {
+       "sh": 0.1336,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.1455,
+      "lam": 0.1572,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8476889,
+   "name": "Radek Faksa",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    1,
+    1,
+    1,
+    0,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2032,
+      "lam": 0.8333
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.1512,
+      "lam": 0.6798,
+      "detail": {
+       "rate60": 4.5295,
+       "toi": 10.9176,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9385
+      }
+     },
+     "buts": {
+      "p": 0.0711,
+      "lam": 0.0737,
+      "detail": {
+       "sh": 0.1205,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.1672,
+      "lam": 0.183,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8478449,
+   "name": "Roope Hintz",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    2,
+    1,
+    6,
+    1,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "l10_assists": [
+    0,
+    0,
+    2,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.594,
+      "lam": 2.0
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.5065,
+      "lam": 1.7393,
+      "detail": {
+       "rate60": 7.6644,
+       "toi": 16.7602,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9243
+      }
+     },
+     "buts": {
+      "p": 0.1914,
+      "lam": 0.2124,
+      "detail": {
+       "sh": 0.1357,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.2833,
+      "lam": 0.3331,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8484829,
+   "name": "Justin Hryckowian",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    1,
+    0,
+    0,
+    1,
+    3
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 5,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2597,
+      "lam": 0.9875,
+      "detail": {
+       "rate60": 4.9692,
+       "toi": 14.3409,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.946
+      }
+     },
+     "buts": {
+      "p": 0.1212,
+      "lam": 0.1292,
+      "detail": {
+       "sh": 0.1453,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.166,
+      "lam": 0.1815,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8484938,
+   "name": "Arttu Hyry",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    1,
+    1,
+    0,
+    1,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.3855,
+      "lam": 1.3502,
+      "detail": {
+       "rate60": 5.6744,
+       "toi": 14.1247,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.15
+      }
+     },
+     "buts": {
+      "p": 0.1492,
+      "lam": 0.1616,
+      "detail": {
+       "sh": 0.1329,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.1615,
+      "lam": 0.1762,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8482740,
+   "name": "Wyatt Johnston",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": true,
+   "l10_shots": [
+    4,
+    2,
+    3,
+    1,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    3,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 12,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.6454,
+      "lam": 2.2
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.5507,
+      "lam": 0.8
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.6165,
+      "lam": 2.1617,
+      "detail": {
+       "rate60": 7.1309,
+       "toi": 19.97,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0363
+      }
+     },
+     "buts": {
+      "p": 0.2891,
+      "lam": 0.3413,
+      "detail": {
+       "sh": 0.1754,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.3387,
+      "lam": 0.4135,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {},
+   "played": false
+  },
+  {
+   "pid": 8478420,
+   "name": "Mikko Rantanen",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    3,
+    3,
+    2,
+    4,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    3,
+    0,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.6372,
+      "lam": 2.1667
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.4866,
+      "lam": 0.6667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.4851,
+      "lam": 1.666,
+      "detail": {
+       "rate60": 6.4836,
+       "toi": 20.4618,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8573
+      }
+     },
+     "buts": {
+      "p": 0.2026,
+      "lam": 0.2263,
+      "detail": {
+       "sh": 0.1509,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.3974,
+      "lam": 0.5066,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
+  },
+  {
+   "pid": 8480027,
+   "name": "Jason Robertson",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    2,
+    1,
+    4,
+    4,
+    3,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    0,
+    1,
+    1
+   ],
+   "vs_gp": 5,
+   "vs_shots": 19,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.7452,
+      "lam": 2.6667
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.3935,
+      "lam": 0.5
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.7199,
+      "lam": 2.6687,
+      "detail": {
+       "rate60": 9.23,
+       "toi": 19.0962,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0336
+      }
+     },
+     "buts": {
+      "p": 0.2996,
+      "lam": 0.3561,
+      "detail": {
+       "sh": 0.1483,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.3238,
+      "lam": 0.3912,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8475794,
+   "name": "Tyler Seguin",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    4,
+    3,
+    2,
+    0,
+    2,
+    7
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 2,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.8009,
+      "lam": 3.0
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.5195,
+      "lam": 1.7851,
+      "detail": {
+       "rate60": 7.4917,
+       "toi": 15.0349,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0819
+      }
+     },
+     "buts": {
+      "p": 0.2142,
+      "lam": 0.2411,
+      "detail": {
+       "sh": 0.15,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.2119,
+      "lam": 0.2381,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8479351,
+   "name": "Sam Steel",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    3,
+    2,
+    1,
+    1,
+    2,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4963,
+      "lam": 1.6667
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.3069,
+      "lam": 1.1208,
+      "detail": {
+       "rate60": 5.2437,
+       "toi": 16.7082,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8733
+      }
+     },
+     "buts": {
+      "p": 0.133,
+      "lam": 0.1427,
+      "detail": {
+       "sh": 0.1414,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.2179,
+      "lam": 0.2458,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8483425,
+   "name": "Lian Bichsel",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.0446,
+      "lam": 0.3333
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.0933,
+      "lam": 0.5024,
+      "detail": {
+       "rate60": 2.3076,
+       "toi": 16.2231,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9161
+      }
+     },
+     "buts": {
+      "p": 0.0341,
+      "lam": 0.0347,
+      "detail": {
+       "sh": 0.0766,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.1146,
+      "lam": 0.1217,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8478476,
+   "name": "Kyle Capobianco",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0
+   ],
+   "l10_goals": [
+    0
+   ],
+   "l10_assists": [
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.1043,
+      "lam": 0.5455
+     },
+     "buts": {
+      "p": 0.0588,
+      "lam": 0.0606
+     },
+     "passes": {
+      "p": 0.0869,
+      "lam": 0.0909
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.0477,
+      "lam": 0.3387,
+      "detail": {
+       "rate60": 3.3145,
+       "toi": 7.5583,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9231
+      }
+     },
+     "buts": {
+      "p": 0.0214,
+      "lam": 0.0216,
+      "detail": {
+       "sh": 0.071,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.0783,
+      "lam": 0.0815,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {},
+   "played": false
+  },
+  {
+   "pid": 8481581,
+   "name": "Thomas Harley",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    2,
+    0,
+    0,
+    7,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4963,
+      "lam": 1.6667
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.3897,
+      "lam": 1.363,
+      "detail": {
+       "rate60": 4.1866,
+       "toi": 24.2687,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9158
+      }
+     },
+     "buts": {
+      "p": 0.0673,
+      "lam": 0.0697,
+      "detail": {
+       "sh": 0.0568,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.2462,
+      "lam": 0.2826,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
+  },
+  {
+   "pid": 8480036,
+   "name": "Miro Heiskanen",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    5,
+    2,
+    1,
+    0,
+    1
+   ],
+   "l10_goals": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    2
+   ],
+   "vs_gp": 5,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4963,
+      "lam": 1.6667
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.3935,
+      "lam": 0.5
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.3892,
+      "lam": 1.3615,
+      "detail": {
+       "rate60": 4.3083,
+       "toi": 24.2611,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8892
+      }
+     },
+     "buts": {
+      "p": 0.0845,
+      "lam": 0.0883,
+      "detail": {
+       "sh": 0.0721,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.3292,
+      "lam": 0.3994,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8476902,
+   "name": "Esa Lindell",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.0902,
+      "lam": 0.5
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.152,
+      "lam": 0.6822,
+      "detail": {
+       "rate60": 2.5787,
+       "toi": 20.4682,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8823
+      }
+     },
+     "buts": {
+      "p": 0.0402,
+      "lam": 0.041,
+      "detail": {
+       "sh": 0.0668,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.1749,
+      "lam": 0.1922,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8480878,
+   "name": "Nils Lundkvist",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    2,
+    2,
+    1,
+    0,
+    0,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2032,
+      "lam": 0.8333
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.1678,
+      "lam": 0.7282,
+      "detail": {
+       "rate60": 3.3238,
+       "toi": 17.5942,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.85
+      }
+     },
+     "buts": {
+      "p": 0.0405,
+      "lam": 0.0414,
+      "detail": {
+       "sh": 0.0631,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.1591,
+      "lam": 0.1732,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8474574,
+   "name": "Tyler Myers",
+   "team": "DAL",
+   "opp": "COL",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.0902,
+      "lam": 0.5
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.1407,
+      "lam": 0.649,
+      "detail": {
+       "rate60": 3.4196,
+       "toi": 14.7504,
+       "f_opp": 0.9439,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8783
+      }
+     },
+     "buts": {
+      "p": 0.0264,
+      "lam": 0.0268,
+      "detail": {
+       "sh": 0.0458,
+       "f_gardien": 0.9
+      }
+     },
+     "passes": {
+      "p": 0.1116,
+      "lam": 0.1183,
+      "detail": {
+       "f_equipe": 0.7859
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8486171,
+   "name": "T.J. Hughes",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    2,
+    2,
+    1,
+    6,
+    3,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.7127,
+      "lam": 2.5
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.5396,
+      "lam": 1.8578,
+      "detail": {
+       "rate60": 8.5638,
+       "toi": 14.9771,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9643
+      }
+     },
+     "buts": {
+      "p": 0.1737,
+      "lam": 0.1909,
+      "detail": {
+       "sh": 0.1214,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.2468,
+      "lam": 0.2834,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8475172,
+   "name": "Nazem Kadri",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    2,
+    4,
+    4,
+    2,
+    3,
+    3
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    2,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 13,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.8009,
+      "lam": 3.0
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.3935,
+      "lam": 0.5
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.6775,
+      "lam": 2.4431,
+      "detail": {
+       "rate60": 8.5314,
+       "toi": 19.378,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9838
+      }
+     },
+     "buts": {
+      "p": 0.1792,
+      "lam": 0.1975,
+      "detail": {
+       "sh": 0.0955,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.3542,
+      "lam": 0.4373,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 2
+   },
+   "played": true
+  },
+  {
+   "pid": 8480448,
+   "name": "Parker Kelly",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    1,
+    1,
+    2,
+    0,
+    0
+   ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    2,
+    0,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2032,
+      "lam": 0.8333
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.4866,
+      "lam": 0.6667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2437,
+      "lam": 0.9428,
+      "detail": {
+       "rate60": 5.7311,
+       "toi": 12.8833,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.85
+      }
+     },
+     "buts": {
+      "p": 0.1255,
+      "lam": 0.1341,
+      "detail": {
+       "sh": 0.1681,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.2496,
+      "lam": 0.2872,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8482742,
+   "name": "Zachary L'Heureux",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": true,
+   "l10_shots": [
+    3,
+    2,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.594,
+      "lam": 2.0
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2358,
+      "lam": 0.9207,
+      "detail": {
+       "rate60": 7.3099,
+       "toi": 9.0833,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9231
+      }
+     },
+     "buts": {
+      "p": 0.0982,
+      "lam": 0.1034,
+      "detail": {
+       "sh": 0.1326,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.1562,
+      "lam": 0.1698,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {},
+   "played": false
+  },
+  {
+   "pid": 8476455,
+   "name": "Gabriel Landeskog",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    0,
+    3,
+    1,
+    2,
+    1
+   ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 8,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.3849,
+      "lam": 1.3333
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.4836,
+      "lam": 1.6609,
+      "detail": {
+       "rate60": 7.0319,
+       "toi": 15.8164,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9941
+      }
+     },
+     "buts": {
+      "p": 0.1633,
+      "lam": 0.1783,
+      "detail": {
+       "sh": 0.1268,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.2823,
+      "lam": 0.3317,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8477476,
+   "name": "Artturi Lehkonen",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    3,
+    2,
+    0,
+    1,
+    1,
+    1
+   ],
+   "l10_goals": [
+    2,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.3849,
+      "lam": 1.3333
+     },
+     "buts": {
+      "p": 0.4866,
+      "lam": 0.6667
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.5103,
+      "lam": 1.7526,
+      "detail": {
+       "rate60": 6.2357,
+       "toi": 18.8838,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9908
+      }
+     },
+     "buts": {
+      "p": 0.2092,
+      "lam": 0.2347,
+      "detail": {
+       "sh": 0.1582,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.2957,
+      "lam": 0.3505,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
+  },
+  {
+   "pid": 8477492,
+   "name": "Nathan MacKinnon",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    8,
+    4,
+    1,
+    2,
+    8,
+    2
+   ],
+   "l10_goals": [
+    2,
+    0,
+    0,
+    1,
+    2,
+    0
+   ],
+   "l10_assists": [
+    0,
+    3,
+    0,
+    2,
+    0,
+    2
+   ],
+   "vs_gp": 5,
+   "vs_shots": 15,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.9199,
+      "lam": 4.1667
+     },
+     "buts": {
+      "p": 0.5654,
+      "lam": 0.8333
+     },
+     "passes": {
+      "p": 0.6886,
+      "lam": 1.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.7754,
+      "lam": 3.0181,
+      "detail": {
+       "rate60": 11.0637,
+       "toi": 20.0542,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9055
+      }
+     },
+     "buts": {
+      "p": 0.3247,
+      "lam": 0.3926,
+      "detail": {
+       "sh": 0.1537,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.506,
+      "lam": 0.7052,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8480039,
+   "name": "Martin Necas",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    4,
+    4,
+    3,
+    2,
+    2,
+    2
+   ],
+   "l10_goals": [
+    0,
+    2,
+    0,
+    0,
+    0,
+    2
+   ],
+   "l10_assists": [
+    1,
+    1,
+    0,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 15,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.7745,
+      "lam": 2.8333
+     },
+     "buts": {
+      "p": 0.4866,
+      "lam": 0.6667
+     },
+     "passes": {
+      "p": 0.3935,
+      "lam": 0.5
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.6592,
+      "lam": 2.3541,
+      "detail": {
+       "rate60": 7.5257,
+       "toi": 20.826,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9999
+      }
+     },
+     "buts": {
+      "p": 0.2911,
+      "lam": 0.344,
+      "detail": {
+       "sh": 0.1726,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.4289,
+      "lam": 0.5601,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8475754,
+   "name": "Brock Nelson",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    1,
+    0,
+    1,
+    4,
+    5
+   ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "l10_assists": [
+    2,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 16,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.594,
+      "lam": 2.0
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.3935,
+      "lam": 0.5
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.551,
+      "lam": 1.8999,
+      "detail": {
+       "rate60": 6.93,
+       "toi": 17.3418,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0524
+      }
+     },
+     "buts": {
+      "p": 0.2298,
+      "lam": 0.261,
+      "detail": {
+       "sh": 0.1623,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.3158,
+      "lam": 0.3794,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8478462,
+   "name": "Nicolas Roy",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    2,
+    3,
+    3,
+    0,
+    2,
+    0
+   ],
+   "l10_goals": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 4,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4963,
+      "lam": 1.6667
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2293,
+      "lam": 0.9024,
+      "detail": {
+       "rate60": 5.6702,
+       "toi": 11.6244,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9114
+      }
+     },
+     "buts": {
+      "p": 0.0993,
+      "lam": 0.1046,
+      "detail": {
+       "sh": 0.1369,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.2071,
+      "lam": 0.232,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {},
+   "played": false
+  },
+  {
+   "pid": 8475768,
+   "name": "Jaden Schwartz",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    4,
+    2,
+    2,
+    0,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    1,
+    2,
+    0,
+    0
+   ],
+   "l10_assists": [
+    2,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4963,
+      "lam": 1.6667
+     },
+     "buts": {
+      "p": 0.3935,
+      "lam": 0.5
+     },
+     "passes": {
+      "p": 0.3935,
+      "lam": 0.5
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.414,
+      "lam": 1.437,
+      "detail": {
+       "rate60": 6.6296,
+       "toi": 12.9971,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.1102
+      }
+     },
+     "buts": {
+      "p": 0.1697,
+      "lam": 0.186,
+      "detail": {
+       "sh": 0.1529,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.2544,
+      "lam": 0.2936,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8482768,
+   "name": "Fedor Svechkov",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    2,
+    2,
+    0,
+    1,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2032,
+      "lam": 0.8333
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2358,
+      "lam": 0.9205,
+      "detail": {
+       "rate60": 5.1416,
+       "toi": 12.7196,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.937
+      }
+     },
+     "buts": {
+      "p": 0.09,
+      "lam": 0.0943,
+      "detail": {
+       "sh": 0.1211,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.2206,
+      "lam": 0.2493,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8470613,
+   "name": "Brent Burns",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    2,
+    2,
+    2,
+    1,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 10,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4422,
+      "lam": 1.5
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.3935,
+      "lam": 0.5
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.4501,
+      "lam": 1.5507,
+      "detail": {
+       "rate60": 5.8018,
+       "toi": 17.1473,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0377
+      }
+     },
+     "buts": {
+      "p": 0.0814,
+      "lam": 0.0849,
+      "detail": {
+       "sh": 0.0647,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.2575,
+      "lam": 0.2977,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8478454,
+   "name": "Noah Juulsen",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.0902,
+      "lam": 0.5
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.2212,
+      "lam": 0.25
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.0926,
+      "lam": 0.4999,
+      "detail": {
+       "rate60": 2.7316,
+       "toi": 12.8375,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9489
+      }
+     },
+     "buts": {
+      "p": 0.0256,
+      "lam": 0.0259,
+      "detail": {
+       "sh": 0.0613,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.1717,
+      "lam": 0.1884,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8476967,
+   "name": "Brett Kulak",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    0,
+    2,
+    0,
+    1,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    2,
+    1,
+    0
+   ],
+   "vs_gp": 6,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.1443,
+      "lam": 0.6667
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.4866,
+      "lam": 0.6667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.1954,
+      "lam": 0.8068,
+      "detail": {
+       "rate60": 3.343,
+       "toi": 17.9476,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.8952
+      }
+     },
+     "buts": {
+      "p": 0.0298,
+      "lam": 0.0302,
+      "detail": {
+       "sh": 0.0443,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.2506,
+      "lam": 0.2885,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8480069,
+   "name": "Cale Makar",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": true,
+   "l10_shots": [
+    1,
+    3,
+    4,
+    2,
+    3
+   ],
+   "l10_goals": [
+    0,
+    1,
+    0,
+    2,
+    0
+   ],
+   "l10_assists": [
+    2,
+    0,
+    0,
+    1,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 11,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.7326,
+      "lam": 2.6
+     },
+     "buts": {
+      "p": 0.4512,
+      "lam": 0.6
+     },
+     "passes": {
+      "p": 0.5507,
+      "lam": 0.8
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.611,
+      "lam": 2.1383,
+      "detail": {
+       "rate60": 6.1846,
+       "toi": 21.4933,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0709
+      }
+     },
+     "buts": {
+      "p": 0.1582,
+      "lam": 0.1723,
+      "detail": {
+       "sh": 0.0952,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.4116,
+      "lam": 0.5303,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8484258,
+   "name": "Sam Malinski",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    2,
+    1,
+    1,
+    0,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 5,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.1912,
+      "lam": 0.8
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.3551,
+      "lam": 1.2599,
+      "detail": {
+       "rate60": 5.3248,
+       "toi": 17.24,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9136
+      }
+     },
+     "buts": {
+      "p": 0.0581,
+      "lam": 0.0599,
+      "detail": {
+       "sh": 0.0561,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.2321,
+      "lam": 0.2641,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
+  },
+  {
+   "pid": 8476312,
+   "name": "Josh Manson",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    2,
+    0,
+    2,
+    1,
+    1
+   ],
+   "l10_goals": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 5,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.3253,
+      "lam": 1.1667
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.3935,
+      "lam": 0.5
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.3391,
+      "lam": 1.2133,
+      "detail": {
+       "rate60": 4.8309,
+       "toi": 17.5656,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9518
+      }
+     },
+     "buts": {
+      "p": 0.0582,
+      "lam": 0.06,
+      "detail": {
+       "sh": 0.0584,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.2785,
+      "lam": 0.3264,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8478038,
+   "name": "Devon Toews",
+   "team": "COL",
+   "opp": "DAL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020107,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    0,
+    2,
+    3,
+    0,
+    4
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    2,
+    0,
+    0
+   ],
+   "l10_assists": [
+    2,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   "vs_gp": 5,
+   "vs_shots": 14,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4422,
+      "lam": 1.5
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.4866,
+      "lam": 0.6667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.4573,
+      "lam": 1.5742,
+      "detail": {
+       "rate60": 4.4131,
+       "toi": 20.6671,
+       "f_opp": 0.9115,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.149
+      }
+     },
+     "buts": {
+      "p": 0.0771,
+      "lam": 0.0802,
+      "detail": {
+       "sh": 0.0602,
+       "f_gardien": 0.8465
+      }
+     },
+     "passes": {
+      "p": 0.3104,
+      "lam": 0.3716,
+      "detail": {
+       "f_equipe": 0.9651
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8476981,
+   "name": "Josh Anderson",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    3,
+    3,
+    0,
+    4,
+    0,
+    2
+   ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.594,
+      "lam": 2.0
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.3494,
+      "lam": 1.2433,
+      "detail": {
+       "rate60": 6.4055,
+       "toi": 13.6113,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8881
+      }
+     },
+     "buts": {
+      "p": 0.1564,
+      "lam": 0.1701,
+      "detail": {
+       "sh": 0.1504,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.219,
+      "lam": 0.2472,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 3,
+    "buts": 2,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8483424,
+   "name": "Owen Beck",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1
+   ],
+   "l10_goals": [
+    0
+   ],
+   "l10_assists": [
+    0
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.1675,
+      "lam": 0.7333
+     },
+     "buts": {
+      "p": 0.0645,
+      "lam": 0.0667
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2033,
+      "lam": 0.8293,
+      "detail": {
+       "rate60": 6.3872,
+       "toi": 8.086,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.0996,
+      "lam": 0.1049,
+      "detail": {
+       "sh": 0.1391,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.15,
+      "lam": 0.1625,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8482737,
+   "name": "Zachary Bolduc",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    2,
+    0,
+    3,
+    2,
+    3,
+    1
+   ],
+   "l10_goals": [
+    1,
+    0,
+    2,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.547,
+      "lam": 1.8333
+     },
+     "buts": {
+      "p": 0.3935,
+      "lam": 0.5
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.3948,
+      "lam": 1.3781,
+      "detail": {
+       "rate60": 6.4393,
+       "toi": 14.2244,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.937
+      }
+     },
+     "buts": {
+      "p": 0.1663,
+      "lam": 0.1819,
+      "detail": {
+       "sh": 0.1451,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.2406,
+      "lam": 0.2752,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
+  },
+  {
+   "pid": 8481540,
+   "name": "Cole Caufield",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    3,
+    3,
+    1,
+    6,
+    6,
+    5
+   ],
+   "l10_goals": [
+    0,
+    2,
+    0,
+    0,
+    0,
+    1
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 16,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.9084,
+      "lam": 4.0
+     },
+     "buts": {
+      "p": 0.3935,
+      "lam": 0.5
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.8687,
+      "lam": 3.8588,
+      "detail": {
+       "rate60": 10.2408,
+       "toi": 20.406,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.15
+      }
+     },
+     "buts": {
+      "p": 0.4529,
+      "lam": 0.603,
+      "detail": {
+       "sh": 0.1718,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.3504,
+      "lam": 0.4314,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8481523,
+   "name": "Kirby Dach",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.0124,
+      "lam": 0.1667
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.1716,
+      "lam": 0.7391,
+      "detail": {
+       "rate60": 4.9554,
+       "toi": 9.3744,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9909
+      }
+     },
+     "buts": {
+      "p": 0.0951,
+      "lam": 0.0999,
+      "detail": {
+       "sh": 0.1486,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.1713,
+      "lam": 0.1878,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8476479,
+   "name": "Phillip Danault",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    0,
+    3,
+    2,
+    1,
+    3
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4422,
+      "lam": 1.5
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.4126,
+      "lam": 1.4327,
+      "detail": {
+       "rate60": 5.3844,
+       "toi": 15.7256,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0538
+      }
+     },
+     "buts": {
+      "p": 0.1313,
+      "lam": 0.1408,
+      "detail": {
+       "sh": 0.108,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.2241,
+      "lam": 0.2537,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8478133,
+   "name": "Jake Evans",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2804,
+      "lam": 1.0457,
+      "detail": {
+       "rate60": 4.8713,
+       "toi": 13.5204,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9888
+      }
+     },
+     "buts": {
+      "p": 0.1263,
+      "lam": 0.135,
+      "detail": {
+       "sh": 0.1419,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.1885,
+      "lam": 0.2089,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8475184,
+   "name": "Chris Kreider",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    1,
+    1,
+    0,
+    2,
+    0
+   ],
+   "l10_goals": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    2,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2032,
+      "lam": 0.8333
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.3935,
+      "lam": 0.5
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.4491,
+      "lam": 1.5475,
+      "detail": {
+       "rate60": 5.8339,
+       "toi": 15.0718,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.096
+      }
+     },
+     "buts": {
+      "p": 0.193,
+      "lam": 0.2144,
+      "detail": {
+       "sh": 0.1523,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.3103,
+      "lam": 0.3715,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8481618,
+   "name": "Alex Newhook",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    2,
+    0,
+    1,
+    0,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2032,
+      "lam": 0.8333
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.3641,
+      "lam": 1.2865,
+      "detail": {
+       "rate60": 5.3195,
+       "toi": 16.3171,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9231
+      }
+     },
+     "buts": {
+      "p": 0.1754,
+      "lam": 0.1928,
+      "detail": {
+       "sh": 0.1648,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.2768,
+      "lam": 0.324,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 2
+   },
+   "played": true
+  },
+  {
+   "pid": 8483515,
+   "name": "Juraj Slafkovský",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    2,
+    1,
+    2,
+    5,
+    5,
+    3
+   ],
+   "l10_goals": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "vs_gp": 3,
+   "vs_shots": 8,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.8009,
+      "lam": 3.0
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.6894,
+      "lam": 2.5033,
+      "detail": {
+       "rate60": 7.7005,
+       "toi": 19.33,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0474
+      }
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3334,
+      "detail": {
+       "sh": 0.1464,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.3736,
+      "lam": 0.4677,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8480018,
+   "name": "Nick Suzuki",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    2,
+    4,
+    2,
+    1,
+    3,
+    5
+   ],
+   "l10_goals": [
+    0,
+    1,
+    1,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    3,
+    1,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.7745,
+      "lam": 2.8333
+     },
+     "buts": {
+      "p": 0.3935,
+      "lam": 0.5
+     },
+     "passes": {
+      "p": 0.5654,
+      "lam": 0.8333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.6779,
+      "lam": 2.4451,
+      "detail": {
+       "rate60": 6.8827,
+       "toi": 22.7487,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9726
+      }
+     },
+     "buts": {
+      "p": 0.29,
+      "lam": 0.3425,
+      "detail": {
+       "sh": 0.154,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.5325,
+      "lam": 0.7603,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 3,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8480074,
+   "name": "Alexandre Texier",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    1,
+    2,
+    5
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    2,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4422,
+      "lam": 1.5
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.4099,
+      "lam": 1.4242,
+      "detail": {
+       "rate60": 6.5901,
+       "toi": 13.4051,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.004
+      }
+     },
+     "buts": {
+      "p": 0.1476,
+      "lam": 0.1597,
+      "detail": {
+       "sh": 0.1232,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.258,
+      "lam": 0.2984,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8478851,
+   "name": "Alexandre Carrier",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    3,
+    0,
+    1,
+    1,
+    1,
+    2
+   ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.3849,
+      "lam": 1.3333
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2418,
+      "lam": 0.9373,
+      "detail": {
+       "rate60": 3.2909,
+       "toi": 18.0671,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9818
+      }
+     },
+     "buts": {
+      "p": 0.0696,
+      "lam": 0.0722,
+      "detail": {
+       "sh": 0.0846,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.2124,
+      "lam": 0.2388,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8480865,
+   "name": "Noah Dobson",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    1,
+    2,
+    2,
+    1,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4422,
+      "lam": 1.5
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.4258,
+      "lam": 1.4737,
+      "detail": {
+       "rate60": 4.726,
+       "toi": 21.42,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9066
+      }
+     },
+     "buts": {
+      "p": 0.0864,
+      "lam": 0.0903,
+      "detail": {
+       "sh": 0.0674,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.289,
+      "lam": 0.3411,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 5,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
+  },
+  {
+   "pid": 8483686,
+   "name": "Adam Engstrom",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    1,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.1669,
+      "lam": 0.7257,
+      "detail": {
+       "rate60": 4.2259,
+       "toi": 10.6944,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.0389,
+      "lam": 0.0397,
+      "detail": {
+       "sh": 0.0601,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.1344,
+      "lam": 0.1443,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8482087,
+   "name": "Kaiden Guhle",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2737,
+      "lam": 1.0256
+     },
+     "buts": {
+      "p": 0.05,
+      "lam": 0.0513
+     },
+     "passes": {
+      "p": 0.2061,
+      "lam": 0.2308
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2874,
+      "lam": 1.0655,
+      "detail": {
+       "rate60": 3.3974,
+       "toi": 19.9731,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.9779
+      }
+     },
+     "buts": {
+      "p": 0.0583,
+      "lam": 0.06,
+      "detail": {
+       "sh": 0.062,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.2371,
+      "lam": 0.2707,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8483457,
+   "name": "Lane Hutson",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    3,
+    2,
+    4,
+    2,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "l10_assists": [
+    0,
+    3,
+    1,
+    0,
+    0,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.6372,
+      "lam": 2.1667
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.5654,
+      "lam": 0.8333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.4762,
+      "lam": 1.6364,
+      "detail": {
+       "rate60": 4.2454,
+       "toi": 27.1407,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 0.8845
+      }
+     },
+     "buts": {
+      "p": 0.1116,
+      "lam": 0.1183,
+      "detail": {
+       "sh": 0.0795,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.5124,
+      "lam": 0.7182,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 3,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true
+  },
+  {
+   "pid": 8476875,
+   "name": "Mike Matheson",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": true,
+   "l10_shots": [
+    3,
+    2,
+    2,
+    0,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 6,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.5372,
+      "lam": 1.8
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1813,
+      "lam": 0.2
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.4681,
+      "lam": 1.6095,
+      "detail": {
+       "rate60": 3.9799,
+       "toi": 24.1533,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.0427
+      }
+     },
+     "buts": {
+      "p": 0.0846,
+      "lam": 0.0884,
+      "detail": {
+       "sh": 0.0604,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.3016,
+      "lam": 0.3589,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {},
+   "played": false
+  },
+  {
+   "pid": 8482964,
+   "name": "Arber Xhekaj",
+   "team": "MTL",
+   "opp": "WSH",
+   "home": false,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    0,
+    0,
+    2,
+    0,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.0446,
+      "lam": 0.3333
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.1403,
+      "lam": 0.6478,
+      "detail": {
+       "rate60": 3.1407,
+       "toi": 11.4373,
+       "f_opp": 1.0346,
+       "f_lieu": 0.97,
+       "f_b2b": 0.96,
+       "f_vs": 1.1231
+      }
+     },
+     "buts": {
+      "p": 0.0331,
+      "lam": 0.0336,
+      "detail": {
+       "sh": 0.0571,
+       "f_gardien": 0.9097
+      }
+     },
+     "passes": {
+      "p": 0.1088,
+      "lam": 0.1152,
+      "detail": {
+       "f_equipe": 1.0291
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8478463,
+   "name": "Anthony Beauvillier",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    3,
+    2,
+    1,
+    0,
+    0,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.3849,
+      "lam": 1.3333
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2922,
+      "lam": 1.079,
+      "detail": {
+       "rate60": 7.0893,
+       "toi": 10.9362,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.85
+      }
+     },
+     "buts": {
+      "p": 0.1304,
+      "lam": 0.1397,
+      "detail": {
+       "sh": 0.121,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.1753,
+      "lam": 0.1928,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8483573,
+   "name": "Ethen Frank",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 11,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4313,
+      "lam": 1.4677
+     },
+     "buts": {
+      "p": 0.176,
+      "lam": 0.1935
+     },
+     "passes": {
+      "p": 0.176,
+      "lam": 0.1935
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.4186,
+      "lam": 1.4511,
+      "detail": {
+       "rate60": 7.0209,
+       "toi": 10.9767,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.15
+      }
+     },
+     "buts": {
+      "p": 0.1922,
+      "lam": 0.2134,
+      "detail": {
+       "sh": 0.1375,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.2188,
+      "lam": 0.2469,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {},
+   "played": false
+  },
+  {
+   "pid": 8476432,
+   "name": "Boone Jenner",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    3,
+    3,
+    2,
+    3,
+    5,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1
+   ],
+   "l10_assists": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.8009,
+      "lam": 3.0
+     },
+     "buts": {
+      "p": 0.3935,
+      "lam": 0.5
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.5978,
+      "lam": 2.0833,
+      "detail": {
+       "rate60": 8.2516,
+       "toi": 15.6404,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9859
+      }
+     },
+     "buts": {
+      "p": 0.2486,
+      "lam": 0.2858,
+      "detail": {
+       "sh": 0.1282,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.3198,
+      "lam": 0.3853,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8479385,
+   "name": "Jordan Kyrou",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    2,
+    1,
+    1,
+    0,
+    1,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 1,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2642,
+      "lam": 1.0
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.5025,
+      "lam": 1.7256,
+      "detail": {
+       "rate60": 7.7014,
+       "toi": 13.0258,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0506
+      }
+     },
+     "buts": {
+      "p": 0.2058,
+      "lam": 0.2304,
+      "detail": {
+       "sh": 0.1248,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.2878,
+      "lam": 0.3394,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 3,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true
+  },
+  {
+   "pid": 8484186,
+   "name": "Ryan Leonard",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    3,
+    3,
+    2,
+    2,
+    4,
+    2
+   ],
+   "l10_goals": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    2
+   ],
+   "vs_gp": 3,
+   "vs_shots": 2,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.7452,
+      "lam": 2.6667
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.4866,
+      "lam": 0.6667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.503,
+      "lam": 1.7272,
+      "detail": {
+       "rate60": 8.8421,
+       "toi": 13.8724,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.86
+      }
+     },
+     "buts": {
+      "p": 0.2228,
+      "lam": 0.252,
+      "detail": {
+       "sh": 0.1364,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.3541,
+      "lam": 0.4371,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8471214,
+   "name": "Alex Ovechkin",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    0,
+    2,
+    2,
+    3,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 13,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4963,
+      "lam": 1.6667
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.6453,
+      "lam": 2.2889,
+      "detail": {
+       "rate60": 8.8044,
+       "toi": 14.2102,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.1174
+      }
+     },
+     "buts": {
+      "p": 0.2807,
+      "lam": 0.3295,
+      "detail": {
+       "sh": 0.1346,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.296,
+      "lam": 0.351,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
+  },
+  {
+   "pid": 8481656,
+   "name": "Aliaksei Protas",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    2,
+    0,
+    1,
+    1,
+    1,
+    2
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.3253,
+      "lam": 1.1667
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.4825,
+      "lam": 1.6575,
+      "detail": {
+       "rate60": 6.2603,
+       "toi": 15.6898,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0306
+      }
+     },
+     "buts": {
+      "p": 0.2258,
+      "lam": 0.2559,
+      "detail": {
+       "sh": 0.1443,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.3249,
+      "lam": 0.3929,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8484999,
+   "name": "Ilya Protas",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    0,
+    1,
+    0,
+    1,
+    3
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.2032,
+      "lam": 0.8333
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2985,
+      "lam": 1.097,
+      "detail": {
+       "rate60": 5.7319,
+       "toi": 11.6889,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.1474,
+      "lam": 0.1595,
+      "detail": {
+       "sh": 0.1359,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.2899,
+      "lam": 0.3424,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 2
+   },
+   "played": true
+  },
+  {
+   "pid": 8482088,
+   "name": "Justin Sourdif",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    2,
+    0,
+    1
+   ],
+   "l10_goals": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 3,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.1443,
+      "lam": 0.6667
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.3224,
+      "lam": 1.1653,
+      "detail": {
+       "rate60": 5.359,
+       "toi": 12.9502,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0255
+      }
+     },
+     "buts": {
+      "p": 0.1655,
+      "lam": 0.1809,
+      "detail": {
+       "sh": 0.1451,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.2343,
+      "lam": 0.267,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8478440,
+   "name": "Dylan Strome",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    2,
+    1,
+    1,
+    4,
+    2,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    2,
+    0,
+    1,
+    1,
+    0,
+    1
+   ],
+   "vs_gp": 3,
+   "vs_shots": 9,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.547,
+      "lam": 1.8333
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.5654,
+      "lam": 0.8333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.5434,
+      "lam": 1.8715,
+      "detail": {
+       "rate60": 6.3464,
+       "toi": 16.5122,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0907
+      }
+     },
+     "buts": {
+      "p": 0.2283,
+      "lam": 0.2591,
+      "detail": {
+       "sh": 0.1294,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.4339,
+      "lam": 0.569,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8477949,
+   "name": "Alex Tuch",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    3,
+    2,
+    6,
+    2,
+    2,
+    1
+   ],
+   "l10_goals": [
+    2,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 4,
+   "vs_shots": 8,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.7452,
+      "lam": 2.6667
+     },
+     "buts": {
+      "p": 0.3935,
+      "lam": 0.5
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.6468,
+      "lam": 2.2963,
+      "detail": {
+       "rate60": 7.7984,
+       "toi": 19.1378,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.9397
+      }
+     },
+     "buts": {
+      "p": 0.3256,
+      "lam": 0.3939,
+      "detail": {
+       "sh": 0.1604,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.335,
+      "lam": 0.408,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 3,
+    "buts": 2,
+    "passes": 1
+   },
+   "played": true
+  },
+  {
+   "pid": 8476880,
+   "name": "Tom Wilson",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "F",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    2,
+    2,
+    3,
+    3,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    0,
+    2,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.4963,
+      "lam": 1.6667
+     },
+     "buts": {
+      "p": 0.2835,
+      "lam": 0.3333
+     },
+     "passes": {
+      "p": 0.3935,
+      "lam": 0.5
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.519,
+      "lam": 1.7832,
+      "detail": {
+       "rate60": 6.2143,
+       "toi": 19.65,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.8919
+      }
+     },
+     "buts": {
+      "p": 0.2788,
+      "lam": 0.3269,
+      "detail": {
+       "sh": 0.1713,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.4184,
+      "lam": 0.542,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 5,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8479345,
+   "name": "Jakob Chychrun",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    3,
+    2,
+    1,
+    3,
+    8,
+    2
+   ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 7,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.8244,
+      "lam": 3.1667
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.766,
+      "lam": 2.9531,
+      "detail": {
+       "rate60": 6.7673,
+       "toi": 25.3616,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0509
+      }
+     },
+     "buts": {
+      "p": 0.2527,
+      "lam": 0.2913,
+      "detail": {
+       "sh": 0.0922,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.3857,
+      "lam": 0.4873,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8479576,
+   "name": "Vincent Desharnais",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.0446,
+      "lam": 0.3333
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.1535,
+      "lam": 0.1667
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.1246,
+      "lam": 0.6005,
+      "detail": {
+       "rate60": 2.2004,
+       "toi": 19.4456,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 0.8571
+      }
+     },
+     "buts": {
+      "p": 0.0371,
+      "lam": 0.0378,
+      "detail": {
+       "sh": 0.0588,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.2259,
+      "lam": 0.256,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8480796,
+   "name": "Martin Fehérváry",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 3,
+   "vs_shots": 4,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.0124,
+      "lam": 0.1667
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2571,
+      "lam": 0.9803,
+      "detail": {
+       "rate60": 2.3172,
+       "toi": 22.6069,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.143
+      }
+     },
+     "buts": {
+      "p": 0.0674,
+      "lam": 0.0698,
+      "detail": {
+       "sh": 0.0665,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.2728,
+      "lam": 0.3185,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8475718,
+   "name": "Justin Holl",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    1
+   ],
+   "l10_goals": [
+    1
+   ],
+   "l10_assists": [
+    0
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.1832,
+      "lam": 0.7778
+     },
+     "buts": {
+      "p": 0.1052,
+      "lam": 0.1111
+     },
+     "passes": {
+      "p": 0.1052,
+      "lam": 0.1111
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.2256,
+      "lam": 0.892,
+      "detail": {
+       "rate60": 3.9258,
+       "toi": 13.8778,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.0741,
+      "lam": 0.077,
+      "detail": {
+       "sh": 0.0807,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.2125,
+      "lam": 0.2388,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8484873,
+   "name": "Cole Hutson",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    3,
+    1,
+    3,
+    2,
+    5,
+    0
+   ],
+   "l10_goals": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.6768,
+      "lam": 2.3333
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.2835,
+      "lam": 0.3333
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.534,
+      "lam": 1.8374,
+      "detail": {
+       "rate60": 5.9412,
+       "toi": 18.888,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.1362,
+      "lam": 0.1464,
+      "detail": {
+       "sh": 0.0745,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.3346,
+      "lam": 0.4074,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
+  },
+  {
+   "pid": 8480043,
+   "name": "Timothy Liljegren",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": false,
+   "l10_shots": [
+    0,
+    1,
+    1,
+    2,
+    0,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 0,
+   "vs_shots": 0,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.1443,
+      "lam": 0.6667
+     },
+     "buts": {
+      "p": 0.1535,
+      "lam": 0.1667
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.21,
+      "lam": 0.848,
+      "detail": {
+       "rate60": 2.7655,
+       "toi": 18.7284,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0
+      }
+     },
+     "buts": {
+      "p": 0.0578,
+      "lam": 0.0595,
+      "detail": {
+       "sh": 0.0656,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.2186,
+      "lam": 0.2467,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
+  },
+  {
+   "pid": 8475795,
+   "name": "Dylan McIlrath",
+   "team": "WSH",
+   "opp": "MTL",
+   "home": true,
+   "pos": "D",
+   "gameId": 2026020106,
+   "b2b": true,
+   "incertain": true,
+   "l10_shots": [
+    0,
+    0,
+    0
+   ],
+   "l10_goals": [
+    0,
+    0,
+    0
+   ],
+   "l10_assists": [
+    0,
+    0,
+    0
+   ],
+   "vs_gp": 2,
+   "vs_shots": 1,
+   "preds": {
+    "v0": {
+     "tirs": {
+      "p": 0.0012,
+      "lam": 0.05
+     },
+     "buts": {
+      "p": 0.01,
+      "lam": 0.01
+     },
+     "passes": {
+      "p": 0.01,
+      "lam": 0.01
+     }
+    },
+    "v1": {
+     "tirs": {
+      "p": 0.0464,
+      "lam": 0.3334,
+      "detail": {
+       "rate60": 3.1626,
+       "toi": 6.3611,
+       "f_opp": 0.9935,
+       "f_lieu": 1.03,
+       "f_b2b": 0.96,
+       "f_vs": 1.0123
+      }
+     },
+     "buts": {
+      "p": 0.0227,
+      "lam": 0.023,
+      "detail": {
+       "sh": 0.0645,
+       "f_gardien": 1.0698
+      }
+     },
+     "passes": {
+      "p": 0.0979,
+      "lam": 0.103,
+      "detail": {
+       "f_equipe": 1.1874
+      }
+     }
+    }
+   },
+   "result": {},
+   "played": false
+  }
+ ],
+ "games": [
+  {
+   "gameId": 2026020107,
+   "home": "COL",
+   "away": "DAL",
+   "start": "2026-10-15T00:30:00Z",
+   "b2b_home": true,
+   "b2b_away": true,
+   "forme": {
+    "home": {
+     "gf": 29,
+     "ga": 19,
+     "n": 6,
+     "v": 4
+    },
+    "away": {
+     "gf": 13,
+     "ga": 11,
+     "n": 6,
+     "v": 2
+    }
+   },
+   "h2h": {
+    "gp": 5,
+    "gf_home": 15,
+    "gf_away": 13
+   },
+   "preds": {
+    "v0": {
+     "p_home": 0.6051,
+     "p_egal60": 0.1611,
+     "lam_home": 3.3333,
+     "lam_away": 2.6667,
+     "total": 6.0,
+     "p_over": {
+      "5.5": 0.5543,
+      "6.5": 0.3937
+     }
+    },
+    "v1": {
+     "p_home": 0.5959,
+     "p_egal60": 0.1704,
+     "lam_home": 3.0183,
+     "lam_away": 2.458,
+     "total": 5.4763,
+     "p_over": {
+      "5.5": 0.467,
+      "6.5": 0.3102
+     },
+     "detail": {
+      "att_h": 3.806,
+      "def_h": 2.8022,
+      "att_a": 3.0467,
+      "def_a": 2.6384,
+      "h2h_h": 0.9186,
+      "h2h_a": 0.9436,
+      "mu": 3.1274
+     }
+    }
+   },
+   "result": {
+    "home": 2,
+    "away": 3
+   }
+  },
+  {
+   "gameId": 2026020106,
+   "home": "WSH",
+   "away": "MTL",
+   "start": "2026-10-14T23:30:00Z",
+   "b2b_home": true,
+   "b2b_away": true,
+   "forme": {
+    "home": {
+     "gf": 19,
+     "ga": 18,
+     "n": 6,
+     "v": 3
+    },
+    "away": {
+     "gf": 19,
+     "ga": 22,
+     "n": 6,
+     "v": 3
+    }
+   },
+   "h2h": {
+    "gp": 3,
+    "gf_home": 13,
+    "gf_away": 12
+   },
+   "preds": {
+    "v0": {
+     "p_home": 0.551,
+     "p_egal60": 0.1586,
+     "lam_home": 3.4167,
+     "lam_away": 3.0833,
+     "total": 6.5,
+     "p_over": {
+      "5.5": 0.631,
+      "6.5": 0.4735
+     }
+    },
+    "v1": {
+     "p_home": 0.5763,
+     "p_egal60": 0.152,
+     "lam_home": 3.7135,
+     "lam_away": 3.2185,
+     "total": 6.9319,
+     "p_over": {
+      "5.5": 0.6905,
+      "6.5": 0.5401
+     },
+     "detail": {
+      "att_h": 3.1774,
+      "def_h": 3.0202,
+      "att_a": 3.3025,
+      "def_a": 3.2491,
+      "h2h_h": 1.0992,
+      "h2h_a": 1.0576,
+      "mu": 3.1274
+     }
+    }
+   },
+   "result": {
+    "home": 5,
+    "away": 4
+   }
+  }
+ ]
+}

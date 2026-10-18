@@ -91,6 +91,10 @@ def resumer(fichiers, versions):
                 s["mae_total"] = sum(erreurs) / len(erreurs)
             out["matchs"][m][v] = s
 
+    # Combien de soirs viennent du rétroactif (rejoués après coup) vs du direct
+    out["soirs_retro"] = sum(1 for f in fichiers if f.get("retro"))
+    out["soirs_direct"] = sum(1 for f in fichiers if not f.get("retro"))
+
     for v in versions:
         blocs = [out["joueurs"][m][v] for m in SEUILS] + [out["matchs"][m][v] for m in MARCHES_MATCH]
         n = sum(b["n"] for b in blocs if b["n"])

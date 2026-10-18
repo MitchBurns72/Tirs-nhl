@@ -6,6 +6,20 @@ Chaque soir de match NHL :
 - **Cotes** : médiane des bookies US en auto (The Odds API) + champ Mise-o-jeu manuel
 - **Suivi** : note /100, calibration et bon côté par marché, pour chaque version de l'algo
 
+## Live
+
+Bouton **LIVE** en haut de la page : rafraîchit aux 30 secondes.
+Vert = objectif atteint, jaune = match en cours pas encore atteint, rouge = match fini, raté.
+Source : l'API NHL directement si ton navigateur l'accepte (temps réel), sinon `docs/live.json`,
+mis à jour par GitHub aux ~5 minutes pendant les matchs (`src/live.py`). GitHub peut retarder
+ses crons de quelques minutes les soirs chargés.
+
+## Rétroactif
+
+À chaque calcul, les soirs de la saison qui n'ont pas de prédictions sont rejoués avec seulement
+les données connues avant ce soir-là (game logs, calendriers et feuilles de match datés), puis gradés.
+Seule limite : l'alignement utilisé est celui d'aujourd'hui. Fichiers marqués `"retro": true`.
+
 ## Cotes automatiques
 
 1. Compte gratuit sur the-odds-api.com, la clé arrive par courriel.

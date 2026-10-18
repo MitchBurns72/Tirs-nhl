@@ -199,28 +199,80 @@ def stats_gardiens(team, saison=None):
     return sum(x.get("shotsAgainst", 0) for x in g), sum(x.get("goalsAgainst", 0) for x in g)
 
 
+def resume_box(box):
+    """Version compacte d'une feuille de match pour le cache de la saison.
+    Fallbacks : si le score ou les tirs d'équipe manquent, on additionne les joueurs."""
+    pb = box.get("playerByGameStats", {})
+    def somme(cote, champ):
+        return sum(j.get(champ, 0) for grp in ("forwards", "defense") for j in pb.get(cote, {}).get(grp, []))
+    h, a = box.get("homeTeam", {}), box.get("awayTeam", {})
+    return {"date": box.get("gameDate", ""), "home": h.get("abbrev"), "away": a.get("abbrev"),
+            "hg": h.get("score", somme("homeTeam", "goals")), "ag": a.get("score", somme("awayTeam", "goals")),
+            "hsog": h.get("sog", somme("homeTeam", "sog")), "asog": a.get("sog", somme("awayTeam", "sog")),
+            "fin": box.get("gameOutcome", {}).get("lastPeriodType", "REG")}
+
+
+def cache_feuilles(saison, equipes):
+    """Toutes les feuilles de match terminées de la saison, en cache permanent.
+
+    POURQUOI : pour rejouer un soir passé SANS TRICHER, il faut les tirs et buts
+    accordés par chaque équipe AVANT ce soir-là. Les stats d'équipe « à date »
+    de l'API incluent tout jusqu'à aujourd'hui (fuite du futur). Avec les feuilles
+    de match datées, on filtre par date et on reconstruit l'état exact de n'importe
+    quel soir. Une feuille finie ne change plus : on la télécharge une seule fois.
+    """
+    f = DIR_CACHE / f"feuilles_{saison}.json"
+    cache = lire_json(f, {})
+    ids = set()
+    for t in equipes:
+        for g in (api.club_schedule(t) or {}).get("games", []):
+            if g.get("gameType") == 2 and g.get("gameState") in ETATS_FINIS:
+                ids.add(g["id"])
+    manquants = [i for i in ids if str(i) not in cache]
+    res = api.fetch_many([f"/gamecenter/{i}/boxscore" for i in manquants])
+    for i in manquants:
+        b = res.get(f"/gamecenter/{i}/boxscore")
+        if b and b.get("gameState") in ETATS_FINIS:
+            cache[str(i)] = resume_box(b)
+    ecrire_json(f, cache)
+    return cache
+
+
 def contexte_ligue(jour, saison):
-    """Tirs accordés et buts accordés par tir pour les 32 équipes + moyenne de buts."""
+    """Tirs accordés et buts accordés par tir pour les 32 équipes + moyenne de buts,
+    tels qu'ils étaient AVANT `jour` (voir cache_feuilles)."""
     prev_saison = saison_precedente(saison)
     st = api.standings_now() or {"standings": []}
-    gp_eq = {s["teamAbbrev"]["default"]: s["gamesPlayed"] for s in st["standings"]}
     noms = {s["teamAbbrev"]["default"]: s.get("teamCommonName", {}).get("default", "") for s in st["standings"]}
-    gf_tot = sum(s.get("goalFor", 0) for s in st["standings"])
-    gp_tot = sum(gp_eq.values())
+    feuilles = cache_feuilles(saison, list(noms))
+
+    tot = {t: {"gp": 0, "sa": 0, "ga": 0, "gf": 0} for t in noms}
+    for fb in feuilles.values():
+        if fb["date"] >= jour or fb["home"] not in tot or fb["away"] not in tot:
+            continue
+        # But de fusillade : compte dans le score officiel mais pas comme but
+        # accordé par le gardien. On le retire pour le % d'arrêt.
+        so_h = 1 if fb["fin"] == "SO" and fb["hg"] > fb["ag"] else 0
+        so_a = 1 if fb["fin"] == "SO" and fb["ag"] > fb["hg"] else 0
+        for moi, eux, gf, ga, sa in ((fb["home"], fb["away"], fb["hg"], fb["ag"] - so_a, fb["asog"]),
+                                    (fb["away"], fb["home"], fb["ag"], fb["hg"] - so_h, fb["hsog"])):
+            t = tot[moi]
+            t["gp"] += 1; t["sa"] += sa; t["ga"] += ga; t["gf"] += gf
+    gp_tot = sum(t["gp"] for t in tot.values())
+    gf_tot = sum(t["gf"] for t in tot.values())
 
     f_eq = DIR_CACHE / f"gardiens_{prev_saison}.json"
     cache = lire_json(f_eq, {})
     eq = {}
-    for team, gp in gp_eq.items():
+    for team, t in tot.items():
         if team not in cache:
             sa_p, ga_p = stats_gardiens(team, prev_saison)
             # 82 matchs en saison régulière. Équipe sans saison passée -> moyenne plus bas.
             cache[team] = {"sa_pg": sa_p / 82.0 if sa_p else None,
                            "gaps": ga_p / sa_p if sa_p else None}
-        sa_c, ga_c = stats_gardiens(team)
-        eq[team] = {"gp": gp,
-                    "sa_cur": (sa_c / gp) if gp and sa_c else 0.0, "sa_prev": cache[team]["sa_pg"],
-                    "gaps_cur": (ga_c / sa_c) if sa_c else 0.0, "gaps_prev": cache[team]["gaps"]}
+        eq[team] = {"gp": t["gp"],
+                    "sa_cur": t["sa"] / t["gp"] if t["gp"] else 0.0, "sa_prev": cache[team]["sa_pg"],
+                    "gaps_cur": t["ga"] / t["sa"] if t["sa"] else 0.0, "gaps_prev": cache[team]["gaps"]}
     ecrire_json(f_eq, cache)
 
     def moyenne_prev(cle, defaut):
@@ -405,6 +457,42 @@ def predire(jour, matchs_ouverts, saison):
 
 # --- 5. Main ---------------------------------------------------------------------
 
+MAX_RETRO = 40   # soirs rejoués max par exécution (garde l'Action sous ~10 min)
+
+
+def retroactif(jour, saison):
+    """Rejoue les soirs passés de la saison qui n'ont pas de fichier de prédictions.
+
+    POURQUOI c'est légitime (pas de triche) : chaque soir rejoué utilise seulement
+    ce qui était connu AVANT ce soir-là (game logs < date, calendriers < date,
+    feuilles de match < date). C'est un vrai test hors-échantillon, ce qui nous
+    donne des centaines de prédictions gradées dès le départ pour les notes.
+    Seule exception assumée : l'alignement utilisé est celui d'aujourd'hui. Un gars
+    échangé ou renvoyé dans les mineures depuis n'apparaît pas dans les vieux soirs.
+    Les fichiers rejoués sont marqués "retro": true.
+    """
+    st = api.standings_now() or {"standings": []}
+    par_date = {}
+    for s in st["standings"]:
+        t = s["teamAbbrev"]["default"]
+        for g in (api.club_schedule(t) or {}).get("games", []):
+            if g.get("gameType") != 2 or g.get("gameState") not in ETATS_FINIS or g["gameDate"] >= jour:
+                continue
+            par_date.setdefault(g["gameDate"], {})[g["id"]] = {
+                "id": g["id"], "home": g["homeTeam"]["abbrev"], "away": g["awayTeam"]["abbrev"],
+                "start": g.get("startTimeUTC", g["gameDate"] + "T23:00:00Z"), "state": "FUT", "season": saison}
+    manquants = [d for d in sorted(par_date) if not (DIR_PRED / f"{d}.json").exists()][:MAX_RETRO]
+    for d in manquants:
+        matchs = list(par_date[d].values())
+        games, entries, _ = predire(d, matchs, saison)
+        ecrire_json(DIR_PRED / f"{d}.json", {
+            "date": d, "retro": True, "versions": list(VERSIONS),
+            "maj": datetime.now(timezone.utc).isoformat(timespec="minutes"),
+            "entries": entries, "games": games})
+        print(f"  rétroactif {d}: {len(matchs)} matchs, {len(entries)} joueurs")
+    return len(manquants)
+
+
 def jour_nhl():
     """La NHL date ses matchs à l'heure de l'Est (même fuseau que La Tuque)."""
     return datetime.now(ZoneInfo("America/Toronto")).date().isoformat()
@@ -421,6 +509,11 @@ def main():
     matchs = [{"id": g["id"], "away": g["awayTeam"]["abbrev"], "home": g["homeTeam"]["abbrev"],
                "start": g["startTimeUTC"], "state": g.get("gameState", "FUT"), "season": g.get("season")}
               for g in matchs_jour if g.get("gameType") in (2, None)]
+
+    # Saison courante : celle des matchs du jour, sinon celle du calendrier d'une équipe
+    saison = matchs[0]["season"] if matchs else (api.club_schedule("TOR") or {}).get("currentSeason")
+    if saison and retroactif(jour, saison):
+        grader()   # les soirs rejoués sont gradés tout de suite
 
     f_jour = DIR_PRED / f"{jour}.json"
     existant = lire_json(f_jour, {"date": jour, "entries": [], "games": []})

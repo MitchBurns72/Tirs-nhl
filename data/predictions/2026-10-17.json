@@ -42,8 +42,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477407,
@@ -86,8 +90,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8485388,
@@ -130,8 +138,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482476,
@@ -174,8 +186,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481601,
@@ -218,8 +234,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 2,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477500,
@@ -262,8 +282,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8481711,
@@ -306,8 +330,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476419,
@@ -350,8 +378,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8476292,
@@ -394,8 +426,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8475151,
@@ -438,8 +474,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8484221,
@@ -482,8 +522,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8475170,
@@ -526,8 +570,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477950,
@@ -570,8 +618,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482516,
@@ -609,8 +661,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476917,
@@ -653,8 +709,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477506,
@@ -697,8 +757,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8485366,
@@ -741,8 +805,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8479378,
@@ -785,8 +853,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476927,
@@ -830,8 +902,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8484158,
@@ -875,8 +951,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8479520,
@@ -920,8 +1000,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8479772,
@@ -959,8 +1043,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480893,
@@ -1004,8 +1092,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8479318,
@@ -1049,8 +1141,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8486067,
@@ -1094,8 +1190,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477939,
@@ -1139,8 +1239,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477426,
@@ -1184,8 +1288,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478458,
@@ -1229,8 +1337,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476925,
@@ -1274,8 +1386,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8475166,
@@ -1318,8 +1434,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8483565,
@@ -1358,8 +1474,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8475171,
@@ -1403,8 +1523,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476931,
@@ -1448,8 +1572,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478178,
@@ -1493,8 +1621,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476853,
@@ -1538,8 +1670,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483546,
@@ -1576,8 +1712,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8479442,
@@ -1621,8 +1757,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8484145,
@@ -1666,8 +1806,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8475842,
@@ -1707,8 +1851,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8479941,
@@ -1749,8 +1893,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482659,
@@ -1794,8 +1942,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8484797,
@@ -1838,8 +1990,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8481522,
@@ -1883,8 +2039,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483468,
@@ -1926,8 +2086,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8479359,
@@ -1971,8 +2135,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480802,
@@ -2016,8 +2184,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480064,
@@ -2061,8 +2233,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483500,
@@ -2106,8 +2282,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482097,
@@ -2151,8 +2331,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8479420,
@@ -2196,8 +2380,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481806,
@@ -2241,8 +2429,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478502,
@@ -2280,8 +2472,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8484305,
@@ -2325,8 +2521,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482671,
@@ -2370,8 +2570,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480807,
@@ -2415,8 +2619,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8482803,
@@ -2459,8 +2667,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476981,
@@ -2503,8 +2715,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483424,
@@ -2542,8 +2758,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8482737,
@@ -2586,8 +2802,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481540,
@@ -2630,8 +2850,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 2,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481523,
@@ -2674,8 +2898,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476479,
@@ -2718,8 +2946,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478133,
@@ -2762,8 +2994,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8475184,
@@ -2806,8 +3042,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481618,
@@ -2850,8 +3090,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483515,
@@ -2894,8 +3138,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 2
+   },
+   "played": true
   },
   {
    "pid": 8480018,
@@ -2938,8 +3186,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8480074,
@@ -2982,8 +3234,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478851,
@@ -3026,8 +3282,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 2
+   },
+   "played": true
   },
   {
    "pid": 8480865,
@@ -3070,8 +3330,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483686,
@@ -3111,8 +3375,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8482087,
@@ -3151,8 +3415,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8483457,
@@ -3195,8 +3463,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482964,
@@ -3239,8 +3511,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478020,
@@ -3284,8 +3560,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480208,
@@ -3329,8 +3609,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477444,
@@ -3370,8 +3654,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476393,
@@ -3415,8 +3703,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481528,
@@ -3460,8 +3752,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8477998,
@@ -3505,8 +3801,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8473512,
@@ -3550,8 +3850,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8482092,
@@ -3593,8 +3897,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483676,
@@ -3638,8 +3946,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481596,
@@ -3683,8 +3995,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482116,
@@ -3728,8 +4044,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8480188,
@@ -3773,8 +4093,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478469,
@@ -3818,8 +4142,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480075,
@@ -3858,8 +4186,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8482095,
@@ -3903,8 +4231,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481606,
@@ -3948,8 +4280,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8484759,
@@ -3993,8 +4329,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482245,
@@ -4031,8 +4371,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478569,
@@ -4077,8 +4421,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8484142,
@@ -4120,8 +4468,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8478047,
@@ -4162,8 +4514,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480220,
@@ -4208,8 +4564,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476461,
@@ -4254,8 +4614,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8477989,
@@ -4300,8 +4664,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8482159,
@@ -4346,8 +4714,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8485406,
@@ -4392,8 +4764,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 4,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8484387,
@@ -4438,8 +4814,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 3,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8480021,
@@ -4477,8 +4857,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8480015,
@@ -4523,8 +4907,8 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {},
+   "played": false
   },
   {
    "pid": 8481533,
@@ -4569,8 +4953,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 5,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481122,
@@ -4614,8 +5002,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8484148,
@@ -4654,8 +5046,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8482142,
@@ -4700,8 +5096,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8483460,
@@ -4744,8 +5144,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true
   },
   {
    "pid": 8477948,
@@ -4790,8 +5194,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8476372,
@@ -4836,8 +5244,12 @@
      }
     }
    },
-   "result": null,
-   "played": null
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true
   },
   {
    "pid": 8481013,
@@ -8076,30 +8488,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2195,
-      "lam": 0.8748,
+      "p": 0.2198,
+      "lam": 0.8757,
       "detail": {
-       "rate60": 4.903,
+       "rate60": 4.9093,
        "toi": 12.2056,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.9929
+       "f_vs": 0.9926
       }
      },
      "buts": {
-      "p": 0.1022,
-      "lam": 0.1078,
+      "p": 0.1023,
+      "lam": 0.1079,
       "detail": {
-       "sh": 0.1218,
-       "f_gardien": 1.0118
+       "sh": 0.1217,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2,
-      "lam": 0.2231,
+      "p": 0.2159,
+      "lam": 0.2433,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8164,30 +8576,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.745,
-      "lam": 2.8172,
+      "p": 0.7452,
+      "lam": 2.8188,
       "detail": {
-       "rate60": 8.743,
+       "rate60": 8.7477,
        "toi": 21.5834,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 1.0141
+       "f_vs": 1.014
       }
      },
      "buts": {
-      "p": 0.379,
-      "lam": 0.4764,
+      "p": 0.3793,
+      "lam": 0.4769,
       "detail": {
        "sh": 0.1671,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.5447,
-      "lam": 0.7869,
+      "p": 0.5755,
+      "lam": 0.8569,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8252,30 +8664,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3366,
-      "lam": 1.2061,
+      "p": 0.3374,
+      "lam": 1.2085,
       "detail": {
-       "rate60": 5.5922,
+       "rate60": 5.6033,
        "toi": 14.8704,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.9852
+       "f_vs": 0.9851
       }
      },
      "buts": {
-      "p": 0.1525,
-      "lam": 0.1654,
+      "p": 0.1527,
+      "lam": 0.1657,
       "detail": {
-       "sh": 0.1355,
-       "f_gardien": 1.0118
+       "sh": 0.1354,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2809,
-      "lam": 0.3297,
+      "p": 0.302,
+      "lam": 0.3595,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8340,30 +8752,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.1953,
-      "lam": 0.8066,
+      "p": 0.1956,
+      "lam": 0.8075,
       "detail": {
-       "rate60": 6.01,
+       "rate60": 6.016,
        "toi": 10.1658,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.8968
+       "f_vs": 0.8967
       }
      },
      "buts": {
-      "p": 0.0866,
-      "lam": 0.0906,
+      "p": 0.0867,
+      "lam": 0.0907,
       "detail": {
-       "sh": 0.111,
-       "f_gardien": 1.0118
+       "sh": 0.1109,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.1246,
-      "lam": 0.1331,
+      "p": 0.1351,
+      "lam": 0.1452,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8422,30 +8834,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2917,
-      "lam": 1.0778,
+      "p": 0.2924,
+      "lam": 1.0797,
       "detail": {
-       "rate60": 6.6249,
+       "rate60": 6.6366,
        "toi": 11.16,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.9903
+       "f_vs": 0.9902
       }
      },
      "buts": {
-      "p": 0.1317,
-      "lam": 0.1412,
+      "p": 0.1319,
+      "lam": 0.1414,
       "detail": {
-       "sh": 0.1295,
-       "f_gardien": 1.0118
+       "sh": 0.1294,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2412,
-      "lam": 0.276,
+      "p": 0.2599,
+      "lam": 0.3009,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8510,30 +8922,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2575,
-      "lam": 0.9814,
+      "p": 0.2579,
+      "lam": 0.9826,
       "detail": {
-       "rate60": 6.8065,
+       "rate60": 6.8159,
        "toi": 9.3328,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 1.0494
+       "f_vs": 1.0492
       }
      },
      "buts": {
-      "p": 0.1067,
-      "lam": 0.1128,
+      "p": 0.1068,
+      "lam": 0.1129,
       "detail": {
-       "sh": 0.1136,
-       "f_gardien": 1.0118
+       "sh": 0.1135,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.187,
-      "lam": 0.207,
+      "p": 0.202,
+      "lam": 0.2256,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8592,30 +9004,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2269,
-      "lam": 0.8956,
+      "p": 0.2274,
+      "lam": 0.8972,
       "detail": {
-       "rate60": 6.7193,
+       "rate60": 6.7312,
        "toi": 10.46,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.8656
+       "f_vs": 0.8655
       }
      },
      "buts": {
-      "p": 0.1107,
-      "lam": 0.1173,
+      "p": 0.1109,
+      "lam": 0.1175,
       "detail": {
-       "sh": 0.1295,
-       "f_gardien": 1.0118
+       "sh": 0.1294,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.1764,
-      "lam": 0.1941,
+      "p": 0.1908,
+      "lam": 0.2118,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8680,30 +9092,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2076,
-      "lam": 0.8414,
+      "p": 0.2081,
+      "lam": 0.8427,
       "detail": {
-       "rate60": 4.5271,
+       "rate60": 4.5334,
        "toi": 14.8532,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 0.85
       }
      },
      "buts": {
-      "p": 0.0922,
-      "lam": 0.0967,
+      "p": 0.0923,
+      "lam": 0.0968,
       "detail": {
-       "sh": 0.1136,
-       "f_gardien": 1.0118
+       "sh": 0.1135,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2812,
-      "lam": 0.3301,
+      "p": 0.3022,
+      "lam": 0.3598,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8768,30 +9180,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4068,
-      "lam": 1.4148,
+      "p": 0.4072,
+      "lam": 1.4161,
       "detail": {
-       "rate60": 6.0408,
+       "rate60": 6.0468,
        "toi": 17.2733,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.921
+       "f_vs": 0.9209
       }
      },
      "buts": {
-      "p": 0.1795,
-      "lam": 0.1978,
+      "p": 0.1797,
+      "lam": 0.198,
       "detail": {
-       "sh": 0.1382,
-       "f_gardien": 1.0118
+       "sh": 0.1381,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2637,
-      "lam": 0.3062,
+      "p": 0.2838,
+      "lam": 0.3338,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8856,30 +9268,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.7497,
-      "lam": 2.8469,
+      "p": 0.7499,
+      "lam": 2.8484,
       "detail": {
-       "rate60": 7.7887,
+       "rate60": 7.7932,
        "toi": 24.2391,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 1.0243
+       "f_vs": 1.0242
       }
      },
      "buts": {
-      "p": 0.3626,
-      "lam": 0.4503,
+      "p": 0.3629,
+      "lam": 0.4508,
       "detail": {
        "sh": 0.1563,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.6859,
-      "lam": 1.158,
+      "p": 0.7166,
+      "lam": 1.2609,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -8944,30 +9356,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2619,
-      "lam": 0.9939,
+      "p": 0.2628,
+      "lam": 0.9963,
       "detail": {
-       "rate60": 5.3082,
+       "rate60": 5.3202,
        "toi": 13.7787,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 0.9231
       }
      },
      "buts": {
-      "p": 0.1403,
-      "lam": 0.1512,
+      "p": 0.1406,
+      "lam": 0.1515,
       "detail": {
-       "sh": 0.1503,
-       "f_gardien": 1.0118
+       "sh": 0.1502,
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.242,
-      "lam": 0.2771,
+      "p": 0.2608,
+      "lam": 0.3022,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9032,115 +9444,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5556,
-      "lam": 1.9174,
+      "p": 0.556,
+      "lam": 1.9187,
       "detail": {
-       "rate60": 7.6562,
+       "rate60": 7.661,
        "toi": 19.7972,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.8593
+       "f_vs": 0.8592
       }
      },
      "buts": {
-      "p": 0.2668,
-      "lam": 0.3103,
+      "p": 0.267,
+      "lam": 0.3106,
       "detail": {
        "sh": 0.1599,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.3059,
-      "lam": 0.3652,
+      "p": 0.3283,
+      "lam": 0.398,
       "detail": {
-       "f_equipe": 1.0223
-      }
-     }
-    }
-   },
-   "result": null,
-   "played": null,
-   "cotes": null
-  },
-  {
-   "pid": 8484509,
-   "name": "Josh Samanski",
-   "team": "EDM",
-   "opp": "UTA",
-   "home": false,
-   "pos": "F",
-   "gameId": 2026020133,
-   "b2b": false,
-   "incertain": false,
-   "l10_shots": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "l10_goals": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "l10_assists": [
-    0,
-    0,
-    0,
-    1,
-    0,
-    0
-   ],
-   "vs_gp": 2,
-   "vs_shots": 0,
-   "preds": {
-    "v0": {
-     "tirs": {
-      "p": 0.0012,
-      "lam": 0.05
-     },
-     "buts": {
-      "p": 0.01,
-      "lam": 0.01
-     },
-     "passes": {
-      "p": 0.1535,
-      "lam": 0.1667
-     }
-    },
-    "v1": {
-     "tirs": {
-      "p": 0.0513,
-      "lam": 0.3533,
-      "detail": {
-       "rate60": 3.6747,
-       "toi": 7.6193,
-       "f_opp": 0.9106,
-       "f_lieu": 0.97,
-       "f_b2b": 1.0,
-       "f_vs": 0.8571
-      }
-     },
-     "buts": {
-      "p": 0.0492,
-      "lam": 0.0505,
-      "detail": {
-       "sh": 0.1412,
-       "f_gardien": 1.0118
-      }
-     },
-     "passes": {
-      "p": 0.1458,
-      "lam": 0.1576,
-      "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9206,29 +9533,29 @@
     "v1": {
      "tirs": {
       "p": 0.6772,
-      "lam": 2.4413,
+      "lam": 2.4416,
       "detail": {
        "rate60": 6.7096,
        "toi": 25.4861,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 0.9698
       }
      },
      "buts": {
-      "p": 0.2197,
-      "lam": 0.2481,
+      "p": 0.2199,
+      "lam": 0.2483,
       "detail": {
        "sh": 0.1004,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.565,
-      "lam": 0.8325,
+      "p": 0.5958,
+      "lam": 0.9059,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9294,29 +9621,29 @@
     "v1": {
      "tirs": {
       "p": 0.4069,
-      "lam": 1.4151,
+      "lam": 1.4152,
       "detail": {
        "rate60": 3.8863,
        "toi": 22.0301,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 1.1227
       }
      },
      "buts": {
-      "p": 0.0814,
-      "lam": 0.0849,
+      "p": 0.0815,
+      "lam": 0.085,
       "detail": {
        "sh": 0.0593,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2904,
-      "lam": 0.343,
+      "p": 0.3115,
+      "lam": 0.3733,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9376,11 +9703,11 @@
     "v1": {
      "tirs": {
       "p": 0.0975,
-      "lam": 0.5158,
+      "lam": 0.5159,
       "detail": {
        "rate60": 2.582,
        "toi": 11.8,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 1.15
@@ -9388,17 +9715,17 @@
      },
      "buts": {
       "p": 0.0299,
-      "lam": 0.0303,
+      "lam": 0.0304,
       "detail": {
        "sh": 0.0581,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.148,
-      "lam": 0.1601,
+      "p": 0.1599,
+      "lam": 0.1743,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9458,29 +9785,29 @@
     "v1": {
      "tirs": {
       "p": 0.1146,
-      "lam": 0.5698,
+      "lam": 0.5699,
       "detail": {
        "rate60": 3.1489,
        "toi": 11.8633,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 1.0361
       }
      },
      "buts": {
-      "p": 0.0456,
+      "p": 0.0457,
       "lam": 0.0467,
       "detail": {
        "sh": 0.081,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.1265,
-      "lam": 0.1352,
+      "p": 0.1368,
+      "lam": 0.1472,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9545,12 +9872,12 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2388,
-      "lam": 0.9291,
+      "p": 0.2389,
+      "lam": 0.9292,
       "detail": {
        "rate60": 2.7055,
        "toi": 21.4178,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 1.0891
@@ -9558,17 +9885,17 @@
      },
      "buts": {
       "p": 0.0579,
-      "lam": 0.0596,
+      "lam": 0.0597,
       "detail": {
        "sh": 0.0634,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.2177,
-      "lam": 0.2455,
+      "p": 0.2344,
+      "lam": 0.2671,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9638,25 +9965,25 @@
       "detail": {
        "rate60": 2.7134,
        "toi": 22.9719,
-       "f_opp": 0.9106,
+       "f_opp": 0.9107,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
        "f_vs": 0.8738
       }
      },
      "buts": {
-      "p": 0.0588,
+      "p": 0.0589,
       "lam": 0.0607,
       "detail": {
        "sh": 0.0748,
-       "f_gardien": 1.0118
+       "f_gardien": 1.0125
       }
      },
      "passes": {
-      "p": 0.3149,
-      "lam": 0.3781,
+      "p": 0.3373,
+      "lam": 0.4115,
       "detail": {
-       "f_equipe": 1.0223
+       "f_equipe": 1.1124
       }
      }
     }
@@ -9724,30 +10051,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.322,
-      "lam": 1.1639,
+      "p": 0.3225,
+      "lam": 1.1654,
       "detail": {
-       "rate60": 6.7817,
+       "rate60": 6.7899,
        "toi": 10.5643,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 0.9862
+       "f_vs": 0.9861
       }
      },
      "buts": {
-      "p": 0.1535,
-      "lam": 0.1667,
+      "p": 0.1534,
+      "lam": 0.1665,
       "detail": {
-       "sh": 0.1306,
-       "f_gardien": 1.0969
+       "sh": 0.1305,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.1692,
-      "lam": 0.1853,
+      "p": 0.1831,
+      "lam": 0.2023,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -9815,30 +10142,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5182,
-      "lam": 1.7805,
+      "p": 0.5186,
+      "lam": 1.7817,
       "detail": {
-       "rate60": 5.5305,
+       "rate60": 5.5352,
        "toi": 18.5917,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.0511
+       "f_vs": 1.0509
       }
      },
      "buts": {
-      "p": 0.2855,
-      "lam": 0.3362,
+      "p": 0.2852,
+      "lam": 0.3358,
       "detail": {
        "sh": 0.1721,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.4329,
-      "lam": 0.5672,
+      "p": 0.461,
+      "lam": 0.618,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -9906,30 +10233,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5401,
-      "lam": 1.8596,
+      "p": 0.5404,
+      "lam": 1.8607,
       "detail": {
-       "rate60": 6.7582,
+       "rate60": 6.7632,
        "toi": 15.2575,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.0947
+       "f_vs": 1.0945
       }
      },
      "buts": {
-      "p": 0.2554,
-      "lam": 0.2949,
+      "p": 0.2551,
+      "lam": 0.2945,
       "detail": {
-       "sh": 0.1446,
-       "f_gardien": 1.0969
+       "sh": 0.1445,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.2687,
-      "lam": 0.313,
+      "p": 0.2891,
+      "lam": 0.3412,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -9997,30 +10324,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.7227,
-      "lam": 2.6842,
+      "p": 0.7229,
+      "lam": 2.6855,
       "detail": {
-       "rate60": 10.285,
+       "rate60": 10.2899,
        "toi": 16.6857,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 0.9495
+       "f_vs": 0.9494
       }
      },
      "buts": {
-      "p": 0.3643,
-      "lam": 0.453,
+      "p": 0.3639,
+      "lam": 0.4524,
       "detail": {
-       "sh": 0.1539,
-       "f_gardien": 1.0969
+       "sh": 0.1538,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.3838,
-      "lam": 0.4842,
+      "p": 0.41,
+      "lam": 0.5276,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10088,30 +10415,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4494,
-      "lam": 1.5484,
+      "p": 0.4497,
+      "lam": 1.5495,
       "detail": {
-       "rate60": 7.1941,
+       "rate60": 7.1992,
        "toi": 13.7438,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 0.9507
+       "f_vs": 0.9505
       }
      },
      "buts": {
-      "p": 0.1708,
-      "lam": 0.1873,
+      "p": 0.1706,
+      "lam": 0.187,
       "detail": {
-       "sh": 0.1103,
-       "f_gardien": 1.0969
+       "sh": 0.1102,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.3051,
-      "lam": 0.3639,
+      "p": 0.3274,
+      "lam": 0.3967,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10179,30 +10506,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.6882,
-      "lam": 2.4972,
+      "p": 0.6884,
+      "lam": 2.4985,
       "detail": {
-       "rate60": 8.4103,
+       "rate60": 8.4151,
        "toi": 17.6782,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.0196
+       "f_vs": 1.0194
       }
      },
      "buts": {
-      "p": 0.2921,
-      "lam": 0.3455,
+      "p": 0.2918,
+      "lam": 0.345,
       "detail": {
        "sh": 0.1261,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.5042,
-      "lam": 0.7015,
+      "p": 0.5343,
+      "lam": 0.7643,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10270,30 +10597,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4942,
-      "lam": 1.6968,
+      "p": 0.4945,
+      "lam": 1.6979,
       "detail": {
-       "rate60": 8.4965,
+       "rate60": 8.5017,
        "toi": 13.0848,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 0.9265
+       "f_vs": 0.9264
       }
      },
      "buts": {
-      "p": 0.194,
-      "lam": 0.2157,
+      "p": 0.1938,
+      "lam": 0.2154,
       "detail": {
        "sh": 0.1159,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.2713,
-      "lam": 0.3165,
+      "p": 0.2918,
+      "lam": 0.345,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10361,30 +10688,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2712,
-      "lam": 1.0199,
+      "p": 0.2715,
+      "lam": 1.0209,
       "detail": {
-       "rate60": 5.771,
+       "rate60": 5.7762,
        "toi": 12.6207,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.85
       }
      },
      "buts": {
-      "p": 0.123,
-      "lam": 0.1313,
+      "p": 0.1229,
+      "lam": 0.1311,
       "detail": {
        "sh": 0.1173,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.2182,
-      "lam": 0.2461,
+      "p": 0.2354,
+      "lam": 0.2684,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10452,30 +10779,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.6935,
-      "lam": 2.5248,
+      "p": 0.6938,
+      "lam": 2.5261,
       "detail": {
-       "rate60": 8.629,
+       "rate60": 8.6337,
        "toi": 18.8047,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 0.9445
+       "f_vs": 0.9444
       }
      },
      "buts": {
-      "p": 0.3565,
-      "lam": 0.4408,
+      "p": 0.3561,
+      "lam": 0.4403,
       "detail": {
-       "sh": 0.1592,
-       "f_gardien": 1.0969
+       "sh": 0.1591,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.4175,
-      "lam": 0.5404,
+      "p": 0.445,
+      "lam": 0.5889,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10543,30 +10870,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.1841,
-      "lam": 0.7749,
+      "p": 0.1845,
+      "lam": 0.776,
       "detail": {
-       "rate60": 3.9201,
+       "rate60": 3.9252,
        "toi": 14.1165,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.85
       }
      },
      "buts": {
-      "p": 0.0889,
-      "lam": 0.0931,
+      "p": 0.0888,
+      "lam": 0.093,
       "detail": {
-       "sh": 0.1096,
-       "f_gardien": 1.0969
+       "sh": 0.1095,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.2433,
-      "lam": 0.2788,
+      "p": 0.2621,
+      "lam": 0.304,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10634,30 +10961,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3622,
-      "lam": 1.2808,
+      "p": 0.3626,
+      "lam": 1.2822,
       "detail": {
-       "rate60": 5.204,
+       "rate60": 5.2089,
        "toi": 16.1855,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9231
       }
      },
      "buts": {
-      "p": 0.1813,
-      "lam": 0.2,
+      "p": 0.1811,
+      "lam": 0.1998,
       "detail": {
-       "sh": 0.1424,
-       "f_gardien": 1.0969
+       "sh": 0.1423,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.329,
-      "lam": 0.399,
+      "p": 0.3526,
+      "lam": 0.4349,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10710,30 +11037,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4637,
-      "lam": 1.5951,
+      "p": 0.4642,
+      "lam": 1.5966,
       "detail": {
-       "rate60": 6.5871,
+       "rate60": 6.5943,
        "toi": 14.1222,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.0408
+       "f_vs": 1.0406
       }
      },
      "buts": {
-      "p": 0.2391,
-      "lam": 0.2732,
+      "p": 0.2389,
+      "lam": 0.2729,
       "detail": {
-       "sh": 0.1562,
-       "f_gardien": 1.0969
+       "sh": 0.1561,
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.3121,
-      "lam": 0.3741,
+      "p": 0.3349,
+      "lam": 0.4078,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10801,30 +11128,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.1704,
-      "lam": 0.7357,
+      "p": 0.1705,
+      "lam": 0.7358,
       "detail": {
        "rate60": 2.4541,
        "toi": 20.1268,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9042
       }
      },
      "buts": {
-      "p": 0.0556,
-      "lam": 0.0572,
+      "p": 0.0555,
+      "lam": 0.0571,
       "detail": {
        "sh": 0.0709,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.3248,
-      "lam": 0.3927,
+      "p": 0.3479,
+      "lam": 0.4275,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10897,25 +11224,25 @@
       "detail": {
        "rate60": 3.4914,
        "toi": 15.009,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.8628
       }
      },
      "buts": {
-      "p": 0.0531,
+      "p": 0.053,
       "lam": 0.0545,
       "detail": {
        "sh": 0.0668,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.1864,
-      "lam": 0.2063,
+      "p": 0.2012,
+      "lam": 0.2246,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -10983,30 +11310,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3552,
-      "lam": 1.2604,
+      "p": 0.3553,
+      "lam": 1.2605,
       "detail": {
        "rate60": 3.611,
        "toi": 20.9585,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 1.0109
       }
      },
      "buts": {
-      "p": 0.0749,
-      "lam": 0.0778,
+      "p": 0.0748,
+      "lam": 0.0777,
       "detail": {
        "sh": 0.0563,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.2329,
-      "lam": 0.2651,
+      "p": 0.2507,
+      "lam": 0.2886,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -11074,30 +11401,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5302,
-      "lam": 1.8236,
+      "p": 0.5303,
+      "lam": 1.8237,
       "detail": {
        "rate60": 5.3508,
        "toi": 22.4922,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9198
       }
      },
      "buts": {
-      "p": 0.1263,
-      "lam": 0.135,
+      "p": 0.1261,
+      "lam": 0.1348,
       "detail": {
        "sh": 0.0675,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.4644,
-      "lam": 0.6243,
+      "p": 0.4932,
+      "lam": 0.6797,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -11170,25 +11497,25 @@
       "detail": {
        "rate60": 3.7443,
        "toi": 14.338,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9281
       }
      },
      "buts": {
-      "p": 0.0444,
+      "p": 0.0443,
       "lam": 0.0454,
       "detail": {
        "sh": 0.0505,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.1899,
-      "lam": 0.2106,
+      "p": 0.2049,
+      "lam": 0.2293,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -11257,29 +11584,29 @@
     "v1": {
      "tirs": {
       "p": 0.4056,
-      "lam": 1.4112,
+      "lam": 1.4113,
       "detail": {
        "rate60": 4.8114,
        "toi": 20.728,
-       "f_opp": 0.9596,
+       "f_opp": 0.9597,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.8589
       }
      },
      "buts": {
-      "p": 0.0791,
-      "lam": 0.0824,
+      "p": 0.079,
+      "lam": 0.0822,
       "detail": {
        "sh": 0.0532,
-       "f_gardien": 1.0969
+       "f_gardien": 1.0952
       }
      },
      "passes": {
-      "p": 0.221,
-      "lam": 0.2497,
+      "p": 0.238,
+      "lam": 0.2718,
       "detail": {
-       "f_equipe": 1.0955
+       "f_equipe": 1.1925
       }
      }
     }
@@ -11344,30 +11671,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5616,
-      "lam": 1.9401,
+      "p": 0.5619,
+      "lam": 1.9411,
       "detail": {
-       "rate60": 7.8583,
+       "rate60": 7.8635,
        "toi": 15.5161,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 1.1375
+       "f_vs": 1.1372
       }
      },
      "buts": {
-      "p": 0.2356,
-      "lam": 0.2686,
+      "p": 0.2354,
+      "lam": 0.2684,
       "detail": {
-       "sh": 0.1376,
-       "f_gardien": 1.0064
+       "sh": 0.1375,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2314,
-      "lam": 0.2631,
+      "p": 0.2489,
+      "lam": 0.2862,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -11435,30 +11762,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5927,
-      "lam": 2.0625,
+      "p": 0.593,
+      "lam": 2.0639,
       "detail": {
-       "rate60": 7.3589,
+       "rate60": 7.3635,
        "toi": 20.0362,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.2711,
-      "lam": 0.3163,
+      "p": 0.271,
+      "lam": 0.3161,
       "detail": {
-       "sh": 0.1524,
-       "f_gardien": 1.0064
+       "sh": 0.1523,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.357,
-      "lam": 0.4417,
+      "p": 0.3814,
+      "lam": 0.4803,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -11526,30 +11853,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2419,
-      "lam": 0.9378,
+      "p": 0.2422,
+      "lam": 0.9386,
       "detail": {
-       "rate60": 6.1481,
+       "rate60": 6.1533,
        "toi": 12.7215,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 0.8571
       }
      },
      "buts": {
-      "p": 0.1159,
-      "lam": 0.1232,
+      "p": 0.1158,
+      "lam": 0.1231,
       "detail": {
        "sh": 0.1305,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.1736,
-      "lam": 0.1907,
+      "p": 0.1873,
+      "lam": 0.2074,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -11614,30 +11941,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.589,
-      "lam": 2.0476,
+      "p": 0.5893,
+      "lam": 2.0488,
       "detail": {
-       "rate60": 7.9646,
+       "rate60": 7.9696,
        "toi": 17.5433,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 1.0476
+       "f_vs": 1.0475
       }
      },
      "buts": {
-      "p": 0.2247,
-      "lam": 0.2545,
+      "p": 0.2245,
+      "lam": 0.2543,
       "detail": {
        "sh": 0.1235,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2482,
-      "lam": 0.2853,
+      "p": 0.2668,
+      "lam": 0.3104,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -11699,30 +12026,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2698,
-      "lam": 1.016,
+      "p": 0.2703,
+      "lam": 1.0174,
       "detail": {
-       "rate60": 5.1145,
+       "rate60": 5.1219,
        "toi": 13.5876,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 1.0452
+       "f_vs": 1.045
       }
      },
      "buts": {
-      "p": 0.1194,
+      "p": 0.1193,
       "lam": 0.1271,
       "detail": {
-       "sh": 0.1243,
-       "f_gardien": 1.0064
+       "sh": 0.1242,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2071,
-      "lam": 0.2321,
+      "p": 0.2232,
+      "lam": 0.2525,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -11778,30 +12105,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2392,
-      "lam": 0.9301,
+      "p": 0.2395,
+      "lam": 0.931,
       "detail": {
-       "rate60": 6.1107,
+       "rate60": 6.1174,
        "toi": 11.7417,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 0.9267
+       "f_vs": 0.9265
       }
      },
      "buts": {
-      "p": 0.1266,
-      "lam": 0.1354,
+      "p": 0.1265,
+      "lam": 0.1353,
       "detail": {
        "sh": 0.1446,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.1654,
-      "lam": 0.1808,
+      "p": 0.1786,
+      "lam": 0.1967,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -11869,12 +12196,12 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.1984,
-      "lam": 0.8153,
+      "p": 0.1987,
+      "lam": 0.8163,
       "detail": {
-       "rate60": 5.2425,
+       "rate60": 5.2482,
        "toi": 12.971,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 0.8571
@@ -11882,17 +12209,17 @@
      },
      "buts": {
       "p": 0.0974,
-      "lam": 0.1025,
+      "lam": 0.1024,
       "detail": {
-       "sh": 0.1249,
-       "f_gardien": 1.0064
+       "sh": 0.1248,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2138,
-      "lam": 0.2406,
+      "p": 0.2303,
+      "lam": 0.2617,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -11960,30 +12287,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.6038,
-      "lam": 2.108,
+      "p": 0.604,
+      "lam": 2.1092,
       "detail": {
-       "rate60": 8.1111,
+       "rate60": 8.1159,
        "toi": 18.2628,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 1.0173
+       "f_vs": 1.0172
       }
      },
      "buts": {
-      "p": 0.2601,
-      "lam": 0.3013,
+      "p": 0.2599,
+      "lam": 0.301,
       "detail": {
        "sh": 0.142,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.3491,
-      "lam": 0.4294,
+      "p": 0.373,
+      "lam": 0.4668,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12051,30 +12378,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3522,
-      "lam": 1.2514,
+      "p": 0.3525,
+      "lam": 1.2524,
       "detail": {
-       "rate60": 6.7625,
+       "rate60": 6.7675,
        "toi": 15.4337,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 0.8571
       }
      },
      "buts": {
-      "p": 0.1594,
-      "lam": 0.1737,
+      "p": 0.1593,
+      "lam": 0.1736,
       "detail": {
        "sh": 0.1379,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2452,
-      "lam": 0.2812,
+      "p": 0.2635,
+      "lam": 0.3059,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12142,30 +12469,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.6277,
-      "lam": 2.2102,
+      "p": 0.628,
+      "lam": 2.2114,
       "detail": {
-       "rate60": 7.8861,
+       "rate60": 7.8907,
        "toi": 20.0038,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 1.0016
+       "f_vs": 1.0015
       }
      },
      "buts": {
-      "p": 0.2444,
-      "lam": 0.2802,
+      "p": 0.2442,
+      "lam": 0.28,
       "detail": {
-       "sh": 0.126,
-       "f_gardien": 1.0064
+       "sh": 0.1259,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2869,
-      "lam": 0.3382,
+      "p": 0.3078,
+      "lam": 0.3678,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12233,30 +12560,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3103,
-      "lam": 1.1306,
+      "p": 0.3106,
+      "lam": 1.1314,
       "detail": {
-       "rate60": 8.1245,
+       "rate60": 8.1298,
        "toi": 11.0608,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 0.8994
       }
      },
      "buts": {
-      "p": 0.1509,
-      "lam": 0.1636,
+      "p": 0.1508,
+      "lam": 0.1634,
       "detail": {
        "sh": 0.1437,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.1453,
-      "lam": 0.1571,
+      "p": 0.1571,
+      "lam": 0.1709,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12315,30 +12642,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4809,
-      "lam": 1.6521,
+      "p": 0.4813,
+      "lam": 1.6534,
       "detail": {
-       "rate60": 6.8965,
+       "rate60": 6.9019,
        "toi": 18.6033,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 0.9206
+       "f_vs": 0.9205
       }
      },
      "buts": {
-      "p": 0.2315,
-      "lam": 0.2633,
+      "p": 0.2314,
+      "lam": 0.2632,
       "detail": {
-       "sh": 0.1584,
-       "f_gardien": 1.0064
+       "sh": 0.1583,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2722,
-      "lam": 0.3178,
+      "p": 0.2923,
+      "lam": 0.3457,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12391,30 +12718,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2505,
-      "lam": 0.9619,
+      "p": 0.2509,
+      "lam": 0.9629,
       "detail": {
-       "rate60": 5.7451,
+       "rate60": 5.7529,
        "toi": 10.6444,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
-       "f_vs": 1.1244
+       "f_vs": 1.124
       }
      },
      "buts": {
       "p": 0.1148,
-      "lam": 0.122,
+      "lam": 0.1219,
       "detail": {
-       "sh": 0.126,
-       "f_gardien": 1.0064
+       "sh": 0.1259,
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.1403,
-      "lam": 0.1512,
+      "p": 0.1517,
+      "lam": 0.1646,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12482,30 +12809,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2863,
-      "lam": 1.0626,
+      "p": 0.2864,
+      "lam": 1.0627,
       "detail": {
        "rate60": 4.007,
        "toi": 18.9577,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.0717,
-      "lam": 0.0744,
+      "p": 0.0716,
+      "lam": 0.0743,
       "detail": {
        "sh": 0.0695,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.1764,
-      "lam": 0.194,
+      "p": 0.19,
+      "lam": 0.2108,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12578,25 +12905,25 @@
       "detail": {
        "rate60": 3.3946,
        "toi": 19.5968,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 1.0029
       }
      },
      "buts": {
-      "p": 0.0611,
-      "lam": 0.063,
+      "p": 0.061,
+      "lam": 0.0629,
       "detail": {
        "sh": 0.0671,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.298,
-      "lam": 0.3538,
+      "p": 0.3191,
+      "lam": 0.3843,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12665,29 +12992,29 @@
     "v1": {
      "tirs": {
       "p": 0.4893,
-      "lam": 1.6803,
+      "lam": 1.6804,
       "detail": {
        "rate60": 4.9932,
        "toi": 23.255,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 1.0345
       }
      },
      "buts": {
-      "p": 0.1106,
-      "lam": 0.1172,
+      "p": 0.1105,
+      "lam": 0.1171,
       "detail": {
        "sh": 0.0693,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.4257,
-      "lam": 0.5546,
+      "p": 0.4525,
+      "lam": 0.6025,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12756,29 +13083,29 @@
     "v1": {
      "tirs": {
       "p": 0.2153,
-      "lam": 0.8631,
+      "lam": 0.8632,
       "detail": {
        "rate60": 3.4049,
        "toi": 18.1223,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.0467,
-      "lam": 0.0478,
+      "p": 0.0466,
+      "lam": 0.0477,
       "detail": {
        "sh": 0.055,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2308,
-      "lam": 0.2624,
+      "p": 0.248,
+      "lam": 0.285,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12846,30 +13173,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3749,
-      "lam": 1.3186,
+      "p": 0.375,
+      "lam": 1.3187,
       "detail": {
        "rate60": 4.6793,
        "toi": 19.568,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 1.0295
       }
      },
      "buts": {
-      "p": 0.057,
-      "lam": 0.0587,
+      "p": 0.0569,
+      "lam": 0.0586,
       "detail": {
        "sh": 0.0442,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.2582,
-      "lam": 0.2987,
+      "p": 0.277,
+      "lam": 0.3244,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -12927,25 +13254,25 @@
       "detail": {
        "rate60": 3.3893,
        "toi": 14.6667,
-       "f_opp": 0.9013,
+       "f_opp": 0.9014,
        "f_lieu": 0.97,
        "f_b2b": 0.96,
        "f_vs": 0.9231
       }
      },
      "buts": {
-      "p": 0.0349,
+      "p": 0.0348,
       "lam": 0.0355,
       "detail": {
        "sh": 0.055,
-       "f_gardien": 1.0064
+       "f_gardien": 1.0053
       }
      },
      "passes": {
-      "p": 0.1325,
-      "lam": 0.1421,
+      "p": 0.143,
+      "lam": 0.1544,
       "detail": {
-       "f_equipe": 0.8589
+       "f_equipe": 0.9329
       }
      }
     }
@@ -13016,30 +13343,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4684,
-      "lam": 1.6105,
+      "p": 0.4688,
+      "lam": 1.6116,
       "detail": {
-       "rate60": 6.1059,
+       "rate60": 6.1106,
        "toi": 16.8196,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9043
       }
      },
      "buts": {
-      "p": 0.2062,
-      "lam": 0.2309,
+      "p": 0.2058,
+      "lam": 0.2304,
       "detail": {
        "sh": 0.1397,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.4319,
-      "lam": 0.5654,
+      "p": 0.4596,
+      "lam": 0.6155,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13110,30 +13437,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4539,
-      "lam": 1.5631,
+      "p": 0.4542,
+      "lam": 1.5641,
       "detail": {
-       "rate60": 5.9612,
+       "rate60": 5.9666,
        "toi": 14.2137,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.0638
+       "f_vs": 1.0636
       }
      },
      "buts": {
-      "p": 0.1905,
-      "lam": 0.2113,
+      "p": 0.19,
+      "lam": 0.2108,
       "detail": {
        "sh": 0.1317,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2663,
-      "lam": 0.3097,
+      "p": 0.2863,
+      "lam": 0.3373,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13204,30 +13531,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5914,
-      "lam": 2.0572,
+      "p": 0.592,
+      "lam": 2.0596,
       "detail": {
-       "rate60": 8.0546,
+       "rate60": 8.0648,
        "toi": 14.7284,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.2592,
-      "lam": 0.3,
+      "p": 0.2587,
+      "lam": 0.2994,
       "detail": {
-       "sh": 0.1421,
-       "f_gardien": 1.0261
+       "sh": 0.142,
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.284,
-      "lam": 0.3341,
+      "p": 0.3052,
+      "lam": 0.3641,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13298,30 +13625,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.1599,
-      "lam": 0.7054,
+      "p": 0.1602,
+      "lam": 0.7063,
       "detail": {
-       "rate60": 3.9236,
+       "rate60": 3.9287,
        "toi": 12.0962,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.8571
       }
      },
      "buts": {
-      "p": 0.0797,
-      "lam": 0.0831,
+      "p": 0.0796,
+      "lam": 0.0829,
       "detail": {
-       "sh": 0.1148,
-       "f_gardien": 1.0261
+       "sh": 0.1147,
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2236,
-      "lam": 0.2531,
+      "p": 0.241,
+      "lam": 0.2757,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13392,30 +13719,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.7675,
-      "lam": 2.9633,
+      "p": 0.7676,
+      "lam": 2.9644,
       "detail": {
-       "rate60": 9.1511,
+       "rate60": 9.1554,
        "toi": 20.6131,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9059
       }
      },
      "buts": {
-      "p": 0.3134,
-      "lam": 0.376,
+      "p": 0.3127,
+      "lam": 0.375,
       "detail": {
        "sh": 0.1236,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.5827,
-      "lam": 0.8739,
+      "p": 0.6137,
+      "lam": 0.9511,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13486,30 +13813,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.388,
-      "lam": 1.3578,
+      "p": 0.3884,
+      "lam": 1.3589,
       "detail": {
-       "rate60": 7.9235,
+       "rate60": 7.9306,
        "toi": 10.958,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9018
       }
      },
      "buts": {
-      "p": 0.1406,
-      "lam": 0.1515,
+      "p": 0.1403,
+      "lam": 0.1511,
       "detail": {
        "sh": 0.1087,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.1831,
-      "lam": 0.2022,
+      "p": 0.1978,
+      "lam": 0.2204,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13580,30 +13907,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.6182,
-      "lam": 2.1691,
+      "p": 0.6185,
+      "lam": 2.1701,
       "detail": {
-       "rate60": 8.4799,
+       "rate60": 8.4846,
        "toi": 16.1406,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9139
       }
      },
      "buts": {
-      "p": 0.2556,
-      "lam": 0.2952,
+      "p": 0.2551,
+      "lam": 0.2945,
       "detail": {
        "sh": 0.1326,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.3315,
-      "lam": 0.4027,
+      "p": 0.355,
+      "lam": 0.4385,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13674,30 +14001,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.4099,
-      "lam": 1.4245,
+      "p": 0.4103,
+      "lam": 1.4256,
       "detail": {
-       "rate60": 5.7665,
+       "rate60": 5.7714,
        "toi": 15.4324,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9231
       }
      },
      "buts": {
-      "p": 0.2021,
-      "lam": 0.2258,
+      "p": 0.2017,
+      "lam": 0.2253,
       "detail": {
-       "sh": 0.1545,
-       "f_gardien": 1.0261
+       "sh": 0.1544,
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2711,
-      "lam": 0.3162,
+      "p": 0.2914,
+      "lam": 0.3444,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13768,30 +14095,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5799,
-      "lam": 2.0111,
+      "p": 0.5804,
+      "lam": 2.0132,
       "detail": {
-       "rate60": 6.6875,
+       "rate60": 6.6946,
        "toi": 17.3424,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.2423,
-      "lam": 0.2775,
+      "p": 0.2419,
+      "lam": 0.2769,
       "detail": {
-       "sh": 0.1345,
-       "f_gardien": 1.0261
+       "sh": 0.1344,
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2953,
-      "lam": 0.3499,
+      "p": 0.317,
+      "lam": 0.3813,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13850,30 +14177,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.2907,
-      "lam": 1.0748,
+      "p": 0.2916,
+      "lam": 1.0775,
       "detail": {
-       "rate60": 5.9253,
+       "rate60": 5.9406,
        "toi": 10.46,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.1337,
-      "lam": 0.1435,
+      "p": 0.1335,
+      "lam": 0.1434,
       "detail": {
-       "sh": 0.1301,
-       "f_gardien": 1.0261
+       "sh": 0.13,
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2503,
-      "lam": 0.2881,
+      "p": 0.2695,
+      "lam": 0.314,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -13944,30 +14271,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.6712,
-      "lam": 2.4117,
+      "p": 0.6714,
+      "lam": 2.4128,
       "detail": {
-       "rate60": 6.6955,
+       "rate60": 6.6998,
        "toi": 20.1053,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.0331
+       "f_vs": 1.033
       }
      },
      "buts": {
-      "p": 0.2842,
-      "lam": 0.3343,
+      "p": 0.2836,
+      "lam": 0.3335,
       "detail": {
        "sh": 0.1351,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.4935,
-      "lam": 0.6802,
+      "p": 0.5231,
+      "lam": 0.7404,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14038,30 +14365,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.5482,
-      "lam": 1.8896,
+      "p": 0.5485,
+      "lam": 1.8907,
       "detail": {
-       "rate60": 6.8205,
+       "rate60": 6.825,
        "toi": 18.6393,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.8571
       }
      },
      "buts": {
-      "p": 0.3063,
-      "lam": 0.3656,
+      "p": 0.3057,
+      "lam": 0.3648,
       "detail": {
-       "sh": 0.1886,
-       "f_gardien": 1.0261
+       "sh": 0.1885,
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.4574,
-      "lam": 0.6114,
+      "p": 0.486,
+      "lam": 0.6656,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14133,29 +14460,29 @@
     "v1": {
      "tirs": {
       "p": 0.4947,
-      "lam": 1.6988,
+      "lam": 1.6987,
       "detail": {
        "rate60": 5.8096,
        "toi": 18.7749,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.8981
       }
      },
      "buts": {
-      "p": 0.1262,
-      "lam": 0.1349,
+      "p": 0.1259,
+      "lam": 0.1345,
       "detail": {
        "sh": 0.0774,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.287,
-      "lam": 0.3383,
+      "p": 0.3078,
+      "lam": 0.3679,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14208,30 +14535,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3811,
-      "lam": 1.3369,
+      "p": 0.381,
+      "lam": 1.3368,
       "detail": {
        "rate60": 5.2924,
        "toi": 14.5667,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 1.0
       }
      },
      "buts": {
-      "p": 0.0765,
-      "lam": 0.0796,
+      "p": 0.0763,
+      "lam": 0.0793,
       "detail": {
        "sh": 0.058,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2292,
-      "lam": 0.2603,
+      "p": 0.2466,
+      "lam": 0.2831,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14302,30 +14629,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3832,
-      "lam": 1.3432,
+      "p": 0.3831,
+      "lam": 1.3431,
       "detail": {
        "rate60": 4.2082,
        "toi": 20.2889,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9072
       }
      },
      "buts": {
-      "p": 0.0639,
-      "lam": 0.066,
+      "p": 0.0637,
+      "lam": 0.0659,
       "detail": {
        "sh": 0.0479,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2748,
-      "lam": 0.3213,
+      "p": 0.2949,
+      "lam": 0.3494,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14397,29 +14724,29 @@
     "v1": {
      "tirs": {
       "p": 0.3252,
-      "lam": 1.1733,
+      "lam": 1.1732,
       "detail": {
        "rate60": 4.2629,
        "toi": 17.3493,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.9148
       }
      },
      "buts": {
-      "p": 0.0502,
-      "lam": 0.0516,
+      "p": 0.0501,
+      "lam": 0.0514,
       "detail": {
        "sh": 0.0428,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.1754,
-      "lam": 0.1928,
+      "p": 0.1892,
+      "lam": 0.2097,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14490,30 +14817,30 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.3582,
-      "lam": 1.269,
+      "p": 0.3581,
+      "lam": 1.2689,
       "detail": {
        "rate60": 3.4927,
        "toi": 18.2187,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 1.15
       }
      },
      "buts": {
-      "p": 0.0736,
-      "lam": 0.0765,
+      "p": 0.0734,
+      "lam": 0.0763,
       "detail": {
        "sh": 0.0587,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2755,
-      "lam": 0.3223,
+      "p": 0.2957,
+      "lam": 0.3505,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14585,29 +14912,29 @@
     "v1": {
      "tirs": {
       "p": 0.5192,
-      "lam": 1.7841,
+      "lam": 1.784,
       "detail": {
        "rate60": 5.15,
        "toi": 21.2508,
-       "f_opp": 1.0102,
+       "f_opp": 1.0101,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
        "f_vs": 0.94
       }
      },
      "buts": {
-      "p": 0.116,
-      "lam": 0.1233,
+      "p": 0.1157,
+      "lam": 0.123,
       "detail": {
        "sh": 0.0674,
-       "f_gardien": 1.0261
+       "f_gardien": 1.0235
       }
      },
      "passes": {
-      "p": 0.2948,
-      "lam": 0.3493,
+      "p": 0.3161,
+      "lam": 0.3799,
       "detail": {
-       "f_equipe": 1.096
+       "f_equipe": 1.192
       }
      }
     }
@@ -14621,7 +14948,7 @@
   "v0",
   "v1"
  ],
- "maj": "2026-10-18T01:26+00:00",
+ "maj": "2026-10-18T02:05+00:00",
  "games": [
   {
    "gameId": 2026020133,
@@ -14662,23 +14989,23 @@
      }
     },
     "v1": {
-     "p_home": 0.5388,
-     "p_egal60": 0.1532,
-     "lam_home": 3.6166,
-     "lam_away": 3.375,
-     "total": 6.9916,
+     "p_home": 0.5396,
+     "p_egal60": 0.1507,
+     "lam_home": 3.7349,
+     "lam_away": 3.4839,
+     "total": 7.2187,
      "p_over": {
-      "5.5": 0.6982,
-      "6.5": 0.549
+      "5.5": 0.7264,
+      "6.5": 0.5823
      },
      "detail": {
-      "att_h": 3.4495,
-      "def_h": 2.9298,
-      "att_a": 3.6616,
-      "def_a": 3.25,
-      "h2h_h": 1.029,
-      "h2h_a": 1.0763,
-      "mu": 3.3015
+      "att_h": 3.4091,
+      "def_h": 2.8894,
+      "att_a": 3.6197,
+      "def_a": 3.2081,
+      "h2h_h": 1.0333,
+      "h2h_a": 1.0811,
+      "mu": 3.1318
      }
     }
    },
@@ -14724,23 +15051,23 @@
      }
     },
     "v1": {
-     "p_home": 0.622,
-     "p_egal60": 0.1535,
-     "lam_home": 3.6185,
-     "lam_away": 2.8355,
-     "total": 6.454,
+     "p_home": 0.6244,
+     "p_egal60": 0.1508,
+     "lam_home": 3.7332,
+     "lam_away": 2.9217,
+     "total": 6.6549,
      "p_over": {
-      "5.5": 0.6242,
-      "6.5": 0.4662
+      "5.5": 0.6531,
+      "6.5": 0.4977
      },
      "detail": {
-      "att_h": 3.4862,
-      "def_h": 2.9193,
-      "att_a": 3.4519,
-      "def_a": 3.3067,
-      "h2h_h": 0.9721,
-      "h2h_a": 1.0028,
-      "mu": 3.3015
+      "att_h": 3.4472,
+      "def_h": 2.8803,
+      "att_a": 3.4115,
+      "def_a": 3.2663,
+      "h2h_h": 0.9741,
+      "h2h_a": 1.0052,
+      "mu": 3.1318
      }
     }
    },
