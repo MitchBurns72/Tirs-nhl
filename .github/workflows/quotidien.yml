@@ -1,11 +1,14 @@
 name: Calcul quotidien
 
-# 10 h, 14 h, 17 h 45 heure de l'Est (cron en UTC)
+# Calcul : 10 h, 14 h, 17 h 45 heure de l'Est (cron en UTC)
+# Live : aux 5 min de 12 h à 2 h du matin (les runs sans match finissent en 10 s)
 on:
   schedule:
     - cron: "7 14 * * *"
     - cron: "7 18 * * *"
     - cron: "47 21 * * *"
+    - cron: "*/5 16-23 * * *"
+    - cron: "*/5 0-5 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -17,13 +20,12 @@ concurrency:
 
 jobs:
   calcul:
+    if: github.event_name == 'workflow_dispatch' || (github.event.schedule != '*/5 16-23 * * *' && github.event.schedule != '*/5 0-5 * * *')
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      # Installation depuis un cell : déballe le zip une seule fois.
-      # .github est exclu : le jeton de l'Action n'a pas le droit de toucher aux workflows.
-      - name: Déballer le zip (première installation seulement)
+      - name: Déballer le zip
         run: |
           if [ -f tirs-nhl.zip ]; then
             unzip -oq tirs-nhl.zip -x 'tirs-nhl/.github/*' -d /tmp/x
@@ -33,12 +35,34 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Grader, prédire, publier
+      - name: Grader, rejouer les soirs manquants, prédire, publier
         run: python src/run.py
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          ODDS: ${{ github.event_name == 'workflow_dispatch' || github.event.schedule == '47 21 * * *' }}
+          ODDS_PROPS: player_shots_on_goal_alternate
       - name: Committer les résultats
         run: |
           git config user.name "patente-bot"
           git config user.email "patente-bot@users.noreply.github.com"
           git add -A
           git diff --cached --quiet || git commit -m "Calcul $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push
+          git pull --rebase -q && git push
+
+  live:
+    if: github.event.schedule == '*/5 16-23 * * *' || github.event.schedule == '*/5 0-5 * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Stats live des matchs en cours
+        run: python src/live.py
+      - name: Committer si ça a bougé
+        run: |
+          git config user.name "patente-bot"
+          git config user.email "patente-bot@users.noreply.github.com"
+          git add docs/live.json 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "Live $(date -u +%H:%MZ)" && git pull --rebase -q && git push)
