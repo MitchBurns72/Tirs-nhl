@@ -20,9 +20,11 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+import auto
 import cotes
 import nhl_api as api
-from modeles import MARCHES, VERSION_PRINCIPALE, VERSIONS
+from modeles import (VERSIONS, charger_auto, features_joueur, features_match,
+                     modele_joueur_param, modele_match_param)
 from score import resumer
 
 RACINE = Path(__file__).resolve().parent.parent
@@ -402,8 +404,12 @@ def predire(jour, matchs_ouverts, saison):
     ligue["mu"] = (ligue["poids"] * mu_cur + 15 * mu_prev) / (ligue["poids"] + 15)
     hier = (date.fromisoformat(jour) - timedelta(days=1)).isoformat()
 
+    # Une version auto ne prédit jamais un soir antérieur à sa création : ces soirs
+    # ont servi à l'entraîner, ses prédictions y seraient de la triche (in-sample).
+    actives = {v: spec for v, spec in VERSIONS.items() if not spec.get("auto") or spec["cree"] <= jour}
+
     # Matchs d'abord : les passes des joueurs dépendent des buts attendus de l'équipe.
-    games, jeu_par_equipe = [], {v: {} for v in VERSIONS}
+    games, jeu_par_equipe = [], {v: {} for v in actives}
     for m in matchs_ouverts:
         cm = {"mu": ligue["mu"]}
         for cote in ("home", "away"):
@@ -419,8 +425,10 @@ def predire(jour, matchs_ouverts, saison):
                         "cur_gp": len(cur), "cur_gf": sum(g["gf"] for g in cur), "cur_ga": sum(g["ga"] for g in cur),
                         "b2b": bool(cur) and cur[-1]["date"] == hier}
         preds = {}
-        for v, spec in VERSIONS.items():
-            r = spec["match"](cm)
+        fm = features_match(cm)
+        for v, spec in actives.items():
+            # Version auto : même modèle que v1, paramètres trouvés par le tuner
+            r = modele_match_param(fm, spec["params"]) if spec.get("auto") else spec["match"](cm)
             preds[v] = r
             jeu_par_equipe[v][m["home"]] = {"lam_pour": r["lam_home"], "lam_contre": r["lam_away"]}
             jeu_par_equipe[v][m["away"]] = {"lam_pour": r["lam_away"], "lam_contre": r["lam_home"]}
@@ -434,12 +442,17 @@ def predire(jour, matchs_ouverts, saison):
             "h2h": {"gp": cm["home"]["h2h"]["gp"], "gf_home": cm["home"]["h2h"]["gf"],
                     "gf_away": cm["away"]["h2h"]["gf"]},
             "preds": arrondir(preds), "result": None,
+            "f": arrondir(fm),   # journal de features : sert au tuner (auto.py)
         })
 
     entries = []
     for ctx in construire_joueurs(jour, equipes, saison, ligue_eq, ligue, ctx_eq):
-        preds = {v: spec["joueur"](dict(ctx), jeu_par_equipe[v].get(ctx["team"]))
-                 for v, spec in VERSIONS.items()}
+        # Features calculées avec les buts attendus de v1 : c'est la référence
+        # commune sur laquelle le tuner rejoue toutes les variantes.
+        f = features_joueur(ctx, jeu_par_equipe.get("v1", {}).get(ctx["team"]))
+        preds = {v: (modele_joueur_param(f, spec["params"]) if spec.get("auto")
+                     else spec["joueur"](dict(ctx), jeu_par_equipe[v].get(ctx["team"])))
+                 for v, spec in actives.items()}
         l10 = ctx["cur"][-10:]
         entries.append({
             "pid": ctx["pid"], "name": ctx["name"], "team": ctx["team"],
@@ -451,6 +464,7 @@ def predire(jour, matchs_ouverts, saison):
             "l10_assists": [g["assists"] for g in l10],
             "vs_gp": ctx["vs"]["gp"], "vs_shots": ctx["vs"]["shots"],
             "preds": arrondir(preds), "result": None, "played": None,
+            "f": arrondir(f),
         })
     return games, entries, noms
 
@@ -498,9 +512,60 @@ def jour_nhl():
     return datetime.now(ZoneInfo("America/Toronto")).date().isoformat()
 
 
+ETAT_AUTO = RACINE / "data" / "versions_auto.json"
+MAX_COMPLETER = 10   # fichiers complétés par exécution
+
+
+def completer_features(saison):
+    """Ajoute le journal de features aux vieilles prédictions qui n'en ont pas
+    (celles d'avant l'auto-upgrade), pour que le tuner ait du data dès le départ.
+
+    POURQUOI c'est honnête : on recalcule seulement le CONTEXTE d'avant-match
+    (filtré < date, comme le rétroactif). Les prédictions déjà faites ne sont
+    jamais modifiées, on y colle juste les features."""
+    n = 0
+    for fic in sorted(DIR_PRED.glob("*.json")):
+        if n >= MAX_COMPLETER:
+            break
+        data = lire_json(fic, None)
+        if not data:
+            continue
+        manque_j = [e for e in data["entries"] if not e.get("f")]
+        manque_g = [g for g in data.get("games", []) if not g.get("f")]
+        if not manque_j and not manque_g:
+            continue
+        # Reconstituer les matchs du soir à partir des joueurs (domicile = équipe du joueur si home)
+        matchs = {}
+        for e in data["entries"]:
+            h, a = (e["team"], e["opp"]) if e["home"] else (e["opp"], e["team"])
+            matchs[e["gameId"]] = {"id": e["gameId"], "home": h, "away": a, "state": "OFF", "season": saison,
+                                   "start": data["date"] + "T23:00:00Z"}
+        for g in data.get("games", []):
+            matchs[g["gameId"]] = {"id": g["gameId"], "home": g["home"], "away": g["away"], "state": "OFF",
+                                   "season": saison, "start": g.get("start", data["date"] + "T23:00:00Z")}
+        if not matchs:
+            continue
+        games, entries, _ = predire(data["date"], list(matchs.values()), saison)
+        f_j = {(e["gameId"], e["pid"]): e["f"] for e in entries}
+        f_g = {g["gameId"]: g["f"] for g in games}
+        for e in manque_j:
+            e["f"] = f_j.get((e["gameId"], e["pid"]))
+        for g in manque_g:
+            g["f"] = f_g.get(g["gameId"])
+        ecrire_json(fic, data)
+        n += 1
+        print(f"  features ajoutées : {data['date']}")
+
+
+def sans_features(liste):
+    """La page n'a pas besoin des features (lourdes) : on les retire de data.json."""
+    return [{k: v for k, v in x.items() if k != "f"} for x in liste]
+
+
 def main():
     jour = sys.argv[1] if len(sys.argv) > 1 else jour_nhl()
     DIR_PRED.mkdir(parents=True, exist_ok=True)
+    principale = charger_auto(ETAT_AUTO)   # ajoute les versions auto au registre
 
     grader()
 
@@ -514,6 +579,16 @@ def main():
     saison = matchs[0]["season"] if matchs else (api.club_schedule("TOR") or {}).get("currentSeason")
     if saison and retroactif(jour, saison):
         grader()   # les soirs rejoués sont gradés tout de suite
+    if saison:
+        completer_features(saison)
+
+    # Labo : patterns + tuning hebdo + promotion. Si une nouvelle version naît,
+    # elle est chargée tout de suite et prédit déjà les matchs de ce soir.
+    historique = [h for h in (lire_json(f, None) for f in sorted(DIR_PRED.glob("*.json"))) if h]
+    labo, nouvelle = auto.cycle(historique, ETAT_AUTO, list(VERSIONS), jour)
+    if nouvelle:
+        charger_auto(ETAT_AUTO)
+    principale = labo.get("principale", principale) if labo.get("principale") in VERSIONS else principale
 
     f_jour = DIR_PRED / f"{jour}.json"
     existant = lire_json(f_jour, {"date": jour, "entries": [], "games": []})
@@ -575,12 +650,14 @@ def main():
         "genere": datetime.now(timezone.utc).isoformat(timespec="minutes"),
         "date": jour,
         "versions": [{"id": v, "desc": s["desc"]} for v, s in VERSIONS.items()],
-        "principale": VERSION_PRINCIPALE,
+        "principale": principale,
         "matchs": matchs,
-        "games": existant["games"],
-        "joueurs": existant["entries"],
+        "games": sans_features(existant["games"]),
+        "joueurs": sans_features(existant["entries"]),
         "stats": resumer(historique, list(VERSIONS)),
         "cotes_quota": quota,
+        "labo": {k: labo.get(k) for k in ("journal", "patterns", "donnees", "dernier_tuning")} | {
+            "versions": [{k: v.get(k) for k in ("id", "cree", "desc", "retiree", "essai")} for v in labo.get("versions", [])]},
     })
     print(f"{jour}: {len(matchs)} matchs, {len(existant['entries'])} joueurs, cotes={'oui' if AVEC_COTES else 'non'}")
 

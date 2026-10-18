@@ -6,6 +6,18 @@ Chaque soir de match NHL :
 - **Cotes** : médiane des bookies US en auto (The Odds API) + champ Mise-o-jeu manuel
 - **Suivi** : note /100, calibration et bon côté par marché, pour chaque version de l'algo
 
+## Labo (auto-upgrade)
+
+`src/auto.py`, à chaque calcul :
+- **Patterns** : segments où la version principale se trompe systématiquement (écart >= 2.5 écarts-types).
+- **Tuner** (aux ~7 jours) : cherche de meilleurs paramètres sur les vieux soirs, valide sur les soirs récents
+  jamais utilisés pour chercher. Si ça bat la principale d'au moins 0.5 % sans empirer un autre marché,
+  crée une version gelée `aMMJJ` qui roule en parallèle. Max 3 versions auto actives.
+- **Promotion** : une version auto devient principale seulement si elle bat la principale EN DIRECT,
+  sur les mêmes prédictions, après 1500 prédictions de tirs.
+- Une version auto ne prédit jamais un soir d'avant sa création (ses soirs d'entraînement).
+- État : `data/versions_auto.json`. Pour annuler une version : y mettre `"retiree": true`.
+
 ## Live
 
 Bouton **LIVE** en haut de la page : rafraîchit aux 30 secondes.

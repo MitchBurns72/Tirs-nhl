@@ -148,6 +148,13 @@ tr.sel td{font-weight:700}
 .lv.ok{color:var(--good)} .lv.cours{color:var(--warn)} .lv.ko{color:var(--bad)}
 .m.st-cours{border-color:var(--warn)}
 .score-live{font:800 18px/1 var(--f-display);letter-spacing:.02em}
+.labo h2 span{color:var(--ice)}
+.labo ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:13px}
+.labo .pat{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;font-size:13px;padding:8px 0;border-top:1px solid var(--line)}
+.labo .pat:first-of-type{border-top:0}
+.labo .pat small{grid-column:1 / 3;color:var(--muted)}
+.etat{font-size:11px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--chip);color:var(--muted)}
+.etat.princ{background:var(--good-bg);color:var(--good)} .etat.essai{background:var(--warn-bg);color:var(--warn)}
 [hidden]{display:none!important}
 </style>
 </head>
@@ -213,6 +220,7 @@ tr.sel td{font-weight:700}
       </div>
     </div>
     <div class="cards" id="cards"></div>
+    <div class="card labo" id="labo" style="margin-top:12px"></div>
     <div class="guide">
       <h2>Comment lire ça</h2>
       <p><b>Note /100</b> : 50 = pas mieux que dire le même % à tout le monde. 100 = parfait, ça n'arrive pas. Pour les joueurs, 55 à 60 c'est un bon modèle. Pour les victoires, même les meilleurs modèles publics tournent autour de 52-55 : le hockey est très aléatoire. Sous 50, la version est à jeter pour ce marché.</p>
@@ -561,6 +569,37 @@ function suivi(){
   }).join("") + (D.cotes_quota ? `<div class="quota">Cotes US : ${D.cotes_quota.restants ?? "?"} crédits restants ce mois-ci${D.cotes_quota.erreur ? ` · dernière erreur : ${D.cotes_quota.erreur}` : ""}</div>` : "");
 }
 
+
+// ---- Labo (auto-upgrade) -------------------------------------------------------
+function labo(){
+  const L = D.labo;
+  if (!L){ $("#labo").hidden = true; return; }
+  const versions = (L.versions || []).slice().reverse().map(v => {
+    let etat = `<span class="etat">retirée</span>`, info = "";
+    if (v.id === D.principale) etat = `<span class="etat princ">principale</span>`;
+    else if (!v.retiree){
+      etat = `<span class="etat essai">en essai</span>`;
+      const e = v.essai;
+      info = e && e.n_tirs ? ` · ${e.n_tirs} prédictions de tirs en direct, ${e.gain >= 0 ? "+" : ""}${(e.gain * 100).toFixed(1)} % vs ${D.principale}` : " · pas encore de résultats en direct";
+    }
+    return `<li><b>${v.id}</b> ${etat}<br><span style="color:var(--muted)">${v.desc}${info}</span></li>`;
+  }).join("") || `<li style="color:var(--muted)">Aucune version auto pour l'instant. Le tuner en crée une seulement s'il trouve mieux que la principale sur des soirs qu'il n'a jamais vus.</li>`;
+  const pats = (L.patterns || []).map(p => `<div class="pat">
+      <span><b>${NOM_MARCHE[p.marche] || p.marche}</b> · ${p.segment}</span>
+      <span class="lv ${p.sens === "surestimé" ? "ko" : "ok"}">${p.sens}</span>
+      <small>Prédit ${pct(p.predit)} %, réel ${pct(p.reel)} % sur ${p.n} · ${Math.abs(p.z).toFixed(1)} écarts-types (trop gros pour être de la chance)</small>
+    </div>`).join("") || `<p style="color:var(--muted);font-size:13px;margin:0">Aucun biais significatif détecté pour l'instant.</p>`;
+  const journal = (L.journal || []).slice(0, 5).map(j => `<li><b>${j.date}</b> · ${j.msg}</li>`).join("")
+    || `<li style="color:var(--muted)">Premier tuning au prochain calcul avec assez de données.</li>`;
+  const dn = L.donnees || {};
+  $("#labo").innerHTML = `
+    <h2>Labo <span>auto-upgrade</span></h2>
+    <p style="margin:-6px 0 0;font-size:13px;color:var(--muted)">Données pour apprendre : ${dn.joueurs ?? 0} prédictions de joueurs et ${dn.matchs ?? 0} matchs gradés. Tuning aux ~7 jours${L.dernier_tuning ? `, dernier le ${L.dernier_tuning}` : ""}.</p>
+    <div><span class="lbl">Patterns détectés · version ${D.principale}</span>${pats}</div>
+    <div><span class="lbl">Versions auto</span><ul>${versions}</ul></div>
+    <div><span class="lbl">Journal</span><ul>${journal}</ul></div>`;
+}
+
 // ---- Événements ----------------------------------------------------------------
 function chips(sel, cleS, apres){
   document.querySelectorAll(sel).forEach(groupe => groupe.addEventListener("click", (ev) => {
@@ -572,7 +611,7 @@ function chips(sel, cleS, apres){
   }));
 }
 
-function tout(){ liste(); matchs(); suivi(); }
+function tout(){ liste(); matchs(); suivi(); labo(); }
 
 function brancher(){
   chips("#f-marche", "marche", liste);

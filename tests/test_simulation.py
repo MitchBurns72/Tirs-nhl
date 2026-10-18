@@ -203,6 +203,7 @@ def main():
     tmp = Path(tempfile.mkdtemp())
     run.DIR_PRED = tmp / "data" / "predictions"
     run.DIR_CACHE = tmp / "data" / "cache"
+    run.ETAT_AUTO = tmp / "data" / "versions_auto.json"   # jamais dans le vrai repo
     run.SORTIE = tmp / "docs" / "data.json"
     api.get_json = faux_get_json
     cotes._get = faux_odds
@@ -260,6 +261,43 @@ def main():
     assert out["games"] and out["joueurs"]
     assert out["games"][0].get("cotes", {}).get("p_home_marche"), "cotes de match non associées"
     assert any(e.get("cotes") for e in out["joueurs"]), "cotes joueurs non associées"
+    # --- Le modèle paramétrique avec V1 doit redonner v1 (sinon le tuner optimise autre chose) ---
+    from modeles import V1, modele_joueur_param, modele_match_param
+    import auto
+    ecart_max = 0.0
+    for fic in sorted(run.DIR_PRED.glob("*.json")):
+        d = json.loads(fic.read_text())
+        for e in d["entries"]:
+            if e.get("f") and "tirs" in e["preds"].get("v1", {}):
+                r = modele_joueur_param(e["f"], V1)
+                for m in ("tirs", "buts", "passes"):
+                    ecart_max = max(ecart_max, abs(r[m]["p"] - e["preds"]["v1"][m]["p"]))
+        for g in d.get("games", []):
+            if g.get("f"):
+                ecart_max = max(ecart_max, abs(modele_match_param(g["f"], V1)["p_home"] - g["preds"]["v1"]["p_home"]))
+    print(f"écart max modèle paramétrique vs v1 : {ecart_max:.6f}")
+    assert ecart_max < 2e-3, "le modèle paramétrique ne reproduit pas v1"
+
+    # --- Labo : patterns + tuner forcé sur la petite fausse ligue ---
+    auto.MIN_JOUEURS, auto.MIN_MATCHS, auto.MIN_VAL_JOUEURS, auto.MIN_VAL_MATCHS = 500, 30, 200, 10
+    hist = [json.loads(f.read_text()) for f in sorted(run.DIR_PRED.glob("*.json"))]
+    labo, nouvelle = auto.cycle(hist, run.ETAT_AUTO, list(run.VERSIONS), jours[-1], force=True)
+    print("journal :", labo["journal"][0]["msg"])
+    print("patterns :", [(p["marche"], p["segment"], round(p["predit"], 2), round(p["reel"], 2), round(p["z"], 1)) for p in labo["patterns"][:4]])
+    if nouvelle:
+        vid = labo["versions"][-1]["id"]
+        # Le lendemain, la version auto prédit... mais jamais un soir d'avant sa naissance
+        api._cache.clear()
+        lendemain = jours[-1]
+        sys.argv = ["run.py", lendemain]
+        run.main()
+        d = json.loads((run.DIR_PRED / f"{lendemain}.json").read_text())
+        ouverts = [e for e in d["entries"] if not e.get("retro")]
+        assert any(vid in e["preds"] for e in ouverts), "la version auto ne prédit pas"
+        vieux = json.loads((run.DIR_PRED / f"{jours[2]}.json").read_text())
+        assert not any(vid in e["preds"] for e in vieux["entries"]), "version auto sur un soir d'entraînement"
+        print(f"version auto {vid} active, pas de triche rétroactive OK")
+
     dest = ICI / "data_exemple.json"
     shutil.copy(run.SORTIE, dest)
     print("OK ->", dest)

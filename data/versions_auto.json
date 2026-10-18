@@ -1,0 +1,17 @@
+{
+ "versions": [],
+ "journal": [
+  {
+   "date": "2026-10-18",
+   "msg": "Tirs 2+ : rien de mieux qui tient en validation (-0.5 %) · But : rien de mieux qui tient en validation (+0.2 %) · Passe : rien de mieux qui tient en validation (-0.1 %) · Matchs : pas assez de données (43 entr. / 22 valid.)"
+  }
+ ],
+ "principale": "v1",
+ "patterns": [],
+ "donnees": {
+  "joueurs": 2242,
+  "matchs": 65
+ },
+ "dernier_tuning": "2026-10-18",
+ "maj": "2026-10-18T04:12+00:00"
+}

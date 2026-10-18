@@ -387,6 +387,135 @@ def v1_match(m):
 
 
 # =================================================================================
+# Modèle paramétrique (auto-upgrade)
+# =================================================================================
+# POURQUOI : pour que l'algo puisse s'améliorer tout seul, il doit pouvoir REJOUER
+# n'importe quel soir passé avec d'autres paramètres, sans rappeler l'API. On
+# enregistre donc avec chaque prédiction ses "features" : les sommes brutes que
+# v1 utilise (tirs, minutes, adversaire...). modele_joueur_param(f, V1) redonne
+# exactement v1 (vérifié par test). Avec d'autres paramètres, ça donne un candidat.
+
+def features_joueur(ctx, jeu):
+    """Contexte brut d'un joueur avant le match. Clés courtes : stocké des milliers de fois."""
+    cur = ctx["cur"]
+    l10, reste = cur[-10:], cur[:-10]
+    s = lambda gs, k: sum(g[k] for g in gs)
+    bloc = lambda gs: [s(gs, "shots"), s(gs, "goals"), s(gs, "assists"), s(gs, "toi"), len(gs)]
+    pv, o, lg, vs = ctx["prev"], ctx["opp"], ctx["league"], ctx["vs"]
+    pos = ctx["pos"]
+    return {
+        "pos": pos, "home": ctx["home"], "b2b": ctx["b2b"],
+        "l10": bloc(l10), "rs": bloc(reste),
+        "pv": [pv["shots"], pv.get("goals", 0), pv.get("assists", 0), pv["toi"], pv["gp"]],
+        "t5": s(cur[-5:], "toi") / len(cur[-5:]) if cur else None,
+        "tsa": s(cur, "toi") / len(cur) if cur else None,
+        "n": len(cur),
+        "op": [o["gp"], o["sa_cur"], o["sa_prev"], o["gaps_cur"], o["gaps_prev"]],
+        "lg": [lg["sa_avg"], lg["gaps_avg"], lg["pos_rate"][pos], lg["pos_sh"][pos],
+               lg["pos_pa_rate"][pos], lg["pos_toi"][pos], lg["mu"]],
+        "vs": [vs["shots"], vs["toi"], vs["gp"]],
+        "eq": jeu["lam_pour"] if jeu else None,
+    }
+
+
+def _taux(f, P, i, pseudo):
+    """Taux par minute poolé (i = 0 tirs, 2 passes), même formule que v1."""
+    l10, rs, pv = f["l10"], f["rs"], f["pv"]
+    pos_rate = f["lg"][2] if i == 0 else f["lg"][4]
+    prev_toi = min(pv[3], P["prev_toi_cap"])
+    prev_rate = pv[i] / pv[3] if pv[3] > 0 else pos_rate
+    num = P["w_l10"] * l10[i] + P["w_reste"] * rs[i] + P["w_prev"] * prev_rate * prev_toi + pseudo * pos_rate
+    den = P["w_l10"] * l10[3] + P["w_reste"] * rs[3] + P["w_prev"] * prev_toi + pseudo
+    return num / den
+
+
+def _toi(f, P):
+    pv = f["pv"]
+    if f["n"] >= 3:
+        return P["toi_recent"] * f["t5"] + (1 - P["toi_recent"]) * f["tsa"]
+    if f["n"]:
+        return 0.5 * f["tsa"] + 0.5 * (pv[3] / pv[4]) if pv[4] > 0 else f["tsa"]
+    if pv[4] > 0:
+        return pv[3] / pv[4]
+    return f["lg"][5]
+
+
+def modele_joueur_param(f, P):
+    """Les 3 marchés d'un joueur à partir de ses features et d'un jeu de paramètres.
+    Les clés scale_* (absentes de V1 -> 1.0) servent au tuner pour corriger un biais
+    global trouvé par le détecteur de patterns (ex. défenseurs surestimés)."""
+    g = lambda k, d=1.0: P.get(k, d)
+    rate = _taux(f, P, 0, P["pseudo_min"])
+    toi = _toi(f, P)
+    o, lg = f["op"], f["lg"]
+    f_opp = (o[0] * o[1] + P["opp_reg_gp"] * o[2]) / (o[0] + P["opp_reg_gp"]) / lg[0]
+    f_lieu = P["home"] if f["home"] else P["away"]
+    f_b2b = P["b2b"] if f["b2b"] else 1.0
+    vs = f["vs"]
+    if vs[1] <= 0 or vs[2] == 0 or rate <= 0:
+        f_vs = 1.0
+    else:
+        ratio = (vs[0] / vs[1]) / rate
+        adj = (vs[2] * ratio + P["vs_reg_gp"]) / (vs[2] + P["vs_reg_gp"])
+        f_vs = min(max(adj, P["vs_cap"][0]), P["vs_cap"][1])
+    echelle_t = g("scale_tirs") * (g("scale_tirs_D") if f["pos"] == "D" else 1.0)
+    lam_t = max(rate * toi * f_opp * f_lieu * f_b2b * f_vs * echelle_t, 0.05)
+
+    l10, rs, pv = f["l10"], f["rs"], f["pv"]
+    sh = (l10[1] + rs[1] + 0.5 * pv[1] + P["sh_pseudo_tirs"] * lg[3]) / (l10[0] + rs[0] + 0.5 * pv[0] + P["sh_pseudo_tirs"])
+    f_g = (o[0] * o[3] + P["sv_reg_gp"] * o[4]) / (o[0] + P["sv_reg_gp"]) / lg[1]
+    lam_b = max(lam_t * sh * f_g * g("scale_buts"), 0.01)
+
+    f_eq = f["eq"] / lg[6] if f["eq"] else 1.0
+    lam_p = max(_taux(f, P, 2, P["pa_pseudo_min"]) * toi * f_eq * g("scale_passes"), 0.01)
+    return {
+        "tirs": {"p": p2plus_negbin(lam_t, P["nb_k"]), "lam": lam_t},
+        "buts": {"p": p1plus_poisson(lam_b), "lam": lam_b},
+        "passes": {"p": p1plus_poisson(lam_p), "lam": lam_p},
+    }
+
+
+def features_match(m):
+    """Contexte brut d'un match (les deux équipes) avant la mise au jeu."""
+    def cote(t):
+        jeux = t["cur"]
+        l10, reste = jeux[-10:], jeux[:-10]
+        s = lambda gs, k: sum(x[k] for x in gs)
+        pv = t["prev"]
+        return {"l10": [s(l10, "gf"), s(l10, "ga"), len(l10)], "rs": [s(reste, "gf"), s(reste, "ga"), len(reste)],
+                "pv": [pv["gp"], pv["gf"], pv["ga"]], "h2h": [t["h2h"]["gf"], t["h2h"]["gp"]], "b2b": t["b2b"]}
+    return {"mu": m["mu"], "h": cote(m["home"]), "a": cote(m["away"])}
+
+
+def modele_match_param(f, P):
+    """Même modèle que v1_match, rejouable à partir des features."""
+    mu = f["mu"]
+    def force(c, i):   # i = 0 buts pour, 1 buts contre
+        n_prev = min(c["pv"][0], P["m_prev_cap"])
+        prev_pg = c["pv"][1 + i] / c["pv"][0] if c["pv"][0] else mu
+        num = P["m_w_l10"] * c["l10"][i] + c["rs"][i] + P["m_w_prev"] * n_prev * prev_pg + P["m_pseudo_gp"] * mu
+        den = P["m_w_l10"] * c["l10"][2] + c["rs"][2] + P["m_w_prev"] * n_prev + P["m_pseudo_gp"]
+        return num / den
+    def h2h(c, att):
+        gf, gp = c["h2h"]
+        if gp == 0 or att <= 0:
+            return 1.0
+        adj = (gp * ((gf / gp) / att) + P["m_h2h_reg"]) / (gp + P["m_h2h_reg"])
+        return min(max(adj, P["m_h2h_cap"][0]), P["m_h2h_cap"][1])
+    h, a = f["h"], f["a"]
+    att_h, def_h, att_a, def_a = force(h, 0), force(h, 1), force(a, 0), force(a, 1)
+    lam_h = att_h * def_a / mu * P["m_home"]
+    lam_a = att_a * def_h / mu * P["m_away"]
+    if h["b2b"]:
+        lam_h *= P["m_b2b_pour"]; lam_a *= P["m_b2b_contre"]
+    if a["b2b"]:
+        lam_a *= P["m_b2b_pour"]; lam_h *= P["m_b2b_contre"]
+    lam_h *= h2h(h, att_h) * P.get("scale_match", 1.0)
+    lam_a *= h2h(a, att_a) * P.get("scale_match", 1.0)
+    return issue_match(max(lam_h, 0.3), max(lam_a, 0.3), P["m_p_ot_home"])
+
+
+# =================================================================================
 # Registre
 # =================================================================================
 # Ordre = ordre d'affichage. La DERNIÈRE est la version "principale" sur la page.
@@ -398,3 +527,24 @@ VERSIONS = {
 }
 VERSION_PRINCIPALE = list(VERSIONS)[-1]
 MARCHES = ["tirs", "buts", "passes"]
+
+
+def charger_auto(chemin):
+    """Ajoute au registre les versions créées par le tuner (data/versions_auto.json).
+
+    Chaque version auto = V1 avec des paramètres différents, GELÉS à sa création.
+    Les versions retirées ne prédisent plus mais leur historique reste.
+    Retourne la version principale choisie (v1 par défaut)."""
+    import json
+    try:
+        etat = json.loads(open(chemin, encoding="utf-8").read())
+    except (FileNotFoundError, ValueError):
+        return VERSION_PRINCIPALE
+    for v in etat.get("versions", []):
+        if v.get("retiree"):
+            continue
+        P = {**V1, **v["params"]}
+        P["vs_cap"], P["m_h2h_cap"] = tuple(P["vs_cap"]), tuple(P["m_h2h_cap"])
+        VERSIONS[v["id"]] = {"params": P, "auto": True, "desc": v["desc"], "cree": v["cree"]}
+    p = etat.get("principale", VERSION_PRINCIPALE)
+    return p if p in VERSIONS else VERSION_PRINCIPALE
