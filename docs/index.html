@@ -611,7 +611,29 @@ function matchs(){
                     label: `${g.away} @ ${g.home} · ${nom} ${ligne} buts`, sous: heure(g.start) }, "+")}</div>`;
       return rangee("o" + k, "Plus", po, c.over) + rangee("u" + k, "Moins", pu, c.under);
     };
-    const ligneTot = `<span class="lbl" style="margin-top:4px">Total de buts${c.ligne != null ? ` · ligne US ${c.ligne}` : ""}</span>
+    // ---- Victoire en 60 min (3 issues) ----
+    const r60 = regl(p.lam_home, p.lam_away);
+    const ligne60 = [["a3", `${g.away}`, r60.a], ["x3", "Nul", r60.x], ["h3", `${g.home}`, r60.h]].map(([k, nom, prob]) => {
+      const cm = lireCote(cle("m", g.gameId, k));
+      const L60 = L;
+      let etat = "";
+      if (L60 || g.result){
+        const fin = !!g.result || FINIS.includes(L60.state);
+        const pt = L60?.periodType, hs = g.result ? g.result.home : L60.hs, as_ = g.result ? g.result.away : L60.as;
+        const prol = pt === "OT" || pt === "SO";
+        const gagne = k === "x3" ? prol : (!prol && fin && (k === "h3" ? hs > as_ : as_ > hs));
+        const perdu = k === "x3" ? (fin && !prol) : (prol || (fin && !gagne));
+        etat = gagne ? `<span class="lv ok">réussi</span>` : perdu ? `<span class="lv ko">raté</span>` : "";
+      }
+      return `<div class="trow">
+          <span class="who">${nom}</span><b>${pct(prob)} %</b>
+          <span class="badges">${badgeEV(ev(prob, cm), null, "MOJ")}${etat}</span>
+          <input id="m-${g.gameId}-${k}" data-k="${cle("m", g.gameId, k)}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu ${nom} en 60 minutes" value="${cm ?? ""}">
+          ${offre({ type: "match", date: D.date, gameId: g.gameId, k, p: prob, cote: cm, version: v,
+                    label: `${g.away} @ ${g.home} · ${k === "x3" ? "Nul après 60 min" : nom + " gagne en 60 min"}`, sous: `${heure(g.start)} · 3 issues, sans prolongation` }, "+")}</div>`;
+    }).join("");
+    const ligneTot = `<span class="lbl" style="margin-top:4px">Victoire en 60 min · 3 issues</span>${ligne60}
+      <span class="lbl" style="margin-top:4px">Total de buts${c.ligne != null ? ` · ligne US ${c.ligne}` : ""}</span>
       ${ligneTotal("5.5")}${ligneTotal("6.5")}
       ${c.ligne != null && !["5.5", "6.5"].includes(String(c.ligne)) ? `<div class="mcote"><span class="us">US ${c.ligne} · plus ${c.over?.toFixed(2)} / moins ${c.under?.toFixed(2)}</span></div>` : ""}`;
     return `<div class="m ${cls}">
@@ -637,11 +659,11 @@ function matchs(){
         <div class="mcote"><span class="who">${g.away}</span>${c.away ? `<span class="us">US ${c.away.toFixed(2)}</span>` : ""}${badgeEV(ev(pa, cA), null, srcA)}
           <input id="m-${g.gameId}-a" data-k="${cle("m", g.gameId, "a")}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu ${g.away}" value="${lireCote(cle("m", g.gameId, "a")) ?? ""}">
           ${offre({ type: "match", date: D.date, gameId: g.gameId, k: "a", p: pa, cote: cA, version: v,
-                    label: `${g.away} @ ${g.home} · ${g.away} gagne`, sous: `${heure(g.start)} · prolongation incluse` }, "+ Bet")}</div>
+                    label: `${g.away} @ ${g.home} · ${g.away} gagne (prol. incluse)`, sous: `${heure(g.start)} · prolongation incluse` }, "+ Bet")}</div>
         <div class="mcote"><span class="who">${g.home}</span>${c.home ? `<span class="us">US ${c.home.toFixed(2)}</span>` : ""}${badgeEV(ev(ph, cH), null, srcH)}
           <input id="m-${g.gameId}-h" data-k="${cle("m", g.gameId, "h")}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu ${g.home}" value="${lireCote(cle("m", g.gameId, "h")) ?? ""}">
           ${offre({ type: "match", date: D.date, gameId: g.gameId, k: "h", p: ph, cote: cH, version: v,
-                    label: `${g.away} @ ${g.home} · ${g.home} gagne`, sous: `${heure(g.start)} · prolongation incluse` }, "+ Bet")}</div>
+                    label: `${g.away} @ ${g.home} · ${g.home} gagne (prol. incluse)`, sous: `${heure(g.start)} · prolongation incluse` }, "+ Bet")}</div>
         ${ligneTot}
       </div>
     </div>`;
@@ -732,6 +754,18 @@ function labo(){
 }
 
 
+// Victoire en 60 min (pari « 3 issues », prolongation exclue) : mêmes deux Poisson
+// que le modèle, sans donner l'égalité à personne. Exact pour toutes les versions.
+function regl(lamH, lamA){
+  const pmf = (l) => { const o = [Math.exp(-l)]; for (let n = 1; n <= 15; n++) o.push(o[n - 1] * l / n); return o; };
+  const h = pmf(lamH), a = pmf(lamA);
+  let wh = 0, eg = 0;
+  for (let i = 0; i <= 15; i++) for (let j = 0; j <= 15; j++){
+    if (i > j) wh += h[i] * a[j]; else if (i === j) eg += h[i] * a[j];
+  }
+  return { h: wh, x: eg, a: 1 - wh - eg };
+}
+
 // ---- Mes bets ------------------------------------------------------------------
 // Gardés dans le navigateur de CET appareil (localStorage). Un bet réglé (match
 // fini) fige son résultat : il n'a plus besoin des archives du serveur.
@@ -780,7 +814,15 @@ function statutBet(b){
     else r = { etat: fini ? "perdu" : "cours", texte: `${val} ${val > 1 ? plusieurs : un} · ${quand}` };
   } else {
     const tot = L.hs + L.as, score = `${L.as} – ${L.hs} · ${quand}`;
-    if (b.k === "h" || b.k === "a"){
+    if (["h3", "a3", "x3"].includes(b.k)){
+      // Égalité après 60 min = la partie va en prolongation (OT) ou en tirs de barrage (SO)
+      const prol = L.periodType === "OT" || L.periodType === "SO";
+      let etat;
+      if (b.k === "x3") etat = prol ? "gagne" : fini ? "perdu" : "cours";
+      else if (prol) etat = "perdu";
+      else etat = fini ? ((b.k === "h3" ? L.hs > L.as : L.as > L.hs) ? "gagne" : "perdu") : "cours";
+      r = { etat, texte: score + (prol ? " · égal après 60 min" : "") };
+    } else if (b.k === "h" || b.k === "a"){
       const gagne = b.k === "h" ? L.hs > L.as : L.as > L.hs;
       r = { etat: fini ? (gagne ? "gagne" : "perdu") : "cours", texte: score };
     } else {
@@ -826,7 +868,10 @@ function bets(){
   // Par marché (réglés seulement)
   const parM = {};
   for (const x of regles){
-    const nom = x.b.type === "joueur" ? NOM_MARCHE[x.b.marche] : (["h", "a"].includes(x.b.k) ? "Victoire" : `Total ${x.b.k[0] === "o" ? "plus" : "moins"} ${x.b.k.slice(1, 2)}.5`);
+    const nom = x.b.type === "joueur" ? NOM_MARCHE[x.b.marche]
+      : ["h", "a"].includes(x.b.k) ? "Victoire (prol. incl.)"
+      : ["h3", "a3", "x3"].includes(x.b.k) ? "Victoire 60 min"
+      : `Total ${x.b.k[0] === "o" ? "plus" : "moins"} ${x.b.k.slice(1, 2)}.5`;
     const m = parM[nom] ||= { n: 0, g: 0, p: 0, profit: 0, mise: 0 };
     m.n++; m.g += x.st.etat === "gagne"; m.p += x.b.p; m.profit += gain(x.b, x.st); m.mise += x.b.mise;
   }
