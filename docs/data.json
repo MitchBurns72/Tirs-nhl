@@ -1,5 +1,5 @@
 {
- "genere": "2026-10-18T02:05+00:00",
+ "genere": "2026-10-18T02:13+00:00",
  "date": "2026-10-17",
  "versions": [
   {
@@ -114,7 +114,7 @@
    "away": "EDM",
    "home": "UTA",
    "start": "2026-10-18T02:00:00Z",
-   "state": "PRE",
+   "state": "LIVE",
    "season": 20262027
   },
   {
@@ -122,7 +122,7 @@
    "away": "PIT",
    "home": "VGK",
    "start": "2026-10-18T02:00:00Z",
-   "state": "PRE",
+   "state": "LIVE",
    "season": 20262027
   }
  ],
@@ -16996,6 +16996,6 @@
   "restants": null,
   "utilises": null,
   "erreur": null,
-  "quand": "2026-10-18T02:05+00:00"
+  "quand": "2026-10-18T02:13+00:00"
  }
 }
