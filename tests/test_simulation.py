@@ -219,6 +219,23 @@ def main():
         if d != jours[-1]:
             jouer(d)
 
+    # --- Ce soir : 2 matchs déjà commencés avant le premier calcul -> rétro ---
+    dernier = jours[-1]
+    (run.DIR_PRED / f"{dernier}.json").unlink()
+    for gid, _, _ in calendrier[dernier][:2]:
+        etat[gid] = "LIVE"
+    api._cache.clear()
+    sys.argv = ["run.py", dernier]
+    run.main()
+    f = json.loads((run.DIR_PRED / f"{dernier}.json").read_text())
+    retro_ids = {e["gameId"] for e in f["entries"] if e.get("retro")}
+    assert retro_ids == {g for g, _, _ in calendrier[dernier][:2]}, retro_ids
+    assert sum(1 for g in f["games"] if g.get("retro")) == 2
+    assert len({e["gameId"] for e in f["entries"]}) == 4, "les matchs ouverts doivent rester"
+    print("rétro de ce soir OK")
+    for gid, _, _ in calendrier[dernier][:2]:
+        etat.pop(gid)
+
     # --- Rétroactif : 3 soirs « manqués » doivent être rejoués et gradés ---
     effaces = jours[4:7]
     for d in effaces:

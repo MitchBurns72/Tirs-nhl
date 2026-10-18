@@ -522,9 +522,26 @@ def main():
     ids_ouverts = {m["id"] for m in ouverts}
     cotes_m, cotes_j = {}, {}
 
-    if ouverts:
-        games, entries, noms = predire(jour, ouverts, ouverts[0]["season"])
-        if AVEC_COTES:
+    # Matchs de ce soir déjà commencés mais jamais prédits (ex. calcul lancé à
+    # 21 h : les matchs de 13 h et 19 h sont déjà partis). On les prédit avec les
+    # données d'AVANT ce soir (tout est filtré < jour), donc pas de triche : même
+    # principe que le rétroactif des soirs passés. Marqués "retro": true.
+    deja_j = {e["gameId"] for e in existant["entries"]}
+    deja_g = {g["gameId"] for g in existant["games"]}
+    commences_sans = [m for m in matchs if m["state"] not in ETATS_AVANT
+                      and (m["id"] not in deja_j or m["id"] not in deja_g)]
+    ids_retro = {m["id"] for m in commences_sans}
+    a_predire = ouverts + commences_sans
+
+    if a_predire:
+        games, entries, noms = predire(jour, a_predire, a_predire[0]["season"])
+        # Rétro : on ajoute seulement ce qui manque (joueurs et/ou match), jamais
+        # on ne remplace une prédiction faite avant la mise au jeu.
+        games_retro = [dict(g, retro=True) for g in games if g["gameId"] in ids_retro and g["gameId"] not in deja_g]
+        entries_retro = [dict(e, retro=True) for e in entries if e["gameId"] in ids_retro and e["gameId"] not in deja_j]
+        games = [g for g in games if g["gameId"] in ids_ouverts]
+        entries = [e for e in entries if e["gameId"] in ids_ouverts]
+        if AVEC_COTES and ouverts:
             cotes_m, cotes_j = cotes.recuperer(ouverts, noms, MARCHES_PROPS)
             for g in games:
                 g["cotes"] = cotes_m.get(g["gameId"])
@@ -539,11 +556,15 @@ def main():
             for e in entries:
                 e["cotes"] = anciennes_j.get((e["gameId"], e["pid"]))
         # Les matchs déjà commencés gardent leurs prédictions gelées.
-        existant["entries"] = [e for e in existant["entries"] if e["gameId"] not in ids_ouverts] + entries
-        existant["games"] = [g for g in existant["games"] if g["gameId"] not in ids_ouverts] + games
+        existant["entries"] = [e for e in existant["entries"] if e["gameId"] not in ids_ouverts] + entries_retro + entries
+        existant["games"] = [g for g in existant["games"] if g["gameId"] not in ids_ouverts] + games_retro + games
         existant["versions"] = list(VERSIONS)
         existant["maj"] = datetime.now(timezone.utc).isoformat(timespec="minutes")
         ecrire_json(f_jour, existant)
+        if games_retro or entries_retro:
+            print(f"  rétro ce soir : {len(games_retro)} matchs, {len(entries_retro)} joueurs")
+            grader()   # ceux qui sont déjà finis sont gradés tout de suite
+            existant = lire_json(f_jour, existant)
 
     historique = [h for h in (lire_json(f, None) for f in sorted(DIR_PRED.glob("*.json"))) if h]
     quota = lire_json(SORTIE, {}).get("cotes_quota")

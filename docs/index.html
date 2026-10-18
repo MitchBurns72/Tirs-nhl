@@ -430,7 +430,7 @@ function liste(){
       <div style="min-width:0">
         <div class="nom">${j.name}</div>
         <div class="meta"><span class="tag">${j.team} ${j.home ? "vs" : "@"} ${j.opp}</span><span>${j.pos === "D" ? "Déf." : "Avant"}</span>
-          ${j.b2b ? '<span class="tag">B2B</span>' : ""}${j.incertain ? '<span class="tag warn">Absent dernier match</span>' : ""}</div>
+          ${j.b2b ? '<span class="tag">B2B</span>' : ""}${j.retro ? '<span class="tag" title="Prédit après la mise au jeu, avec seulement les données d\'avant le match">Rétro</span>' : ""}${j.incertain ? '<span class="tag warn">Absent dernier match</span>' : ""}</div>
       </div>
       <div><div class="pct">${pct(j.pr.p)}<small>%</small></div><div class="lam">${j.pr.lam.toFixed(m === "tirs" ? 1 : 2)} ${att}</div></div>
       <div class="sub">
@@ -480,7 +480,7 @@ function matchs(){
          ${badgeEV(ev(p.p_over[String(c.ligne)], c.over), null, "plus")}${badgeEV(ev(1 - p.p_over[String(c.ligne)], c.under), null, "moins")}</div>`
       : c.ligne ? `<div class="mcote"><span class="who">Total</span><span class="us">US ${c.ligne} · plus ${c.over?.toFixed(2)} / moins ${c.under?.toFixed(2)}</span></div>` : "";
     return `<div class="m ${cls}">
-      <div class="m-top"><span class="lbl">${heure(g.start)}${g.b2b_away ? ` · ${g.away} B2B` : ""}${g.b2b_home ? ` · ${g.home} B2B` : ""}</span>${res}</div>
+      <div class="m-top"><span class="lbl">${heure(g.start)}${g.retro ? " · rétro" : ""}${g.b2b_away ? ` · ${g.away} B2B` : ""}${g.b2b_home ? ` · ${g.home} B2B` : ""}</span>${res}</div>
       <div class="duel">
         <div class="eq"><span class="ab">${g.away}</span><span class="wp ${pa > ph ? "fav" : ""}">${pct(pa)} %</span><span class="xg">${p.lam_away.toFixed(1)} buts att.</span></div>
         <span class="vs">@</span>
