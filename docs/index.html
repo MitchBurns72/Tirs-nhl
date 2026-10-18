@@ -178,9 +178,16 @@ tr.sel td{font-weight:700}
   <section id="p-joueurs" role="tabpanel" aria-labelledby="t-joueurs">
     <div class="ctrls">
       <div class="row" id="f-marche">
-        <button class="chip big" data-v="tirs" aria-pressed="true">Tirs 2+</button>
+        <button class="chip big" data-v="tirs" aria-pressed="true">Tirs</button>
         <button class="chip big" data-v="buts" aria-pressed="false">But</button>
         <button class="chip big" data-v="passes" aria-pressed="false">Passe</button>
+      </div>
+      <div class="row" id="f-seuil">
+        <span class="lbl">Au moins</span>
+        <button class="chip" data-v="tirs1" aria-pressed="false">1 tir</button>
+        <button class="chip" data-v="tirs" aria-pressed="true">2 tirs</button>
+        <button class="chip" data-v="tirs3" aria-pressed="false">3 tirs</button>
+        <button class="chip" data-v="tirs4" aria-pressed="false">4 tirs</button>
       </div>
       <div class="row">
         <select id="f-match" aria-label="Filtrer par match"></select>
@@ -211,7 +218,10 @@ tr.sel td{font-weight:700}
   <section id="p-suivi" role="tabpanel" aria-labelledby="t-suivi" hidden>
     <div class="ctrls">
       <div class="row" id="f-smarche">
+        <button class="chip" data-v="tirs1" aria-pressed="false">Tirs 1+</button>
         <button class="chip" data-v="tirs" aria-pressed="true">Tirs 2+</button>
+        <button class="chip" data-v="tirs3" aria-pressed="false">Tirs 3+</button>
+        <button class="chip" data-v="tirs4" aria-pressed="false">Tirs 4+</button>
         <button class="chip" data-v="buts" aria-pressed="false">But</button>
         <button class="chip" data-v="passes" aria-pressed="false">Passe</button>
         <button class="chip" data-v="victoire" aria-pressed="false">Victoire</button>
@@ -224,7 +234,7 @@ tr.sel td{font-weight:700}
     <div class="guide">
       <h2>Comment lire ça</h2>
       <p><b>Note /100</b> : 50 = pas mieux que dire le même % à tout le monde. 100 = parfait, ça n'arrive pas. Pour les joueurs, 55 à 60 c'est un bon modèle. Pour les victoires, même les meilleurs modèles publics tournent autour de 52-55 : le hockey est très aléatoire. Sous 50, la version est à jeter pour ce marché.</p>
-      <p><b>Note globale</b> : moyenne des notes de tous les marchés, pondérée par le nombre de prédictions.</p>
+      <p><b>Note globale</b> : moyenne des notes de tous les marchés, pondérée par le nombre de prédictions. Les 4 seuils de tirs viennent des mêmes joueurs, ils comptent ensemble comme un seul marché.</p>
       <p><b>Calibration</b> : la barre bleue est le % réel dans chaque tranche, le trait rouge le % prédit moyen. La barre arrête au trait : le modèle dit vrai. Plus courte : trop optimiste.</p>
       <p><b>Bon côté</b> : % de fois où le côté jugé favori (50 % et plus) est arrivé. Pour les matchs, c'est le % de bons gagnants.</p>
       <p><b>Brier</b> : erreur moyenne au carré, plus bas = mieux. Les scratchés ne comptent pas.</p>
@@ -238,11 +248,17 @@ tr.sel td{font-weight:700}
 // Les cotes Mise-o-jeu que tu tapes restent sur ton appareil (localStorage) :
 // la page est publique, tes mises ne regardent que toi.
 let D = null;
-const S = { marche: "tirs", match: "all", pos: "all", tri: "p", ver: null, smarche: "tirs" };
-const SEUIL = { tirs: 2, buts: 1, passes: 1 };
+// famille = TIRS / BUT / PASSE ; seuil = quel marché de tirs (tirs1 = 1+, tirs = 2+, ...)
+const S = { famille: "tirs", seuil: "tirs", match: "all", pos: "all", tri: "p", ver: null, smarche: "tirs" };
+const marcheCourant = () => S.famille === "tirs" ? S.seuil : S.famille;
+const SEUIL = { tirs1: 1, tirs: 2, tirs3: 3, tirs4: 4, buts: 1, passes: 1 };
+const STAT = { tirs1: "tirs", tirs: "tirs", tirs3: "tirs", tirs4: "tirs", buts: "buts", passes: "passes" };
+const estTirs = (m) => STAT[m] === "tirs";
 const L10 = { tirs: "l10_shots", buts: "l10_goals", passes: "l10_assists" };
-const MOT = { tirs: ["tir", "tirs", "tirs att."], buts: ["but", "buts", "buts att."], passes: ["passe", "passes", "passes att."] };
-const NOM_MARCHE = { tirs: "Tirs 2+", buts: "But", passes: "Passe", victoire: "Victoire", total55: "+5.5 buts", total65: "+6.5 buts" };
+const MOT_TIRS = ["tir", "tirs", "tirs att."];
+const MOT = { tirs1: MOT_TIRS, tirs: MOT_TIRS, tirs3: MOT_TIRS, tirs4: MOT_TIRS, buts: ["but", "buts", "buts att."], passes: ["passe", "passes", "passes att."] };
+const NOM_MARCHE = { tirs1: "Tirs 1+", tirs: "Tirs 2+", tirs3: "Tirs 3+", tirs4: "Tirs 4+", buts: "But", passes: "Passe",
+                     victoire: "Victoire", total55: "+5.5 buts", total65: "+6.5 buts", "victoire (domicile)": "Victoire" };
 
 const $ = (s) => document.querySelector(s);
 const pct = (x) => Math.round(x * 100);
@@ -266,8 +282,8 @@ function pred(j, v, m){
 }
 function resultat(j, m){
   if (j.result == null) return null;
-  if (typeof j.result === "number") return m === "tirs" ? j.result : null;
-  return j.result[m] ?? null;
+  if (typeof j.result === "number") return estTirs(m) ? j.result : null;
+  return j.result[STAT[m]] ?? null;
 }
 
 // Valeur espérée par 1 $ misé : p × cote − 1.
@@ -287,7 +303,7 @@ function heure(iso){
 //  1. directement l'API NHL depuis ton navigateur (temps réel), si elle l'accepte
 //  2. sinon docs/live.json, mis à jour par GitHub aux ~5 minutes pendant les matchs
 let LIVE = null, directOK = true, minuterie = null, sourceLive = "";
-const IDX = { tirs: 0, buts: 1, passes: 2 };
+const IDX = { tirs1: 0, tirs: 0, tirs3: 0, tirs4: 0, buts: 1, passes: 2 };
 const FINIS = ["OFF", "FINAL"];
 
 function etatMatch(box){
@@ -379,7 +395,7 @@ function construireFiltres(){
 }
 
 function liste(){
-  const v = S.ver, m = S.marche;
+  const v = S.ver, m = marcheCourant();
   let js = D.joueurs
     .filter(j => S.match === "all" || String(j.gameId) === S.match)
     .filter(j => S.pos === "all" || j.pos === S.pos)
@@ -402,19 +418,20 @@ function liste(){
   });
 
   if (!js.length){
-    $("#liste").innerHTML = `<div class="vide">Pas de joueurs pour ce filtre. ${m !== "tirs" ? "Les buts et passes sont calculés à partir du prochain calcul." : "Les prédictions arrivent vers 10 h les jours de match."}</div>`;
+    $("#liste").innerHTML = `<div class="vide">Pas de joueurs pour ce filtre. ${m === "tirs" ? "Les prédictions arrivent vers 10 h les jours de match." : "Ce marché apparaît au prochain calcul."}</div>`;
     return;
   }
 
   const [un, plusieurs, att] = MOT[m];
   $("#liste").innerHTML = js.map((j, i) => {
-    const serie = j[L10[m]] || [];
+    const serie = j[L10[STAT[m]]] || [];
     const hits = serie.filter(x => x >= SEUIL[m]).length;
-    const echelle = m === "tirs" ? 4 : 8;
+    const echelle = estTirs(m) ? 4 : 8;
     const barres = serie.map(x => `<i class="${x >= SEUIL[m] ? "ok" : ""}" style="height:${Math.min(22, 4 + x * echelle)}px"></i>`).join("");
-    const det = j.pr.detail;
+    // Le détail des tirs est le même pour 1+, 2+, 3+ et 4+ (même courbe)
+    const det = estTirs(m) ? pred(j, v, "tirs")?.detail : j.pr.detail;
     let fx = "";
-    if (det && m === "tirs") fx = `
+    if (det && estTirs(m)) fx = `
         <span>Tirs/60 : <b>${det.rate60.toFixed(1)}</b></span>
         <span>TOI projeté : <b>${det.toi.toFixed(1)} min</b></span>
         <span>Adversaire : <b>×${det.f_opp.toFixed(2)}</b></span>
@@ -440,7 +457,7 @@ function liste(){
         <div class="meta"><span class="tag">${j.team} ${j.home ? "vs" : "@"} ${j.opp}</span><span>${j.pos === "D" ? "Déf." : "Avant"}</span>
           ${j.b2b ? '<span class="tag">B2B</span>' : ""}${j.retro ? '<span class="tag" title="Prédit après la mise au jeu, avec seulement les données d\'avant le match">Rétro</span>' : ""}${j.incertain ? '<span class="tag warn">Absent dernier match</span>' : ""}</div>
       </div>
-      <div><div class="pct">${pct(j.pr.p)}<small>%</small></div><div class="lam">${j.pr.lam.toFixed(m === "tirs" ? 1 : 2)} ${att}</div></div>
+      <div><div class="pct">${pct(j.pr.p)}<small>%</small></div><div class="lam">${j.pr.lam.toFixed(estTirs(m) ? 1 : 2)} ${att}</div></div>
       <div class="sub">
         <span style="display:flex;align-items:flex-end">
           <span class="l10" aria-label="10 derniers matchs">${barres}</span>
@@ -526,7 +543,7 @@ function blocStats(v){
 
 function suivi(){
   const st = D.stats || {};
-  const marches = ["tirs", "buts", "passes", "victoire", "total55", "total65"];
+  const marches = ["tirs1", "tirs", "tirs3", "tirs4", "buts", "passes", "victoire", "total55", "total65"];
   $("#cards").innerHTML = D.versions.slice().reverse().map(({ id, desc }) => {
     const g = st.global?.[id];
     const s = blocStats(id);
@@ -614,7 +631,8 @@ function chips(sel, cleS, apres){
 function tout(){ liste(); matchs(); suivi(); labo(); }
 
 function brancher(){
-  chips("#f-marche", "marche", liste);
+  chips("#f-marche", "famille", () => { $("#f-seuil").hidden = S.famille !== "tirs"; liste(); });
+  chips("#f-seuil", "seuil", liste);
   chips("#f-pos", "pos", liste);
   chips("#f-tri", "tri", liste);
   chips(".f-ver", "ver", tout);

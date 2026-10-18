@@ -29,7 +29,10 @@ import math
 
 TRANCHES = [(0.0, 0.1), (0.1, 0.2), (0.2, 0.3), (0.3, 0.4), (0.4, 0.5),
             (0.5, 0.6), (0.6, 0.7), (0.7, 0.8), (0.8, 0.9), (0.9, 1.01)]
-SEUILS = {"tirs": 2, "buts": 1, "passes": 1}
+# Marché -> (stat de la feuille de match, seuil)
+MARCHES_J = {"tirs1": ("tirs", 1), "tirs": ("tirs", 2), "tirs3": ("tirs", 3), "tirs4": ("tirs", 4),
+             "buts": ("buts", 1), "passes": ("passes", 1)}
+SEUILS = {m: s for m, (_, s) in MARCHES_J.items()}   # compat
 MARCHES_MATCH = {
     "victoire": lambda p: p["p_home"],
     "total55": lambda p: p["p_over"]["5.5"],
@@ -50,15 +53,16 @@ def p_joueur(e, v, m):
 
 
 def r_joueur(e, m):
+    stat = MARCHES_J[m][0]
     r = e.get("result")
     if isinstance(r, dict):
-        return r.get(m)
-    return r if m == "tirs" else None   # ancien format : un nombre = tirs
+        return r.get(stat)
+    return r if stat == "tirs" else None   # ancien format : un nombre = tirs
 
 
 def resumer(fichiers, versions):
     out = {"joueurs": {}, "matchs": {}, "global": {}}
-    for m, seuil in SEUILS.items():
+    for m, (_, seuil) in MARCHES_J.items():
         out["joueurs"][m] = {}
         for v in versions:
             lignes = []
@@ -96,7 +100,14 @@ def resumer(fichiers, versions):
     out["soirs_direct"] = sum(1 for f in fichiers if not f.get("retro"))
 
     for v in versions:
-        blocs = [out["joueurs"][m][v] for m in SEUILS] + [out["matchs"][m][v] for m in MARCHES_MATCH]
+        # Les 4 seuils de tirs viennent des MÊMES joueurs : on les fusionne en un seul
+        # bloc (note moyenne, poids = n du 2+). Sinon les tirs pèseraient 4 fois plus
+        # que les buts dans la note globale.
+        tirs = [out["joueurs"][m][v] for m in ("tirs1", "tirs", "tirs3", "tirs4") if out["joueurs"][m][v]["n"]]
+        blocs = [out["joueurs"][m][v] for m in ("buts", "passes")] + [out["matchs"][m][v] for m in MARCHES_MATCH]
+        if tirs:
+            blocs.append({"n": out["joueurs"]["tirs"][v]["n"] or tirs[0]["n"],
+                          "note": sum(b["note"] for b in tirs) / len(tirs)})
         n = sum(b["n"] for b in blocs if b["n"])
         out["global"][v] = {"n": n, "note": sum(b["note"] * b["n"] for b in blocs if b["n"]) / n if n else None}
     return out

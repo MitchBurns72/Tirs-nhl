@@ -51,6 +51,56 @@ def p2plus_negbin(lam, k):
     return 1.0 - p0 - p1
 
 
+# Seuils de tirs offerts : marché -> nombre de tirs minimum.
+# "tirs" (2+) garde son nom d'origine pour ne pas casser l'historique.
+SEUILS_TIRS = {"tirs1": 1, "tirs": 2, "tirs3": 3, "tirs4": 4}
+
+
+def p_seuil(lam, seuil, k=None):
+    """P(X >= seuil). k=None : Poisson ; sinon binomiale négative (dispersion k).
+
+    On additionne P(0)..P(seuil-1) par récurrence (pas de factorielles géantes) :
+      Poisson : P(n) = P(n-1) × λ / n
+      Bin. nég. : P(0) = p^k avec p = k/(k+λ) ; P(n) = P(n-1) × (k+n-1)/n × (1-p)
+    """
+    if k is None:
+        pn = math.exp(-lam)
+        cumul = pn
+        for n in range(1, seuil):
+            pn *= lam / n
+            cumul += pn
+    else:
+        p = k / (k + lam)
+        pn = p ** k
+        cumul = pn
+        for n in range(1, seuil):
+            pn *= (k + n - 1) / n * (1 - p)
+            cumul += pn
+    return 1.0 - cumul
+
+
+def ajouter_seuils(pv, k):
+    """Ajoute tirs1/tirs3/tirs4 à la prédiction d'une version, à partir de SES
+    tirs attendus (λ) et de SA distribution.
+
+    POURQUOI c'est honnête même sur de vieilles prédictions : λ a été calculé et
+    sauvé AVANT le match. 1+, 3+ et 4+ sont juste d'autres lectures de la même
+    courbe, comme lire 25 % ou 75 % sur la même jauge. Rien d'après-match n'entre.
+    Retourne True si quelque chose a été ajouté."""
+    if "tirs" in pv:
+        lam = pv["tirs"]["lam"]
+    elif "lam" in pv and "p" in pv:     # ancien format du 17 octobre : tirs seulement
+        lam = pv["lam"]
+    else:
+        return False
+    ajoute = False
+    for m, seuil in SEUILS_TIRS.items():
+        if m != "tirs" and m not in pv:
+            pv[m] = {"p": round(p_seuil(lam, seuil, k), 4), "lam": round(lam, 4)}
+            ajoute = True
+    return ajoute
+
+
 def pmf_poisson(lam, n_max=15):
     """Liste P(0..n_max). 15 buts couvre 99.9999 % de tout match de hockey."""
     out = [math.exp(-lam)]
@@ -468,8 +518,10 @@ def modele_joueur_param(f, P):
 
     f_eq = f["eq"] / lg[6] if f["eq"] else 1.0
     lam_p = max(_taux(f, P, 2, P["pa_pseudo_min"]) * toi * f_eq * g("scale_passes"), 0.01)
+    out_tirs = {m: {"p": p_seuil(lam_t, seuil, P["nb_k"]), "lam": lam_t} for m, seuil in SEUILS_TIRS.items()}
+    out_tirs["tirs"]["p"] = p2plus_negbin(lam_t, P["nb_k"])   # même formule exacte que v1
     return {
-        "tirs": {"p": p2plus_negbin(lam_t, P["nb_k"]), "lam": lam_t},
+        **out_tirs,
         "buts": {"p": p1plus_poisson(lam_b), "lam": lam_b},
         "passes": {"p": p1plus_poisson(lam_p), "lam": lam_p},
     }
@@ -520,13 +572,16 @@ def modele_match_param(f, P):
 # =================================================================================
 # Ordre = ordre d'affichage. La DERNIÈRE est la version "principale" sur la page.
 VERSIONS = {
-    "v0": {"joueur": v0_joueur, "match": v0_match,
+    "v0": {"joueur": v0_joueur, "match": v0_match, "nb_k": None,
            "desc": "Baseline : moyennes de la saison, aucun ajustement"},
-    "v1": {"joueur": v1_joueur, "match": v1_match,
+    "v1": {"joueur": v1_joueur, "match": v1_match, "nb_k": V1["nb_k"],
            "desc": "Forme L10, temps de glace, adversaire, gardiens, domicile, back-to-back, duels directs"},
 }
 VERSION_PRINCIPALE = list(VERSIONS)[-1]
-MARCHES = ["tirs", "buts", "passes"]
+MARCHES = ["tirs1", "tirs", "tirs3", "tirs4", "buts", "passes"]
+# Distribution des tirs de chaque version ayant déjà prédit (None = Poisson).
+# Inclut les versions auto retirées : leur historique doit pouvoir être complété.
+DISPERSION = {"v0": None, "v1": V1["nb_k"]}
 
 
 def charger_auto(chemin):
@@ -541,10 +596,11 @@ def charger_auto(chemin):
     except (FileNotFoundError, ValueError):
         return VERSION_PRINCIPALE
     for v in etat.get("versions", []):
+        DISPERSION[v["id"]] = v["params"].get("nb_k", V1["nb_k"])
         if v.get("retiree"):
             continue
         P = {**V1, **v["params"]}
         P["vs_cap"], P["m_h2h_cap"] = tuple(P["vs_cap"]), tuple(P["m_h2h_cap"])
-        VERSIONS[v["id"]] = {"params": P, "auto": True, "desc": v["desc"], "cree": v["cree"]}
+        VERSIONS[v["id"]] = {"params": P, "auto": True, "desc": v["desc"], "cree": v["cree"], "nb_k": P["nb_k"]}
     p = etat.get("principale", VERSION_PRINCIPALE)
     return p if p in VERSIONS else VERSION_PRINCIPALE

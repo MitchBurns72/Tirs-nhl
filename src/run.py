@@ -23,8 +23,8 @@ from zoneinfo import ZoneInfo
 import auto
 import cotes
 import nhl_api as api
-from modeles import (VERSIONS, charger_auto, features_joueur, features_match,
-                     modele_joueur_param, modele_match_param)
+from modeles import (DISPERSION, VERSIONS, ajouter_seuils, charger_auto, features_joueur,
+                     features_match, modele_joueur_param, modele_match_param)
 from score import resumer
 
 RACINE = Path(__file__).resolve().parent.parent
@@ -453,6 +453,8 @@ def predire(jour, matchs_ouverts, saison):
         preds = {v: (modele_joueur_param(f, spec["params"]) if spec.get("auto")
                      else spec["joueur"](dict(ctx), jeu_par_equipe[v].get(ctx["team"])))
                  for v, spec in actives.items()}
+        for v, spec in actives.items():
+            ajouter_seuils(preds[v], spec.get("nb_k"))   # tirs 1+, 3+, 4+
         l10 = ctx["cur"][-10:]
         entries.append({
             "pid": ctx["pid"], "name": ctx["name"], "team": ctx["team"],
@@ -557,6 +559,23 @@ def completer_features(saison):
         print(f"  features ajoutées : {data['date']}")
 
 
+def completer_seuils():
+    """Ajoute tirs 1+/3+/4+ aux prédictions qui ne les ont pas (faites avant
+    l'ajout de ces marchés). Calculé à partir des tirs attendus sauvés avant le
+    match : aucune donnée d'après-match. Rapide, aucun appel réseau."""
+    for fic in sorted(DIR_PRED.glob("*.json")):
+        data = lire_json(fic, None)
+        if not data:
+            continue
+        modifie = False
+        for e in data["entries"]:
+            for v, pv in e.get("preds", {}).items():
+                if v in DISPERSION and ajouter_seuils(pv, DISPERSION[v]):
+                    modifie = True
+        if modifie:
+            ecrire_json(fic, data)
+
+
 def sans_features(liste):
     """La page n'a pas besoin des features (lourdes) : on les retire de data.json."""
     return [{k: v for k, v in x.items() if k != "f"} for x in liste]
@@ -566,6 +585,7 @@ def main():
     jour = sys.argv[1] if len(sys.argv) > 1 else jour_nhl()
     DIR_PRED.mkdir(parents=True, exist_ok=True)
     principale = charger_auto(ETAT_AUTO)   # ajoute les versions auto au registre
+    completer_seuils()
 
     grader()
 

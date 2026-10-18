@@ -62,7 +62,7 @@ ESPACE = {
               ("scale_match", 0.85, 1.15, "add"), ("m_p_ot_home", 0.45, 0.60, "add")],
 }
 SEUILS = {"tirs": 2, "buts": 1, "passes": 1}
-NOMS = {"tirs": "Tirs 2+", "buts": "But", "passes": "Passe", "match": "Matchs"}
+NOMS = {"tirs": "Tirs (1+ à 4+)", "buts": "But", "passes": "Passe", "match": "Matchs"}
 
 
 # =================================================================================
@@ -90,14 +90,22 @@ def donnees(historique):
     return J, M
 
 
+# Pour les tirs, le tuner optimise la moyenne des 4 seuils : c'est la seule façon
+# d'ajuster correctement la dispersion (nb_k). Avec juste le 2+, une courbe trop
+# étroite ou trop large peut donner le même 2+ et se tromper sur 1+ et 4+.
+SEUILS_TUNER = {"tirs": {"tirs1": 1, "tirs": 2, "tirs3": 3, "tirs4": 4}, "buts": {"buts": 1}, "passes": {"passes": 1}}
+
+
 def _brier_joueurs(rows, P, marche):
+    stat = marche
     s = n = 0
     for _, f, r, _ in rows:
-        if marche not in r:
+        if stat not in r:
             continue
-        p = modele_joueur_param(f, P)[marche]["p"]
-        y = 1 if r[marche] >= SEUILS[marche] else 0
-        s += (p - y) ** 2; n += 1
+        sortie = modele_joueur_param(f, P)
+        for m, seuil in SEUILS_TUNER[marche].items():
+            y = 1 if r[stat] >= seuil else 0
+            s += (sortie[m]["p"] - y) ** 2; n += 1
     return s / n if n else None
 
 

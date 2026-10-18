@@ -191,8 +191,9 @@ def faux_odds(path, params):
         return evs
     gid = int(path.split("/")[2][2:])
     _, a, h = next(x for x in calendrier[d] if x[0] == gid)
-    outs = [{"name": "Over", "description": f"Joueur {str(p)[-3:]}", "point": 1.5, "price": 1.45}
-            for p, j in joueurs.items() if j["team"] in (a, h)]
+    outs = [{"name": "Over", "description": f"Joueur {str(p)[-3:]}", "point": pt, "price": prix}
+            for p, j in joueurs.items() if j["team"] in (a, h)
+            for pt, prix in ((0.5, 1.08), (1.5, 1.45), (2.5, 2.30), (3.5, 4.10))]
     return {"bookmakers": [{"key": "bk", "markets": [{"key": "player_shots_on_goal_alternate", "outcomes": outs}]}]}
 
 
@@ -297,6 +298,27 @@ def main():
         vieux = json.loads((run.DIR_PRED / f"{jours[2]}.json").read_text())
         assert not any(vid in e["preds"] for e in vieux["entries"]), "version auto sur un soir d'entraînement"
         print(f"version auto {vid} active, pas de triche rétroactive OK")
+
+    # --- Seuils de tirs 1+ à 4+ ---
+    st = json.loads(run.SORTIE.read_text())
+    for e in st["joueurs"]:
+        for v, pv in e["preds"].items():
+            ps = [pv[m]["p"] for m in ("tirs1", "tirs", "tirs3", "tirs4")]
+            assert all(a >= b for a, b in zip(ps, ps[1:])), f"seuils pas décroissants {ps}"
+    assert st["stats"]["joueurs"]["tirs4"]["v1"]["n"] > 300, "tirs 4+ pas gradés"
+    assert any(e.get("cotes", {}) and "tirs3" in e["cotes"] for e in st["joueurs"]), "cotes 3+ pas lues"
+    print("tirs 1+/3+/4+ :", {m: round(st["stats"]["joueurs"][m]["v1"]["note"], 1) for m in ("tirs1", "tirs", "tirs3", "tirs4")})
+    # Une vieille prédiction (format du 17 octobre) reçoit ses seuils à partir de son λ
+    vieux = {"date": "2026-10-01", "entries": [{"pid": 1, "gameId": 1, "preds": {"v0": {"p": 0.6, "lam": 2.0},
+             "v1": {"p": 0.7, "lam": 2.5, "detail": {}}}, "result": 3, "played": True}], "games": []}
+    (run.DIR_PRED / "2026-10-01.json").write_text(json.dumps(vieux))
+    run.completer_seuils()
+    pv = json.loads((run.DIR_PRED / "2026-10-01.json").read_text())["entries"][0]["preds"]
+    from modeles import p_seuil
+    assert abs(pv["v0"]["tirs3"]["p"] - p_seuil(2.0, 3)) < 1e-4 and abs(pv["v1"]["tirs4"]["p"] - p_seuil(2.5, 4, 15.0)) < 1e-4
+    assert abs(p_seuil(2.0, 2) - (1 - 3 * 2.718281828 ** -2)) < 1e-6   # Poisson : 1 - e^-λ(1+λ)
+    (run.DIR_PRED / "2026-10-01.json").unlink()
+    print("complétion des vieilles prédictions OK")
 
     dest = ICI / "data_exemple.json"
     shutil.copy(run.SORTIE, dest)

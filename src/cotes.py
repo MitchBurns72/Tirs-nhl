@@ -30,10 +30,13 @@ BASE = "https://api.the-odds-api.com/v4/sports/icehockey_nhl"
 REGION = "us"
 
 # Marché Odds API -> (notre marché, ligne "Over" qui veut dire notre seuil)
-# 2+ tirs = Over 1.5 ; 1+ but = Yes / Over 0.5 ; 1+ passe = Over 0.5
+# 1+ but = Yes / Over 0.5 ; 1+ passe = Over 0.5
+# Tirs : ligne None -> on lit TOUTES les lignes alternatives du même appel
+# (0.5, 1.5, 2.5, 3.5 = 1+, 2+, 3+, 4+). Zéro crédit de plus.
+TIRS_PAR_LIGNE = {0.5: "tirs1", 1.5: "tirs", 2.5: "tirs3", 3.5: "tirs4"}
 PROPS = {
-    "player_shots_on_goal_alternate": ("tirs", 1.5),
-    "player_shots_on_goal": ("tirs", 1.5),
+    "player_shots_on_goal_alternate": ("tirs", None),
+    "player_shots_on_goal": ("tirs", None),
     "player_goal_scorer_anytime": ("buts", None),
     "player_assists": ("passes", 0.5),
 }
@@ -127,9 +130,14 @@ def recuperer(matchs, noms_equipes, marches_props):
                             oui = o["name"] in ("Over", "Yes") or marche == "buts" and o["name"] not in ("No", "Under")
                             if not oui:
                                 continue
-                            if ligne is not None and o.get("point") != ligne:
+                            cible = marche
+                            if marche == "tirs":
+                                cible = TIRS_PAR_LIGNE.get(o.get("point"))
+                                if not cible:
+                                    continue
+                            elif ligne is not None and o.get("point") != ligne:
                                 continue
-                            prix.setdefault((gid, norm(nom)), {}).setdefault(marche, []).append(o["price"])
+                            prix.setdefault((gid, norm(nom)), {}).setdefault(cible, []).append(o["price"])
                 for k, d in prix.items():
                     cotes_j[k] = {mk: {"prix": _mediane(v), "n": len(v)} for mk, v in d.items()}
     except Exception as ex:  # noqa: BLE001
