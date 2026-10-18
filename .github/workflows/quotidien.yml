@@ -21,9 +21,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      # Installation depuis un cell : déballe le zip une seule fois.
-      # .github est exclu : le jeton de l'Action n'a pas le droit de toucher aux workflows.
-      - name: Déballer le zip (première installation seulement)
+      # Déballe le zip uploadé depuis le cell (.github exclu : protégé par GitHub)
+      - name: Déballer le zip
         run: |
           if [ -f tirs-nhl.zip ]; then
             unzip -oq tirs-nhl.zip -x 'tirs-nhl/.github/*' -d /tmp/x
@@ -35,6 +34,12 @@ jobs:
           python-version: "3.12"
       - name: Grader, prédire, publier
         run: python src/run.py
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          # Cotes seulement à 17 h 45 et aux lancements manuels (500 crédits/mois gratuit)
+          ODDS: ${{ github.event_name == 'workflow_dispatch' || github.event.schedule == '47 21 * * *' }}
+          # Plan payant : player_shots_on_goal_alternate,player_goal_scorer_anytime,player_assists
+          ODDS_PROPS: player_shots_on_goal_alternate
       - name: Committer les résultats
         run: |
           git config user.name "patente-bot"
