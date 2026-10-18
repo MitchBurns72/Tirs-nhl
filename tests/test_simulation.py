@@ -320,6 +320,15 @@ def main():
     (run.DIR_PRED / "2026-10-01.json").unlink()
     print("complétion des vieilles prédictions OK")
 
+    # --- Archives de résultats pour les bets ---
+    arch = run.SORTIE.parent / "live" / f"{jours[-2]}.json"
+    a = json.loads(arch.read_text())
+    assert a["complet"] and len(a["games"]) == 4, "archive du soir précédent incomplète"
+    un = next(iter(a["games"].values()))
+    assert un["joueurs"] and len(next(iter(un["joueurs"].values()))) == 3
+    print("archives des soirs OK")
+    shutil.copy(arch, ICI / "archive_exemple.json")
+
     dest = ICI / "data_exemple.json"
     shutil.copy(run.SORTIE, dest)
     print("OK ->", dest)

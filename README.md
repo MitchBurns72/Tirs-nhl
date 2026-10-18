@@ -6,6 +6,17 @@ Chaque soir de match NHL :
 - **Cotes** : médiane des bookies US en auto (The Odds API) + champ Mise-o-jeu manuel
 - **Suivi** : note /100, calibration et bon côté par marché, pour chaque version de l'algo
 
+## Mes bets
+
+Onglet **Bets** : bouton « + Bet » sur chaque joueur, victoire et total (plus/moins 5.5 et 6.5).
+Chaque bet est **Test** (sans argent) ou **Vrai bet**, avec stats séparées : profit, rendement,
+réussite réelle vs réussite prévue par l'algo, détail par marché.
+Statut live : jaune = en cours, vert = gagné (même avant la fin si c'est acquis), rouge = perdu,
+gris = pas commencé ou annulé (joueur qui n'a pas joué = remboursé).
+Les bets sont gardés dans le navigateur de l'appareil ; « Copier mes bets » / « Importer » pour
+passer du cell à la tablette. Les soirs passés sont réglés avec `docs/live/AAAA-MM-JJ.json`
+(écrit par le calcul, gardé 21 jours) ; un bet réglé garde son résultat sur l'appareil.
+
 ## Labo (auto-upgrade)
 
 `src/auto.py`, à chaque calcul :

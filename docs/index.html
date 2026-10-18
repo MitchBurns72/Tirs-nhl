@@ -156,10 +156,38 @@ tr.sel td{font-weight:700}
 .etat{font-size:11px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--chip);color:var(--muted)}
 .etat.princ{background:var(--good-bg);color:var(--good)} .etat.essai{background:var(--warn-bg);color:var(--warn)}
 /* Rangée de total : libellé | % | badges (passent à la ligne entre eux) | champ MOJ toujours à droite */
-.trow{display:grid;grid-template-columns:72px 40px minmax(0,1fr) 64px;gap:6px;align-items:center;font-size:13px}
+.trow{display:grid;grid-template-columns:66px 38px minmax(0,1fr) 60px 30px;gap:6px;align-items:center;font-size:13px}
 .trow .who{font-weight:700}
 .trow .badges{display:flex;flex-wrap:wrap;gap:4px;min-width:0}
-.trow input{width:64px;font:600 15px var(--f-body);padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-align:center}
+.trow input{width:60px;font:600 15px var(--f-body);padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-align:center}
+/* Bets */
+.addbet{border:1px dashed var(--ice);background:transparent;color:var(--ice);border-radius:8px;padding:5px 8px;font:700 12px var(--f-body);cursor:pointer;white-space:nowrap}
+#sheet{position:fixed;inset:0;z-index:50}
+.sheet-bg{position:absolute;inset:0;background:rgba(5,12,18,.55)}
+.sheet-box{position:absolute;left:0;right:0;bottom:0;background:var(--surface);border-top:3px solid var(--goal);border-radius:14px 14px 0 0;
+  padding:18px max(16px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  display:flex;flex-direction:column;gap:12px;max-width:720px;margin:0 auto}
+.sh-info{margin:0;font-size:13px;color:var(--muted)}
+.sh-champs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sh-champs label{display:flex;flex-direction:column;gap:4px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.sh-champs label{min-width:0}
+.sh-champs input{width:100%;min-width:0;font:600 18px var(--f-body);padding:9px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.btn-main{border:0;background:var(--goal);color:#fff;border-radius:999px;padding:9px 18px;font:800 16px/1 var(--f-display);text-transform:uppercase;letter-spacing:.04em;cursor:pointer}
+.bet{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;padding:12px;border-top:1px solid var(--line)}
+.bet:first-child{border-top:0}
+.bet.st-ok{box-shadow:inset 4px 0 var(--good);background:var(--good-bg)}
+.bet.st-cours{box-shadow:inset 4px 0 var(--warn);background:var(--warn-bg)}
+.bet.st-ko{box-shadow:inset 4px 0 var(--bad);background:var(--bad-bg)}
+.bet .t{font-weight:700;min-width:0}
+.bet .g{font:800 20px/1 var(--f-display);text-align:right;white-space:nowrap}
+.bet .m2{grid-column:1 / 3;display:flex;gap:6px 10px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--muted)}
+.tag.reel{background:var(--goal);color:#fff}
+.suppr{margin-left:auto;border:0;background:none;color:var(--muted);font:600 12px var(--f-body);cursor:pointer;text-decoration:underline}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.kpis div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.kpis b{font:800 22px/1 var(--f-display);white-space:nowrap}
+.pos{color:var(--good)} .neg{color:var(--bad)}
+.sep{grid-column:1 / -1;padding:8px 12px;background:var(--chip);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
 [hidden]{display:none!important}
 </style>
 </head>
@@ -178,6 +206,7 @@ tr.sel td{font-weight:700}
     <button role="tab" id="t-joueurs" aria-selected="true" aria-controls="p-joueurs">Joueurs</button>
     <button role="tab" id="t-matchs" aria-selected="false" aria-controls="p-matchs">Matchs</button>
     <button role="tab" id="t-suivi" aria-selected="false" aria-controls="p-suivi">Suivi</button>
+    <button role="tab" id="t-bets" aria-selected="false" aria-controls="p-bets">Bets</button>
   </nav>
 
   <section id="p-joueurs" role="tabpanel" aria-labelledby="t-joueurs">
@@ -220,6 +249,29 @@ tr.sel td{font-weight:700}
     <div class="matchs" id="matchs"></div>
   </section>
 
+  <section id="p-bets" role="tabpanel" aria-labelledby="t-bets" hidden>
+    <div class="ctrls">
+      <div class="row" id="f-bets">
+        <button class="chip" data-v="tous" aria-pressed="true">Tous</button>
+        <button class="chip" data-v="test" aria-pressed="false">Tests</button>
+        <button class="chip" data-v="reel" aria-pressed="false">Vrais bets</button>
+      </div>
+    </div>
+    <div class="card" id="bets-kpi"></div>
+    <div class="liste" id="bets-liste" style="margin-top:12px"></div>
+    <div class="card" id="bets-sync" style="margin-top:12px">
+      <h2>Cell ↔ tablette</h2>
+      <p style="margin:-6px 0 0;font-size:13px;color:var(--muted)">Tes bets sont gardés sur cet appareil seulement. Pour les transférer : « Copier mes bets » ici, puis colle le texte dans « Importer » sur l'autre appareil. Les bets déjà présents ne sont pas doublés.</p>
+      <div class="row">
+        <button class="chip" id="bets-copier">Copier mes bets</button>
+        <button class="chip" id="bets-importer">Importer</button>
+      </div>
+      <textarea id="bets-texte" rows="4" hidden placeholder="Colle ici le texte copié sur l'autre appareil" style="width:100%;font:13px var(--f-body);padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)"></textarea>
+      <div class="row" id="bets-import-ok" hidden><button class="chip" id="bets-importer-go">Importer ce texte</button></div>
+      <p id="bets-msg" style="margin:0;font-size:13px" hidden></p>
+    </div>
+  </section>
+
   <section id="p-suivi" role="tabpanel" aria-labelledby="t-suivi" hidden>
     <div class="ctrls">
       <div class="row" id="f-smarche">
@@ -246,6 +298,27 @@ tr.sel td{font-weight:700}
       <p>Avec moins de 500 prédictions gradées (ou 150 matchs), les écarts entre versions peuvent être de la chance.</p>
     </div>
   </section>
+</div>
+
+<div id="sheet" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-box" role="dialog" aria-modal="true" aria-labelledby="sh-titre">
+    <h2 id="sh-titre"></h2>
+    <p id="sh-info" class="sh-info"></p>
+    <div class="sh-champs">
+      <label>Cote<input id="sh-cote" inputmode="decimal" placeholder="1.85"></label>
+      <label>Mise ($)<input id="sh-mise" inputmode="decimal" placeholder="10"></label>
+    </div>
+    <div class="row" id="sh-type">
+      <button class="chip" data-v="test" aria-pressed="true">Test, sans argent</button>
+      <button class="chip" data-v="reel" aria-pressed="false">Vrai bet</button>
+    </div>
+    <p id="sh-calc" class="sh-info"></p>
+    <div class="row">
+      <button class="btn-main" id="sh-ok">Ajouter le bet</button>
+      <button class="chip" data-close>Annuler</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -331,6 +404,7 @@ async function rafraichirLive(){
     const r = await fetch("live.json?v=" + Date.now());
     if (r.ok) data = await r.json();
   } catch (e) {}
+  if (data?.date) ARCH[data.date] = { ...(ARCH[data.date] || {}), games: { ...(ARCH[data.date]?.games || {}), ...data.games } };
   if (data && data.date !== D.date) data = null;
   sourceLive = data ? "via GitHub" : "";
   let maj = data ? new Date(data.maj) : null;
@@ -362,6 +436,8 @@ async function rafraichirLive(){
     st.textContent = "Live : aucun match commencé pour l'instant.";
   }
   liste(); matchs();
+  await chargerArchives();
+  bets();
 }
 
 function periode(L){
@@ -470,6 +546,9 @@ function liste(){
         </span>
         <span class="cote">${res}${us}${badgeEV(j.e, null, j.src)}
           <input id="c-${j.pid}-${m}" data-k="${cle(j.pid, m)}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu pour ${j.name}" value="${j.manuelle ?? ""}">
+          ${offre({ type: "joueur", date: D.date, gameId: j.gameId, pid: j.pid, name: j.name, team: j.team, opp: j.opp,
+                    home: j.home, marche: m, p: j.pr.p, cote: j.manuelle || j.auto, version: v,
+                    label: `${j.name} · ${NOM_MARCHE[m]}`, sous: `${j.team} ${j.home ? "vs" : "@"} ${j.opp}` }, "+ Bet")}
         </span>
       </div>
       ${fx}
@@ -527,7 +606,9 @@ function matchs(){
           <span class="who">${nom} ${ligne}</span><b>${pct(prob)} %</b>
           <span class="badges">${usOk && auto ? `<span class="us">US ${auto.toFixed(2)}</span>` : ""}${badgeEV(ev(prob, cote(cote_k, auto)), null, src(cote_k))}${etat(cote_k)}</span>
           <input id="m-${g.gameId}-${cote_k}" data-k="${cle("m", g.gameId, cote_k)}" inputmode="decimal" placeholder="MOJ"
-                 aria-label="Cote Mise-o-jeu ${nom.toLowerCase()} de ${ligne} buts" value="${lireCote(cle("m", g.gameId, cote_k)) ?? ""}"></div>`;
+                 aria-label="Cote Mise-o-jeu ${nom.toLowerCase()} de ${ligne} buts" value="${lireCote(cle("m", g.gameId, cote_k)) ?? ""}">
+          ${offre({ type: "match", date: D.date, gameId: g.gameId, k: cote_k, p: prob, cote: cote(cote_k, auto), version: v,
+                    label: `${g.away} @ ${g.home} · ${nom} ${ligne} buts`, sous: heure(g.start) }, "+")}</div>`;
       return rangee("o" + k, "Plus", po, c.over) + rangee("u" + k, "Moins", pu, c.under);
     };
     const ligneTot = `<span class="lbl" style="margin-top:4px">Total de buts${c.ligne != null ? ` · ligne US ${c.ligne}` : ""}</span>
@@ -554,9 +635,13 @@ function matchs(){
       <div class="mcotes">
         ${c.p_home_marche ? `<div class="mcote"><span class="lbl">Marché US sans marge : ${g.away} ${pct(1 - c.p_home_marche)} % · ${g.home} ${pct(c.p_home_marche)} %</span></div>` : ""}
         <div class="mcote"><span class="who">${g.away}</span>${c.away ? `<span class="us">US ${c.away.toFixed(2)}</span>` : ""}${badgeEV(ev(pa, cA), null, srcA)}
-          <input id="m-${g.gameId}-a" data-k="${cle("m", g.gameId, "a")}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu ${g.away}" value="${lireCote(cle("m", g.gameId, "a")) ?? ""}"></div>
+          <input id="m-${g.gameId}-a" data-k="${cle("m", g.gameId, "a")}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu ${g.away}" value="${lireCote(cle("m", g.gameId, "a")) ?? ""}">
+          ${offre({ type: "match", date: D.date, gameId: g.gameId, k: "a", p: pa, cote: cA, version: v,
+                    label: `${g.away} @ ${g.home} · ${g.away} gagne`, sous: `${heure(g.start)} · prolongation incluse` }, "+ Bet")}</div>
         <div class="mcote"><span class="who">${g.home}</span>${c.home ? `<span class="us">US ${c.home.toFixed(2)}</span>` : ""}${badgeEV(ev(ph, cH), null, srcH)}
-          <input id="m-${g.gameId}-h" data-k="${cle("m", g.gameId, "h")}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu ${g.home}" value="${lireCote(cle("m", g.gameId, "h")) ?? ""}"></div>
+          <input id="m-${g.gameId}-h" data-k="${cle("m", g.gameId, "h")}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu ${g.home}" value="${lireCote(cle("m", g.gameId, "h")) ?? ""}">
+          ${offre({ type: "match", date: D.date, gameId: g.gameId, k: "h", p: ph, cote: cH, version: v,
+                    label: `${g.away} @ ${g.home} · ${g.home} gagne`, sous: `${heure(g.start)} · prolongation incluse` }, "+ Bet")}</div>
         ${ligneTot}
       </div>
     </div>`;
@@ -646,6 +731,232 @@ function labo(){
     <div><span class="lbl">Journal</span><ul>${journal}</ul></div>`;
 }
 
+
+// ---- Mes bets ------------------------------------------------------------------
+// Gardés dans le navigateur de CET appareil (localStorage). Un bet réglé (match
+// fini) fige son résultat : il n'a plus besoin des archives du serveur.
+const CLE_BETS = "bets:v1";
+let OFFRES = {}, nOffre = 0, ARCH = {}, offreCourante = null, typeBet = "test", filtreBets = "tous", aSupprimer = null;
+
+function lireBets(){ try { return JSON.parse(store.get(CLE_BETS) || "[]"); } catch (e) { return []; } }
+function ecrireBets(liste){ store.set(CLE_BETS, JSON.stringify(liste)); }
+
+// Enregistre ce qu'il faut pour créer un bet et retourne le bouton qui l'ouvre
+function offre(o, texte){
+  // Identifiant stable : la liste se redessine aux 30 s en live sans empiler les offres
+  const id = [o.type, o.gameId, o.pid ?? o.k, o.marche ?? ""].join("-");
+  OFFRES[id] = o;
+  return `<button class="addbet" data-offre="${id}" aria-label="Ajouter un bet : ${o.label}">${texte}</button>`;
+}
+
+async function chargerArchives(){
+  // Soirs passés qui ont des bets pas encore réglés
+  const dates = [...new Set(lireBets().filter(b => !b.final && b.date !== D.date).map(b => b.date))];
+  await Promise.all(dates.filter(d => !ARCH[d]?.complet).map(async d => {
+    try {
+      const r = await fetch(`live/${d}.json?v=${Date.now()}`);
+      if (r.ok) ARCH[d] = await r.json();
+    } catch (e) {}
+  }));
+}
+
+function soir(date){
+  return { ...(ARCH[date]?.games || {}), ...(date === D.date ? (LIVE?.games || {}) : {}) };
+}
+
+// Statut d'un bet : etat = avenir | cours | gagne | perdu | annule
+function statutBet(b){
+  if (b.final) return b.final;
+  const L = soir(b.date)[b.gameId];
+  if (!L) return { etat: "avenir", texte: b.date < D.date ? "En attente du résultat" : "Pas commencé" };
+  const fini = FINIS.includes(L.state);
+  const quand = fini ? "final" : periode(L);
+  let r;
+  if (b.type === "joueur"){
+    const val = L.joueurs?.[String(b.pid)]?.[IDX[b.marche]];
+    const [un, plusieurs] = MOT[b.marche];
+    if (val == null) r = fini ? { etat: "annule", texte: "N'a pas joué · remboursé" } : { etat: "cours", texte: `Pas encore dans l'alignement · ${quand}` };
+    else if (val >= SEUIL[b.marche]) r = { etat: "gagne", texte: `${val} ${val > 1 ? plusieurs : un} · ${quand}` };
+    else r = { etat: fini ? "perdu" : "cours", texte: `${val} ${val > 1 ? plusieurs : un} · ${quand}` };
+  } else {
+    const tot = L.hs + L.as, score = `${L.as} – ${L.hs} · ${quand}`;
+    if (b.k === "h" || b.k === "a"){
+      const gagne = b.k === "h" ? L.hs > L.as : L.as > L.hs;
+      r = { etat: fini ? (gagne ? "gagne" : "perdu") : "cours", texte: score };
+    } else {
+      const ligne = b.k.slice(1) === "55" ? 5.5 : 6.5, depasse = tot > ligne, plus = b.k[0] === "o";
+      // Un plus est acquis dès que la ligne est dépassée ; un moins est perdu au même moment
+      const etat = plus ? (depasse ? "gagne" : fini ? "perdu" : "cours") : (depasse ? "perdu" : fini ? "gagne" : "cours");
+      r = { etat, texte: `${tot} buts · ${score}` };
+    }
+  }
+  if (fini) r.fige = true;
+  return r;
+}
+
+function gain(b, st){
+  if (st.etat === "gagne") return b.mise * (b.cote - 1);
+  if (st.etat === "perdu") return -b.mise;
+  return 0;
+}
+const argent = (x) => `${x >= 0 ? "+" : "−"}${Math.abs(x).toFixed(2)} $`;
+
+function bets(){
+  let liste = lireBets();
+  // Figer les bets dont le match est fini
+  let change = false;
+  for (const b of liste){
+    if (!b.final){
+      const st = statutBet(b);
+      if (st.fige){ b.final = { etat: st.etat, texte: st.texte }; change = true; }
+    }
+  }
+  if (change) ecrireBets(liste);
+
+  const vus = liste.filter(b => filtreBets === "tous" || (filtreBets === "reel") === !!b.reel);
+  const avecSt = vus.map(b => ({ b, st: statutBet(b) }));
+  const regles = avecSt.filter(x => ["gagne", "perdu"].includes(x.st.etat) && x.b.final);
+  const g = regles.filter(x => x.st.etat === "gagne").length;
+  const misees = regles.reduce((t, x) => t + x.b.mise, 0);
+  const profit = regles.reduce((t, x) => t + gain(x.b, x.st), 0);
+  const attendu = regles.reduce((t, x) => t + x.b.p, 0);
+  const ouverts = avecSt.filter(x => !x.b.final);
+  const enJeu = ouverts.reduce((t, x) => t + x.b.mise, 0);
+
+  // Par marché (réglés seulement)
+  const parM = {};
+  for (const x of regles){
+    const nom = x.b.type === "joueur" ? NOM_MARCHE[x.b.marche] : (["h", "a"].includes(x.b.k) ? "Victoire" : `Total ${x.b.k[0] === "o" ? "plus" : "moins"} ${x.b.k.slice(1, 2)}.5`);
+    const m = parM[nom] ||= { n: 0, g: 0, p: 0, profit: 0, mise: 0 };
+    m.n++; m.g += x.st.etat === "gagne"; m.p += x.b.p; m.profit += gain(x.b, x.st); m.mise += x.b.mise;
+  }
+  const lignesM = Object.entries(parM).sort((a, b) => b[1].n - a[1].n).map(([nom, m]) =>
+    `<tr><td>${nom}</td><td>${m.n}</td><td>${pct(m.g / m.n)} %</td><td>${pct(m.p / m.n)} %</td><td class="${m.profit >= 0 ? "pos" : "neg"}">${argent(m.profit)}</td></tr>`).join("");
+
+  $("#bets-kpi").innerHTML = !vus.length
+    ? `<h2>Mes bets</h2><p class="sh-info">Aucun bet ${filtreBets === "reel" ? "réel" : filtreBets === "test" ? "test" : ""} pour l'instant. Ajoute-en avec les boutons « + Bet » dans Joueurs et Matchs. Les tests servent à essayer l'algo sans argent : ils ont leurs propres stats.</p>`
+    : `<h2>${filtreBets === "reel" ? "Vrais bets" : filtreBets === "test" ? "Bets tests" : "Tous mes bets"}</h2>
+      <div class="kpis">
+        <div><span class="lbl">Profit</span><b class="${profit >= 0 ? "pos" : "neg"}">${argent(profit)}</b></div>
+        <div><span class="lbl">Rendement</span><b class="${profit >= 0 ? "pos" : "neg"}">${misees ? (profit / misees * 100).toFixed(1) + " %" : "–"}</b></div>
+        <div><span class="lbl">Réussite</span><b>${regles.length ? pct(g / regles.length) + " %" : "–"}</b></div>
+      </div>
+      <div class="mini">
+        <span>Réglés : <b>${g}-${regles.length - g}</b></span>
+        <span>Misé : <b>${misees.toFixed(2)} $</b></span>
+        <span>L'algo prévoyait : <b>${regles.length ? pct(attendu / regles.length) + " %" : "–"}</b> de réussite</span>
+        <span>En cours : <b>${ouverts.length}</b> (${enJeu.toFixed(2)} $)</span>
+      </div>
+      ${lignesM ? `<div class="tbl"><table><thead><tr><th>Marché</th><th>Bets</th><th>Réussite</th><th>Prévu</th><th>Profit</th></tr></thead><tbody>${lignesM}</tbody></table></div>` : ""}`;
+
+  const cls = { gagne: "st-ok", perdu: "st-ko", cours: "st-cours", avenir: "", annule: "" };
+  const lv = { gagne: "ok", perdu: "ko", cours: "cours", avenir: "", annule: "" };
+  const mot = { gagne: "Gagné", perdu: "Perdu", cours: "En cours", avenir: "À venir", annule: "Annulé" };
+  const rang = (x) => ({ cours: 0, avenir: 1 }[x.st.etat] ?? 2);
+  const tri = avecSt.slice().sort((a, b) => (!!a.b.final - !!b.b.final) || rang(a) - rang(b) || b.b.cree.localeCompare(a.b.cree));
+  let html = "", section = null;
+  for (const { b, st } of tri){
+    const sec = b.final ? "Réglés" : "En cours et à venir";
+    if (sec !== section){ html += `<div class="sep">${sec}</div>`; section = sec; }
+    const potentiel = b.mise * (b.cote - 1);
+    // Gagné ou perdu est déjà acquis en live (plus dépassé, moins dépassé) : on montre le vrai montant
+    const montant = b.final || ["gagne", "perdu"].includes(st.etat) ? argent(gain(b, st)) : `+${potentiel.toFixed(2)} $`;
+    html += `<div class="bet ${cls[st.etat]}">
+      <span class="t">${b.label}</span>
+      <span class="g ${st.etat === "perdu" ? "neg" : st.etat === "gagne" ? "pos" : ""}">${montant}</span>
+      <div class="m2">
+        <span class="tag ${b.reel ? "reel" : ""}">${b.reel ? "RÉEL" : "TEST"}</span>
+        <span>${b.date} · ${b.sous}</span>
+        <span>Cote ${b.cote.toFixed(2)} · mise ${b.mise.toFixed(2)} $ · algo ${pct(b.p)} %</span>
+        <span class="lv ${lv[st.etat]}">${mot[st.etat]} · ${st.texte}</span>
+        <button class="suppr" data-suppr="${b.id}">${aSupprimer === b.id ? "Confirmer la suppression" : "Supprimer"}</button>
+      </div>
+    </div>`;
+  }
+  $("#bets-liste").innerHTML = html || `<div class="vide">Les bets que tu ajoutes apparaissent ici, avec leur statut en direct.</div>`;
+  $("#t-bets").textContent = ouverts.length ? `Bets (${ouverts.length})` : "Bets";
+}
+
+// ---- Fiche d'ajout ----
+function ouvrirFiche(o){
+  offreCourante = o;
+  $("#sh-titre").textContent = o.label;
+  $("#sh-info").textContent = `${o.sous} · l'algo (${o.version}) donne ${pct(o.p)} %`;
+  $("#sh-cote").value = o.cote ? o.cote.toFixed(2) : "";
+  $("#sh-mise").value = store.get("bets:mise") || "10";
+  typeBet = store.get("bets:type") || "test";
+  document.querySelectorAll("#sh-type button").forEach(x => x.setAttribute("aria-pressed", x.dataset.v === typeBet));
+  calcFiche();
+  $("#sheet").hidden = false;
+  $("#sh-cote").focus();
+}
+function nombre(id){ return parseFloat(($(id).value || "").replace(",", ".")); }
+function calcFiche(){
+  const c = nombre("#sh-cote"), m = nombre("#sh-mise"), p = offreCourante.p;
+  if (!(c > 1) || !(m > 0)){ $("#sh-calc").textContent = "Entre une cote (plus grande que 1) et une mise."; $("#sh-ok").disabled = true; return; }
+  const e = p * c - 1;
+  $("#sh-calc").innerHTML = `Gain si réussi : <b>${(m * (c - 1)).toFixed(2)} $</b> · cote implicite ${pct(1 / c)} % · valeur selon l'algo : <b class="${e >= 0 ? "pos" : "neg"}">${e >= 0 ? "+" : ""}${pct(e)} %</b>`;
+  $("#sh-ok").disabled = false;
+}
+function fermerFiche(){ $("#sheet").hidden = true; offreCourante = null; }
+function ajouterBet(){
+  const c = nombre("#sh-cote"), m = nombre("#sh-mise"), o = offreCourante;
+  if (!(c > 1) || !(m > 0)) return;
+  const liste = lireBets();
+  liste.push({ ...o, id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), cote: c, mise: m,
+               reel: typeBet === "reel", cree: new Date().toISOString() });
+  ecrireBets(liste);
+  store.set("bets:mise", String(m)); store.set("bets:type", typeBet);
+  fermerFiche();
+  bets();
+}
+
+function brancherBets(){
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-offre]");
+    if (b){ ouvrirFiche(OFFRES[b.dataset.offre]); return; }
+    if (e.target.closest("[data-close]")){ fermerFiche(); return; }
+    const s = e.target.closest("[data-suppr]");
+    if (s){
+      if (aSupprimer === s.dataset.suppr){ ecrireBets(lireBets().filter(x => x.id !== aSupprimer)); aSupprimer = null; }
+      else aSupprimer = s.dataset.suppr;
+      bets();
+    }
+  });
+  $("#sh-cote").addEventListener("input", calcFiche);
+  $("#sh-mise").addEventListener("input", calcFiche);
+  $("#sh-ok").addEventListener("click", ajouterBet);
+  $("#sh-type").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-v]"); if (!b) return;
+    typeBet = b.dataset.v;
+    document.querySelectorAll("#sh-type button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("#sheet").hidden) fermerFiche(); });
+  chips("#f-bets", "filtre", () => {});
+  $("#f-bets").addEventListener("click", (e) => { const b = e.target.closest("button[data-v]"); if (b){ filtreBets = b.dataset.v; bets(); } });
+
+  // Transfert entre appareils
+  const msg = (t) => { $("#bets-msg").hidden = false; $("#bets-msg").textContent = t; };
+  $("#bets-copier").addEventListener("click", async () => {
+    const texte = JSON.stringify(lireBets());
+    try { await navigator.clipboard.writeText(texte); msg(`${lireBets().length} bets copiés. Colle-les dans « Importer » sur l'autre appareil.`); }
+    catch (e) { const t = $("#bets-texte"); t.hidden = false; t.value = texte; t.select(); msg("Copie automatique refusée : le texte est sélectionné, copie-le à la main."); }
+  });
+  $("#bets-importer").addEventListener("click", () => { $("#bets-texte").hidden = false; $("#bets-texte").value = ""; $("#bets-import-ok").hidden = false; $("#bets-texte").focus(); });
+  $("#bets-importer-go").addEventListener("click", () => {
+    try {
+      const recus = JSON.parse($("#bets-texte").value);
+      if (!Array.isArray(recus)) throw new Error();
+      const liste = lireBets(), ids = new Set(liste.map(b => b.id));
+      const nouveaux = recus.filter(b => b && b.id && b.label && b.cote > 1 && !ids.has(b.id));
+      ecrireBets(liste.concat(nouveaux));
+      msg(`${nouveaux.length} bets importés${recus.length - nouveaux.length ? `, ${recus.length - nouveaux.length} déjà présents ou invalides` : ""}.`);
+      $("#bets-texte").hidden = true; $("#bets-import-ok").hidden = true;
+      chargerArchives().then(bets);
+    } catch (e) { msg("Ce texte n'est pas une liste de bets valide. Recopie-le au complet depuis l'autre appareil."); }
+  });
+}
+
 // ---- Événements ----------------------------------------------------------------
 function chips(sel, cleS, apres){
   document.querySelectorAll(sel).forEach(groupe => groupe.addEventListener("click", (ev) => {
@@ -657,7 +968,7 @@ function chips(sel, cleS, apres){
   }));
 }
 
-function tout(){ liste(); matchs(); suivi(); labo(); }
+function tout(){ liste(); matchs(); suivi(); labo(); bets(); }
 
 function brancher(){
   chips("#f-marche", "famille", () => { $("#f-seuil").hidden = S.famille !== "tirs"; liste(); });
@@ -676,7 +987,7 @@ function brancher(){
   });
   document.querySelectorAll("nav.tabs button").forEach(b => b.addEventListener("click", () => {
     document.querySelectorAll("nav.tabs button").forEach(x => x.setAttribute("aria-selected", x === b));
-    for (const id of ["joueurs", "matchs", "suivi"]) $("#p-" + id).hidden = b.id !== "t-" + id;
+    for (const id of ["joueurs", "matchs", "suivi", "bets"]) $("#p-" + id).hidden = b.id !== "t-" + id;
   }));
 }
 
@@ -695,6 +1006,7 @@ async function init(){
   $("#maj").innerHTML = `${new Date(D.date + "T12:00").toLocaleDateString("fr-CA", { weekday: "long", day: "numeric", month: "long" })}<br>Calculé à ${g.toLocaleTimeString("fr-CA", { hour: "2-digit", minute: "2-digit" })}`;
   construireFiltres();
   brancher();
+  brancherBets();
   tout();
   // Le bouton LIVE : rafraîchit aux 30 s tant qu'il est allumé. Son état est retenu.
   const btn = $("#live");

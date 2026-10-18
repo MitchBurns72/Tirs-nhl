@@ -22,6 +22,7 @@ from zoneinfo import ZoneInfo
 
 import auto
 import cotes
+import live
 import nhl_api as api
 from modeles import (DISPERSION, VERSIONS, ajouter_seuils, charger_auto, features_joueur,
                      features_match, modele_joueur_param, modele_match_param)
@@ -576,6 +577,41 @@ def completer_seuils():
             ecrire_json(fic, data)
 
 
+def archiver_soirs(jour, n=3, garder=21):
+    """Écrit docs/live/AAAA-MM-JJ.json (score + stats finales de chaque joueur)
+    pour les n derniers soirs, dans le même format que live.json.
+
+    POURQUOI : l'onglet Bets de la page règle tes paris des soirs passés avec ces
+    fichiers (live.json ne contient que la soirée en cours). Un soir est réécrit
+    tant que tous ses matchs ne sont pas finis. Les archives de plus de `garder`
+    jours sont effacées : un bet réglé garde son résultat sur ton appareil."""
+    dossier = SORTIE.parent / "live"
+    dossier.mkdir(parents=True, exist_ok=True)
+    for i in range(1, n + 1):
+        d = (date.fromisoformat(jour) - timedelta(days=i)).isoformat()
+        f = dossier / f"{d}.json"
+        if (lire_json(f, {}) or {}).get("complet"):
+            continue
+        sched = api.schedule(d) or {}
+        jeux = [g for g in next((x["games"] for x in sched.get("gameWeek", []) if x["date"] == d), [])
+                if g.get("gameType") in (2, None)]
+        if not jeux:
+            continue
+        games = {}
+        for g in jeux:
+            b = api.boxscore(g["id"])
+            if b and b.get("gameState") not in ETATS_AVANT:
+                games[str(g["id"])] = live.etat_match(b)
+        complet = len(games) == len(jeux) and all(x["state"] in ETATS_FINIS for x in games.values())
+        f.write_text(json.dumps({"date": d, "complet": complet, "games": games,
+                                 "maj": datetime.now(timezone.utc).isoformat(timespec="minutes")},
+                                ensure_ascii=False), encoding="utf-8")
+    limite = (date.fromisoformat(jour) - timedelta(days=garder)).isoformat()
+    for f in dossier.glob("*.json"):
+        if f.stem < limite:
+            f.unlink()
+
+
 def sans_features(liste):
     """La page n'a pas besoin des features (lourdes) : on les retire de data.json."""
     return [{k: v for k, v in x.items() if k != "f"} for x in liste]
@@ -601,6 +637,7 @@ def main():
         grader()   # les soirs rejoués sont gradés tout de suite
     if saison:
         completer_features(saison)
+    archiver_soirs(jour)   # résultats des derniers soirs pour régler tes bets
 
     # Labo : patterns + tuning hebdo + promotion. Si une nouvelle version naît,
     # elle est chargée tout de suite et prédit déjà les matchs de ce soir.
