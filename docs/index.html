@@ -259,9 +259,18 @@ tr.sel td{font-weight:700}
     </div>
     <div class="card" id="bets-kpi"></div>
     <div class="liste" id="bets-liste" style="margin-top:12px"></div>
+    <div class="card" id="gh-card" style="margin-top:12px">
+      <h2>Sauvegarde GitHub</h2>
+      <p id="gh-etat" style="margin:-6px 0 0;font-size:13px"></p>
+      <div id="gh-form" class="sh-champs" style="grid-template-columns:minmax(0,1fr) auto;align-items:end">
+        <label>Clé GitHub (commence par github_pat_)<input id="gh-cle" type="password" autocomplete="off" placeholder="github_pat_…"></label>
+        <button class="btn-main" id="gh-ok">Activer</button>
+      </div>
+      <div class="row"><button class="chip" id="gh-sync">Synchroniser maintenant</button><button class="suppr" id="gh-oublier">Oublier la clé sur cet appareil</button></div>
+    </div>
     <div class="card" id="bets-sync" style="margin-top:12px">
-      <h2>Cell ↔ tablette</h2>
-      <p style="margin:-6px 0 0;font-size:13px;color:var(--muted)">Tes bets sont gardés sur cet appareil seulement. Pour les transférer : « Copier mes bets » ici, puis colle le texte dans « Importer » sur l'autre appareil. Les bets déjà présents ne sont pas doublés.</p>
+      <h2>Importer / copie de secours</h2>
+      <p style="margin:-6px 0 0;font-size:13px;color:var(--muted)">« Importer » : colle ici les bets que Claude te prépare à partir d'une capture de ton coupon. « Copier mes bets » : copie de secours de tout ce qui est sur cet appareil. Les bets déjà présents ne sont jamais doublés.</p>
       <div class="row">
         <button class="chip" id="bets-copier">Copier mes bets</button>
         <button class="chip" id="bets-importer">Importer</button>
@@ -777,6 +786,93 @@ let OFFRES = {}, nOffre = 0, ARCH = {}, offreCourante = null, typeBet = "test", 
 
 function lireBets(){ try { return JSON.parse(store.get(CLE_BETS) || "[]"); } catch (e) { return []; } }
 function ecrireBets(liste){ store.set(CLE_BETS, JSON.stringify(liste)); }
+// Un bet supprimé reste dans la liste marqué « supprime » : sinon l'autre appareil
+// (ou GitHub) le ferait réapparaître à la prochaine synchro.
+const actifs = (liste) => liste.filter(b => !b.supprime);
+
+// ---- Sauvegarde GitHub : data/bets.json dans le repo -----------------------------
+// La page lit et écrit le fichier avec l'API GitHub, avec une clé limitée à ce repo
+// (gardée seulement sur l'appareil). Chaque sauvegarde = un commit : historique complet.
+const GH = {
+  owner: location.hostname.endsWith(".github.io") ? location.hostname.split(".")[0] : "MitchBurns72",
+  repo: location.pathname.split("/").filter(Boolean)[0] || "Tirs-nhl",
+  chemin: "data/bets.json",
+};
+let ghEtat = { texte: "", ok: false }, synchroEnCours = null, minuterieSync = null;
+const ghCle = () => store.get("gh:cle");
+const b64enc = (t) => btoa(unescape(encodeURIComponent(t)));
+const b64dec = (t) => decodeURIComponent(escape(atob(t.replace(/\n/g, ""))));
+const ghEntetes = () => ({ Authorization: `Bearer ${ghCle()}`, Accept: "application/vnd.github+json" });
+const ghUrl = () => `https://api.github.com/repos/${GH.owner}/${GH.repo}/contents/${GH.chemin}`;
+
+async function ghLire(){
+  const r = await fetch(`${ghUrl()}?ref=main&t=${Date.now()}`, { headers: ghEntetes(), cache: "no-store" });
+  if (r.status === 404) return { liste: [], sha: null };
+  if (r.status === 401) throw new Error("clé refusée ou expirée");
+  if (!r.ok) throw new Error(`GitHub a répondu ${r.status}`);
+  const j = await r.json();
+  return { liste: JSON.parse(b64dec(j.content) || "[]"), sha: j.sha };
+}
+async function ghEcrire(liste, sha){
+  const corps = { message: `Bets ${new Date().toISOString().slice(0, 16)}`, branch: "main",
+                  content: b64enc(JSON.stringify(liste, null, 1)) };
+  if (sha) corps.sha = sha;
+  const r = await fetch(ghUrl(), { method: "PUT", headers: ghEntetes(), body: JSON.stringify(corps) });
+  if (r.status === 409 || r.status === 422) return false;   // quelqu'un a écrit entre-temps : on relit
+  if (r.status === 403 || r.status === 404) throw new Error("la clé n'a pas le droit d'écrire (permission Contents : Read and write)");
+  if (!r.ok) throw new Error(`GitHub a répondu ${r.status}`);
+  return true;
+}
+// Fusion par id : la version modifiée le plus récemment gagne
+function fusion(a, b){
+  const m = new Map();
+  for (const x of [...a, ...b]){
+    const y = m.get(x.id);
+    const t = (z) => z.maj || z.cree || "";
+    if (!y || t(x) > t(y) || (t(x) === t(y) && x.final && !y.final)) m.set(x.id, x);
+  }
+  return [...m.values()].sort((x, y) => (x.cree || "").localeCompare(y.cree || ""));
+}
+const empreinte = (l) => JSON.stringify(l.slice().sort((x, y) => x.id.localeCompare(y.id)));
+
+function planifierSynchro(){
+  if (!ghCle()) return;
+  clearTimeout(minuterieSync);
+  minuterieSync = setTimeout(synchroniser, 1500);
+}
+async function synchroniser(){
+  if (!ghCle()) { afficherGh(); return; }
+  if (synchroEnCours) return synchroEnCours;
+  synchroEnCours = (async () => {
+    try {
+      let fini = false;
+      for (let essai = 0; essai < 3 && !fini; essai++){
+        const { liste: distants, sha } = await ghLire();
+        const fus = fusion(lireBets(), distants);
+        ecrireBets(fus);
+        fini = empreinte(fus) === empreinte(distants) || await ghEcrire(fus, sha);
+      }
+      ghEtat = fini
+        ? { ok: true, texte: `Active · ${actifs(lireBets()).length} bet${actifs(lireBets()).length > 1 ? "s" : ""} sauvegardé${actifs(lireBets()).length > 1 ? "s" : ""} dans le repo · synchro à ${new Date().toLocaleTimeString("fr-CA", { hour: "2-digit", minute: "2-digit" })}` }
+        : { ok: false, texte: "Conflit répété avec GitHub, réessaie dans une minute." };
+    } catch (e) {
+      ghEtat = { ok: false, texte: `Erreur : ${e.message}. Tes bets restent sur cet appareil en attendant.` };
+    }
+    synchroEnCours = null;
+    afficherGh();
+    bets(true);
+  })();
+  return synchroEnCours;
+}
+function afficherGh(){
+  const actif = !!ghCle();
+  $("#gh-form").hidden = actif;
+  $("#gh-sync").hidden = !actif; $("#gh-oublier").hidden = !actif;
+  $("#gh-etat").className = actif && ghEtat.ok ? "pos" : actif ? "neg" : "";
+  $("#gh-etat").textContent = actif
+    ? (ghEtat.texte || "Synchro en cours…")
+    : "Pas active : tes bets sont seulement sur cet appareil. Colle ta clé GitHub pour les sauvegarder dans le repo et les voir sur tous tes appareils.";
+}
 
 // Enregistre ce qu'il faut pour créer un bet et retourne le bouton qui l'ouvre
 function offre(o, texte){
@@ -788,7 +884,7 @@ function offre(o, texte){
 
 async function chargerArchives(){
   // Soirs passés qui ont des bets pas encore réglés
-  const dates = [...new Set(lireBets().filter(b => !b.final && b.date !== D.date).map(b => b.date))];
+  const dates = [...new Set(actifs(lireBets()).filter(b => !b.final && b.date !== D.date).map(b => b.date))];
   await Promise.all(dates.filter(d => !ARCH[d]?.complet).map(async d => {
     try {
       const r = await fetch(`live/${d}.json?v=${Date.now()}`);
@@ -846,25 +942,50 @@ function gain(b, st){
 }
 const argent = (x) => `${x >= 0 ? "+" : "−"}${Math.abs(x).toFixed(2)} $`;
 
-function bets(){
+// Un bet importé d'une capture peut arriver sans le % de l'algo (p = null) :
+// la page le complète elle-même avec SES prédictions du soir.
+function completerP(b){
+  if (b.p != null || b.date !== D.date) return false;
+  const v = b.version || D.principale;
+  if (b.type === "joueur"){
+    const j = D.joueurs.find(x => x.pid === b.pid && x.gameId === b.gameId);
+    const pr = j && pred(j, v, b.marche);
+    if (!pr) return false;
+    b.p = pr.p;
+  } else {
+    const g = D.games.find(x => x.gameId === b.gameId), pm = g?.preds?.[v];
+    if (!pm) return false;
+    const r = regl(pm.lam_home, pm.lam_away);
+    const table = { h: pm.p_home, a: 1 - pm.p_home, o55: pm.p_over["5.5"], u55: 1 - pm.p_over["5.5"],
+                    o65: pm.p_over["6.5"], u65: 1 - pm.p_over["6.5"], h3: r.h, a3: r.a, x3: r.x };
+    if (table[b.k] == null) return false;
+    b.p = table[b.k];
+  }
+  b.version = v;
+  return true;
+}
+
+function bets(depuisSynchro){
   let liste = lireBets();
   // Figer les bets dont le match est fini
   let change = false;
+  for (const b of actifs(liste)) if (completerP(b)){ b.maj = new Date().toISOString(); change = true; }
   for (const b of liste){
     if (!b.final){
       const st = statutBet(b);
-      if (st.fige){ b.final = { etat: st.etat, texte: st.texte }; change = true; }
+      if (st.fige && !b.supprime){ b.final = { etat: st.etat, texte: st.texte }; b.maj = new Date().toISOString(); change = true; }
     }
   }
-  if (change) ecrireBets(liste);
+  if (change){ ecrireBets(liste); if (!depuisSynchro) planifierSynchro(); }
 
-  const vus = liste.filter(b => filtreBets === "tous" || (filtreBets === "reel") === !!b.reel);
+  const vus = actifs(liste).filter(b => filtreBets === "tous" || (filtreBets === "reel") === !!b.reel);
   const avecSt = vus.map(b => ({ b, st: statutBet(b) }));
   const regles = avecSt.filter(x => ["gagne", "perdu"].includes(x.st.etat) && x.b.final);
   const g = regles.filter(x => x.st.etat === "gagne").length;
   const misees = regles.reduce((t, x) => t + x.b.mise, 0);
   const profit = regles.reduce((t, x) => t + gain(x.b, x.st), 0);
-  const attendu = regles.reduce((t, x) => t + x.b.p, 0);
+  const avecP = regles.filter(x => x.b.p != null);
+  const attendu = avecP.reduce((t, x) => t + x.b.p, 0);
   const ouverts = avecSt.filter(x => !x.b.final);
   const enJeu = ouverts.reduce((t, x) => t + x.b.mise, 0);
 
@@ -876,10 +997,20 @@ function bets(){
       : ["h3", "a3", "x3"].includes(x.b.k) ? "Victoire 60 min"
       : `Total ${x.b.k[0] === "o" ? "plus" : "moins"} ${x.b.k.slice(1, 2)}.5`;
     const m = parM[nom] ||= { n: 0, g: 0, p: 0, profit: 0, mise: 0 };
-    m.n++; m.g += x.st.etat === "gagne"; m.p += x.b.p; m.profit += gain(x.b, x.st); m.mise += x.b.mise;
+    m.n++; m.g += x.st.etat === "gagne"; m.p += x.b.p ?? x.st.etat === "gagne"; m.profit += gain(x.b, x.st); m.mise += x.b.mise;
   }
   const lignesM = Object.entries(parM).sort((a, b) => b[1].n - a[1].n).map(([nom, m]) =>
     `<tr><td>${nom}</td><td>${m.n}</td><td>${pct(m.g / m.n)} %</td><td>${pct(m.p / m.n)} %</td><td class="${m.profit >= 0 ? "pos" : "neg"}">${argent(m.profit)}</td></tr>`).join("");
+
+  // Tes choix classés par valeur (p × cote − 1) : est-ce que les bets où l'algo
+  // voyait un edge sont vraiment ceux qui rapportent? C'est LE test de l'algo + de tes choix.
+  const tranchesV = [["+10 % et plus", 0.10, 9], ["+5 à +10 %", 0.05, 0.10], ["0 à +5 %", 0, 0.05], ["Négative", -9, 0]];
+  const lignesV = tranchesV.map(([nom, lo, hi]) => {
+    const t = regles.filter(x => x.b.p != null && x.b.p * x.b.cote - 1 >= lo && x.b.p * x.b.cote - 1 < hi);
+    if (!t.length) return "";
+    const gg = t.filter(x => x.st.etat === "gagne").length, pr = t.reduce((a, x) => a + gain(x.b, x.st), 0);
+    return `<tr><td>${nom}</td><td>${t.length}</td><td>${pct(gg / t.length)} %</td><td>${pct(t.reduce((a, x) => a + x.b.p, 0) / t.length)} %</td><td class="${pr >= 0 ? "pos" : "neg"}">${argent(pr)}</td></tr>`;
+  }).join("");
 
   $("#bets-kpi").innerHTML = !vus.length
     ? `<h2>Mes bets</h2><p class="sh-info">Aucun bet ${filtreBets === "reel" ? "réel" : filtreBets === "test" ? "test" : ""} pour l'instant. Ajoute-en avec les boutons « + Bet » dans Joueurs et Matchs. Les tests servent à essayer l'algo sans argent : ils ont leurs propres stats.</p>`
@@ -892,10 +1023,11 @@ function bets(){
       <div class="mini">
         <span>Réglés : <b>${g}-${regles.length - g}</b></span>
         <span>Misé : <b>${misees.toFixed(2)} $</b></span>
-        <span>L'algo prévoyait : <b>${regles.length ? pct(attendu / regles.length) + " %" : "–"}</b> de réussite</span>
+        <span>L'algo prévoyait : <b>${avecP.length ? pct(attendu / avecP.length) + " %" : "–"}</b> de réussite</span>
         <span>En cours : <b>${ouverts.length}</b> (${enJeu.toFixed(2)} $)</span>
       </div>
-      ${lignesM ? `<div class="tbl"><table><thead><tr><th>Marché</th><th>Bets</th><th>Réussite</th><th>Prévu</th><th>Profit</th></tr></thead><tbody>${lignesM}</tbody></table></div>` : ""}`;
+      ${lignesM ? `<div class="tbl"><table><thead><tr><th>Marché</th><th>Bets</th><th>Réussite</th><th>Prévu</th><th>Profit</th></tr></thead><tbody>${lignesM}</tbody></table></div>` : ""}
+      ${lignesV ? `<div class="tbl"><span class="lbl">Selon la valeur vue par l'algo au moment du bet</span><table><thead><tr><th>Valeur</th><th>Bets</th><th>Réussite</th><th>Prévu</th><th>Profit</th></tr></thead><tbody>${lignesV}</tbody></table></div>` : ""}`;
 
   const cls = { gagne: "st-ok", perdu: "st-ko", cours: "st-cours", avenir: "", annule: "" };
   const lv = { gagne: "ok", perdu: "ko", cours: "cours", avenir: "", annule: "" };
@@ -915,7 +1047,7 @@ function bets(){
       <div class="m2">
         <span class="tag ${b.reel ? "reel" : ""}">${b.reel ? "RÉEL" : "TEST"}</span>
         <span>${b.date} · ${b.sous}</span>
-        <span>Cote ${b.cote.toFixed(2)} · mise ${b.mise.toFixed(2)} $ · algo ${pct(b.p)} %</span>
+        <span>Cote ${b.cote.toFixed(2)} · mise ${b.mise.toFixed(2)} $ · algo ${b.p != null ? pct(b.p) + " %" : "?"}${b.p != null ? ` · valeur ${b.p * b.cote - 1 >= 0 ? "+" : ""}${pct(b.p * b.cote - 1)} %` : ""}</span>
         <span class="lv ${lv[st.etat]}">${mot[st.etat]} · ${st.texte}</span>
         <button class="suppr" data-suppr="${b.id}">${aSupprimer === b.id ? "Confirmer la suppression" : "Supprimer"}</button>
       </div>
@@ -951,22 +1083,39 @@ function ajouterBet(){
   const c = nombre("#sh-cote"), m = nombre("#sh-mise"), o = offreCourante;
   if (!(c > 1) || !(m > 0)) return;
   const liste = lireBets();
+  const cree = new Date().toISOString();
   liste.push({ ...o, id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), cote: c, mise: m,
-               reel: typeBet === "reel", cree: new Date().toISOString() });
+               reel: typeBet === "reel", cree, maj: cree });
   ecrireBets(liste);
+  planifierSynchro();
   store.set("bets:mise", String(m)); store.set("bets:type", typeBet);
   fermerFiche();
   bets();
 }
 
 function brancherBets(){
+  $("#gh-ok").addEventListener("click", () => {
+    const cle = $("#gh-cle").value.trim();
+    if (!cle) return;
+    store.set("gh:cle", cle); $("#gh-cle").value = "";
+    ghEtat = { ok: false, texte: "" }; afficherGh(); synchroniser();
+  });
+  $("#gh-sync").addEventListener("click", () => synchroniser());
+  $("#gh-oublier").addEventListener("click", () => { store.set("gh:cle", ""); ghEtat = { ok: false, texte: "" }; afficherGh(); });
+  afficherGh();
+  synchroniser();
+  // L'autre appareil a peut-être ajouté des bets : on relit aux 2 minutes
+  setInterval(() => { if (ghCle() && !document.hidden) synchroniser(); }, 120000);
   document.addEventListener("click", (e) => {
     const b = e.target.closest("[data-offre]");
     if (b){ ouvrirFiche(OFFRES[b.dataset.offre]); return; }
     if (e.target.closest("[data-close]")){ fermerFiche(); return; }
     const s = e.target.closest("[data-suppr]");
     if (s){
-      if (aSupprimer === s.dataset.suppr){ ecrireBets(lireBets().filter(x => x.id !== aSupprimer)); aSupprimer = null; }
+      if (aSupprimer === s.dataset.suppr){
+        ecrireBets(lireBets().map(x => x.id === aSupprimer ? { id: x.id, cree: x.cree, supprime: true, maj: new Date().toISOString() } : x));
+        aSupprimer = null; planifierSynchro();
+      }
       else aSupprimer = s.dataset.suppr;
       bets();
     }
@@ -996,8 +1145,9 @@ function brancherBets(){
       const recus = JSON.parse($("#bets-texte").value);
       if (!Array.isArray(recus)) throw new Error();
       const liste = lireBets(), ids = new Set(liste.map(b => b.id));
-      const nouveaux = recus.filter(b => b && b.id && b.label && b.cote > 1 && !ids.has(b.id));
-      ecrireBets(liste.concat(nouveaux));
+      const nouveaux = recus.filter(b => b && b.id && b.label && b.cote > 1 && !ids.has(b.id)).map(b => ({ ...b, p: b.p ?? null }));
+      ecrireBets(liste.concat(nouveaux.map(b => ({ ...b, maj: new Date().toISOString() }))));
+      planifierSynchro();
       msg(`${nouveaux.length} bets importés${recus.length - nouveaux.length ? `, ${recus.length - nouveaux.length} déjà présents ou invalides` : ""}.`);
       $("#bets-texte").hidden = true; $("#bets-import-ok").hidden = true;
       chargerArchives().then(bets);

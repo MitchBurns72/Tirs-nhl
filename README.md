@@ -13,8 +13,9 @@ Chaque bet est **Test** (sans argent) ou **Vrai bet**, avec stats séparées : p
 réussite réelle vs réussite prévue par l'algo, détail par marché.
 Statut live : jaune = en cours, vert = gagné (même avant la fin si c'est acquis), rouge = perdu,
 gris = pas commencé ou annulé (joueur qui n'a pas joué = remboursé).
-Les bets sont gardés dans le navigateur de l'appareil ; « Copier mes bets » / « Importer » pour
-passer du cell à la tablette. Les soirs passés sont réglés avec `docs/live/AAAA-MM-JJ.json`
+Les bets sont sauvegardés dans `data/bets.json` du repo (carte « Sauvegarde GitHub » : clé à accès
+limité au repo, permission Contents en lecture/écriture), synchronisés entre appareils aux 2 minutes.
+Un bet supprimé reste dans le fichier marqué `supprime` pour ne pas réapparaître. Les soirs passés sont réglés avec `docs/live/AAAA-MM-JJ.json`
 (écrit par le calcul, gardé 21 jours) ; un bet réglé garde son résultat sur l'appareil.
 
 ## Labo (auto-upgrade)
