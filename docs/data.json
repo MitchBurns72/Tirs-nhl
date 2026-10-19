@@ -1,5 +1,5 @@
 {
- "genere": "2026-10-19T03:38+00:00",
+ "genere": "2026-10-19T03:47+00:00",
  "date": "2026-10-18",
  "versions": [
   {
@@ -11611,11 +11611,12 @@
   "soirs_direct": 2
  },
  "cotes_quota": {
-  "restants": null,
-  "utilises": null,
+  "restants": "499",
+  "utilises": "1",
   "erreur": null,
-  "source": null,
-  "quand": "2026-10-19T03:38+00:00"
+  "source": "The Odds API",
+  "test": 4,
+  "quand": "2026-10-19T03:47+00:00"
  },
  "labo": {
   "journal": [

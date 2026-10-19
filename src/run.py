@@ -701,6 +701,8 @@ def main():
     historique = [h for h in (lire_json(f, None) for f in sorted(DIR_PRED.glob("*.json"))) if h]
     quota = lire_json(SORTIE, {}).get("cotes_quota")
     if AVEC_COTES:
+        if not ouverts:
+            cotes.tester_cle()   # aucun match ouvert : on vérifie juste que la clé marche
         quota = {**cotes.etat, "quand": datetime.now(timezone.utc).isoformat(timespec="minutes")}
 
     ecrire_json(SORTIE, {

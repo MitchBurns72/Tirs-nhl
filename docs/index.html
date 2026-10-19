@@ -722,7 +722,7 @@ function suivi(){
       <span class="lbl" style="color:var(--ink)">Détail · ${NOM_MARCHE[S.smarche]}</span>
       ${detail}
     </div>`;
-  }).join("") + (D.cotes_quota ? `<div class="quota">Cotes US : ${D.cotes_quota.source === "SportsGameOdds" ? `SportsGameOdds, ${D.cotes_quota.utilises ?? 0} matchs lus` : `${D.cotes_quota.restants ?? "?"} crédits restants ce mois-ci`}${D.cotes_quota.erreur ? ` · dernière erreur : ${D.cotes_quota.erreur}` : ""}</div>` : "");
+  }).join("") + (D.cotes_quota ? `<div class="quota">Cotes US : ${D.cotes_quota.source === "SportsGameOdds" ? `SportsGameOdds, ${D.cotes_quota.utilises ?? 0} matchs lus` : `${D.cotes_quota.restants ?? "?"} crédits restants ce mois-ci`}${D.cotes_quota.test != null ? ` · test de clé réussi : ${D.cotes_quota.test} matchs à venir trouvés chez ${D.cotes_quota.source}` : ""}${D.cotes_quota.erreur ? ` · dernière erreur : ${D.cotes_quota.erreur}` : ""}</div>` : "");
 }
 
 

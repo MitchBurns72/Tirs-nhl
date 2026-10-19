@@ -44,7 +44,7 @@ PROPS = {
     "player_assists": ("passes", 0.5),
 }
 
-etat = {"restants": None, "utilises": None, "erreur": None, "source": None}
+etat = {"restants": None, "utilises": None, "erreur": None, "source": None, "test": None}
 
 
 def norm(nom):
@@ -313,6 +313,26 @@ def recuperer_sgo(matchs, noms_equipes):
     etat["source"] = "SportsGameOdds"
     etat["utilises"] = (etat.get("utilises") or 0) + len(evs or [])
     return analyser_sgo(evs or [], matchs, noms_equipes)
+
+
+def tester_cle():
+    """Vérifie la clé quand aucun match du soir n'est ouvert (lancement manuel) :
+    lit les matchs à venir sans rien enregistrer. The Odds API : 1 crédit (h2h).
+    Résultat dans etat["test"] (nombre de matchs trouvés) ou etat["erreur"]."""
+    cle = (os.environ.get("ODDS_API_KEY") or "").strip()
+    if not cle:
+        return
+    try:
+        if re.fullmatch(r"[0-9a-f]{32}", cle):
+            etat["source"] = "The Odds API"
+            evs = _get("/odds", {"markets": "h2h"})
+        else:
+            etat["source"] = "SportsGameOdds"
+            rep = _sgo_get({"leagueID": "NHL", "oddsAvailable": "true", "limit": 1})
+            evs = rep.get("data", rep) if isinstance(rep, dict) else rep
+        etat["test"] = len(evs or [])
+    except Exception as ex:  # noqa: BLE001
+        etat["erreur"] = ("clé refusée" if isinstance(ex, CleRefusee) else str(ex)[:200])
 
 
 def recuperer(matchs, noms_equipes, marches_props):
