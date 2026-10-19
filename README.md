@@ -45,6 +45,13 @@ Seule limite : l'alignement utilisé est celui d'aujourd'hui. Fichiers marqués 
 
 ## Cotes automatiques
 
+Deux fournisseurs possibles, **un seul secret** `ODDS_API_KEY` : le code essaie SportsGameOdds,
+et si la clé y est refusée, The Odds API.
+- **SportsGameOdds** (plan gratuit Amateur, 2 500 matchs lus/mois) : victoires avec et sans prolongation,
+  totaux 5.5 et 6.5, tirs 1+ à 4+, buts, passes. Un appel par calcul avec cotes.
+- **The Odds API** (500 crédits/mois) : victoires, ligne de total principale, tirs.
+
+
 1. Compte gratuit sur the-odds-api.com, la clé arrive par courriel.
 2. Repo → Settings → Secrets and variables → Actions → New repository secret : nom `ODDS_API_KEY`, valeur = ta clé.
 3. Les cotes sont prises au calcul de 17 h 45 et aux lancements manuels seulement (budget de 500 crédits/mois).

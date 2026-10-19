@@ -12,6 +12,7 @@ Lancement : python tests/test_simulation.py
 
 import json
 import math
+from statistics import median as statistics_median
 import random
 import shutil
 import sys
@@ -208,6 +209,9 @@ def main():
     run.SORTIE = tmp / "docs" / "data.json"
     api.get_json = faux_get_json
     cotes._get = faux_odds
+    def sgo_refuse(params):   # la clé de test n'est pas une clé SportsGameOdds -> repli sur The Odds API
+        raise cotes.CleRefusee()
+    cotes._sgo_get = sgo_refuse
     run.AVEC_COTES = True
     import os
     os.environ["ODDS_API_KEY"] = "test"
@@ -328,6 +332,31 @@ def main():
     assert un["joueurs"] and len(next(iter(un["joueurs"].values()))) == 3
     print("archives des soirs OK")
     shutil.copy(arch, ICI / "archive_exemple.json")
+
+    # --- Lecteur SportsGameOdds sur une réponse imitée des docs ---
+    ev = {"teams": {"home": {"names": {"long": "Minnesota Wild"}}, "away": {"names": {"long": "Columbus Blue Jackets"}}},
+          "players": {"BLAKE_COLEMAN_1_NHL": {"name": "Blake Coleman"}},
+          "odds": {
+            "points-home-game-ml-home": {"statID": "points", "statEntityID": "home", "periodID": "game", "betTypeID": "ml", "sideID": "home",
+                                         "byBookmaker": {"draftkings": {"odds": "-180"}, "fanduel": {"odds": "-170"}}},
+            "points-away-game-ml-away": {"statID": "points", "statEntityID": "away", "periodID": "game", "betTypeID": "ml", "sideID": "away",
+                                         "byBookmaker": {"draftkings": {"odds": "+150"}, "fanduel": {"odds": "+145"}}},
+            "points-all-reg-ml3way-home": {"statID": "points", "statEntityID": "all", "periodID": "reg", "betTypeID": "ml3way", "sideID": "home",
+                                           "byBookmaker": {"draftkings": {"odds": "-120"}}},
+            "points-all-game-ou-over": {"statID": "points", "statEntityID": "all", "periodID": "game", "betTypeID": "ou", "sideID": "over",
+                                        "byBookmaker": {"draftkings": {"odds": "-140", "overUnder": "5.5",
+                                                                       "altLines": [{"odds": "+110", "overUnder": "6.5"}]}}},
+            "shots_onGoal-BLAKE_COLEMAN_1_NHL-game-ou-over": {"statID": "shots_onGoal", "statEntityID": "BLAKE_COLEMAN_1_NHL", "periodID": "game",
+                "betTypeID": "ou", "sideID": "over", "bookOverUnder": "2.5",
+                "byBookmaker": {"draftkings": {"odds": "+170", "overUnder": "2.5",
+                                               "altLines": [{"odds": "-185", "overUnder": "1.5"}, {"odds": "+425", "overUnder": "3.5"}]}}}}}
+    cm, cj = cotes.analyser_sgo([ev], [{"id": 9, "home": "MIN", "away": "CBJ"}], {"MIN": "Wild", "CBJ": "Blue Jackets"})
+    assert cm[9]["home"] == round(statistics_median([1 + 100 / 180, 1 + 100 / 170]), 3), cm[9]
+    assert cm[9]["away"] == 2.475 and cm[9]["h3"] == round(1 + 100 / 120, 3)
+    assert cm[9]["totaux"]["5.5"]["over"] == round(1 + 100 / 140, 3) and cm[9]["totaux"]["6.5"]["over"] == 2.1
+    jc = cj[(9, "blake coleman")]
+    assert jc["tirs3"]["prix"] == 2.7 and jc["tirs"]["prix"] == round(1 + 100 / 185, 3) and jc["tirs4"]["prix"] == 5.25
+    print("lecteur SportsGameOdds OK :", {k: v["prix"] for k, v in jc.items()})
 
     dest = ICI / "data_exemple.json"
     shutil.copy(run.SORTIE, dest)

@@ -10,27 +10,27 @@
  "patterns": [
   {
    "marche": "passes",
-   "segment": "Contre une équipe qui accorde peu de tirs",
-   "n": 923,
-   "predit": 0.24397789815818,
-   "reel": 0.2047670639219935,
-   "z": -2.831985436385,
+   "segment": "Début de saison (moins de 5 matchs)",
+   "n": 2950,
+   "predit": 0.2542494915254236,
+   "reel": 0.23254237288135593,
+   "z": -2.769755530739867,
    "sens": "surestimé"
   },
   {
    "marche": "passes",
-   "segment": "Début de saison (moins de 5 matchs)",
-   "n": 2940,
-   "predit": 0.25451646258503385,
-   "reel": 0.23299319727891157,
-   "z": -2.7406488295690385,
+   "segment": "Contre une équipe qui accorde peu de tirs",
+   "n": 940,
+   "predit": 0.2426255319148938,
+   "reel": 0.20638297872340425,
+   "z": -2.6467484732006725,
    "sens": "surestimé"
   }
  ],
  "donnees": {
-  "joueurs": 4614,
-  "matchs": 134
+  "joueurs": 4684,
+  "matchs": 136
  },
  "dernier_tuning": "2026-10-18",
- "maj": "2026-10-18T23:02+00:00"
+ "maj": "2026-10-19T03:38+00:00"
 }

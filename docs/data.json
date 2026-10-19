@@ -1,5 +1,5 @@
 {
- "genere": "2026-10-18T23:02+00:00",
+ "genere": "2026-10-19T03:38+00:00",
  "date": "2026-10-18",
  "versions": [
   {
@@ -18,7 +18,7 @@
    "away": "CBJ",
    "home": "MIN",
    "start": "2026-10-18T22:00:00Z",
-   "state": "LIVE",
+   "state": "OFF",
    "season": 20262027
   },
   {
@@ -26,7 +26,7 @@
    "away": "CAR",
    "home": "CGY",
    "start": "2026-10-19T00:00:00Z",
-   "state": "FUT",
+   "state": "OFF",
    "season": 20262027
   }
  ],
@@ -90,7 +90,10 @@
      }
     }
    },
-   "result": null,
+   "result": {
+    "home": 2,
+    "away": 1
+   },
    "cotes": null
   },
   {
@@ -152,7 +155,10 @@
      }
     }
    },
-   "result": null,
+   "result": {
+    "home": 3,
+    "away": 2
+   },
    "cotes": null
   }
  ],
@@ -262,8 +268,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -356,8 +366,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -465,8 +479,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -574,8 +592,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -683,8 +705,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -792,8 +818,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -901,8 +931,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -1010,8 +1044,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -1119,8 +1157,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -1228,8 +1270,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -1337,8 +1383,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -1446,8 +1496,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -1552,8 +1606,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "cotes": null
   },
   {
@@ -1655,8 +1709,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "cotes": null
   },
   {
@@ -1761,8 +1815,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -1870,8 +1928,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -1979,8 +2041,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -2085,8 +2151,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -2194,8 +2264,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -2309,8 +2383,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 6,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -2424,8 +2502,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -2539,8 +2621,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -2654,8 +2740,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -2769,8 +2859,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -2884,8 +2978,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 5,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -2987,8 +3085,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -3102,8 +3204,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -3199,8 +3305,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -3314,8 +3424,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -3429,8 +3543,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -3544,8 +3662,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 4,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -3656,8 +3778,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -3771,8 +3897,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -3886,8 +4016,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -4001,8 +4135,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -4095,8 +4233,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -4204,8 +4346,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "cotes": null
   },
   {
@@ -4307,8 +4449,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -4425,8 +4571,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -4543,8 +4693,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -4661,8 +4815,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -4764,8 +4922,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -4882,8 +5044,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -4997,8 +5163,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "cotes": null
   },
   {
@@ -5115,8 +5281,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "cotes": null
   },
   {
@@ -5227,8 +5393,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 4,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -5345,8 +5515,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -5439,8 +5613,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -5557,8 +5735,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -5675,8 +5857,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -5793,8 +5979,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -5887,8 +6077,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -6005,8 +6199,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -6123,8 +6321,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -6241,8 +6443,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -6353,8 +6559,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -6471,8 +6681,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -6589,8 +6803,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -6701,8 +6919,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -6804,8 +7026,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -6916,8 +7142,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -7028,8 +7258,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -7140,8 +7374,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -7252,8 +7490,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -7364,8 +7606,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -7476,8 +7722,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -7588,8 +7838,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 6,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -7700,8 +7954,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -7803,8 +8061,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -7912,8 +8174,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "cotes": null
   },
   {
@@ -8024,8 +8286,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -8133,8 +8399,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -8245,8 +8515,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -8357,8 +8631,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -8469,8 +8747,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -8581,8 +8863,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   }
  ],
@@ -8590,87 +8876,81 @@
   "joueurs": {
    "tirs1": {
     "v0": {
-     "n": 4614,
-     "base": 0.7277850021673169,
-     "brier": 0.19639910249674902,
-     "bss": 0.008656078587667815,
-     "precision": 0.7139141742522757,
-     "note": 50.43280392938339,
-     "logloss": 0.5838791263296474,
+     "n": 4684,
+     "base": 0.7275832621690862,
+     "brier": 0.19621384239538855,
+     "bss": 0.010050239671747896,
+     "precision": 0.7143467122117848,
+     "note": 50.5025119835874,
+     "logloss": 0.5832473019047697,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 37,
+       "n": 38,
        "predit": 0.0488,
-       "reel": 0.7297297297297297
+       "reel": 0.7105263157894737
       },
       {
        "tranche": "10-20",
-       "n": 29,
-       "predit": 0.16837241379310344,
-       "reel": 0.5172413793103449
+       "n": 30,
+       "predit": 0.16880333333333333,
+       "reel": 0.5
       },
       {
        "tranche": "20-30",
-       "n": 139,
-       "predit": 0.2618014388489209,
-       "reel": 0.5251798561151079
+       "n": 140,
+       "predit": 0.26151142857142856,
+       "reel": 0.5285714285714286
       },
       {
        "tranche": "30-40",
-       "n": 136,
-       "predit": 0.3686198529411765,
-       "reel": 0.5294117647058824
+       "n": 138,
+       "predit": 0.36898043478260867,
+       "reel": 0.5217391304347826
       },
       {
        "tranche": "40-50",
-       "n": 231,
-       "predit": 0.4700731601731602,
-       "reel": 0.5670995670995671
+       "n": 232,
+       "predit": 0.47014439655172413,
+       "reel": 0.5689655172413793
       },
       {
        "tranche": "50-60",
-       "n": 437,
-       "predit": 0.5488732265446225,
-       "reel": 0.6544622425629291
+       "n": 448,
+       "predit": 0.5489555803571429,
+       "reel": 0.65625
       },
       {
        "tranche": "60-70",
-       "n": 789,
-       "predit": 0.6523550063371355,
-       "reel": 0.6577946768060836
+       "n": 793,
+       "predit": 0.6522528373266078,
+       "reel": 0.6569987389659521
       },
       {
        "tranche": "70-80",
-       "n": 952,
-       "predit": 0.7499127100840337,
-       "reel": 0.6995798319327731
+       "n": 966,
+       "predit": 0.7499837474120082,
+       "reel": 0.6997929606625258
       },
       {
        "tranche": "80-90",
-       "n": 1056,
-       "predit": 0.8488210227272728,
-       "reel": 0.7945075757575758
+       "n": 1077,
+       "predit": 0.8486592386258124,
+       "reel": 0.7929433611884865
       },
       {
        "tranche": "90-100",
-       "n": 808,
-       "predit": 0.9411096534653466,
-       "reel": 0.9034653465346535
+       "n": 822,
+       "predit": 0.9411630170316301,
+       "reel": 0.9038929440389294
       }
      ],
      "top": {
-      "n": 190,
-      "hits": 177,
-      "attendu": 184.122
+      "n": 200,
+      "hits": 187,
+      "attendu": 193.6607
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 10,
-       "hits": 9,
-       "attendu": 9.6047
-      },
       {
        "date": "2026-10-05",
        "n": 10,
@@ -8748,17 +9028,23 @@
        "n": 10,
        "hits": 10,
        "attendu": 9.8314
+      },
+      {
+       "date": "2026-10-18",
+       "n": 10,
+       "hits": 10,
+       "attendu": 9.5387
       }
      ]
     },
     "v1": {
-     "n": 4614,
-     "base": 0.7277850021673169,
-     "brier": 0.18125126065452968,
-     "bss": 0.08511631054340241,
-     "precision": 0.734503684438665,
-     "note": 54.25581552717012,
-     "logloss": 0.5396780536645207,
+     "n": 4684,
+     "base": 0.7275832621690862,
+     "brier": 0.18130601486976944,
+     "bss": 0.08526409872386753,
+     "precision": 0.7346285226302306,
+     "note": 54.263204936193375,
+     "logloss": 0.5397129663657081,
      "calib": [
       {
        "tranche": "20-30",
@@ -8774,53 +9060,47 @@
       },
       {
        "tranche": "40-50",
-       "n": 159,
-       "predit": 0.46198993710691827,
-       "reel": 0.39622641509433965
+       "n": 161,
+       "predit": 0.462139751552795,
+       "reel": 0.391304347826087
       },
       {
        "tranche": "50-60",
-       "n": 520,
-       "predit": 0.5581548076923077,
-       "reel": 0.5615384615384615
+       "n": 530,
+       "predit": 0.5579388679245283,
+       "reel": 0.5622641509433962
       },
       {
        "tranche": "60-70",
-       "n": 1035,
-       "predit": 0.6526826086956522,
-       "reel": 0.6473429951690821
+       "n": 1044,
+       "predit": 0.6526006704980843,
+       "reel": 0.6494252873563219
       },
       {
        "tranche": "70-80",
-       "n": 1285,
-       "predit": 0.7505260700389106,
-       "reel": 0.7284046692607004
+       "n": 1309,
+       "predit": 0.7504579831932774,
+       "reel": 0.7242169595110771
       },
       {
        "tranche": "80-90",
-       "n": 1109,
-       "predit": 0.8487554553651939,
-       "reel": 0.8340847610459874
+       "n": 1127,
+       "predit": 0.8485246672582076,
+       "reel": 0.8358473824312334
       },
       {
        "tranche": "90-100",
-       "n": 478,
-       "predit": 0.9282294979079497,
-       "reel": 0.9560669456066946
+       "n": 485,
+       "predit": 0.9283253608247423,
+       "reel": 0.9567010309278351
       }
      ],
      "top": {
-      "n": 190,
-      "hits": 183,
-      "attendu": 178.68099999999998
+      "n": 200,
+      "hits": 193,
+      "attendu": 187.87279999999998
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 10,
-       "hits": 10,
-       "attendu": 9.3448
-      },
       {
        "date": "2026-10-05",
        "n": 10,
@@ -8898,93 +9178,93 @@
        "n": 10,
        "hits": 10,
        "attendu": 9.6055
+      },
+      {
+       "date": "2026-10-18",
+       "n": 10,
+       "hits": 10,
+       "attendu": 9.1918
       }
      ]
     }
    },
    "tirs": {
     "v0": {
-     "n": 4614,
-     "base": 0.4221933246640659,
-     "brier": 0.22735821003684437,
-     "bss": 0.06799825776999824,
-     "precision": 0.6423927178153446,
-     "note": 53.39991288849991,
-     "logloss": 0.6671546059801915,
+     "n": 4684,
+     "base": 0.42335610589239964,
+     "brier": 0.2272871309735269,
+     "bss": 0.06897504683696654,
+     "precision": 0.6421861656703672,
+     "note": 53.448752341848326,
+     "logloss": 0.6666587152903358,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 344,
-       "predit": 0.04893779069767443,
-       "reel": 0.23255813953488372
+       "n": 349,
+       "predit": 0.04888309455587393,
+       "reel": 0.22922636103151864
       },
       {
        "tranche": "10-20",
-       "n": 506,
-       "predit": 0.15823339920948618,
-       "reel": 0.2648221343873518
+       "n": 513,
+       "predit": 0.15846198830409355,
+       "reel": 0.26900584795321636
       },
       {
        "tranche": "20-30",
-       "n": 656,
-       "predit": 0.25213460365853657,
-       "reel": 0.31097560975609756
+       "n": 665,
+       "predit": 0.2518784962406015,
+       "reel": 0.3112781954887218
       },
       {
        "tranche": "30-40",
-       "n": 760,
-       "predit": 0.3526157894736842,
-       "reel": 0.3447368421052632
+       "n": 766,
+       "predit": 0.3527668407310705,
+       "reel": 0.34464751958224543
       },
       {
        "tranche": "40-50",
-       "n": 656,
-       "predit": 0.4518172256097561,
-       "reel": 0.41615853658536583
+       "n": 670,
+       "predit": 0.45207179104477613,
+       "reel": 0.417910447761194
       },
       {
        "tranche": "50-60",
-       "n": 617,
-       "predit": 0.5548213938411669,
-       "reel": 0.44570502431118314
+       "n": 630,
+       "predit": 0.554932380952381,
+       "reel": 0.44603174603174606
       },
       {
        "tranche": "60-70",
-       "n": 404,
-       "predit": 0.6540962871287129,
-       "reel": 0.594059405940594
+       "n": 407,
+       "predit": 0.654139312039312,
+       "reel": 0.5945945945945946
       },
       {
        "tranche": "70-80",
-       "n": 342,
-       "predit": 0.744104970760234,
-       "reel": 0.695906432748538
+       "n": 348,
+       "predit": 0.7442646551724138,
+       "reel": 0.6982758620689655
       },
       {
        "tranche": "80-90",
-       "n": 268,
-       "predit": 0.841210447761194,
-       "reel": 0.7276119402985075
+       "n": 274,
+       "predit": 0.8406394160583941,
+       "reel": 0.7299270072992701
       },
       {
        "tranche": "90-100",
-       "n": 61,
-       "predit": 0.9365934426229507,
-       "reel": 0.7704918032786885
+       "n": 62,
+       "predit": 0.9365241935483871,
+       "reel": 0.7741935483870968
       }
      ],
      "top": {
-      "n": 190,
-      "hits": 148,
-      "attendu": 164.8137
+      "n": 200,
+      "hits": 157,
+      "attendu": 172.9578
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 10,
-       "hits": 8,
-       "attendu": 8.3612
-      },
       {
        "date": "2026-10-05",
        "n": 10,
@@ -9062,17 +9342,23 @@
        "n": 10,
        "hits": 9,
        "attendu": 9.1537
+      },
+      {
+       "date": "2026-10-18",
+       "n": 10,
+       "hits": 9,
+       "attendu": 8.1441
       }
      ]
     },
     "v1": {
-     "n": 4614,
-     "base": 0.4221933246640659,
-     "brier": 0.21401443797355874,
-     "bss": 0.12269792667083479,
-     "precision": 0.658864325964456,
-     "note": 56.13489633354174,
-     "logloss": 0.6167426998542362,
+     "n": 4684,
+     "base": 0.42335610589239964,
+     "brier": 0.21389290755977797,
+     "bss": 0.1238411370244189,
+     "precision": 0.6596925704526047,
+     "note": 56.19205685122095,
+     "logloss": 0.6165100904378892,
      "calib": [
       {
        "tranche": "0-10",
@@ -9082,51 +9368,51 @@
       },
       {
        "tranche": "10-20",
-       "n": 349,
-       "predit": 0.16178280802292264,
-       "reel": 0.16905444126074498
+       "n": 355,
+       "predit": 0.16180647887323943,
+       "reel": 0.17183098591549295
       },
       {
        "tranche": "20-30",
-       "n": 856,
-       "predit": 0.25385268691588786,
-       "reel": 0.2628504672897196
+       "n": 869,
+       "predit": 0.25375627157652475,
+       "reel": 0.26352128883774456
       },
       {
        "tranche": "30-40",
-       "n": 954,
-       "predit": 0.35045283018867923,
-       "reel": 0.3438155136268344
+       "n": 965,
+       "predit": 0.3506729533678757,
+       "reel": 0.34196891191709844
       },
       {
        "tranche": "40-50",
-       "n": 875,
-       "predit": 0.44768491428571433,
-       "reel": 0.42628571428571427
+       "n": 894,
+       "predit": 0.44775939597315434,
+       "reel": 0.4272930648769575
       },
       {
        "tranche": "50-60",
-       "n": 625,
-       "predit": 0.5475654400000001,
-       "reel": 0.5088
+       "n": 635,
+       "predit": 0.5475596850393701,
+       "reel": 0.5133858267716536
       },
       {
        "tranche": "60-70",
-       "n": 502,
-       "predit": 0.6460922310756972,
-       "reel": 0.6195219123505976
+       "n": 506,
+       "predit": 0.6460245059288537,
+       "reel": 0.6225296442687747
       },
       {
        "tranche": "70-80",
-       "n": 318,
-       "predit": 0.7423452830188679,
-       "reel": 0.7767295597484277
+       "n": 322,
+       "predit": 0.7421298136645963,
+       "reel": 0.7763975155279503
       },
       {
        "tranche": "80-90",
-       "n": 101,
-       "predit": 0.8385712871287129,
-       "reel": 0.8316831683168316
+       "n": 104,
+       "predit": 0.8387423076923077,
+       "reel": 0.8365384615384616
       },
       {
        "tranche": "90-100",
@@ -9136,17 +9422,11 @@
       }
      ],
      "top": {
-      "n": 190,
-      "hits": 155,
-      "attendu": 150.3271
+      "n": 200,
+      "hits": 164,
+      "attendu": 157.7051
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 10,
-       "hits": 9,
-       "attendu": 7.7388
-      },
       {
        "date": "2026-10-05",
        "n": 10,
@@ -9224,61 +9504,67 @@
        "n": 10,
        "hits": 7,
        "attendu": 8.467
+      },
+      {
+       "date": "2026-10-18",
+       "n": 10,
+       "hits": 9,
+       "attendu": 7.378
       }
      ]
     }
    },
    "tirs3": {
     "v0": {
-     "n": 4614,
-     "base": 0.2141309059384482,
-     "brier": 0.15558917231902905,
-     "bss": 0.07540869162908004,
-     "precision": 0.7878196792371045,
-     "note": 53.770434581454005,
-     "logloss": 0.5056903925628186,
+     "n": 4684,
+     "base": 0.2149871904355252,
+     "brier": 0.15627064574935953,
+     "bss": 0.07404884201453021,
+     "precision": 0.7865072587532024,
+     "note": 53.70244210072651,
+     "logloss": 0.5074967461365928,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 1506,
-       "predit": 0.04595019920318725,
-       "reel": 0.10624169986719788
+       "n": 1527,
+       "predit": 0.04591748526522593,
+       "reel": 0.10805500982318271
       },
       {
        "tranche": "10-20",
-       "n": 1127,
-       "predit": 0.1465723158828749,
-       "reel": 0.1543921916592724
+       "n": 1139,
+       "predit": 0.14675662862159788,
+       "reel": 0.15452151009657594
       },
       {
        "tranche": "20-30",
-       "n": 677,
-       "predit": 0.24792703101920235,
-       "reel": 0.22008862629246675
+       "n": 693,
+       "predit": 0.24793708513708515,
+       "reel": 0.21933621933621933
       },
       {
        "tranche": "30-40",
-       "n": 486,
-       "predit": 0.3462117283950617,
-       "reel": 0.2613168724279835
+       "n": 492,
+       "predit": 0.34602378048780486,
+       "reel": 0.26422764227642276
       },
       {
        "tranche": "40-50",
-       "n": 349,
-       "predit": 0.4526171919770774,
-       "reel": 0.3982808022922636
+       "n": 354,
+       "predit": 0.4526084745762712,
+       "reel": 0.3983050847457627
       },
       {
        "tranche": "50-60",
-       "n": 224,
-       "predit": 0.5466808035714286,
-       "reel": 0.46875
+       "n": 230,
+       "predit": 0.5469513043478261,
+       "reel": 0.4652173913043478
       },
       {
        "tranche": "60-70",
-       "n": 131,
-       "predit": 0.651151145038168,
-       "reel": 0.5038167938931297
+       "n": 134,
+       "predit": 0.6504768656716418,
+       "reel": 0.5
       },
       {
        "tranche": "70-80",
@@ -9288,9 +9574,9 @@
       },
       {
        "tranche": "80-90",
-       "n": 23,
-       "predit": 0.8345173913043478,
-       "reel": 0.5652173913043478
+       "n": 24,
+       "predit": 0.8335750000000001,
+       "reel": 0.5833333333333334
       },
       {
        "tranche": "90-100",
@@ -9300,17 +9586,11 @@
       }
      ],
      "top": {
-      "n": 190,
-      "hits": 107,
-      "attendu": 132.1927
+      "n": 200,
+      "hits": 111,
+      "attendu": 138.21
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 10,
-       "hits": 5,
-       "attendu": 6.374
-      },
       {
        "date": "2026-10-05",
        "n": 10,
@@ -9388,79 +9668,79 @@
        "n": 10,
        "hits": 6,
        "attendu": 7.7829
+      },
+      {
+       "date": "2026-10-18",
+       "n": 10,
+       "hits": 4,
+       "attendu": 6.0173
       }
      ]
     },
     "v1": {
-     "n": 4614,
-     "base": 0.2141309059384482,
-     "brier": 0.14666421950151715,
-     "bss": 0.128445375864226,
-     "precision": 0.7997399219765929,
-     "note": 56.4222687932113,
-     "logloss": 0.45886471033513687,
+     "n": 4684,
+     "base": 0.2149871904355252,
+     "brier": 0.14728440021135783,
+     "bss": 0.12729508299570658,
+     "precision": 0.7991033304867634,
+     "note": 56.36475414978533,
+     "logloss": 0.4608419673672342,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 1116,
-       "predit": 0.06400519713261649,
-       "reel": 0.06720430107526881
+       "n": 1133,
+       "predit": 0.06397166813768755,
+       "reel": 0.06972639011473963
       },
       {
        "tranche": "10-20",
-       "n": 1447,
-       "predit": 0.1468103662750518,
-       "reel": 0.1465100207325501
+       "n": 1469,
+       "predit": 0.14700272294077604,
+       "reel": 0.14703880190605853
       },
       {
        "tranche": "20-30",
-       "n": 861,
-       "predit": 0.2456753774680604,
-       "reel": 0.23228803716608595
+       "n": 877,
+       "predit": 0.24577263397947546,
+       "reel": 0.2314709236031927
       },
       {
        "tranche": "30-40",
-       "n": 553,
-       "predit": 0.3486873417721519,
-       "reel": 0.32007233273056057
+       "n": 559,
+       "predit": 0.3485633273703041,
+       "reel": 0.3220035778175313
       },
       {
        "tranche": "40-50",
-       "n": 349,
-       "predit": 0.4475727793696275,
-       "reel": 0.42406876790830944
+       "n": 354,
+       "predit": 0.447590395480226,
+       "reel": 0.423728813559322
       },
       {
        "tranche": "50-60",
-       "n": 190,
-       "predit": 0.54469,
-       "reel": 0.5631578947368421
+       "n": 191,
+       "predit": 0.5446376963350785,
+       "reel": 0.5602094240837696
       },
       {
        "tranche": "60-70",
-       "n": 77,
-       "predit": 0.6448493506493507,
-       "reel": 0.7142857142857143
+       "n": 79,
+       "predit": 0.6448012658227849,
+       "reel": 0.7215189873417721
       },
       {
        "tranche": "70-80",
-       "n": 21,
-       "predit": 0.7283333333333333,
-       "reel": 0.6666666666666666
+       "n": 22,
+       "predit": 0.7277818181818181,
+       "reel": 0.6818181818181818
       }
      ],
      "top": {
-      "n": 190,
-      "hits": 116,
-      "attendu": 111.8415
+      "n": 200,
+      "hits": 121,
+      "attendu": 117.0086
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 10,
-       "hits": 6,
-       "attendu": 5.6176
-      },
       {
        "date": "2026-10-05",
        "n": 10,
@@ -9538,49 +9818,55 @@
        "n": 10,
        "hits": 4,
        "attendu": 6.7086
+      },
+      {
+       "date": "2026-10-18",
+       "n": 10,
+       "hits": 5,
+       "attendu": 5.1671
       }
      ]
     }
    },
    "tirs4": {
     "v0": {
-     "n": 4614,
-     "base": 0.09904638058084092,
-     "brier": 0.0839438534308626,
-     "bss": 0.059307119038241374,
-     "precision": 0.8968357173818813,
-     "note": 52.965355951912066,
-     "logloss": 0.3081634674655454,
+     "n": 4684,
+     "base": 0.0990606319385141,
+     "brier": 0.08413889710717336,
+     "bss": 0.05724215224597573,
+     "precision": 0.8970964987190435,
+     "note": 52.862107612298786,
+     "logloss": 0.3097097111341344,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 3006,
-       "predit": 0.03245632069194943,
-       "reel": 0.051563539587491686
+       "n": 3048,
+       "predit": 0.03253011811023622,
+       "reel": 0.05249343832020997
       },
       {
        "tranche": "10-20",
-       "n": 800,
-       "predit": 0.140937625,
-       "reel": 0.10125
+       "n": 814,
+       "predit": 0.1408120393120393,
+       "reel": 0.09950859950859951
       },
       {
        "tranche": "20-30",
-       "n": 400,
-       "predit": 0.24927275000000002,
-       "reel": 0.2325
+       "n": 404,
+       "predit": 0.2492841584158416,
+       "reel": 0.2301980198019802
       },
       {
        "tranche": "30-40",
-       "n": 192,
-       "predit": 0.3434828125,
-       "reel": 0.23958333333333334
+       "n": 199,
+       "predit": 0.34339296482412063,
+       "reel": 0.23115577889447236
       },
       {
        "tranche": "40-50",
-       "n": 113,
-       "predit": 0.44940353982300885,
-       "reel": 0.35398230088495575
+       "n": 115,
+       "predit": 0.44864000000000004,
+       "reel": 0.3565217391304348
       },
       {
        "tranche": "50-60",
@@ -9590,9 +9876,9 @@
       },
       {
        "tranche": "60-70",
-       "n": 23,
-       "predit": 0.6432217391304348,
-       "reel": 0.34782608695652173
+       "n": 24,
+       "predit": 0.6429291666666667,
+       "reel": 0.375
       },
       {
        "tranche": "70-80",
@@ -9608,17 +9894,11 @@
       }
      ],
      "top": {
-      "n": 190,
-      "hits": 66,
-      "attendu": 94.321
+      "n": 200,
+      "hits": 68,
+      "attendu": 98.1547
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 10,
-       "hits": 4,
-       "attendu": 4.2213
-      },
       {
        "date": "2026-10-05",
        "n": 10,
@@ -9696,53 +9976,59 @@
        "n": 10,
        "hits": 4,
        "attendu": 5.9215
+      },
+      {
+       "date": "2026-10-18",
+       "n": 10,
+       "hits": 2,
+       "attendu": 3.8337
       }
      ]
     },
     "v1": {
-     "n": 4614,
-     "base": 0.09904638058084092,
-     "brier": 0.07830873759427828,
-     "bss": 0.12245543942402926,
-     "precision": 0.9016038144776767,
-     "note": 56.12277197120146,
-     "logloss": 0.27443109519916165,
+     "n": 4684,
+     "base": 0.0990606319385141,
+     "brier": 0.07844584957514944,
+     "bss": 0.12103149846970518,
+     "precision": 0.9017933390264731,
+     "note": 56.05157492348526,
+     "logloss": 0.2756878449853009,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 2971,
-       "predit": 0.042151733423089865,
-       "reel": 0.04240996297542915
+       "n": 3016,
+       "predit": 0.04219559018567639,
+       "reel": 0.04343501326259947
       },
       {
        "tranche": "10-20",
-       "n": 931,
-       "predit": 0.14293447905477982,
-       "reel": 0.12567132116004295
+       "n": 946,
+       "predit": 0.14271374207188162,
+       "reel": 0.12367864693446089
       },
       {
        "tranche": "20-30",
-       "n": 430,
-       "predit": 0.24403232558139534,
-       "reel": 0.22325581395348837
+       "n": 436,
+       "predit": 0.24403509174311927,
+       "reel": 0.22018348623853212
       },
       {
        "tranche": "30-40",
-       "n": 186,
-       "predit": 0.3429935483870968,
-       "reel": 0.34946236559139787
+       "n": 188,
+       "predit": 0.34321702127659576,
+       "reel": 0.34574468085106386
       },
       {
        "tranche": "40-50",
-       "n": 73,
-       "predit": 0.44617671232876716,
-       "reel": 0.547945205479452
+       "n": 74,
+       "predit": 0.4468135135135135,
+       "reel": 0.5540540540540541
       },
       {
        "tranche": "50-60",
-       "n": 21,
-       "predit": 0.5353619047619047,
-       "reel": 0.5714285714285714
+       "n": 22,
+       "predit": 0.5351409090909091,
+       "reel": 0.5909090909090909
       },
       {
        "tranche": "60-70",
@@ -9752,17 +10038,11 @@
       }
      ],
      "top": {
-      "n": 190,
-      "hits": 79,
-      "attendu": 74.2612
+      "n": 200,
+      "hits": 81,
+      "attendu": 77.4784
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 10,
-       "hits": 4,
-       "attendu": 3.6132999999999997
-      },
       {
        "date": "2026-10-05",
        "n": 10,
@@ -9840,49 +10120,55 @@
        "n": 10,
        "hits": 4,
        "attendu": 4.7774
+      },
+      {
+       "date": "2026-10-18",
+       "n": 10,
+       "hits": 2,
+       "attendu": 3.2172
       }
      ]
     }
    },
    "buts": {
     "v0": {
-     "n": 4442,
-     "base": 0.1515083295812697,
-     "brier": 0.13405031882260243,
-     "bss": -0.042758546398030006,
-     "precision": 0.8374606033318325,
-     "note": 47.8620726800985,
-     "logloss": 0.4803137272982125,
+     "n": 4512,
+     "base": 0.15093085106382978,
+     "brier": 0.13362635180186172,
+     "bss": -0.04272798580593995,
+     "precision": 0.8384308510638298,
+     "note": 47.863600709703,
+     "logloss": 0.47884057935456126,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 1934,
-       "predit": 0.02421432264736298,
-       "reel": 0.10341261633919338
+       "n": 1968,
+       "predit": 0.02399446138211382,
+       "reel": 0.10264227642276423
       },
       {
        "tranche": "10-20",
-       "n": 1008,
-       "predit": 0.15235575396825396,
-       "reel": 0.15873015873015872
+       "n": 1026,
+       "predit": 0.15210253411306043,
+       "reel": 0.15886939571150097
       },
       {
        "tranche": "20-30",
-       "n": 896,
-       "predit": 0.2469114955357143,
-       "reel": 0.17075892857142858
+       "n": 905,
+       "predit": 0.2468839779005525,
+       "reel": 0.17016574585635358
       },
       {
        "tranche": "30-40",
-       "n": 357,
-       "predit": 0.35559635854341737,
-       "reel": 0.24369747899159663
+       "n": 361,
+       "predit": 0.35569639889196675,
+       "reel": 0.24376731301939059
       },
       {
        "tranche": "40-50",
-       "n": 150,
-       "predit": 0.45900599999999997,
-       "reel": 0.32666666666666666
+       "n": 154,
+       "predit": 0.45958051948051953,
+       "reel": 0.3181818181818182
       },
       {
        "tranche": "50-60",
@@ -9892,9 +10178,9 @@
       },
       {
        "tranche": "60-70",
-       "n": 38,
-       "predit": 0.6429184210526316,
-       "reel": 0.2894736842105263
+       "n": 39,
+       "predit": 0.643748717948718,
+       "reel": 0.3076923076923077
       },
       {
        "tranche": "70-80",
@@ -9904,17 +10190,11 @@
       }
      ],
      "top": {
-      "n": 190,
-      "hits": 60,
-      "attendu": 93.8702
+      "n": 200,
+      "hits": 62,
+      "attendu": 98.212
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 10,
-       "hits": 4,
-       "attendu": 4.8286
-      },
       {
        "date": "2026-10-05",
        "n": 10,
@@ -9992,47 +10272,53 @@
        "n": 10,
        "hits": 1,
        "attendu": 5.6259
+      },
+      {
+       "date": "2026-10-18",
+       "n": 10,
+       "hits": 2,
+       "attendu": 4.3418
       }
      ]
     },
     "v1": {
-     "n": 4442,
-     "base": 0.1515083295812697,
-     "brier": 0.12105341777577666,
-     "bss": 0.0583425159664851,
-     "precision": 0.8482665466006304,
-     "note": 52.91712579832426,
-     "logloss": 0.39560321696145073,
+     "n": 4512,
+     "base": 0.15093085106382978,
+     "brier": 0.12070963561170214,
+     "bss": 0.058065168198317085,
+     "precision": 0.8488475177304965,
+     "note": 52.90325840991586,
+     "logloss": 0.3947991512378127,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 1361,
-       "predit": 0.06243975018368847,
-       "reel": 0.05363703159441587
+       "n": 1385,
+       "predit": 0.06245891696750903,
+       "reel": 0.053429602888086646
       },
       {
        "tranche": "10-20",
-       "n": 1781,
-       "predit": 0.14958747894441327,
-       "reel": 0.15216170690623246
+       "n": 1813,
+       "predit": 0.14963695532266963,
+       "reel": 0.1516822945394374
       },
       {
        "tranche": "20-30",
-       "n": 938,
-       "predit": 0.24151055437100213,
-       "reel": 0.21428571428571427
+       "n": 948,
+       "predit": 0.24139103375527424,
+       "reel": 0.2141350210970464
       },
       {
        "tranche": "30-40",
-       "n": 310,
-       "predit": 0.3382583870967742,
-       "reel": 0.33548387096774196
+       "n": 312,
+       "predit": 0.3382080128205128,
+       "reel": 0.3333333333333333
       },
       {
        "tranche": "40-50",
-       "n": 51,
-       "predit": 0.4329450980392157,
-       "reel": 0.47058823529411764
+       "n": 53,
+       "predit": 0.43387924528301886,
+       "reel": 0.4716981132075472
       },
       {
        "tranche": "50-60",
@@ -10042,17 +10328,11 @@
       }
      ],
      "top": {
-      "n": 190,
-      "hits": 66,
-      "attendu": 69.74119999999999
+      "n": 200,
+      "hits": 68,
+      "attendu": 72.7764
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 10,
-       "hits": 3,
-       "attendu": 3.4932
-      },
       {
        "date": "2026-10-05",
        "n": 10,
@@ -10130,67 +10410,73 @@
        "n": 10,
        "hits": 6,
        "attendu": 4.1922
+      },
+      {
+       "date": "2026-10-18",
+       "n": 10,
+       "hits": 2,
+       "attendu": 3.0352
       }
      ]
     }
    },
    "passes": {
     "v0": {
-     "n": 4442,
-     "base": 0.24493471409275103,
-     "brier": 0.18992790127645204,
-     "bss": -0.02696093608644956,
-     "precision": 0.7483115713642503,
-     "note": 48.65195319567752,
-     "logloss": 0.6288548573475324,
+     "n": 4512,
+     "base": 0.24423758865248227,
+     "brier": 0.18977952462101064,
+     "bss": -0.02813835960372768,
+     "precision": 0.7486702127659575,
+     "note": 48.593082019813615,
+     "logloss": 0.6282104816321794,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 1028,
-       "predit": 0.02146682879377432,
-       "reel": 0.17412451361867703
+       "n": 1044,
+       "predit": 0.02134750957854406,
+       "reel": 0.17337164750957854
       },
       {
        "tranche": "10-20",
-       "n": 940,
-       "predit": 0.15721117021276595,
-       "reel": 0.21063829787234042
+       "n": 962,
+       "predit": 0.15712130977130978,
+       "reel": 0.21101871101871103
       },
       {
        "tranche": "20-30",
-       "n": 1091,
-       "predit": 0.2528263061411549,
-       "reel": 0.22548120989917506
+       "n": 1105,
+       "predit": 0.2527993665158371,
+       "reel": 0.2244343891402715
       },
       {
        "tranche": "30-40",
-       "n": 691,
-       "predit": 0.35483212735166425,
-       "reel": 0.26772793053545585
+       "n": 697,
+       "predit": 0.3549348637015782,
+       "reel": 0.2682926829268293
       },
       {
        "tranche": "40-50",
-       "n": 332,
-       "predit": 0.46193554216867466,
-       "reel": 0.3463855421686747
+       "n": 338,
+       "predit": 0.46179940828402366,
+       "reel": 0.3431952662721893
       },
       {
        "tranche": "50-60",
-       "n": 198,
-       "predit": 0.5432631313131313,
-       "reel": 0.43434343434343436
+       "n": 201,
+       "predit": 0.5433467661691542,
+       "reel": 0.43781094527363185
       },
       {
        "tranche": "60-70",
-       "n": 127,
-       "predit": 0.6379897637795275,
-       "reel": 0.4881889763779528
+       "n": 129,
+       "predit": 0.637898449612403,
+       "reel": 0.4806201550387597
       },
       {
        "tranche": "70-80",
-       "n": 24,
-       "predit": 0.7391166666666668,
-       "reel": 0.3333333333333333
+       "n": 25,
+       "predit": 0.7380920000000001,
+       "reel": 0.32
       },
       {
        "tranche": "80-90",
@@ -10206,17 +10492,11 @@
       }
      ],
      "top": {
-      "n": 190,
-      "hits": 92,
-      "attendu": 118.2553
+      "n": 200,
+      "hits": 95,
+      "attendu": 123.7528
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 10,
-       "hits": 7,
-       "attendu": 6.0865
-      },
       {
        "date": "2026-10-05",
        "n": 10,
@@ -10294,17 +10574,23 @@
        "n": 10,
        "hits": 6,
        "attendu": 6.785
+      },
+      {
+       "date": "2026-10-18",
+       "n": 10,
+       "hits": 3,
+       "attendu": 5.4975
       }
      ]
     },
     "v1": {
-     "n": 4442,
-     "base": 0.24493471409275103,
-     "brier": 0.1735228564092751,
-     "bss": 0.06174293585711421,
-     "precision": 0.7602431337235479,
-     "note": 53.08714679285571,
-     "logloss": 0.5276026787354242,
+     "n": 4512,
+     "base": 0.24423758865248227,
+     "brier": 0.17339380131648938,
+     "bss": 0.06063196855930286,
+     "precision": 0.7606382978723404,
+     "note": 53.03159842796514,
+     "logloss": 0.5273633893922237,
      "calib": [
       {
        "tranche": "0-10",
@@ -10314,27 +10600,27 @@
       },
       {
        "tranche": "10-20",
-       "n": 1296,
-       "predit": 0.1639719135802469,
-       "reel": 0.15046296296296297
+       "n": 1323,
+       "predit": 0.1636395313681028,
+       "reel": 0.15041572184429328
       },
       {
        "tranche": "20-30",
-       "n": 1880,
-       "predit": 0.24547702127659574,
-       "reel": 0.22393617021276596
+       "n": 1908,
+       "predit": 0.2453797169811321,
+       "reel": 0.22379454926624737
       },
       {
        "tranche": "30-40",
-       "n": 893,
-       "predit": 0.3415148936170213,
-       "reel": 0.3337066069428891
+       "n": 900,
+       "predit": 0.34156444444444445,
+       "reel": 0.3322222222222222
       },
       {
        "tranche": "40-50",
-       "n": 246,
-       "predit": 0.44033943089430894,
-       "reel": 0.44308943089430897
+       "n": 253,
+       "predit": 0.44022806324110675,
+       "reel": 0.4426877470355731
       },
       {
        "tranche": "50-60",
@@ -10344,9 +10630,9 @@
       },
       {
        "tranche": "60-70",
-       "n": 22,
-       "predit": 0.6312454545454546,
-       "reel": 0.7272727272727273
+       "n": 23,
+       "predit": 0.6310391304347825,
+       "reel": 0.6956521739130435
       },
       {
        "tranche": "70-80",
@@ -10356,17 +10642,11 @@
       }
      ],
      "top": {
-      "n": 190,
-      "hits": 101,
-      "attendu": 94.73819999999999
+      "n": 200,
+      "hits": 104,
+      "attendu": 99.1882
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 10,
-       "hits": 5,
-       "attendu": 4.4919
-      },
       {
        "date": "2026-10-05",
        "n": 10,
@@ -10444,6 +10724,12 @@
        "n": 10,
        "hits": 7,
        "attendu": 5.7881
+      },
+      {
+       "date": "2026-10-18",
+       "n": 10,
+       "hits": 3,
+       "attendu": 4.45
       }
      ]
     }
@@ -10452,13 +10738,13 @@
   "matchs": {
    "victoire": {
     "v0": {
-     "n": 134,
-     "base": 0.5597014925373134,
-     "brier": 0.24326050865671642,
-     "bss": 0.01288458905310741,
-     "precision": 0.5597014925373134,
-     "note": 50.644229452655374,
-     "logloss": 0.6786264863273536,
+     "n": 136,
+     "base": 0.5661764705882353,
+     "brier": 0.24557020889705883,
+     "bss": 0.0002054625225621498,
+     "precision": 0.5588235294117647,
+     "note": 50.010273126128105,
+     "logloss": 0.6843210441014881,
      "calib": [
       {
        "tranche": "0-10",
@@ -10468,9 +10754,9 @@
       },
       {
        "tranche": "10-20",
-       "n": 2,
-       "predit": 0.1799,
-       "reel": 0.0
+       "n": 3,
+       "predit": 0.18463333333333334,
+       "reel": 0.3333333333333333
       },
       {
        "tranche": "20-30",
@@ -10498,9 +10784,9 @@
       },
       {
        "tranche": "60-70",
-       "n": 16,
-       "predit": 0.62269375,
-       "reel": 0.6875
+       "n": 17,
+       "predit": 0.6220176470588236,
+       "reel": 0.7058823529411765
       },
       {
        "tranche": "70-80",
@@ -10516,17 +10802,11 @@
       }
      ],
      "top": {
-      "n": 134,
-      "hits": 75,
-      "attendu": 65.4796
+      "n": 136,
+      "hits": 77,
+      "attendu": 66.2849
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 5,
-       "hits": 3,
-       "attendu": 2.6207000000000003
-      },
       {
        "date": "2026-10-05",
        "n": 4,
@@ -10604,17 +10884,23 @@
        "n": 14,
        "hits": 9,
        "attendu": 6.216
+      },
+      {
+       "date": "2026-10-18",
+       "n": 2,
+       "hits": 2,
+       "attendu": 0.8052999999999999
       }
      ]
     },
     "v1": {
-     "n": 134,
-     "base": 0.5597014925373134,
-     "brier": 0.22264616686567162,
-     "bss": 0.09653455994576277,
-     "precision": 0.6567164179104478,
-     "note": 54.82672799728814,
-     "logloss": 0.6369235203249887,
+     "n": 136,
+     "base": 0.5661764705882353,
+     "brier": 0.22362962860294117,
+     "bss": 0.08953255323794851,
+     "precision": 0.6544117647058824,
+     "note": 54.476627661897425,
+     "logloss": 0.6390046198962664,
      "calib": [
       {
        "tranche": "20-30",
@@ -10624,9 +10910,9 @@
       },
       {
        "tranche": "30-40",
-       "n": 13,
-       "predit": 0.3670307692307692,
-       "reel": 0.3076923076923077
+       "n": 14,
+       "predit": 0.3639357142857143,
+       "reel": 0.35714285714285715
       },
       {
        "tranche": "40-50",
@@ -10642,9 +10928,9 @@
       },
       {
        "tranche": "60-70",
-       "n": 29,
-       "predit": 0.6432827586206897,
-       "reel": 0.7241379310344828
+       "n": 30,
+       "predit": 0.6435466666666667,
+       "reel": 0.7333333333333333
       },
       {
        "tranche": "70-80",
@@ -10654,17 +10940,11 @@
       }
      ],
      "top": {
-      "n": 134,
-      "hits": 75,
-      "attendu": 72.1006
+      "n": 136,
+      "hits": 77,
+      "attendu": 73.0755
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 5,
-       "hits": 3,
-       "attendu": 2.7344
-      },
       {
        "date": "2026-10-05",
        "n": 4,
@@ -10742,19 +11022,25 @@
        "n": 14,
        "hits": 9,
        "attendu": 7.0428
+      },
+      {
+       "date": "2026-10-18",
+       "n": 2,
+       "hits": 2,
+       "attendu": 0.9749
       }
      ]
     }
    },
    "total55": {
     "v0": {
-     "n": 134,
-     "base": 0.5597014925373134,
-     "brier": 0.2534665235074627,
-     "bss": -0.028529920022598798,
-     "precision": 0.5597014925373134,
-     "note": 48.57350399887006,
-     "logloss": 0.7036665780895891,
+     "n": 136,
+     "base": 0.5514705882352942,
+     "brier": 0.25505555992647055,
+     "bss": -0.031149210142076278,
+     "precision": 0.5514705882352942,
+     "note": 48.44253949289619,
+     "logloss": 0.7068636371364792,
      "calib": [
       {
        "tranche": "20-30",
@@ -10776,15 +11062,15 @@
       },
       {
        "tranche": "50-60",
-       "n": 57,
-       "predit": 0.5601964912280701,
-       "reel": 0.543859649122807
+       "n": 58,
+       "predit": 0.5602103448275861,
+       "reel": 0.5344827586206896
       },
       {
        "tranche": "60-70",
-       "n": 39,
-       "predit": 0.6370179487179487,
-       "reel": 0.6410256410256411
+       "n": 40,
+       "predit": 0.6370675,
+       "reel": 0.625
       },
       {
        "tranche": "70-80",
@@ -10800,17 +11086,11 @@
       }
      ],
      "top": {
-      "n": 134,
+      "n": 136,
       "hits": 75,
-      "attendu": 77.7675
+      "attendu": 78.9675
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 5,
-       "hits": 2,
-       "attendu": 2.9612
-      },
       {
        "date": "2026-10-05",
        "n": 4,
@@ -10888,18 +11168,24 @@
        "n": 14,
        "hits": 8,
        "attendu": 8.2577
+      },
+      {
+       "date": "2026-10-18",
+       "n": 2,
+       "hits": 0,
+       "attendu": 1.2000000000000002
       }
      ],
-     "mae_total": 1.831736567164179
+     "mae_total": 1.8386029411764706
     },
     "v1": {
-     "n": 134,
-     "base": 0.5597014925373134,
-     "brier": 0.2488031456716418,
-     "bss": -0.009606617780790971,
-     "precision": 0.5447761194029851,
-     "note": 49.51966911096045,
-     "logloss": 0.6912313878056129,
+     "n": 136,
+     "base": 0.5514705882352942,
+     "brier": 0.2505249080147059,
+     "bss": -0.012832502434972692,
+     "precision": 0.5367647058823529,
+     "note": 49.35837487825137,
+     "logloss": 0.6947557280376843,
      "calib": [
       {
        "tranche": "30-40",
@@ -10915,15 +11201,15 @@
       },
       {
        "tranche": "50-60",
-       "n": 60,
-       "predit": 0.55036,
-       "reel": 0.5
+       "n": 61,
+       "predit": 0.5504754098360656,
+       "reel": 0.4918032786885246
       },
       {
        "tranche": "60-70",
-       "n": 47,
-       "predit": 0.652272340425532,
-       "reel": 0.5957446808510638
+       "n": 48,
+       "predit": 0.6522020833333334,
+       "reel": 0.5833333333333334
       },
       {
        "tranche": "70-80",
@@ -10939,17 +11225,11 @@
       }
      ],
      "top": {
-      "n": 134,
+      "n": 136,
       "hits": 75,
-      "attendu": 79.7698
+      "attendu": 80.9761
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 5,
-       "hits": 2,
-       "attendu": 2.7958
-      },
       {
        "date": "2026-10-05",
        "n": 4,
@@ -11027,20 +11307,26 @@
        "n": 14,
        "hits": 8,
        "attendu": 8.2976
+      },
+      {
+       "date": "2026-10-18",
+       "n": 2,
+       "hits": 0,
+       "attendu": 1.2063000000000001
       }
      ],
-     "mae_total": 1.793820895522388
+     "mae_total": 1.801589705882353
     }
    },
    "total65": {
     "v0": {
-     "n": 134,
-     "base": 0.44776119402985076,
-     "brier": 0.2535856923880597,
-     "bss": -0.02553709290990991,
-     "precision": 0.5373134328358209,
-     "note": 48.7231453545045,
-     "logloss": 0.7012403260823873,
+     "n": 136,
+     "base": 0.4411764705882353,
+     "brier": 0.252744998382353,
+     "bss": -0.025169186421052814,
+     "precision": 0.5441176470588235,
+     "note": 48.74154067894736,
+     "logloss": 0.6995284001430757,
      "calib": [
       {
        "tranche": "10-20",
@@ -11062,9 +11348,9 @@
       },
       {
        "tranche": "40-50",
-       "n": 63,
-       "predit": 0.4451,
-       "reel": 0.4603174603174603
+       "n": 65,
+       "predit": 0.4449830769230769,
+       "reel": 0.4461538461538462
       },
       {
        "tranche": "50-60",
@@ -11086,17 +11372,11 @@
       }
      ],
      "top": {
-      "n": 134,
+      "n": 136,
       "hits": 60,
-      "attendu": 56.9872
+      "attendu": 57.8698
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 5,
-       "hits": 1,
-       "attendu": 2.2331
-      },
       {
        "date": "2026-10-05",
        "n": 4,
@@ -11174,17 +11454,23 @@
        "n": 14,
        "hits": 6,
        "attendu": 6.0677
+      },
+      {
+       "date": "2026-10-18",
+       "n": 2,
+       "hits": 0,
+       "attendu": 0.8826
       }
      ]
     },
     "v1": {
-     "n": 134,
-     "base": 0.44776119402985076,
-     "brier": 0.24802805791044777,
-     "bss": -0.0030612179819817786,
-     "precision": 0.5671641791044776,
-     "note": 49.84693910090091,
-     "logloss": 0.6896660719706673,
+     "n": 136,
+     "base": 0.4411764705882353,
+     "brier": 0.24732557544117645,
+     "bss": -0.003187246350877082,
+     "precision": 0.5735294117647058,
+     "note": 49.84063768245615,
+     "logloss": 0.688235557875799,
      "calib": [
       {
        "tranche": "20-30",
@@ -11194,15 +11480,15 @@
       },
       {
        "tranche": "30-40",
-       "n": 47,
-       "predit": 0.3640893617021277,
-       "reel": 0.46808510638297873
+       "n": 48,
+       "predit": 0.36476875000000003,
+       "reel": 0.4583333333333333
       },
       {
        "tranche": "40-50",
-       "n": 44,
-       "predit": 0.4431045454545455,
-       "reel": 0.36363636363636365
+       "n": 45,
+       "predit": 0.44421555555555553,
+       "reel": 0.35555555555555557
       },
       {
        "tranche": "50-60",
@@ -11218,17 +11504,11 @@
       }
      ],
      "top": {
-      "n": 134,
+      "n": 136,
       "hits": 60,
-      "attendu": 58.882
+      "attendu": 59.7718
      },
      "soirs": [
-      {
-       "date": "2026-10-04",
-       "n": 5,
-       "hits": 1,
-       "attendu": 2.0172
-      },
       {
        "date": "2026-10-05",
        "n": 4,
@@ -11306,6 +11586,12 @@
        "n": 14,
        "hits": 6,
        "attendu": 6.1267
+      },
+      {
+       "date": "2026-10-18",
+       "n": 2,
+       "hits": 0,
+       "attendu": 0.8897999999999999
       }
      ]
     }
@@ -11313,12 +11599,12 @@
   },
   "global": {
    "v0": {
-    "n": 13900,
-    "note": 49.74317654171736
+    "n": 14116,
+    "note": 49.71273751509924
    },
    "v1": {
-    "n": 13900,
-    "note": 53.86253788166394
+    "n": 14116,
+    "note": 53.829738879332346
    }
   },
   "soirs_retro": 18,
@@ -11328,7 +11614,8 @@
   "restants": null,
   "utilises": null,
   "erreur": null,
-  "quand": "2026-10-18T23:02+00:00"
+  "source": null,
+  "quand": "2026-10-19T03:38+00:00"
  },
  "labo": {
   "journal": [
@@ -11340,26 +11627,26 @@
   "patterns": [
    {
     "marche": "passes",
-    "segment": "Contre une équipe qui accorde peu de tirs",
-    "n": 923,
-    "predit": 0.24397789815818,
-    "reel": 0.2047670639219935,
-    "z": -2.831985436385,
+    "segment": "Début de saison (moins de 5 matchs)",
+    "n": 2950,
+    "predit": 0.2542494915254236,
+    "reel": 0.23254237288135593,
+    "z": -2.769755530739867,
     "sens": "surestimé"
    },
    {
     "marche": "passes",
-    "segment": "Début de saison (moins de 5 matchs)",
-    "n": 2940,
-    "predit": 0.25451646258503385,
-    "reel": 0.23299319727891157,
-    "z": -2.7406488295690385,
+    "segment": "Contre une équipe qui accorde peu de tirs",
+    "n": 940,
+    "predit": 0.2426255319148938,
+    "reel": 0.20638297872340425,
+    "z": -2.6467484732006725,
     "sens": "surestimé"
    }
   ],
   "donnees": {
-   "joueurs": 4614,
-   "matchs": 134
+   "joueurs": 4684,
+   "matchs": 136
   },
   "dernier_tuning": "2026-10-18",
   "versions": []

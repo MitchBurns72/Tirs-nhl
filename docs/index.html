@@ -592,7 +592,9 @@ function matchs(){
     const ligneTotal = (ligne) => {
       const po = p.p_over[ligne], pu = 1 - po;
       const k = ligne.replace(".", "");
-      const usOk = c.ligne != null && String(c.ligne) === ligne;
+      // SportsGameOdds donne les lignes 5.5 ET 6.5 (c.totaux) ; The Odds API, seulement la ligne principale
+      const tl = c.totaux?.[ligne] || (c.ligne != null && String(c.ligne) === ligne ? { over: c.over, under: c.under } : null);
+      const usOk = !!tl;
       const cote = (cote_k, auto) => lireCote(cle("m", g.gameId, cote_k)) || (usOk ? auto : null);
       const src = (cote_k) => lireCote(cle("m", g.gameId, cote_k)) ? "MOJ" : "US";
       const etat = (cote_k) => {
@@ -609,12 +611,13 @@ function matchs(){
                  aria-label="Cote Mise-o-jeu ${nom.toLowerCase()} de ${ligne} buts" value="${lireCote(cle("m", g.gameId, cote_k)) ?? ""}">
           ${offre({ type: "match", date: D.date, gameId: g.gameId, k: cote_k, p: prob, cote: cote(cote_k, auto), version: v,
                     label: `${g.away} @ ${g.home} · ${nom} ${ligne} buts`, sous: heure(g.start) }, "+")}</div>`;
-      return rangee("o" + k, "Plus", po, c.over) + rangee("u" + k, "Moins", pu, c.under);
+      return rangee("o" + k, "Plus", po, tl?.over) + rangee("u" + k, "Moins", pu, tl?.under);
     };
     // ---- Victoire en 60 min (3 issues) ----
     const r60 = regl(p.lam_home, p.lam_away);
     const ligne60 = [["a3", `${g.away}`, r60.a], ["x3", "Nul", r60.x], ["h3", `${g.home}`, r60.h]].map(([k, nom, prob]) => {
-      const cm = lireCote(cle("m", g.gameId, k));
+      const moj = lireCote(cle("m", g.gameId, k)), us60 = c[k] || null;
+      const cm = moj || us60;   // ta cote MOJ a priorité sur la cote US
       const L60 = L;
       let etat = "";
       if (L60 || g.result){
@@ -627,8 +630,8 @@ function matchs(){
       }
       return `<div class="trow">
           <span class="who">${nom}</span><b>${pct(prob)} %</b>
-          <span class="badges">${badgeEV(ev(prob, cm), null, "MOJ")}${etat}</span>
-          <input id="m-${g.gameId}-${k}" data-k="${cle("m", g.gameId, k)}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu ${nom} en 60 minutes" value="${cm ?? ""}">
+          <span class="badges">${us60 ? `<span class="us">US ${us60.toFixed(2)}</span>` : ""}${badgeEV(ev(prob, cm), null, moj ? "MOJ" : "US")}${etat}</span>
+          <input id="m-${g.gameId}-${k}" data-k="${cle("m", g.gameId, k)}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu ${nom} en 60 minutes" value="${moj ?? ""}">
           ${offre({ type: "match", date: D.date, gameId: g.gameId, k, p: prob, cote: cm, version: v,
                     label: `${g.away} @ ${g.home} · ${k === "x3" ? "Nul après 60 min" : nom + " gagne en 60 min"}`, sous: `${heure(g.start)} · 3 issues, sans prolongation` }, "+")}</div>`;
     }).join("");
@@ -719,7 +722,7 @@ function suivi(){
       <span class="lbl" style="color:var(--ink)">Détail · ${NOM_MARCHE[S.smarche]}</span>
       ${detail}
     </div>`;
-  }).join("") + (D.cotes_quota ? `<div class="quota">Cotes US : ${D.cotes_quota.restants ?? "?"} crédits restants ce mois-ci${D.cotes_quota.erreur ? ` · dernière erreur : ${D.cotes_quota.erreur}` : ""}</div>` : "");
+  }).join("") + (D.cotes_quota ? `<div class="quota">Cotes US : ${D.cotes_quota.source === "SportsGameOdds" ? `SportsGameOdds, ${D.cotes_quota.utilises ?? 0} matchs lus` : `${D.cotes_quota.restants ?? "?"} crédits restants ce mois-ci`}${D.cotes_quota.erreur ? ` · dernière erreur : ${D.cotes_quota.erreur}` : ""}</div>` : "");
 }
 
 
