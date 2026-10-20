@@ -11,26 +11,17 @@
   {
    "marche": "passes",
    "segment": "Début de saison (moins de 5 matchs)",
-   "n": 2950,
-   "predit": 0.2542494915254236,
-   "reel": 0.23254237288135593,
-   "z": -2.769755530739867,
-   "sens": "surestimé"
-  },
-  {
-   "marche": "passes",
-   "segment": "Contre une équipe qui accorde peu de tirs",
-   "n": 940,
-   "predit": 0.2426255319148938,
-   "reel": 0.20638297872340425,
-   "z": -2.6467484732006725,
+   "n": 2960,
+   "predit": 0.25399969594594585,
+   "reel": 0.23310810810810811,
+   "z": -2.671132881382357,
    "sens": "surestimé"
   }
  ],
  "donnees": {
-  "joueurs": 4684,
-  "matchs": 136
+  "joueurs": 4818,
+  "matchs": 140
  },
  "dernier_tuning": "2026-10-18",
- "maj": "2026-10-19T23:08+00:00"
+ "maj": "2026-10-20T14:31+00:00"
 }
