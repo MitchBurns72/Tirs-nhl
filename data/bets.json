@@ -38,28 +38,10 @@
   }
  },
  {
-  "date": "2026-10-18",
-  "gameId": 2026020135,
-  "version": "v1",
-  "cree": "2026-10-18T22:45:00.000Z",
   "id": "moj1018c",
-  "type": "joueur",
-  "pid": 8476399,
-  "name": "Blake Coleman",
-  "team": "MIN",
-  "opp": "CBJ",
-  "home": true,
-  "marche": "tirs4",
-  "p": 0.216,
-  "cote": 5.25,
-  "mise": 25,
-  "reel": false,
-  "label": "Blake Coleman · Tirs 4+",
-  "sous": "MIN vs CBJ",
-  "final": {
-   "etat": "perdu",
-   "texte": "2 tirs · final"
-  }
+  "cree": "2026-10-18T22:45:00.000Z",
+  "supprime": true,
+  "maj": "2026-10-20T03:21:35.202Z"
  },
  {
   "date": "2026-10-18",
