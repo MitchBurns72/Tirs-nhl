@@ -158,7 +158,11 @@
   "mise": 1,
   "label": "Nick Schmaltz · Tirs 3+",
   "sous": "UTA vs PIT",
-  "maj": "2026-10-20T00:04:46.167Z"
+  "maj": "2026-10-20T03:51:07.266Z",
+  "final": {
+   "etat": "perdu",
+   "texte": "2 tirs · final"
+  }
  },
  {
   "date": "2026-10-19",
