@@ -1,5 +1,163 @@
 [
  {
+  "date": "2026-10-18",
+  "gameId": 2026020135,
+  "version": "v1",
+  "cree": "2026-10-18T22:45:00.000Z",
+  "id": "moj1018a",
+  "type": "match",
+  "k": "o55",
+  "p": 0.6489,
+  "cote": 1.63,
+  "mise": 1,
+  "reel": true,
+  "label": "CBJ @ MIN · Plus 5.5 buts",
+  "sous": "18 h 00",
+  "final": {
+   "etat": "perdu",
+   "texte": "3 buts · 1 – 2 · final"
+  }
+ },
+ {
+  "date": "2026-10-18",
+  "gameId": 2026020135,
+  "version": "v1",
+  "cree": "2026-10-18T22:45:00.000Z",
+  "id": "moj1018b",
+  "type": "match",
+  "k": "h3",
+  "p": 0.5744,
+  "cote": 1.83,
+  "mise": 1,
+  "reel": true,
+  "label": "CBJ @ MIN · MIN gagne en 60 min",
+  "sous": "18 h 00 · 3 issues, sans prolongation",
+  "final": {
+   "etat": "gagne",
+   "texte": "1 – 2 · final"
+  }
+ },
+ {
+  "date": "2026-10-18",
+  "gameId": 2026020135,
+  "version": "v1",
+  "cree": "2026-10-18T22:45:00.000Z",
+  "id": "moj1018c",
+  "type": "joueur",
+  "pid": 8476399,
+  "name": "Blake Coleman",
+  "team": "MIN",
+  "opp": "CBJ",
+  "home": true,
+  "marche": "tirs4",
+  "p": 0.216,
+  "cote": 5.25,
+  "mise": 25,
+  "reel": false,
+  "label": "Blake Coleman · Tirs 4+",
+  "sous": "MIN vs CBJ",
+  "final": {
+   "etat": "perdu",
+   "texte": "2 tirs · final"
+  }
+ },
+ {
+  "date": "2026-10-18",
+  "gameId": 2026020135,
+  "version": "v1",
+  "cree": "2026-10-18T22:45:00.000Z",
+  "id": "moj1018d",
+  "type": "joueur",
+  "pid": 8476399,
+  "name": "Blake Coleman",
+  "team": "MIN",
+  "opp": "CBJ",
+  "home": true,
+  "marche": "tirs3",
+  "p": 0.4055,
+  "cote": 2.7,
+  "mise": 1,
+  "reel": true,
+  "label": "Blake Coleman · Tirs 3+",
+  "sous": "MIN vs CBJ",
+  "final": {
+   "etat": "perdu",
+   "texte": "2 tirs · final"
+  }
+ },
+ {
+  "date": "2026-10-18",
+  "gameId": 2026020135,
+  "version": "v1",
+  "cree": "2026-10-18T22:45:00.000Z",
+  "id": "moj1018e",
+  "type": "joueur",
+  "pid": 8477497,
+  "name": "Sean Monahan",
+  "team": "CBJ",
+  "opp": "MIN",
+  "home": false,
+  "marche": "tirs",
+  "p": 0.538,
+  "cote": 1.95,
+  "mise": 1,
+  "reel": true,
+  "label": "Sean Monahan · Tirs 2+",
+  "sous": "CBJ @ MIN",
+  "final": {
+   "etat": "perdu",
+   "texte": "0 tir · final"
+  }
+ },
+ {
+  "date": "2026-10-18",
+  "gameId": 2026020135,
+  "version": "v1",
+  "cree": "2026-10-18T22:45:00.000Z",
+  "id": "moj1018f",
+  "type": "joueur",
+  "pid": 8476399,
+  "name": "Blake Coleman",
+  "team": "MIN",
+  "opp": "CBJ",
+  "home": true,
+  "marche": "tirs",
+  "p": 0.6542,
+  "cote": 1.54,
+  "mise": 2,
+  "reel": true,
+  "label": "Blake Coleman · Tirs 2+",
+  "sous": "MIN vs CBJ",
+  "final": {
+   "etat": "gagne",
+   "texte": "2 tirs · final"
+  }
+ },
+ {
+  "date": "2026-10-18",
+  "gameId": 2026020135,
+  "version": "v1",
+  "cree": "2026-10-18T22:45:00.000Z",
+  "id": "moj1018g",
+  "type": "joueur",
+  "pid": 8483485,
+  "name": "Denton Mateychuk",
+  "team": "CBJ",
+  "opp": "MIN",
+  "home": false,
+  "marche": "tirs",
+  "p": 0.4968,
+  "cote": 2.05,
+  "mise": 1,
+  "reel": true,
+  "label": "Denton Mateychuk · Tirs 2+",
+  "sous": "CBJ @ MIN",
+  "final": {
+   "etat": "perdu",
+   "texte": "1 tir · final"
+  }
+ },
+ {
   "date": "2026-10-19",
   "version": "v1",
   "cree": "2026-10-19T21:28:00.000Z",
@@ -18,7 +176,7 @@
   "mise": 1,
   "label": "Nick Schmaltz · Tirs 3+",
   "sous": "UTA vs PIT",
-  "maj": "2026-10-19T23:09:50.526Z"
+  "maj": "2026-10-20T00:04:46.167Z"
  },
  {
   "date": "2026-10-19",
@@ -39,7 +197,7 @@
   "mise": 1,
   "label": "William Nylander · Tirs 3+",
   "sous": "TOR vs SJS",
-  "maj": "2026-10-19T23:09:50.527Z"
+  "maj": "2026-10-20T00:04:46.167Z"
  },
  {
   "date": "2026-10-19",
@@ -60,6 +218,6 @@
   "mise": 2,
   "label": "Macklin Celebrini · Tirs 3+",
   "sous": "SJS @ TOR",
-  "maj": "2026-10-19T23:09:50.527Z"
+  "maj": "2026-10-20T00:04:46.167Z"
  }
 ]
