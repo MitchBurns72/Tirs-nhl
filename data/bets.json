@@ -197,7 +197,11 @@
   "mise": 1,
   "label": "William Nylander · Tirs 3+",
   "sous": "TOR vs SJS",
-  "maj": "2026-10-20T00:04:46.167Z"
+  "maj": "2026-10-20T02:57:08.540Z",
+  "final": {
+   "etat": "gagne",
+   "texte": "3 tirs · final"
+  }
  },
  {
   "date": "2026-10-19",
@@ -218,6 +222,10 @@
   "mise": 2,
   "label": "Macklin Celebrini · Tirs 3+",
   "sous": "SJS @ TOR",
-  "maj": "2026-10-20T00:04:46.167Z"
+  "maj": "2026-10-20T02:57:08.540Z",
+  "final": {
+   "etat": "gagne",
+   "texte": "5 tirs · final"
+  }
  }
 ]
