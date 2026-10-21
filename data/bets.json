@@ -254,7 +254,11 @@
   "mise": 2,
   "label": "Macklin Celebrini · Tirs 3+",
   "sous": "SJS @ MTL",
-  "maj": "2026-10-20T21:59:50.584Z"
+  "maj": "2026-10-21T02:35:35.186Z",
+  "final": {
+   "etat": "gagne",
+   "texte": "6 tirs · final"
+  }
  },
  {
   "date": "2026-10-20",
@@ -270,6 +274,10 @@
   "mise": 1,
   "label": "SJS @ MTL · MTL gagne (prol. incluse)",
   "sous": "19 h 00 · cote boostée, paiement hâtif si +3",
-  "maj": "2026-10-20T21:59:50.584Z"
+  "maj": "2026-10-21T02:35:35.186Z",
+  "final": {
+   "etat": "perdu",
+   "texte": "4 – 3 · final"
+  }
  }
 ]
