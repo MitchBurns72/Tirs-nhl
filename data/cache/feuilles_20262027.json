@@ -1398,5 +1398,55 @@
   "hsog": 29,
   "asog": 19,
   "fin": "REG"
+ },
+ "2026020141": {
+  "date": "2026-10-20",
+  "home": "MTL",
+  "away": "SJS",
+  "hg": 3,
+  "ag": 4,
+  "hsog": 34,
+  "asog": 30,
+  "fin": "OT"
+ },
+ "2026020142": {
+  "date": "2026-10-20",
+  "home": "NJD",
+  "away": "COL",
+  "hg": 4,
+  "ag": 3,
+  "hsog": 41,
+  "asog": 34,
+  "fin": "REG"
+ },
+ "2026020143": {
+  "date": "2026-10-20",
+  "home": "NYI",
+  "away": "ANA",
+  "hg": 3,
+  "ag": 2,
+  "hsog": 25,
+  "asog": 17,
+  "fin": "REG"
+ },
+ "2026020144": {
+  "date": "2026-10-20",
+  "home": "WSH",
+  "away": "LAK",
+  "hg": 2,
+  "ag": 5,
+  "hsog": 32,
+  "asog": 26,
+  "fin": "REG"
+ },
+ "2026020145": {
+  "date": "2026-10-20",
+  "home": "CBJ",
+  "away": "TOR",
+  "hg": 2,
+  "ag": 6,
+  "hsog": 37,
+  "asog": 22,
+  "fin": "REG"
  }
 }

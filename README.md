@@ -6,6 +6,17 @@ Chaque soir de match NHL :
 - **Cotes** : médiane des bookies US en auto (The Odds API) + champ Mise-o-jeu manuel
 - **Suivi** : note /100, calibration et bon côté par marché, pour chaque version de l'algo
 
+## v2
+
+`v2` = v1 + tentatives de tirs (cadrés + ratés + bloqués), temps en avantage numérique, indiscipline de
+l'adversaire (minutes de PP qu'il donne), état de match (l'équipe qui tire de l'arrière tire plus),
+matchs par les tirs (mélangés 60/40 avec le modèle par buts), calibration de la victoire, et mélange
+avec les cotes US (en logit) quand on les a. Données : `api.nhle.com/stats/rest` (rapports `realtime`
+et `timeonice` par match, en cache dans `data/cache/`). Paramètres fixés d'avance, donc rejouée sur
+toute la saison avec les données d'avant chaque match. Elle devient principale seulement si elle bat
+v1 sur les mêmes prédictions (voir Labo). v1 reste la meilleure pour chasser la valeur pure, parce
+qu'elle ignore le marché.
+
 ## Mes bets
 
 Onglet **Bets** : bouton « + Bet » sur chaque joueur, victoire et total (plus/moins 5.5 et 6.5).

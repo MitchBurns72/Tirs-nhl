@@ -568,6 +568,211 @@ def modele_match_param(f, P):
 
 
 # =================================================================================
+# v2 : tentatives de tirs, avantage numérique, indiscipline, état de match,
+#      calibration, mélange avec le marché
+# =================================================================================
+# Même ossature que v1 (rejouable à partir des features, donc tunable), avec en plus
+# les features "x" (voir donnees_v2.py et run.py) :
+#   x["a"]  = [att_l10, toi_att_l10, sog_att_l10, att_rs, toi_att_rs, sog_att_rs, att_prev, gp_prev]
+#   x["pp"] = [pp_l10, n_pp_l10, pp_rs, n_pp_rs, pp_prev, gp_prev, pp_l5]   (minutes)
+#   x["osh"] = minutes de PP par match accordées par l'adversaire (régressées)
+#   x["lpp"] = moyenne de ligue des minutes de PP par équipe par match
+#   x["pw"]  = % de victoire de l'équipe du joueur (modèle de match v1)
+#   x["lr"]  = ratio tirs cadrés / tentatives moyen de sa position
+# f["mkt"] (optionnel) = probabilités implicites du marché (cotes US) par marché.
+
+V2 = {
+    **V1,
+    # Minutes « effectives » : une minute en PP vaut (1 + k_pp) minutes à 5 c. 5 pour les tirs
+    "k_pp": 1.0,
+    # Poids des tentatives dans le taux (0 = tirs cadrés seulement, 1 = tentatives seulement)
+    "w_att": 0.5,
+    "ratio_pseudo": 60.0,      # tentatives fictives au ratio moyen de la position
+    # Indiscipline : (min de PP accordées par l'adversaire / moyenne) ^ pen_exp
+    "pen_exp": 1.0,
+    # État de match : une équipe qui tire de l'arrière tire plus (score effects)
+    "score_s": 0.12,
+    # Passes : même logique de minutes effectives
+    "k_pp_passes": 1.5,
+    # Mélange avec le marché (en logit) : p = σ(w·logit(p_modèle) + (1-w)·logit(p_marché))
+    "w_mod_joueur": 0.55,
+    "w_mod_match": 0.45,
+    "vig_props": 1.08,         # marge approx. d'une prop (on ne voit que le côté « plus »)
+    # Calibration (Platt) de la victoire : p' = σ(a·logit(p) + b)
+    "cal_a": 1.0,
+    "cal_b": 0.0,
+    # Match par les tirs (xG simplifié) plutôt que par les buts seulement
+    "mt_pseudo_gp": 8.0,
+    "mt_sh_pseudo": 500.0,     # tirs fictifs au % de tir moyen de la ligue
+    "mt_w_buts": 0.60,         # part du vieux modèle par buts dans le λ final (prudent au départ)
+}
+
+
+def _logit(p):
+    p = min(max(p, 1e-4), 1 - 1e-4)
+    return math.log(p / (1 - p))
+
+
+def _sig(z):
+    return 1 / (1 + math.exp(-z))
+
+
+def melanger(p_mod, p_mkt, w):
+    """Combinaison en logit : on fait une moyenne pondérée des « cotes » plutôt que
+    des %, parce qu'un 90 % et un 95 % sont très différents (10 % vs 5 % de risque)."""
+    if p_mkt is None:
+        return p_mod
+    return _sig(w * _logit(p_mod) + (1 - w) * _logit(p_mkt))
+
+
+def modele_joueur_v2(f, P):
+    x = f.get("x")
+    if not x:
+        # Vieille prédiction sans données v2 : même chose que v1 (mais calibrée/mélangée)
+        out = modele_joueur_param(f, P)
+    else:
+        g = lambda k, d=1.0: P.get(k, d)
+        l10, rs, pv, lg = f["l10"], f["rs"], f["pv"], f["lg"]
+        a, pp = x["a"], x["pp"]
+        k = P["k_pp"]
+        pos_rate = lg[2]
+
+        # --- Temps de PP projeté, ajusté à l'indiscipline de l'adversaire ---
+        pp_sa = (pp[0] + pp[2]) / (pp[1] + pp[3]) if (pp[1] + pp[3]) else None
+        pp_prev = pp[4] / pp[5] if pp[5] else None
+        base_pp = [v for v in (pp_sa, pp_prev) if v is not None]
+        pp_moy = 0.6 * (pp[6] if pp[6] is not None else base_pp[0]) + 0.4 * base_pp[0] if base_pp else 0.0
+        f_pen = (x["osh"] / x["lpp"]) ** P["pen_exp"] if x.get("lpp") else 1.0
+        pp_proj = pp_moy * f_pen
+
+        # --- Taux de tirs par minute effective (cadrés + tentatives) ---
+        em = lambda toi_, ppm, coef: toi_ + coef * ppm
+        prev_toi = min(pv[3], P["prev_toi_cap"])
+        part_prev = prev_toi / pv[3] if pv[3] else 0
+        em_l10, em_rs = em(l10[3], pp[0], k), em(rs[3], pp[2], k)
+        em_pv = em(pv[3], pp[4], k) * part_prev
+        prev_rate = pv[0] / em(pv[3], pp[4], k) if pv[3] else pos_rate
+        num = P["w_l10"] * l10[0] + P["w_reste"] * rs[0] + P["w_prev"] * prev_rate * em_pv + P["pseudo_min"] * pos_rate
+        den = P["w_l10"] * em_l10 + P["w_reste"] * em_rs + P["w_prev"] * em_pv + P["pseudo_min"]
+        rate_sog = num / den
+
+        ratio_ligue = x.get("lr") or 0.53
+        sog_a, att_a = a[2] + a[5] + 0.5 * pv[0], a[0] + a[3] + 0.5 * (a[6] or 0)
+        ratio = (sog_a + P["ratio_pseudo"] * ratio_ligue) / (att_a + P["ratio_pseudo"])
+        # Les minutes effectives des matchs où on connaît les tentatives
+        f_l10 = a[1] / l10[3] if l10[3] else 0
+        f_rs = a[4] / rs[3] if rs[3] else 0
+        em_att_l10, em_att_rs = em(a[1], pp[0] * f_l10, k), em(a[4], pp[2] * f_rs, k)
+        prev_att_rate = (a[6] / em(pv[3], pp[4], k)) if (a[6] and pv[3]) else pos_rate / ratio_ligue
+        num_a = P["w_l10"] * a[0] + P["w_reste"] * a[3] + P["w_prev"] * prev_att_rate * em_pv + P["pseudo_min"] * pos_rate / ratio_ligue
+        den_a = P["w_l10"] * em_att_l10 + P["w_reste"] * em_att_rs + P["w_prev"] * em_pv + P["pseudo_min"]
+        rate_att = num_a / den_a
+        rate = (1 - P["w_att"]) * rate_sog + P["w_att"] * rate_att * ratio
+
+        toi = _toi(f, P)
+        em_proj = em(toi, pp_proj, k)
+        o = f["op"]
+        f_opp = (o[0] * o[1] + P["opp_reg_gp"] * o[2]) / (o[0] + P["opp_reg_gp"]) / lg[0]
+        f_lieu = P["home"] if f["home"] else P["away"]
+        f_b2b = P["b2b"] if f["b2b"] else 1.0
+        vs = f["vs"]
+        rate_toi = _taux(f, P, 0, P["pseudo_min"])
+        if vs[1] <= 0 or vs[2] == 0 or rate_toi <= 0:
+            f_vs = 1.0
+        else:
+            adj = (vs[2] * ((vs[0] / vs[1]) / rate_toi) + P["vs_reg_gp"]) / (vs[2] + P["vs_reg_gp"])
+            f_vs = min(max(adj, P["vs_cap"][0]), P["vs_cap"][1])
+        f_score = 1 + P["score_s"] * (0.5 - x["pw"]) if x.get("pw") is not None else 1.0
+        echelle = g("scale_tirs") * (g("scale_tirs_D") if f["pos"] == "D" else 1.0)
+        lam_t = max(rate * em_proj * f_opp * f_lieu * f_b2b * f_vs * f_score * echelle, 0.05)
+
+        sh = (l10[1] + rs[1] + 0.5 * pv[1] + P["sh_pseudo_tirs"] * lg[3]) / (l10[0] + rs[0] + 0.5 * pv[0] + P["sh_pseudo_tirs"])
+        f_g = (o[0] * o[3] + P["sv_reg_gp"] * o[4]) / (o[0] + P["sv_reg_gp"]) / lg[1]
+        lam_b = max(lam_t * sh * f_g * g("scale_buts"), 0.01)
+
+        # Passes par minute effective (le PP génère beaucoup de passes)
+        kp = P["k_pp_passes"]
+        em_p = lambda t_, ppm: t_ + kp * ppm
+        prev_rate_p = pv[2] / em_p(pv[3], pp[4]) if pv[3] else lg[4]
+        em_pv_p = em_p(pv[3], pp[4]) * part_prev
+        num_p = P["w_l10"] * l10[2] + P["w_reste"] * rs[2] + P["w_prev"] * prev_rate_p * em_pv_p + P["pa_pseudo_min"] * lg[4]
+        den_p = P["w_l10"] * em_p(l10[3], pp[0]) + P["w_reste"] * em_p(rs[3], pp[2]) + P["w_prev"] * em_pv_p + P["pa_pseudo_min"]
+        f_eq = f["eq"] / lg[6] if f["eq"] else 1.0
+        lam_p = max(num_p / den_p * em_p(toi, pp_proj) * f_eq * g("scale_passes"), 0.01)
+
+        out = {m: {"p": p_seuil(lam_t, seuil, P["nb_k"]), "lam": lam_t} for m, seuil in SEUILS_TIRS.items()}
+        out["buts"] = {"p": p1plus_poisson(lam_b), "lam": lam_b}
+        out["passes"] = {"p": p1plus_poisson(lam_p), "lam": lam_p}
+        out["tirs"]["detail"] = {"rate60": rate * 60, "toi": toi, "f_opp": f_opp, "f_lieu": f_lieu, "f_b2b": f_b2b,
+                                 "f_vs": f_vs, "pp": pp_proj, "f_pen": f_pen, "f_score": f_score}
+
+    # --- Mélange avec le marché, marché par marché ---
+    mkt = f.get("mkt") or {}
+    for m, implicite in mkt.items():
+        if m in out and implicite:
+            p_mkt = min(implicite / P["vig_props"], 0.995)
+            out[m]["p0"] = out[m]["p"]
+            out[m]["p"] = melanger(out[m]["p"], p_mkt, P["w_mod_joueur"])
+            if m == "tirs" and "detail" in out[m]:
+                out[m]["detail"]["mkt"] = p_mkt
+    return out
+
+
+def modele_match_v2(f, P):
+    """Buts attendus par les TIRS (plus stables que les buts), mélangés avec v1,
+    puis calibration de la victoire et mélange avec le marché."""
+    base = modele_match_param(f, P)
+    x = f.get("x")
+    if x:
+        lg_sf, lg_sh = x["lg"][0], x["lg"][1]
+        def pool(c, i, moy):   # i : 0 tirs pour, 1 tirs contre, 2 buts pour, 3 buts contre
+            l, r, pv = c["l10"], c["rs"], c["pv"]
+            n_prev = min(pv[0], P["m_prev_cap"]) if pv else 0
+            prev_pg = pv[1 + i] / pv[0] if pv and pv[0] else moy
+            num = P["m_w_l10"] * l[i] + r[i] + P["m_w_prev"] * n_prev * prev_pg + P["mt_pseudo_gp"] * moy
+            den = P["m_w_l10"] * l[4] + r[4] + P["m_w_prev"] * n_prev + P["mt_pseudo_gp"]
+            return num / den
+        def eq(c):
+            sf, sa = pool(c, 0, lg_sf), pool(c, 1, lg_sf)
+            gf, ga = pool(c, 2, lg_sf * lg_sh), pool(c, 3, lg_sf * lg_sh)
+            # % de tir et buts accordés par tir, régressés vers la ligue avec
+            # mt_sh_pseudo tirs fictifs (ramenés « par match » comme les moyennes poolées)
+            ps = P["mt_sh_pseudo"] / 82
+            return sf, sa, (gf + ps * lg_sh) / (sf + ps), (ga + ps * lg_sh) / (sa + ps)
+        sf_h, sa_h, sh_h, gaps_h = eq(x["h"])
+        sf_a, sa_a, sh_a, gaps_a = eq(x["a"])
+        tirs_h = sf_h * sa_a / lg_sf
+        tirs_a = sf_a * sa_h / lg_sf
+        lam_h = tirs_h * sh_h * gaps_a / lg_sh * P["m_home"]
+        lam_a = tirs_a * sh_a * gaps_h / lg_sh * P["m_away"]
+        if f["h"]["b2b"]:
+            lam_h *= P["m_b2b_pour"]; lam_a *= P["m_b2b_contre"]
+        if f["a"]["b2b"]:
+            lam_a *= P["m_b2b_pour"]; lam_h *= P["m_b2b_contre"]
+        w = P["mt_w_buts"]
+        lam_h = (1 - w) * lam_h * P.get("scale_match", 1.0) + w * base["lam_home"]
+        lam_a = (1 - w) * lam_a * P.get("scale_match", 1.0) + w * base["lam_away"]
+        base = issue_match(max(lam_h, 0.3), max(lam_a, 0.3), P["m_p_ot_home"])
+    # Calibration de la victoire (Platt), puis marché
+    base["p_home"] = _sig(P["cal_a"] * _logit(base["p_home"]) + P["cal_b"])
+    mkt = f.get("mkt") or {}
+    if mkt.get("home"):
+        base["p_home0"] = base["p_home"]
+        base["p_home"] = melanger(base["p_home"], mkt["home"], P["w_mod_match"])
+    for ligne in ("5.5", "6.5"):
+        if mkt.get("o" + ligne):
+            base["p_over"][ligne] = melanger(base["p_over"][ligne], mkt["o" + ligne], P["w_mod_match"])
+    return base
+
+
+# Familles de modèles rejouables (le tuner et les versions auto s'en servent)
+FAMILLES = {
+    "v1": {"joueur": modele_joueur_param, "match": modele_match_param, "P": V1},
+    "v2": {"joueur": modele_joueur_v2, "match": modele_match_v2, "P": V2},
+}
+
+
+# =================================================================================
 # Registre
 # =================================================================================
 # Ordre = ordre d'affichage. La DERNIÈRE est la version "principale" sur la page.
@@ -576,12 +781,18 @@ VERSIONS = {
            "desc": "Baseline : moyennes de la saison, aucun ajustement"},
     "v1": {"joueur": v1_joueur, "match": v1_match, "nb_k": V1["nb_k"],
            "desc": "Forme L10, temps de glace, adversaire, gardiens, domicile, back-to-back, duels directs"},
+    # v2 : pas « auto » (paramètres fixés à la main, pas entraînés sur l'historique),
+    # donc elle peut être rejouée honnêtement sur toute la saison, comme v1.
+    "v2": {"params": V2, "famille": "v2", "nb_k": V2["nb_k"],
+           "desc": "v1 + tentatives de tirs, temps en avantage numérique, indiscipline adverse, état de match, "
+                   "matchs par les tirs, calibration, mélange avec les cotes US"},
 }
-VERSION_PRINCIPALE = list(VERSIONS)[-1]
+# La principale reste v1 tant que v2 (ou une version auto) n'a pas prouvé mieux (voir auto.py)
+VERSION_PRINCIPALE = "v1"
 MARCHES = ["tirs1", "tirs", "tirs3", "tirs4", "buts", "passes"]
 # Distribution des tirs de chaque version ayant déjà prédit (None = Poisson).
 # Inclut les versions auto retirées : leur historique doit pouvoir être complété.
-DISPERSION = {"v0": None, "v1": V1["nb_k"]}
+DISPERSION = {"v0": None, "v1": V1["nb_k"], "v2": V2["nb_k"]}
 
 
 def charger_auto(chemin):
@@ -596,11 +807,13 @@ def charger_auto(chemin):
     except (FileNotFoundError, ValueError):
         return VERSION_PRINCIPALE
     for v in etat.get("versions", []):
-        DISPERSION[v["id"]] = v["params"].get("nb_k", V1["nb_k"])
+        fam = v.get("famille", "v1")
+        base = FAMILLES[fam]["P"]
+        DISPERSION[v["id"]] = v["params"].get("nb_k", base["nb_k"])
         if v.get("retiree"):
             continue
-        P = {**V1, **v["params"]}
+        P = {**base, **v["params"]}
         P["vs_cap"], P["m_h2h_cap"] = tuple(P["vs_cap"]), tuple(P["m_h2h_cap"])
-        VERSIONS[v["id"]] = {"params": P, "auto": True, "desc": v["desc"], "cree": v["cree"], "nb_k": P["nb_k"]}
+        VERSIONS[v["id"]] = {"params": P, "auto": True, "famille": fam, "desc": v["desc"], "cree": v["cree"], "nb_k": P["nb_k"]}
     p = etat.get("principale", VERSION_PRINCIPALE)
     return p if p in VERSIONS else VERSION_PRINCIPALE

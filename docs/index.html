@@ -527,7 +527,11 @@ function liste(){
         <span>Adversaire : <b>×${det.f_opp.toFixed(2)}</b></span>
         <span>${j.home ? "Domicile" : "Visiteur"} : <b>×${det.f_lieu.toFixed(2)}</b></span>
         <span>Back-to-back : <b>×${det.f_b2b.toFixed(2)}</b></span>
-        <span>Vs ${j.opp} (${j.vs_gp} m.) : <b>×${det.f_vs.toFixed(2)}</b></span>`;
+        <span>Vs ${j.opp} (${j.vs_gp} m.) : <b>×${det.f_vs.toFixed(2)}</b></span>${det.pp != null ? `
+        <span>PP projeté : <b>${det.pp.toFixed(1)} min</b></span>
+        <span>Indiscipline ${j.opp} : <b>×${det.f_pen.toFixed(2)}</b></span>
+        <span>État de match : <b>×${det.f_score.toFixed(2)}</b></span>` : ""}${det.mkt != null ? `
+        <span>Marché US (2+) : <b>${pct(det.mkt)} %</b></span>` : ""}`;
     if (det && m === "buts") fx = `
         <span>Tirs attendus : <b>${pred(j, v, "tirs").lam.toFixed(1)}</b></span>
         <span>% de tir régressé : <b>${(det.sh * 100).toFixed(1)} %</b></span>
@@ -749,6 +753,14 @@ function labo(){
     }
     return `<li><b>${v.id}</b> ${etat}<br><span style="color:var(--muted)">${v.desc}${info}</span></li>`;
   }).join("") || `<li style="color:var(--muted)">Aucune version auto pour l'instant. Le tuner en crée une seulement s'il trouve mieux que la principale sur des soirs qu'il n'a jamais vus.</li>`;
+  // v2 (et futures versions faites à la main) : comparée en continu à la principale
+  const essais = Object.entries(L.essais || {}).map(([id, e]) => {
+    const etat = id === D.principale ? `<span class="etat princ">principale</span>` : `<span class="etat essai">en essai</span>`;
+    const d = D.versions.find(x => x.id === id);
+    return `<li><b>${id}</b> ${etat}<br><span style="color:var(--muted)">${d ? d.desc : ""}${e && e.n_tirs
+      ? ` · sur ${e.n_tirs} prédictions de tirs communes : ${e.gain >= 0 ? "+" : ""}${(e.gain * 100).toFixed(1)} % de précision vs ${D.principale}`
+      : ""}</span></li>`;
+  }).join("");
   const pats = (L.patterns || []).map(p => `<div class="pat">
       <span><b>${NOM_MARCHE[p.marche] || p.marche}</b> · ${p.segment}</span>
       <span class="lv ${p.sens === "surestimé" ? "ko" : "ok"}">${p.sens}</span>
@@ -761,6 +773,7 @@ function labo(){
     <h2>Labo <span>auto-upgrade</span></h2>
     <p style="margin:-6px 0 0;font-size:13px;color:var(--muted)">Données pour apprendre : ${dn.joueurs ?? 0} prédictions de joueurs et ${dn.matchs ?? 0} matchs gradés. Tuning aux ~7 jours${L.dernier_tuning ? `, dernier le ${L.dernier_tuning}` : ""}.</p>
     <div><span class="lbl">Patterns détectés · version ${D.principale}</span>${pats}</div>
+    ${essais ? `<div><span class="lbl">Nouvelles versions</span><ul>${essais}</ul></div>` : ""}
     <div><span class="lbl">Versions auto</span><ul>${versions}</ul></div>
     <div><span class="lbl">Journal</span><ul>${journal}</ul></div>`;
 }

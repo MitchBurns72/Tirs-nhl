@@ -33,7 +33,10 @@ import json
 import math
 from datetime import date, datetime, timezone
 
-from modeles import V1, modele_joueur_param, modele_match_param
+from modeles import FAMILLES, V1
+
+# Famille de modèle en cours de tuning (v1 ou v2) : fixée par cycle() selon la principale
+_FAM = FAMILLES["v1"]
 
 # --- Seuils (les tests les baissent pour rouler sur une petite fausse ligue) ------
 MIN_JOUEURS = 2000          # prédictions de joueurs gradées avec features avant d'oser tuner
@@ -60,6 +63,15 @@ ESPACE = {
     "match": [("m_w_l10", 0.5, 4, "mult"), ("m_w_prev", 0.0, 1.5, "mult"), ("m_pseudo_gp", 2, 40, "mult"),
               ("m_home", 1.0, 1.08, "add"), ("m_away", 0.92, 1.0, "add"), ("m_h2h_reg", 2, 40, "mult"),
               ("scale_match", 0.85, 1.15, "add"), ("m_p_ot_home", 0.45, 0.60, "add")],
+}
+# Paramètres en plus, propres à la v2
+ESPACE_V2 = {
+    "tirs": [("k_pp", 0.0, 4.0, "mult"), ("w_att", 0.0, 1.0, "mult"), ("pen_exp", 0.0, 2.0, "mult"),
+             ("score_s", 0.0, 0.4, "mult"), ("w_mod_joueur", 0.1, 1.0, "mult"), ("vig_props", 1.0, 1.15, "add")],
+    "buts": [],
+    "passes": [("k_pp_passes", 0.0, 4.0, "mult")],
+    "match": [("cal_a", 0.6, 1.6, "mult"), ("cal_b", -0.3, 0.3, "add"), ("mt_w_buts", 0.0, 1.0, "mult"),
+              ("mt_pseudo_gp", 2.0, 30.0, "mult"), ("mt_sh_pseudo", 100.0, 2000.0, "mult"), ("w_mod_match", 0.1, 1.0, "mult")],
 }
 SEUILS = {"tirs": 2, "buts": 1, "passes": 1}
 NOMS = {"tirs": "Tirs (1+ à 4+)", "buts": "But", "passes": "Passe", "match": "Matchs"}
@@ -102,7 +114,7 @@ def _brier_joueurs(rows, P, marche):
     for _, f, r, _ in rows:
         if stat not in r:
             continue
-        sortie = modele_joueur_param(f, P)
+        sortie = _FAM["joueur"](f, P)
         for m, seuil in SEUILS_TUNER[marche].items():
             y = 1 if r[stat] >= seuil else 0
             s += (sortie[m]["p"] - y) ** 2; n += 1
@@ -113,7 +125,7 @@ def _brier_matchs(rows, P):
     """Somme des Brier victoire + total 5.5 (les deux décisions qu'on regarde)."""
     s = n = 0
     for _, f, (h, a), _ in rows:
-        r = modele_match_param(f, P)
+        r = _FAM["match"](f, P)
         s += (r["p_home"] - (1 if h > a else 0)) ** 2 + (r["p_over"]["5.5"] - (1 if h + a > 5.5 else 0)) ** 2
         n += 1
     return s / n if n else None
@@ -203,9 +215,10 @@ def _descente(groupe, rows, P, passes=2):
     """Descente par coordonnées : un paramètre à la fois, on garde ce qui baisse la perte."""
     P = dict(P)
     meilleur = _perte(groupe, rows, P)
+    espace = ESPACE[groupe] + (ESPACE_V2[groupe] if _FAM is FAMILLES["v2"] else [])
     for _ in range(passes):
         ameliore = False
-        for nom, lo, hi, pas in ESPACE[groupe]:
+        for nom, lo, hi, pas in espace:
             base = P.get(nom, 1.0)
             for v in _candidats(base, lo, hi, pas):
                 essai = dict(P, **{nom: v})
@@ -293,9 +306,13 @@ def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=Fals
         etat = json.loads(open(chemin_etat, encoding="utf-8").read())
     except (FileNotFoundError, ValueError):
         etat = {"versions": [], "journal": [], "principale": "v1"}
+    global _FAM
     principale = etat.get("principale", "v1")
     if principale not in versions_actives:
         principale = "v1"
+    fam_de = {v["id"]: v.get("famille", "v1") for v in etat["versions"]}
+    fam = "v2" if principale == "v2" else fam_de.get(principale, "v1")
+    _FAM = FAMILLES[fam]
     J, M = donnees(historique)
     # Le rétroactif compte pour le tuning et les patterns (il est honnête : données d'avant),
     # mais la PROMOTION se juge seulement en direct, voir _brier_commun.
@@ -312,13 +329,14 @@ def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=Fals
             P = None
         else:
             ref = next((v["params"] for v in etat["versions"] if v["id"] == principale), {})
-            P, msg = tuner(J, M, {**V1, **ref}, aujourdhui)
+            base = FAMILLES[fam]["P"]
+            P, msg = tuner(J, M, {**base, **ref}, aujourdhui)
         etat["dernier_tuning"] = aujourdhui
         if P:
             vid = "a" + aujourdhui[5:7] + aujourdhui[8:10]
-            diff = {k: v for k, v in P.items() if V1.get(k, 1.0 if k.startswith("scale") else None) != v}
+            diff = {k: v for k, v in P.items() if base.get(k, 1.0 if k.startswith("scale") else None) != v}
             etat["versions"].append({
-                "id": vid, "cree": aujourdhui, "base": principale,
+                "id": vid, "cree": aujourdhui, "base": principale, "famille": fam,
                 "params": {k: (list(v) if isinstance(v, tuple) else v) for k, v in diff.items()},
                 "desc": f"Auto du {aujourdhui} (base {principale}) : {msg}", "retiree": False})
             nouvelle = True
@@ -332,15 +350,23 @@ def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=Fals
         etat["journal"] = ([{"date": aujourdhui, "msg": msg}] + etat.get("journal", []))[:20]
 
     # --- Promotion ---
-    for v in etat["versions"]:
-        if v.get("retiree") or v["id"] == principale or v["id"] not in versions_actives:
+    # Candidates : les versions auto actives + la v2 (paramètres fixés d'avance, rejouée
+    # honnêtement sur l'historique avec les données d'avant chaque match).
+    candidates = [v for v in etat["versions"] if not v.get("retiree")]
+    etat.setdefault("essais", {})
+    if "v2" in versions_actives:
+        candidates.append({"id": "v2", "manuelle": True})
+    for v in candidates:
+        if v["id"] == principale or v["id"] not in versions_actives:
             continue
         b_princ, b_auto, n_tirs = _brier_commun(J, M, principale, v["id"])
         v["essai"] = {"n_tirs": n_tirs, "gain": (b_princ - b_auto) / b_princ if b_princ else None}
+        if v.get("manuelle"):
+            etat["essais"][v["id"]] = v["essai"]
         if n_tirs >= PROMO_MIN_TIRS and b_princ and (b_princ - b_auto) / b_princ >= PROMO_GAIN:
             etat["journal"].insert(0, {"date": aujourdhui,
                                        "msg": f"{v['id']} devient la version principale "
-                                              f"({(b_princ - b_auto) / b_princ * 100:.1f} % mieux que {principale} en direct, {n_tirs} prédictions de tirs)."})
+                                              f"({(b_princ - b_auto) / b_princ * 100:.1f} % mieux que {principale} sur les mêmes {n_tirs} prédictions de tirs)."})
             principale = v["id"]
     etat["principale"] = principale
     etat["maj"] = datetime.now(timezone.utc).isoformat(timespec="minutes")

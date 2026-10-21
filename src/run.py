@@ -22,10 +22,11 @@ from zoneinfo import ZoneInfo
 
 import auto
 import cotes
+import donnees_v2
 import live
 import nhl_api as api
-from modeles import (DISPERSION, VERSIONS, ajouter_seuils, charger_auto, features_joueur,
-                     features_match, modele_joueur_param, modele_match_param)
+from modeles import (DISPERSION, FAMILLES, VERSIONS, ajouter_seuils, charger_auto, features_joueur,
+                     features_match)
 from score import resumer
 
 RACINE = Path(__file__).resolve().parent.parent
@@ -296,7 +297,7 @@ def contexte_ligue(jour, saison):
     # `mu` (buts par équipe par match) est finalisé dans predire(), une fois la
     # moyenne de la saison passée connue. Ici on garde juste la partie courante.
     return eq, noms, {"sa_avg": melange(cur_sa, sa_prev_moy), "gaps_avg": melange(cur_gaps, gaps_prev_moy),
-                      "mu_cur": gf_tot / gp_tot if gp_tot else None, "poids": poids}
+                      "mu_cur": gf_tot / gp_tot if gp_tot else None, "poids": poids, "feuilles": feuilles}
 
 
 def construire_joueurs(jour, equipes, saison, ligue_eq, ligue, ctx_eq):
@@ -325,7 +326,8 @@ def construire_joueurs(jour, equipes, saison, ligue_eq, ligue, ctx_eq):
     for j in joueurs:
         log = logs.get(chemins[j["pid"]]) or {}
         games = [{"date": g["gameDate"], "shots": g.get("shots", 0), "goals": g.get("goals", 0),
-                  "assists": g.get("assists", 0), "toi": toi_min(g.get("toi")), "opp": g["opponentAbbrev"]}
+                  "assists": g.get("assists", 0), "toi": toi_min(g.get("toi")), "opp": g["opponentAbbrev"],
+                  "gid": str(g.get("gameId", ""))}
                  for g in log.get("gameLog", []) if g["gameDate"] < jour]   # rien du futur, jamais
         games.sort(key=lambda g: g["date"])
         j["cur"] = games
@@ -383,7 +385,131 @@ def construire_joueurs(jour, equipes, saison, ligue_eq, ligue, ctx_eq):
     return ctxs
 
 
-# --- 4. Prédire ------------------------------------------------------------------
+# --- 4. Données v2 ----------------------------------------------------------------
+
+def preparer_v2(jour, saison, feuilles):
+    """Tout ce que la v2 sait d'une soirée, filtré AVANT `jour` (pas de fuite du futur) :
+    stats par match (tentatives, PP), saison passée, blocs d'équipe, moyennes de ligue."""
+    prev = saison_precedente(saison)
+    jeux = donnees_v2.cache_stats_jeux(DIR_CACHE, saison, [g for g, fb in feuilles.items() if fb["date"] < jour])
+    joueurs_prev = donnees_v2.cache_stats_saison(DIR_CACHE, prev)
+    eq_prev = donnees_v2.equipes_saison_passee(DIR_CACHE, prev)
+
+    par_eq = {}
+    S = G = N = 0
+    tous_pp = []
+    for gid, fb in sorted(feuilles.items(), key=lambda kv: kv[1]["date"]):
+        if fb["date"] >= jour:
+            continue
+        pp = (jeux.get(gid) or {}).get("pp", {})
+        for moi, eux, sf, sa, gf, ga in ((fb["home"], fb["away"], fb["hsog"], fb["asog"], fb["hg"], fb["ag"]),
+                                         (fb["away"], fb["home"], fb["asog"], fb["hsog"], fb["ag"], fb["hg"])):
+            par_eq.setdefault(moi, []).append({"sf": sf, "sa": sa, "gf": gf, "ga": ga,
+                                               "ppa": pp.get(eux)})   # minutes de PP données à l'adversaire
+            S += sf; G += gf; N += 1
+            if pp.get(eux) is not None:
+                tous_pp.append(pp[eux])
+    prevs = [v for v in eq_prev.values() if v]
+    psf = sum(v[1] for v in prevs) / sum(v[0] for v in prevs) if prevs else 30.0
+    psh = sum(v[3] for v in prevs) / sum(v[1] for v in prevs) if prevs else 0.095
+    W = 480   # ≈ 15 matchs × 32 équipes de saison passée comme ancre
+    lg_sf = (S + W * psf) / (N + W)
+    lg_sh = (G + W * psf * psh) / (S + W * psf)
+    lpp = (sum(tous_pp) + 300 * 4.5) / (len(tous_pp) + 300)   # ~4.5 min de PP par équipe par match
+
+    def bloc(lst):
+        return [sum(x["sf"] for x in lst), sum(x["sa"] for x in lst), sum(x["gf"] for x in lst),
+                sum(x["ga"] for x in lst), len(lst)]
+    blocs, osh = {}, {}
+    for t, lst in par_eq.items():
+        pv = eq_prev.get(t)
+        blocs[t] = {"l10": bloc(lst[-10:]), "rs": bloc(lst[:-10]), "pv": pv}
+        connus = [x["ppa"] for x in lst if x["ppa"] is not None]
+        osh[t] = (sum(connus) + 10 * lpp) / (len(connus) + 10)   # régressé : 10 matchs à la moyenne
+    return {"jeux": jeux, "prev": joueurs_prev, "blocs": blocs, "osh": osh, "lpp": lpp, "lg": [lg_sf, lg_sh]}
+
+
+def features_x_joueur(ctx, v2, pw, ratio_pos):
+    """Features v2 d'un joueur (voir modeles.py, section v2)."""
+    stats = v2["jeux"]
+    pid = str(ctx["pid"])
+    def bloc(gs):
+        att = toi_a = sog_a = pp = n_pp = 0
+        for g in gs:
+            st = ((stats.get(g.get("gid")) or {}).get("j") or {}).get(pid)
+            if st and st[0] is not None:
+                att += st[0]; toi_a += g["toi"]; sog_a += g["shots"]
+            if st:
+                pp += st[1]; n_pp += 1
+        return att, toi_a, sog_a, pp, n_pp
+    cur = ctx["cur"]
+    a1, t1, s1, p1, n1 = bloc(cur[-10:])
+    a2, t2, s2, p2, n2 = bloc(cur[:-10])
+    pv = v2["prev"].get(pid)
+    l5 = [((stats.get(g.get("gid")) or {}).get("j") or {}).get(pid) for g in cur[-5:]]
+    l5 = [x[1] for x in l5 if x]
+    return {
+        "a": [a1, round(t1, 2), s1, a2, round(t2, 2), s2, pv[0] if pv else None, pv[2] if pv else 0],
+        "pp": [round(p1, 2), n1, round(p2, 2), n2, pv[1] if pv else 0, pv[2] if pv else 0,
+               round(sum(l5) / len(l5), 2) if l5 else None],
+        "osh": v2["osh"].get(ctx["opp"]["abbrev"], v2["lpp"]), "lpp": v2["lpp"],
+        "pw": pw, "lr": ratio_pos.get(ctx["pos"], 0.53),
+    }
+
+
+def implicites_joueur(cotes_j):
+    """Cotes US d'un joueur -> probabilités implicites brutes (avec la marge du bookie)."""
+    return {m: 1 / c["prix"] for m, c in (cotes_j or {}).items() if c and c.get("prix")}
+
+
+def implicites_match(c):
+    """Cotes US d'un match -> probabilités SANS marge (on a les deux côtés)."""
+    if not c:
+        return {}
+    out = {}
+    if c.get("p_home_marche"):
+        out["home"] = c["p_home_marche"]
+    lignes = dict(c.get("totaux") or {})
+    if c.get("ligne") is not None and c.get("over") and c.get("under"):
+        lignes.setdefault(str(c["ligne"]), {"over": c["over"], "under": c["under"]})
+    for ligne, d in lignes.items():
+        if ligne in ("5.5", "6.5") and d.get("over") and d.get("under"):
+            io, iu = 1 / d["over"], 1 / d["under"]
+            out["o" + ligne] = io / (io + iu)
+    return out
+
+
+def predire_version(spec, quoi, f, ctx=None, jeu=None, cm=None):
+    """Une version « paramétrique » (v2, auto) se calcule à partir des features ;
+    v0/v1 gardent leur code d'origine (gelé)."""
+    if "params" in spec:
+        return FAMILLES[spec.get("famille", "v1")][quoi](f, spec["params"])
+    return spec[quoi](dict(ctx), jeu) if quoi == "joueur" else spec[quoi](cm)
+
+
+def appliquer_marche(entries, games):
+    """Recalcule les versions de la famille v2 avec les cotes du marché, une fois
+    les cotes connues. Les autres versions (v0, v1...) ne sont jamais touchées."""
+    for g in games:
+        mk = implicites_match(g.get("cotes"))
+        if g.get("f") is None:
+            continue
+        g["f"]["mkt"] = mk or None
+        for v, spec in VERSIONS.items():
+            if spec.get("famille") == "v2" and v in g.get("preds", {}):
+                g["preds"][v] = arrondir(predire_version(spec, "match", g["f"]))
+    for e in entries:
+        if e.get("f") is None:
+            continue
+        e["f"]["mkt"] = implicites_joueur(e.get("cotes")) or None
+        for v, spec in VERSIONS.items():
+            if spec.get("famille") == "v2" and v in e.get("preds", {}):
+                pv = predire_version(spec, "joueur", e["f"])
+                ajouter_seuils(pv, spec.get("nb_k"))
+                e["preds"][v] = arrondir(pv)
+
+
+# --- 5. Prédire ------------------------------------------------------------------
 
 def predire(jour, matchs_ouverts, saison):
     equipes = {}
@@ -393,6 +519,12 @@ def predire(jour, matchs_ouverts, saison):
 
     ligue_eq, noms, ligue = contexte_ligue(jour, saison)
     ctx_eq, cache_prev = contexte_equipes(jour, equipes, saison)
+    try:
+        v2 = preparer_v2(jour, saison, ligue["feuilles"])
+    except Exception as ex:  # noqa: BLE001
+        # La v2 est un ajout : si l'API de stats flanche, v0/v1 roulent quand même
+        print(f"  données v2 indisponibles : {str(ex)[:120]}")
+        v2 = None
 
     # Buts par équipe par match. POURQUOI pas une constante : le niveau d'offensive
     # de la ligue bouge d'une saison à l'autre (règles, arbitrage). Si `mu` est
@@ -427,9 +559,12 @@ def predire(jour, matchs_ouverts, saison):
                         "b2b": bool(cur) and cur[-1]["date"] == hier}
         preds = {}
         fm = features_match(cm)
+        if v2:
+            fm["x"] = {"h": v2["blocs"].get(m["home"]), "a": v2["blocs"].get(m["away"]), "lg": v2["lg"]}
+            if not (fm["x"]["h"] and fm["x"]["a"]):
+                fm.pop("x")
         for v, spec in actives.items():
-            # Version auto : même modèle que v1, paramètres trouvés par le tuner
-            r = modele_match_param(fm, spec["params"]) if spec.get("auto") else spec["match"](cm)
+            r = predire_version(spec, "match", fm, cm=cm)
             preds[v] = r
             jeu_par_equipe[v][m["home"]] = {"lam_pour": r["lam_home"], "lam_contre": r["lam_away"]}
             jeu_par_equipe[v][m["away"]] = {"lam_pour": r["lam_away"], "lam_contre": r["lam_home"]}
@@ -447,12 +582,33 @@ def predire(jour, matchs_ouverts, saison):
         })
 
     entries = []
-    for ctx in construire_joueurs(jour, equipes, saison, ligue_eq, ligue, ctx_eq):
+    ctxs = construire_joueurs(jour, equipes, saison, ligue_eq, ligue, ctx_eq)
+    # % de victoire de chaque équipe selon v1 (pour l'état de match de la v2)
+    pw = {}
+    for g in games:
+        ph = g["preds"].get("v1", {}).get("p_home")
+        if ph is not None:
+            pw[g["home"]], pw[g["away"]] = ph, 1 - ph
+    # Ratio tirs cadrés / tentatives de chaque position, sur le pool du soir
+    ratio_pos = {}
+    if v2:
+        for pos in ("F", "D"):
+            sog = att = 0
+            for c in ctxs:
+                if c["pos"] != pos:
+                    continue
+                for gm in c["cur"]:
+                    st = ((v2["jeux"].get(gm.get("gid")) or {}).get("j") or {}).get(str(c["pid"]))
+                    if st and st[0]:
+                        sog += gm["shots"]; att += st[0]
+            ratio_pos[pos] = sog / att if att > 200 else 0.53
+    for ctx in ctxs:
         # Features calculées avec les buts attendus de v1 : c'est la référence
         # commune sur laquelle le tuner rejoue toutes les variantes.
         f = features_joueur(ctx, jeu_par_equipe.get("v1", {}).get(ctx["team"]))
-        preds = {v: (modele_joueur_param(f, spec["params"]) if spec.get("auto")
-                     else spec["joueur"](dict(ctx), jeu_par_equipe[v].get(ctx["team"])))
+        if v2:
+            f["x"] = features_x_joueur(ctx, v2, pw.get(ctx["team"]), ratio_pos)
+        preds = {v: predire_version(spec, "joueur", f, ctx=ctx, jeu=jeu_par_equipe[v].get(ctx["team"]))
                  for v, spec in actives.items()}
         for v, spec in actives.items():
             ajouter_seuils(preds[v], spec.get("nb_k"))   # tirs 1+, 3+, 4+
@@ -516,7 +672,7 @@ def jour_nhl():
 
 
 ETAT_AUTO = RACINE / "data" / "versions_auto.json"
-MAX_COMPLETER = 10   # fichiers complétés par exécution
+MAX_COMPLETER = 60   # fichiers complétés par exécution
 
 
 def completer_features(saison):
@@ -533,9 +689,18 @@ def completer_features(saison):
         data = lire_json(fic, None)
         if not data:
             continue
-        manque_j = [e for e in data["entries"] if not e.get("f")]
-        manque_g = [g for g in data.get("games", []) if not g.get("f")]
+        a_rejouer = [v for v, sp in VERSIONS.items() if "params" in sp and not sp.get("auto")]
+        marque = "x|" + ",".join(a_rejouer)
+        if data.get("complete") == marque:
+            continue   # déjà fait : un joueur échangé depuis n'aura jamais de features, on n'insiste pas
+        # Il manque quelque chose si : pas de features, pas de features v2, ou une
+        # version paramétrique non-auto (v2) absente des prédictions.
+        manque = lambda x: not x.get("f") or "x" not in x["f"] or any(v not in x.get("preds", {}) for v in a_rejouer)
+        manque_j = [e for e in data["entries"] if manque(e)]
+        manque_g = [g for g in data.get("games", []) if manque(g)]
         if not manque_j and not manque_g:
+            data["complete"] = marque
+            ecrire_json(fic, data)
             continue
         # Reconstituer les matchs du soir à partir des joueurs (domicile = équipe du joueur si home)
         matchs = {}
@@ -552,9 +717,24 @@ def completer_features(saison):
         f_j = {(e["gameId"], e["pid"]): e["f"] for e in entries}
         f_g = {g["gameId"]: g["f"] for g in games}
         for e in manque_j:
-            e["f"] = f_j.get((e["gameId"], e["pid"]))
+            e["f"] = f_j.get((e["gameId"], e["pid"])) or e.get("f")
         for g in manque_g:
-            g["f"] = f_g.get(g["gameId"])
+            g["f"] = f_g.get(g["gameId"]) or g.get("f")
+        # Rejouer la v2 (pas une version auto : paramètres fixés d'avance) sur ces soirs,
+        # avec les cotes d'avant-match si on les avait. Les autres versions : jamais touchées.
+        for x in manque_g:
+            if x.get("f") is not None:
+                x["f"]["mkt"] = implicites_match(x.get("cotes")) or None
+                for v in a_rejouer:
+                    x.setdefault("preds", {})[v] = arrondir(predire_version(VERSIONS[v], "match", x["f"]))
+        for x in manque_j:
+            if x.get("f") is not None:
+                x["f"]["mkt"] = implicites_joueur(x.get("cotes")) or None
+                for v in a_rejouer:
+                    pv = predire_version(VERSIONS[v], "joueur", x["f"])
+                    ajouter_seuils(pv, VERSIONS[v].get("nb_k"))
+                    x.setdefault("preds", {})[v] = arrondir(pv)
+        data["complete"] = marque
         ecrire_json(fic, data)
         n += 1
         print(f"  features ajoutées : {data['date']}")
@@ -687,6 +867,8 @@ def main():
                 g["cotes"] = anciennes_g.get(g["gameId"])
             for e in entries:
                 e["cotes"] = anciennes_j.get((e["gameId"], e["pid"]))
+        # v2 : mélange avec le marché maintenant que les cotes sont connues
+        appliquer_marche(entries, games)
         # Les matchs déjà commencés gardent leurs prédictions gelées.
         existant["entries"] = [e for e in existant["entries"] if e["gameId"] not in ids_ouverts] + entries_retro + entries
         existant["games"] = [g for g in existant["games"] if g["gameId"] not in ids_ouverts] + games_retro + games
@@ -715,7 +897,7 @@ def main():
         "joueurs": sans_features(existant["entries"]),
         "stats": resumer(historique, list(VERSIONS)),
         "cotes_quota": quota,
-        "labo": {k: labo.get(k) for k in ("journal", "patterns", "donnees", "dernier_tuning")} | {
+        "labo": {k: labo.get(k) for k in ("journal", "patterns", "donnees", "dernier_tuning", "essais")} | {
             "versions": [{k: v.get(k) for k in ("id", "cree", "desc", "retiree", "essai")} for v in labo.get("versions", [])]},
     })
     print(f"{jour}: {len(matchs)} matchs, {len(existant['entries'])} joueurs, cotes={'oui' if AVEC_COTES else 'non'}")

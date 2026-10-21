@@ -32,7 +32,8 @@ def get_json(path, retries=4):
     """
     if path in _cache:
         return _cache[path]
-    url = f"{BASE}{path}"
+    # Un chemin complet (http...) sert pour l'API de stats (api.nhle.com/stats/rest)
+    url = path if path.startswith("http") else f"{BASE}{path}"
     delai = 1.0
     for essai in range(retries):
         try:

@@ -42,7 +42,12 @@ for t in EQUIPES:
         joueurs[pid] = {"team": t, "pos": "D" if d else "C",
                         "rate": rng.uniform(0.05, 0.12) if d else rng.uniform(0.06, 0.22),
                         "toi": rng.uniform(17, 24) if d else rng.uniform(10, 20),
-                        "playmaker": rng.uniform(0.5, 2.0)}
+                        "playmaker": rng.uniform(0.5, 2.0),
+                        # v2 : 1er/2e avantage numérique (4 avants + 2 déf. par équipe) et précision
+                        "pp": rng.uniform(2.0, 3.5) if (i < 4 or i in (12, 13)) else rng.uniform(0.0, 0.6),
+                        "ratio": rng.uniform(0.45, 0.65)}
+K_PP_VRAI = 1.2                                   # une minute de PP vaut 2.2 minutes pour les tirs
+indisc = {t: rng.uniform(0.7, 1.4) for t in EQUIPES}   # >1 : donne plus de PP à l'adversaire
 attaque = {t: rng.uniform(0.85, 1.15) for t in EQUIPES}
 defense = {t: rng.uniform(0.85, 1.15) for t in EQUIPES}
 
@@ -65,6 +70,7 @@ for n in range(14):
 
 logs = {p: [] for p in joueurs}
 box, etat, scores = {}, {}, {}
+stats_sim = {}   # gameId -> {pid: (tentatives, min PP, équipe)}
 
 
 def jouer(d, matchs=None, cible_logs=None, cible_box=None, cible_scores=None, cible_etat=None):
@@ -80,8 +86,12 @@ def jouer(d, matchs=None, cible_logs=None, cible_box=None, cible_scores=None, ci
                 continue
             opp = home if j["team"] == away else away
             toi = max(5, rng.gauss(j["toi"], 2.5))
-            s = poisson(j["rate"] * toi * defense[opp])
-            lignes[p] = {"team": j["team"], "opp": opp, "toi": toi, "shots": s, "goals": 0, "assists": 0}
+            ppm = max(0.0, j["pp"] * indisc[opp] * rng.uniform(0.6, 1.4))
+            lam_sog = j["rate"] * (toi + K_PP_VRAI * ppm) * defense[opp]
+            att = poisson(lam_sog / j["ratio"])
+            s = sum(1 for _ in range(att) if rng.random() < j["ratio"])   # cadrés = tentatives × précision (bruit)
+            lignes[p] = {"team": j["team"], "opp": opp, "toi": toi, "shots": s, "goals": 0, "assists": 0,
+                         "att": att, "pp": round(ppm, 2)}
         # Buts : chaque tir rentre à ~9.5 % x qualité du gardien adverse
         for p, l in lignes.items():
             l["goals"] = sum(1 for _ in range(l["shots"]) if rng.random() < 0.095 * defense[l["opp"]] * attaque[l["team"]])
@@ -103,6 +113,7 @@ def jouer(d, matchs=None, cible_logs=None, cible_box=None, cible_scores=None, ci
         if sc[away] == sc[home]:
             sc[home if rng.random() < 0.52 else away] += 1   # prolongation/fusillade
         cible_scores[gid] = sc
+        stats_sim[gid] = {p: (l["att"], l["pp"], l["team"]) for p, l in lignes.items()}
         cible_box[gid] = {"gameState": "OFF", "gameDate": d, "playerByGameStats": stats,
                     "awayTeam": {"abbrev": away, "score": sc[away]}, "homeTeam": {"abbrev": home, "score": sc[home]}}
         cible_etat[gid] = "OFF"
@@ -122,7 +133,28 @@ def jeux_finis(t):
     return [(d, g) for d in calendrier for g in calendrier[d] if t in g[1:] and etat.get(g[0]) == "OFF"]
 
 
+def faux_stats(path):
+    from urllib.parse import urlparse, parse_qs
+    q = parse_qs(urlparse(path).query)
+    nom = urlparse(path).path.rstrip("/").split("/")[-1]
+    cay, debut = q["cayenneExp"][0], int(q.get("start", ["0"])[0])
+    rows = []
+    if cay.startswith("gameId="):
+        for p, (att, ppm, team) in stats_sim.get(int(cay.split("=")[1]), {}).items():
+            rows.append({"playerId": p, "teamAbbrev": team, "totalShotAttempts": att, "ppTimeOnIce": int(ppm * 60), "shTimeOnIce": 0})
+    elif cay.startswith(f"seasonId={PREV}"):
+        tot = {}
+        for g, a, h in cal_prev:
+            for p, (att, ppm, team) in stats_sim.get(g, {}).items():
+                e = tot.setdefault(p, [0, 0.0, 0]); e[0] += att; e[1] += ppm; e[2] += 1
+        for p, (att, ppm, n) in tot.items():
+            rows.append({"playerId": p, "totalShotAttempts": att, "ppTimeOnIce": int(ppm * 60), "gamesPlayed": n})
+    return {"data": rows[debut:debut + 100], "total": len(rows)} if nom in ("realtime", "timeonice") else {"data": [], "total": 0}
+
+
 def faux_get_json(path, retries=4):
+    if path.startswith("https://api.nhle.com/stats/rest/"):
+        return faux_stats(path)
     parts = path.strip("/").split("/")
     if parts[0] == "schedule":
         d = parts[1]
@@ -153,9 +185,16 @@ def faux_get_json(path, retries=4):
             st = bx[g]["playerByGameStats"][cote_opp]
             sa += sum(x["sog"] for grp in st.values() for x in grp)
             ga += sum(x["goals"] for grp in st.values() for x in grp)
+        sf = gf = 0
+        for g in ids:
+            cote_moi = "homeTeam" if bx[g]["homeTeam"]["abbrev"] == t else "awayTeam"
+            st = bx[g]["playerByGameStats"][cote_moi]
+            sf += sum(x["sog"] for grp in st.values() for x in grp)
+            gf += sum(x["goals"] for grp in st.values() for x in grp)
         if prev:   # run.py divise par 82 : on ramène le total à l'échelle de 82 matchs
-            sa, ga = sa * 82 // max(len(ids), 1), ga * 82 // max(len(ids), 1)
-        return {"goalies": [{"shotsAgainst": sa, "goalsAgainst": ga}]}
+            k = 82 / max(len(ids), 1)
+            sa, ga, sf, gf = int(sa * k), int(ga * k), int(sf * k), int(gf * k)
+        return {"goalies": [{"shotsAgainst": sa, "goalsAgainst": ga}], "skaters": [{"shots": sf, "goals": gf}]}
     if parts[0] == "club-schedule-season":
         t = parts[1]
         if parts[2] != "now":
@@ -178,27 +217,61 @@ def faux_get_json(path, retries=4):
     raise ValueError(path)
 
 
+def _bruit(p, rr):
+    z = math.log(p / (1 - p)) + rr.gauss(0, 0.3)
+    return 1 / (1 + math.exp(-z))
+
+
+def _p_seuil_poisson(lam, k):
+    pn, c = math.exp(-lam), math.exp(-lam)
+    for n in range(1, k):
+        pn *= lam / n; c += pn
+    return 1 - c
+
+
+def _match_vrai(a, h):
+    lh, la = 3 * attaque[h] * defense[a] * 1.03, 3 * attaque[a] * defense[h] * 0.97
+    ph = [math.exp(-lh) * lh ** i / math.factorial(i) for i in range(16)]
+    pa = [math.exp(-la) * la ** i / math.factorial(i) for i in range(16)]
+    win = sum(ph[i] * pa[j] for i in range(16) for j in range(16) if i > j)
+    tie = sum(ph[i] * pa[i] for i in range(16))
+    over = 1 - sum(ph[i] * pa[j] for i in range(16) for j in range(16) if i + j <= 6)
+    return win + 0.52 * tie, over
+
+
 def faux_odds(path, params):
-    """Imite les réponses de The Odds API (format décimal)."""
+    """Imite The Odds API (décimal) avec un marché qui connaît les vrais talents, bruité."""
     d = jour_courant[0]
-    evs = [{"id": f"ev{g}", "home_team": f"Ville {NOMS[h]}", "away_team": f"Ville {NOMS[a]}",
-            "bookmakers": [{"key": "bk", "markets": [
-                {"key": "h2h", "outcomes": [{"name": f"Ville {NOMS[h]}", "price": 1.85},
-                                            {"name": f"Ville {NOMS[a]}", "price": 2.0}]},
-                {"key": "totals", "outcomes": [{"name": "Over", "point": 6.5, "price": 1.95},
-                                               {"name": "Under", "point": 6.5, "price": 1.87}]}]}]}
-           for g, a, h in calendrier[d]]
+    import zlib
+    rr = random.Random(zlib.crc32(f"{d}|{path}".encode()))   # reproductible d'un test à l'autre
+    evs = []
+    for g, a, h in calendrier[d]:
+        p, over = _match_vrai(a, h)
+        p, over = _bruit(p, rr), _bruit(over, rr)
+        evs.append({"id": f"ev{g}", "home_team": f"Ville {NOMS[h]}", "away_team": f"Ville {NOMS[a]}",
+                    "bookmakers": [{"key": "bk", "markets": [
+                        {"key": "h2h", "outcomes": [{"name": f"Ville {NOMS[h]}", "price": round(1 / (p * 1.045), 2)},
+                                                    {"name": f"Ville {NOMS[a]}", "price": round(1 / ((1 - p) * 1.045), 2)}]},
+                        {"key": "totals", "outcomes": [{"name": "Over", "point": 6.5, "price": round(1 / (over * 1.045), 2)},
+                                                       {"name": "Under", "point": 6.5, "price": round(1 / ((1 - over) * 1.045), 2)}]}]}]})
     if path == "/odds":
         return evs
     gid = int(path.split("/")[2][2:])
     _, a, h = next(x for x in calendrier[d] if x[0] == gid)
-    outs = [{"name": "Over", "description": f"Joueur {str(p)[-3:]}", "point": pt, "price": prix}
-            for p, j in joueurs.items() if j["team"] in (a, h)
-            for pt, prix in ((0.5, 1.08), (1.5, 1.45), (2.5, 2.30), (3.5, 4.10))]
+    outs = []
+    for p, j in joueurs.items():
+        if j["team"] not in (a, h):
+            continue
+        opp = h if j["team"] == a else a
+        lam = j["rate"] * (j["toi"] + K_PP_VRAI * j["pp"] * indisc[opp]) * defense[opp]
+        for pt, k in ((0.5, 1), (1.5, 2), (2.5, 3), (3.5, 4)):
+            pk = min(max(_bruit(min(max(_p_seuil_poisson(lam, k), 0.01), 0.99), rr), 0.01), 0.97)
+            outs.append({"name": "Over", "description": f"Joueur {str(p)[-3:]}", "point": pt, "price": round(1 / (pk * 1.08), 2)})
     return {"bookmakers": [{"key": "bk", "markets": [{"key": "player_shots_on_goal_alternate", "outcomes": outs}]}]}
 
 
 jour_courant = [None]
+BETS_TEMOIN = json.dumps([{"id": "temoin", "label": "Bet témoin", "cote": 1.9, "mise": 1, "cree": "2026-10-01T00:00:00Z"}])
 
 
 def main():
@@ -207,6 +280,8 @@ def main():
     run.DIR_CACHE = tmp / "data" / "cache"
     run.ETAT_AUTO = tmp / "data" / "versions_auto.json"   # jamais dans le vrai repo
     run.SORTIE = tmp / "docs" / "data.json"
+    (tmp / "data").mkdir(parents=True, exist_ok=True)
+    (tmp / "data" / "bets.json").write_text(BETS_TEMOIN)   # témoin : ne doit jamais bouger
     api.get_json = faux_get_json
     cotes._get = faux_odds
     def sgo_refuse(params):   # la clé de test n'est pas une clé SportsGameOdds -> repli sur The Odds API
@@ -357,6 +432,57 @@ def main():
     jc = cj[(9, "blake coleman")]
     assert jc["tirs3"]["prix"] == 2.7 and jc["tirs"]["prix"] == round(1 + 100 / 185, 3) and jc["tirs4"]["prix"] == 5.25
     print("lecteur SportsGameOdds OK :", {k: v["prix"] for k, v in jc.items()})
+
+    # --- Diagnostic : le marché seul vs v1 vs v2 (avant / après mélange), sur les tirs 2+ ---
+    diag = {"mkt": [], "v1": [], "v2": [], "v2_avant": []}
+    n_cotes = n_tot = 0
+    for fic in sorted(run.DIR_PRED.glob("*.json")):
+        for e in json.loads(fic.read_text())["entries"]:
+            if not e.get("played") or not isinstance(e.get("result"), dict):
+                continue
+            n_tot += 1
+            c = (e.get("cotes") or {}).get("tirs")
+            if not c or "v2" not in e["preds"]:
+                continue
+            n_cotes += 1
+            y = 1 if e["result"]["tirs"] >= 2 else 0
+            pm = min(1 / c["prix"] / 1.08, 0.995)
+            diag["mkt"].append((pm - y) ** 2)
+            diag["v1"].append((e["preds"]["v1"]["tirs"]["p"] - y) ** 2)
+            diag["v2"].append((e["preds"]["v2"]["tirs"]["p"] - y) ** 2)
+            diag["v2_avant"].append((e["preds"]["v2"]["tirs"].get("p0", e["preds"]["v2"]["tirs"]["p"]) - y) ** 2)
+            j = joueurs[e["pid"]]
+            lam_vrai = j["rate"] * (j["toi"] + K_PP_VRAI * j["pp"] * indisc[e["opp"]]) * defense[e["opp"]]
+            diag.setdefault("vrai", []).append((_p_seuil_poisson(lam_vrai, 2) - y) ** 2)
+    # Données v2 bien branchées? (part des joueurs avec features x, PP projeté vs vrai rôle)
+    avec_x = pp_ok = 0; ecarts = []; pens = []
+    for fic in sorted(run.DIR_PRED.glob("*.json"))[-5:]:
+        for e in json.loads(fic.read_text())["entries"]:
+            det = e["preds"].get("v2", {}).get("tirs", {}).get("detail")
+            if e.get("f", {}).get("x") and det:
+                avec_x += 1
+                vrai_pp = joueurs[e["pid"]]["pp"] * indisc[e["opp"]]
+                ecarts.append(abs(det["pp"] - vrai_pp)); pens.append((det["f_pen"], indisc[e["opp"]]))
+    import statistics as stt
+    corr = stt.correlation([a for a, b in pens], [b for a, b in pens]) if len(pens) > 2 else None
+    print(f"v2 branchée : {avec_x} joueurs avec features x · erreur PP moyenne {stt.mean(ecarts):.2f} min · "
+          f"corrélation indiscipline détectée/vraie {corr:.2f}")
+    print(f"diagnostic tirs 2+ ({n_cotes}/{n_tot} avec cotes) :", {k: round(sum(v) / len(v), 4) for k, v in diag.items() if v})
+
+    # --- v2 : présente partout, rejouée sur l'historique, et meilleure que v1 sur les tirs ---
+    st2 = json.loads(run.SORTIE.read_text())["stats"]
+    for m in ("tirs", "tirs3", "buts", "passes"):
+        print(f"v2 vs v1 {m:7}", round(st2["joueurs"][m]["v2"]["note"], 1), "vs", round(st2["joueurs"][m]["v1"]["note"], 1),
+              f"(n={st2['joueurs'][m]['v2']['n']})")
+    print("v2 vs v1 victoire", round(st2["matchs"]["victoire"]["v2"]["note"], 1), "vs", round(st2["matchs"]["victoire"]["v1"]["note"], 1))
+    print("note globale v2", round(st2["global"]["v2"]["note"], 1), "| v1", round(st2["global"]["v1"]["note"], 1))
+    assert st2["joueurs"]["tirs"]["v2"]["n"] >= st2["joueurs"]["tirs"]["v1"]["n"] * 0.95, "v2 pas rejouée sur l'historique"
+    assert st2["joueurs"]["tirs"]["v2"]["note"] > st2["joueurs"]["tirs"]["v1"]["note"], "v2 ne bat pas v1 sur les tirs"
+    # Les bets : aucun fichier Python n'y touche, et le fichier reste identique
+    for fpy in (ICI.parent / "src").glob("*.py"):
+        assert "bets.json" not in fpy.read_text(encoding="utf-8"), f"{fpy.name} touche aux bets"
+    assert (tmp / "data" / "bets.json").read_text() == BETS_TEMOIN, "data/bets.json a été modifié"
+    print("bets intacts OK")
 
     dest = ICI / "data_exemple.json"
     shutil.copy(run.SORTIE, dest)
