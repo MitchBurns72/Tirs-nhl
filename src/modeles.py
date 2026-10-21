@@ -703,8 +703,16 @@ def modele_joueur_v2(f, P):
         out = {m: {"p": p_seuil(lam_t, seuil, P["nb_k"]), "lam": lam_t} for m, seuil in SEUILS_TIRS.items()}
         out["buts"] = {"p": p1plus_poisson(lam_b), "lam": lam_b}
         out["passes"] = {"p": p1plus_poisson(lam_p), "lam": lam_p}
+        # Détail pour « Pourquoi ce % » sur la page. N'affecte AUCUNE probabilité :
+        # c'est juste les morceaux du calcul, pour voir d'où vient le chiffre.
+        # r_sog / r_att : les deux estimés du taux (par les cadrés seulement, et par
+        # les tentatives × % qui se rendent au filet), mélangés selon w_att.
         out["tirs"]["detail"] = {"rate60": rate * 60, "toi": toi, "f_opp": f_opp, "f_lieu": f_lieu, "f_b2b": f_b2b,
-                                 "f_vs": f_vs, "pp": pp_proj, "f_pen": f_pen, "f_score": f_score}
+                                 "f_vs": f_vs, "pp": pp_proj, "f_pen": f_pen, "f_score": f_score,
+                                 "r_sog": rate_sog * 60, "r_att": rate_att * ratio * 60, "ratio": ratio,
+                                 "w_att": P["w_att"], "k_pp": k}
+        out["buts"]["detail"] = {"sh": sh, "f_gardien": f_g, "pp": pp_proj}
+        out["passes"]["detail"] = {"f_equipe": f_eq, "pp": pp_proj, "k_pp": kp}
 
     # --- Mélange avec le marché, marché par marché ---
     mkt = f.get("mkt") or {}
@@ -713,6 +721,8 @@ def modele_joueur_v2(f, P):
             p_mkt = min(implicite / P["vig_props"], 0.995)
             out[m]["p0"] = out[m]["p"]
             out[m]["p"] = melanger(out[m]["p"], p_mkt, P["w_mod_joueur"])
+            # Pour la page : % du marché (sans la marge du bookie) et poids du modèle
+            out[m]["mkt"], out[m]["w"] = p_mkt, P["w_mod_joueur"]
             if m == "tirs" and "detail" in out[m]:
                 out[m]["detail"]["mkt"] = p_mkt
     return out
@@ -781,18 +791,32 @@ VERSIONS = {
            "desc": "Baseline : moyennes de la saison, aucun ajustement"},
     "v1": {"joueur": v1_joueur, "match": v1_match, "nb_k": V1["nb_k"],
            "desc": "Forme L10, temps de glace, adversaire, gardiens, domicile, back-to-back, duels directs"},
-    # v2 : pas « auto » (paramètres fixés à la main, pas entraînés sur l'historique),
-    # donc elle peut être rejouée honnêtement sur toute la saison, comme v1.
-    "v2": {"params": V2, "famille": "v2", "nb_k": V2["nb_k"],
-           "desc": "v1 + tentatives de tirs, temps en avantage numérique, indiscipline adverse, état de match, "
-                   "matchs par les tirs, calibration, mélange avec les cotes US"},
+    # Génération 2 : 5 « philosophies » fixées d'avance (pas entraînées sur l'historique),
+    # donc rejouées honnêtement sur toute la saison, comme v1. Voir GEN2 plus bas.
 }
-# La principale reste v1 tant que v2 (ou une version auto) n'a pas prouvé mieux (voir auto.py)
+# Génération 2 : même modèle (famille v2), 5 réglages qui testent chacun une idée.
+# v2.1 est la référence ; les autres poussent UNE direction à la fois, pour qu'on
+# apprenne quelque chose de lisible du gagnant (« le marché compte plus », etc.).
+GEN2 = {
+    "v2.1": ({}, "Référence v2 : tentatives + PP + indiscipline + état de match + marché 45-55 %"),
+    "v2.2": ({"w_mod_joueur": 0.35, "w_mod_match": 0.30},
+             "Fait plus confiance au marché (65-70 % du poids aux cotes US)"),
+    "v2.3": ({"w_mod_joueur": 0.80, "w_mod_match": 0.70, "w_att": 0.75},
+             "Fait plus confiance au modèle et aux tentatives de tirs, moins au marché"),
+    "v2.4": ({"w_l10": 2.5, "w_prev": 0.2, "toi_recent": 0.8, "m_w_l10": 2.5},
+             "Forme récente : les 10 derniers matchs pèsent beaucoup plus, la saison passée moins"),
+    "v2.5": ({"k_pp": 1.8, "pen_exp": 1.4, "score_s": 0.22, "k_pp_passes": 2.4},
+             "Situations spéciales : avantage numérique, indiscipline et état de match amplifiés"),
+}
+for _id, (_diff, _desc) in GEN2.items():
+    VERSIONS[_id] = {"params": {**V2, **_diff}, "famille": "v2", "generation": 2,
+                     "nb_k": V2["nb_k"], "desc": _desc}
+# La principale reste v1 tant qu'une autre n'a pas prouvé mieux (voir auto.py)
 VERSION_PRINCIPALE = "v1"
 MARCHES = ["tirs1", "tirs", "tirs3", "tirs4", "buts", "passes"]
 # Distribution des tirs de chaque version ayant déjà prédit (None = Poisson).
 # Inclut les versions auto retirées : leur historique doit pouvoir être complété.
-DISPERSION = {"v0": None, "v1": V1["nb_k"], "v2": V2["nb_k"]}
+DISPERSION = {"v0": None, "v1": V1["nb_k"], "v2": V2["nb_k"], **{v: V2["nb_k"] for v in GEN2}}
 
 
 def charger_auto(chemin):
@@ -811,9 +835,16 @@ def charger_auto(chemin):
         base = FAMILLES[fam]["P"]
         DISPERSION[v["id"]] = v["params"].get("nb_k", base["nb_k"])
         if v.get("retiree"):
+            VERSIONS.pop(v["id"], None)   # au cas où elle était chargée avant d'être retirée
             continue
         P = {**base, **v["params"]}
         P["vs_cap"], P["m_h2h_cap"] = tuple(P["vs_cap"]), tuple(P["m_h2h_cap"])
-        VERSIONS[v["id"]] = {"params": P, "auto": True, "famille": fam, "desc": v["desc"], "cree": v["cree"], "nb_k": P["nb_k"]}
+        VERSIONS[v["id"]] = {"params": P, "auto": True, "famille": fam, "desc": v["desc"], "cree": v["cree"],
+                             "nb_k": P["nb_k"], "generation": v.get("generation")}
+    # Versions faites à la main (génération 2) éliminées par l'évolution : elles ne
+    # prédisent plus, mais leur historique reste dans les fichiers.
+    for vid in etat.get("retirees", []):
+        if vid in VERSIONS and VERSIONS[vid].get("generation"):
+            VERSIONS.pop(vid)
     p = etat.get("principale", VERSION_PRINCIPALE)
     return p if p in VERSIONS else VERSION_PRINCIPALE

@@ -358,25 +358,48 @@ def main():
     print(f"écart max modèle paramétrique vs v1 : {ecart_max:.6f}")
     assert ecart_max < 2e-3, "le modèle paramétrique ne reproduit pas v1"
 
-    # --- Labo : patterns + tuner forcé sur la petite fausse ligue ---
+    # --- Labo : la génération 2 (v2.1 à v2.5) se termine et la génération 3 naît ---
     auto.MIN_JOUEURS, auto.MIN_MATCHS, auto.MIN_VAL_JOUEURS, auto.MIN_VAL_MATCHS = 500, 30, 200, 10
+    auto.GEN_MIN_TIRS, auto.GEN_MIN_SOIRS = 300, 3
     hist = [json.loads(f.read_text()) for f in sorted(run.DIR_PRED.glob("*.json"))]
     labo, nouvelle = auto.cycle(hist, run.ETAT_AUTO, list(run.VERSIONS), jours[-1], force=True)
     print("journal :", labo["journal"][0]["msg"])
     print("patterns :", [(p["marche"], p["segment"], round(p["predit"], 2), round(p["reel"], 2), round(p["z"], 1)) for p in labo["patterns"][:4]])
-    if nouvelle:
-        vid = labo["versions"][-1]["id"]
-        # Le lendemain, la version auto prédit... mais jamais un soir d'avant sa naissance
-        api._cache.clear()
-        lendemain = jours[-1]
-        sys.argv = ["run.py", lendemain]
-        run.main()
-        d = json.loads((run.DIR_PRED / f"{lendemain}.json").read_text())
-        ouverts = [e for e in d["entries"] if not e.get("retro")]
-        assert any(vid in e["preds"] for e in ouverts), "la version auto ne prédit pas"
-        vieux = json.loads((run.DIR_PRED / f"{jours[2]}.json").read_text())
-        assert not any(vid in e["preds"] for e in vieux["entries"]), "version auto sur un soir d'entraînement"
-        print(f"version auto {vid} active, pas de triche rétroactive OK")
+    gen2 = labo["generations"][0]
+    print("classement gén. 2 :", [(c["id"], round(c["gain"] * 100, 2), round(c["z"] or 0, 1)) for c in gen2["classement"]])
+    print("principale :", labo["principale"], "· promo :", labo.get("promo"))
+    assert nouvelle and labo["generation"]["n"] == 3, "la génération 3 n'est pas née"
+    assert gen2["n"] == 2 and {c["id"] for c in gen2["classement"]} == {f"v2.{i}" for i in range(1, 6)}
+    parent = gen2["gagnant"]
+    enfants = [f"v3.{i}" for i in range(1, 6)]
+    assert labo["generation"]["membres"] == [parent] + enfants
+    perdants = [c["id"] for c in gen2["classement"] if c["id"] not in (parent, labo["principale"])]
+    assert set(perdants) <= set(labo.get("retirees", [])), "les perdants doivent arrêter de prédire"
+    # Les enfants sont vraiment différents du parent (sinon on teste 5 fois la même chose)
+    params = [json.dumps(v["params"], sort_keys=True) for v in labo["versions"] if v["generation"] == 3]
+    assert len(set(params)) == 5, "enfants identiques"
+    for v in labo["versions"]:
+        print(f"  {v['id']} : {v['desc'][:110]}")
+
+    # Le lendemain : les enfants prédisent, les perdants non, et aucun enfant sur un vieux soir
+    import modeles
+    run.charger_auto(run.ETAT_AUTO)
+    api._cache.clear()
+    sys.argv = ["run.py", jours[-1]]
+    run.main()
+    d = json.loads((run.DIR_PRED / f"{jours[-1]}.json").read_text())
+    ouverts = [e for e in d["entries"] if not e.get("retro")]
+    for vid in enfants + [parent]:
+        assert any(vid in e["preds"] for e in ouverts), f"{vid} ne prédit pas"
+    for vid in perdants:
+        assert vid not in modeles.VERSIONS, f"{vid} retirée mais encore chargée"
+    vieux = json.loads((run.DIR_PRED / f"{jours[2]}.json").read_text())
+    assert not any(vid in e["preds"] for e in vieux["entries"] for vid in enfants), "enfant sur un soir d'entraînement"
+    # Leur historique reste : les perdants ont toujours leurs prédictions des vieux soirs
+    assert any(perdants[0] in e["preds"] for e in vieux["entries"]), "historique des perdants effacé"
+    lab = json.loads(run.SORTIE.read_text())["labo"]
+    assert lab["generation"]["n"] == 3 and lab["attente"], "la génération 3 doit attendre ses propres soirs"
+    print(f"génération 3 active ({', '.join(enfants)} vs {parent}), jugée seulement à partir du {lab['generation']['depuis']} OK")
 
     # --- Seuils de tirs 1+ à 4+ ---
     st = json.loads(run.SORTIE.read_text())
@@ -434,6 +457,7 @@ def main():
     print("lecteur SportsGameOdds OK :", {k: v["prix"] for k, v in jc.items()})
 
     # --- Diagnostic : le marché seul vs v1 vs v2 (avant / après mélange), sur les tirs 2+ ---
+    V2 = "v2.1"   # la référence v2 (mêmes paramètres que l'ancienne v2)
     diag = {"mkt": [], "v1": [], "v2": [], "v2_avant": []}
     n_cotes = n_tot = 0
     for fic in sorted(run.DIR_PRED.glob("*.json")):
@@ -442,15 +466,15 @@ def main():
                 continue
             n_tot += 1
             c = (e.get("cotes") or {}).get("tirs")
-            if not c or "v2" not in e["preds"]:
+            if not c or V2 not in e["preds"]:
                 continue
             n_cotes += 1
             y = 1 if e["result"]["tirs"] >= 2 else 0
             pm = min(1 / c["prix"] / 1.08, 0.995)
             diag["mkt"].append((pm - y) ** 2)
             diag["v1"].append((e["preds"]["v1"]["tirs"]["p"] - y) ** 2)
-            diag["v2"].append((e["preds"]["v2"]["tirs"]["p"] - y) ** 2)
-            diag["v2_avant"].append((e["preds"]["v2"]["tirs"].get("p0", e["preds"]["v2"]["tirs"]["p"]) - y) ** 2)
+            diag["v2"].append((e["preds"][V2]["tirs"]["p"] - y) ** 2)
+            diag["v2_avant"].append((e["preds"][V2]["tirs"].get("p0", e["preds"][V2]["tirs"]["p"]) - y) ** 2)
             j = joueurs[e["pid"]]
             lam_vrai = j["rate"] * (j["toi"] + K_PP_VRAI * j["pp"] * indisc[e["opp"]]) * defense[e["opp"]]
             diag.setdefault("vrai", []).append((_p_seuil_poisson(lam_vrai, 2) - y) ** 2)
@@ -458,7 +482,7 @@ def main():
     avec_x = pp_ok = 0; ecarts = []; pens = []
     for fic in sorted(run.DIR_PRED.glob("*.json"))[-5:]:
         for e in json.loads(fic.read_text())["entries"]:
-            det = e["preds"].get("v2", {}).get("tirs", {}).get("detail")
+            det = e["preds"].get(V2, {}).get("tirs", {}).get("detail")
             if e.get("f", {}).get("x") and det:
                 avec_x += 1
                 vrai_pp = joueurs[e["pid"]]["pp"] * indisc[e["opp"]]
@@ -469,15 +493,27 @@ def main():
           f"corrélation indiscipline détectée/vraie {corr:.2f}")
     print(f"diagnostic tirs 2+ ({n_cotes}/{n_tot} avec cotes) :", {k: round(sum(v) / len(v), 4) for k, v in diag.items() if v})
 
-    # --- v2 : présente partout, rejouée sur l'historique, et meilleure que v1 sur les tirs ---
+    # --- v2.1 à v2.5 : rejouées sur l'historique, v2.1 meilleure que v1 sur les tirs ---
     st2 = json.loads(run.SORTIE.read_text())["stats"]
     for m in ("tirs", "tirs3", "buts", "passes"):
-        print(f"v2 vs v1 {m:7}", round(st2["joueurs"][m]["v2"]["note"], 1), "vs", round(st2["joueurs"][m]["v1"]["note"], 1),
-              f"(n={st2['joueurs'][m]['v2']['n']})")
-    print("v2 vs v1 victoire", round(st2["matchs"]["victoire"]["v2"]["note"], 1), "vs", round(st2["matchs"]["victoire"]["v1"]["note"], 1))
-    print("note globale v2", round(st2["global"]["v2"]["note"], 1), "| v1", round(st2["global"]["v1"]["note"], 1))
-    assert st2["joueurs"]["tirs"]["v2"]["n"] >= st2["joueurs"]["tirs"]["v1"]["n"] * 0.95, "v2 pas rejouée sur l'historique"
-    assert st2["joueurs"]["tirs"]["v2"]["note"] > st2["joueurs"]["tirs"]["v1"]["note"], "v2 ne bat pas v1 sur les tirs"
+        print(f"v2.1 vs v1 {m:7}", round(st2["joueurs"][m][V2]["note"], 1), "vs", round(st2["joueurs"][m]["v1"]["note"], 1),
+              f"(n={st2['joueurs'][m][V2]['n']})")
+    print("v2.1 vs v1 victoire", round(st2["matchs"]["victoire"][V2]["note"], 1), "vs", round(st2["matchs"]["victoire"]["v1"]["note"], 1))
+    print("note globale", {v: round(s["note"], 1) for v, s in st2["global"].items() if s.get("note") is not None})
+    assert st2["joueurs"]["tirs"][V2]["n"] >= st2["joueurs"]["tirs"]["v1"]["n"] * 0.95, "v2.1 pas rejouée sur l'historique"
+    assert st2["joueurs"]["tirs"][V2]["note"] > st2["joueurs"]["tirs"]["v1"]["note"], "v2.1 ne bat pas v1 sur les tirs"
+    # Rejouées sans réseau : toutes les lignes avec features ont les 5 versions de la génération 2
+    for fic in sorted(run.DIR_PRED.glob("*.json"))[:-1]:
+        for e in json.loads(fic.read_text())["entries"]:
+            if e.get("f", {}).get("x"):
+                assert all(f"v2.{i}" in e["preds"] for i in range(1, 6)), f"{fic.name} : génération 2 incomplète"
+    # « Pourquoi ce % » : la v2 explique aussi but et passe, et le mélange avec le marché
+    sortie = json.loads(run.SORTIE.read_text())
+    pv = next(e["preds"][parent] for e in sortie["joueurs"] if parent in e["preds"] and e.get("cotes", {}).get("tirs"))
+    assert {"r_sog", "r_att", "ratio", "w_att"} <= set(pv["tirs"]["detail"]), pv["tirs"]["detail"]
+    assert "pp" in pv["buts"]["detail"] and "pp" in pv["passes"]["detail"]
+    assert pv["tirs"]["p0"] is not None and pv["tirs"]["mkt"] is not None and pv["tirs"]["w"] is not None
+    print("détail « Pourquoi ce % » v2 OK · taille data.json", round(run.SORTIE.stat().st_size / 1e6, 2), "Mo")
     # Les bets : aucun fichier Python n'y touche, et le fichier reste identique
     for fpy in (ICI.parent / "src").glob("*.py"):
         assert "bets.json" not in fpy.read_text(encoding="utf-8"), f"{fpy.name} touche aux bets"

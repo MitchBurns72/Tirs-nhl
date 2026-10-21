@@ -1,21 +1,32 @@
 # La Patente à Tirs
 
 Chaque soir de match NHL :
-- **Joueurs** : probabilité de 2+ tirs au but, d'un but, d'une passe
+- **Joueurs** : probabilité de 1+ à 4+ tirs au but, d'un but, d'une passe
 - **Matchs** : % de victoire, buts attendus, total projeté, P(plus de 5.5 / 6.5)
 - **Cotes** : médiane des bookies US en auto (The Odds API) + champ Mise-o-jeu manuel
-- **Suivi** : note /100, calibration et bon côté par marché, pour chaque version de l'algo
+- **Suivi** : note /100, calibration et bon côté par marché, pour chaque version de l'algo, et le Labo
 
-## v2
+## v2 (génération 2 : v2.1 à v2.5)
 
-`v2` = v1 + tentatives de tirs (cadrés + ratés + bloqués), temps en avantage numérique, indiscipline de
-l'adversaire (minutes de PP qu'il donne), état de match (l'équipe qui tire de l'arrière tire plus),
-matchs par les tirs (mélangés 60/40 avec le modèle par buts), calibration de la victoire, et mélange
-avec les cotes US (en logit) quand on les a. Données : `api.nhle.com/stats/rest` (rapports `realtime`
-et `timeonice` par match, en cache dans `data/cache/`). Paramètres fixés d'avance, donc rejouée sur
-toute la saison avec les données d'avant chaque match. Elle devient principale seulement si elle bat
-v1 sur les mêmes prédictions (voir Labo). v1 reste la meilleure pour chasser la valeur pure, parce
-qu'elle ignore le marché.
+La v2 = v1 + tentatives de tirs (cadrés + ratés + bloqués), temps en avantage numérique, indiscipline
+de l'adversaire (minutes de PP qu'il donne), état de match (l'équipe qui tire de l'arrière tire plus),
+matchs par les tirs (mélangés avec le modèle par buts), calibration de la victoire, et mélange avec
+les cotes US (en logit) quand on les a. Données : `api.nhle.com/stats/rest` (rapports `realtime` et
+`timeonice` par match, en cache dans `data/cache/`).
+
+Cinq réglages roulent en même temps (`GEN2` dans `src/modeles.py`) :
+
+| Version | Idée |
+|---|---|
+| v2.1 | Référence (mêmes paramètres que l'ancienne v2) |
+| v2.2 | Fait plus confiance au marché (65-70 % du poids aux cotes US) |
+| v2.3 | Fait plus confiance au modèle et aux tentatives de tirs |
+| v2.4 | Forme récente : les 10 derniers matchs pèsent plus, la saison passée moins |
+| v2.5 | Situations spéciales amplifiées (PP, indiscipline, état de match) |
+
+Réglées AVANT de voir les résultats, donc rejouées honnêtement sur toute la saison (sans réseau :
+les features sont déjà dans les fichiers). « Pourquoi ce % » montre le détail de chaque version,
+dont le % du modèle seul, le % du marché et le mélange des deux.
 
 ## Mes bets
 
@@ -29,17 +40,26 @@ limité au repo, permission Contents en lecture/écriture), synchronisés entre 
 Un bet supprimé reste dans le fichier marqué `supprime` pour ne pas réapparaître. Les soirs passés sont réglés avec `docs/live/AAAA-MM-JJ.json`
 (écrit par le calcul, gardé 21 jours) ; un bet réglé garde son résultat sur l'appareil.
 
-## Labo (auto-upgrade)
+## Labo : évolution par générations
 
 `src/auto.py`, à chaque calcul :
-- **Patterns** : segments où la version principale se trompe systématiquement (écart >= 2.5 écarts-types).
-- **Tuner** (aux ~7 jours) : cherche de meilleurs paramètres sur les vieux soirs, valide sur les soirs récents
-  jamais utilisés pour chercher. Si ça bat la principale d'au moins 0.5 % sans empirer un autre marché,
-  crée une version gelée `aMMJJ` qui roule en parallèle. Max 3 versions auto actives.
-- **Promotion** : une version auto devient principale seulement si elle bat la principale EN DIRECT,
-  sur les mêmes prédictions, après 1500 prédictions de tirs.
-- Une version auto ne prédit jamais un soir d'avant sa création (ses soirs d'entraînement).
-- État : `data/versions_auto.json`. Pour annuler une version : y mettre `"retiree": true`.
+- **Classement** : chaque membre de la génération est comparé à v1 sur EXACTEMENT les mêmes joueurs
+  (Brier des 6 marchés joueur) et les mêmes matchs. z = solidité, calculé par soir (les joueurs d'un
+  même soir ne sont pas indépendants, donc c'est plus sévère qu'un z ligne par ligne).
+- **Promotion** : le meneur devient la version principale (celle par défaut sur la page) seulement
+  s'il bat la principale actuelle d'au moins 0.5 %, avec z >= 2.33 (moins de 1 % de chance que ce soit
+  de la chance, ce qui compense le fait qu'on compare 5 candidats), sur au moins 1500 joueurs, sans
+  être clairement pire sur les matchs.
+- **Fin de génération** : quand chaque membre a 3000 joueurs comparables sur 7 soirs. Le meilleur
+  survit (le parent, même si son avance n'est pas encore prouvée : il faut explorer), et 5 enfants
+  naissent : `vN.1` = le tuner part du parent (cherche sur les vieux soirs, valide sur les récents),
+  `vN.2` à `vN.5` = mutations au hasard de 3 à 5 paramètres, de plus en plus audacieuses.
+  Croisement : les paramètres de match viennent du meilleur sur les matchs. Les perdants arrêtent de
+  prédire, leur historique reste.
+- **Pas de triche** : la génération 3 et + est née en regardant l'historique, donc elle est jugée
+  SEULEMENT sur les soirs après sa naissance et ne prédit jamais un soir d'avant.
+- **Patterns** : segments où la principale se trompe systématiquement (écart >= 2.5 écarts-types).
+- État : `data/versions_auto.json`. Pour retirer une version auto : y mettre `"retiree": true`.
 
 ## Live
 
@@ -95,10 +115,9 @@ Données : API publique de la NHL (`api-web.nhle.com`), gratuite, sans clé.
 
 ## Ajouter une version de l'algo
 
-1. Dans `src/modeles.py`, copie `v1` et ses paramètres `V1`, renomme en `v2` / `V2`, change ce que tu veux tester.
-2. Ajoute `"v2"` à la fin de `VERSIONS`. La dernière de la liste devient la version principale de la page.
-3. **Ne modifie jamais une version déjà publiée.** Ses vieilles prédictions ne correspondraient plus au code et la comparaison serait faussée.
-4. `python tests/test_simulation.py` pour vérifier que rien ne plante, puis commit.
+1. Dans `src/modeles.py`, ajoute une ligne dans `GEN2` (ou une nouvelle famille) avec les paramètres à changer.
+2. **Ne modifie jamais une version déjà publiée.** Ses vieilles prédictions ne correspondraient plus au code et la comparaison serait faussée.
+3. `python tests/test_simulation.py` pour vérifier que rien ne plante, puis commit.
 
 Une nouvelle version commence à zéro prédiction gradée. Elle est comparée aux autres seulement sur les soirs où elle a roulé. Attends quelques centaines de prédictions avant de conclure.
 

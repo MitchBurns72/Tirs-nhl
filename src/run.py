@@ -702,38 +702,51 @@ def completer_features(saison):
             data["complete"] = marque
             ecrire_json(fic, data)
             continue
-        # Reconstituer les matchs du soir à partir des joueurs (domicile = équipe du joueur si home)
-        matchs = {}
-        for e in data["entries"]:
-            h, a = (e["team"], e["opp"]) if e["home"] else (e["opp"], e["team"])
-            matchs[e["gameId"]] = {"id": e["gameId"], "home": h, "away": a, "state": "OFF", "season": saison,
-                                   "start": data["date"] + "T23:00:00Z"}
-        for g in data.get("games", []):
-            matchs[g["gameId"]] = {"id": g["gameId"], "home": g["home"], "away": g["away"], "state": "OFF",
-                                   "season": saison, "start": g.get("start", data["date"] + "T23:00:00Z")}
-        if not matchs:
-            continue
-        games, entries, _ = predire(data["date"], list(matchs.values()), saison)
-        f_j = {(e["gameId"], e["pid"]): e["f"] for e in entries}
-        f_g = {g["gameId"]: g["f"] for g in games}
-        for e in manque_j:
-            e["f"] = f_j.get((e["gameId"], e["pid"])) or e.get("f")
-        for g in manque_g:
-            g["f"] = f_g.get(g["gameId"]) or g.get("f")
-        # Rejouer la v2 (pas une version auto : paramètres fixés d'avance) sur ces soirs,
-        # avec les cotes d'avant-match si on les avait. Les autres versions : jamais touchées.
+        # Les features manquent seulement sur les très vieux soirs. Si toutes les lignes
+        # ont déjà leurs features, on rejoue les versions manquantes SANS aucun appel
+        # réseau (c'est le cas quand on ajoute v2.1 à v2.5 : tout est déjà là).
+        sans_f = lambda x: not x.get("f") or "x" not in x["f"]
+        if any(sans_f(x) for x in manque_j + manque_g):
+            # Reconstituer les matchs du soir à partir des joueurs (domicile = équipe du joueur si home)
+            matchs = {}
+            for e in data["entries"]:
+                h, a = (e["team"], e["opp"]) if e["home"] else (e["opp"], e["team"])
+                matchs[e["gameId"]] = {"id": e["gameId"], "home": h, "away": a, "state": "OFF", "season": saison,
+                                       "start": data["date"] + "T23:00:00Z"}
+            for g in data.get("games", []):
+                matchs[g["gameId"]] = {"id": g["gameId"], "home": g["home"], "away": g["away"], "state": "OFF",
+                                       "season": saison, "start": g.get("start", data["date"] + "T23:00:00Z")}
+            if not matchs:
+                continue
+            games, entries, _ = predire(data["date"], list(matchs.values()), saison)
+            f_j = {(e["gameId"], e["pid"]): e["f"] for e in entries}
+            f_g = {g["gameId"]: g["f"] for g in games}
+            # On garde TOUJOURS les features d'origine quand elles existent (calculées avant le match)
+            for e in manque_j:
+                if sans_f(e):
+                    e["f"] = f_j.get((e["gameId"], e["pid"])) or e.get("f")
+            for g in manque_g:
+                if sans_f(g):
+                    g["f"] = f_g.get(g["gameId"]) or g.get("f")
+        # Rejouer les versions manuelles (paramètres fixés d'avance, pas des versions auto)
+        # qui manquent, avec les cotes d'avant-match si on les avait. Une prédiction déjà
+        # là n'est jamais recalculée, et les autres versions ne sont jamais touchées.
         for x in manque_g:
             if x.get("f") is not None:
-                x["f"]["mkt"] = implicites_match(x.get("cotes")) or None
+                if "mkt" not in x["f"]:
+                    x["f"]["mkt"] = implicites_match(x.get("cotes")) or None
                 for v in a_rejouer:
-                    x.setdefault("preds", {})[v] = arrondir(predire_version(VERSIONS[v], "match", x["f"]))
+                    if v not in x.setdefault("preds", {}):
+                        x["preds"][v] = arrondir(predire_version(VERSIONS[v], "match", x["f"]))
         for x in manque_j:
             if x.get("f") is not None:
-                x["f"]["mkt"] = implicites_joueur(x.get("cotes")) or None
+                if "mkt" not in x["f"]:
+                    x["f"]["mkt"] = implicites_joueur(x.get("cotes")) or None
                 for v in a_rejouer:
-                    pv = predire_version(VERSIONS[v], "joueur", x["f"])
-                    ajouter_seuils(pv, VERSIONS[v].get("nb_k"))
-                    x.setdefault("preds", {})[v] = arrondir(pv)
+                    if v not in x.setdefault("preds", {}):
+                        pv = predire_version(VERSIONS[v], "joueur", x["f"])
+                        ajouter_seuils(pv, VERSIONS[v].get("nb_k"))
+                        x["preds"][v] = arrondir(pv)
         data["complete"] = marque
         ecrire_json(fic, data)
         n += 1
@@ -795,6 +808,32 @@ def archiver_soirs(jour, n=3, garder=21):
 def sans_features(liste):
     """La page n'a pas besoin des features (lourdes) : on les retire de data.json."""
     return [{k: v for k, v in x.items() if k != "f"} for x in liste]
+
+
+def _r3(x):
+    if isinstance(x, float):
+        return round(x, 3)
+    if isinstance(x, dict):
+        return {k: _r3(v) for k, v in x.items()}
+    if isinstance(x, list):
+        return [_r3(v) for v in x]
+    return x
+
+
+def allege(entries):
+    """data.json pour le cell : avec 8-10 versions, chaque joueur traîne beaucoup de
+    chiffres. On arrondit à 3 décimales (0.1 % près, plus que ce que la page affiche)
+    et on retire le λ des tirs 1+/3+/4+ (c'est le même que celui des tirs 2+, la page
+    le reprend). Les fichiers de data/predictions gardent TOUT, au complet."""
+    out = []
+    for e in sans_features(entries):
+        preds = {}
+        for v, pv in (e.get("preds") or {}).items():
+            pv = {m: ({k: x for k, x in o.items() if k != "lam"} if m in ("tirs1", "tirs3", "tirs4") and isinstance(o, dict) else o)
+                  for m, o in pv.items()}
+            preds[v] = pv
+        out.append(_r3({**e, "preds": preds}))
+    return out
 
 
 def main():
@@ -894,11 +933,13 @@ def main():
         "principale": principale,
         "matchs": matchs,
         "games": sans_features(existant["games"]),
-        "joueurs": sans_features(existant["entries"]),
+        "joueurs": allege(existant["entries"]),
         "stats": resumer(historique, list(VERSIONS)),
         "cotes_quota": quota,
-        "labo": {k: labo.get(k) for k in ("journal", "patterns", "donnees", "dernier_tuning", "essais")} | {
-            "versions": [{k: v.get(k) for k in ("id", "cree", "desc", "retiree", "essai")} for v in labo.get("versions", [])]},
+        "labo": {k: labo.get(k) for k in ("journal", "patterns", "donnees", "dernier_tuning", "generation",
+                                          "classement", "generations", "promo", "attente", "retirees")} | {
+            "versions": [{k: v.get(k) for k in ("id", "cree", "desc", "retiree", "generation", "base", "params")}
+                         for v in labo.get("versions", [])]},
     })
     print(f"{jour}: {len(matchs)} matchs, {len(existant['entries'])} joueurs, cotes={'oui' if AVEC_COTES else 'non'}")
 
