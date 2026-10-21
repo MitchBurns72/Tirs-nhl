@@ -233,7 +233,11 @@
   "mise": 1,
   "label": "Jason Robertson · Tirs 3+",
   "sous": "DAL vs BOS",
-  "maj": "2026-10-20T21:59:50.584Z"
+  "maj": "2026-10-21T03:39:48.522Z",
+  "final": {
+   "etat": "gagne",
+   "texte": "3 tirs · final"
+  }
  },
  {
   "date": "2026-10-20",
