@@ -1528,5 +1528,125 @@
   "hsog": 30,
   "asog": 19,
   "fin": "REG"
+ },
+ "2026020154": {
+  "date": "2026-10-22",
+  "home": "BOS",
+  "away": "NSH",
+  "hg": 6,
+  "ag": 0,
+  "hsog": 31,
+  "asog": 28,
+  "fin": "REG"
+ },
+ "2026020155": {
+  "date": "2026-10-22",
+  "home": "TOR",
+  "away": "NYR",
+  "hg": 5,
+  "ag": 4,
+  "hsog": 35,
+  "asog": 25,
+  "fin": "REG"
+ },
+ "2026020156": {
+  "date": "2026-10-22",
+  "home": "OTT",
+  "away": "SJS",
+  "hg": 2,
+  "ag": 6,
+  "hsog": 43,
+  "asog": 28,
+  "fin": "REG"
+ },
+ "2026020157": {
+  "date": "2026-10-22",
+  "home": "NJD",
+  "away": "ANA",
+  "hg": 4,
+  "ag": 1,
+  "hsog": 29,
+  "asog": 17,
+  "fin": "REG"
+ },
+ "2026020158": {
+  "date": "2026-10-22",
+  "home": "PIT",
+  "away": "FLA",
+  "hg": 4,
+  "ag": 0,
+  "hsog": 21,
+  "asog": 26,
+  "fin": "REG"
+ },
+ "2026020159": {
+  "date": "2026-10-22",
+  "home": "NYI",
+  "away": "LAK",
+  "hg": 2,
+  "ag": 3,
+  "hsog": 43,
+  "asog": 27,
+  "fin": "OT"
+ },
+ "2026020160": {
+  "date": "2026-10-22",
+  "home": "STL",
+  "away": "VGK",
+  "hg": 6,
+  "ag": 2,
+  "hsog": 31,
+  "asog": 29,
+  "fin": "REG"
+ },
+ "2026020161": {
+  "date": "2026-10-22",
+  "home": "DAL",
+  "away": "WPG",
+  "hg": 3,
+  "ag": 2,
+  "hsog": 38,
+  "asog": 19,
+  "fin": "OT"
+ },
+ "2026020162": {
+  "date": "2026-10-22",
+  "home": "CGY",
+  "away": "MIN",
+  "hg": 2,
+  "ag": 1,
+  "hsog": 22,
+  "asog": 37,
+  "fin": "REG"
+ },
+ "2026020163": {
+  "date": "2026-10-22",
+  "home": "EDM",
+  "away": "CAR",
+  "hg": 6,
+  "ag": 5,
+  "hsog": 21,
+  "asog": 27,
+  "fin": "SO"
+ },
+ "2026020164": {
+  "date": "2026-10-22",
+  "home": "SEA",
+  "away": "UTA",
+  "hg": 5,
+  "ag": 3,
+  "hsog": 23,
+  "asog": 36,
+  "fin": "REG"
+ },
+ "2026020165": {
+  "date": "2026-10-22",
+  "home": "VAN",
+  "away": "DET",
+  "hg": 2,
+  "ag": 5,
+  "hsog": 13,
+  "asog": 31,
+  "fin": "REG"
  }
 }
