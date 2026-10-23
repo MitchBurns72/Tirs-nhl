@@ -13,7 +13,7 @@
     "scale_passes": 0.9949
    },
    "desc": "Petite mutation de v2.2 (le tuner n'a rien trouvé) : scale_passes 1→0.995, m_pseudo_gp 10→12",
-   "retiree": false
+   "retiree": true
   },
   {
    "id": "v3.2",
@@ -29,7 +29,7 @@
     "scale_buts": 1.0211
    },
    "desc": "Mutation de v2.2 : toi_recent 0.6→0.586, scale_buts 1→1.02, m_w_l10 1.5→1.4",
-   "retiree": false
+   "retiree": true
   },
   {
    "id": "v3.3",
@@ -45,7 +45,7 @@
     "w_mod_match": 0.3
    },
    "desc": "Mutation de v2.2 : w_att 0.5→0.499, w_prev 0.35→0.313, m_w_l10 1.5→1.66",
-   "retiree": false
+   "retiree": true
   },
   {
    "id": "v3.4",
@@ -62,7 +62,7 @@
     "mt_w_buts": 0.4066
    },
    "desc": "Mutation de v2.2 : nb_k 15→23.7, w_prev 0.35→0.284, score_s 0.12→0.0827, mt_w_buts 0.6→0.407",
-   "retiree": false
+   "retiree": true
   },
   {
    "id": "v3.5",
@@ -80,10 +80,116 @@
     "w_mod_match": 0.3
    },
    "desc": "Mutation de v2.2 : pen_exp 1→1.12, pseudo_min 120→67, score_s 0.12→0.133, m_w_prev 0.5→0.601, m_pseudo_gp 10→9.79",
-   "retiree": false
+   "retiree": true
+  },
+  {
+   "id": "v4.1",
+   "cree": "2026-10-23",
+   "base": "v2.2",
+   "famille": "v2",
+   "generation": 4,
+   "params": {
+    "pa_pseudo_min": 300.0,
+    "k_pp_passes": 1.125,
+    "w_mod_joueur": 0.35,
+    "w_mod_match": 0.3,
+    "cal_pa_a": 1.06,
+    "cal_pa_b": -0.01,
+    "scale_passes": 0.96
+   },
+   "desc": "Tuner : raffine v2.2. Tirs (1+ à 4+) : rien de mieux qui tient en validation (+0.4 %) · But : rien de mieux qui tient en validation (+0.2 %) · Passe : 0.5 % mieux en validation · Matchs : rien de mieux qui tient en validation (-1.3 %)",
+   "retiree": false,
+   "ecart": 0.0086
+  },
+  {
+   "id": "v4.2",
+   "cree": "2026-10-23",
+   "base": "v2.2",
+   "famille": "v2",
+   "generation": 4,
+   "params": {
+    "nb_k": 9.0,
+    "w_mod_joueur": 0.35,
+    "w_mod_match": 0.3,
+    "cal_t_a": 1.02,
+    "cal_t_b": -0.02,
+    "cal_pa_a": 1.06,
+    "cal_pa_b": -0.03,
+    "scale_tirs": 0.96,
+    "scale_passes": 0.95
+   },
+   "desc": "Calibreur : v2.2 recalibré (échelle, dispersion, biais). Tirs (1+ à 4+) 0.0 % mieux en validation · Passe 0.7 % mieux en validation",
+   "retiree": false,
+   "ecart": 0.0202
+  },
+  {
+   "id": "v4.3",
+   "cree": "2026-10-23",
+   "base": "v2.2",
+   "famille": "v2",
+   "generation": 4,
+   "params": {
+    "k_pp": 0.4,
+    "w_att": 0.2,
+    "pen_exp": 0.4,
+    "score_s": 0.048,
+    "k_pp_passes": 0.6,
+    "w_mod_joueur": 0.35,
+    "w_mod_match": 0.3
+   },
+   "desc": "Expérience : v2.2 perd contre v1, alors on coupe les ajouts v2 à 40 % pour voir si c'est eux qui nuisent : w_att 0.5→0.2, k_pp 1→0.4, pen_exp 1→0.4, score_s 0.12→0.048, k_pp_passes 1.5→0.6",
+   "retiree": false,
+   "ecart": 0.007
+  },
+  {
+   "id": "v4.4",
+   "cree": "2026-10-23",
+   "base": "v2.2",
+   "famille": "v2",
+   "generation": 4,
+   "params": {
+    "w_l10": 0.5054,
+    "opp_reg_gp": 6.238,
+    "vs_reg_gp": 31.116,
+    "m_w_l10": 4,
+    "pen_exp": 2.0,
+    "w_mod_joueur": 0.35,
+    "w_mod_match": 0.3,
+    "cal_a": 1.4713,
+    "prior_toi_exp": 0.2204
+   },
+   "desc": "Exploratrice : grosse mutation de v2.2 : w_l10 1.5→0.505, vs_reg_gp 12→31.1, pen_exp 1→2, prior_toi_exp 0→0.22, opp_reg_gp 15→6.24, cal_a 1→1.47, m_w_l10 1.5→4",
+   "retiree": false,
+   "ecart": 0.0148
+  },
+  {
+   "id": "v4.5",
+   "cree": "2026-10-23",
+   "base": "v2.2",
+   "famille": "v2",
+   "generation": 4,
+   "params": {
+    "w_l10": 1.2816,
+    "vs_reg_gp": 20.2005,
+    "m_w_prev": 0.214,
+    "k_pp": 1.534,
+    "w_mod_joueur": 0.35,
+    "w_mod_match": 0.3,
+    "cal_pa_a": 1.1133,
+    "cal_pa_b": 0.2605,
+    "scale_tirs": 1.114,
+    "scale_match": 0.9839
+   },
+   "desc": "Radicale : saut loin de v2.2 : w_l10 1.5→1.28, vs_reg_gp 12→20.2, k_pp 1→1.53, scale_tirs 1→1.11, cal_pa_b 0→0.261, cal_pa_a 1→1.11, m_w_prev 0.5→0.214, scale_match 1→0.984",
+   "retiree": false,
+   "ecart": 0.0338
   }
  ],
  "journal": [
+  {
+   "date": "2026-10-23",
+   "msg": "Nouveau moteur : génération 3 interrompue (ses 5 enfants étaient presque des clones de v2.2). Génération 4 : v4.1, v4.2, v4.3, v4.4, v4.5 naissent et affrontent v2.2. Perdants retirés : aucun."
+  },
   {
    "date": "2026-10-21",
    "msg": "Génération 2 terminée : v2.2 gagne (-0.38 % vs v1, z = -3.1). Génération 3 : v3.1, v3.2, v3.3, v3.4, v3.5 naissent et affrontent v2.2. Perdants retirés : v2.1, v2.3, v2.4, v2.5."
@@ -110,103 +216,103 @@
   "matchs": 165
  },
  "dernier_tuning": "2026-10-21",
- "maj": "2026-10-23T22:11+00:00",
+ "maj": "2026-10-23T23:13+00:00",
  "generation": {
-  "n": 3,
+  "n": 4,
   "membres": [
    "v2.2",
-   "v3.1",
-   "v3.2",
-   "v3.3",
-   "v3.4",
-   "v3.5"
+   "v4.1",
+   "v4.2",
+   "v4.3",
+   "v4.4",
+   "v4.5"
   ],
   "parent": "v2.2",
-  "depuis": "2026-10-21",
-  "debut": "2026-10-21"
+  "depuis": "2026-10-23",
+  "debut": "2026-10-23"
  },
  "classement": [
   {
-   "id": "v3.5",
-   "n": 2886,
-   "n_tirs": 481,
-   "soirs": 2,
-   "gain": -0.008433302273468531,
-   "z": -30.347312028067893,
-   "brier": 0.15109235606722096,
-   "n_m": 42,
-   "gain_m": 0.009616170610007874,
-   "z_m": 4.075394420791849
-  },
-  {
-   "id": "v3.1",
-   "n": 2886,
-   "n_tirs": 481,
-   "soirs": 2,
-   "gain": -0.009153481319616347,
-   "z": -38.21860497855987,
-   "brier": 0.15120025963270953,
-   "n_m": 42,
-   "gain_m": 0.010205697756251656,
-   "z_m": 4.49926428505982
-  },
-  {
-   "id": "v3.4",
-   "n": 2886,
-   "n_tirs": 481,
-   "soirs": 2,
-   "gain": -0.009164195973791495,
-   "z": -121.28255466860116,
-   "brier": 0.1512018649965349,
-   "n_m": 42,
-   "gain_m": 0.011664245007065865,
-   "z_m": 2.8770515072875673
-  },
-  {
    "id": "v2.2",
-   "n": 2886,
-   "n_tirs": 481,
-   "soirs": 2,
-   "gain": -0.009224944446917625,
-   "z": -41.55828004798543,
-   "brier": 0.15121096686763677,
-   "n_m": 42,
-   "gain_m": 0.010566181240811188,
-   "z_m": 5.254169767925403
+   "n": 0,
+   "n_tirs": 0,
+   "soirs": 0,
+   "gain": null,
+   "z": null,
+   "brier": null,
+   "n_m": 0,
+   "gain_m": null,
+   "z_m": null
   },
   {
-   "id": "v3.2",
-   "n": 2886,
-   "n_tirs": 481,
-   "soirs": 2,
-   "gain": -0.009236227802824463,
-   "z": -50.9789660289029,
-   "brier": 0.15121265743936269,
-   "n_m": 42,
-   "gain_m": 0.009735669206641632,
-   "z_m": 3.855062580188321
+   "id": "v4.1",
+   "n": 0,
+   "n_tirs": 0,
+   "soirs": 0,
+   "gain": null,
+   "z": null,
+   "brier": null,
+   "n_m": 0,
+   "gain_m": null,
+   "z_m": null
   },
   {
-   "id": "v3.3",
-   "n": 2886,
-   "n_tirs": 481,
-   "soirs": 2,
-   "gain": -0.00937041284982076,
-   "z": -38.67965941625505,
-   "brier": 0.15123276222453189,
-   "n_m": 42,
-   "gain_m": 0.01178085441924214,
-   "z_m": 9.059080947667063
+   "id": "v4.2",
+   "n": 0,
+   "n_tirs": 0,
+   "soirs": 0,
+   "gain": null,
+   "z": null,
+   "brier": null,
+   "n_m": 0,
+   "gain_m": null,
+   "z_m": null
+  },
+  {
+   "id": "v4.3",
+   "n": 0,
+   "n_tirs": 0,
+   "soirs": 0,
+   "gain": null,
+   "z": null,
+   "brier": null,
+   "n_m": 0,
+   "gain_m": null,
+   "z_m": null
+  },
+  {
+   "id": "v4.4",
+   "n": 0,
+   "n_tirs": 0,
+   "soirs": 0,
+   "gain": null,
+   "z": null,
+   "brier": null,
+   "n_m": 0,
+   "gain_m": null,
+   "z_m": null
+  },
+  {
+   "id": "v4.5",
+   "n": 0,
+   "n_tirs": 0,
+   "soirs": 0,
+   "gain": null,
+   "z": null,
+   "brier": null,
+   "n_m": 0,
+   "gain_m": null,
+   "z_m": null
   }
  ],
  "promo": {
-  "candidat": "v3.5",
+  "candidat": "v2.2",
   "contre": "v1",
-  "n_tirs": 481,
-  "gain": -0.008433302273468531,
-  "z": -30.347312028067893,
-  "gain_m": 0.009616170610007874,
-  "z_m": 4.075394420791849,
+  "n_tirs": 0,
+  "gain": null,
+  "z": null,
+  "gain_m": null,
+  "z_m": null,
   "solide": false
  },
  "retirees": [
@@ -216,6 +322,52 @@
   "v2.5"
  ],
  "generations": [
+  {
+   "n": 3,
+   "fin": "2026-10-23",
+   "gagnant": "v2.2",
+   "interrompue": true,
+   "gain": null,
+   "z": null,
+   "classement": [
+    {
+     "id": "v2.2",
+     "gain": -0.009224944446917625,
+     "z": null,
+     "gain_m": 0.010566181240811188
+    },
+    {
+     "id": "v3.1",
+     "gain": -0.009153481319616347,
+     "z": null,
+     "gain_m": 0.010205697756251656
+    },
+    {
+     "id": "v3.2",
+     "gain": -0.009236227802824463,
+     "z": null,
+     "gain_m": 0.009735669206641632
+    },
+    {
+     "id": "v3.3",
+     "gain": -0.00937041284982076,
+     "z": null,
+     "gain_m": 0.01178085441924214
+    },
+    {
+     "id": "v3.4",
+     "gain": -0.009164195973791495,
+     "z": null,
+     "gain_m": 0.011664245007065865
+    },
+    {
+     "id": "v3.5",
+     "gain": -0.008433302273468531,
+     "z": null,
+     "gain_m": 0.009616170610007874
+    }
+   ]
+  },
   {
    "n": 2,
    "fin": "2026-10-21",
@@ -257,9 +409,10 @@
   }
  ],
  "attente": {
-  "n_tirs": 481,
-  "soirs": 2,
+  "n_tirs": 0,
+  "soirs": 0,
   "min_tirs": 3000,
   "min_soirs": 7
- }
+ },
+ "moteur": 2
 }

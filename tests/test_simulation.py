@@ -379,7 +379,13 @@ def main():
     params = [json.dumps(v["params"], sort_keys=True) for v in labo["versions"] if v["generation"] == 3]
     assert len(set(params)) == 5, "enfants identiques"
     for v in labo["versions"]:
-        print(f"  {v['id']} : {v['desc'][:110]}")
+        print(f"  {v['id']} (écart {v.get('ecart')}) : {v['desc'][:120]}")
+    # Ambition : les enfants doivent donner des % vraiment différents du parent
+    ecarts = sorted(v["ecart"] for v in labo["versions"] if v["generation"] == 3)
+    assert ecarts[-1] >= 0.015 and sum(e >= 0.004 for e in ecarts) >= 3, f"enfants trop pareils : {ecarts}"
+    # Facteur de patinoire présent dans les features (et rétro-rempli sur les vieux soirs)
+    vieux_f = json.loads((run.DIR_PRED / f"{jours[3]}.json").read_text())
+    assert all("rk" in e["f"]["x"] for e in vieux_f["entries"] if (e.get("f") or {}).get("x")), "facteur de patinoire manquant"
 
     # Le lendemain : les enfants prédisent, les perdants non, et aucun enfant sur un vieux soir
     import modeles
@@ -400,6 +406,22 @@ def main():
     lab = json.loads(run.SORTIE.read_text())["labo"]
     assert lab["generation"]["n"] == 3 and lab["attente"], "la génération 3 doit attendre ses propres soirs"
     print(f"génération 3 active ({', '.join(enfants)} vs {parent}), jugée seulement à partir du {lab['generation']['depuis']} OK")
+
+    # --- Migration : un état de l'ancien moteur (sans "moteur") doit relancer la génération ---
+    e = json.loads(run.ETAT_AUTO.read_text())
+    e.pop("moteur", None)
+    run.ETAT_AUTO.write_text(json.dumps(e))
+    hist = [json.loads(f.read_text()) for f in sorted(run.DIR_PRED.glob("*.json"))]
+    labo, nouvelle = auto.cycle(hist, run.ETAT_AUTO, list(run.VERSIONS), jours[-1])
+    print("migration :", labo["journal"][0]["msg"][:200])
+    assert nouvelle and labo["generation"]["n"] == 4 and labo["generation"]["membres"][0] == parent
+    assert labo["generations"][0].get("interrompue") and labo["moteur"] == 2
+    assert all(v["retiree"] for v in labo["versions"] if v["generation"] == 3), "anciennes v3.x pas retirées"
+    run.charger_auto(run.ETAT_AUTO)
+    assert "v4.1" in modeles.VERSIONS and "v3.1" not in modeles.VERSIONS
+    labo2, nouvelle2 = auto.cycle(hist, run.ETAT_AUTO, list(run.VERSIONS), jours[-1])
+    assert not nouvelle2 and labo2["generation"]["n"] == 4, "la migration ne doit rouler qu'une fois"
+    print("migration vers le nouveau moteur OK")
 
     # --- Seuils de tirs 1+ à 4+ ---
     st = json.loads(run.SORTIE.read_text())

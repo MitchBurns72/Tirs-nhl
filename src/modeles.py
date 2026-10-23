@@ -605,6 +605,19 @@ V2 = {
     "mt_pseudo_gp": 8.0,
     "mt_sh_pseudo": 500.0,     # tirs fictifs au % de tir moyen de la ligue
     "mt_w_buts": 0.60,         # part du vieux modèle par buts dans le λ final (prudent au départ)
+    # --- Ajouts du 23 octobre. Valeurs NEUTRES : v2.x et v3.x donnent exactement les
+    # mêmes % qu'avant. C'est l'évolution (mutations, tuner) qui décide s'ils servent. ---
+    # Biais de patinoire : certains marqueurs officiels comptent plus de tirs que d'autres.
+    # λ × (facteur de l'aréna)^w_rink. 0 = ignoré, 1 = facteur complet.
+    "w_rink": 0.0,
+    # Prior selon le rôle : le taux « de départ » d'un joueur à 22 min n'est pas celui d'un
+    # joueur à 10 min. taux_prior × (TOI projeté / TOI moyen)^prior_toi_exp. 0 = même prior pour tous.
+    "prior_toi_exp": 0.0,
+    # Recalibration des % du modèle (avant le marché) : p' = σ(a·logit(p) + b).
+    # b < 0 corrige un modèle qui voit trop haut ; a < 1 calme les extrêmes.
+    "cal_t_a": 1.0, "cal_t_b": 0.0,      # tirs 1+ à 4+ (même correction pour les 4 : l'ordre est gardé)
+    "cal_bu_a": 1.0, "cal_bu_b": 0.0,    # but
+    "cal_pa_a": 1.0, "cal_pa_b": 0.0,    # passe
 }
 
 
@@ -635,7 +648,11 @@ def modele_joueur_v2(f, P):
         l10, rs, pv, lg = f["l10"], f["rs"], f["pv"], f["lg"]
         a, pp = x["a"], x["pp"]
         k = P["k_pp"]
-        pos_rate = lg[2]
+        toi = _toi(f, P)
+        # Prior selon le rôle (neutre si prior_toi_exp = 0)
+        e_prior = g("prior_toi_exp", 0.0)
+        f_role = (toi / lg[5]) ** e_prior if e_prior and toi > 0 and lg[5] else 1.0
+        pos_rate = lg[2] * f_role
 
         # --- Temps de PP projeté, ajusté à l'indiscipline de l'adversaire ---
         pp_sa = (pp[0] + pp[2]) / (pp[1] + pp[3]) if (pp[1] + pp[3]) else None
@@ -669,7 +686,6 @@ def modele_joueur_v2(f, P):
         rate_att = num_a / den_a
         rate = (1 - P["w_att"]) * rate_sog + P["w_att"] * rate_att * ratio
 
-        toi = _toi(f, P)
         em_proj = em(toi, pp_proj, k)
         o = f["op"]
         f_opp = (o[0] * o[1] + P["opp_reg_gp"] * o[2]) / (o[0] + P["opp_reg_gp"]) / lg[0]
@@ -684,11 +700,14 @@ def modele_joueur_v2(f, P):
             f_vs = min(max(adj, P["vs_cap"][0]), P["vs_cap"][1])
         f_score = 1 + P["score_s"] * (0.5 - x["pw"]) if x.get("pw") is not None else 1.0
         echelle = g("scale_tirs") * (g("scale_tirs_D") if f["pos"] == "D" else 1.0)
-        lam_t = max(rate * em_proj * f_opp * f_lieu * f_b2b * f_vs * f_score * echelle, 0.05)
+        # Patinoire : change les tirs COMPTÉS, pas les buts. Les buts partent donc du λ sans ce facteur.
+        f_rink = x.get("rk", 1.0) ** g("w_rink", 0.0) if x.get("rk") else 1.0
+        lam_t0 = max(rate * em_proj * f_opp * f_lieu * f_b2b * f_vs * f_score * echelle, 0.05)
+        lam_t = lam_t0 * f_rink
 
         sh = (l10[1] + rs[1] + 0.5 * pv[1] + P["sh_pseudo_tirs"] * lg[3]) / (l10[0] + rs[0] + 0.5 * pv[0] + P["sh_pseudo_tirs"])
         f_g = (o[0] * o[3] + P["sv_reg_gp"] * o[4]) / (o[0] + P["sv_reg_gp"]) / lg[1]
-        lam_b = max(lam_t * sh * f_g * g("scale_buts"), 0.01)
+        lam_b = max(lam_t0 * sh * f_g * g("scale_buts"), 0.01)
 
         # Passes par minute effective (le PP génère beaucoup de passes)
         kp = P["k_pp_passes"]
@@ -711,8 +730,21 @@ def modele_joueur_v2(f, P):
                                  "f_vs": f_vs, "pp": pp_proj, "f_pen": f_pen, "f_score": f_score,
                                  "r_sog": rate_sog * 60, "r_att": rate_att * ratio * 60, "ratio": ratio,
                                  "w_att": P["w_att"], "k_pp": k}
+        if f_rink != 1.0:
+            out["tirs"]["detail"]["f_rink"] = f_rink
+        if f_role != 1.0:
+            out["tirs"]["detail"]["f_role"] = f_role
         out["buts"]["detail"] = {"sh": sh, "f_gardien": f_g, "pp": pp_proj}
         out["passes"]["detail"] = {"f_equipe": f_eq, "pp": pp_proj, "k_pp": kp}
+
+    # Recalibration du modèle, avant le marché (identité avec les valeurs par défaut)
+    for marches, ca, cb in ((SEUILS_TIRS, "cal_t_a", "cal_t_b"), (("buts",), "cal_bu_a", "cal_bu_b"),
+                            (("passes",), "cal_pa_a", "cal_pa_b")):
+        A, B = P.get(ca, 1.0), P.get(cb, 0.0)
+        if A != 1.0 or B != 0.0:
+            for m in marches:
+                if m in out:
+                    out[m]["p"] = _sig(A * _logit(out[m]["p"]) + B)
 
     # --- Mélange avec le marché, marché par marché ---
     mkt = f.get("mkt") or {}

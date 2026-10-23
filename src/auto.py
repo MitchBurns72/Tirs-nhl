@@ -66,9 +66,11 @@ ESPACE = {
 # Paramètres en plus, propres à la v2
 ESPACE_V2 = {
     "tirs": [("k_pp", 0.0, 4.0, "mult"), ("w_att", 0.0, 1.0, "mult"), ("pen_exp", 0.0, 2.0, "mult"),
-             ("score_s", 0.0, 0.4, "mult"), ("w_mod_joueur", 0.1, 1.0, "mult"), ("vig_props", 1.0, 1.15, "add")],
-    "buts": [],
-    "passes": [("k_pp_passes", 0.0, 4.0, "mult")],
+             ("score_s", 0.0, 0.4, "mult"), ("w_mod_joueur", 0.1, 1.0, "mult"), ("vig_props", 1.0, 1.15, "add"),
+             ("w_rink", 0.0, 1.5, "mult"), ("prior_toi_exp", 0.0, 1.5, "mult"),
+             ("cal_t_a", 0.7, 1.3, "add"), ("cal_t_b", -0.3, 0.3, "add")],
+    "buts": [("cal_bu_a", 0.7, 1.3, "add"), ("cal_bu_b", -0.3, 0.3, "add")],
+    "passes": [("k_pp_passes", 0.0, 4.0, "mult"), ("cal_pa_a", 0.7, 1.3, "add"), ("cal_pa_b", -0.3, 0.3, "add")],
     "match": [("cal_a", 0.6, 1.6, "mult"), ("cal_b", -0.3, 0.3, "add"), ("mt_w_buts", 0.0, 1.0, "mult"),
               ("mt_pseudo_gp", 2.0, 30.0, "mult"), ("mt_sh_pseudo", 100.0, 2000.0, "mult"), ("w_mod_match", 0.1, 1.0, "mult")],
 }
@@ -210,11 +212,12 @@ def _candidats(val, lo, hi, pas):
     return sorted({min(max(v, lo), hi) for v in vals} - {val})
 
 
-def _descente(groupe, rows, P, passes=2):
+def _descente(groupe, rows, P, passes=2, espace=None):
     """Descente par coordonnées : un paramètre à la fois, on garde ce qui baisse la perte."""
     P = dict(P)
     meilleur = _perte(groupe, rows, P)
-    espace = ESPACE[groupe] + (ESPACE_V2[groupe] if _FAM is FAMILLES["v2"] else [])
+    if espace is None:
+        espace = ESPACE[groupe] + (ESPACE_V2[groupe] if _FAM is FAMILLES["v2"] else [])
     for _ in range(passes):
         ameliore = False
         for nom, lo, hi, pas in espace:
@@ -298,6 +301,7 @@ def tuner(J, M, P_ref, aujourdhui):
 
 GEN_MIN_TIRS = 3000     # lignes de joueurs comparables pour CHAQUE membre avant de conclure
 GEN_MIN_SOIRS = 7       # et au moins 7 soirs différents (un soir bizarre ne décide rien)
+Z_MIN_SOIRS = 7         # en bas de 7 soirs, le z n'a pas de sens (2 soirs = 2 points pour estimer le bruit)
 Z_PROMO = 2.33
 N_ENFANTS = 5
 REFERENCE = "v1"        # étalon fixe : tout le monde est mesuré contre v1 sur les mêmes lignes
@@ -323,7 +327,7 @@ def _z_par_soir(par_soir):
     On traite chaque soir comme un bloc : c'est plus sévère, donc plus honnête."""
     D = sum(d for d, _ in par_soir.values())
     N = sum(n for _, n in par_soir.values())
-    if len(par_soir) < 2 or not N:
+    if len(par_soir) < Z_MIN_SOIRS or not N:
         return None
     mu = D / N
     var = sum((d - n * mu) ** 2 for d, n in par_soir.values())
@@ -378,17 +382,29 @@ def _espace(fam):
     return joueurs, match
 
 
-def muter(P, fam, rng, n_joueur=2, n_match=1, force=0.4):
+def muter(P, fam, rng, n_joueur=2, n_match=1, force=0.4, radical=False):
     """Change quelques paramètres au hasard, dans des bornes raisonnables.
-    POURQUOI peu de paramètres à la fois : si l'enfant gagne, on sait à peu près
-    pourquoi. Si on brasse tout, on apprend rien même quand ça marche."""
+    radical=True : tire la valeur n'importe où entre les bornes (pas juste autour de
+    la valeur actuelle). C'est le « saut » qui peut trouver une autre recette au lieu
+    de raffiner la même."""
     P = dict(P)
     joueurs, match = _espace(fam)
     changes = []
-    for nom, lo, hi, pas in rng.sample(joueurs, n_joueur) + rng.sample(match, n_match):
+    if radical:
+        # Le saut vise surtout les TIRS (le but premier de la patente) : 2/3 des paramètres joueurs
+        tirs = ESPACE["tirs"] + (ESPACE_V2["tirs"] if fam == "v2" else [])
+        reste = [e for e in joueurs if e not in tirs]
+        n_t = min(len(tirs), max(1, round(n_joueur * 2 / 3)))
+        choix = rng.sample(tirs, n_t) + rng.sample(reste, min(len(reste), n_joueur - n_t))
+    else:
+        choix = rng.sample(joueurs, min(n_joueur, len(joueurs)))
+    for nom, lo, hi, pas in choix + rng.sample(match, min(n_match, len(match))):
         val = P.get(nom, 1.0)
-        if pas == "mult":
-            neuf = val * math.exp(rng.uniform(-force, force)) if val else lo + (hi - lo) * rng.uniform(0.05, 0.3)
+        if radical:
+            # log-uniforme pour les paramètres « multiplicatifs » strictement positifs
+            neuf = math.exp(rng.uniform(math.log(lo), math.log(hi))) if pas == "mult" and lo > 0 else rng.uniform(lo, hi)
+        elif pas == "mult":
+            neuf = val * math.exp(rng.uniform(-force, force)) if val else lo + (hi - lo) * rng.uniform(0.05, 0.3) * (1 + force)
         else:
             neuf = val + rng.uniform(-0.1, 0.1) * force
         neuf = round(min(max(neuf, lo), hi), 4)
@@ -407,8 +423,54 @@ def _params_de(vid, etat):
     return {**FAMILLES[fam]["P"], **((v or {}).get("params") or {})}, fam
 
 
+def _ecart(Pa, Pb, echantillon):
+    """Différence moyenne des % de tirs 2+ entre deux jeux de paramètres. POURQUOI :
+    deux enfants aux paramètres différents peuvent donner presque les mêmes % (on l'a
+    vu en génération 3 : tout à 0.1 % près). Tester 5 fois la même recette = gaspillage."""
+    if not echantillon:
+        return 1.0
+    s = 0.0
+    n = 0
+    for _, f, _, _ in echantillon:
+        a, b = _FAM["joueur"](f, Pa), _FAM["joueur"](f, Pb)
+        # % du modèle SEUL (p0) : le mélange avec le marché écrase les différences de recette
+        for m in ("tirs", "buts", "passes"):
+            s += abs(a[m].get("p0", a[m]["p"]) - b[m].get("p0", b[m]["p"])); n += 1
+    return s / n
+
+
+def calibrer(J, P):
+    """Corrige les biais d'ensemble (le modèle voit trop haut ou trop bas) : descente
+    seulement sur l'échelle, la dispersion et la recalibration, entraînée sur les vieux
+    soirs, gardée seulement si ça tient sur les soirs récents."""
+    J = sorted(J, key=lambda r: r[0])[-40000:]
+    dates = sorted({r[0] for r in J})
+    if len(dates) < 4:
+        return P, []
+    coupe = dates[int(len(dates) * 0.7)]
+    Jt, Jv = [r for r in J if r[0] < coupe], [r for r in J if r[0] >= coupe]
+    P = _tuple_caps(P)
+    notes = []
+    cibles = {"tirs": [("scale_tirs", 0.85, 1.15, "add"), ("nb_k", 3, 200, "mult"),
+                       ("cal_t_a", 0.7, 1.3, "add"), ("cal_t_b", -0.3, 0.3, "add")],
+              "buts": [("scale_buts", 0.80, 1.20, "add"), ("cal_bu_a", 0.7, 1.3, "add"), ("cal_bu_b", -0.3, 0.3, "add")],
+              "passes": [("scale_passes", 0.80, 1.20, "add"), ("cal_pa_a", 0.7, 1.3, "add"), ("cal_pa_b", -0.3, 0.3, "add")]}
+    for groupe, esp in cibles.items():
+        cand = _descente(groupe, Jt, P, passes=3, espace=esp)
+        avant, apres = _perte(groupe, Jv, P), _perte(groupe, Jv, cand)
+        if avant and apres is not None and apres < avant:
+            P = cand
+            notes.append(f"{NOMS[groupe]} {(avant - apres) / avant * 100:.1f} % mieux en validation")
+    return P, notes
+
+
+# Les ajouts propres à la v2, côté joueurs (ce qui la distingue de v1)
+AJOUTS_V2 = ("w_att", "k_pp", "pen_exp", "score_s", "k_pp_passes")
+
+
 def _nouvelle_generation(etat, J, M, classement, aujourdhui):
-    """Le meilleur survit et a 5 enfants. Retourne le message du journal."""
+    """Le meilleur survit et a 5 enfants aux « personnalités » différentes.
+    Retourne le message du journal."""
     global _FAM
     gen = etat["generation"]
     n = gen["n"] + 1
@@ -424,19 +486,76 @@ def _nouvelle_generation(etat, J, M, classement, aujourdhui):
     _FAM = FAMILLES[fam]
     base = FAMILLES[fam]["P"]
     rng = random.Random(f"{aujourdhui}-gen{n}")   # même date = mêmes mutations (rejouable)
+    echantillon = [r for r in sorted(J, key=lambda r: r[0])[-600:] if r[1].get("x")][::2]
+    perd_contre_v1 = (classement[0]["gain"] or 0) < 0
+    dejavu = [P]
+
+    def distinct(fabrique, minimum, essais=5):
+        """Refait la mutation, plus fort à chaque fois, jusqu'à ce que l'enfant soit
+        vraiment différent du parent ET des frères déjà nés."""
+        Pk, ch = fabrique(1.0)
+        for i in range(essais):
+            if min(_ecart(Pk, autre, echantillon) for autre in dejavu) >= minimum:
+                break
+            Pk, ch = fabrique(1.0 + 0.6 * (i + 1))
+        dejavu.append(Pk)
+        return Pk, ch
 
     enfants = []
-    # Enfant 1 : le tuner part du croisement (il cherche sur le vieux, valide sur le récent)
+    # 1. LE TUNER : raffine le parent (cherche sur le vieux, valide sur le récent)
     Pt, msg_t = tuner(J, M, P, aujourdhui) if len(J) >= MIN_JOUEURS or len(M) >= MIN_MATCHS else (None, "pas assez de données")
     if Pt:
-        enfants.append((Pt, f"Tuner à partir de {best_j}" + (f" (matchs de {best_m})" if best_m != best_j else "") + f" : {msg_t}"))
+        dejavu.append(Pt)
+        enfants.append((Pt, f"Tuner : raffine {best_j}" + (f" (matchs de {best_m})" if best_m != best_j else "") + f". {msg_t}"))
     else:
-        Pm2, ch = muter(P, fam, rng, 1, 1, 0.2)
-        enfants.append((Pm2, f"Petite mutation de {best_j} (le tuner n'a rien trouvé) : " + ", ".join(ch)))
-    # Enfants 2 à 5 : mutations au hasard, de plus en plus audacieuses
-    for i, (nj, nm_, force) in enumerate([(2, 1, 0.3), (2, 1, 0.4), (3, 1, 0.5), (3, 2, 0.7)], start=2):
-        Pk, ch = muter(P, fam, rng, nj, nm_, force)
-        enfants.append((Pk, f"Mutation de {best_j} : " + ", ".join(ch)))
+        Pk, ch = distinct(lambda k: muter(P, fam, rng, 2, 1, 0.3 * k), 0.006)
+        enfants.append((Pk, f"Tuner : rien trouvé sur {best_j}, petite mutation à la place : " + ", ".join(ch)))
+
+    # 2. LE CALIBREUR : corrige les biais d'ensemble (ex. « voit trop de tirs »)
+    Pc, notes = calibrer(J, P)
+    if notes:
+        dejavu.append(Pc)
+        enfants.append((Pc, f"Calibreur : {best_j} recalibré (échelle, dispersion, biais). " + " · ".join(notes)))
+    else:
+        Pk, ch = distinct(lambda k: muter(P, fam, rng, 2, 0, 0.4 * k), 0.008)
+        enfants.append((Pk, f"Calibreur : aucun biais à corriger sur {best_j}, mutation à la place : " + ", ".join(ch)))
+
+    # 3. L'EXPÉRIENCE : si toute la génération perd contre v1, on teste si ce sont les
+    #    ajouts de la v2 qui nuisent (on les coupe à 40 %). Sinon : croisement des 2 meilleurs.
+    if perd_contre_v1 and fam == "v2":
+        Pe = dict(P)
+        ch = []
+        for k in AJOUTS_V2:
+            if Pe.get(k):
+                Pe[k] = round(Pe[k] * 0.4, 4)
+                ch.append(f"{k} {P[k]:.3g}→{Pe[k]:.3g}")
+        dejavu.append(Pe)
+        enfants.append((Pe, f"Expérience : {best_j} perd contre v1, alors on coupe les ajouts v2 à 40 % "
+                            f"pour voir si c'est eux qui nuisent : " + ", ".join(ch)))
+    else:
+        # Croisement avec le 2e, seulement s'il est vraiment différent (sinon c'est un clone)
+        Px, ch, autre = None, [], classement[1]["id"] if len(classement) > 1 else None
+        if autre:
+            P2, fam2 = _params_de(autre, etat)
+            diff = sorted(k for k in P2 if fam2 == fam and P.get(k) != P2[k])
+            if diff:
+                pris = [k for k in diff if rng.random() < 0.5] or [rng.choice(diff)]
+                Px = dict(P, **{k: P2[k] for k in pris})
+                ch = pris
+        if Px is not None and _ecart(Px, P, echantillon) >= 0.004:
+            dejavu.append(Px)
+            enfants.append((Px, f"Croisement : {best_j} × {autre} (prend de {autre} : {', '.join(ch)})"))
+        else:
+            Pk, ch = distinct(lambda k: muter(P, fam, rng, 3, 1, 0.5 * k), 0.008)
+            enfants.append((Pk, f"Mutation moyenne de {best_j} (le 2e est presque un clone, croisement inutile) : " + ", ".join(ch)))
+
+    # 4. L'EXPLORATRICE : grosse mutation (5 paramètres joueurs + 2 match)
+    Pk, ch = distinct(lambda k: muter(P, fam, rng, 5, 2, 0.8 * k), 0.012)
+    enfants.append((Pk, f"Exploratrice : grosse mutation de {best_j} : " + ", ".join(ch)))
+
+    # 5. LA RADICALE : 7 paramètres tirés n'importe où dans leurs bornes
+    Pk, ch = distinct(lambda k: muter(P, fam, rng, 6, 2, 1.0, radical=True), 0.02)
+    enfants.append((Pk, f"Radicale : saut loin de {best_j} : " + ", ".join(ch)))
 
     ids = []
     for i, (Pk, desc) in enumerate(enfants[:N_ENFANTS], start=1):
@@ -445,11 +564,12 @@ def _nouvelle_generation(etat, J, M, classement, aujourdhui):
                 if (list(base[k]) if isinstance(base.get(k), tuple) else base.get(k)) != (list(v) if isinstance(v, tuple) else v)}
         etat["versions"] = [v for v in etat["versions"] if v["id"] != vid]
         etat["versions"].append({"id": vid, "cree": aujourdhui, "base": best_j, "famille": fam, "generation": n,
-                                 "params": diff, "desc": desc, "retiree": False})
+                                 "params": diff, "desc": desc, "retiree": False,
+                                 "ecart": round(_ecart(Pk, P, echantillon), 4)})
         ids.append(vid)
 
     # Les perdants arrêtent de prédire. Jamais la principale, jamais le parent.
-    perdants = [c["id"] for c in classement if c["id"] not in (best_j, etat.get("principale"))]
+    perdants = [c["id"] for c in classement if c["id"] not in (best_j, etat.get("principale")) and not c.get("hors_gen")]
     for vid in perdants:
         v = next((x for x in etat["versions"] if x["id"] == vid), None)
         if v:
@@ -492,7 +612,34 @@ def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=Fals
         membres = [v for v, s in VERSIONS.items() if s.get("generation") == 2 and v in versions_actives]
         etat["generation"] = {"n": 2, "membres": membres, "parent": None, "depuis": None, "debut": aujourdhui}
     gen = etat["generation"]
-    membres = [m for m in gen["membres"] if m in versions_actives]
+
+    # --- Migration unique (23 octobre) : la génération 3 de l'ancien moteur avait 5 enfants
+    # presque identiques au parent (mêmes % à 0.1 % près). On l'interrompt et on refait
+    # naître la génération suivante avec le nouveau moteur (5 personnalités, enfants
+    # garantis différents). Les vieilles v3.x gardent leur historique. ---
+    if etat.get("moteur", 1) < 2 and gen["n"] >= 3 and gen.get("parent") and etat.get("generations"):
+        parent = gen["parent"]
+        anciens = [m for m in gen["membres"] if m != parent]
+        etat_g = [{"id": m, **comparer(J, M, REFERENCE, m, gen.get("depuis"))} for m in gen["membres"]]
+        for v in etat["versions"]:
+            if v["id"] in anciens:
+                v["retiree"] = True
+        precedent = etat["generations"][0]
+        ref = [{"id": parent, **{k: precedent.get(k) for k in ("gain", "z")},
+                "gain_m": next((c.get("gain_m") for c in precedent.get("classement", []) if c["id"] == parent), None)}]
+        msg = _nouvelle_generation(etat, J, M, ref, aujourdhui)
+        # L'entrée d'historique créée décrit la génération interrompue, pas la précédente
+        etat["generations"][0] = {"n": gen["n"], "fin": aujourdhui, "gagnant": parent, "interrompue": True,
+                                  "gain": None, "z": None,
+                                  "classement": [{k: c.get(k) for k in ("id", "gain", "z", "gain_m")} for c in etat_g]}
+        etat["journal"].insert(0, {"date": aujourdhui, "msg":
+            f"Nouveau moteur : génération {gen['n']} interrompue (ses 5 enfants étaient presque des clones de {parent}). "
+            + msg.split(". ", 1)[1]})
+        etat["moteur"] = 2
+        nouvelle = True
+        gen = etat["generation"]
+    etat.setdefault("moteur", 2)
+    membres = [m for m in gen["membres"] if m in versions_actives or m in [v["id"] for v in etat["versions"] if not v.get("retiree")]]
 
     # --- Classement de la génération en cours (tous contre v1, mêmes lignes) ---
     classement = []
@@ -533,13 +680,12 @@ def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=Fals
         msg = _nouvelle_generation(etat, J, M, classement, aujourdhui)
         etat["journal"].insert(0, {"date": aujourdhui, "msg": msg})
         etat["dernier_tuning"] = aujourdhui
+        etat.pop("attente", None)
         nouvelle = True
     elif classement:
         manque = min(classement, key=lambda c: c["n_tirs"])
         etat["attente"] = {"n_tirs": manque["n_tirs"], "soirs": manque["soirs"],
                            "min_tirs": GEN_MIN_TIRS, "min_soirs": GEN_MIN_SOIRS}
-    if nouvelle:
-        etat.pop("attente", None)
 
     etat["journal"] = etat["journal"][:30]
     etat["principale"] = principale

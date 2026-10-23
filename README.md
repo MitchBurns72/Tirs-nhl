@@ -52,10 +52,20 @@ Un bet supprimé reste dans le fichier marqué `supprime` pour ne pas réappara�
   être clairement pire sur les matchs.
 - **Fin de génération** : quand chaque membre a 3000 joueurs comparables sur 7 soirs. Le meilleur
   survit (le parent, même si son avance n'est pas encore prouvée : il faut explorer), et 5 enfants
-  naissent : `vN.1` = le tuner part du parent (cherche sur les vieux soirs, valide sur les récents),
-  `vN.2` à `vN.5` = mutations au hasard de 3 à 5 paramètres, de plus en plus audacieuses.
-  Croisement : les paramètres de match viennent du meilleur sur les matchs. Les perdants arrêtent de
-  prédire, leur historique reste.
+  aux personnalités différentes naissent :
+  1. **Tuner** : raffine le parent (cherche sur les vieux soirs, valide sur les récents).
+  2. **Calibreur** : corrige les biais d'ensemble (échelle, dispersion, recalibration en logit).
+  3. **Expérience** : si toute la génération perd contre v1, coupe les ajouts v2 à 40 % pour voir si
+     ce sont eux qui nuisent ; sinon croisement avec le 2e (s'il n'est pas un clone).
+  4. **Exploratrice** : grosse mutation (5 paramètres joueurs + 2 match).
+  5. **Radicale** : 8 paramètres tirés n'importe où dans leurs bornes, surtout côté tirs.
+  Chaque enfant doit donner des % vraiment différents du parent ET de ses frères (écart mesuré sur
+  les % du modèle seul) ; sinon la mutation est refaite plus fort. Croisement : les paramètres de
+  match viennent du meilleur sur les matchs. Les perdants arrêtent de prédire, leur historique reste.
+- **Nouveaux ingrédients** (neutres au départ, l'évolution décide) : biais de patinoire (tirs comptés
+  à domicile ÷ à l'étranger pour chaque aréna, régressé), prior selon le rôle (le taux de départ
+  dépend du temps de glace), recalibration tirs / but / passe.
+- **z** : affiché seulement après 7 soirs (avant, il ne veut rien dire).
 - **Pas de triche** : la génération 3 et + est née en regardant l'historique, donc elle est jugée
   SEULEMENT sur les soirs après sa naissance et ne prédit jamais un soir d'avant.
 - **Patterns** : segments où la principale se trompe systématiquement (écart >= 2.5 écarts-types).

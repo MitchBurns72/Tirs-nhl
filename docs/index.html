@@ -83,6 +83,8 @@ details.why summary{cursor:pointer;width:max-content}
 .fx{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:4px 12px;margin-top:6px}
 .fx b{color:var(--ink);font-weight:600}
 .fx .mix{grid-column:1/-1}
+.bandeau{font-size:13px;padding:8px 12px;border-radius:10px;background:var(--warn-bg);color:var(--warn);margin-bottom:8px}
+.chip.princ{font-weight:700}
 .vide{padding:28px 16px;text-align:center;color:var(--muted)}
 
 /* Matchs */
@@ -493,8 +495,10 @@ function construireFiltres(){
   sel.innerHTML = `<option value="all">Tous les matchs (${D.matchs.length})</option>` +
     D.matchs.map(m => `<option value="${m.id}">${m.away} @ ${m.home} · ${heure(m.start)}</option>`).join("");
   sel.value = S.match;
-  document.querySelectorAll(".f-ver").forEach(el => el.innerHTML = D.versions.map(v =>
-    `<button class="chip" data-v="${v.id}" aria-pressed="${v.id === S.ver}" title="${v.desc}">${v.id}</button>`).join(""));
+  // La principale d'abord, marquée ; les autres sont des versions en essai
+  const vs = D.versions.slice().sort((a, b) => (b.id === D.principale) - (a.id === D.principale));
+  document.querySelectorAll(".f-ver").forEach(el => el.innerHTML = vs.map(v =>
+    `<button class="chip ${v.id === D.principale ? "princ" : ""}" data-v="${v.id}" aria-pressed="${v.id === S.ver}" title="${v.desc}">${v.id}${v.id === D.principale ? " · principale" : ""}</button>`).join(""));
 }
 
 function liste(){
@@ -526,7 +530,8 @@ function liste(){
   }
 
   const [un, plusieurs, att] = MOT[m];
-  $("#liste").innerHTML = js.map((j, i) => {
+  const bandeau = v !== D.principale ? `<div class="bandeau">Tu regardes <b>${v}</b>, une version en essai. La principale (la plus fiable à date) est <b>${D.principale}</b>.</div>` : "";
+  $("#liste").innerHTML = bandeau + js.map((j, i) => {
     const serie = j[L10[STAT[m]]] || [];
     const hits = serie.filter(x => x >= SEUIL[m]).length;
     const echelle = estTirs(m) ? 4 : 8;
@@ -546,7 +551,9 @@ function liste(){
         <span>Vs ${j.opp} (${j.vs_gp} m.) : <b>×${det.f_vs.toFixed(2)}</b></span>${det.pp != null ? `
         <span>PP projeté : <b>${det.pp.toFixed(1)} min</b>${det.k_pp != null ? ` (1 min PP = ${(1 + det.k_pp).toFixed(1)} min à 5 c. 5)` : ""}</span>
         <span>Indiscipline ${j.opp} : <b>×${det.f_pen.toFixed(2)}</b></span>
-        <span>État de match : <b>×${det.f_score.toFixed(2)}</b></span>` : ""}`;
+        <span>État de match : <b>×${det.f_score.toFixed(2)}</b></span>` : ""}${det.f_rink != null ? `
+        <span>Patinoire (marqueur) : <b>×${det.f_rink.toFixed(2)}</b></span>` : ""}${det.f_role != null ? `
+        <span>Prior selon le rôle : <b>×${det.f_role.toFixed(2)}</b></span>` : ""}`;
     if (det && m === "buts") fx = `
         <span>Tirs attendus : <b>${pred(j, v, "tirs").lam.toFixed(1)}</b></span>
         <span>% de tir régressé : <b>${(det.sh * 100).toFixed(1)} %</b></span>
@@ -804,7 +811,7 @@ function labo(){
     ${gen.n ? `<div><span class="lbl">Génération ${gen.n} en cours${gen.depuis ? ` · jugée sur les soirs depuis le ${gen.depuis}` : " · rejouée sur toute la saison"}</span>
       <div class="tbl"><table class="classement"><thead><tr><th>#</th><th>Version</th><th>Joueurs</th><th>z</th><th>Matchs</th></tr></thead>
       <tbody>${cl || `<tr><td colspan="5" style="color:var(--muted)">Classement au prochain calcul.</td></tr>`}</tbody></table></div>
-      <p class="aide">« Joueurs » et « Matchs » = combien moins d'erreur que v1 (Brier), sur exactement les mêmes joueurs et matchs. z = solidité : 2 et plus, ça commence à être du vrai ; en bas de 1, c'est du bruit.</p>
+      <p class="aide">« Joueurs » et « Matchs » = combien moins d'erreur que v1 (Brier), sur exactement les mêmes joueurs et matchs. z = solidité : 2 et plus, ça commence à être du vrai ; en bas de 1, c'est du bruit. Le z apparaît après 7 soirs (avant, il ne veut rien dire).</p>
       ${promo}${attente}</div>` : ""}
     ${hist ? `<div><span class="lbl">Générations passées</span><ul>${hist}</ul></div>` : ""}
     <div><span class="lbl">Patterns détectés · version ${D.principale}</span>${pats}</div>
