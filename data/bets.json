@@ -303,7 +303,11 @@
   "reel": true,
   "label": "Nathan MacKinnon · Tirs 3+",
   "sous": "COL vs TBL",
-  "maj": "2026-10-24T02:00:50.213Z"
+  "maj": "2026-10-24T05:09:58.573Z",
+  "final": {
+   "etat": "gagne",
+   "texte": "4 tirs · final"
+  }
  },
  {
   "date": "2026-10-23",
@@ -324,6 +328,10 @@
   "reel": true,
   "label": "Frank Nazar · Tirs 3+",
   "sous": "CHI vs MTL",
-  "maj": "2026-10-24T02:00:50.219Z"
+  "maj": "2026-10-24T05:09:58.576Z",
+  "final": {
+   "etat": "perdu",
+   "texte": "0 tir · final"
+  }
  }
 ]
