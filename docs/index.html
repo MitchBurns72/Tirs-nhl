@@ -200,6 +200,8 @@ tr.sel td{font-weight:700}
 .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .kpis div{display:flex;flex-direction:column;gap:2px;min-width:0}
 .kpis b{font:800 22px/1 var(--f-display);white-space:nowrap}
+.kpis .nec{font-size:11.5px;color:var(--muted)}
+table.serre{font-size:11.5px} table.serre th,table.serre td{padding:5px 3px} table.serre th{font-size:9.5px;letter-spacing:.02em}
 .pos{color:var(--good)} .neg{color:var(--bad)}
 .sep{grid-column:1 / -1;padding:8px 12px;background:var(--chip);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
 [hidden]{display:none!important}
@@ -1067,6 +1069,12 @@ function bets(depuisSynchro){
   const profit = regles.reduce((t, x) => t + gain(x.b, x.st), 0);
   const avecP = regles.filter(x => x.b.p != null);
   const attendu = avecP.reduce((t, x) => t + x.b.p, 0);
+  // Réussite NÉCESSAIRE pour finir à 0 : la moyenne des 1 ÷ cote. Pourquoi pas 1 ÷ (cote
+  // moyenne) : avec un bet à 1.29 et un à 3.50, la cote moyenne (2.40) dit 42 %, alors
+  // qu'il faut vraiment (77.5 % + 28.6 %) ÷ 2 = 53 %. Le 1 ÷ cote n'est pas une ligne droite.
+  const necessaire = t => t.length ? t.reduce((a, x) => a + 1 / x.b.cote, 0) / t.length : null;
+  const nec = necessaire(regles);
+  const coteMoy = regles.length ? regles.reduce((a, x) => a + x.b.cote, 0) / regles.length : null;
   const ouverts = avecSt.filter(x => !x.b.final);
   const enJeu = ouverts.reduce((t, x) => t + x.b.mise, 0);
 
@@ -1077,11 +1085,12 @@ function bets(depuisSynchro){
       : ["h", "a"].includes(x.b.k) ? "Victoire (prol. incl.)"
       : ["h3", "a3", "x3"].includes(x.b.k) ? "Victoire 60 min"
       : `Total ${x.b.k[0] === "o" ? "plus" : "moins"} ${x.b.k.slice(1, 2)}.5`;
-    const m = parM[nom] ||= { n: 0, g: 0, p: 0, profit: 0, mise: 0 };
+    const m = parM[nom] ||= { n: 0, g: 0, p: 0, profit: 0, mise: 0, nec: 0 };
     m.n++; m.g += x.st.etat === "gagne"; m.p += x.b.p ?? x.st.etat === "gagne"; m.profit += gain(x.b, x.st); m.mise += x.b.mise;
+    m.nec += 1 / x.b.cote;
   }
   const lignesM = Object.entries(parM).sort((a, b) => b[1].n - a[1].n).map(([nom, m]) =>
-    `<tr><td>${nom}</td><td>${m.n}</td><td>${pct(m.g / m.n)} %</td><td>${pct(m.p / m.n)} %</td><td class="${m.profit >= 0 ? "pos" : "neg"}">${argent(m.profit)}</td></tr>`).join("");
+    `<tr><td>${nom}</td><td>${m.n}</td><td class="${m.g / m.n >= m.nec / m.n ? "pos" : "neg"}">${pct(m.g / m.n)} %</td><td>${pct(m.nec / m.n)} %</td><td>${pct(m.p / m.n)} %</td><td class="${m.profit >= 0 ? "pos" : "neg"}">${argent(m.profit)}</td></tr>`).join("");
 
   // Tes choix classés par valeur (p × cote − 1) : est-ce que les bets où l'algo
   // voyait un edge sont vraiment ceux qui rapportent? C'est LE test de l'algo + de tes choix.
@@ -1090,7 +1099,7 @@ function bets(depuisSynchro){
     const t = regles.filter(x => x.b.p != null && x.b.p * x.b.cote - 1 >= lo && x.b.p * x.b.cote - 1 < hi);
     if (!t.length) return "";
     const gg = t.filter(x => x.st.etat === "gagne").length, pr = t.reduce((a, x) => a + gain(x.b, x.st), 0);
-    return `<tr><td>${nom}</td><td>${t.length}</td><td>${pct(gg / t.length)} %</td><td>${pct(t.reduce((a, x) => a + x.b.p, 0) / t.length)} %</td><td class="${pr >= 0 ? "pos" : "neg"}">${argent(pr)}</td></tr>`;
+    return `<tr><td>${nom}</td><td>${t.length}</td><td class="${gg / t.length >= necessaire(t) ? "pos" : "neg"}">${pct(gg / t.length)} %</td><td>${pct(necessaire(t))} %</td><td>${pct(t.reduce((a, x) => a + x.b.p, 0) / t.length)} %</td><td class="${pr >= 0 ? "pos" : "neg"}">${argent(pr)}</td></tr>`;
   }).join("");
 
   $("#bets-kpi").innerHTML = !vus.length
@@ -1099,16 +1108,17 @@ function bets(depuisSynchro){
       <div class="kpis">
         <div><span class="lbl">Profit</span><b class="${profit >= 0 ? "pos" : "neg"}">${argent(profit)}</b></div>
         <div><span class="lbl">Rendement</span><b class="${profit >= 0 ? "pos" : "neg"}">${misees ? (profit / misees * 100).toFixed(1) + " %" : "–"}</b></div>
-        <div><span class="lbl">Réussite</span><b>${regles.length ? pct(g / regles.length) + " %" : "–"}</b></div>
+        <div><span class="lbl">Réussite</span><b class="${nec != null && g / regles.length >= nec ? "pos" : nec != null ? "neg" : ""}">${regles.length ? pct(g / regles.length) + " %" : "–"}</b><small class="nec">${nec != null ? `faut ${pct(nec)} %` : ""}</small></div>
       </div>
       <div class="mini">
         <span>Réglés : <b>${g}-${regles.length - g}</b></span>
+        <span>Cote moyenne : <b>${coteMoy ? coteMoy.toFixed(2) : "–"}</b> · réussite nécessaire pour finir à 0 : <b>${nec != null ? pct(nec) + " %" : "–"}</b></span>
         <span>Misé : <b>${misees.toFixed(2)} $</b></span>
         <span>L'algo prévoyait : <b>${avecP.length ? pct(attendu / avecP.length) + " %" : "–"}</b> de réussite</span>
         <span>En cours : <b>${ouverts.length}</b> (${enJeu.toFixed(2)} $)</span>
       </div>
-      ${lignesM ? `<div class="tbl"><table><thead><tr><th>Marché</th><th>Bets</th><th>Réussite</th><th>Prévu</th><th>Profit</th></tr></thead><tbody>${lignesM}</tbody></table></div>` : ""}
-      ${lignesV ? `<div class="tbl"><span class="lbl">Selon la valeur vue par l'algo au moment du bet</span><table><thead><tr><th>Valeur</th><th>Bets</th><th>Réussite</th><th>Prévu</th><th>Profit</th></tr></thead><tbody>${lignesV}</tbody></table></div>` : ""}`;
+      ${lignesM ? `<div class="tbl"><table class="serre"><thead><tr><th>Marché</th><th>Bets</th><th>Réussite</th><th>Faut</th><th>Prévu</th><th>Profit</th></tr></thead><tbody>${lignesM}</tbody></table></div>` : ""}
+      ${lignesV ? `<div class="tbl"><span class="lbl">Selon la valeur vue par l'algo au moment du bet</span><table class="serre"><thead><tr><th>Valeur</th><th>Bets</th><th>Réussite</th><th>Faut</th><th>Prévu</th><th>Profit</th></tr></thead><tbody>${lignesV}</tbody></table></div>` : ""}`;
 
   const cls = { gagne: "st-ok", perdu: "st-ko", cours: "st-cours", avenir: "", annule: "" };
   const lv = { gagne: "ok", perdu: "ko", cours: "cours", avenir: "", annule: "" };
