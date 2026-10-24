@@ -32,12 +32,15 @@ Les gros gains viendraient de nouvelles données (temps de PP, gardien partant).
 import json
 import math
 import random
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 from modeles import FAMILLES, V1, VERSIONS
 
 # Famille de modèle en cours de tuning (v1 ou v2) : fixée par cycle() selon la principale
 _FAM = FAMILLES["v1"]
+# Premier soir de VALIDATION du dernier tuner/calibreur : les soirs d'avant ont servi à
+# l'entraîner, donc ils ne comptent pas pour le juger.
+DERNIERE_COUPE = None
 
 # --- Seuils (les tests les baissent pour rouler sur une petite fausse ligue) ------
 MIN_JOUEURS = 2000          # prédictions de joueurs gradées avec features avant d'oser tuner
@@ -241,6 +244,8 @@ def tuner(J, M, P_ref, aujourdhui):
     if len(dates) < 4:
         return None, "Pas assez de soirs pour séparer entraînement et validation."
     coupe = dates[int(len(dates) * 0.7)]
+    global DERNIERE_COUPE
+    DERNIERE_COUPE = coupe
     Jt, Jv = [r for r in J if r[0] < coupe], [r for r in J if r[0] >= coupe]
     Mt, Mv = [r for r in M if r[0] < coupe], [r for r in M if r[0] >= coupe]
 
@@ -299,8 +304,13 @@ def tuner(J, M, P_ref, aujourdhui):
 # son avance est statistiquement solide : z >= 2.33 (moins de 1 % de chance d'être
 # de la chance, ce qui compense le fait qu'on compare 5 candidats à la fois).
 
-GEN_MIN_TIRS = 3000     # lignes de joueurs comparables pour CHAQUE membre avant de conclure
-GEN_MIN_SOIRS = 7       # et au moins 7 soirs différents (un soir bizarre ne décide rien)
+JOURS_GENERATION = 7    # une génération par semaine
+# Champion par catégorie : lignes comparables exigées (tirs = 4 lignes par joueur, totaux = 2 par match)
+PROMO_MIN_CAT = {"tirs": 6000, "buts": 1500, "passes": 1500, "victoire": 150, "totaux": 300}
+PROMO_GAIN_CAT = 0.002  # 0.2 % d'erreur en moins au minimum...
+Z_PROMO_CAT = 2.5       # ...et z >= 2.5 (on compare ~8 versions dans 5 catégories : on est plus sévère)
+GEN_MIN_SOIRS_DIRECT = 3  # soirs en direct (après la naissance) exigés avant de conclure une génération
+PROMO_MIN_DIRECT = 1000   # joueurs en direct exigés avant qu'une version auto devienne principale
 Z_MIN_SOIRS = 7         # en bas de 7 soirs, le z n'a pas de sens (2 soirs = 2 points pour estimer le bruit)
 Z_PROMO = 2.33
 N_ENFANTS = 5
@@ -312,13 +322,21 @@ MARCHES_L = {"tirs1": ("tirs", 1), "tirs": ("tirs", 2), "tirs3": ("tirs", 3), "t
 
 
 def _pertes_match(pv, h, a):
-    """Brier victoire + total 5.5 + total 6.5 d'une prédiction de match."""
+    """Brier victoire + total 5.5 + total 6.5 d'une prédiction de match, par marché."""
     po = pv.get("p_over") or {}
-    out = [(pv["p_home"] - (1 if h > a else 0)) ** 2]
+    out = {"victoire": (pv["p_home"] - (1 if h > a else 0)) ** 2}
     for ligne in ("5.5", "6.5"):
         if ligne in po:
-            out.append((po[ligne] - (1 if h + a > float(ligne) else 0)) ** 2)
+            out[ligne] = (po[ligne] - (1 if h + a > float(ligne) else 0)) ** 2
     return out
+
+
+# Les catégories : chacune a son champion (voir cycle). Les 4 seuils de tirs viennent de la
+# même courbe, ils forment une seule catégorie ; les deux totaux aussi.
+CATEGORIES = {"tirs": ("tirs1", "tirs", "tirs3", "tirs4"), "buts": ("buts",), "passes": ("passes",),
+              "victoire": ("victoire",), "totaux": ("5.5", "6.5")}
+CAT_JOUEUR = ("tirs", "buts", "passes")
+NOMS_CAT = {"tirs": "Tirs (1+ à 4+)", "buts": "But", "passes": "Passe", "victoire": "Victoire", "totaux": "Totaux 5.5 / 6.5"}
 
 
 def _z_par_soir(par_soir):
@@ -362,7 +380,9 @@ def comparer(J, M, ref, cand, depuis=None):
         pa, pb = preds.get(ref), preds.get(cand)
         if not pa or not pb:
             continue
-        for la, lb in zip(_pertes_match(pa, h, a), _pertes_match(pb, h, a)):
+        qa, qb = _pertes_match(pa, h, a), _pertes_match(pb, h, a)
+        for k in qa.keys() & qb.keys():
+            la, lb = qa[k], qb[k]
             ma += la; mb += lb; nm += 1
             x = soirs_m.setdefault(d, [0.0, 0]); x[0] += la - lb; x[1] += 1
     return {"n": n, "n_tirs": n_tirs, "soirs": len(soirs),
@@ -371,9 +391,46 @@ def comparer(J, M, ref, cand, depuis=None):
             "n_m": nm, "gain_m": (ma - mb) / ma if ma else None, "z_m": _z_par_soir(soirs_m)}
 
 
+def comparer_cat(J, M, ref, cand, cat, depuis=None):
+    """Comme comparer(), mais sur UNE catégorie (tirs, buts, passes, victoire, totaux)."""
+    sa = sb = 0.0
+    n = 0
+    soirs = {}
+    marches = CATEGORIES[cat]
+    if cat in CAT_JOUEUR:
+        for d, _, r, preds in J:
+            if depuis and d < depuis:
+                continue
+            pa, pb = preds.get(ref), preds.get(cand)
+            if not pa or not pb:
+                continue
+            for m in marches:
+                stat, seuil = MARCHES_L[m]
+                if stat in r and m in pa and m in pb:
+                    y = 1 if r[stat] >= seuil else 0
+                    la, lb = (pa[m]["p"] - y) ** 2, (pb[m]["p"] - y) ** 2
+                    sa += la; sb += lb; n += 1
+                    x = soirs.setdefault(d, [0.0, 0]); x[0] += la - lb; x[1] += 1
+    else:
+        for d, _, (h, a), preds in M:
+            if depuis and d < depuis:
+                continue
+            pa, pb = preds.get(ref), preds.get(cand)
+            if not pa or not pb:
+                continue
+            qa, qb = _pertes_match(pa, h, a), _pertes_match(pb, h, a)
+            for k in marches:
+                if k in qa and k in qb:
+                    sa += qa[k]; sb += qb[k]; n += 1
+                    x = soirs.setdefault(d, [0.0, 0]); x[0] += qa[k] - qb[k]; x[1] += 1
+    return {"n": n, "soirs": len(soirs), "gain": (sa - sb) / sa if sa else None, "z": _z_par_soir(soirs),
+            "brier": sb / n if n else None}
+
+
 def _cle_match(k):
     """Les paramètres du modèle de MATCH (indépendants de ceux des joueurs)."""
-    return k.startswith(("m_", "mt_", "cal_")) or k in ("w_mod_match", "scale_match")
+    # cal_a / cal_b = calibration de la victoire ; cal_t_*, cal_bu_*, cal_pa_* sont aux JOUEURS
+    return k.startswith(("m_", "mt_")) or k in ("cal_a", "cal_b", "w_mod_match", "scale_match")
 
 
 def _espace(fam):
@@ -448,6 +505,8 @@ def calibrer(J, P):
     if len(dates) < 4:
         return P, []
     coupe = dates[int(len(dates) * 0.7)]
+    global DERNIERE_COUPE
+    DERNIERE_COUPE = coupe
     Jt, Jv = [r for r in J if r[0] < coupe], [r for r in J if r[0] >= coupe]
     P = _tuple_caps(P)
     notes = []
@@ -468,6 +527,11 @@ def calibrer(J, P):
 AJOUTS_V2 = ("w_att", "k_pp", "pen_exp", "score_s", "k_pp_passes")
 
 
+def _juge_de(vid, etat):
+    v = next((x for x in etat["versions"] if x["id"] == vid), None) or VERSIONS.get(vid) or {}
+    return v.get("juge_depuis")
+
+
 def _nouvelle_generation(etat, J, M, classement, aujourdhui):
     """Le meilleur survit et a 5 enfants aux « personnalités » différentes.
     Retourne le message du journal."""
@@ -475,14 +539,28 @@ def _nouvelle_generation(etat, J, M, classement, aujourdhui):
     gen = etat["generation"]
     n = gen["n"] + 1
     best_j = classement[0]["id"]
-    # Croisement : les paramètres JOUEURS du meilleur sur les joueurs, et les paramètres
-    # MATCH du meilleur sur les matchs (les deux modèles sont indépendants).
-    best_m = max((c for c in classement if c.get("gain_m") is not None),
-                 key=lambda c: c["gain_m"], default=classement[0])["id"]
-    P, fam = _params_de(best_j, etat)
-    Pm, fam_m = _params_de(best_m, etat)
-    if fam_m == fam:
-        P.update({k: v for k, v in Pm.items() if _cle_match(k)})
+    # Recette combinée : chaque groupe de paramètres vient du meilleur membre DANS SA
+    # catégorie (tirs, but, passe, matchs). Les paramètres de base (forme, temps de glace...)
+    # viennent du meilleur aux tirs, le but premier.
+    def meilleur_cat(cats):
+        notes = {}
+        for c in classement:
+            if (c.get("n_tirs") or 0) < 500:
+                continue
+            notes[c["id"]] = sum((comparer_cat(J, M, REFERENCE, c["id"], cat, _juge_de(c["id"], etat))["gain"] or 0)
+                                 for cat in cats)
+        return max(notes, key=notes.get) if notes else best_j
+    best_t, best_b, best_p = meilleur_cat(["tirs"]), meilleur_cat(["buts"]), meilleur_cat(["passes"])
+    best_m = meilleur_cat(["victoire", "totaux"])
+    P, fam = _params_de(best_t, etat)
+    cles = {"buts": {e[0] for e in ESPACE["buts"] + ESPACE_V2["buts"]},
+            "passes": {e[0] for e in ESPACE["passes"] + ESPACE_V2["passes"]}}
+    for source, garde in ((best_b, lambda k: k in cles["buts"]), (best_p, lambda k: k in cles["passes"]),
+                          (best_m, _cle_match)):
+        Pk, famk = _params_de(source, etat)
+        if famk == fam:
+            P.update({k: v for k, v in Pk.items() if garde(k)})
+    recette = f"tirs de {best_t}, but de {best_b}, passe de {best_p}, matchs de {best_m}"
     _FAM = FAMILLES[fam]
     base = FAMILLES[fam]["P"]
     rng = random.Random(f"{aujourdhui}-gen{n}")   # même date = mêmes mutations (rejouable)
@@ -504,21 +582,24 @@ def _nouvelle_generation(etat, J, M, classement, aujourdhui):
     enfants = []
     # 1. LE TUNER : raffine le parent (cherche sur le vieux, valide sur le récent)
     Pt, msg_t = tuner(J, M, P, aujourdhui) if len(J) >= MIN_JOUEURS or len(M) >= MIN_MATCHS else (None, "pas assez de données")
+    juge = {}   # index de l'enfant -> premier soir qui compte pour le juger
     if Pt:
         dejavu.append(Pt)
-        enfants.append((Pt, f"Tuner : raffine {best_j}" + (f" (matchs de {best_m})" if best_m != best_j else "") + f". {msg_t}"))
+        juge[0] = DERNIERE_COUPE
+        enfants.append((Pt, f"Tuner : raffine la recette combinée ({recette}). {msg_t}"))
     else:
         Pk, ch = distinct(lambda k: muter(P, fam, rng, 2, 1, 0.3 * k), 0.006)
-        enfants.append((Pk, f"Tuner : rien trouvé sur {best_j}, petite mutation à la place : " + ", ".join(ch)))
+        enfants.append((Pk, f"Tuner : rien trouvé, petite mutation de la recette à la place : " + ", ".join(ch)))
 
     # 2. LE CALIBREUR : corrige les biais d'ensemble (ex. « voit trop de tirs »)
     Pc, notes = calibrer(J, P)
     if notes:
         dejavu.append(Pc)
-        enfants.append((Pc, f"Calibreur : {best_j} recalibré (échelle, dispersion, biais). " + " · ".join(notes)))
+        juge[len(enfants)] = DERNIERE_COUPE
+        enfants.append((Pc, f"Calibreur : recette combinée recalibrée (échelle, dispersion, biais). " + " · ".join(notes)))
     else:
         Pk, ch = distinct(lambda k: muter(P, fam, rng, 2, 0, 0.4 * k), 0.008)
-        enfants.append((Pk, f"Calibreur : aucun biais à corriger sur {best_j}, mutation à la place : " + ", ".join(ch)))
+        enfants.append((Pk, f"Calibreur : aucun biais à corriger, mutation de la recette à la place : " + ", ".join(ch)))
 
     # 3. L'EXPÉRIENCE : si toute la génération perd contre v1, on teste si ce sont les
     #    ajouts de la v2 qui nuisent (on les coupe à 40 %). Sinon : croisement des 2 meilleurs.
@@ -547,15 +628,15 @@ def _nouvelle_generation(etat, J, M, classement, aujourdhui):
             enfants.append((Px, f"Croisement : {best_j} × {autre} (prend de {autre} : {', '.join(ch)})"))
         else:
             Pk, ch = distinct(lambda k: muter(P, fam, rng, 3, 1, 0.5 * k), 0.008)
-            enfants.append((Pk, f"Mutation moyenne de {best_j} (le 2e est presque un clone, croisement inutile) : " + ", ".join(ch)))
+            enfants.append((Pk, f"Mutation moyenne de la recette (le 2e est presque un clone, croisement inutile) : " + ", ".join(ch)))
 
     # 4. L'EXPLORATRICE : grosse mutation (5 paramètres joueurs + 2 match)
     Pk, ch = distinct(lambda k: muter(P, fam, rng, 5, 2, 0.8 * k), 0.012)
-    enfants.append((Pk, f"Exploratrice : grosse mutation de {best_j} : " + ", ".join(ch)))
+    enfants.append((Pk, f"Exploratrice : grosse mutation de la recette : " + ", ".join(ch)))
 
     # 5. LA RADICALE : 7 paramètres tirés n'importe où dans leurs bornes
     Pk, ch = distinct(lambda k: muter(P, fam, rng, 6, 2, 1.0, radical=True), 0.02)
-    enfants.append((Pk, f"Radicale : saut loin de {best_j} : " + ", ".join(ch)))
+    enfants.append((Pk, f"Radicale : saut loin de la recette : " + ", ".join(ch)))
 
     ids = []
     for i, (Pk, desc) in enumerate(enfants[:N_ENFANTS], start=1):
@@ -565,11 +646,19 @@ def _nouvelle_generation(etat, J, M, classement, aujourdhui):
         etat["versions"] = [v for v in etat["versions"] if v["id"] != vid]
         etat["versions"].append({"id": vid, "cree": aujourdhui, "base": best_j, "famille": fam, "generation": n,
                                  "params": diff, "desc": desc, "retiree": False,
-                                 "ecart": round(_ecart(Pk, P, echantillon), 4)})
+                                 "ecart": round(_ecart(Pk, P, echantillon), 4),
+                                 # None = rejouée et jugée sur toute la saison (paramètres pas ajustés
+                                 # sur les données) ; une date = seulement à partir de ses soirs de validation
+                                 "juge_depuis": juge.get(i - 1)})
         ids.append(vid)
 
+    # Trop jeunes pour être jugés (moins de 500 joueurs notés, ex. une VA ajoutée en cours de
+    # semaine) : ils passent à la génération suivante au lieu d'être éliminés sans procès.
+    jeunes = [c["id"] for c in classement if (c.get("n_tirs") or 0) < 500 and c["id"] != best_j]
     # Les perdants arrêtent de prédire. Jamais la principale, jamais le parent.
-    perdants = [c["id"] for c in classement if c["id"] not in (best_j, etat.get("principale")) and not c.get("hors_gen")]
+    champions = set((etat.get("principales") or {}).values()) | {etat.get("principale")}
+    perdants = [c["id"] for c in classement if c["id"] != best_j and c["id"] not in champions
+                and not c.get("hors_gen") and c["id"] not in jeunes]
     for vid in perdants:
         v = next((x for x in etat["versions"] if x["id"] == vid), None)
         if v:
@@ -581,9 +670,9 @@ def _nouvelle_generation(etat, J, M, classement, aujourdhui):
     etat.setdefault("generations", []).insert(0, {
         "n": gen["n"], "fin": aujourdhui, "gagnant": best_j, "gain": gagnant["gain"], "z": gagnant["z"],
         "classement": [{k: c.get(k) for k in ("id", "gain", "z", "gain_m")} for c in classement]})
-    etat["generation"] = {"n": n, "membres": [best_j] + ids, "parent": best_j, "depuis": aujourdhui, "debut": aujourdhui}
+    etat["generation"] = {"n": n, "membres": [best_j] + ids + jeunes, "parent": best_j, "depuis": None, "debut": aujourdhui}
     return (f"Génération {gen['n']} terminée : {best_j} gagne ({(gagnant['gain'] or 0) * 100:+.2f} % vs {REFERENCE}"
-            + (f", z = {gagnant['z']:.1f}" if gagnant["z"] is not None else "") + f"). Génération {n} : "
+            + (f", z = {gagnant['z']:.1f}" if gagnant["z"] is not None else "") + f"). Recette des enfants : {recette}. Génération {n} : "
             + ", ".join(ids) + f" naissent et affrontent {best_j}. Perdants retirés : {', '.join(perdants) or 'aucun'}.")
 
 
@@ -635,47 +724,107 @@ def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=Fals
         etat["journal"].insert(0, {"date": aujourdhui, "msg":
             f"Nouveau moteur : génération {gen['n']} interrompue (ses 5 enfants étaient presque des clones de {parent}). "
             + msg.split(". ", 1)[1]})
-        etat["moteur"] = 2
+        etat["moteur"] = 3
         nouvelle = True
         gen = etat["generation"]
-    etat.setdefault("moteur", 2)
-    membres = [m for m in gen["membres"] if m in versions_actives or m in [v["id"] for v in etat["versions"] if not v.get("retiree")]]
+    # --- Migration (moteur 3, 23 octobre) : les versions auto sont maintenant rejouées sur
+    # toute la saison. Celles dont les paramètres ont été AJUSTÉS sur les données (Tuner,
+    # Calibreur) comptent seulement à partir de leurs soirs de validation. ---
+    if etat.get("moteur", 2) < 3:
+        for v in etat["versions"]:
+            if "juge_depuis" in v or v.get("retiree"):
+                continue
+            ajuste = v["desc"].startswith("Tuner : raffine") or (v["desc"].startswith("Calibreur") and "recalibré" in v["desc"])
+            if ajuste:
+                ds = sorted({r[0] for r in J if r[0] < v["cree"]})
+                v["juge_depuis"] = ds[int(len(ds) * 0.7)] if len(ds) >= 4 else v["cree"]
+            else:
+                v["juge_depuis"] = None
+        gen["depuis"] = None
+        etat["moteur"] = 3
+    infos = {v["id"]: v for v in etat["versions"]}
+    # Versions auto (data/versions_auto.json) ou manuelles comme va.1 (modeles.py)
+    juge = lambda vid: (infos.get(vid) or VERSIONS.get(vid) or {}).get("juge_depuis")
+    cree = lambda vid: (infos.get(vid) or VERSIONS.get(vid) or {}).get("cree")
+    # Les VA (scan complet des paramètres, fait sur demande) rejoignent le concours en cours
+    for vid, spec in VERSIONS.items():
+        if spec.get("generation") == "A" and vid in versions_actives and vid not in gen["membres"]:
+            gen["membres"].append(vid)
+            etat["journal"].insert(0, {"date": aujourdhui, "msg": f"{vid} (scan complet des paramètres) rejoint la génération {gen['n']}."})
+    membres = [m for m in gen["membres"] if m in versions_actives or (m in infos and not infos[m].get("retiree"))]
 
     # --- Classement de la génération en cours (tous contre v1, mêmes lignes) ---
+    # Chaque membre est jugé sur toute la saison (rejouée), sauf les soirs qui ont servi à
+    # ajuster ses paramètres. « direct » = soirs prédits AVANT le match, après sa naissance.
     classement = []
     for m in membres:
-        c = comparer(J, M, REFERENCE, m, gen.get("depuis"))
-        classement.append({"id": m, **c})
+        c = comparer(J, M, REFERENCE, m, juge(m) or gen.get("depuis"))
+        d = comparer(J, M, REFERENCE, m, cree(m)) if cree(m) else None
+        classement.append({"id": m, **c, "soirs_direct": d["soirs"] if d else None,
+                           "gain_direct": d["gain"] if d else None, "juge_depuis": juge(m)})
     classement.sort(key=lambda c: -(c["gain"] if c["gain"] is not None else -9))
     # La principale, si elle n'est pas dans la génération (champion en titre), est
     # affichée avec le classement pour comparer, mais ne compte pas dans le concours.
     hors = []
     if principale not in membres and principale != REFERENCE:
-        hors = [{"id": principale, "hors_gen": True, **comparer(J, M, REFERENCE, principale, gen.get("depuis"))}]
+        hors = [{"id": principale, "hors_gen": True, **comparer(J, M, REFERENCE, principale, juge(principale))}]
     etat["classement"] = classement + hors
 
-    # --- Promotion : le meilleur devient principal seulement si c'est prouvé ---
-    if classement and classement[0]["id"] != principale:
-        b = classement[0]["id"]
-        depuis = gen.get("depuis")
-        c = comparer(J, M, principale, b, depuis)
-        solide = (c["n_tirs"] >= PROMO_MIN_TIRS and c["gain"] is not None and c["gain"] >= PROMO_GAIN
-                  and c["z"] is not None and c["z"] >= Z_PROMO
-                  and not (c["z_m"] is not None and c["z_m"] <= -Z_PROMO))   # pas pire sur les matchs
-        etat["promo"] = {"candidat": b, "contre": principale, **{k: c[k] for k in ("n_tirs", "gain", "z", "gain_m", "z_m")},
-                         "solide": solide}
+    # --- Un champion PAR CATÉGORIE (tirs, but, passe, victoire, totaux) ---
+    # La meilleure recette pour les tirs n'est pas forcément la meilleure pour les passes ou
+    # les matchs. Chaque catégorie a son champion ; la version « combo » de la page prend le
+    # % de chaque marché chez le champion de sa catégorie. Tout le monde est candidat (pas
+    # juste la génération en cours), et un champion change seulement si c'est PROUVÉ.
+    principales = etat.get("principales") or {c: principale for c in CATEGORIES}
+    for c in CATEGORIES:
+        if principales.get(c) not in versions_actives:
+            principales[c] = REFERENCE
+    candidats = [v for v in versions_actives if v != "v0"]
+    etat["classement_cat"], etat["promos"] = {}, {}
+    for cat in CATEGORIES:
+        lignes = []
+        for v in candidats:
+            r = comparer_cat(J, M, REFERENCE, v, cat, juge(v))
+            if r["n"]:
+                lignes.append({"id": v, **{k: r[k] for k in ("n", "soirs", "gain", "z")}})
+        lignes.sort(key=lambda x: -(x["gain"] or 0))
+        etat["classement_cat"][cat] = lignes
+        champ = principales[cat]
+        mini = PROMO_MIN_CAT[cat]
+        meilleur = next((x for x in lignes if x["n"] >= mini), None)
+        if not meilleur or meilleur["id"] == champ:
+            continue
+        b = meilleur["id"]
+        c = comparer_cat(J, M, champ, b, cat, max(filter(None, [juge(b), juge(champ)]), default=None))
+        solide = (c["n"] >= mini and (c["gain"] or 0) >= PROMO_GAIN_CAT and c["z"] is not None and c["z"] >= Z_PROMO_CAT)
+        direct = None
+        if cree(b):
+            # Une version auto ou VA doit AUSSI tenir en direct (après sa naissance)
+            direct = comparer_cat(J, M, champ, b, cat, cree(b))
+            solide = solide and direct["n"] >= mini // 3 and (direct["gain"] or 0) > 0
+        etat["promos"][cat] = {"candidat": b, "contre": champ, "n": c["n"], "gain": c["gain"], "z": c["z"],
+                               "solide": solide, "direct_n": direct["n"] if direct else None,
+                               "direct_gain": direct["gain"] if direct else None}
         if solide:
             etat["journal"].insert(0, {"date": aujourdhui, "msg":
-                f"{b} devient la version principale : {c['gain'] * 100:.2f} % mieux que {principale} "
-                f"sur les mêmes {c['n_tirs']} joueurs (z = {c['z']:.1f})."})
-            principale = b
-            etat["principale"] = b
-    else:
-        etat.pop("promo", None)
+                f"{NOMS_CAT[cat]} : {b} devient champion ({c['gain'] * 100:+.2f} % vs {champ}, z = {c['z']:.1f})."})
+            principales[cat] = b
+    etat["principales"] = principales
+    # Compatibilité : « principale » = le champion des tirs (le but premier de la patente)
+    principale = principales["tirs"]
+    etat["principale"] = principale
+    etat.pop("promo", None)
 
-    # --- Fin de génération : chacun a assez de données comparables ---
-    pret = classement and all(c["n_tirs"] >= GEN_MIN_TIRS and c["soirs"] >= GEN_MIN_SOIRS for c in classement)
-    if pret and (force or gen.get("debut") != aujourdhui):
+    # --- Fin de génération : chacun a assez de données comparables, ET quelques soirs en
+    # direct (sinon on choisirait toujours sur les mêmes vieux soirs, encore et encore) ---
+    # Une génération par semaine : on analyse tout le monde avec la semaine de nouvelles
+    # données, le meilleur a 5 enfants. Pas 12 000 versions d'un coup : le rythme suit
+    # l'arrivée de données fraîches.
+    jours_gen = (date.fromisoformat(aujourdhui) - date.fromisoformat(gen["debut"])).days if gen.get("debut") else 99
+    def pret_membre(c):
+        return c["soirs_direct"] is None or c["soirs_direct"] >= GEN_MIN_SOIRS_DIRECT
+    pret = classement and jours_gen >= JOURS_GENERATION and all(pret_membre(c) for c in classement)
+    if classement and (pret or force):
         etat["principale"] = principale
         msg = _nouvelle_generation(etat, J, M, classement, aujourdhui)
         etat["journal"].insert(0, {"date": aujourdhui, "msg": msg})
@@ -684,8 +833,10 @@ def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=Fals
         nouvelle = True
     elif classement:
         manque = min(classement, key=lambda c: c["n_tirs"])
+        directs = [c["soirs_direct"] for c in classement if c["soirs_direct"] is not None]
         etat["attente"] = {"n_tirs": manque["n_tirs"], "soirs": manque["soirs"],
-                           "min_tirs": GEN_MIN_TIRS, "min_soirs": GEN_MIN_SOIRS}
+                           "fin": (date.fromisoformat(gen["debut"]) + timedelta(days=JOURS_GENERATION)).isoformat(),
+                           "soirs_direct": min(directs) if directs else None, "min_direct": GEN_MIN_SOIRS_DIRECT}
 
     etat["journal"] = etat["journal"][:30]
     etat["principale"] = principale

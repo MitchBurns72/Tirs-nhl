@@ -844,11 +844,58 @@ for _id, (_diff, _desc) in GEN2.items():
     VERSIONS[_id] = {"params": {**V2, **_diff}, "famille": "v2", "generation": 2,
                      "nb_k": V2["nb_k"], "desc": _desc}
 # La principale reste v1 tant qu'une autre n'a pas prouvé mieux (voir auto.py)
+# --- VA : scan complet des paramètres, fait SUR DEMANDE (pas chaque semaine) ---------
+# va.1 (23 octobre) : descente sur tous les paramètres joueurs de la famille v2, sur les 23
+# premiers soirs. Trois départs testés ; estimation honnête (optimisé sur 70 % des soirs,
+# testé sur les 30 % jamais vus) : +0.10 % vs v1 sur les joueurs. Sur tout l'historique
+# (optimiste, il l'a vu) : +0.37 %. Le modèle de MATCH n'est PAS optimisé : sur 110 matchs,
+# le scan empirait de 3.4 % les matchs jamais vus (il apprenait le bruit par cœur).
+# Ses paramètres ont vu jusqu'au 22 octobre : il est noté seulement à partir du 24.
+VA = {
+    "va.1": ({
+    "away": 0.95,
+    "b2b": 1.0,
+    "cal_bu_a": 1.06,
+    "cal_bu_b": 0.07,
+    "cal_pa_a": 1.1,
+    "cal_pa_b": 0.02,
+    "cal_t_a": 0.98,
+    "cal_t_b": -0.03,
+    "k_pp": 0.0,
+    "k_pp_passes": 1.1,
+    "nb_k": 35.4492,
+    "opp_reg_gp": 12.375,
+    "pa_pseudo_min": 439.23,
+    "pen_exp": 0.0,
+    "pseudo_min": 97.2,
+    "scale_buts": 1.01,
+    "scale_passes": 0.96,
+    "scale_tirs": 0.99,
+    "scale_tirs_D": 0.99,
+    "score_s": 0.0,
+    "sh_pseudo_tirs": 176.0,
+    "sv_reg_gp": 60,
+    "toi_recent": 0.36,
+    "vig_props": 1.0,
+    "vs_reg_gp": 44.2368,
+    "w_att": 0.0,
+    "w_l10": 1.188,
+    "w_mod_joueur": 0.7563,
+    "w_prev": 0.56
+    }, "2026-10-23", "2026-10-24",
+        "Scan complet du 23 oct. (23 soirs) : ajouts v2 coupés (PP, tentatives, indiscipline, état de match à 0), "
+        "forme récente moins pesante, dispersion élargie, petite recalibration. Matchs = v2 de base."),
+}
+for _id, (_diff, _cree, _juge, _desc) in VA.items():
+    VERSIONS[_id] = {"params": {**V2, **_diff}, "famille": "v2", "generation": "A", "nb_k": _diff.get("nb_k", V2["nb_k"]),
+                     "desc": _desc, "cree": _cree, "juge_depuis": _juge}
+
 VERSION_PRINCIPALE = "v1"
 MARCHES = ["tirs1", "tirs", "tirs3", "tirs4", "buts", "passes"]
 # Distribution des tirs de chaque version ayant déjà prédit (None = Poisson).
 # Inclut les versions auto retirées : leur historique doit pouvoir être complété.
-DISPERSION = {"v0": None, "v1": V1["nb_k"], "v2": V2["nb_k"], **{v: V2["nb_k"] for v in GEN2}}
+DISPERSION = {"v0": None, "v1": V1["nb_k"], "v2": V2["nb_k"], **{v: V2["nb_k"] for v in GEN2},
+              **{v: VERSIONS[v]["nb_k"] for v in VA}}
 
 
 def charger_auto(chemin):
@@ -872,7 +919,8 @@ def charger_auto(chemin):
         P = {**base, **v["params"]}
         P["vs_cap"], P["m_h2h_cap"] = tuple(P["vs_cap"]), tuple(P["m_h2h_cap"])
         VERSIONS[v["id"]] = {"params": P, "auto": True, "famille": fam, "desc": v["desc"], "cree": v["cree"],
-                             "nb_k": P["nb_k"], "generation": v.get("generation")}
+                             "nb_k": P["nb_k"], "generation": v.get("generation"),
+                             "juge_depuis": v.get("juge_depuis")}
     # Versions faites à la main (génération 2) éliminées par l'évolution : elles ne
     # prédisent plus, mais leur historique reste dans les fichiers.
     for vid in etat.get("retirees", []):

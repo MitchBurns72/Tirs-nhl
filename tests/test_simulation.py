@@ -26,6 +26,7 @@ sys.path.insert(0, str(ICI.parent / "src"))
 import cotes  # noqa: E402
 import nhl_api as api  # noqa: E402
 import run  # noqa: E402
+import auto  # noqa: E402
 
 rng = random.Random(42)
 EQUIPES = ["MTL", "TOR", "BOS", "DET", "NYR", "PHI", "PIT", "WSH"]
@@ -288,9 +289,11 @@ def main():
         raise cotes.CleRefusee()
     cotes._sgo_get = sgo_refuse
     run.AVEC_COTES = True
+    run.AVEC_ALIGNEMENTS = False   # pas d'internet dans le test
     import os
     os.environ["ODDS_API_KEY"] = "test"
 
+    auto.JOURS_GENERATION = 999   # le test force la fin de génération lui-même (plus bas)
     jours = sorted(calendrier)
     for d in jours:
         api._cache.clear()
@@ -335,7 +338,7 @@ def main():
     st = out["stats"]
     for m, par_v in list(st["joueurs"].items()) + list(st["matchs"].items()):
         print(f"{m:9}", {v: (s["n"], round(s["note"], 1), round(s["brier"], 4)) for v, s in par_v.items() if s["n"]})
-    print("global  ", {v: round(s["note"], 1) for v, s in st["global"].items()})
+    print("global  ", {v: round(s["note"], 1) for v, s in st["global"].items() if s.get("note") is not None})
     assert st["joueurs"]["tirs"]["v1"]["n"] > 300
     assert st["matchs"]["victoire"]["v1"]["n"] > 40
     assert out["games"] and out["joueurs"]
@@ -343,7 +346,7 @@ def main():
     assert any(e.get("cotes") for e in out["joueurs"]), "cotes joueurs non associées"
     # --- Le modèle paramétrique avec V1 doit redonner v1 (sinon le tuner optimise autre chose) ---
     from modeles import V1, modele_joueur_param, modele_match_param
-    import auto
+    pass  # auto importé en haut du fichier
     ecart_max = 0.0
     for fic in sorted(run.DIR_PRED.glob("*.json")):
         d = json.loads(fic.read_text())
@@ -360,20 +363,21 @@ def main():
 
     # --- Labo : la génération 2 (v2.1 à v2.5) se termine et la génération 3 naît ---
     auto.MIN_JOUEURS, auto.MIN_MATCHS, auto.MIN_VAL_JOUEURS, auto.MIN_VAL_MATCHS = 500, 30, 200, 10
-    auto.GEN_MIN_TIRS, auto.GEN_MIN_SOIRS = 300, 3
     hist = [json.loads(f.read_text()) for f in sorted(run.DIR_PRED.glob("*.json"))]
     labo, nouvelle = auto.cycle(hist, run.ETAT_AUTO, list(run.VERSIONS), jours[-1], force=True)
     print("journal :", labo["journal"][0]["msg"])
     print("patterns :", [(p["marche"], p["segment"], round(p["predit"], 2), round(p["reel"], 2), round(p["z"], 1)) for p in labo["patterns"][:4]])
     gen2 = labo["generations"][0]
-    print("classement gén. 2 :", [(c["id"], round(c["gain"] * 100, 2), round(c["z"] or 0, 1)) for c in gen2["classement"]])
+    print("classement gén. 2 :", [(c["id"], round((c["gain"] or 0) * 100, 2), round(c["z"] or 0, 1)) for c in gen2["classement"]])
     print("principale :", labo["principale"], "· promo :", labo.get("promo"))
     assert nouvelle and labo["generation"]["n"] == 3, "la génération 3 n'est pas née"
-    assert gen2["n"] == 2 and {c["id"] for c in gen2["classement"]} == {f"v2.{i}" for i in range(1, 6)}
+    # va.1 (scan complet) rejoint le concours, mais n'a aucune ligne notée avant le 24 octobre
+    assert gen2["n"] == 2 and {c["id"] for c in gen2["classement"]} == {f"v2.{i}" for i in range(1, 6)} | {"va.1"}
+    assert next(c for c in gen2["classement"] if c["id"] == "va.1")["gain"] is None, "va.1 notée sur ses soirs de scan"
     parent = gen2["gagnant"]
     enfants = [f"v3.{i}" for i in range(1, 6)]
-    assert labo["generation"]["membres"] == [parent] + enfants
-    perdants = [c["id"] for c in gen2["classement"] if c["id"] not in (parent, labo["principale"])]
+    assert labo["generation"]["membres"] == [parent] + enfants + ["va.1"], "va.1 (trop jeune) doit passer à la suivante"
+    perdants = [c["id"] for c in gen2["classement"] if c["id"] not in (parent, labo["principale"], "va.1")]
     assert set(perdants) <= set(labo.get("retirees", [])), "les perdants doivent arrêter de prédire"
     # Les enfants sont vraiment différents du parent (sinon on teste 5 fois la même chose)
     params = [json.dumps(v["params"], sort_keys=True) for v in labo["versions"] if v["generation"] == 3]
@@ -400,12 +404,24 @@ def main():
     for vid in perdants:
         assert vid not in modeles.VERSIONS, f"{vid} retirée mais encore chargée"
     vieux = json.loads((run.DIR_PRED / f"{jours[2]}.json").read_text())
-    assert not any(vid in e["preds"] for e in vieux["entries"] for vid in enfants), "enfant sur un soir d'entraînement"
+    # Rejoués sur toute la saison (sans réseau)...
+    assert all(vid in e["preds"] for e in vieux["entries"] if (e.get("f") or {}).get("x") for vid in enfants), "enfants pas rejoués"
+    # ...mais le Tuner / Calibreur ne sont pas notés sur leurs soirs d'entraînement
+    vs = {v["id"]: v for v in labo["versions"]}
+    ajustes = [vid for vid in enfants if vs[vid]["desc"].startswith("Tuner : raffine")
+               or (vs[vid]["desc"].startswith("Calibreur") and "recalibr" in vs[vid]["desc"])]
+    assert all(vs[vid]["juge_depuis"] for vid in ajustes), "juge_depuis manquant"
+    assert all(vs[vid]["juge_depuis"] is None for vid in enfants if vid not in ajustes)
+    st_s = json.loads(run.SORTIE.read_text())["stats"]["joueurs"]["tirs"]
+    for vid in ajustes:
+        assert st_s[vid]["n"] < st_s[parent]["n"], f"{vid} noté sur ses soirs d'entraînement"
+    print("rétro des enfants OK · notés sur :", {vid: st_s[vid]["n"] for vid in enfants}, "vs parent", st_s[parent]["n"])
     # Leur historique reste : les perdants ont toujours leurs prédictions des vieux soirs
     assert any(perdants[0] in e["preds"] for e in vieux["entries"]), "historique des perdants effacé"
     lab = json.loads(run.SORTIE.read_text())["labo"]
-    assert lab["generation"]["n"] == 3 and lab["attente"], "la génération 3 doit attendre ses propres soirs"
-    print(f"génération 3 active ({', '.join(enfants)} vs {parent}), jugée seulement à partir du {lab['generation']['depuis']} OK")
+    assert lab["generation"]["n"] == 3 and lab["attente"], "la génération 3 doit attendre ses soirs en direct"
+    assert lab["attente"]["soirs_direct"] is not None and lab["attente"]["soirs_direct"] < auto.GEN_MIN_SOIRS_DIRECT
+    print(f"génération 3 active ({', '.join(enfants)} vs {parent}), attend {auto.GEN_MIN_SOIRS_DIRECT} soirs en direct OK")
 
     # --- Migration : un état de l'ancien moteur (sans "moteur") doit relancer la génération ---
     e = json.loads(run.ETAT_AUTO.read_text())
@@ -415,13 +431,20 @@ def main():
     labo, nouvelle = auto.cycle(hist, run.ETAT_AUTO, list(run.VERSIONS), jours[-1])
     print("migration :", labo["journal"][0]["msg"][:200])
     assert nouvelle and labo["generation"]["n"] == 4 and labo["generation"]["membres"][0] == parent
-    assert labo["generations"][0].get("interrompue") and labo["moteur"] == 2
+    assert labo["generations"][0].get("interrompue") and labo["moteur"] == 3
     assert all(v["retiree"] for v in labo["versions"] if v["generation"] == 3), "anciennes v3.x pas retirées"
     run.charger_auto(run.ETAT_AUTO)
     assert "v4.1" in modeles.VERSIONS and "v3.1" not in modeles.VERSIONS
     labo2, nouvelle2 = auto.cycle(hist, run.ETAT_AUTO, list(run.VERSIONS), jours[-1])
     assert not nouvelle2 and labo2["generation"]["n"] == 4, "la migration ne doit rouler qu'une fois"
     print("migration vers le nouveau moteur OK")
+    # Rythme hebdo : 7 jours plus tard, mais sans 3 soirs en direct -> on attend encore
+    auto.JOURS_GENERATION = 7
+    from datetime import date as _d, timedelta as _td
+    plus7 = (_d.fromisoformat(jours[-1]) + _td(days=7)).isoformat()
+    labo3, n3 = auto.cycle(hist, run.ETAT_AUTO, list(run.VERSIONS), plus7)
+    assert not n3 and labo3["attente"]["fin"] == plus7 and labo3["attente"]["soirs_direct"] == 0
+    print("rythme hebdo OK (attend ses soirs en direct)")
 
     # --- Seuils de tirs 1+ à 4+ ---
     st = json.loads(run.SORTIE.read_text())
@@ -529,6 +552,30 @@ def main():
         for e in json.loads(fic.read_text())["entries"]:
             if e.get("f", {}).get("x"):
                 assert all(f"v2.{i}" in e["preds"] for i in range(1, 6)), f"{fic.name} : génération 2 incomplète"
+    # Champions par catégorie + version combo
+    sortie0 = json.loads(run.SORTIE.read_text())
+    P = sortie0["principales"]
+    print("champions :", P, "| promos :", {c: (p["candidat"], round((p["gain"] or 0) * 100, 2), p["z"] and round(p["z"], 1))
+                                          for c, p in (sortie0["labo"].get("promos") or {}).items()})
+    assert set(P) == {"tirs", "buts", "passes", "victoire", "totaux"} and sortie0["principale"] == "combo"
+    e0 = next(e for e in sortie0["joueurs"] if "combo" in e["preds"] and P["passes"] in e["preds"])
+    assert e0["preds"]["combo"]["passes"]["p"] == e0["preds"][P["passes"]]["passes"]["p"]
+    assert e0["preds"]["combo"]["tirs3"]["src"] == P["tirs"]
+    g0 = next(g for g in sortie0["games"] if "combo" in g["preds"])
+    assert g0["preds"]["combo"]["p_home"] == g0["preds"][P["victoire"]]["p_home"]
+    assert g0["preds"]["combo"]["p_over"] == g0["preds"][P["totaux"]]["p_over"]
+    assert all(len(sortie0["labo"]["classement_cat"][c]) >= 3 for c in P)
+    print("combo OK")
+    # Blessures : lecteur ESPN sur une réponse imitée, puis annotation
+    import alignements
+    faux_espn = {"injuries": [{"displayName": "Montreal Canadiens", "injuries": [
+        {"status": "Out", "athlete": {"displayName": e0["name"], "team": {"abbreviation": "MTL"}},
+         "details": {"type": "Lower Body", "returnDate": "2026-11-01"}}]}]}
+    alignements._texte = lambda url, timeout=25: json.dumps(faux_espn)
+    bl = alignements.blessures()
+    copie = [dict(e0)]
+    assert alignements.annoter(copie, bl) == 1 and copie[0]["blesse"]["statut"] == "Out" and alignements.absent(bl[next(iter(bl))])
+    print("blessures ESPN OK")
     # « Pourquoi ce % » : la v2 explique aussi but et passe, et le mélange avec le marché
     sortie = json.loads(run.SORTIE.read_text())
     pv = next(e["preds"][parent] for e in sortie["joueurs"] if parent in e["preds"] and e.get("cotes", {}).get("tirs"))

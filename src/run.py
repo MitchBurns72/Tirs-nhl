@@ -20,6 +20,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+import alignements
 import auto
 import cotes
 import donnees_v2
@@ -43,6 +44,8 @@ TOI_DEFAUT = {"F": 14.0, "D": 19.0}
 # Les cotes coûtent des crédits : seulement quand le workflow le demande
 # (calcul de 17 h 45 ou lancement manuel). Voir cotes.py pour le budget.
 AVEC_COTES = os.environ.get("ODDS", "").lower() == "true"
+# Blessures ESPN + sondes DailyFaceoff (les tests le coupent : pas d'internet)
+AVEC_ALIGNEMENTS = os.environ.get("ALIGNEMENTS", "1") == "1"
 MARCHES_PROPS = [m for m in os.environ.get("ODDS_PROPS", "player_shots_on_goal_alternate").split(",") if m]
 
 
@@ -560,9 +563,10 @@ def predire(jour, matchs_ouverts, saison):
     ligue["mu"] = (ligue["poids"] * mu_cur + 15 * mu_prev) / (ligue["poids"] + 15)
     hier = (date.fromisoformat(jour) - timedelta(days=1)).isoformat()
 
-    # Une version auto ne prédit jamais un soir antérieur à sa création : ces soirs
-    # ont servi à l'entraîner, ses prédictions y seraient de la triche (in-sample).
-    actives = {v: spec for v, spec in VERSIONS.items() if not spec.get("auto") or spec["cree"] <= jour}
+    # Toutes les versions prédisent, même un soir d'avant leur naissance (rétroactif) :
+    # c'est le JUGEMENT qui écarte les soirs qui ont servi à ajuster leurs paramètres
+    # (voir `juge_depuis` dans auto.py et score.py). Plus de data, sans tricher.
+    actives = dict(VERSIONS)
 
     # Matchs d'abord : les passes des joueurs dépendent des buts attendus de l'équipe.
     games, jeu_par_equipe = [], {v: {} for v in actives}
@@ -712,7 +716,9 @@ def completer_features(saison):
         data = lire_json(fic, None)
         if not data:
             continue
-        a_rejouer = [v for v, sp in VERSIONS.items() if "params" in sp and not sp.get("auto")]
+        # Toutes les versions paramétriques, auto comprises : elles se rejouent à partir des
+        # features, sans réseau. Une prédiction déjà là n'est jamais recalculée.
+        a_rejouer = [v for v, sp in VERSIONS.items() if "params" in sp]
         marque = "x|rk|" + ",".join(a_rejouer)
         # Facteur de patinoire ajouté le 23 octobre : on le colle aux vieilles lignes
         # (calculé avec les feuilles d'AVANT ce soir-là, donc pas de triche) pour que le
@@ -836,6 +842,40 @@ def archiver_soirs(jour, n=3, garder=21):
             f.unlink()
 
 
+# La version « combo » : pour chaque marché, le % du champion de sa catégorie.
+CAT_DE = {"tirs1": "tirs", "tirs": "tirs", "tirs3": "tirs", "tirs4": "tirs", "buts": "buts", "passes": "passes"}
+COMBO = "combo"
+
+
+def ajouter_combo(entries, games, principales):
+    """Ajoute preds["combo"] en COPIANT les % des champions (choisis avec les données
+    d'avant ce soir). Rien n'est recalculé. Le champion de chaque marché est noté dans
+    "src" pour que la page puisse dire d'où vient le chiffre."""
+    if not principales:
+        return
+    for e in entries:
+        combo = {}
+        for m, cat in CAT_DE.items():
+            pv = e["preds"].get(principales.get(cat), {}).get(m)
+            if pv:
+                combo[m] = {**pv, "src": principales[cat]}
+        if combo:
+            e["preds"][COMBO] = combo
+    for g in games:
+        tot = g["preds"].get(principales.get("totaux"))
+        vic = g["preds"].get(principales.get("victoire"))
+        if not tot or not vic:
+            continue
+        # Buts attendus et totaux : champion des totaux ; % de victoire : champion de la victoire
+        combo = {**tot, "src_tot": principales["totaux"], "src_vic": principales["victoire"]}
+        for k in ("p_home", "p_home0"):
+            if k in vic:
+                combo[k] = vic[k]
+            else:
+                combo.pop(k, None)
+        g["preds"][COMBO] = combo
+
+
 def sans_features(liste):
     """La page n'a pas besoin des features (lourdes) : on les retire de data.json."""
     return [{k: v for k, v in x.items() if k != "f"} for x in liste]
@@ -888,13 +928,19 @@ def main():
     if saison:
         completer_features(saison)
     archiver_soirs(jour)   # résultats des derniers soirs pour régler tes bets
+    if AVEC_ALIGNEMENTS:
+        try:
+            alignements.sonder(RACINE / "data" / "sondes", jour)
+        except Exception as ex:  # noqa: BLE001
+            print(f"  sondes : {str(ex)[:120]}")
 
     # Labo : patterns + tuning hebdo + promotion. Si une nouvelle version naît,
     # elle est chargée tout de suite et prédit déjà les matchs de ce soir.
     historique = [h for h in (lire_json(f, None) for f in sorted(DIR_PRED.glob("*.json"))) if h]
     labo, nouvelle = auto.cycle(historique, ETAT_AUTO, list(VERSIONS), jour)
-    if nouvelle:
-        charger_auto(ETAT_AUTO)
+    # Toujours recharger : le cycle a pu faire naître des versions, en retirer, ou
+    # changer leurs dates de jugement (juge_depuis).
+    charger_auto(ETAT_AUTO)
     principale = labo.get("principale", principale) if labo.get("principale") in VERSIONS else principale
 
     f_jour = DIR_PRED / f"{jour}.json"
@@ -939,6 +985,12 @@ def main():
                 e["cotes"] = anciennes_j.get((e["gameId"], e["pid"]))
         # v2 : mélange avec le marché maintenant que les cotes sont connues
         appliquer_marche(entries, games)
+        # Combo : le champion de chaque catégorie (ce soir et les matchs de ce soir déjà partis)
+        ajouter_combo(entries + entries_retro, games + games_retro, labo.get("principales"))
+        # Blessures du jour (ESPN) : on marque, on ne retire pas
+        if AVEC_ALIGNEMENTS and entries:
+            n_b = alignements.annoter(entries, alignements.blessures())
+            print(f"  blessures ESPN : {n_b} joueurs de ce soir sur la liste")
         # Les matchs déjà commencés gardent leurs prédictions gelées.
         existant["entries"] = [e for e in existant["entries"] if e["gameId"] not in ids_ouverts] + entries_retro + entries
         existant["games"] = [g for g in existant["games"] if g["gameId"] not in ids_ouverts] + games_retro + games
@@ -960,15 +1012,20 @@ def main():
     ecrire_json(SORTIE, {
         "genere": datetime.now(timezone.utc).isoformat(timespec="minutes"),
         "date": jour,
-        "versions": [{"id": v, "desc": s["desc"]} for v, s in VERSIONS.items()],
-        "principale": principale,
+        "versions": [{"id": COMBO, "desc": "Le champion de chaque catégorie : " + ", ".join(
+                         f"{c} {v}" for c, v in (labo.get("principales") or {}).items())}] +
+                    [{"id": v, "desc": s["desc"], "cree": s.get("cree"), "juge_depuis": s.get("juge_depuis")}
+                     for v, s in VERSIONS.items()],
+        "principale": COMBO if labo.get("principales") else principale,
+        "principales": labo.get("principales"),
         "matchs": matchs,
         "games": sans_features(existant["games"]),
         "joueurs": allege(existant["entries"]),
-        "stats": resumer(historique, list(VERSIONS)),
+        "stats": resumer(historique, [COMBO] + list(VERSIONS), {v: s.get("juge_depuis") for v, s in VERSIONS.items()}),
         "cotes_quota": quota,
         "labo": {k: labo.get(k) for k in ("journal", "patterns", "donnees", "dernier_tuning", "generation",
-                                          "classement", "generations", "promo", "attente", "retirees")} | {
+                                          "classement", "generations", "promos", "attente", "retirees",
+                                          "principales", "classement_cat")} | {
             "versions": [{k: v.get(k) for k in ("id", "cree", "desc", "retiree", "generation", "base", "params")}
                          for v in labo.get("versions", [])]},
     })

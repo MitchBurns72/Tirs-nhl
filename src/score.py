@@ -60,7 +60,10 @@ def r_joueur(e, m):
     return r if stat == "tirs" else None   # ancien format : un nombre = tirs
 
 
-def resumer(fichiers, versions):
+def resumer(fichiers, versions, depuis=None):
+    """depuis[v] : premier soir qui compte pour v (None = tous). Les soirs d'avant ont
+    servi à ajuster ses paramètres : les compter gonflerait sa note."""
+    depuis = depuis or {}
     out = {"joueurs": {}, "matchs": {}, "global": {}}
     for m, (_, seuil) in MARCHES_J.items():
         out["joueurs"][m] = {}
@@ -70,6 +73,8 @@ def resumer(fichiers, versions):
                 for e in f["entries"]:
                     if not e.get("played"):
                         continue  # pas encore joué, ou scratché -> annulé
+                    if depuis.get(v) and f["date"] < depuis[v]:
+                        continue
                     p, r = p_joueur(e, v, m), r_joueur(e, m)
                     if p is None or r is None:
                         continue  # version/marché créé après cette date : pas de triche rétroactive
@@ -83,7 +88,7 @@ def resumer(fichiers, versions):
             for f in fichiers:
                 for g in f.get("games", []):
                     res, pv = g.get("result"), g.get("preds", {}).get(v)
-                    if not res or not pv:
+                    if not res or not pv or (depuis.get(v) and f["date"] < depuis[v]):
                         continue
                     h, a = res["home"], res["away"]
                     y = {"victoire": h > a, "total55": h + a > 5.5, "total65": h + a > 6.5}[m]

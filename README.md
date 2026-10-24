@@ -40,6 +40,18 @@ limité au repo, permission Contents en lecture/écriture), synchronisés entre 
 Un bet supprimé reste dans le fichier marqué `supprime` pour ne pas réapparaître. Les soirs passés sont réglés avec `docs/live/AAAA-MM-JJ.json`
 (écrit par le calcul, gardé 21 jours) ; un bet réglé garde son résultat sur l'appareil.
 
+## Champions par catégorie et version « combo »
+
+La meilleure recette pour les tirs n'est pas forcément la meilleure pour les passes ou les matchs.
+Chaque catégorie (tirs 1+ à 4+, but, passe, victoire, totaux) a son champion. **combo**, la version par
+défaut de la page, prend le % de chaque marché chez le champion de sa catégorie (copié tel quel, rien
+n'est recalculé ; « Pourquoi ce % » dit d'où il vient). Toutes les versions actives sont candidates.
+Un champion change seulement si c'est prouvé : au moins 0.2 % d'erreur en moins, z >= 2.5 (plus
+sévère, on compare beaucoup de versions dans 5 catégories), assez de lignes, et pour une version auto
+ou VA, tenir aussi en direct. Les champions ne sont jamais retirés par l'évolution.
+La reproduction suit la même logique : les enfants partent d'une recette combinée (paramètres tirs du
+meilleur aux tirs, but du meilleur au but, passe du meilleur à la passe, match du meilleur aux matchs).
+
 ## Labo : évolution par générations
 
 `src/auto.py`, à chaque calcul :
@@ -50,9 +62,11 @@ Un bet supprimé reste dans le fichier marqué `supprime` pour ne pas réappara�
   s'il bat la principale actuelle d'au moins 0.5 %, avec z >= 2.33 (moins de 1 % de chance que ce soit
   de la chance, ce qui compense le fait qu'on compare 5 candidats), sur au moins 1500 joueurs, sans
   être clairement pire sur les matchs.
-- **Fin de génération** : quand chaque membre a 3000 joueurs comparables sur 7 soirs. Le meilleur
+- **Une génération par semaine** : 7 jours après sa naissance (et au moins 3 soirs en direct pour
+  chaque nouvelle version), tout le monde est analysé avec la semaine de nouvelles données. Le meilleur
   survit (le parent, même si son avance n'est pas encore prouvée : il faut explorer), et 5 enfants
-  aux personnalités différentes naissent :
+  aux personnalités différentes naissent. Une version trop jeune (moins de 500 joueurs notés) passe à
+  la génération suivante au lieu d'être éliminée :
   1. **Tuner** : raffine le parent (cherche sur les vieux soirs, valide sur les récents).
   2. **Calibreur** : corrige les biais d'ensemble (échelle, dispersion, recalibration en logit).
   3. **Expérience** : si toute la génération perd contre v1, coupe les ajouts v2 à 40 % pour voir si
@@ -66,8 +80,17 @@ Un bet supprimé reste dans le fichier marqué `supprime` pour ne pas réappara�
   à domicile ÷ à l'étranger pour chaque aréna, régressé), prior selon le rôle (le taux de départ
   dépend du temps de glace), recalibration tirs / but / passe.
 - **z** : affiché seulement après 7 soirs (avant, il ne veut rien dire).
-- **Pas de triche** : la génération 3 et + est née en regardant l'historique, donc elle est jugée
-  SEULEMENT sur les soirs après sa naissance et ne prédit jamais un soir d'avant.
+- **VA (scan complet, sur demande)** : descente sur TOUS les paramètres joueurs, sur tout l'historique,
+  avec plusieurs points de départ. Rejoint le concours de la semaine, notée seulement après sa date de
+  scan (elle a tout vu avant). `va.1` (23 oct.) : +0.10 % vs v1 estimé honnêtement (optimisé sur 70 %
+  des soirs, testé sur les 30 % jamais vus), +0.37 % sur ce qu'elle a vu. Le modèle de match n'est pas
+  scanné : sur ~110 matchs, ça empirait de 3.4 % les matchs jamais vus.
+- **Rétroactif pour tout le monde** : toutes les versions (auto comprises) sont rejouées sur toute la
+  saison, sans réseau. Exception au JUGEMENT seulement : le Tuner et le Calibreur, ajustés sur les vieux
+  soirs, comptent à partir de leurs soirs de validation (`juge_depuis`), sinon ils se noteraient sur
+  leur propre corrigé. Garde-fous contre « apprendre le bruit par cœur » à force de choisir sur les
+  mêmes soirs : une génération finit seulement après 3 soirs en direct, et une version auto devient
+  principale seulement si elle tient aussi en direct (gain > 0 sur au moins 1000 joueurs).
 - **Patterns** : segments où la principale se trompe systématiquement (écart >= 2.5 écarts-types).
 - État : `data/versions_auto.json`. Pour retirer une version auto : y mettre `"retiree": true`.
 
