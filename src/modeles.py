@@ -618,6 +618,10 @@ V2 = {
     "cal_t_a": 1.0, "cal_t_b": 0.0,      # tirs 1+ à 4+ (même correction pour les 4 : l'ordre est gardé)
     "cal_bu_a": 1.0, "cal_bu_b": 0.0,    # but
     "cal_pa_a": 1.0, "cal_pa_b": 0.0,    # passe
+    # Dispersion propre à chaque joueur (24 oct.) : certains gars varient beaucoup plus que
+    # d'autres d'un match à l'autre (souvent 0-1 tir, ou 4+). On mélange la dispersion de la
+    # ligue avec celle de SES 10 derniers matchs. 0 = même dispersion pour tous.
+    "w_disp": 0.0,
 }
 
 
@@ -636,6 +640,21 @@ def melanger(p_mod, p_mkt, w):
     if p_mkt is None:
         return p_mod
     return _sig(w * _logit(p_mod) + (1 - w) * _logit(p_mkt))
+
+
+def _dispersion_joueur(serie, k_ligue, w):
+    """Dispersion (k de la binomiale négative) d'un joueur. Petit k = matchs très inégaux.
+    k du joueur estimé sur ses derniers matchs (variance vs moyenne), puis mélangé avec la
+    ligue, d'autant plus que la série est longue. On mélange 1/k (l'excès de variance)."""
+    if not w or not serie or len(serie) < 5:
+        return k_ligue
+    n = len(serie)
+    m = sum(serie) / n
+    v = sum((x - m) ** 2 for x in serie) / (n - 1)
+    k_j = m * m / (v - m) if v > m * 1.02 and m > 0 else 500.0
+    poids = w * n / (n + 10)
+    inv = (1 - poids) / k_ligue + poids / max(k_j, 1.0)
+    return min(max(1 / inv, 1.0), 500.0)
 
 
 def modele_joueur_v2(f, P):
@@ -719,7 +738,8 @@ def modele_joueur_v2(f, P):
         f_eq = f["eq"] / lg[6] if f["eq"] else 1.0
         lam_p = max(num_p / den_p * em_p(toi, pp_proj) * f_eq * g("scale_passes"), 0.01)
 
-        out = {m: {"p": p_seuil(lam_t, seuil, P["nb_k"]), "lam": lam_t} for m, seuil in SEUILS_TIRS.items()}
+        k_eff = _dispersion_joueur(f.get("s10"), P["nb_k"], g("w_disp", 0.0))
+        out = {m: {"p": p_seuil(lam_t, seuil, k_eff), "lam": lam_t} for m, seuil in SEUILS_TIRS.items()}
         out["buts"] = {"p": p1plus_poisson(lam_b), "lam": lam_b}
         out["passes"] = {"p": p1plus_poisson(lam_p), "lam": lam_p}
         # Détail pour « Pourquoi ce % » sur la page. N'affecte AUCUNE probabilité :
@@ -920,7 +940,7 @@ def charger_auto(chemin):
         P["vs_cap"], P["m_h2h_cap"] = tuple(P["vs_cap"]), tuple(P["m_h2h_cap"])
         VERSIONS[v["id"]] = {"params": P, "auto": True, "famille": fam, "desc": v["desc"], "cree": v["cree"],
                              "nb_k": P["nb_k"], "generation": v.get("generation"),
-                             "juge_depuis": v.get("juge_depuis")}
+                             "juge_depuis": v.get("juge_depuis"), "cat": v.get("cat")}
     # Versions faites à la main (génération 2) éliminées par l'évolution : elles ne
     # prédisent plus, mais leur historique reste dans les fichiers.
     for vid in etat.get("retirees", []):

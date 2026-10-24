@@ -92,8 +92,13 @@ def resumer(fichiers, versions, depuis=None):
                         continue
                     h, a = res["home"], res["away"]
                     y = {"victoire": h > a, "total55": h + a > 5.5, "total65": h + a > 6.5}[m]
-                    lignes.append((f["date"], get_p(pv), 1 if y else 0))
-                    erreurs.append(abs(pv["total"] - (h + a)))
+                    try:
+                        p = get_p(pv)
+                    except (KeyError, TypeError):
+                        continue   # version d'une autre catégorie (ex. vic_v5 n'a pas de totaux)
+                    lignes.append((f["date"], p, 1 if y else 0))
+                    if "total" in pv:
+                        erreurs.append(abs(pv["total"] - (h + a)))
             s = _metriques(lignes, top=None)
             if erreurs and m == "total55":
                 # Erreur moyenne sur le total de buts projeté (en buts)

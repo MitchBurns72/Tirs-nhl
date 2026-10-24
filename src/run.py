@@ -26,8 +26,8 @@ import cotes
 import donnees_v2
 import live
 import nhl_api as api
-from modeles import (DISPERSION, FAMILLES, VERSIONS, ajouter_seuils, charger_auto, features_joueur,
-                     features_match)
+from modeles import (DISPERSION, FAMILLES, SEUILS_TIRS, VERSIONS, ajouter_seuils, charger_auto,
+                     features_joueur, features_match, p_seuil)
 from score import resumer
 
 RACINE = Path(__file__).resolve().parent.parent
@@ -516,6 +516,38 @@ def predire_version(spec, quoi, f, ctx=None, jeu=None, cm=None):
     return spec[quoi](dict(ctx), jeu) if quoi == "joueur" else spec[quoi](cm)
 
 
+# Une version de catégorie (tirs3_v5, vic_v6...) ne sert qu'à SON marché : on ne garde que
+# celui-là (data.json reste léger et le Suivi ne la note pas ailleurs).
+MARCHES_CAT = {"tirs1": ("tirs1",), "tirs2": ("tirs",), "tirs3": ("tirs3",), "tirs4": ("tirs4",),
+               "but": ("buts",), "passe": ("passes",)}
+
+
+def pertinent(spec, quoi):
+    """Cette version prédit-elle les joueurs (quoi='joueur') ou les matchs ('match') ?"""
+    cat = spec.get("cat")
+    if not cat:
+        return True
+    return (cat in MARCHES_CAT) == (quoi == "joueur")
+
+
+def elaguer(spec, out, quoi):
+    cat = spec.get("cat")
+    if not cat:
+        return out
+    if quoi == "joueur":
+        garde = {m: out[m] for m in MARCHES_CAT.get(cat, ()) if m in out}
+        detail = (out.get("tirs") or {}).get("detail")
+        for m in garde:
+            if m.startswith("tirs") and detail and "detail" not in garde[m]:
+                garde[m] = dict(garde[m], detail=detail)   # pour « Pourquoi ce % »
+        return garde
+    if cat == "vic":
+        return {k: out[k] for k in ("p_home", "p_home0", "p_egal60", "lam_home", "lam_away") if k in out}
+    if cat == "tot":
+        return {k: out[k] for k in ("p_over", "total", "lam_home", "lam_away") if k in out}
+    return out
+
+
 def appliquer_marche(entries, games):
     """Recalcule les versions de la famille v2 avec les cotes du marché, une fois
     les cotes connues. Les autres versions (v0, v1...) ne sont jamais touchées."""
@@ -526,7 +558,7 @@ def appliquer_marche(entries, games):
         g["f"]["mkt"] = mk or None
         for v, spec in VERSIONS.items():
             if spec.get("famille") == "v2" and v in g.get("preds", {}):
-                g["preds"][v] = arrondir(predire_version(spec, "match", g["f"]))
+                g["preds"][v] = arrondir(elaguer(spec, predire_version(spec, "match", g["f"]), "match"))
     for e in entries:
         if e.get("f") is None:
             continue
@@ -535,7 +567,7 @@ def appliquer_marche(entries, games):
             if spec.get("famille") == "v2" and v in e.get("preds", {}):
                 pv = predire_version(spec, "joueur", e["f"])
                 ajouter_seuils(pv, spec.get("nb_k"))
-                e["preds"][v] = arrondir(pv)
+                e["preds"][v] = arrondir(elaguer(spec, pv, "joueur"))
 
 
 # --- 5. Prédire ------------------------------------------------------------------
@@ -595,7 +627,8 @@ def predire(jour, matchs_ouverts, saison):
                 fm.pop("x")
         for v, spec in actives.items():
             r = predire_version(spec, "match", fm, cm=cm)
-            preds[v] = r
+            if pertinent(spec, "match"):
+                preds[v] = elaguer(spec, r, "match")
             jeu_par_equipe[v][m["home"]] = {"lam_pour": r["lam_home"], "lam_contre": r["lam_away"]}
             jeu_par_equipe[v][m["away"]] = {"lam_pour": r["lam_away"], "lam_contre": r["lam_home"]}
         l10 = lambda c: cm[c]["cur"][-10:]
@@ -638,10 +671,14 @@ def predire(jour, matchs_ouverts, saison):
         f = features_joueur(ctx, jeu_par_equipe.get("v1", {}).get(ctx["team"]))
         if v2:
             f["x"] = features_x_joueur(ctx, v2, pw.get(ctx["team"]), ratio_pos)
+        # La série de tirs du joueur (dispersion propre à chaque joueur)
+        f["s10"] = [g["shots"] for g in ctx["cur"][-10:]]
+        joueurs_v = {v: spec for v, spec in actives.items() if pertinent(spec, "joueur")}
         preds = {v: predire_version(spec, "joueur", f, ctx=ctx, jeu=jeu_par_equipe[v].get(ctx["team"]))
-                 for v, spec in actives.items()}
-        for v, spec in actives.items():
+                 for v, spec in joueurs_v.items()}
+        for v, spec in joueurs_v.items():
             ajouter_seuils(preds[v], spec.get("nb_k"))   # tirs 1+, 3+, 4+
+            preds[v] = elaguer(spec, preds[v], "joueur")
         l10 = ctx["cur"][-10:]
         entries.append({
             "pid": ctx["pid"], "name": ctx["name"], "team": ctx["team"],
@@ -753,9 +790,14 @@ def completer_features(saison):
             continue   # déjà fait : un joueur échangé depuis n'aura jamais de features, on n'insiste pas
         # Il manque quelque chose si : pas de features, pas de features v2, ou une
         # version paramétrique non-auto (v2) absente des prédictions.
-        manque = lambda x: not x.get("f") or "x" not in x["f"] or any(v not in x.get("preds", {}) for v in a_rejouer)
-        manque_j = [e for e in data["entries"] if manque(e)]
-        manque_g = [g for g in data.get("games", []) if manque(g)]
+        r_j = [v for v in a_rejouer if pertinent(VERSIONS[v], "joueur")]
+        r_g = [v for v in a_rejouer if pertinent(VERSIONS[v], "match")]
+        manque = lambda x, rv: not x.get("f") or "x" not in x["f"] or any(v not in x.get("preds", {}) for v in rv)
+        manque_j = [e for e in data["entries"] if manque(e, r_j)]
+        manque_g = [g for g in data.get("games", []) if manque(g, r_g)]
+        for e in data["entries"]:
+            if e.get("f") and "s10" not in e["f"] and e.get("l10_shots") is not None:
+                e["f"]["s10"] = e["l10_shots"]
         if not manque_j and not manque_g:
             data["complete"] = marque
             ecrire_json(fic, data)
@@ -793,18 +835,18 @@ def completer_features(saison):
             if x.get("f") is not None:
                 if "mkt" not in x["f"]:
                     x["f"]["mkt"] = implicites_match(x.get("cotes")) or None
-                for v in a_rejouer:
+                for v in r_g:
                     if v not in x.setdefault("preds", {}):
-                        x["preds"][v] = arrondir(predire_version(VERSIONS[v], "match", x["f"]))
+                        x["preds"][v] = arrondir(elaguer(VERSIONS[v], predire_version(VERSIONS[v], "match", x["f"]), "match"))
         for x in manque_j:
             if x.get("f") is not None:
                 if "mkt" not in x["f"]:
                     x["f"]["mkt"] = implicites_joueur(x.get("cotes")) or None
-                for v in a_rejouer:
+                for v in r_j:
                     if v not in x.setdefault("preds", {}):
                         pv = predire_version(VERSIONS[v], "joueur", x["f"])
                         ajouter_seuils(pv, VERSIONS[v].get("nb_k"))
-                        x["preds"][v] = arrondir(pv)
+                        x["preds"][v] = arrondir(elaguer(VERSIONS[v], pv, "joueur"))
         data["complete"] = marque
         ecrire_json(fic, data)
         n += 1
@@ -864,14 +906,15 @@ def archiver_soirs(jour, n=3, garder=21):
 
 
 # La version « combo » : pour chaque marché, le % du champion de sa catégorie.
-CAT_DE = {"tirs1": "tirs", "tirs": "tirs", "tirs3": "tirs", "tirs4": "tirs", "buts": "buts", "passes": "passes"}
+CAT_DE = {"tirs1": "tirs1", "tirs": "tirs2", "tirs3": "tirs3", "tirs4": "tirs4", "buts": "but", "passes": "passe"}
 COMBO = "combo"
 
 
 def ajouter_combo(entries, games, principales):
-    """Ajoute preds["combo"] en COPIANT les % des champions (choisis avec les données
-    d'avant ce soir). Rien n'est recalculé. Le champion de chaque marché est noté dans
-    "src" pour que la page puisse dire d'où vient le chiffre."""
+    """Ajoute preds["combo"] en COPIANT les % des champions de chaque catégorie (choisis
+    avec les données d'avant ce soir). "src" dit d'où vient chaque chiffre.
+    Garde-fou : chaque seuil de tirs a sa propre recette, donc on force l'ordre
+    1+ >= 2+ >= 3+ >= 4+ (sinon un gars aurait plus de chances de faire 3 tirs que 2)."""
     if not principales:
         return
     for e in entries:
@@ -880,21 +923,85 @@ def ajouter_combo(entries, games, principales):
             pv = e["preds"].get(principales.get(cat), {}).get(m)
             if pv:
                 combo[m] = {**pv, "src": principales[cat]}
+        precedent = 1.0
+        for m in ("tirs1", "tirs", "tirs3", "tirs4"):
+            if m in combo:
+                if combo[m]["p"] > precedent:
+                    combo[m] = dict(combo[m], p=precedent, borne=True)
+                precedent = combo[m]["p"]
         if combo:
             e["preds"][COMBO] = combo
     for g in games:
-        tot = g["preds"].get(principales.get("totaux"))
-        vic = g["preds"].get(principales.get("victoire"))
+        tot = g["preds"].get(principales.get("tot"))
+        vic = g["preds"].get(principales.get("vic"))
         if not tot or not vic:
             continue
         # Buts attendus et totaux : champion des totaux ; % de victoire : champion de la victoire
-        combo = {**tot, "src_tot": principales["totaux"], "src_vic": principales["victoire"]}
+        combo = {**tot, "src_tot": principales["tot"], "src_vic": principales["vic"]}
         for k in ("p_home", "p_home0"):
             if k in vic:
                 combo[k] = vic[k]
             else:
                 combo.pop(k, None)
         g["preds"][COMBO] = combo
+
+
+# % du soir : mêmes formules que la page (docs/index.html, soirJoueur)
+TOI_TRIO = {"f1": 19.0, "f2": 16.5, "f3": 14.0, "f4": 11.0, "d1": 23.0, "d2": 20.0, "d3": 17.0}
+PP_UNITE = {"pp1": 2.9, "pp2": 1.3, "aucune": 0.15}
+SV_LIGUE = 0.903
+SOIR = "soir"
+
+
+def ajouter_soir(entries, align, vp):
+    """preds["soir"] = la version principale ajustée à l'alignement DailyFaceoff :
+    temps de glace (moitié projeté, moitié typique du trio), unité de PP, gardien adverse.
+    Poids fixés d'avance : c'est le Suivi qui dira si ça aide. Retourne le nombre ajusté."""
+    from math import exp, sqrt
+    n = 0
+    for e in entries:
+        al = (align.get("equipes") or {}).get(e["team"])
+        base = e["preds"].get(vp) or {}
+        if not al or "tirs" not in base:
+            continue
+        nom = next((x for x in al["joueurs"] if cotes.norm(x) == cotes.norm(e["name"])), None)
+        dans = lambda g: any(cotes.norm(x) == cotes.norm(e["name"]) for x in al["groupes"].get(g, []))
+        slot = next((g for g in TOI_TRIO if dans(g)), None)
+        if not nom or not slot or (al["joueurs"].get(nom) or {}).get("inj"):
+            e["soir_info"] = {"absent": True}
+            continue
+        unite = "pp1" if dans("pp1") else "pp2" if dans("pp2") else "aucune"
+        dets = [pv.get("tirs", {}).get("detail") for pv in e["preds"].values() if isinstance(pv, dict)]
+        dets = [d for d in dets if d]
+        toi = next((d["toi"] for d in dets if d.get("toi")), None)
+        pp = next((d["pp"] for d in dets if d.get("pp") is not None), None)
+        if not toi:
+            continue
+        toi_s = 0.5 * toi + 0.5 * TOI_TRIO[slot]
+        f_toi = toi_s / toi
+        d_pp = PP_UNITE[unite] - pp if pp is not None else 0.0
+        borne = lambda x: min(1.5, max(0.6, x))
+        f_t, f_a = borne(f_toi * (1 + d_pp / toi_s)), borne(f_toi * (1 + 1.5 * d_pp / toi_s))
+        g = (align.get("gardiens") or {}).get(e["opp"]) or {}
+        try:
+            sv = float(g.get("sv")) if g.get("sv") else None
+        except ValueError:
+            sv = None
+        f_g = min(1.15, max(0.85, sqrt((1 - sv) / (1 - SV_LIGUE)))) if sv else 1.0
+        soir = {}
+        lt = base["tirs"]["lam"] * f_t
+        for m, seuil in SEUILS_TIRS.items():
+            soir[m] = {"p": p_seuil(lt, seuil, 15.0), "lam": lt}
+        if "buts" in base:
+            lb = base["buts"]["lam"] * f_t * f_g
+            soir["buts"] = {"p": 1 - exp(-lb), "lam": lb}
+        if "passes" in base:
+            la = base["passes"]["lam"] * f_a
+            soir["passes"] = {"p": 1 - exp(-la), "lam": la}
+        e["preds"][SOIR] = arrondir(soir)
+        e["soir_info"] = arrondir({"slot": slot, "pp": unite, "f_t": f_t, "f_a": f_a, "f_g": f_g, "base": vp})
+        n += 1
+    return n
 
 
 def sans_features(liste):
@@ -982,6 +1089,16 @@ def main():
     ids_retro = {m["id"] for m in commences_sans}
     a_predire = ouverts + commences_sans
 
+    # Alignements DailyFaceoff (trios, PP, gardiens) des équipes de ce soir. Le job live
+    # les rafraîchit aux 30 min dans docs/live.json ; la page prend le plus récent.
+    align = None
+    if AVEC_ALIGNEMENTS and matchs:
+        try:
+            align = alignements.alignements_soir([t for m in matchs for t in (m["home"], m["away"])])
+            print(f"  alignements : {len(align['equipes'])} équipes, {len(align['gardiens'])} gardiens")
+        except Exception as ex:  # noqa: BLE001
+            print(f"  alignements : {str(ex)[:120]}")
+
     if a_predire:
         games, entries, noms = predire(jour, a_predire, a_predire[0]["season"])
         # Rétro : on ajoute seulement ce qui manque (joueurs et/ou match), jamais
@@ -1008,6 +1125,10 @@ def main():
         appliquer_marche(entries, games)
         # Combo : le champion de chaque catégorie (ce soir et les matchs de ce soir déjà partis)
         ajouter_combo(entries + entries_retro, games + games_retro, labo.get("principales"))
+        # % du soir : la principale ajustée à l'alignement (noté au Suivi comme une version)
+        if align:
+            n_s = ajouter_soir(entries, align, COMBO if labo.get("principales") else principale)
+            print(f"  % du soir : {n_s} joueurs ajustés à l'alignement")
         # Blessures du jour (ESPN) : on marque, on ne retire pas
         if AVEC_ALIGNEMENTS and entries:
             n_b = alignements.annoter(entries, alignements.blessures())
@@ -1023,16 +1144,6 @@ def main():
             grader()   # ceux qui sont déjà finis sont gradés tout de suite
             existant = lire_json(f_jour, existant)
 
-    # Alignements DailyFaceoff (trios, PP, gardiens) des équipes de ce soir. Le job live
-    # les rafraîchit aux 30 min dans docs/live.json ; la page prend le plus récent.
-    align = None
-    if AVEC_ALIGNEMENTS and matchs:
-        try:
-            align = alignements.alignements_soir([t for m in matchs for t in (m["home"], m["away"])])
-            print(f"  alignements : {len(align['equipes'])} équipes, {len(align['gardiens'])} gardiens")
-        except Exception as ex:  # noqa: BLE001
-            print(f"  alignements : {str(ex)[:120]}")
-
     historique = [h for h in (lire_json(f, None) for f in sorted(DIR_PRED.glob("*.json"))) if h]
     quota = lire_json(SORTIE, {}).get("cotes_quota")
     if AVEC_COTES:
@@ -1044,22 +1155,23 @@ def main():
         "genere": datetime.now(timezone.utc).isoformat(timespec="minutes"),
         "date": jour,
         "versions": [{"id": COMBO, "desc": "Le champion de chaque catégorie : " + ", ".join(
-                         f"{c} {v}" for c, v in (labo.get("principales") or {}).items())}] +
-                    [{"id": v, "desc": s["desc"], "cree": s.get("cree"), "juge_depuis": s.get("juge_depuis")}
-                     for v, s in VERSIONS.items()],
+                         f"{c} {v}" for c, v in (labo.get("principales") or {}).items())},
+                     {"id": SOIR, "desc": "La principale ajustée à l'alignement DailyFaceoff du soir : temps de glace "
+                                          "selon le trio, unité de PP, gardien adverse (poids fixés d'avance)"}] +
+                    [{"id": v, "desc": s["desc"], "cree": s.get("cree"), "juge_depuis": s.get("juge_depuis"),
+                      "cat": s.get("cat")} for v, s in VERSIONS.items()],
         "principale": COMBO if labo.get("principales") else principale,
         "principales": labo.get("principales"),
         "alignements": align,
         "matchs": matchs,
         "games": sans_features(existant["games"]),
         "joueurs": allege(existant["entries"]),
-        "stats": resumer(historique, [COMBO] + list(VERSIONS), {v: s.get("juge_depuis") for v, s in VERSIONS.items()}),
+        "stats": resumer(historique, [COMBO, SOIR] + list(VERSIONS), {v: s.get("juge_depuis") for v, s in VERSIONS.items()}),
         "cotes_quota": quota,
-        "labo": {k: labo.get(k) for k in ("journal", "patterns", "donnees", "dernier_tuning", "generation",
-                                          "classement", "generations", "promos", "attente", "retirees",
-                                          "principales", "classement_cat")} | {
-            "versions": [{k: v.get(k) for k in ("id", "cree", "desc", "retiree", "generation", "base", "params")}
-                         for v in labo.get("versions", [])]},
+        "labo": {k: labo.get(k) for k in ("journal", "patterns", "donnees", "principales", "recalcul",
+                                          "prochain_recalcul", "dernier_recalcul")} | {
+            "versions": [{k: v.get(k) for k in ("id", "cat", "cree", "desc", "retiree", "base", "rapport")}
+                         for v in labo.get("versions", []) if v.get("cat")]},
     })
     print(f"{jour}: {len(matchs)} matchs, {len(existant['entries'])} joueurs, cotes={'oui' if AVEC_COTES else 'non'}")
 

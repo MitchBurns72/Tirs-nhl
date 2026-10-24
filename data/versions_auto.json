@@ -98,7 +98,7 @@
     "scale_passes": 0.96
    },
    "desc": "Tuner : raffine v2.2. Tirs (1+ à 4+) : rien de mieux qui tient en validation (+0.4 %) · But : rien de mieux qui tient en validation (+0.2 %) · Passe : 0.5 % mieux en validation · Matchs : rien de mieux qui tient en validation (-1.3 %)",
-   "retiree": false,
+   "retiree": true,
    "ecart": 0.0086,
    "juge_depuis": "2026-10-15"
   },
@@ -120,7 +120,7 @@
     "scale_passes": 0.95
    },
    "desc": "Calibreur : v2.2 recalibré (échelle, dispersion, biais). Tirs (1+ à 4+) 0.0 % mieux en validation · Passe 0.7 % mieux en validation",
-   "retiree": false,
+   "retiree": true,
    "ecart": 0.0202,
    "juge_depuis": "2026-10-15"
   },
@@ -140,7 +140,7 @@
     "w_mod_match": 0.3
    },
    "desc": "Expérience : v2.2 perd contre v1, alors on coupe les ajouts v2 à 40 % pour voir si c'est eux qui nuisent : w_att 0.5→0.2, k_pp 1→0.4, pen_exp 1→0.4, score_s 0.12→0.048, k_pp_passes 1.5→0.6",
-   "retiree": false,
+   "retiree": true,
    "ecart": 0.007,
    "juge_depuis": null
   },
@@ -162,7 +162,7 @@
     "prior_toi_exp": 0.2204
    },
    "desc": "Exploratrice : grosse mutation de v2.2 : w_l10 1.5→0.505, vs_reg_gp 12→31.1, pen_exp 1→2, prior_toi_exp 0→0.22, opp_reg_gp 15→6.24, cal_a 1→1.47, m_w_l10 1.5→4",
-   "retiree": false,
+   "retiree": true,
    "ecart": 0.0148,
    "juge_depuis": null
   },
@@ -185,12 +185,126 @@
     "scale_match": 0.9839
    },
    "desc": "Radicale : saut loin de v2.2 : w_l10 1.5→1.28, vs_reg_gp 12→20.2, k_pp 1→1.53, scale_tirs 1→1.11, cal_pa_b 0→0.261, cal_pa_a 1→1.11, m_w_prev 0.5→0.214, scale_match 1→0.984",
-   "retiree": false,
+   "retiree": true,
    "ecart": 0.0338,
    "juge_depuis": null
+  },
+  {
+   "id": "but_v5",
+   "cat": "but",
+   "famille": "v2",
+   "cree": "2026-10-24",
+   "juge_depuis": "2026-10-24",
+   "base": "v1",
+   "params": {
+    "w_l10": 1.0125,
+    "w_prev": 0.4375,
+    "pseudo_min": 159.72000000000003,
+    "opp_reg_gp": 36.864000000000004,
+    "home": 0.99,
+    "away": 0.9299999999999999,
+    "b2b": 0.8699999999999999,
+    "vs_reg_gp": 24.0,
+    "sh_pseudo_tirs": 225.28000000000003,
+    "sv_reg_gp": 60,
+    "k_pp": 0.4,
+    "w_att": 0.0,
+    "pen_exp": 0.0,
+    "score_s": 0.0,
+    "k_pp_passes": 0.0,
+    "w_mod_joueur": 1.0,
+    "w_mod_match": 1.0,
+    "prior_toi_exp": 0.6144000000000003,
+    "cal_bu_a": 1.01,
+    "cal_bu_b": 0.01,
+    "scale_tirs_D": 0.95,
+    "scale_tirs": 1.02
+   },
+   "retiree": false,
+   "rapport": {
+    "cat": "but",
+    "champion": "v1",
+    "gain_honnete": 0.007066639668787975,
+    "n_val": 1472,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.004659938766436641,
+    "msg": "but_v5 remplace v1 : +0.71 % sur les soirs jamais vus, +0.47 % sur toute la saison (optimiste)"
+   },
+   "desc": "But : scan du 2026-10-24 sur toute la saison. +0.71 % vs v1 sur des soirs jamais vus pendant le scan."
+  },
+  {
+   "id": "passe_v5",
+   "cat": "passe",
+   "famille": "v2",
+   "cree": "2026-10-24",
+   "juge_depuis": "2026-10-24",
+   "base": "v1",
+   "params": {
+    "w_l10": 0.5,
+    "w_prev": 0.7884800000000001,
+    "toi_recent": 0.7600000000000001,
+    "pa_pseudo_min": 412.50000000000006,
+    "k_pp": 0.0,
+    "w_att": 0.0,
+    "pen_exp": 0.0,
+    "score_s": 0.0,
+    "k_pp_passes": 0.8000000000000002,
+    "w_mod_joueur": 1.0,
+    "w_mod_match": 1.0,
+    "cal_pa_a": 1.06,
+    "cal_pa_b": 0.01,
+    "scale_passes": 0.95
+   },
+   "retiree": false,
+   "rapport": {
+    "cat": "passe",
+    "champion": "v1",
+    "gain_honnete": 0.017668429018982443,
+    "n_val": 1472,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.010958570562215185,
+    "msg": "passe_v5 remplace v1 : +1.77 % sur les soirs jamais vus, +1.10 % sur toute la saison (optimiste)"
+   },
+   "desc": "Passe : scan du 2026-10-24 sur toute la saison. +1.77 % vs v1 sur des soirs jamais vus pendant le scan."
   }
  ],
  "journal": [
+  {
+   "date": "2026-10-24",
+   "msg": "Totaux 5.5 / 6.5 : v1 reste : la meilleure recette trouvée fait -7.88 % sur les soirs jamais vus"
+  },
+  {
+   "date": "2026-10-24",
+   "msg": "Victoire : v1 reste : la meilleure recette trouvée fait -2.01 % sur les soirs jamais vus"
+  },
+  {
+   "date": "2026-10-24",
+   "msg": "Passe : passe_v5 remplace v1 : +1.77 % sur les soirs jamais vus, +1.10 % sur toute la saison (optimiste)"
+  },
+  {
+   "date": "2026-10-24",
+   "msg": "But : but_v5 remplace v1 : +0.71 % sur les soirs jamais vus, +0.47 % sur toute la saison (optimiste)"
+  },
+  {
+   "date": "2026-10-24",
+   "msg": "Tirs 4+ : v1 reste : la meilleure recette trouvée fait -0.02 % sur les soirs jamais vus"
+  },
+  {
+   "date": "2026-10-24",
+   "msg": "Tirs 3+ : v1 reste : la meilleure recette trouvée fait -0.15 % sur les soirs jamais vus"
+  },
+  {
+   "date": "2026-10-24",
+   "msg": "Tirs 2+ : v1 reste : la meilleure recette trouvée fait -0.37 % sur les soirs jamais vus"
+  },
+  {
+   "date": "2026-10-24",
+   "msg": "Tirs 1+ : v1 reste : la meilleure recette trouvée fait -0.22 % sur les soirs jamais vus"
+  },
+  {
+   "date": "2026-10-24",
+   "msg": "Nouveau moteur : une recette par catégorie (tirs 1+, 2+, 3+, 4+, but, passe, victoire, totaux), recalculée chaque semaine avec toute la saison. Départ : v1 partout."
+  },
   {
    "date": "2026-10-23",
    "msg": "va.1 (scan complet des paramètres) rejoint la génération 4."
@@ -213,546 +327,109 @@
   {
    "marche": "passes",
    "segment": "Début de saison (moins de 5 matchs)",
-   "n": 3032,
-   "predit": 0.2526491094986807,
-   "reel": 0.2312005277044855,
-   "z": -2.7806565421706675,
+   "n": 3036,
+   "predit": 0.2525493741765481,
+   "reel": 0.23089591567852438,
+   "z": -2.809427924559005,
    "sens": "surestimé"
   }
  ],
  "donnees": {
-  "joueurs": 5742,
-  "matchs": 167
+  "joueurs": 5774,
+  "matchs": 168
  },
  "dernier_tuning": "2026-10-21",
- "maj": "2026-10-24T18:28+00:00",
- "generation": {
-  "n": 4,
-  "membres": [
-   "v2.2",
-   "v4.1",
-   "v4.2",
-   "v4.3",
-   "v4.4",
-   "v4.5",
-   "va.1"
-  ],
-  "parent": "v2.2",
-  "depuis": null,
-  "debut": "2026-10-23"
- },
- "classement": [
-  {
-   "id": "v4.3",
-   "n": 33936,
-   "n_tirs": 5570,
-   "soirs": 25,
-   "gain": -0.0007422413053215059,
-   "z": -1.103672442144344,
-   "brier": 0.15219408591584202,
-   "n_m": 501,
-   "gain_m": 0.003945486813145287,
-   "z_m": 0.7884057884264566,
-   "soirs_direct": 1,
-   "gain_direct": 0.00736821734073048,
-   "juge_depuis": null
-  },
-  {
-   "id": "v4.2",
-   "n": 11844,
-   "n_tirs": 1888,
-   "soirs": 9,
-   "gain": -0.002367863372505959,
-   "z": -1.0807124344653383,
-   "brier": 0.15073559400962497,
-   "n_m": 180,
-   "gain_m": 0.00403165980706508,
-   "z_m": 0.5357421284003985,
-   "soirs_direct": 1,
-   "gain_direct": 0.010743375382021927,
-   "juge_depuis": "2026-10-15"
-  },
-  {
-   "id": "v4.1",
-   "n": 11844,
-   "n_tirs": 1888,
-   "soirs": 9,
-   "gain": -0.00301286065738395,
-   "z": -1.2403229712449122,
-   "brier": 0.15083258838905725,
-   "n_m": 180,
-   "gain_m": 0.00403165980706508,
-   "z_m": 0.5357421284003985,
-   "soirs_direct": 1,
-   "gain_direct": 0.007012349991404963,
-   "juge_depuis": "2026-10-15"
-  },
-  {
-   "id": "v4.4",
-   "n": 33936,
-   "n_tirs": 5570,
-   "soirs": 25,
-   "gain": -0.003882376270110302,
-   "z": -2.7149590926478866,
-   "brier": 0.15267164142503592,
-   "n_m": 501,
-   "gain_m": -0.01250705670822707,
-   "z_m": -0.9105029043828679,
-   "soirs_direct": 1,
-   "gain_direct": 0.0166389306482547,
-   "juge_depuis": null
-  },
-  {
-   "id": "v2.2",
-   "n": 33936,
-   "n_tirs": 5570,
-   "soirs": 25,
-   "gain": -0.004152297189288813,
-   "z": -3.4751689470849865,
-   "brier": 0.15271269132366952,
-   "n_m": 501,
-   "gain_m": 0.003945486813145287,
-   "z_m": 0.7884057884264566,
-   "soirs_direct": null,
-   "gain_direct": null,
-   "juge_depuis": null
-  },
-  {
-   "id": "v4.5",
-   "n": 33936,
-   "n_tirs": 5570,
-   "soirs": 25,
-   "gain": -0.024110187392054342,
-   "z": -10.491979779524213,
-   "brier": 0.15574791131424043,
-   "n_m": 501,
-   "gain_m": -0.004302408742765734,
-   "z_m": -0.47897225296176604,
-   "soirs_direct": 1,
-   "gain_direct": -0.003561655126647104,
-   "juge_depuis": null
-  },
-  {
-   "id": "va.1",
-   "n": 0,
-   "n_tirs": 0,
-   "soirs": 0,
-   "gain": null,
-   "z": null,
-   "brier": null,
-   "n_m": 0,
-   "gain_m": null,
-   "z_m": null,
-   "soirs_direct": 1,
-   "gain_direct": 0.008389237936000708,
-   "juge_depuis": "2026-10-24"
-  }
- ],
+ "maj": "2026-10-24T21:26+00:00",
  "retirees": [
   "v2.1",
+  "v2.2",
   "v2.3",
   "v2.4",
-  "v2.5"
+  "v2.5",
+  "va.1"
  ],
- "generations": [
-  {
-   "n": 3,
-   "fin": "2026-10-23",
-   "gagnant": "v2.2",
-   "interrompue": true,
-   "gain": null,
-   "z": null,
-   "classement": [
-    {
-     "id": "v2.2",
-     "gain": -0.009224944446917625,
-     "z": null,
-     "gain_m": 0.010566181240811188
-    },
-    {
-     "id": "v3.1",
-     "gain": -0.009153481319616347,
-     "z": null,
-     "gain_m": 0.010205697756251656
-    },
-    {
-     "id": "v3.2",
-     "gain": -0.009236227802824463,
-     "z": null,
-     "gain_m": 0.009735669206641632
-    },
-    {
-     "id": "v3.3",
-     "gain": -0.00937041284982076,
-     "z": null,
-     "gain_m": 0.01178085441924214
-    },
-    {
-     "id": "v3.4",
-     "gain": -0.009164195973791495,
-     "z": null,
-     "gain_m": 0.011664245007065865
-    },
-    {
-     "id": "v3.5",
-     "gain": -0.008433302273468531,
-     "z": null,
-     "gain_m": 0.009616170610007874
-    }
-   ]
-  },
-  {
-   "n": 2,
-   "fin": "2026-10-21",
-   "gagnant": "v2.2",
-   "gain": -0.0038427634485190534,
-   "z": -3.124981931420731,
-   "classement": [
-    {
-     "id": "v2.2",
-     "gain": -0.0038427634485190534,
-     "z": -3.124981931420731,
-     "gain_m": 0.0034525578482363685
-    },
-    {
-     "id": "v2.1",
-     "gain": -0.003909276032603074,
-     "z": -3.2952409444174293,
-     "gain_m": 0.0028252853758933432
-    },
-    {
-     "id": "v2.3",
-     "gain": -0.006014595148002128,
-     "z": -3.97153041345547,
-     "gain_m": 0.0017111327792977726
-    },
-    {
-     "id": "v2.4",
-     "gain": -0.006824924986356116,
-     "z": -6.133855437455283,
-     "gain_m": -0.003279882018704197
-    },
-    {
-     "id": "v2.5",
-     "gain": -0.007659820585562738,
-     "z": -5.442542660932155,
-     "gain_m": 0.0028252853758933432
-    }
-   ]
-  }
- ],
- "attente": {
-  "n_tirs": 0,
-  "soirs": 0,
-  "fin": "2026-10-30",
-  "soirs_direct": 1,
-  "min_direct": 3
+ "moteur": 5,
+ "principales": {
+  "tirs1": "v1",
+  "tirs2": "v1",
+  "tirs3": "v1",
+  "tirs4": "v1",
+  "but": "but_v5",
+  "passe": "passe_v5",
+  "vic": "v1",
+  "tot": "v1"
  },
- "moteur": 3,
- "classement_cat": {
-  "tirs": [
+ "dernier_recalcul": "2026-10-24",
+ "recalcul": {
+  "date": "2026-10-24",
+  "rapports": [
    {
-    "id": "v1",
-    "n": 22796,
-    "soirs": 25,
-    "gain": 0.0,
-    "z": null
+    "cat": "tirs1",
+    "champion": "v1",
+    "gain_honnete": -0.0021788355913433984,
+    "n_val": 1644,
+    "coupe": "2026-10-17",
+    "msg": "v1 reste : la meilleure recette trouvée fait -0.22 % sur les soirs jamais vus"
    },
    {
-    "id": "v4.3",
-    "n": 22796,
-    "soirs": 25,
-    "gain": -0.000994294760671707,
-    "z": -1.0163498511422215
+    "cat": "tirs2",
+    "champion": "v1",
+    "gain_honnete": -0.003700424604448512,
+    "n_val": 1472,
+    "coupe": "2026-10-17",
+    "msg": "v1 reste : la meilleure recette trouvée fait -0.37 % sur les soirs jamais vus"
    },
    {
-    "id": "v4.2",
-    "n": 8068,
-    "soirs": 9,
-    "gain": -0.004402830648291508,
-    "z": -1.544382778961914
+    "cat": "tirs3",
+    "champion": "v1",
+    "gain_honnete": -0.0015339777260099375,
+    "n_val": 1644,
+    "coupe": "2026-10-17",
+    "msg": "v1 reste : la meilleure recette trouvée fait -0.15 % sur les soirs jamais vus"
    },
    {
-    "id": "v4.1",
-    "n": 8068,
-    "soirs": 9,
-    "gain": -0.004683250440406123,
-    "z": -1.4331016661077114
+    "cat": "tirs4",
+    "champion": "v1",
+    "gain_honnete": -0.0001978804755797652,
+    "n_val": 1644,
+    "coupe": "2026-10-17",
+    "msg": "v1 reste : la meilleure recette trouvée fait -0.02 % sur les soirs jamais vus"
    },
    {
-    "id": "v2.2",
-    "n": 22796,
-    "soirs": 25,
-    "gain": -0.00517518608113835,
-    "z": -2.9441355306928227
+    "cat": "but",
+    "champion": "v1",
+    "gain_honnete": 0.007066639668787975,
+    "n_val": 1472,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.004659938766436641,
+    "msg": "but_v5 remplace v1 : +0.71 % sur les soirs jamais vus, +0.47 % sur toute la saison (optimiste)"
    },
    {
-    "id": "v4.4",
-    "n": 22796,
-    "soirs": 25,
-    "gain": -0.005282587790253013,
-    "z": -2.6922199020114017
+    "cat": "passe",
+    "champion": "v1",
+    "gain_honnete": 0.017668429018982443,
+    "n_val": 1472,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.010958570562215185,
+    "msg": "passe_v5 remplace v1 : +1.77 % sur les soirs jamais vus, +1.10 % sur toute la saison (optimiste)"
    },
    {
-    "id": "v4.5",
-    "n": 22796,
-    "soirs": 25,
-    "gain": -0.02815124705831779,
-    "z": -9.71454874418863
-   }
-  ],
-  "buts": [
-   {
-    "id": "v4.2",
-    "n": 1888,
-    "soirs": 9,
-    "gain": 0.0013424159011554305,
-    "z": 0.8504191583527102
+    "cat": "vic",
+    "champion": "v1",
+    "gain_honnete": -0.020104251002420595,
+    "n_val": 48,
+    "coupe": "2026-10-17",
+    "msg": "v1 reste : la meilleure recette trouvée fait -2.01 % sur les soirs jamais vus"
    },
    {
-    "id": "v4.1",
-    "n": 1888,
-    "soirs": 9,
-    "gain": 0.00038767397218298803,
-    "z": 0.19106507286385233
-   },
-   {
-    "id": "v1",
-    "n": 5570,
-    "soirs": 25,
-    "gain": 0.0,
-    "z": null
-   },
-   {
-    "id": "v4.3",
-    "n": 5570,
-    "soirs": 25,
-    "gain": -0.0005794873356915498,
-    "z": -1.1158425995137267
-   },
-   {
-    "id": "v2.2",
-    "n": 5570,
-    "soirs": 25,
-    "gain": -0.0022664963264589773,
-    "z": -1.7703155270738955
-   },
-   {
-    "id": "v4.4",
-    "n": 5570,
-    "soirs": 25,
-    "gain": -0.0029667972356322188,
-    "z": -2.0030532269024217
-   },
-   {
-    "id": "v4.5",
-    "n": 5570,
-    "soirs": 25,
-    "gain": -0.01113599294686583,
-    "z": -3.653182600652733
-   }
-  ],
-  "passes": [
-   {
-    "id": "v4.2",
-    "n": 1888,
-    "soirs": 9,
-    "gain": 0.0026880990482701012,
-    "z": 0.9472389827672411
-   },
-   {
-    "id": "v4.1",
-    "n": 1888,
-    "soirs": 9,
-    "gain": 0.0008877893163151618,
-    "z": 0.3542867842240005
-   },
-   {
-    "id": "v4.4",
-    "n": 5570,
-    "soirs": 25,
-    "gain": 0.0005437850369918443,
-    "z": 0.2227218477795713
-   },
-   {
-    "id": "v4.3",
-    "n": 5570,
-    "soirs": 25,
-    "gain": 5.594781383121798e-05,
-    "z": 0.050924255361121905
-   },
-   {
-    "id": "v1",
-    "n": 5570,
-    "soirs": 25,
-    "gain": 0.0,
-    "z": null
-   },
-   {
-    "id": "v2.2",
-    "n": 5570,
-    "soirs": 25,
-    "gain": -0.001764386338896752,
-    "z": -0.7557006812754352
-   },
-   {
-    "id": "v4.5",
-    "n": 5570,
-    "soirs": 25,
-    "gain": -0.018514438617714256,
-    "z": -3.3549075297864444
-   }
-  ],
-  "victoire": [
-   {
-    "id": "v4.1",
-    "n": 60,
-    "soirs": 9,
-    "gain": 0.02806056199904457,
-    "z": 1.347345595835359
-   },
-   {
-    "id": "v4.2",
-    "n": 60,
-    "soirs": 9,
-    "gain": 0.02806056199904457,
-    "z": 1.347345595835359
-   },
-   {
-    "id": "v2.2",
-    "n": 167,
-    "soirs": 25,
-    "gain": 0.007885135003671434,
-    "z": 0.8241824480473247
-   },
-   {
-    "id": "v4.3",
-    "n": 167,
-    "soirs": 25,
-    "gain": 0.007885135003671434,
-    "z": 0.8241824480473247
-   },
-   {
-    "id": "v1",
-    "n": 167,
-    "soirs": 25,
-    "gain": 0.0,
-    "z": null
-   },
-   {
-    "id": "v4.5",
-    "n": 167,
-    "soirs": 25,
-    "gain": -0.0016757806073333613,
-    "z": -0.13582474326014085
-   },
-   {
-    "id": "v4.4",
-    "n": 167,
-    "soirs": 25,
-    "gain": -0.01390349894034922,
-    "z": -0.6382423383164404
-   }
-  ],
-  "totaux": [
-   {
-    "id": "v2.2",
-    "n": 334,
-    "soirs": 25,
-    "gain": 0.0020707700277435926,
-    "z": 0.27861200131803654
-   },
-   {
-    "id": "v4.3",
-    "n": 334,
-    "soirs": 25,
-    "gain": 0.0020707700277435926,
-    "z": 0.27861200131803654
-   },
-   {
-    "id": "v1",
-    "n": 334,
-    "soirs": 25,
-    "gain": 0.0,
-    "z": null
-   },
-   {
-    "id": "v4.5",
-    "n": 334,
-    "soirs": 25,
-    "gain": -0.0055523132053880795,
-    "z": -0.40838630237134105
-   },
-   {
-    "id": "v4.1",
-    "n": 120,
-    "soirs": 9,
-    "gain": -0.008917496077150922,
-    "z": -1.026293290262049
-   },
-   {
-    "id": "v4.2",
-    "n": 120,
-    "soirs": 9,
-    "gain": -0.008917496077150922,
-    "z": -1.026293290262049
-   },
-   {
-    "id": "v4.4",
-    "n": 334,
-    "soirs": 25,
-    "gain": -0.011842547197277904,
-    "z": -0.8057703264924561
+    "cat": "tot",
+    "champion": "v1",
+    "gain_honnete": -0.07880363472968428,
+    "n_val": 96,
+    "coupe": "2026-10-17",
+    "msg": "v1 reste : la meilleure recette trouvée fait -7.88 % sur les soirs jamais vus"
    }
   ]
  },
- "promos": {
-  "buts": {
-   "candidat": "v4.2",
-   "contre": "v1",
-   "n": 1888,
-   "gain": 0.0013424159011554305,
-   "z": 0.8504191583527102,
-   "solide": false,
-   "direct_n": 67,
-   "direct_gain": 4.905995282024566e-05
-  },
-  "passes": {
-   "candidat": "v4.2",
-   "contre": "v1",
-   "n": 1888,
-   "gain": 0.0026880990482701012,
-   "z": 0.9472389827672411,
-   "solide": false,
-   "direct_n": 67,
-   "direct_gain": -0.0016706091170073446
-  },
-  "victoire": {
-   "candidat": "v2.2",
-   "contre": "v1",
-   "n": 167,
-   "gain": 0.007885135003671434,
-   "z": 0.8241824480473247,
-   "solide": false,
-   "direct_n": null,
-   "direct_gain": null
-  },
-  "totaux": {
-   "candidat": "v2.2",
-   "contre": "v1",
-   "n": 334,
-   "gain": 0.0020707700277435926,
-   "z": 0.27861200131803654,
-   "solide": false,
-   "direct_n": null,
-   "direct_gain": null
-  }
- },
- "principales": {
-  "tirs": "v1",
-  "buts": "v1",
-  "passes": "v1",
-  "victoire": "v1",
-  "totaux": "v1"
- }
+ "prochain_recalcul": "2026-10-31"
 }

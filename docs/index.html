@@ -245,7 +245,7 @@ table.serre{font-size:11.5px} table.serre th,table.serre td{padding:5px 3px} tab
 .sep{grid-column:1 / -1;padding:8px 12px;background:var(--chip);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
 
 /* Projection par l'alignement + gardiens + alignements */
-.proj{display:flex;flex-direction:column;gap:10px;padding:12px;border-radius:12px;background:var(--surface2);border:1px solid var(--line)}
+.projm{display:flex;flex-direction:column;gap:10px;padding:12px;border-radius:12px;background:var(--surface2);border:1px solid var(--line)}
 .pgrid{display:grid;grid-template-columns:minmax(0,1fr) 64px 64px;gap:2px 8px;align-items:baseline}
 .pab{font:800 15px/1 var(--f-display);text-align:center;color:var(--muted)}
 .plbl{font-size:12.5px;color:var(--muted)}
@@ -258,7 +258,7 @@ table.serre{font-size:11.5px} table.serre th,table.serre td{padding:5px 3px} tab
 .pscore b{font:800 26px/1 var(--f-display)}
 .pscore small{font-weight:700;color:var(--ice)}
 .pscore .ps{flex-basis:100%;text-align:left}
-.proj .aide{margin:0;font-size:11.5px;color:var(--muted)}
+.projm .aide{margin:0;font-size:11.5px;color:var(--muted)}
 .gards{display:grid;grid-template-columns:1fr;gap:6px}
 .gard{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:8px;align-items:center;font-size:13px}
 .gard small{color:var(--muted)}
@@ -282,6 +282,14 @@ details.aln summary{cursor:pointer;font-size:12.5px;color:var(--muted);font-weig
 .aj.bless{opacity:.55}
 .pp{font-size:12px;color:var(--muted);margin-top:4px}
 .pp b{color:var(--goal)}
+.soir{margin-top:6px;text-align:right;font-size:12px;color:var(--muted);line-height:1.25}
+.soir b{font:800 18px/1 var(--f-display);color:var(--ink)}
+.soir small{font-weight:700}
+.soir.haut small{color:var(--good)} .soir.bas small{color:var(--bad)}
+.soir span{display:block;font-size:10.5px}
+.soir em{display:block;font-style:normal;font-size:9.5px;font-weight:700;color:var(--warn)}
+.soir em.conf{color:var(--good)}
+.soir.absent{color:var(--bad);font-weight:700;max-width:110px;margin-left:auto}
 [hidden]{display:none!important}
 </style>
 </head>
@@ -478,6 +486,71 @@ function saisonHTML(j, m){
     <span class="proj" title="Son rythme par match joué, sur les matchs qui restent à son équipe">Projection fin de saison (${s.max_pj} matchs possibles) : <b>${p.b}</b> B, <b>${p.a}</b> A, <b>${p.pts}</b> Pts, <b>${p.tirs}</b> tirs</span></div>`;
 }
 
+// ---- % du soir : le % de la version principale ajusté à l'alignement du soir ----------
+// Trois ajustements, poids fixés d'avance (pas encore validés : c'est ce que le Suivi va dire) :
+//  - temps de glace : moitié son TOI projeté, moitié le TOI typique de son trio/paire de ce soir
+//  - avantage numérique : PP1 / PP2 / aucune unité vs le PP qu'on lui projetait
+//    (une minute de PP vaut environ 2 minutes à 5 c. 5 pour les tirs, 2.5 pour les passes)
+//  - gardien adverse annoncé (buts seulement) : son % d'arrêts vs la moyenne de ligue, à moitié
+const TOI_TRIO = { f1: 19.0, f2: 16.5, f3: 14.0, f4: 11.0, d1: 23.0, d2: 20.0, d3: 17.0 };
+const PP_UNITE = { pp1: 2.9, pp2: 1.3, aucune: 0.15 };
+const SV_LIGUE = 0.903;
+function nbAuMoins(lam, s, k = 15){
+  // P(X >= s), binomiale négative de moyenne lam (même dispersion que v1)
+  const q = lam / (lam + k);
+  let p = Math.pow(1 - q, k), cumul = p;
+  for (let n = 1; n < s; n++){ p *= (n - 1 + k) / n * q; cumul += p; }
+  return Math.max(0, 1 - cumul);
+}
+function soirJoueur(j){
+  const A = alignDuSoir(), al = A?.equipes?.[j.team];
+  if (!al) return null;
+  const nom = Object.keys(al.joueurs).find(n => nrm(n) === nrm(j.name));
+  const slot = EV.find(g => (al.groupes[g] || []).some(n => nrm(n) === nrm(j.name)));
+  if (!nom || !slot || al.joueurs[nom]?.inj) return { absent: true };
+  const unite = (al.groupes.pp1 || []).some(n => nrm(n) === nrm(j.name)) ? "pp1" : (al.groupes.pp2 || []).some(n => nrm(n) === nrm(j.name)) ? "pp2" : "aucune";
+  const vp = D.principale;
+  const t = pred(j, vp, "tirs"), b = pred(j, vp, "buts"), a = pred(j, vp, "passes");
+  if (!t) return null;
+  // TOI et PP projetés : on les prend dans le détail de n'importe quelle version qui les a
+  const det = Object.values(j.preds).map(pv => pv?.tirs?.detail).filter(Boolean);
+  const toi = det.find(d => d.toi)?.toi, pp = det.find(d => d.pp != null)?.pp;
+  if (!toi) return null;
+  const toiSoir = 0.5 * toi + 0.5 * TOI_TRIO[slot];
+  const fToi = toiSoir / toi;
+  const dPP = pp != null ? PP_UNITE[unite] - pp : 0;
+  const borne = (x) => Math.min(1.5, Math.max(0.6, x));
+  const fT = borne(fToi * (1 + dPP / toiSoir)), fA = borne(fToi * (1 + 1.5 * dPP / toiSoir));
+  const g = A.gardiens?.[j.opp];
+  const sv = g?.sv ? parseFloat(g.sv) : null;
+  const fG = sv ? Math.min(1.15, Math.max(0.85, Math.sqrt((1 - sv) / (1 - SV_LIGUE)))) : 1;
+  const out = { slot, unite, fT, fA, fG, gardien: g?.nom, sv, toiSoir };
+  for (const m of ["tirs1", "tirs", "tirs3", "tirs4"]) out[m] = nbAuMoins(t.lam * fT, SEUIL[m]);
+  if (b) out.buts = 1 - Math.exp(-b.lam * fT * fG);
+  if (a) out.passes = 1 - Math.exp(-a.lam * fA);
+  return out;
+}
+// Alignement « confirmé » : publié aujourd'hui par un journaliste (pas le trio du dernier match)
+function alignConfirme(team){
+  const al = alignDuSoir()?.equipes?.[team];
+  if (!al?.maj) return false;
+  const jourLocal = new Date(al.maj).toLocaleDateString("en-CA", { timeZone: "America/Toronto" });
+  return jourLocal === D.date && !/^last game/i.test(al.source || "");
+}
+function soirHTML(j, m){
+  const s = soirJoueur(j);
+  if (!s) return "";
+  if (s.absent) return `<div class="soir absent">Pas dans l'alignement de ce soir</div>`;
+  const p = s[m];
+  if (p == null) return "";
+  const d = Math.round(p * 100) - pct(j.pr.p);
+  const raisons = [NOM_GROUPE[s.slot], s.unite !== "aucune" ? s.unite.toUpperCase() : "pas de PP",
+                   m === "buts" && s.gardien ? `${s.gardien} ${s.sv ? s.sv.toFixed(3).replace(/^0/, "") : ""}` : ""].filter(Boolean);
+  const conf = alignConfirme(j.team);
+  return `<div class="soir ${d > 0 ? "haut" : d < 0 ? "bas" : ""}" title="Ajusté à l'alignement DailyFaceoff : temps de glace ${s.toiSoir.toFixed(1)} min, PP, gardien adverse">
+    <em class="${conf ? "conf" : ""}">${conf ? "Alignement confirmé" : "Avant l'alignement"}</em>Soir <b>${pct(p)}%</b> <small>${d > 0 ? "+" : ""}${d}</small><span>${raisons.join(" · ")}</span></div>`;
+}
+
 function pred(j, v, m){
   const pv = j.preds[v];
   if (!pv) return null;
@@ -601,14 +674,30 @@ function construireFiltres(){
   sel.innerHTML = `<option value="all">Tous les matchs (${D.matchs.length})</option>` +
     D.matchs.map(m => `<option value="${m.id}">${m.away} @ ${m.home} · ${heure(m.start)}</option>`).join("");
   sel.value = S.match;
-  // La principale d'abord, marquée ; les autres sont des versions en essai
-  const vs = D.versions.slice().sort((a, b) => (b.id === D.principale) - (a.id === D.principale));
-  document.querySelectorAll(".f-ver").forEach(el => el.innerHTML = vs.map(v =>
-    `<button class="chip ${v.id === D.principale ? "princ" : ""}" data-v="${v.id}" aria-pressed="${v.id === S.ver}" title="${v.desc}">${v.id}${v.id === D.principale ? " · principale" : ""}</button>`).join(""));
+  majChips();
+}
+// Chaque version de catégorie ne prédit que SON marché : on montre seulement les versions
+// qui ont le marché affiché (Joueurs) ou des matchs (Matchs). La principale d'abord.
+function versionsDispo(section){
+  const m = marcheCourant();
+  const a = (v) => section === "p-matchs" ? D.games.some(g => g.preds?.[v]?.p_home != null || g.preds?.[v]?.p_over)
+                                           : D.joueurs.some(j => j.preds?.[v]?.[m] || (m === "tirs" && j.preds?.[v]?.p != null));
+  return D.versions.filter(v => a(v.id)).sort((x, y) => (y.id === D.principale) - (x.id === D.principale));
+}
+function majChips(){
+  document.querySelectorAll(".f-ver").forEach(el => {
+    const section = el.closest("section")?.id;
+    const vs = versionsDispo(section);
+    const actif = vs.some(v => v.id === S.ver) ? S.ver : D.principale;
+    el.innerHTML = vs.map(v =>
+      `<button class="chip ${v.id === D.principale ? "princ" : ""}" data-v="${v.id}" aria-pressed="${v.id === actif}" title="${(v.desc || "").replace(/"/g, "")}">${v.id}${v.id === D.principale ? " · principale" : ""}</button>`).join("");
+  });
 }
 
 function liste(){
-  const v = S.ver, m = marcheCourant();
+  majChips();
+  const m = marcheCourant();
+  const v = versionsDispo("p-joueurs").some(x => x.id === S.ver) ? S.ver : D.principale;
   let js = D.joueurs
     .filter(j => S.match === "all" || String(j.gameId) === S.match)
     .filter(j => S.pos === "all" || j.pos === S.pos)
@@ -643,7 +732,7 @@ function liste(){
     const echelle = estTirs(m) ? 4 : 8;
     const barres = serie.map(x => `<i class="${x >= SEUIL[m] ? "ok" : ""}" style="height:${Math.min(22, 4 + x * echelle)}px"></i>`).join("");
     // Le détail des tirs est le même pour 1+, 2+, 3+ et 4+ (même courbe)
-    const det = estTirs(m) ? pred(j, v, "tirs")?.detail : j.pr.detail;
+    const det = estTirs(m) ? (j.pr.detail || pred(j, v, "tirs")?.detail) : j.pr.detail;
     let fx = "";
     if (det && estTirs(m)) fx = `
         <span>Tirs/60 : <b>${det.rate60.toFixed(1)}</b></span>${det.r_sog != null ? `
@@ -661,7 +750,7 @@ function liste(){
         <span>Patinoire (marqueur) : <b>×${det.f_rink.toFixed(2)}</b></span>` : ""}${det.f_role != null ? `
         <span>Prior selon le rôle : <b>×${det.f_role.toFixed(2)}</b></span>` : ""}`;
     if (det && m === "buts") fx = `
-        <span>Tirs attendus : <b>${pred(j, v, "tirs").lam.toFixed(1)}</b></span>
+        ${pred(j, v, "tirs") ? `<span>Tirs attendus : <b>${pred(j, v, "tirs").lam.toFixed(1)}</b></span>` : ""}
         <span>% de tir régressé : <b>${(det.sh * 100).toFixed(1)} %</b></span>
         <span>Gardiens ${j.opp} : <b>×${det.f_gardien.toFixed(2)}</b></span>${det.pp != null ? `
         <span>PP projeté : <b>${det.pp.toFixed(1)} min</b> (déjà dans les tirs attendus)</span>` : ""}`;
@@ -688,7 +777,7 @@ function liste(){
           ${j.b2b ? '<span class="tag">B2B</span>' : ""}${j.retro ? '<span class="tag" title="Prédit après la mise au jeu, avec seulement les données d\'avant le match">Rétro</span>' : ""}${j.incertain ? '<span class="tag warn">Absent dernier match</span>' : ""}${j.blesse ? `<span class="tag ${/^(out|suspension|injured reserve)/i.test(j.blesse.statut) ? "ko" : "warn"}" title="${(j.blesse.detail || "").replace(/"/g, "")}${j.blesse.retour ? " · retour prévu " + j.blesse.retour : ""}">Blessé (ESPN) : ${j.blesse.statut}</span>` : ""}</div>
       </div>
       <div><div class="pct">${pct(j.pr.p)}<small>%</small></div><div class="lam">${j.pr.lam.toFixed(estTirs(m) ? 1 : 2)} ${att}</div>
-        <div class="jauge" aria-hidden="true"><i style="width:${Math.round(j.pr.p * 100)}%"></i></div></div>
+        <div class="jauge" aria-hidden="true"><i style="width:${Math.round(j.pr.p * 100)}%"></i></div>${soirHTML(j, m)}</div>
       ${saisonHTML(j, m)}
       <div class="sub">
         <span style="display:flex;align-items:flex-end">
@@ -828,7 +917,7 @@ function blocAlignement(g){
   };
   const src = (eq) => eq.source ? `${eq.source.source || "DailyFaceoff"}, ${new Date(eq.source.maj).toLocaleString("fr-CA", { weekday: "short", hour: "2-digit", minute: "2-digit" })}` : "estimé";
   const fourchette = (p) => `${p.tirsPlage[0]}-${p.tirsPlage[1]}`;
-  return `<div class="proj">
+  return `<div class="projm">
       <div class="pgrid">
         <span></span><b class="pab">${g.away}</b><b class="pab">${g.home}</b>
         <span class="plbl">Tirs les plus probables</span><b class="pv">${prA.tirsMode}</b><b class="pv">${prH.tirsMode}</b>
@@ -849,7 +938,7 @@ function blocAlignement(g){
 
 // ---- Matchs --------------------------------------------------------------------
 function matchs(){
-  const v = S.ver;
+  const v = versionsDispo("p-matchs").some(x => x.id === S.ver) ? S.ver : D.principale;
   if (!D.games?.length){
     $("#matchs").innerHTML = `<div class="liste"><div class="vide">Les prédictions de matchs commencent au prochain calcul.</div></div>`;
     return;
@@ -972,124 +1061,89 @@ function blocStats(v){
   return (st.joueurs?.[m] || st.matchs?.[m] || {})[v] || { n: 0 };
 }
 
+// Marché du Suivi -> catégorie de l'algo
+const CAT_DU_MARCHE = { tirs1: "tirs1", tirs: "tirs2", tirs3: "tirs3", tirs4: "tirs4", buts: "but", passes: "passe",
+                        victoire: "vic", total55: "tot", total65: "tot" };
+const NOMS_CAT = { tirs1: "Tirs 1+", tirs2: "Tirs 2+", tirs3: "Tirs 3+", tirs4: "Tirs 4+", but: "But", passe: "Passe",
+                   vic: "Victoire", tot: "Totaux 5.5 / 6.5" };
 function suivi(){
   const st = D.stats || {};
-  const marches = ["tirs1", "tirs", "tirs3", "tirs4", "buts", "passes", "victoire", "total55", "total65"];
-  const note = id => st.global?.[id]?.note ?? -1;
-  const ordre = D.versions.slice().sort((a, b) => (b.id === D.principale) - (a.id === D.principale) || note(b.id) - note(a.id));
-  $("#cards").innerHTML = champions() + ordre.map(({ id, desc }) => {
-    const g = st.global?.[id];
-    const s = blocStats(id);
-    const lignes = marches.map(m => {
-      const x = (st.joueurs?.[m] || st.matchs?.[m] || {})[id] || { n: 0 };
-      return `<tr class="${m === S.smarche ? "sel" : ""}"><td>${NOM_MARCHE[m]}</td><td>${x.n || "–"}</td>
-        <td>${x.n ? x.note.toFixed(1) : "–"}</td><td>${x.n ? pct(x.precision) + " %" : "–"}</td></tr>`;
-    }).join("");
-    let detail = `<div class="vide">Pas encore de résultats pour « ${NOM_MARCHE[S.smarche]} ». Les premiers arrivent le lendemain du premier soir.</div>`;
-    if (s.n){
-      const calib = s.calib.map(c => `<div class="cb">
-          <span>${c.tranche} %</span>
-          <span class="bar"><span class="r" style="width:${pct(c.reel)}%"></span><span class="p" style="left:${pct(c.predit)}%"></span></span>
-          <span style="text-align:right">${pct(c.reel)} % <span style="color:var(--muted)">(${c.n})</span></span>
-        </div>`).join("");
-      const joueur = !!st.joueurs?.[S.smarche];
-      const soirs = s.soirs.slice().reverse().map(x =>
-        `<tr><td>${x.date}</td><td>${x.hits}/${x.n}</td><td>${x.attendu.toFixed(1)}</td></tr>`).join("");
-      detail = `
-        <div class="kv">
-          <div><span class="lbl">Note</span><b>${s.note.toFixed(1)}</b></div>
-          <div><span class="lbl">Brier</span><b>${s.brier.toFixed(3)}</b></div>
-          <div><span class="lbl">${s.mae_total != null ? "Erreur total" : "Réel moyen"}</span><b>${s.mae_total != null ? s.mae_total.toFixed(2) + " b." : pct(s.base) + " %"}</b></div>
-        </div>
-        <div class="calib"><span class="lbl">Calibration · prédit vs réel</span>${calib}
-          <div class="legende"><span><i style="background:var(--ice)"></i>Réel</span><span><i style="background:var(--goal)"></i>Prédit</span><span>(n) = ${joueur ? "joueurs" : "matchs"}</span></div>
-        </div>
-        <div class="tbl"><span class="lbl">${joueur ? "Top 10 par soir" : "Par soir (domicile / plus)"}</span>
-          <table><thead><tr><th>Soir</th><th>Réussis</th><th>Attendus</th></tr></thead><tbody>${soirs}</tbody></table>
-        </div>`;
-    }
-    return `<div class="card ${id === D.principale ? "main" : ""}">
-      <h2>${id}${id === D.principale ? ' <span class="lbl" style="color:var(--goal)">principale</span>' : ""}</h2>
-      <p class="lbl" style="margin:-8px 0 0;text-transform:none;letter-spacing:0;font-weight:500">${desc}${(() => { const vv = D.versions.find(x => x.id === id); return vv && vv.juge_depuis ? ` · <b>notes comptées à partir du ${vv.juge_depuis}</b> (soirs d'avant = entraînement)` : ""; })()}</p>
-      <div><span class="lbl">Note globale</span><div class="note">${g?.note != null ? g.note.toFixed(1) : "–"}<small>/100</small></div></div>
-      <div class="tbl"><table><thead><tr><th>Marché</th><th>Gradées</th><th>Note</th><th>Bon côté</th></tr></thead><tbody>${lignes}</tbody></table></div>
-      <span class="lbl" style="color:var(--ink)">Détail · ${NOM_MARCHE[S.smarche]}</span>
-      ${detail}
+  const m = S.smarche, cat = CAT_DU_MARCHE[m];
+  const P = D.principales || D.labo?.principales || {};
+  const bloc = (id) => (st.joueurs?.[m] || st.matchs?.[m] || {})[id] || { n: 0 };
+  // Toutes les versions qui ont des résultats dans CE marché, meilleure note d'abord
+  const ids = [...new Set([...Object.keys(st.joueurs?.[m] || {}), ...Object.keys(st.matchs?.[m] || {})])].filter(id => bloc(id).n);
+  ids.sort((a, b) => (b === P[cat]) - (a === P[cat]) || bloc(b).note - bloc(a).note);
+  const desc = (id) => (D.versions.find(x => x.id === id) || {}).desc || "";
+  const rap = (D.labo?.recalcul?.rapports || []).find(r => r.cat === cat);
+  const entete = `<div class="card main">
+      <h2>${NOMS_CAT[cat]}</h2>
+      <p class="aide" style="margin:-6px 0 0">Recette en service : <b>${P[cat] || "v1"}</b>${rap ? ` · dernier recalcul (${D.labo.recalcul.date}) : ${rap.msg}` : ""}
+        ${D.labo?.prochain_recalcul ? ` · prochain recalcul le ${D.labo.prochain_recalcul}` : ""}</p>
+      <p class="aide" style="margin:0">Chaque catégorie a sa propre recette, notée seulement sur son marché. Une recette scannée est notée à partir de sa création (avant, elle a tout vu).</p>
     </div>`;
-  }).join("") + (D.cotes_quota ? `<div class="quota">Cotes US : ${D.cotes_quota.source === "SportsGameOdds" ? `SportsGameOdds, ${D.cotes_quota.utilises ?? 0} matchs lus` : `${D.cotes_quota.restants ?? "?"} crédits restants ce mois-ci`}${D.cotes_quota.test != null ? ` · test de clé réussi : ${D.cotes_quota.test} matchs à venir trouvés chez ${D.cotes_quota.source}` : ""}${D.cotes_quota.erreur ? ` · dernière erreur : ${D.cotes_quota.erreur}` : ""}</div>` : "");
+  const cartes = ids.map(id => {
+    const s = bloc(id);
+    const calib = s.calib.map(c => `<div class="cb">
+        <span>${c.tranche} %</span>
+        <span class="bar"><span class="r" style="width:${pct(c.reel)}%"></span><span class="p" style="left:${pct(c.predit)}%"></span></span>
+        <span style="text-align:right">${pct(c.reel)} % <span style="color:var(--muted)">(${c.n})</span></span>
+      </div>`).join("");
+    const joueur = !!st.joueurs?.[m];
+    const soirs = (s.soirs || []).slice().reverse().slice(0, 10).map(x =>
+      `<tr><td>${x.date}</td><td>${x.hits}/${x.n}</td><td>${x.attendu.toFixed(1)}</td></tr>`).join("");
+    const enService = id === P[cat];
+    return `<div class="card ${enService ? "main" : ""}">
+      <h2>${id}${enService ? ' <span class="lbl" style="color:var(--goal)">en service</span>' : ""}</h2>
+      <p class="lbl" style="margin:-8px 0 0;text-transform:none;letter-spacing:0;font-weight:500">${desc(id)}</p>
+      <div class="kv">
+        <div><span class="lbl">Note</span><div class="note">${s.note.toFixed(1)}<small>/100</small></div></div>
+        <div><span class="lbl">Bon côté</span><b>${pct(s.precision)} %</b></div>
+        <div><span class="lbl">Prédictions</span><b>${s.n}</b></div>
+      </div>
+      <div class="mini"><span>Brier <b>${s.brier.toFixed(4)}</b></span><span>${s.mae_total != null ? `Erreur sur le total <b>${s.mae_total.toFixed(2)} buts</b>` : `Réel moyen <b>${pct(s.base)} %</b>`}</span></div>
+      <div class="calib"><span class="lbl">Calibration · prédit vs réel</span>${calib}
+        <div class="legende"><span><i style="background:var(--ice)"></i>Réel</span><span><i style="background:var(--goal)"></i>Prédit</span><span>(n) = ${joueur ? "joueurs" : "matchs"}</span></div>
+      </div>
+      ${soirs ? `<details><summary class="lbl">${joueur ? "Top 10 par soir" : "Par soir"}</summary><div class="tbl"><table><thead><tr><th>Soir</th><th>Réussis</th><th>Attendus</th></tr></thead><tbody>${soirs}</tbody></table></div></details>` : ""}
+    </div>`;
+  }).join("") || `<div class="card"><div class="vide">Pas encore de résultats pour ${NOMS_CAT[cat]}.</div></div>`;
+  $("#cards").innerHTML = recettes() + entete + cartes + (D.cotes_quota ? `<div class="quota">Cotes US : ${D.cotes_quota.source === "SportsGameOdds" ? `SportsGameOdds, ${D.cotes_quota.utilises ?? 0} matchs lus` : `${D.cotes_quota.restants ?? "?"} crédits restants ce mois-ci`}${D.cotes_quota.erreur ? ` · dernière erreur : ${D.cotes_quota.erreur}` : ""}</div>` : "");
 }
 
-
-// ---- Champions par catégorie ------------------------------------------------------
-const NOMS_CAT = { tirs: "Tirs (1+ à 4+)", buts: "But", passes: "Passe", victoire: "Victoire", totaux: "Totaux 5.5 / 6.5" };
-function champions(){
-  const L = D.labo || {}, P = D.principales || L.principales, C = L.classement_cat;
-  if (!P || !C) return "";
+// Vue d'ensemble : la recette en service de chaque catégorie et le dernier recalcul
+function recettes(){
+  const P = D.principales || D.labo?.principales;
+  if (!P) return "";
+  const raps = Object.fromEntries((D.labo?.recalcul?.rapports || []).map(r => [r.cat, r]));
   const lignes = Object.keys(NOMS_CAT).map(cat => {
-    const liste = C[cat] || [];
-    const nmax = Math.max(1, ...liste.map(x => x.n));
-    // Le champion toujours affiché ; les versions avec peu de lignes sont marquées (chiffre fragile)
-    const choix = liste.slice(0, 4);
-    const ch = liste.find(x => x.id === P[cat]);
-    if (ch && !choix.includes(ch)) choix.push(ch);
-    const top = choix.map(x => `<span class="${x.id === P[cat] ? "champ" : ""}">${x.id} ${sg(x.gain)} <small>${x.z != null ? `z ${x.z.toFixed(1)} · ` : ""}${x.n < nmax / 3 ? `peu de data (${x.n})` : x.n}</small></span>`).join(" · ");
-    const pr = (L.promos || {})[cat];
-    const note = pr && !pr.solide ? `<br><small>${pr.candidat} mène mais pas prouvé contre ${pr.contre} : ${sg(pr.gain)}, z ${pr.z == null ? "–" : pr.z.toFixed(1)} (faut +0.2 % et z ≥ 2.5${pr.direct_n != null ? `, et tenir en direct` : ""})</small>` : "";
-    return `<tr><td><b>${NOMS_CAT[cat]}</b></td><td><b>${P[cat]}</b></td></tr><tr class="dsc"><td colspan="2">${top}${note}</td></tr>`;
+    const r = raps[cat];
+    return `<tr><td>${NOMS_CAT[cat]}</td><td><b>${P[cat] || "v1"}</b></td><td class="${(r?.gain_honnete ?? 0) > 0 ? "ok" : ""}">${r?.gain_honnete != null ? sg(r.gain_honnete) : "–"}</td></tr>`;
   }).join("");
-  return `<div class="card main"><h2>Champions par catégorie</h2>
-    <p class="aide" style="margin:-6px 0 0">Chaque catégorie a sa meilleure version. La version <b>combo</b> prend le % de chaque marché chez son champion. Chiffres : erreur en moins vs v1, sur les mêmes prédictions.</p>
-    <div class="tbl"><table class="classement champions"><tbody>${lignes}</tbody></table></div></div>`;
+  return `<div class="card"><h2>Recettes en service</h2>
+    <div class="tbl"><table class="classement"><thead><tr><th>Catégorie</th><th>Version</th><th>Dernier scan*</th></tr></thead><tbody>${lignes}</tbody></table></div>
+    <p class="aide" style="margin:0">* Meilleure recette trouvée au dernier recalcul, mesurée sur des soirs jamais vus pendant le scan. Elle remplace la version en service seulement si c'est positif.</p></div>`;
 }
 
 
-// ---- Labo (évolution par générations) -----------------------------------------
+// ---- Labo : patterns + journal du recalcul hebdo ----------------------------------
 const sg = (x, d = 2) => x == null ? "–" : `${x >= 0 ? "+" : ""}${(x * 100).toFixed(d)} %`;
 function labo(){
   const L = D.labo;
   if (!L){ $("#labo").hidden = true; return; }
-  const gen = L.generation || {};
-  const desc = id => (D.versions.find(x => x.id === id) || (L.versions || []).find(x => x.id === id) || {}).desc || "";
-  // Classement de la génération en cours : tout le monde contre v1, sur les mêmes lignes
-  const cl = (L.classement || []).map((c, i) => {
-    const tags = [c.id === D.principale ? `<span class="etat princ">principale</span>` : "",
-                  c.id === gen.parent ? `<span class="etat">parent</span>` : "",
-                  c.hors_gen ? `<span class="etat">hors concours</span>` : ""].join(" ");
-    return `<tr class="${i === 0 ? "tete" : ""}"><td>${c.hors_gen ? "" : i + 1}</td><td><b>${c.id}</b></td>
-      <td class="${(c.gain ?? 0) >= 0 ? "ok" : "ko"}">${sg(c.gain)}</td><td>${c.z == null ? "–" : c.z.toFixed(1)}</td>
-      <td class="${(c.gain_m ?? 0) >= 0 ? "ok" : "ko"}">${sg(c.gain_m, 1)}</td></tr>
-      <tr class="dsc"><td></td><td colspan="4">${tags} ${c.n_tirs} joueurs · ${c.soirs} soirs${c.soirs_direct != null ? ` (dont ${c.soirs_direct} en direct${c.gain_direct != null ? `, ${sg(c.gain_direct)} en direct` : ""})` : ""}${c.juge_depuis ? ` · jugée à partir du ${c.juge_depuis} (avant : ses soirs d'entraînement)` : ""}<br>${desc(c.id)}</td></tr>`;
-  }).join("");
-  const at = L.attente;
-  const attente = at ? `<p class="aide">Une génération par semaine : celle-ci se termine au premier calcul du <b>${at.fin}</b>${at.soirs_direct != null ? `, si chaque nouvelle version a au moins ${at.min_direct} soirs en direct (là : <b>${Math.min(at.soirs_direct, at.min_direct)} / ${at.min_direct}</b>)` : ""}. Le meilleur aura alors 5 enfants.</p>` : "";
-  const pr = L.promo;
-  const promo = pr && pr.n_tirs ? `<p class="aide">${pr.solide ? `<b>${pr.candidat}</b> vient d'être promue.` :
-      `<b>${pr.candidat}</b> mène, mais pas encore prouvé contre ${pr.contre} : ${sg(pr.gain)} sur ${pr.n_tirs} joueurs, z = ${pr.z == null ? "–" : pr.z.toFixed(1)}
-       (il faut au moins +0.5 % et z ≥ 2.3, soit moins de 1 % de chance que ce soit de la chance${pr.direct_n != null ? `, et tenir en direct : ${sg(pr.direct_gain)} sur ${pr.direct_n} joueurs, faut 1000` : ""}).`}</p>` : "";
-  const hist = (L.generations || []).map(g => `<li><b>Génération ${g.n}</b> (fin ${g.fin}) · gagnant <b>${g.gagnant}</b> ${sg(g.gain)} vs v1${g.z != null ? `, z ${g.z.toFixed(1)}` : ""}
-      <br><span style="color:var(--muted)">${(g.classement || []).map(c => `${c.id} ${sg(c.gain)}`).join(" · ")}</span></li>`).join("");
   const pats = (L.patterns || []).map(p => `<div class="pat">
       <span><b>${NOM_MARCHE[p.marche] || p.marche}</b> · ${p.segment}</span>
       <span class="lv ${p.sens === "surestimé" ? "ko" : "ok"}">${p.sens}</span>
       <small>Prédit ${pct(p.predit)} %, réel ${pct(p.reel)} % sur ${p.n} · ${Math.abs(p.z).toFixed(1)} écarts-types (trop gros pour être de la chance)</small>
     </div>`).join("") || `<p style="color:var(--muted);font-size:13px;margin:0">Aucun biais significatif détecté pour l'instant.</p>`;
-  const journal = (L.journal || []).slice(0, 6).map(j => `<li><b>${j.date}</b> · ${j.msg}</li>`).join("")
-    || `<li style="color:var(--muted)">Rien encore.</li>`;
-  const retirees = [...(L.versions || []).filter(v => v.retiree).map(v => v.id), ...(L.retirees || [])];
+  const journal = (L.journal || []).slice(0, 12).map(j => `<li><b>${j.date}</b> · ${j.msg}</li>`).join("") || `<li style="color:var(--muted)">Rien encore.</li>`;
   const dn = L.donnees || {};
   $("#labo").innerHTML = `
-    <h2>Labo <span>évolution</span></h2>
-    <p style="margin:-6px 0 0;font-size:13px;color:var(--muted)">Données : ${dn.joueurs ?? 0} prédictions de joueurs et ${dn.matchs ?? 0} matchs gradés.</p>
-    ${gen.n ? `<div><span class="lbl">Génération ${gen.n} en cours${gen.depuis ? ` · jugée sur les soirs depuis le ${gen.depuis}` : " · rejouée sur toute la saison"}</span>
-      <div class="tbl"><table class="classement"><thead><tr><th>#</th><th>Version</th><th>Joueurs</th><th>z</th><th>Matchs</th></tr></thead>
-      <tbody>${cl || `<tr><td colspan="5" style="color:var(--muted)">Classement au prochain calcul.</td></tr>`}</tbody></table></div>
-      <p class="aide">Toutes les versions sont rejouées sur toute la saison. Exception : le Tuner et le Calibreur, ajustés sur les vieux soirs, comptent seulement à partir de leurs soirs de validation (sinon ils se noteraient sur leur propre corrigé).</p>
-      <p class="aide">« Joueurs » et « Matchs » = combien moins d'erreur que v1 (Brier), sur exactement les mêmes joueurs et matchs. z = solidité : 2 et plus, ça commence à être du vrai ; en bas de 1, c'est du bruit. Le z apparaît après 7 soirs (avant, il ne veut rien dire).</p>
-      ${promo}${attente}</div>` : ""}
-    ${hist ? `<div><span class="lbl">Générations passées</span><ul>${hist}</ul></div>` : ""}
-    <div><span class="lbl">Patterns détectés · version ${D.principale}</span>${pats}</div>
-    <div><span class="lbl">Journal</span><ul>${journal}</ul></div>
-    ${retirees.length ? `<p class="aide">Retirées (ne prédisent plus, historique gardé) : ${retirees.join(", ")}</p>` : ""}`;
+    <h2>Labo <span>recalcul hebdo</span></h2>
+    <p style="margin:-6px 0 0;font-size:13px;color:var(--muted)">Données de la saison : ${dn.joueurs ?? 0} prédictions de joueurs et ${dn.matchs ?? 0} matchs gradés.
+      Chaque semaine, chaque catégorie est rescannée avec toute la saison${L.dernier_recalcul ? ` (dernier : ${L.dernier_recalcul}, prochain : ${L.prochain_recalcul})` : ""}.</p>
+    <div><span class="lbl">Patterns détectés · tirs 2+</span>${pats}</div>
+    <div><span class="lbl">Journal</span><ul>${journal}</ul></div>`;
 }
 
 
