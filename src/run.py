@@ -311,7 +311,9 @@ def construire_joueurs(jour, equipes, saison, ligue_eq, ligue, ctx_eq):
         for grp in ("forwards", "defensemen"):
             for j in r.get(grp, []):
                 joueurs.append({"pid": j["id"], "team": team, "pos": pos_de(j.get("positionCode")),
-                                "name": f'{j["firstName"]["default"]} {j["lastName"]["default"]}'})
+                                "name": f'{j["firstName"]["default"]} {j["lastName"]["default"]}',
+                                # Pour la page : photo officielle NHL et numéro de chandail
+                                "photo": j.get("headshot"), "no": j.get("sweaterNumber")})
 
     chemins = {j["pid"]: api.game_log_path(j["pid"], saison) for j in joueurs}
     logs = api.fetch_many(list(chemins.values()))
@@ -384,7 +386,8 @@ def construire_joueurs(jour, equipes, saison, ligue_eq, ligue, ctx_eq):
         ctxs.append({**j,
                      "opp": dict(ligue_eq.get(info["opp"], defaut), abbrev=info["opp"]),
                      "home": info["home"], "b2b": bool(dates) and dates[0] == hier,
-                     "vs": vs, "league": ligue, "gameId": info["gameId"], "incertain": incertain})
+                     "vs": vs, "league": ligue, "gameId": info["gameId"], "incertain": incertain,
+                     "eq_pj": len(dates)})
     return ctxs
 
 
@@ -649,10 +652,28 @@ def predire(jour, matchs_ouverts, saison):
             "l10_goals": [g["goals"] for g in l10],
             "l10_assists": [g["assists"] for g in l10],
             "vs_gp": ctx["vs"]["gp"], "vs_shots": ctx["vs"]["shots"],
+            "photo": ctx.get("photo"), "no": ctx.get("no"), "saison": saison_joueur(ctx),
             "preds": arrondir(preds), "result": None, "played": None,
             "f": arrondir(f),
         })
     return games, entries, noms
+
+
+def saison_joueur(ctx, n_matchs=82):
+    """Stats de la saison (avant ce soir) + projection de fin de saison. La projection
+    part de SON rythme par match joué, sur les matchs qui RESTENT à son équipe : un gars
+    qui a manqué la moitié de la saison ne récupère pas ses matchs perdus."""
+    cur = ctx["cur"]
+    pj = len(cur)
+    tot = {"b": sum(g["goals"] for g in cur), "a": sum(g["assists"] for g in cur), "tirs": sum(g["shots"] for g in cur)}
+    tot["pts"] = tot["b"] + tot["a"]
+    restants = max(0, n_matchs - ctx.get("eq_pj", pj))
+    out = {"pj": pj, **tot, "toi": round(sum(g["toi"] for g in cur) / pj, 1) if pj else None,
+           "eq_pj": ctx.get("eq_pj"), "restants": restants}
+    if pj:
+        out["proj"] = {k: round(v + v / pj * restants) for k, v in tot.items()}
+        out["max_pj"] = pj + restants
+    return out
 
 
 # --- 5. Main ---------------------------------------------------------------------

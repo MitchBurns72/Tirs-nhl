@@ -166,7 +166,7 @@ def faux_get_json(path, retries=4):
     if parts[0] == "roster":
         t = parts[1]
         mk = lambda p, j: {"id": p, "firstName": {"default": "Joueur"}, "lastName": {"default": str(p)[-3:]},
-                           "positionCode": j["pos"]}
+                           "positionCode": j["pos"], "sweaterNumber": p % 98 + 1, "headshot": None}
         return {"forwards": [mk(p, j) for p, j in joueurs.items() if j["team"] == t and j["pos"] != "D"],
                 "defensemen": [mk(p, j) for p, j in joueurs.items() if j["team"] == t and j["pos"] == "D"],
                 "goalies": []}
@@ -566,6 +566,10 @@ def main():
     assert g0["preds"]["combo"]["p_over"] == g0["preds"][P["totaux"]]["p_over"]
     assert all(len(sortie0["labo"]["classement_cat"][c]) >= 3 for c in P)
     print("combo OK")
+    # Fiche joueur : numéro et stats de saison avec projection sur les matchs restants
+    sj = e0["saison"]
+    assert e0["no"] and sj["pj"] > 0 and sj["proj"]["tirs"] >= sj["tirs"] and sj["max_pj"] == sj["pj"] + sj["restants"]
+    print("stats de saison OK :", e0["name"], sj)
     # Blessures : lecteur ESPN sur une réponse imitée, puis annotation
     import alignements
     faux_espn = {"injuries": [{"displayName": "Montreal Canadiens", "injuries": [

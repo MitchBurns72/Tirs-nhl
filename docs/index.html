@@ -11,31 +11,43 @@
 /* Mise en page : tableau de bord une colonne pensé pour le cell, style tableau indicateur d'aréna.
    Rouge = lumière de but (ce qui compte), bleu glace = info secondaire. */
 :root{
-  --bg:#EEF3F6; --surface:#FFFFFF; --ink:#0E1A24; --muted:#56687A; --line:#D5DEE5;
-  --goal:#C8202A; --ice:#1D5F8E; --good:#1A8048; --good-bg:#E2F3E9; --bad:#A33A2E; --bad-bg:#F8E6E3;
-  --chip:#E3EAF0; --us:#6B4FA0; --us-bg:#EFEAF7; --warn:#A86A00; --warn-bg:#FFF3D6;
+  /* Glace du matin : blanc bleuté de patinoire, rouge de ligne de but, bleu de ligne bleue */
+  --bg:#E6EEF4; --surface:#FFFFFF; --surface2:#F2F6F9; --ink:#0C1824; --muted:#526676; --line:#D2DDE6;
+  --goal:#D3202B; --ice:#1B6CA3; --good:#14834A; --good-bg:#E0F4E8; --bad:#B03427; --bad-bg:#FBE7E4;
+  --chip:#E1EAF1; --us:#6A4BA6; --us-bg:#EFEAF8; --warn:#9A6200; --warn-bg:#FFF2D2;
+  --rayure:rgba(12,24,36,.035); --ombre:0 1px 0 rgba(12,24,36,.04), 0 6px 18px -10px rgba(12,24,36,.25);
   --f-display:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
   --f-body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0A1117; --surface:#111B23; --ink:#E5ECF1; --muted:#8B9DAC; --line:#22313C;
-  --goal:#FF4B4B; --ice:#5DA9E0; --good:#3BD184; --good-bg:#12301F; --bad:#FF7F6E; --bad-bg:#3A1A16;
-  --chip:#1A2731; --us:#B9A2E8; --us-bg:#251E36; --warn:#F2C14E; --warn-bg:#332A12; color-scheme:dark}}
+  /* Aréna de soir : bandes sombres, lumière de but, glace sous les projecteurs */
+  --bg:#0B141C; --surface:#121E29; --surface2:#172633; --ink:#EAF1F6; --muted:#8B9EAE; --line:#22334280;
+  --goal:#FF4040; --ice:#6CC0F5; --good:#3CD488; --good-bg:#10301F; --bad:#FF7B6A; --bad-bg:#3A1915;
+  --chip:#1A2A37; --us:#BCA5EC; --us-bg:#251E38; --warn:#F4C14C; --warn-bg:#33290F;
+  --rayure:rgba(255,255,255,.025); --ombre:0 1px 0 rgba(255,255,255,.03) inset, 0 10px 24px -14px rgba(0,0,0,.8); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0A1117; --surface:#111B23; --ink:#E5ECF1; --muted:#8B9DAC; --line:#22313C;
-  --goal:#FF4B4B; --ice:#5DA9E0; --good:#3BD184; --good-bg:#12301F; --bad:#FF7F6E; --bad-bg:#3A1A16;
-  --chip:#1A2731; --us:#B9A2E8; --us-bg:#251E36; --warn:#F2C14E; --warn-bg:#332A12; color-scheme:dark}
+  --bg:#0B141C; --surface:#121E29; --surface2:#172633; --ink:#EAF1F6; --muted:#8B9EAE; --line:#22334280;
+  --goal:#FF4040; --ice:#6CC0F5; --good:#3CD488; --good-bg:#10301F; --bad:#FF7B6A; --bad-bg:#3A1915;
+  --chip:#1A2A37; --us:#BCA5EC; --us-bg:#251E38; --warn:#F4C14C; --warn-bg:#33290F;
+  --rayure:rgba(255,255,255,.025); --ombre:0 1px 0 rgba(255,255,255,.03) inset, 0 10px 24px -14px rgba(0,0,0,.8); color-scheme:dark}
 
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font:15px/1.45 var(--f-body);
+  /* Glace grattée par les patins : deux réseaux de rayures fines, presque invisibles */
+  background-image:repeating-linear-gradient(-28deg, transparent 0 9px, var(--rayure) 9px 10px, transparent 10px 23px),
+    repeating-linear-gradient(17deg, transparent 0 13px, var(--rayure) 13px 14px, transparent 14px 31px);
+  background-attachment:fixed;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
   padding-block:0 40px;font-variant-numeric:tabular-nums}
 .wrap{max-width:720px;margin:0 auto}
 header{padding-block:max(18px,env(safe-area-inset-top,0px)) 10px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
 h1{font:800 34px/0.95 var(--f-display);letter-spacing:.01em;margin:0;text-transform:uppercase;text-wrap:balance}
 h1 span{color:var(--goal)}
+/* Ligne rouge du centre avec le point de mise au jeu : sépare l'en-tête du reste */
+.lignes{position:relative;height:16px;margin:2px 0 10px;background:linear-gradient(var(--goal),var(--goal)) center/100% 2px no-repeat}
+.lignes::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--bg);border:2px solid var(--goal)}
 .maj{color:var(--muted);font-size:12px;text-align:right}
 h2{font:800 22px/1 var(--f-display);text-transform:uppercase;letter-spacing:.02em;margin:0}
 .lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
@@ -48,15 +60,31 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .ctrls{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
 .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font:600 13px var(--f-body);cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink);box-shadow:0 4px 12px -6px var(--ink)}
 .chip.big{font:800 16px/1 var(--f-display);text-transform:uppercase;letter-spacing:.03em;padding:9px 14px}
 select{font:600 14px var(--f-body);padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:100%}
 button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--ice);outline-offset:2px}
 
-.liste{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.j{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:4px 10px;padding:12px;border-top:1px solid var(--line);align-items:center}
+.liste{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--ombre)}
+/* --eq : couleur principale de l'équipe (posée en ligne par le JS) */
+.j{--eq:var(--muted);position:relative;display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:4px 12px;padding:12px 12px 12px 14px;border-top:1px solid var(--line);align-items:center;
+  background:linear-gradient(90deg, color-mix(in srgb, var(--eq) 13%, transparent), transparent 46%)}
+.j::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--eq)}
 .j:first-child{border-top:0}
-.rk{font:800 20px/1 var(--f-display);color:var(--muted);align-self:start;padding-top:2px}
+.photo{position:relative;width:56px;height:56px;align-self:start;grid-row:span 2}
+.photo .ph{width:56px;height:56px;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 50% 35%, color-mix(in srgb, var(--eq) 55%, #fff), var(--eq));
+  box-shadow:0 0 0 2px var(--surface), 0 0 0 4px var(--eq);display:grid;place-items:center}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.photo .num{font:800 26px/1 var(--f-display);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.photo .no{position:absolute;right:-6px;bottom:-4px;min-width:22px;height:20px;padding:0 4px;border-radius:6px;background:var(--eq);color:#fff;
+  font:800 13px/20px var(--f-display);text-align:center;box-shadow:0 0 0 2px var(--surface)}
+.rk{position:absolute;left:-6px;top:-6px;min-width:20px;height:20px;border-radius:10px;padding:0 5px;background:var(--ink);color:var(--surface);font:800 12px/20px var(--f-display);text-align:center}
+.saison{grid-column:2 / 4;display:flex;flex-wrap:wrap;gap:2px 12px;font-size:12px;color:var(--muted);align-items:baseline}
+.saison b{color:var(--ink);font-weight:700;font-size:13px}
+.saison .proj{flex-basis:100%;font-size:11.5px}
+.saison .proj b{color:var(--ice);font-size:12px}
+.jauge{height:4px;border-radius:2px;background:var(--chip);margin-top:5px;overflow:hidden}
+.jauge i{display:block;height:100%;background:linear-gradient(90deg,var(--ice),var(--goal))}
 .nom{font-weight:700;font-size:15px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .meta{color:var(--muted);font-size:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .tag{font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:1px 6px;border-radius:4px;background:var(--chip);color:var(--muted)}
@@ -64,7 +92,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
 .pct{font:800 30px/1 var(--f-display);text-align:right}
 .pct small{font-size:16px}
 .lam{font-size:11.5px;color:var(--muted);text-align:right}
-.sub{grid-column:2 / 4;display:flex;gap:8px 10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.sub{grid-column:1 / 4;display:flex;gap:8px 10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .l10{display:flex;gap:2px;align-items:flex-end;height:22px}
 .l10 i{display:block;width:6px;background:var(--line);border-radius:1px}
 .l10 i.ok{background:var(--ice)}
@@ -78,7 +106,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
 .us{font-size:11.5px;font-weight:600;padding:2px 6px;border-radius:5px;background:var(--us-bg);color:var(--us);white-space:nowrap}
 .res{font-size:12px;font-weight:700}
 .res.ok{color:var(--good)} .res.ko{color:var(--bad)}
-details.why{grid-column:2 / 4;font-size:12.5px;color:var(--muted)}
+details.why{grid-column:1 / 4;font-size:12.5px;color:var(--muted)}
 details.why summary{cursor:pointer;width:max-content}
 .fx{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:4px 12px;margin-top:6px}
 .fx b{color:var(--ink);font-weight:600}
@@ -90,7 +118,11 @@ details.why summary{cursor:pointer;width:max-content}
 
 /* Matchs */
 .matchs{display:flex;flex-direction:column;gap:12px}
-.m{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.m{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--ombre);
+  background-image:linear-gradient(100deg, color-mix(in srgb, var(--ca, transparent) 14%, transparent), transparent 38%, transparent 62%, color-mix(in srgb, var(--ch, transparent) 14%, transparent))}
+.logo{width:34px;height:34px;object-fit:contain;flex:none}
+.eq .ligne{display:flex;align-items:center;gap:8px}
+.eq.d .ligne{flex-direction:row-reverse}
 .m-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
 .duel{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:center}
 .eq{display:flex;flex-direction:column;gap:2px;min-width:0}
@@ -114,7 +146,7 @@ details.why summary{cursor:pointer;width:max-content}
 
 /* Suivi */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--ombre);display:flex;flex-direction:column;gap:14px;min-width:0}
 .card.main{border-color:var(--goal)}
 .note{font:800 64px/0.9 var(--f-display)}
 .note small{font-size:22px;color:var(--muted)}
@@ -145,9 +177,9 @@ tr.sel td{font-weight:700}
 @media (prefers-reduced-motion:no-preference){.livebtn[aria-pressed="true"] i{animation:pulse 1.4s infinite}}
 @keyframes pulse{50%{opacity:.25}}
 .livestat{font-size:12px;color:var(--muted);margin:-4px 0 10px}
-.j.st-ok{box-shadow:inset 4px 0 var(--good);background:var(--good-bg)}
-.j.st-cours{box-shadow:inset 4px 0 var(--warn);background:var(--warn-bg)}
-.j.st-ko{box-shadow:inset 4px 0 var(--bad);background:var(--bad-bg)}
+.j.st-ok{--eq:var(--good);background:var(--good-bg)}
+.j.st-cours{--eq:var(--warn);background:var(--warn-bg)}
+.j.st-ko{--eq:var(--bad);background:var(--bad-bg)}
 .lv{font-size:12px;font-weight:700;white-space:nowrap}
 .lv.ok{color:var(--good)} .lv.cours{color:var(--warn)} .lv.ko{color:var(--bad)}
 .m.st-cours{border-color:var(--warn)}
@@ -201,6 +233,13 @@ tr.sel td{font-weight:700}
 .kpis div{display:flex;flex-direction:column;gap:2px;min-width:0}
 .kpis b{font:800 22px/1 var(--f-display);white-space:nowrap}
 .kpis .nec{font-size:11.5px;color:var(--muted)}
+.kpis.petits b{font-size:19px}
+.courbe{display:flex;flex-direction:column;gap:6px}
+.courbe svg{width:100%;height:96px;display:block}
+.courbe .zero{stroke:var(--line);stroke-width:1;stroke-dasharray:4 4;vector-effect:non-scaling-stroke}
+.courbe .trait{fill:none;stroke-width:2.5;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.courbe .trait.pos{stroke:var(--good)} .courbe .trait.neg{stroke:var(--bad)}
+.courbe .aire.pos{fill:color-mix(in srgb, var(--good) 16%, transparent)} .courbe .aire.neg{fill:color-mix(in srgb, var(--bad) 16%, transparent)}
 table.serre{font-size:11.5px} table.serre th,table.serre td{padding:5px 3px} table.serre th{font-size:9.5px;letter-spacing:.02em}
 .pos{color:var(--good)} .neg{color:var(--bad)}
 .sep{grid-column:1 / -1;padding:8px 12px;background:var(--chip);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
@@ -216,6 +255,7 @@ table.serre{font-size:11.5px} table.serre th,table.serre td{padding:5px 3px} tab
       <div class="maj" id="maj">Chargement…</div>
     </div>
   </header>
+  <div class="lignes" aria-hidden="true"></div>
   <div class="livestat" id="livestat" hidden></div>
 
   <nav class="tabs" role="tablist">
@@ -377,6 +417,28 @@ function lireCote(k){
 
 // Prédiction d'un joueur pour un marché. Les entrées du 17 octobre sont dans
 // l'ancien format (tirs seulement : preds[v] = {p, lam}).
+// Couleur principale de chaque équipe (bande et photo des joueurs, fond des matchs)
+const COULEUR = { ANA: "#F47A38", BOS: "#FFB81C", BUF: "#003087", CGY: "#C8102E", CAR: "#CE1126", CHI: "#CF0A2C",
+  COL: "#6F263D", CBJ: "#002654", DAL: "#006847", DET: "#CE1126", EDM: "#FF4C00", FLA: "#C8102E", LAK: "#A2AAAD",
+  MIN: "#154734", MTL: "#AF1E2D", NSH: "#FFB81C", NJD: "#CE1126", NYI: "#00539B", NYR: "#0038A8", OTT: "#C52032",
+  PHI: "#F74902", PIT: "#FCB514", SJS: "#006D75", SEA: "#68A2B9", STL: "#002F87", TBL: "#002868", TOR: "#00205B",
+  UTA: "#6CACE4", VAN: "#00205B", VGK: "#B4975A", WSH: "#C8102E", WPG: "#004C97" };
+const coul = (t) => COULEUR[t] || "#6B7C8C";
+const LOGO = (t) => `https://assets.nhle.com/logos/nhl/svg/${t}_light.svg`;
+// Photo officielle NHL ; si elle ne charge pas, le numéro de chandail prend la place
+function photo(j, rang){
+  const num = j.no != null ? j.no : "";
+  const img = j.photo ? `<img src="${j.photo}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'num',textContent:'${num}'}))">` : `<span class="num">${num}</span>`;
+  return `<div class="photo"><div class="ph">${img}</div>${j.photo && num !== "" ? `<span class="no">${num}</span>` : ""}<span class="rk">${rang}</span></div>`;
+}
+function saisonHTML(j, m){
+  const s = j.saison;
+  if (!s || !s.pj) return "";
+  const p = s.proj || {};
+  return `<div class="saison"><span><b>${s.pj}</b> PJ</span><span><b>${s.b}</b> B</span><span><b>${s.a}</b> A</span><span><b>${s.pts}</b> Pts</span><span><b>${s.tirs}</b> tirs</span>${s.toi ? `<span><b>${s.toi.toFixed(1)}</b> min/match</span>` : ""}
+    <span class="proj" title="Son rythme par match joué, sur les matchs qui restent à son équipe">Projection fin de saison (${s.max_pj} matchs possibles) : <b>${p.b}</b> B, <b>${p.a}</b> A, <b>${p.pts}</b> Pts, <b>${p.tirs}</b> tirs</span></div>`;
+}
+
 function pred(j, v, m){
   const pv = j.preds[v];
   if (!pv) return null;
@@ -579,14 +641,16 @@ function liste(){
     const res = st.badge;
 
     const us = j.auto ? `<span class="us" title="Cote médiane des bookies US">US ${j.auto.toFixed(2)} · ${pct(1 / j.auto)} %</span>` : "";
-    return `<div class="j ${st.cls}">
-      <div class="rk">${i + 1}</div>
+    return `<div class="j ${st.cls}" style="--eq:${coul(j.team)}">
+      ${photo(j, i + 1)}
       <div style="min-width:0">
         <div class="nom">${j.name}</div>
         <div class="meta"><span class="tag">${j.team} ${j.home ? "vs" : "@"} ${j.opp}</span><span>${j.pos === "D" ? "Déf." : "Avant"}</span>
           ${j.b2b ? '<span class="tag">B2B</span>' : ""}${j.retro ? '<span class="tag" title="Prédit après la mise au jeu, avec seulement les données d\'avant le match">Rétro</span>' : ""}${j.incertain ? '<span class="tag warn">Absent dernier match</span>' : ""}${j.blesse ? `<span class="tag ${/^(out|suspension|injured reserve)/i.test(j.blesse.statut) ? "ko" : "warn"}" title="${(j.blesse.detail || "").replace(/"/g, "")}${j.blesse.retour ? " · retour prévu " + j.blesse.retour : ""}">Blessé (ESPN) : ${j.blesse.statut}</span>` : ""}</div>
       </div>
-      <div><div class="pct">${pct(j.pr.p)}<small>%</small></div><div class="lam">${j.pr.lam.toFixed(estTirs(m) ? 1 : 2)} ${att}</div></div>
+      <div><div class="pct">${pct(j.pr.p)}<small>%</small></div><div class="lam">${j.pr.lam.toFixed(estTirs(m) ? 1 : 2)} ${att}</div>
+        <div class="jauge" aria-hidden="true"><i style="width:${Math.round(j.pr.p * 100)}%"></i></div></div>
+      ${saisonHTML(j, m)}
       <div class="sub">
         <span style="display:flex;align-items:flex-end">
           <span class="l10" aria-label="10 derniers matchs">${barres}</span>
@@ -595,7 +659,7 @@ function liste(){
         <span class="cote">${res}${us}${badgeEV(j.e, null, j.src)}
           <input id="c-${j.pid}-${m}" data-k="${cle(j.pid, m)}" inputmode="decimal" placeholder="MOJ" aria-label="Cote Mise-o-jeu pour ${j.name}" value="${j.manuelle ?? ""}">
           ${offre({ type: "joueur", date: D.date, gameId: j.gameId, pid: j.pid, name: j.name, team: j.team, opp: j.opp,
-                    home: j.home, marche: m, p: j.pr.p, cote: j.manuelle || j.auto, version: v,
+                    home: j.home, marche: m, p: j.pr.p, cote: j.manuelle || j.auto, us: j.auto || null, version: v,
                     label: `${j.name} · ${NOM_MARCHE[m]}`, sous: `${j.team} ${j.home ? "vs" : "@"} ${j.opp}` }, "+ Bet")}
         </span>
       </div>
@@ -687,12 +751,12 @@ function matchs(){
       <span class="lbl" style="margin-top:4px">Total de buts${c.ligne != null ? ` · ligne US ${c.ligne}` : ""}</span>
       ${ligneTotal("5.5")}${ligneTotal("6.5")}
       ${c.ligne != null && !["5.5", "6.5"].includes(String(c.ligne)) ? `<div class="mcote"><span class="us">US ${c.ligne} · plus ${c.over?.toFixed(2)} / moins ${c.under?.toFixed(2)}</span></div>` : ""}`;
-    return `<div class="m ${cls}">
+    return `<div class="m ${cls}" style="--ca:${coul(g.away)};--ch:${coul(g.home)}">
       <div class="m-top"><span class="lbl">${heure(g.start)}${g.retro ? " · rétro" : ""}${g.b2b_away ? ` · ${g.away} B2B` : ""}${g.b2b_home ? ` · ${g.home} B2B` : ""}</span>${res}</div>
       <div class="duel">
-        <div class="eq"><span class="ab">${g.away}</span><span class="wp ${pa > ph ? "fav" : ""}">${pct(pa)} %</span><span class="xg">${p.lam_away.toFixed(1)} buts att.</span></div>
+        <div class="eq"><span class="ligne"><img class="logo" src="${LOGO(g.away)}" alt="" loading="lazy" onerror="this.remove()"><span class="ab">${g.away}</span></span><span class="wp ${pa > ph ? "fav" : ""}">${pct(pa)} %</span><span class="xg">${p.lam_away.toFixed(1)} buts att.</span></div>
         <span class="vs">@</span>
-        <div class="eq d"><span class="ab">${g.home}</span><span class="wp ${ph >= pa ? "fav" : ""}">${pct(ph)} %</span><span class="xg">${p.lam_home.toFixed(1)} buts att.</span></div>
+        <div class="eq d"><span class="ligne"><img class="logo" src="${LOGO(g.home)}" alt="" loading="lazy" onerror="this.remove()"><span class="ab">${g.home}</span></span><span class="wp ${ph >= pa ? "fav" : ""}">${pct(ph)} %</span><span class="xg">${p.lam_home.toFixed(1)} buts att.</span></div>
       </div>
       <div class="wbar" aria-hidden="true"><span class="a" style="width:${pct(pa)}%"></span><span class="h" style="width:${pct(ph)}%"></span></div>
       <div class="kv3">
@@ -1102,6 +1166,64 @@ function bets(depuisSynchro){
     return `<tr><td>${nom}</td><td>${t.length}</td><td class="${gg / t.length >= necessaire(t) ? "pos" : "neg"}">${pct(gg / t.length)} %</td><td>${pct(necessaire(t))} %</td><td>${pct(t.reduce((a, x) => a + x.b.p, 0) / t.length)} %</td><td class="${pr >= 0 ? "pos" : "neg"}">${argent(pr)}</td></tr>`;
   }).join("");
 
+  // ---- Plus de stats ----
+  // Ordre chronologique des bets réglés (date du match, puis heure d'ajout)
+  const chrono = regles.slice().sort((a, b) => (a.b.date + a.b.cree).localeCompare(b.b.date + b.b.cree));
+  // Courbe du profit cumulé
+  let cumul = 0;
+  const points = [0, ...chrono.map(x => (cumul += gain(x.b, x.st)))];
+  const courbe = (() => {
+    if (points.length < 3) return "";
+    const W = 320, H = 90, lo = Math.min(0, ...points), hi = Math.max(0, ...points), dy = hi - lo || 1;
+    const X = i => (i / (points.length - 1) * W).toFixed(1), Y = v => (H - (v - lo) / dy * H).toFixed(1);
+    const ligne = points.map((v, i) => `${X(i)},${Y(v)}`).join(" ");
+    const fin = points[points.length - 1];
+    return `<div class="courbe"><span class="lbl">Profit cumulé, bet par bet</span>
+      <svg viewBox="0 -4 ${W} ${H + 8}" preserveAspectRatio="none" role="img" aria-label="Profit cumulé : ${argent(fin)}">
+        <line x1="0" x2="${W}" y1="${Y(0)}" y2="${Y(0)}" class="zero"/>
+        <polygon points="0,${Y(0)} ${ligne} ${W},${Y(0)}" class="aire ${fin >= 0 ? "pos" : "neg"}"/>
+        <polyline points="${ligne}" class="trait ${fin >= 0 ? "pos" : "neg"}"/>
+      </svg>
+      <div class="mini"><span>Sommet : <b>${argent(Math.max(...points))}</b></span><span>Creux : <b>${argent(Math.min(...points))}</b></span><span>Maintenant : <b class="${fin >= 0 ? "pos" : "neg"}">${argent(fin)}</b></span></div></div>`;
+  })();
+  // Séquences
+  let seqAct = 0, typeAct = null, meilleure = 0, pire = 0, run = 0, runT = null;
+  for (const x of chrono){
+    const w = x.st.etat === "gagne";
+    if (w === runT) run++; else { run = 1; runT = w; }
+    if (w) meilleure = Math.max(meilleure, run); else pire = Math.max(pire, run);
+  }
+  if (chrono.length){ seqAct = run; typeAct = runT; }
+  const gros = chrono.reduce((best, x) => gain(x.b, x.st) > (best ? gain(best.b, best.st) : -1e9) ? x : best, null);
+  const avecEdge = regles.filter(x => x.b.p != null);
+  const edgeMoy = avecEdge.length ? avecEdge.reduce((a, x) => a + x.b.p * x.b.cote - 1, 0) / avecEdge.length : null;
+  const avecUS = regles.filter(x => x.b.us > 1);
+  const vsUS = avecUS.length ? avecUS.reduce((a, x) => a + x.b.cote / x.b.us - 1, 0) / avecUS.length : null;
+  // Tableau générique : bets, réussite vs nécessaire, rendement
+  const ligneGroupe = (nom, t) => {
+    if (!t.length) return "";
+    const gg = t.filter(x => x.st.etat === "gagne").length, mi = t.reduce((a, x) => a + x.b.mise, 0), pr = t.reduce((a, x) => a + gain(x.b, x.st), 0);
+    return `<tr><td>${nom}</td><td>${t.length}</td><td class="${gg / t.length >= necessaire(t) ? "pos" : "neg"}">${pct(gg / t.length)} %</td><td>${pct(necessaire(t))} %</td><td class="${pr >= 0 ? "pos" : "neg"}">${mi ? (pr / mi * 100).toFixed(0) + " %" : "–"}</td><td class="${pr >= 0 ? "pos" : "neg"}">${argent(pr)}</td></tr>`;
+  };
+  const tete = (col) => `<thead><tr><th>${col}</th><th>Bets</th><th>Réussite</th><th>Faut</th><th>Rend.</th><th>Profit</th></tr></thead>`;
+  const parCote = [["Moins de 1.50", 0, 1.5], ["1.50 à 1.99", 1.5, 2], ["2.00 à 2.99", 2, 3], ["3.00 et +", 3, 999]]
+    .map(([nom, lo, hi]) => ligneGroupe(nom, regles.filter(x => x.b.cote >= lo && x.b.cote < hi))).join("");
+  const versionsVues = [...new Set(regles.map(x => x.b.version || "?"))];
+  const parVersion = versionsVues.length > 1 ? versionsVues.map(v => ligneGroupe(v, regles.filter(x => (x.b.version || "?") === v))).join("") : "";
+  const testVsReel = filtreBets === "tous" && regles.some(x => x.b.reel) && regles.some(x => !x.b.reel)
+    ? ligneGroupe("Vrais bets", regles.filter(x => x.b.reel)) + ligneGroupe("Tests", regles.filter(x => !x.b.reel)) : "";
+  const plus = !regles.length ? "" : `
+      ${courbe}
+      <div class="kpis petits">
+        <div><span class="lbl">Valeur moyenne</span><b class="${(edgeMoy ?? 0) >= 0 ? "pos" : "neg"}">${edgeMoy != null ? (edgeMoy >= 0 ? "+" : "") + pct(edgeMoy) + " %" : "–"}</b><small class="nec">selon l'algo, au moment du bet</small></div>
+        <div><span class="lbl">Ta cote vs US</span><b class="${(vsUS ?? 0) >= 0 ? "pos" : "neg"}">${vsUS != null ? (vsUS >= 0 ? "+" : "") + (vsUS * 100).toFixed(1) + " %" : "–"}</b><small class="nec">${avecUS.length ? `sur ${avecUS.length} bets` : "nouveaux bets seulement"}</small></div>
+        <div><span class="lbl">Séquence</span><b class="${typeAct ? "pos" : "neg"}">${seqAct ? (typeAct ? "G" : "P") + seqAct : "–"}</b><small class="nec">record : G${meilleure} · P${pire}</small></div>
+      </div>
+      ${gros && gain(gros.b, gros.st) > 0 ? `<p class="sh-info">Plus gros gain : <b>${argent(gain(gros.b, gros.st))}</b> avec ${gros.b.label} à ${gros.b.cote.toFixed(2)}.</p>` : ""}
+      ${testVsReel ? `<div class="tbl"><span class="lbl">Vrais bets vs tests</span><table class="serre">${tete("Type")}<tbody>${testVsReel}</tbody></table></div>` : ""}
+      <div class="tbl"><span class="lbl">Selon la cote</span><table class="serre">${tete("Cote")}<tbody>${parCote}</tbody></table></div>
+      ${parVersion ? `<div class="tbl"><span class="lbl">Selon la version affichée quand t'as misé</span><table class="serre">${tete("Version")}<tbody>${parVersion}</tbody></table></div>` : ""}`;
+
   $("#bets-kpi").innerHTML = !vus.length
     ? `<h2>Mes bets</h2><p class="sh-info">Aucun bet ${filtreBets === "reel" ? "réel" : filtreBets === "test" ? "test" : ""} pour l'instant. Ajoute-en avec les boutons « + Bet » dans Joueurs et Matchs. Les tests servent à essayer l'algo sans argent : ils ont leurs propres stats.</p>`
     : `<h2>${filtreBets === "reel" ? "Vrais bets" : filtreBets === "test" ? "Bets tests" : "Tous mes bets"}</h2>
@@ -1118,7 +1240,8 @@ function bets(depuisSynchro){
         <span>En cours : <b>${ouverts.length}</b> (${enJeu.toFixed(2)} $)</span>
       </div>
       ${lignesM ? `<div class="tbl"><table class="serre"><thead><tr><th>Marché</th><th>Bets</th><th>Réussite</th><th>Faut</th><th>Prévu</th><th>Profit</th></tr></thead><tbody>${lignesM}</tbody></table></div>` : ""}
-      ${lignesV ? `<div class="tbl"><span class="lbl">Selon la valeur vue par l'algo au moment du bet</span><table class="serre"><thead><tr><th>Valeur</th><th>Bets</th><th>Réussite</th><th>Faut</th><th>Prévu</th><th>Profit</th></tr></thead><tbody>${lignesV}</tbody></table></div>` : ""}`;
+      ${lignesV ? `<div class="tbl"><span class="lbl">Selon la valeur vue par l'algo au moment du bet</span><table class="serre"><thead><tr><th>Valeur</th><th>Bets</th><th>Réussite</th><th>Faut</th><th>Prévu</th><th>Profit</th></tr></thead><tbody>${lignesV}</tbody></table></div>` : ""}
+      ${plus}`;
 
   const cls = { gagne: "st-ok", perdu: "st-ko", cours: "st-cours", avenir: "", annule: "" };
   const lv = { gagne: "ok", perdu: "ko", cours: "cours", avenir: "", annule: "" };
