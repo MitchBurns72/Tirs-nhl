@@ -28,6 +28,19 @@ Réglées AVANT de voir les résultats, donc rejouées honnêtement sur toute la
 les features sont déjà dans les fichiers). « Pourquoi ce % » montre le détail de chaque version,
 dont le % du modèle seul, le % du marché et le mélange des deux.
 
+## Matchs : alignements et projection joueur par joueur
+
+`src/alignements.py` lit DailyFaceoff (trios, paires, PP1/PP2, PK, blessés, gardiens partants
+avec leur statut) au calcul, puis le job live les rafraîchit aux 30 min dans `docs/live.json`
+(midi à minuit). La page prend la version la plus récente.
+Dans chaque match, avec la version principale :
+- **Tirs les plus probables** par équipe : somme des tirs attendus des joueurs de l'alignement,
+  dispersion binomiale négative (variance λ + λ²/15 par joueur), le mode + la plage de 80 %.
+- **Score le plus probable** : somme des buts attendus des joueurs -> Poisson par équipe ->
+  la case la plus probable du tableau des scores, plus les 2 suivantes et la victoire.
+- Un joueur de l'alignement sans prédiction reçoit la moyenne de sa position dans son équipe.
+- Limite : joueurs traités comme indépendants, donc les plages sont un peu étroites.
+
 ## Mes bets
 
 Onglet **Bets** : bouton « + Bet » sur chaque joueur, victoire et total (plus/moins 5.5 et 6.5).

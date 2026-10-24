@@ -20,6 +20,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+import alignements
 import nhl_api as api
 
 SORTIE = Path(__file__).resolve().parent.parent / "docs" / "live.json"
@@ -56,20 +57,37 @@ def etat_match(box):
     }
 
 
+ALIGN_MINUTES = 30   # les trios et gardiens changent rarement : 30 min suffit (et ménage DailyFaceoff)
+
+
 def main():
     jour = jour_soiree()
     sched = api.schedule(jour) or {}
     jeux = next((d["games"] for d in sched.get("gameWeek", []) if d["date"] == jour), [])
     commences = [g for g in jeux if g.get("gameState") not in AVANT]
-    if not commences:
-        print(f"{jour}: aucun match commencé")
-        return
 
     ancien = {}
     try:
         ancien = json.loads(SORTIE.read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError):
         pass
+    if ancien.get("date") != jour:
+        ancien = {}
+
+    # Alignements DailyFaceoff : rafraîchis aux 30 min tant qu'il reste un match à venir
+    align = ancien.get("alignements")
+    vieux = True
+    if align and align.get("maj"):
+        age = datetime.now(timezone.utc) - datetime.fromisoformat(align["maj"])
+        vieux = age > timedelta(minutes=ALIGN_MINUTES)
+    a_venir = [g for g in jeux if g.get("gameState") in AVANT]
+    nouvel_align = False
+    if jeux and a_venir and vieux:
+        try:
+            align = alignements.alignements_soir([g[c]["abbrev"] for g in jeux for c in ("homeTeam", "awayTeam")])
+            nouvel_align = True
+        except Exception as ex:  # noqa: BLE001
+            print(f"  alignements : {str(ex)[:120]}")
 
     games = {}
     for g in commences:
@@ -77,14 +95,17 @@ def main():
         if box:
             games[str(g["id"])] = etat_match(box)
 
-    if ancien.get("date") == jour and ancien.get("games") == games:
+    if not games and not nouvel_align:
+        print(f"{jour}: aucun match commencé, alignements à jour")
+        return
+    if ancien.get("games") == games and not nouvel_align:
         print(f"{jour}: rien de neuf")
         return
     SORTIE.write_text(json.dumps({
         "maj": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "date": jour, "games": games,
+        "date": jour, "games": games, "alignements": align,
     }, ensure_ascii=False), encoding="utf-8")
-    print(f"{jour}: {len(games)} matchs mis à jour")
+    print(f"{jour}: {len(games)} matchs mis à jour" + (", alignements rafraîchis" if nouvel_align else ""))
 
 
 if __name__ == "__main__":

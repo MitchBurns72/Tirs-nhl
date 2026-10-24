@@ -243,6 +243,45 @@ tr.sel td{font-weight:700}
 table.serre{font-size:11.5px} table.serre th,table.serre td{padding:5px 3px} table.serre th{font-size:9.5px;letter-spacing:.02em}
 .pos{color:var(--good)} .neg{color:var(--bad)}
 .sep{grid-column:1 / -1;padding:8px 12px;background:var(--chip);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+
+/* Projection par l'alignement + gardiens + alignements */
+.proj{display:flex;flex-direction:column;gap:10px;padding:12px;border-radius:12px;background:var(--surface2);border:1px solid var(--line)}
+.pgrid{display:grid;grid-template-columns:minmax(0,1fr) 64px 64px;gap:2px 8px;align-items:baseline}
+.pab{font:800 15px/1 var(--f-display);text-align:center;color:var(--muted)}
+.plbl{font-size:12.5px;color:var(--muted)}
+.plbl.sous{font-size:11.5px}
+.pv{font:800 28px/1.05 var(--f-display);text-align:center}
+.pv.petit{font-size:20px}
+.ps{font-size:11.5px;color:var(--muted);text-align:center}
+.pscore{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;border-top:1px solid var(--line);padding-top:8px}
+.pscore .plbl{flex-basis:100%}
+.pscore b{font:800 26px/1 var(--f-display)}
+.pscore small{font-weight:700;color:var(--ice)}
+.pscore .ps{flex-basis:100%;text-align:left}
+.proj .aide{margin:0;font-size:11.5px;color:var(--muted)}
+.gards{display:grid;grid-template-columns:1fr;gap:6px}
+.gard{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:8px;align-items:center;font-size:13px}
+.gard small{color:var(--muted)}
+.gface,.aface{width:34px;height:34px;border-radius:50%;overflow:hidden;background:var(--chip);display:block}
+.gface img,.aface img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+.statut{font-size:11px;font-weight:700;padding:2px 7px;border-radius:5px;background:var(--warn-bg);color:var(--warn)}
+.statut.ok{background:var(--good-bg);color:var(--good)}
+details.aln{border-top:1px solid var(--line);padding-top:8px}
+details.aln summary{cursor:pointer;font-size:12.5px;color:var(--muted);font-weight:600}
+.aeq{margin-top:10px}
+.aeq h3{display:flex;align-items:center;gap:8px;margin:6px 0;font:800 20px/1 var(--f-display)}
+.aeq h3 .logo{width:26px;height:26px}
+.ahead,.aj{display:grid;grid-template-columns:30px minmax(0,1fr) 44px 44px 50px;gap:6px;align-items:center}
+.ahead span{font-size:10.5px;color:var(--muted);text-align:right}
+.aj{padding:3px 0;font-size:13px}
+.aj .aface{width:30px;height:30px;box-shadow:0 0 0 2px var(--eq, var(--line))}
+.anom{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.anom small{color:var(--muted)}
+.ap{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.agr{font-size:11px;color:var(--ice);font-weight:700;margin-top:6px}
+.aj.bless{opacity:.55}
+.pp{font-size:12px;color:var(--muted);margin-top:4px}
+.pp b{color:var(--goal)}
 [hidden]{display:none!important}
 </style>
 </head>
@@ -668,6 +707,146 @@ function liste(){
   }).join("");
 }
 
+// ---- Alignements DailyFaceoff + projections par joueur ------------------------------
+// Les deux sources (calcul et job live aux 30 min) : on prend la plus récente.
+const nrm = (s) => (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+function alignDuSoir(){
+  return [D.alignements, LIVE?.alignements].filter(a => a && a.equipes).sort((a, b) => (b.maj || "").localeCompare(a.maj || ""))[0] || null;
+}
+const NOM_GROUPE = { f1: "1er trio", f2: "2e trio", f3: "3e trio", f4: "4e trio", d1: "1re paire", d2: "2e paire", d3: "3e paire" };
+const EV = ["f1", "f2", "f3", "f4", "d1", "d2", "d3"];
+
+// Les joueurs d'une équipe ce soir : l'alignement DailyFaceoff s'il existe, sinon nos joueurs
+// probables (ceux qui ont joué un des 2 derniers matchs). Chaque joueur reçoit les % de la
+// version PRINCIPALE (pas celle choisie dans les puces).
+function joueursEquipe(g, team, A){
+  const nos = D.joueurs.filter(j => j.gameId === g.gameId && j.team === team);
+  const parNom = Object.fromEntries(nos.map(j => [nrm(j.name), j]));
+  const vp = D.principale;
+  const pr = (j) => j ? { t: pred(j, vp, "tirs") || pred(j, S.ver, "tirs"), b: pred(j, vp, "buts") || pred(j, S.ver, "buts"), a: pred(j, vp, "passes") || pred(j, S.ver, "passes") } : null;
+  const al = A?.equipes?.[team];
+  if (!al){
+    return { source: null, groupes: null, liste: nos.map(j => ({ nom: j.name, j, p: pr(j), pos: j.pos })) };
+  }
+  const fiche = (nom) => {
+    const j = parNom[nrm(nom)] || null, x = al.joueurs[nom] || {};
+    return { nom, j, p: pr(j), no: x.no ?? j?.no, face: j?.photo || x.face, inj: x.inj, gtd: x.gtd, pos: (x.pos === "ld" || x.pos === "rd") ? "D" : x.pos === "g" ? "G" : "F" };
+  };
+  const groupes = {};
+  for (const [gr, noms] of Object.entries(al.groupes)) groupes[gr] = noms.map(fiche);
+  const liste = EV.flatMap(gr => groupes[gr] || []);
+  return { source: al, groupes, liste };
+}
+
+// Loi binomiale négative (moyenne m, variance v) : sert à la somme des tirs d'une équipe
+function pmfNB(m, v, max){
+  const out = [];
+  if (v <= m * 1.0001){ let p = Math.exp(-m); out.push(p); for (let n = 1; n <= max; n++){ p *= m / n; out.push(p); } return out; }
+  const r = m * m / (v - m), q = m / (m + r);
+  let p = Math.pow(1 - q, r); out.push(p);
+  for (let n = 1; n <= max; n++){ p *= (n - 1 + r) / n * q; out.push(p); }
+  return out;
+}
+function poisson(m, max){ const o = [Math.exp(-m)]; for (let n = 1; n <= max; n++) o.push(o[n - 1] * m / n); return o; }
+function intervalle(pmf, niv){
+  // Plus petite plage centrée qui contient `niv` de la probabilité (bornes 10 % / 90 %)
+  let c = 0, lo = 0, hi = pmf.length - 1;
+  for (let i = 0; i < pmf.length; i++){ c += pmf[i]; if (c >= (1 - niv) / 2){ lo = i; break; } }
+  c = 0;
+  for (let i = 0; i < pmf.length; i++){ c += pmf[i]; if (c >= 1 - (1 - niv) / 2){ hi = i; break; } }
+  return [lo, hi];
+}
+
+// Projection d'équipe à partir de ses joueurs :
+//  tirs  = somme des tirs attendus de chaque joueur ; dispersion : chaque joueur varie
+//          plus qu'un Poisson (variance λ + λ²/15, comme v1), donc la somme aussi.
+//  buts  = somme des buts attendus de chaque joueur -> Poisson pour l'équipe.
+//  score = la case la plus probable du tableau buts visiteur × buts domicile.
+// Un joueur de l'alignement sans prédiction (rappelé des mineures) reçoit la moyenne de
+// sa position dans son équipe. Limite : les joueurs sont traités comme indépendants (une
+// soirée où toute l'équipe pousse n'est pas modélisée), donc les plages sont un peu étroites.
+function projeter(liste){
+  const avec = liste.filter(x => x.p?.t && x.pos !== "G");
+  if (!avec.length) return null;
+  const moy = (pos, k) => { const t = avec.filter(x => x.pos === pos); return t.length ? t.reduce((s, x) => s + (x.p[k]?.lam || 0), 0) / t.length : 0; };
+  let T = 0, V = 0, B = 0, manquants = 0;
+  for (const x of liste){
+    if (x.pos === "G") continue;
+    const lt = x.p?.t ? x.p.t.lam : (manquants++, moy(x.pos, "t"));
+    const lb = x.p?.b ? x.p.b.lam : moy(x.pos, "b");
+    T += lt; V += lt + lt * lt / 15; B += lb;
+  }
+  const pt = pmfNB(T, V, 90);
+  const mode = pt.indexOf(Math.max(...pt));
+  return { tirs: T, tirsMode: mode, tirsPlage: intervalle(pt, 0.8), buts: B, n: liste.filter(x => x.pos !== "G").length, manquants };
+}
+function scores(la, lh){
+  const pa = poisson(la, 10), ph = poisson(lh, 10), cases = [];
+  let vh = 0, eg = 0;
+  for (let a = 0; a <= 10; a++) for (let h = 0; h <= 10; h++){
+    const p = pa[a] * ph[h];
+    cases.push({ a, h, p });
+    if (h > a) vh += p; else if (h === a) eg += p;
+  }
+  cases.sort((x, y) => y.p - x.p);
+  // Égalité après 60 min : la prolongation se joue presque à pile ou face (52 % pour le local)
+  return { top: cases.slice(0, 3), victoireDom: vh + 0.52 * eg };
+}
+
+const OUVERTS = new Set();   // alignements ouverts : restent ouverts quand la page se redessine en live
+function blocAlignement(g){
+  const A = alignDuSoir();
+  const eqA = joueursEquipe(g, g.away, A), eqH = joueursEquipe(g, g.home, A);
+  const prA = projeter(eqA.liste), prH = projeter(eqH.liste);
+  if (!prA || !prH) return "";
+  const sc = scores(prA.buts, prH.buts);
+  const meilleur = sc.top[0];
+  const gard = (t) => {
+    const x = A?.gardiens?.[t];
+    if (!x) return `<div class="gard"><span class="gface vide"></span><span><b>${t}</b> gardien pas encore annoncé</span></div>`;
+    const conf = /confirm/i.test(x.statut || "");
+    return `<div class="gard"><span class="gface">${x.face ? `<img src="${x.face}" alt="" loading="lazy" onerror="this.remove()">` : ""}</span>
+      <span><b>${x.nom}</b> <small>${t} · ${x.fiche || ""} · ${x.sv ? "arrêts " + x.sv.replace(/^0/, "") : ""}</small></span>
+      <span class="statut ${conf ? "ok" : ""}">${conf ? "Confirmé" : x.statut === "Likely" ? "Probable" : (x.statut || "Pas confirmé")}</span></div>`;
+  };
+  const ligneJ = (x) => `<div class="aj ${x.inj ? "bless" : ""}">
+      <span class="aface" style="--eq:${coul(x.j?.team || "")}">${x.face ? `<img src="${x.face}" alt="" loading="lazy" onerror="this.remove()">` : ""}</span>
+      <span class="anom">${x.no != null ? `<small>#${x.no}</small> ` : ""}${x.nom}${x.gtd ? ' <span class="tag warn">Décision tardive</span>' : ""}</span>
+      <span class="ap" title="But">${x.p?.b ? pct(x.p.b.p) + "%" : "–"}</span>
+      <span class="ap" title="Passe">${x.p?.a ? pct(x.p.a.p) + "%" : "–"}</span>
+      <span class="ap" title="Tirs 2+">${x.p?.t ? pct(x.p.t.p) + "%" : "–"}</span></div>`;
+  const equipe = (t, eq) => {
+    if (!eq.groupes) return `<div class="aeq"><h3>${t}</h3><p class="sh-info">DailyFaceoff n'a pas encore d'alignement. Joueurs probables selon les derniers matchs.</p>
+      <div class="ahead"><span></span><span></span><span>But</span><span>Passe</span><span>Tirs 2+</span></div>${eq.liste.map(ligneJ).join("")}</div>`;
+    const G = eq.groupes;
+    const pp = ["pp1", "pp2"].filter(k => G[k]).map(k => `<div class="pp"><b>${k.toUpperCase()}</b> ${G[k].map(x => x.nom.split(" ").slice(-1)[0]).join(", ")}</div>`).join("");
+    const ir = G.ir?.length ? `<p class="sh-info">Blessés : ${G.ir.map(x => x.nom).join(", ")}</p>` : "";
+    return `<div class="aeq"><h3><img class="logo" src="${LOGO(t)}" alt="" loading="lazy" onerror="this.remove()">${t}</h3>
+      <div class="ahead"><span></span><span></span><span>But</span><span>Passe</span><span>Tirs 2+</span></div>
+      ${EV.filter(k => G[k]).map(k => `<div class="agr">${NOM_GROUPE[k]}</div>${G[k].map(ligneJ).join("")}`).join("")}
+      ${pp}${ir}</div>`;
+  };
+  const src = (eq) => eq.source ? `${eq.source.source || "DailyFaceoff"}, ${new Date(eq.source.maj).toLocaleString("fr-CA", { weekday: "short", hour: "2-digit", minute: "2-digit" })}` : "estimé";
+  const fourchette = (p) => `${p.tirsPlage[0]}-${p.tirsPlage[1]}`;
+  return `<div class="proj">
+      <div class="pgrid">
+        <span></span><b class="pab">${g.away}</b><b class="pab">${g.home}</b>
+        <span class="plbl">Tirs les plus probables</span><b class="pv">${prA.tirsMode}</b><b class="pv">${prH.tirsMode}</b>
+        <span class="plbl sous">80 % du temps entre</span><span class="ps">${fourchette(prA)}</span><span class="ps">${fourchette(prH)}</span>
+        <span class="plbl">Buts attendus</span><b class="pv petit">${prA.buts.toFixed(1)}</b><b class="pv petit">${prH.buts.toFixed(1)}</b>
+      </div>
+      <div class="pscore"><span class="plbl">Score le plus probable</span>
+        <b>${g.away} ${meilleur.a} – ${meilleur.h} ${g.home}</b> <small>${pct(meilleur.p)} %</small>
+        <span class="ps">ensuite : ${sc.top.slice(1).map(s => `${s.a}-${s.h} (${pct(s.p)} %)`).join(", ")} · victoire ${g.home} ${pct(sc.victoireDom)} %</span></div>
+      <p class="aide">Calculé joueur par joueur avec ${D.principale} : ${prA.n + prH.n} joueurs de l'alignement${prA.manquants + prH.manquants ? `, dont ${prA.manquants + prH.manquants} sans prédiction (moyenne de leur position)` : ""}.</p>
+    </div>
+    <div class="gards">${gard(g.away)}${gard(g.home)}</div>
+    <details class="aln" data-gid="${g.gameId}" ${OUVERTS.has(String(g.gameId)) ? "open" : ""}>
+      <summary>Alignements · ${g.away} : ${src(eqA)} · ${g.home} : ${src(eqH)}</summary>
+      ${equipe(g.away, eqA)}${equipe(g.home, eqH)}
+    </details>`;
+}
+
 // ---- Matchs --------------------------------------------------------------------
 function matchs(){
   const v = S.ver;
@@ -759,6 +938,7 @@ function matchs(){
         <div class="eq d"><span class="ligne"><img class="logo" src="${LOGO(g.home)}" alt="" loading="lazy" onerror="this.remove()"><span class="ab">${g.home}</span></span><span class="wp ${ph >= pa ? "fav" : ""}">${pct(ph)} %</span><span class="xg">${p.lam_home.toFixed(1)} buts att.</span></div>
       </div>
       <div class="wbar" aria-hidden="true"><span class="a" style="width:${pct(pa)}%"></span><span class="h" style="width:${pct(ph)}%"></span></div>
+      ${blocAlignement(g)}
       <div class="kv3">
         <div><span class="lbl">Total projeté</span><b>${p.total.toFixed(1)}</b></div>
         <div><span class="lbl">Plus de 5.5</span><b>${pct(p.p_over["5.5"])} %</b></div>
@@ -1402,6 +1582,11 @@ function brancher(){
     for (const id of ["joueurs", "matchs", "suivi", "bets"]) $("#p-" + id).hidden = b.id !== "t-" + id;
   }));
 }
+
+document.addEventListener("toggle", (e) => {
+  const d = e.target;
+  if (d.classList?.contains("aln")) d.open ? OUVERTS.add(d.dataset.gid) : OUVERTS.delete(d.dataset.gid);
+}, true);
 
 async function init(){
   try {

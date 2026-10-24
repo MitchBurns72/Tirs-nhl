@@ -580,6 +580,20 @@ def main():
     copie = [dict(e0)]
     assert alignements.annoter(copie, bl) == 1 and copie[0]["blesse"]["statut"] == "Out" and alignements.absent(bl[next(iter(bl))])
     print("blessures ESPN OK")
+    # Lecteurs DailyFaceoff sur la structure réelle (vue dans la sonde du 24 octobre)
+    comb = {"updatedAt": "2026-10-23T23:41:46Z", "sourceName": "Eric Engels", "players": [
+        {"name": "Cole Caufield", "jerseyNumber": 13, "positionIdentifier": "lw", "groupIdentifier": "f1", "fantasydataFaceUrl": "u1"},
+        {"name": "Cole Caufield", "jerseyNumber": 13, "positionIdentifier": "lw", "groupIdentifier": "pp1", "fantasydataFaceUrl": "u1"},
+        {"name": "Lane Hutson", "jerseyNumber": 48, "positionIdentifier": "ld", "groupIdentifier": "d1"},
+        {"name": "Ivan Demidov", "positionIdentifier": "rw", "groupIdentifier": "ir", "injuryStatus": "ir"}]}
+    tr = alignements.lire_trios(comb)
+    assert tr["groupes"] == {"f1": ["Cole Caufield"], "d1": ["Lane Hutson"], "pp1": ["Cole Caufield"], "ir": ["Ivan Demidov"]}
+    assert tr["joueurs"]["Ivan Demidov"]["inj"] == "ir" and tr["joueurs"]["Cole Caufield"]["no"] == 13
+    gd = alignements.lire_gardiens({"data": [{"homeTeamSlug": "chicago-blackhawks", "homeGoalieName": "Spencer Knight",
+        "homeNewsStrengthName": "Confirmed", "homeGoalieSavePercentage": "0.888", "awayTeamSlug": "montreal-canadiens",
+        "awayGoalieName": "Jacob Fowler", "awayNewsStrengthName": "Likely"}]})
+    assert gd["CHI"]["nom"] == "Spencer Knight" and gd["MTL"]["statut"] == "Likely"
+    print("lecteurs DailyFaceoff OK")
     # « Pourquoi ce % » : la v2 explique aussi but et passe, et le mélange avec le marché
     sortie = json.loads(run.SORTIE.read_text())
     pv = next(e["preds"][parent] for e in sortie["joueurs"] if parent in e["preds"] and e.get("cotes", {}).get("tirs"))

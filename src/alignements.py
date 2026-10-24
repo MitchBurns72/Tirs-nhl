@@ -1,6 +1,6 @@
 """
-Infos du soir : blessures (ESPN), et SONDES pour les gardiens partants et les trios /
-unités d'avantage numérique (DailyFaceoff).
+Infos du soir : blessures (ESPN), gardiens partants et trios / unités d'avantage
+numérique (DailyFaceoff), plus les SONDES qui sauvent le JSON brut une fois par jour.
 
 POURQUOI des sondes d'abord : DailyFaceoff est un site Next.js. Ses données sont dans un
 bloc JSON (__NEXT_DATA__) dont on ne connaît pas encore les noms de champs. Plutôt que de
@@ -13,7 +13,7 @@ Tout ici est optionnel : si un site plante ou change, le calcul continue sans ce
 import json
 import re
 import urllib.request
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 from cotes import norm
@@ -69,6 +69,76 @@ def annoter(entries, bless):
             e["blesse"] = {k: info[k] for k in ("statut", "detail", "retour")}
             n += 1
     return n
+
+
+# Abréviation NHL -> adresse de l'équipe chez DailyFaceoff (eux écrivent MON, NAS, VEG...)
+SLUG = {"ANA": "anaheim-ducks", "BOS": "boston-bruins", "BUF": "buffalo-sabres", "CGY": "calgary-flames",
+        "CAR": "carolina-hurricanes", "CHI": "chicago-blackhawks", "COL": "colorado-avalanche",
+        "CBJ": "columbus-blue-jackets", "DAL": "dallas-stars", "DET": "detroit-red-wings", "EDM": "edmonton-oilers",
+        "FLA": "florida-panthers", "LAK": "los-angeles-kings", "MIN": "minnesota-wild", "MTL": "montreal-canadiens",
+        "NSH": "nashville-predators", "NJD": "new-jersey-devils", "NYI": "new-york-islanders",
+        "NYR": "new-york-rangers", "OTT": "ottawa-senators", "PHI": "philadelphia-flyers",
+        "PIT": "pittsburgh-penguins", "SJS": "san-jose-sharks", "SEA": "seattle-kraken", "STL": "st-louis-blues",
+        "TBL": "tampa-bay-lightning", "TOR": "toronto-maple-leafs", "UTA": "utah-mammoth",
+        "VAN": "vancouver-canucks", "VGK": "vegas-golden-knights", "WSH": "washington-capitals",
+        "WPG": "winnipeg-jets"}
+ABBR_DE_SLUG = {v: k for k, v in SLUG.items()}
+# Ordre d'affichage des groupes (structure réelle vue dans la sonde du 24 octobre)
+GROUPES = ["f1", "f2", "f3", "f4", "d1", "d2", "d3", "g", "pp1", "pp2", "pk1", "pk2", "ir"]
+
+
+def lire_trios(combinations):
+    """pageProps.combinations de DailyFaceoff -> alignement compact.
+    joueurs : {nom: {no, pos, face, inj, gtd}} ; groupes : {"f1": [noms], "pp1": [...], ...}."""
+    joueurs, groupes = {}, {}
+    for p in combinations.get("players", []) or []:
+        nom = p.get("name")
+        if not nom:
+            continue
+        joueurs.setdefault(nom, {"no": p.get("jerseyNumber"), "pos": p.get("positionIdentifier"),
+                                 "face": p.get("fantasydataFaceUrl"), "inj": p.get("injuryStatus"),
+                                 "gtd": bool(p.get("gameTimeDecision"))})
+        groupes.setdefault(p.get("groupIdentifier") or "?", []).append(nom)
+    return {"maj": combinations.get("updatedAt"), "source": combinations.get("sourceName"),
+            "joueurs": joueurs, "groupes": {g: groupes[g] for g in GROUPES if g in groupes}}
+
+
+def lire_gardiens(page_props):
+    """pageProps de la page des gardiens partants -> {abbr NHL: {nom, statut, sv, gaa, face, maj}}."""
+    out = {}
+    for m in page_props.get("data", []) or []:
+        for cote in ("home", "away"):
+            abbr = ABBR_DE_SLUG.get(m.get(f"{cote}TeamSlug"))
+            nom = m.get(f"{cote}GoalieName")
+            if abbr and nom:
+                out[abbr] = {"nom": nom, "statut": m.get(f"{cote}NewsStrengthName"),
+                             "sv": m.get(f"{cote}GoalieSavePercentage"), "gaa": m.get(f"{cote}GoalieGoalsAgainstAvg"),
+                             "fiche": f'{m.get(f"{cote}GoalieWins", 0)}-{m.get(f"{cote}GoalieLosses", 0)}-{m.get(f"{cote}GoalieOvertimeLosses", 0)}',
+                             "face": m.get(f"{cote}GoalieFantasydataFaceUrl") or m.get(f"{cote}GoalieHeadshotUrl"),
+                             "maj": m.get(f"{cote}NewsCreatedAt") or m.get(f"{cote}NewsUpdatedAt")}
+    return out
+
+
+def alignements_soir(equipes):
+    """Trios + gardiens pour les équipes de ce soir. Une équipe qui plante n'empêche pas les autres."""
+    out = {"maj": datetime.now(timezone.utc).isoformat(timespec="minutes"), "equipes": {}, "gardiens": {}}
+    for abbr in sorted(set(equipes)):
+        slug = SLUG.get(abbr)
+        if not slug:
+            continue
+        try:
+            nd = _next_data(_texte(DFO_TRIOS.format(slug=slug)))
+            comb = ((nd or {}).get("props", {}).get("pageProps", {}) or {}).get("combinations")
+            if comb:
+                out["equipes"][abbr] = lire_trios(comb)
+        except Exception as ex:  # noqa: BLE001
+            print(f"  trios {abbr} : {str(ex)[:100]}")
+    try:
+        nd = _next_data(_texte(DFO_GARDIENS))
+        out["gardiens"] = lire_gardiens((nd or {}).get("props", {}).get("pageProps", {}) or {})
+    except Exception as ex:  # noqa: BLE001
+        print(f"  gardiens : {str(ex)[:100]}")
+    return out
 
 
 def _next_data(html):

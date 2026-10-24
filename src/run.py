@@ -1023,6 +1023,16 @@ def main():
             grader()   # ceux qui sont déjà finis sont gradés tout de suite
             existant = lire_json(f_jour, existant)
 
+    # Alignements DailyFaceoff (trios, PP, gardiens) des équipes de ce soir. Le job live
+    # les rafraîchit aux 30 min dans docs/live.json ; la page prend le plus récent.
+    align = None
+    if AVEC_ALIGNEMENTS and matchs:
+        try:
+            align = alignements.alignements_soir([t for m in matchs for t in (m["home"], m["away"])])
+            print(f"  alignements : {len(align['equipes'])} équipes, {len(align['gardiens'])} gardiens")
+        except Exception as ex:  # noqa: BLE001
+            print(f"  alignements : {str(ex)[:120]}")
+
     historique = [h for h in (lire_json(f, None) for f in sorted(DIR_PRED.glob("*.json"))) if h]
     quota = lire_json(SORTIE, {}).get("cotes_quota")
     if AVEC_COTES:
@@ -1039,6 +1049,7 @@ def main():
                      for v, s in VERSIONS.items()],
         "principale": COMBO if labo.get("principales") else principale,
         "principales": labo.get("principales"),
+        "alignements": align,
         "matchs": matchs,
         "games": sans_features(existant["games"]),
         "joueurs": allege(existant["entries"]),
