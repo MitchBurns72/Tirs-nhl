@@ -1,5 +1,5 @@
 {
- "genere": "2026-10-24T21:26+00:00",
+ "genere": "2026-10-24T22:06+00:00",
  "date": "2026-10-24",
  "versions": [
   {
@@ -51,7 +51,7 @@
   "tot": "v1"
  },
  "alignements": {
-  "maj": "2026-10-24T21:26+00:00",
+  "maj": "2026-10-24T22:06+00:00",
   "equipes": {
    "ANA": {
     "maj": "2026-10-24T16:52:13.082Z",
@@ -5837,8 +5837,8 @@
    "NJD": {
     "nom": "Jake Allen",
     "statut": "Confirmed",
-    "sv": "0.886",
-    "gaa": "2.98",
+    "sv": "0.882",
+    "gaa": "2.99",
     "fiche": "4-2-0",
     "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/42d5f19b-0f24-11e2-8525-18a905767e44.jpg",
     "maj": "2026-10-24T17:31:56.013Z"
@@ -5846,8 +5846,8 @@
    "LAK": {
     "nom": "Anton Forsberg",
     "statut": "Confirmed",
-    "sv": "0.892",
-    "gaa": "2.35",
+    "sv": "0.9",
+    "gaa": "2.4",
     "fiche": "0-1-1",
     "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/3/3cdfd392-e23c-4d49-b608-a473995998aa.jpg",
     "maj": "2026-10-24T19:00:24.293Z"
@@ -6048,7 +6048,7 @@
    "away": "LAK",
    "home": "NJD",
    "start": "2026-10-24T19:30:00Z",
-   "state": "LIVE",
+   "state": "FINAL",
    "season": 20262027
   },
   {
@@ -6477,7 +6477,10 @@
      "src_vic": "v1"
     }
    },
-   "result": null,
+   "result": {
+    "home": 3,
+    "away": 1
+   },
    "cotes": {
     "home": 1.6,
     "away": 2.42,
@@ -6576,7 +6579,7 @@
     "n": 9,
     "p_home_marche": 0.628,
     "ligne": 6.5,
-    "over": 1.92,
+    "over": 1.91,
     "under": 1.91
    }
   },
@@ -6760,8 +6763,8 @@
     "n": 9,
     "p_home_marche": 0.5247,
     "ligne": 6.5,
-    "over": 1.95,
-    "under": 1.87
+    "over": 1.91,
+    "under": 1.91
    }
   },
   {
@@ -6939,10 +6942,10 @@
    },
    "result": null,
    "cotes": {
-    "home": 2.15,
+    "home": 2.14,
     "away": 1.74,
     "n": 9,
-    "p_home_marche": 0.4473,
+    "p_home_marche": 0.4485,
     "ligne": 6.0,
     "over": 1.87,
     "under": 1.975
@@ -7036,8 +7039,8 @@
     "n": 9,
     "p_home_marche": 0.4192,
     "ligne": 6.0,
-    "over": 1.88,
-    "under": 1.94
+    "over": 1.885,
+    "under": 1.935
    }
   },
   {
@@ -7128,8 +7131,8 @@
     "n": 9,
     "p_home_marche": 0.5823,
     "ligne": 7.0,
-    "over": 1.995,
-    "under": 1.85
+    "over": 2.0,
+    "under": 1.86
    }
   },
   {
@@ -8017,6 +8020,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.258,
+      "lam": 0.299,
+      "detail": {
+       "sh": 0.138,
+       "f_gardien": 0.984,
+       "pp": 3.716
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.355,
+      "lam": 0.448,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 3.716,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -8547,6 +8572,28 @@
        "f_equipe": 0.846
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.129,
+      "lam": 0.139,
+      "detail": {
+       "sh": 0.132,
+       "f_gardien": 0.984,
+       "pp": 0.495
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.147,
+      "lam": 0.172,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 0.495,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -9161,6 +9208,28 @@
        "f_equipe": 0.846
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.324,
+      "lam": 0.39,
+      "detail": {
+       "sh": 0.131,
+       "f_gardien": 0.984,
+       "pp": 3.152
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.236,
+      "lam": 0.283,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 3.152,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -9793,6 +9862,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.216,
+      "lam": 0.244,
+      "detail": {
+       "sh": 0.137,
+       "f_gardien": 0.984,
+       "pp": 3.234
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.281,
+      "lam": 0.343,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 3.234,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -10332,6 +10423,28 @@
        "f_equipe": 0.846
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.154,
+      "lam": 0.169,
+      "detail": {
+       "sh": 0.133,
+       "f_gardien": 0.984,
+       "pp": 0.088
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.146,
+      "lam": 0.171,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 0.088,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -10950,6 +11063,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.182,
+      "lam": 0.202,
+      "detail": {
+       "sh": 0.124,
+       "f_gardien": 0.984,
+       "pp": 1.201
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.176,
+      "lam": 0.208,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 1.201,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -11475,6 +11610,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.117,
+      "lam": 0.125,
+      "detail": {
+       "sh": 0.131,
+       "f_gardien": 0.984,
+       "pp": 1.731
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.188,
+      "lam": 0.222,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 1.731,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {},
@@ -11993,6 +12150,28 @@
        "f_equipe": 0.846
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.098,
+      "lam": 0.104,
+      "detail": {
+       "sh": 0.123,
+       "f_gardien": 0.984,
+       "pp": 0.005
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.118,
+      "lam": 0.138,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 0.005,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -12521,6 +12700,28 @@
        "f_equipe": 0.846
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.129,
+      "lam": 0.139,
+      "detail": {
+       "sh": 0.127,
+       "f_gardien": 0.984,
+       "pp": 0.011
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.172,
+      "lam": 0.203,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 0.011,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -13139,6 +13340,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.288,
+      "lam": 0.34,
+      "detail": {
+       "sh": 0.132,
+       "f_gardien": 0.984,
+       "pp": 3.955
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.337,
+      "lam": 0.421,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 3.955,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -13673,6 +13896,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.14,
+      "lam": 0.152,
+      "detail": {
+       "sh": 0.125,
+       "f_gardien": 0.984,
+       "pp": 1.017
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.113,
+      "lam": 0.132,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 1.017,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {},
@@ -14195,6 +14440,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.128,
+      "lam": 0.138,
+      "detail": {
+       "sh": 0.133,
+       "f_gardien": 0.984,
+       "pp": 0.12
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.136,
+      "lam": 0.159,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 0.12,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -14702,6 +14969,28 @@
        "f_equipe": 0.846
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.044,
+      "lam": 0.046,
+      "detail": {
+       "sh": 0.059,
+       "f_gardien": 0.984,
+       "pp": 0.009
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.159,
+      "lam": 0.188,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 0.009,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -15229,6 +15518,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.069,
+      "lam": 0.072,
+      "detail": {
+       "sh": 0.057,
+       "f_gardien": 0.984,
+       "pp": 0.024
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.127,
+      "lam": 0.149,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 0.024,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -15730,6 +16041,28 @@
        "f_equipe": 0.846
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.036,
+      "lam": 0.038,
+      "detail": {
+       "sh": 0.07,
+       "f_gardien": 0.984,
+       "pp": 0.0
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.144,
+      "lam": 0.169,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 0.0,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -16344,6 +16677,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.089,
+      "lam": 0.094,
+      "detail": {
+       "sh": 0.065,
+       "f_gardien": 0.984,
+       "pp": 4.004
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.366,
+      "lam": 0.464,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 4.004,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -16887,6 +17242,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.052,
+      "lam": 0.055,
+      "detail": {
+       "sh": 0.062,
+       "f_gardien": 0.984,
+       "pp": 0.963
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.182,
+      "lam": 0.215,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 0.963,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -17409,6 +17786,28 @@
        "f_equipe": 0.846
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.051,
+      "lam": 0.053,
+      "detail": {
+       "sh": 0.067,
+       "f_gardien": 0.984,
+       "pp": 0.19
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.135,
+      "lam": 0.159,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 0.19,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -17937,6 +18336,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.041,
+      "lam": 0.043,
+      "detail": {
+       "sh": 0.06,
+       "f_gardien": 0.984,
+       "pp": 0.016
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.164,
+      "lam": 0.193,
+      "detail": {
+       "f_equipe": 0.846,
+       "pp": 0.016,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -18463,6 +18884,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.172,
+      "lam": 0.189,
+      "detail": {
+       "sh": 0.131,
+       "f_gardien": 1.086,
+       "pp": 0.007
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.166,
+      "lam": 0.196,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 0.007,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -18985,6 +19428,28 @@
        "f_equipe": 1.016
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.153,
+      "lam": 0.168,
+      "detail": {
+       "sh": 0.127,
+       "f_gardien": 1.086,
+       "pp": 2.453
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.272,
+      "lam": 0.33,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 2.453,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -19588,6 +20053,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.181,
+      "lam": 0.2,
+      "detail": {
+       "sh": 0.131,
+       "f_gardien": 1.086,
+       "pp": 1.451
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.207,
+      "lam": 0.246,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 1.451,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -20122,6 +20609,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.153,
+      "lam": 0.168,
+      "detail": {
+       "sh": 0.123,
+       "f_gardien": 1.086,
+       "pp": 1.859
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.18,
+      "lam": 0.213,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 1.859,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {},
@@ -20643,6 +21152,28 @@
        "f_equipe": 1.016
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.163,
+      "lam": 0.179,
+      "detail": {
+       "sh": 0.128,
+       "f_gardien": 1.086,
+       "pp": 0.099
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.211,
+      "lam": 0.252,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 0.099,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -21260,6 +21791,28 @@
        "f_equipe": 1.016
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.195,
+      "lam": 0.217,
+      "detail": {
+       "sh": 0.119,
+       "f_gardien": 1.086,
+       "pp": 0.135
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.265,
+      "lam": 0.32,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 0.135,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -21895,6 +22448,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.233,
+      "lam": 0.265,
+      "detail": {
+       "sh": 0.129,
+       "f_gardien": 1.086,
+       "pp": 1.537
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.303,
+      "lam": 0.372,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 1.537,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -22529,6 +23104,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.277,
+      "lam": 0.324,
+      "detail": {
+       "sh": 0.132,
+       "f_gardien": 1.086,
+       "pp": 2.799
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.191,
+      "lam": 0.227,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 2.799,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -23048,6 +23645,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.111,
+      "lam": 0.118,
+      "detail": {
+       "sh": 0.129,
+       "f_gardien": 1.086,
+       "pp": 0.0
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.151,
+      "lam": 0.178,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 0.0,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -23549,6 +24168,28 @@
        "f_equipe": 1.016
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.186,
+      "lam": 0.206,
+      "detail": {
+       "sh": 0.137,
+       "f_gardien": 1.086,
+       "pp": 0.072
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.197,
+      "lam": 0.233,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 0.072,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -24166,6 +24807,28 @@
        "f_equipe": 1.016
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.208,
+      "lam": 0.234,
+      "detail": {
+       "sh": 0.131,
+       "f_gardien": 1.086,
+       "pp": 2.439
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.259,
+      "lam": 0.312,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 2.439,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -24801,6 +25464,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.252,
+      "lam": 0.291,
+      "detail": {
+       "sh": 0.141,
+       "f_gardien": 1.086,
+       "pp": 2.976
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.289,
+      "lam": 0.353,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 2.976,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -25435,6 +26120,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.274,
+      "lam": 0.32,
+      "detail": {
+       "sh": 0.137,
+       "f_gardien": 1.086,
+       "pp": 3.028
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.357,
+      "lam": 0.45,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 3.028,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -25978,6 +26685,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.039,
+      "lam": 0.041,
+      "detail": {
+       "sh": 0.053,
+       "f_gardien": 1.086,
+       "pp": 0.008
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.091,
+      "lam": 0.107,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 0.008,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {},
@@ -26487,6 +27216,28 @@
        "f_equipe": 1.016
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.074,
+      "lam": 0.078,
+      "detail": {
+       "sh": 0.063,
+       "f_gardien": 1.086,
+       "pp": 1.283
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.298,
+      "lam": 0.365,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 1.283,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -27105,6 +27856,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.085,
+      "lam": 0.09,
+      "detail": {
+       "sh": 0.062,
+       "f_gardien": 1.086,
+       "pp": 2.65
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.244,
+      "lam": 0.293,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 2.65,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -27645,6 +28418,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.043,
+      "lam": 0.045,
+      "detail": {
+       "sh": 0.058,
+       "f_gardien": 1.086,
+       "pp": 2.133
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.108,
+      "lam": 0.127,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 2.133,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {},
@@ -28142,6 +28937,28 @@
        "f_equipe": 1.016
       },
       "src": "v1"
+     }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.037,
+      "lam": 0.039,
+      "detail": {
+       "sh": 0.062,
+       "f_gardien": 1.086,
+       "pp": 0.0
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.166,
+      "lam": 0.196,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 0.0,
+       "k_pp": 0.8
+      }
      }
     }
    },
@@ -28669,6 +29486,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.116,
+      "lam": 0.124,
+      "detail": {
+       "sh": 0.07,
+       "f_gardien": 1.086,
+       "pp": 0.611
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.275,
+      "lam": 0.335,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 0.611,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -29195,6 +30034,28 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.065,
+      "lam": 0.068,
+      "detail": {
+       "sh": 0.057,
+       "f_gardien": 1.086,
+       "pp": 0.032
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.134,
+      "lam": 0.157,
+      "detail": {
+       "f_equipe": 1.016,
+       "pp": 0.032,
+       "k_pp": 0.8
+      }
+     }
     }
    },
    "result": {
@@ -29715,10 +30576,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.145,
+      "lam": 0.158,
+      "detail": {
+       "sh": 0.132,
+       "f_gardien": 1.008,
+       "pp": 0.087
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.139,
+      "lam": 0.163,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 0.087,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -30228,10 +31115,32 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.228,
+      "lam": 0.259,
+      "detail": {
+       "sh": 0.129,
+       "f_gardien": 1.008,
+       "pp": 3.214
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.216,
+      "lam": 0.257,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 3.214,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "cotes": null,
    "blesse": {
     "statut": "Day-To-Day",
@@ -30840,10 +31749,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.174,
+      "lam": 0.192,
+      "detail": {
+       "sh": 0.123,
+       "f_gardien": 1.008,
+       "pp": 1.071
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.208,
+      "lam": 0.247,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 1.071,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": {
     "tirs": {
      "prix": 1.93,
@@ -31367,10 +32302,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.106,
+      "lam": 0.113,
+      "detail": {
+       "sh": 0.128,
+       "f_gardien": 1.008,
+       "pp": 0.0
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.092,
+      "lam": 0.108,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 0.0,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -31974,10 +32935,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.322,
+      "lam": 0.387,
+      "detail": {
+       "sh": 0.138,
+       "f_gardien": 1.008,
+       "pp": 2.982
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.307,
+      "lam": 0.378,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 2.982,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": {
     "tirs": {
      "prix": 1.235,
@@ -32598,10 +33585,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.257,
+      "lam": 0.297,
+      "detail": {
+       "sh": 0.122,
+       "f_gardien": 1.008,
+       "pp": 2.686
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.25,
+      "lam": 0.301,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 2.686,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": {
     "tirs3": {
      "prix": 1.795,
@@ -33131,10 +34144,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.168,
+      "lam": 0.185,
+      "detail": {
+       "sh": 0.129,
+       "f_gardien": 1.008,
+       "pp": 0.011
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.121,
+      "lam": 0.141,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 0.011,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -33641,10 +34680,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.115,
+      "lam": 0.123,
+      "detail": {
+       "sh": 0.129,
+       "f_gardien": 1.008,
+       "pp": 0.067
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.143,
+      "lam": 0.168,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 0.067,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -34248,10 +35313,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.218,
+      "lam": 0.247,
+      "detail": {
+       "sh": 0.115,
+       "f_gardien": 1.008,
+       "pp": 0.796
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.196,
+      "lam": 0.232,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 0.796,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": {
     "tirs4": {
      "prix": 4.95,
@@ -34872,10 +35963,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.32,
+      "lam": 0.385,
+      "detail": {
+       "sh": 0.137,
+       "f_gardien": 1.008,
+       "pp": 3.354
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.389,
+      "lam": 0.499,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 3.354,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": {
     "tirs4": {
      "prix": 3.125,
@@ -35402,10 +36519,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.159,
+      "lam": 0.174,
+      "detail": {
+       "sh": 0.131,
+       "f_gardien": 1.008,
+       "pp": 1.093
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.157,
+      "lam": 0.185,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 1.093,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -35900,10 +37043,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.129,
+      "lam": 0.139,
+      "detail": {
+       "sh": 0.12,
+       "f_gardien": 1.008,
+       "pp": 0.0
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.135,
+      "lam": 0.158,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 0.0,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -36498,10 +37667,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.186,
+      "lam": 0.206,
+      "detail": {
+       "sh": 0.128,
+       "f_gardien": 1.008,
+       "pp": 3.18
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.33,
+      "lam": 0.41,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 3.18,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": {
     "tirs": {
      "prix": 1.875,
@@ -37031,10 +38226,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.04,
+      "lam": 0.041,
+      "detail": {
+       "sh": 0.062,
+       "f_gardien": 1.008,
+       "pp": 0.049
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.134,
+      "lam": 0.158,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 0.049,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -37638,10 +38859,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.101,
+      "lam": 0.108,
+      "detail": {
+       "sh": 0.062,
+       "f_gardien": 1.008,
+       "pp": 2.894
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.251,
+      "lam": 0.303,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 2.894,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": {
     "tirs3": {
      "prix": 3.425,
@@ -38171,10 +39418,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.06,
+      "lam": 0.062,
+      "detail": {
+       "sh": 0.059,
+       "f_gardien": 1.008,
+       "pp": 0.906
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.164,
+      "lam": 0.193,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 0.906,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -38687,10 +39960,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.041,
+      "lam": 0.043,
+      "detail": {
+       "sh": 0.061,
+       "f_gardien": 1.008,
+       "pp": 0.015
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.127,
+      "lam": 0.15,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 0.015,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -39203,10 +40502,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.055,
+      "lam": 0.058,
+      "detail": {
+       "sh": 0.052,
+       "f_gardien": 1.008,
+       "pp": 0.0
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.151,
+      "lam": 0.178,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 0.0,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -39713,10 +41038,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.062,
+      "lam": 0.065,
+      "detail": {
+       "sh": 0.064,
+       "f_gardien": 1.008,
+       "pp": 1.308
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.165,
+      "lam": 0.195,
+      "detail": {
+       "f_equipe": 0.83,
+       "pp": 1.308,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -40229,10 +41580,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.135,
+      "lam": 0.146,
+      "detail": {
+       "sh": 0.128,
+       "f_gardien": 0.959,
+       "pp": 0.401
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.163,
+      "lam": 0.191,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 0.401,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -40842,10 +42219,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.237,
+      "lam": 0.271,
+      "detail": {
+       "sh": 0.125,
+       "f_gardien": 0.959,
+       "pp": 2.768
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.425,
+      "lam": 0.556,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 2.768,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": {
     "tirs4": {
      "prix": 4.45,
@@ -41357,10 +42760,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.17,
+      "lam": 0.188,
+      "detail": {
+       "sh": 0.136,
+       "f_gardien": 0.959,
+       "pp": 0.14
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.269,
+      "lam": 0.326,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 0.14,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -41961,10 +43390,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.224,
+      "lam": 0.255,
+      "detail": {
+       "sh": 0.116,
+       "f_gardien": 0.959,
+       "pp": 3.048
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.423,
+      "lam": 0.553,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 3.048,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": {
     "tirs": {
      "prix": 1.405,
@@ -42500,10 +43955,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.167,
+      "lam": 0.184,
+      "detail": {
+       "sh": 0.138,
+       "f_gardien": 0.959,
+       "pp": 0.381
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.139,
+      "lam": 0.163,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 0.381,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -43113,10 +44594,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.248,
+      "lam": 0.285,
+      "detail": {
+       "sh": 0.127,
+       "f_gardien": 0.959,
+       "pp": 1.106
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.273,
+      "lam": 0.331,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 1.106,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true,
    "cotes": {
     "tirs": {
      "prix": 1.415,
@@ -43743,10 +45250,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.251,
+      "lam": 0.289,
+      "detail": {
+       "sh": 0.138,
+       "f_gardien": 0.959,
+       "pp": 2.798
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.333,
+      "lam": 0.415,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 2.798,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": {
     "tirs4": {
      "prix": 3.525,
@@ -44373,10 +45906,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.332,
+      "lam": 0.403,
+      "detail": {
+       "sh": 0.122,
+       "f_gardien": 0.959,
+       "pp": 2.906
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.528,
+      "lam": 0.743,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 2.906,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": {
     "tirs4": {
      "prix": 1.91,
@@ -44912,10 +46471,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.2,
+      "lam": 0.224,
+      "detail": {
+       "sh": 0.153,
+       "f_gardien": 0.959,
+       "pp": 1.002
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.265,
+      "lam": 0.321,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 1.002,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -45525,10 +47110,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.253,
+      "lam": 0.292,
+      "detail": {
+       "sh": 0.106,
+       "f_gardien": 0.959,
+       "pp": 1.22
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.239,
+      "lam": 0.287,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 1.22,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": {
     "tirs3": {
      "prix": 1.645,
@@ -46155,10 +47766,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.203,
+      "lam": 0.228,
+      "detail": {
+       "sh": 0.116,
+       "f_gardien": 0.959,
+       "pp": 1.802
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.258,
+      "lam": 0.311,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 1.802,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "cotes": {
     "tirs3": {
      "prix": 2.695,
@@ -46694,10 +48331,32 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.041,
+      "lam": 0.042,
+      "detail": {
+       "sh": 0.065,
+       "f_gardien": 0.959,
+       "pp": 0.385
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.205,
+      "lam": 0.244,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 0.385,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "cotes": null
   },
   {
@@ -47307,10 +48966,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.114,
+      "lam": 0.122,
+      "detail": {
+       "sh": 0.059,
+       "f_gardien": 0.959,
+       "pp": 1.401
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.298,
+      "lam": 0.366,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 1.401,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": {
     "tirs3": {
      "prix": 2.37,
@@ -47937,10 +49622,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.122,
+      "lam": 0.131,
+      "detail": {
+       "sh": 0.06,
+       "f_gardien": 0.959,
+       "pp": 3.002
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.348,
+      "lam": 0.438,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 3.002,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": {
     "tirs": {
      "prix": 1.325,
@@ -48461,10 +50172,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.042,
+      "lam": 0.044,
+      "detail": {
+       "sh": 0.057,
+       "f_gardien": 0.959,
+       "pp": 0.022
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.189,
+      "lam": 0.223,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 0.022,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -48983,10 +50720,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.064,
+      "lam": 0.067,
+      "detail": {
+       "sh": 0.056,
+       "f_gardien": 0.959,
+       "pp": 0.179
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.22,
+      "lam": 0.262,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 0.179,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -49505,10 +51268,36 @@
       },
       "src": "v1"
      }
+    },
+    "but_v5": {
+     "buts": {
+      "p": 0.035,
+      "lam": 0.036,
+      "detail": {
+       "sh": 0.054,
+       "f_gardien": 0.959,
+       "pp": 0.142
+      }
+     }
+    },
+    "passe_v5": {
+     "passes": {
+      "p": 0.21,
+      "lam": 0.25,
+      "detail": {
+       "f_equipe": 1.157,
+       "pp": 0.142,
+       "k_pp": 0.8
+      }
+     }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "cotes": null
   },
   {
@@ -51876,7 +53665,7 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.31,
+     "prix": 1.305,
      "n": 2
     },
     "tirs3": {
@@ -52131,11 +53920,11 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 3.375,
+     "prix": 3.325,
      "n": 2
     },
     "tirs4": {
-     "prix": 8.125,
+     "prix": 8.0,
      "n": 2
     }
    },
@@ -52378,11 +54167,11 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.83,
+     "prix": 1.82,
      "n": 3
     },
     "tirs3": {
-     "prix": 3.17,
+     "prix": 3.16,
      "n": 2
     },
     "tirs4": {
@@ -53801,15 +55590,15 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.89,
+     "prix": 1.87,
      "n": 3
     },
     "tirs3": {
-     "prix": 3.75,
+     "prix": 3.7,
      "n": 2
     },
     "tirs4": {
-     "prix": 8.75,
+     "prix": 8.625,
      "n": 2
     }
    },
@@ -56013,7 +57802,7 @@
      "n": 2
     },
     "tirs4": {
-     "prix": 1.91,
+     "prix": 1.92,
      "n": 3
     }
    },
@@ -63687,11 +65476,11 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.71,
+     "prix": 1.73,
      "n": 3
     },
     "tirs3": {
-     "prix": 2.7,
+     "prix": 2.735,
      "n": 2
     },
     "tirs4": {
@@ -66731,7 +68520,7 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.14,
+     "prix": 1.15,
      "n": 1
     },
     "tirs": {
@@ -66739,11 +68528,11 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 2.825,
+     "prix": 2.85,
      "n": 2
     },
     "tirs4": {
-     "prix": 5.725,
+     "prix": 5.775,
      "n": 2
     }
    },
@@ -68359,7 +70148,7 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.13,
+     "prix": 1.12,
      "n": 1
     },
     "tirs": {
@@ -68367,7 +70156,7 @@
      "n": 2
     },
     "tirs3": {
-     "prix": 2.65,
+     "prix": 2.6,
      "n": 3
     },
     "tirs4": {
@@ -69269,7 +71058,7 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.43,
+     "prix": 1.425,
      "n": 2
     },
     "tirs3": {
@@ -69521,7 +71310,7 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 4.5,
+     "prix": 4.45,
      "n": 2
     },
     "tirs4": {
@@ -71760,11 +73549,11 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.305,
+     "prix": 1.315,
      "n": 2
     },
     "tirs3": {
-     "prix": 2.0,
+     "prix": 2.03,
      "n": 3
     },
     "tirs4": {
@@ -72458,7 +74247,7 @@
      "n": 2
     },
     "tirs4": {
-     "prix": 9.0,
+     "prix": 8.75,
      "n": 2
     }
    },
@@ -72688,7 +74477,7 @@
    "played": null,
    "cotes": {
     "tirs": {
-     "prix": 1.96,
+     "prix": 1.93,
      "n": 1
     }
    },
@@ -73588,7 +75377,7 @@
    "played": null,
    "cotes": {
     "tirs": {
-     "prix": 1.81,
+     "prix": 1.79,
      "n": 1
     }
    },
@@ -73826,7 +75615,7 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.64,
+     "prix": 1.63,
      "n": 2
     },
     "tirs3": {
@@ -74077,15 +75866,15 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.255,
+     "prix": 1.25,
      "n": 2
     },
     "tirs3": {
-     "prix": 1.8,
+     "prix": 1.81,
      "n": 3
     },
     "tirs4": {
-     "prix": 2.855,
+     "prix": 2.83,
      "n": 2
     }
    },
@@ -74301,7 +76090,7 @@
    "played": null,
    "cotes": {
     "tirs": {
-     "prix": 1.8,
+     "prix": 1.79,
      "n": 1
     }
    },
@@ -74956,19 +76745,19 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.26,
+     "prix": 1.24,
      "n": 1
     },
     "tirs": {
-     "prix": 2.19,
+     "prix": 2.14,
      "n": 2
     },
     "tirs3": {
-     "prix": 4.45,
+     "prix": 4.25,
      "n": 2
     },
     "tirs4": {
-     "prix": 11.0,
+     "prix": 10.5,
      "n": 2
     }
    },
@@ -75207,7 +76996,7 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.07,
+     "prix": 1.08,
      "n": 1
     },
     "tirs": {
@@ -75215,11 +77004,11 @@
      "n": 2
     },
     "tirs3": {
-     "prix": 2.23,
+     "prix": 2.17,
      "n": 3
     },
     "tirs4": {
-     "prix": 3.65,
+     "prix": 3.675,
      "n": 2
     }
    },
@@ -75692,7 +77481,7 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.24,
+     "prix": 1.25,
      "n": 1
     },
     "tirs": {
@@ -75700,7 +77489,7 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 4.15,
+     "prix": 4.2,
      "n": 2
     },
     "tirs4": {
@@ -79676,7 +81465,7 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.29,
+     "prix": 1.285,
      "n": 2
     },
     "tirs3": {
@@ -82484,15 +84273,15 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.85,
+     "prix": 1.87,
      "n": 3
     },
     "tirs3": {
-     "prix": 3.775,
+     "prix": 3.75,
      "n": 2
     },
     "tirs4": {
-     "prix": 9.25,
+     "prix": 9.0,
      "n": 2
     }
    },
@@ -83211,7 +85000,7 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.355,
+     "prix": 1.35,
      "n": 2
     },
     "tirs3": {
@@ -83219,7 +85008,7 @@
      "n": 3
     },
     "tirs4": {
-     "prix": 3.3,
+     "prix": 3.25,
      "n": 2
     }
    },
@@ -84398,7 +86187,7 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 3.035,
+     "prix": 3.03,
      "n": 2
     },
     "tirs4": {
@@ -85767,7 +87556,7 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.71,
+     "prix": 1.69,
      "n": 3
     },
     "tirs3": {
@@ -88149,7 +89938,7 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.59,
+     "prix": 1.57,
      "n": 3
     },
     "tirs3": {
@@ -88400,11 +90189,11 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.79,
+     "prix": 1.8,
      "n": 3
     },
     "tirs3": {
-     "prix": 3.05,
+     "prix": 3.025,
      "n": 2
     },
     "tirs4": {
@@ -91224,7 +93013,7 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 3.8,
+     "prix": 3.825,
      "n": 2
     },
     "tirs4": {
@@ -101845,16 +103634,16 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.915,
-     "n": 2
+     "prix": 2.13,
+     "n": 3
     },
     "tirs3": {
-     "prix": 2.9,
-     "n": 1
+     "prix": 3.45,
+     "n": 2
     },
     "tirs4": {
-     "prix": 5.75,
-     "n": 1
+     "prix": 7.625,
+     "n": 2
     }
    },
    "soir_info": {
@@ -103267,19 +105056,19 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.21,
+     "prix": 1.2,
      "n": 1
     },
     "tirs": {
-     "prix": 1.89,
+     "prix": 1.85,
      "n": 3
     },
     "tirs3": {
-     "prix": 3.75,
+     "prix": 3.675,
      "n": 2
     },
     "tirs4": {
-     "prix": 9.25,
+     "prix": 9.0,
      "n": 2
     }
    },
@@ -104191,15 +105980,15 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.295,
+     "prix": 1.29,
      "n": 2
     },
     "tirs3": {
-     "prix": 1.97,
+     "prix": 1.91,
      "n": 3
     },
     "tirs4": {
-     "prix": 3.35,
+     "prix": 3.3,
      "n": 2
     }
    },
@@ -104438,19 +106227,19 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.03,
+     "prix": 1.02,
      "n": 1
     },
     "tirs": {
-     "prix": 1.15,
+     "prix": 1.14,
      "n": 1
     },
     "tirs3": {
-     "prix": 1.43,
+     "prix": 1.42,
      "n": 2
     },
     "tirs4": {
-     "prix": 2.09,
+     "prix": 1.97,
      "n": 3
     }
    },
@@ -104689,7 +106478,7 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.18,
+     "prix": 1.19,
      "n": 1
     },
     "tirs": {
@@ -104697,7 +106486,7 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 3.475,
+     "prix": 3.525,
      "n": 2
     },
     "tirs4": {
@@ -104944,7 +106733,7 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.28,
+     "prix": 1.29,
      "n": 2
     },
     "tirs3": {
@@ -104952,7 +106741,7 @@
      "n": 3
     },
     "tirs4": {
-     "prix": 3.125,
+     "prix": 3.2,
      "n": 2
     }
    },
@@ -105191,7 +106980,7 @@
    "played": null,
    "cotes": {
     "tirs": {
-     "prix": 2.43,
+     "prix": 2.3,
      "n": 1
     }
    },
@@ -105430,7 +107219,7 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.13,
+     "prix": 1.14,
      "n": 1
     },
     "tirs": {
@@ -105438,11 +107227,11 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 2.59,
+     "prix": 2.615,
      "n": 2
     },
     "tirs4": {
-     "prix": 4.825,
+     "prix": 4.95,
      "n": 2
     }
    },
@@ -106114,7 +107903,7 @@
    "played": null,
    "cotes": {
     "tirs": {
-     "prix": 2.48,
+     "prix": 2.33,
      "n": 1
     }
    },
@@ -106595,11 +108384,11 @@
      "n": 2
     },
     "tirs3": {
-     "prix": 2.02,
+     "prix": 1.95,
      "n": 3
     },
     "tirs4": {
-     "prix": 3.225,
+     "prix": 3.2,
      "n": 2
     }
    },
@@ -106838,15 +108627,15 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.25,
+     "prix": 1.24,
      "n": 1
     },
     "tirs": {
-     "prix": 2.18,
+     "prix": 2.08,
      "n": 3
     },
     "tirs3": {
-     "prix": 4.35,
+     "prix": 4.25,
      "n": 2
     },
     "tirs4": {
@@ -107736,11 +109525,11 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.19,
+     "prix": 1.2,
      "n": 1
     },
     "tirs3": {
-     "prix": 1.455,
+     "prix": 1.47,
      "n": 2
     },
     "tirs4": {
@@ -108840,7 +110629,7 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.3,
+     "prix": 1.31,
      "n": 2
     },
     "tirs3": {
@@ -108848,7 +110637,7 @@
      "n": 3
     },
     "tirs4": {
-     "prix": 2.91,
+     "prix": 2.96,
      "n": 2
     }
    },
@@ -109321,19 +111110,19 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.17,
+     "prix": 1.19,
      "n": 1
     },
     "tirs": {
-     "prix": 1.74,
+     "prix": 1.77,
      "n": 3
     },
     "tirs3": {
-     "prix": 3.125,
+     "prix": 3.225,
      "n": 2
     },
     "tirs4": {
-     "prix": 6.625,
+     "prix": 6.875,
      "n": 2
     }
    },
@@ -109576,11 +111365,11 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.15,
+     "prix": 1.14,
      "n": 1
     },
     "tirs3": {
-     "prix": 1.385,
+     "prix": 1.38,
      "n": 2
     },
     "tirs4": {
@@ -110030,19 +111819,19 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.11,
+     "prix": 1.09,
      "n": 1
     },
     "tirs": {
-     "prix": 1.435,
+     "prix": 1.405,
      "n": 2
     },
     "tirs3": {
-     "prix": 2.45,
+     "prix": 2.35,
      "n": 3
     },
     "tirs4": {
-     "prix": 4.5,
+     "prix": 4.2,
      "n": 2
     }
    },
@@ -110285,15 +112074,15 @@
      "n": 1
     },
     "tirs": {
-     "prix": 1.385,
+     "prix": 1.405,
      "n": 2
     },
     "tirs3": {
-     "prix": 2.34,
+     "prix": 2.35,
      "n": 3
     },
     "tirs4": {
-     "prix": 4.1,
+     "prix": 4.2,
      "n": 2
     }
    },
@@ -110544,7 +112333,7 @@
      "n": 3
     },
     "tirs4": {
-     "prix": 2.555,
+     "prix": 2.605,
      "n": 2
     }
    },
@@ -111681,7 +113470,7 @@
    "played": null,
    "cotes": {
     "tirs1": {
-     "prix": 1.22,
+     "prix": 1.21,
      "n": 1
     },
     "tirs": {
@@ -111689,11 +113478,11 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 3.8,
+     "prix": 3.875,
      "n": 2
     },
     "tirs4": {
-     "prix": 9.25,
+     "prix": 9.5,
      "n": 2
     }
    },
@@ -134652,7 +136441,7 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 3.275,
+     "prix": 3.325,
      "n": 2
     },
     "tirs4": {
@@ -135851,9 +137640,9 @@
     "absent": true
    },
    "blesse": {
-    "statut": "Out",
+    "statut": "Injured Reserve",
     "detail": "Lower Body",
-    "retour": "2026-10-28"
+    "retour": "2026-10-30"
    }
   },
   {
@@ -138699,62 +140488,62 @@
   "joueurs": {
    "tirs1": {
     "combo": {
-     "n": 32,
-     "base": 0.84375,
-     "brier": 0.132980561875,
-     "bss": -0.008682187851851708,
-     "precision": 0.8125,
-     "note": 49.56589060740741,
-     "logloss": 0.4299164146301149,
+     "n": 66,
+     "base": 0.696969696969697,
+     "brier": 0.19180571303030305,
+     "bss": 0.09184164569565201,
+     "precision": 0.7121212121212122,
+     "note": 54.5920822847826,
+     "logloss": 0.5732735646116757,
      "calib": [
       {
        "tranche": "40-50",
-       "n": 1,
-       "predit": 0.4907,
-       "reel": 1.0
+       "n": 3,
+       "predit": 0.4868333333333334,
+       "reel": 0.3333333333333333
       },
       {
        "tranche": "50-60",
-       "n": 4,
-       "predit": 0.5757,
-       "reel": 0.5
+       "n": 6,
+       "predit": 0.5692,
+       "reel": 0.3333333333333333
       },
       {
        "tranche": "60-70",
-       "n": 6,
-       "predit": 0.6514166666666666,
-       "reel": 0.8333333333333334
+       "n": 11,
+       "predit": 0.6487818181818181,
+       "reel": 0.6363636363636364
       },
       {
        "tranche": "70-80",
-       "n": 12,
-       "predit": 0.7557916666666666,
-       "reel": 0.8333333333333334
+       "n": 23,
+       "predit": 0.7506521739130435,
+       "reel": 0.7391304347826086
       },
       {
        "tranche": "80-90",
-       "n": 7,
-       "predit": 0.8346142857142856,
-       "reel": 1.0
+       "n": 16,
+       "predit": 0.85723125,
+       "reel": 0.8125
       },
       {
        "tranche": "90-100",
-       "n": 2,
-       "predit": 0.9277,
-       "reel": 1.0
+       "n": 7,
+       "predit": 0.9263714285714286,
+       "reel": 0.8571428571428571
       }
      ],
      "top": {
       "n": 10,
-      "hits": 10,
-      "attendu": 8.4966
+      "hits": 8,
+      "attendu": 9.1568
      },
      "soirs": [
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 10,
-       "attendu": 8.4966
+       "hits": 8,
+       "attendu": 9.1568
       }
      ]
     },
@@ -138762,13 +140551,13 @@
      "n": 0
     },
     "v0": {
-     "n": 5774,
-     "base": 0.732074818150329,
-     "brier": 0.19410074248008316,
-     "bss": 0.01040340061559486,
-     "precision": 0.7190855559404226,
-     "note": 50.520170030779745,
-     "logloss": 0.5779283766587924,
+     "n": 5808,
+     "base": 0.7310606060606061,
+     "brier": 0.19437283674070246,
+     "bss": 0.011383694849303017,
+     "precision": 0.71849173553719,
+     "note": 50.569184742465154,
+     "logloss": 0.5786977324564073,
      "calib": [
       {
        "tranche": "0-10",
@@ -138784,15 +140573,15 @@
       },
       {
        "tranche": "20-30",
-       "n": 153,
-       "predit": 0.2601222222222222,
-       "reel": 0.5359477124183006
+       "n": 154,
+       "predit": 0.2601162337662337,
+       "reel": 0.5324675324675324
       },
       {
        "tranche": "30-40",
-       "n": 174,
-       "predit": 0.36568620689655174,
-       "reel": 0.5172413793103449
+       "n": 175,
+       "predit": 0.3658451428571429,
+       "reel": 0.5142857142857142
       },
       {
        "tranche": "40-50",
@@ -138802,39 +140591,39 @@
       },
       {
        "tranche": "50-60",
-       "n": 570,
-       "predit": 0.5505931578947368,
-       "reel": 0.6684210526315789
+       "n": 573,
+       "predit": 0.5506099476439791,
+       "reel": 0.6666666666666666
       },
       {
        "tranche": "60-70",
-       "n": 992,
-       "predit": 0.6530166330645162,
-       "reel": 0.6592741935483871
+       "n": 999,
+       "predit": 0.6530774774774775,
+       "reel": 0.6566566566566566
       },
       {
        "tranche": "70-80",
-       "n": 1194,
-       "predit": 0.7500336683417086,
-       "reel": 0.7127303182579564
+       "n": 1200,
+       "predit": 0.750063,
+       "reel": 0.7125
       },
       {
        "tranche": "80-90",
-       "n": 1297,
-       "predit": 0.8485627602158828,
-       "reel": 0.7964533538936006
+       "n": 1304,
+       "predit": 0.8486564417177913,
+       "reel": 0.7960122699386503
       },
       {
        "tranche": "90-100",
-       "n": 1014,
-       "predit": 0.9411529585798817,
-       "reel": 0.9043392504930966
+       "n": 1023,
+       "predit": 0.9412270772238515,
+       "reel": 0.9032258064516129
       }
      ],
      "top": {
       "n": 260,
-      "hits": 243,
-      "attendu": 250.3339
+      "hits": 242,
+      "attendu": 251.26670000000001
      },
      "soirs": [
       {
@@ -138918,19 +140707,19 @@
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 9,
-       "attendu": 8.594100000000001
+       "hits": 8,
+       "attendu": 9.5269
       }
      ]
     },
     "v1": {
-     "n": 5774,
-     "base": 0.732074818150329,
-     "brier": 0.17921155717007275,
-     "bss": 0.08631391472350691,
-     "precision": 0.7379632836854867,
-     "note": 54.31569573617534,
-     "logloss": 0.5349482387645673,
+     "n": 5808,
+     "base": 0.7310606060606061,
+     "brier": 0.17960938880509641,
+     "bss": 0.08647332977012323,
+     "precision": 0.7372589531680441,
+     "note": 54.32366648850616,
+     "logloss": 0.5359624415672897,
      "calib": [
       {
        "tranche": "20-30",
@@ -138946,45 +140735,45 @@
       },
       {
        "tranche": "40-50",
-       "n": 196,
-       "predit": 0.46319897959183676,
-       "reel": 0.413265306122449
+       "n": 198,
+       "predit": 0.4634181818181818,
+       "reel": 0.4090909090909091
       },
       {
        "tranche": "50-60",
-       "n": 660,
-       "predit": 0.5573904545454546,
-       "reel": 0.5575757575757576
+       "n": 662,
+       "predit": 0.5573868580060423,
+       "reel": 0.5558912386706949
       },
       {
        "tranche": "60-70",
-       "n": 1288,
-       "predit": 0.6523527173913043,
-       "reel": 0.656055900621118
+       "n": 1293,
+       "predit": 0.6523266821345708,
+       "reel": 0.6550657385924207
       },
       {
        "tranche": "70-80",
-       "n": 1603,
-       "predit": 0.7504009981285091,
-       "reel": 0.7305053025577043
+       "n": 1614,
+       "predit": 0.7503644981412638,
+       "reel": 0.7298636926889716
       },
       {
        "tranche": "80-90",
-       "n": 1386,
-       "predit": 0.8480318903318903,
-       "reel": 0.8427128427128427
+       "n": 1395,
+       "predit": 0.8482047311827957,
+       "reel": 0.8415770609318997
       },
       {
        "tranche": "90-100",
-       "n": 603,
-       "predit": 0.929218407960199,
-       "reel": 0.9535655058043118
+       "n": 608,
+       "predit": 0.929190625,
+       "reel": 0.9523026315789473
       }
      ],
      "top": {
       "n": 260,
-      "hits": 250,
-      "attendu": 243.16049999999998
+      "hits": 248,
+      "attendu": 243.8207
      },
      "soirs": [
       {
@@ -139068,8 +140857,8 @@
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 10,
-       "attendu": 8.4966
+       "hits": 8,
+       "attendu": 9.1568
       }
      ]
     },
@@ -139082,74 +140871,74 @@
    },
    "tirs": {
     "combo": {
-     "n": 32,
-     "base": 0.5,
-     "brier": 0.2122651725,
-     "bss": 0.15093931000000005,
-     "precision": 0.71875,
-     "note": 57.5469655,
-     "logloss": 0.6127780447482467,
+     "n": 66,
+     "base": 0.3939393939393939,
+     "brier": 0.20466346575757577,
+     "bss": 0.14277494534615376,
+     "precision": 0.7121212121212122,
+     "note": 57.138747267307686,
+     "logloss": 0.5947467263810952,
      "calib": [
       {
        "tranche": "10-20",
-       "n": 2,
-       "predit": 0.1754,
+       "n": 5,
+       "predit": 0.16570000000000001,
        "reel": 0.0
       },
       {
        "tranche": "20-30",
-       "n": 7,
-       "predit": 0.2603285714285714,
-       "reel": 0.42857142857142855
-      },
-      {
-       "tranche": "30-40",
-       "n": 6,
-       "predit": 0.35936666666666667,
+       "n": 12,
+       "predit": 0.265725,
        "reel": 0.3333333333333333
       },
       {
+       "tranche": "30-40",
+       "n": 10,
+       "predit": 0.35978,
+       "reel": 0.2
+      },
+      {
        "tranche": "40-50",
-       "n": 8,
-       "predit": 0.456225,
-       "reel": 0.375
+       "n": 16,
+       "predit": 0.4423,
+       "reel": 0.3125
       },
       {
        "tranche": "50-60",
-       "n": 5,
-       "predit": 0.53148,
-       "reel": 0.8
+       "n": 6,
+       "predit": 0.5351166666666667,
+       "reel": 0.6666666666666666
       },
       {
        "tranche": "60-70",
-       "n": 2,
-       "predit": 0.61815,
-       "reel": 1.0
+       "n": 11,
+       "predit": 0.6424272727272727,
+       "reel": 0.5454545454545454
       },
       {
        "tranche": "70-80",
-       "n": 1,
-       "predit": 0.7,
-       "reel": 1.0
+       "n": 4,
+       "predit": 0.733825,
+       "reel": 0.75
       },
       {
        "tranche": "80-90",
-       "n": 1,
-       "predit": 0.8132,
+       "n": 2,
+       "predit": 0.82345,
        "reel": 1.0
       }
      ],
      "top": {
       "n": 10,
-      "hits": 9,
-      "attendu": 5.8998
+      "hits": 7,
+      "attendu": 7.2666
      },
      "soirs": [
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 9,
-       "attendu": 5.8998
+       "hits": 7,
+       "attendu": 7.2666
       }
      ]
     },
@@ -139157,79 +140946,79 @@
      "n": 0
     },
     "v0": {
-     "n": 5774,
-     "base": 0.4258746103221337,
-     "brier": 0.2257881990613093,
-     "bss": 0.07655137885354568,
-     "precision": 0.6447869760997575,
-     "note": 53.82756894267728,
-     "logloss": 0.662749847335529,
+     "n": 5808,
+     "base": 0.42510330578512395,
+     "brier": 0.22565504467630854,
+     "bss": 0.07666190647468696,
+     "precision": 0.6448002754820936,
+     "note": 53.83309532373435,
+     "logloss": 0.6623245596890047,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 413,
-       "predit": 0.04893220338983051,
-       "reel": 0.22760290556900725
+       "n": 415,
+       "predit": 0.049002650602409645,
+       "reel": 0.22650602409638554
       },
       {
        "tranche": "10-20",
-       "n": 644,
-       "predit": 0.157597049689441,
-       "reel": 0.26242236024844723
+       "n": 646,
+       "predit": 0.1576735294117647,
+       "reel": 0.2631578947368421
       },
       {
        "tranche": "20-30",
-       "n": 821,
-       "predit": 0.25138891595615104,
-       "reel": 0.3081607795371498
+       "n": 825,
+       "predit": 0.25139551515151515,
+       "reel": 0.30666666666666664
       },
       {
        "tranche": "30-40",
-       "n": 985,
-       "predit": 0.3513969543147208,
-       "reel": 0.34822335025380713
+       "n": 990,
+       "predit": 0.35127444444444444,
+       "reel": 0.3464646464646465
       },
       {
        "tranche": "40-50",
-       "n": 803,
-       "predit": 0.45188256537982563,
-       "reel": 0.4259028642590286
+       "n": 808,
+       "predit": 0.45171188118811884,
+       "reel": 0.42574257425742573
       },
       {
        "tranche": "50-60",
-       "n": 773,
-       "predit": 0.55388382923674,
-       "reel": 0.4540750323415265
+       "n": 776,
+       "predit": 0.5538536082474227,
+       "reel": 0.452319587628866
       },
       {
        "tranche": "60-70",
-       "n": 487,
-       "predit": 0.6544638603696099,
-       "reel": 0.6057494866529775
+       "n": 492,
+       "predit": 0.6544146341463414,
+       "reel": 0.6016260162601627
       },
       {
        "tranche": "70-80",
-       "n": 434,
-       "predit": 0.7443311059907833,
-       "reel": 0.6889400921658986
+       "n": 437,
+       "predit": 0.7443556064073226,
+       "reel": 0.6887871853546911
       },
       {
        "tranche": "80-90",
-       "n": 337,
-       "predit": 0.8396430267062315,
-       "reel": 0.744807121661721
+       "n": 341,
+       "predit": 0.8397175953079179,
+       "reel": 0.7448680351906158
       },
       {
        "tranche": "90-100",
-       "n": 77,
-       "predit": 0.9366337662337663,
-       "reel": 0.8051948051948052
+       "n": 78,
+       "predit": 0.936524358974359,
+       "reel": 0.8076923076923077
       }
      ],
      "top": {
       "n": 260,
       "hits": 204,
-      "attendu": 221.1813
+      "attendu": 223.3715
      },
      "soirs": [
       {
@@ -139314,18 +141103,18 @@
        "date": "2026-10-24",
        "n": 10,
        "hits": 8,
-       "attendu": 5.9436
+       "attendu": 8.1338
       }
      ]
     },
     "v1": {
-     "n": 5774,
-     "base": 0.4258746103221337,
-     "brier": 0.21344329344821614,
-     "bss": 0.12704066976417716,
-     "precision": 0.6615864218912366,
-     "note": 56.35203348820886,
-     "logloss": 0.6154694726443671,
+     "n": 5808,
+     "base": 0.42510330578512395,
+     "brier": 0.2133500137035124,
+     "bss": 0.1270117838970568,
+     "precision": 0.6618457300275482,
+     "note": 56.350589194852844,
+     "logloss": 0.6152488156952108,
      "calib": [
       {
        "tranche": "0-10",
@@ -139335,51 +141124,51 @@
       },
       {
        "tranche": "10-20",
-       "n": 447,
-       "predit": 0.16263780760626398,
-       "reel": 0.18568232662192394
+       "n": 450,
+       "predit": 0.1626151111111111,
+       "reel": 0.18444444444444444
       },
       {
        "tranche": "20-30",
-       "n": 1073,
-       "predit": 0.2541832246039143,
-       "reel": 0.26281453867660765
+       "n": 1078,
+       "predit": 0.25427179962894253,
+       "reel": 0.2625231910946197
       },
       {
        "tranche": "30-40",
-       "n": 1181,
-       "predit": 0.3504151566469094,
-       "reel": 0.3437764606265876
+       "n": 1185,
+       "predit": 0.35044886075949366,
+       "reel": 0.3426160337552743
       },
       {
        "tranche": "40-50",
-       "n": 1092,
-       "predit": 0.4475797619047619,
-       "reel": 0.4249084249084249
+       "n": 1100,
+       "predit": 0.4474400909090909,
+       "reel": 0.42363636363636364
       },
       {
        "tranche": "50-60",
-       "n": 792,
-       "predit": 0.5473378787878788,
-       "reel": 0.5227272727272727
+       "n": 793,
+       "predit": 0.5473453972257251,
+       "reel": 0.5220680958385876
       },
       {
        "tranche": "60-70",
-       "n": 612,
-       "predit": 0.6449794117647059,
-       "reel": 0.6209150326797386
+       "n": 621,
+       "predit": 0.645020611916264,
+       "reel": 0.6183574879227053
       },
       {
        "tranche": "70-80",
-       "n": 394,
-       "predit": 0.7431804568527919,
-       "reel": 0.7817258883248731
+       "n": 397,
+       "predit": 0.7431949622166247,
+       "reel": 0.7808564231738035
       },
       {
        "tranche": "80-90",
-       "n": 139,
-       "predit": 0.839031654676259,
-       "reel": 0.8561151079136691
+       "n": 140,
+       "predit": 0.8389935714285714,
+       "reel": 0.8571428571428571
       },
       {
        "tranche": "90-100",
@@ -139390,8 +141179,8 @@
      ],
      "top": {
       "n": 260,
-      "hits": 212,
-      "attendu": 202.7059
+      "hits": 210,
+      "attendu": 204.0727
      },
      "soirs": [
       {
@@ -139475,8 +141264,8 @@
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 9,
-       "attendu": 5.8998
+       "hits": 7,
+       "attendu": 7.2666
       }
      ]
     },
@@ -139489,62 +141278,68 @@
    },
    "tirs3": {
     "combo": {
-     "n": 32,
-     "base": 0.28125,
-     "brier": 0.16866700874999999,
-     "bss": 0.16562793739130444,
-     "precision": 0.75,
-     "note": 58.28139686956522,
-     "logloss": 0.4957913935157721,
+     "n": 66,
+     "base": 0.21212121212121213,
+     "brier": 0.14720973727272726,
+     "bss": 0.11916811049450549,
+     "precision": 0.803030303030303,
+     "note": 55.95840552472527,
+     "logloss": 0.4525266566309254,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 8,
-       "predit": 0.0721875,
-       "reel": 0.0
+       "n": 16,
+       "predit": 0.07179375,
+       "reel": 0.0625
       },
       {
        "tranche": "10-20",
-       "n": 10,
-       "predit": 0.15354,
-       "reel": 0.2
+       "n": 20,
+       "predit": 0.16060000000000002,
+       "reel": 0.1
       },
       {
        "tranche": "20-30",
-       "n": 9,
-       "predit": 0.24517777777777777,
-       "reel": 0.4444444444444444
+       "n": 12,
+       "predit": 0.245675,
+       "reel": 0.3333333333333333
       },
       {
        "tranche": "30-40",
-       "n": 3,
-       "predit": 0.35769999999999996,
-       "reel": 0.6666666666666666
+       "n": 8,
+       "predit": 0.3702,
+       "reel": 0.375
       },
       {
        "tranche": "40-50",
+       "n": 7,
+       "predit": 0.45004285714285713,
+       "reel": 0.2857142857142857
+      },
+      {
+       "tranche": "50-60",
        "n": 1,
-       "predit": 0.46,
-       "reel": 0.0
+       "predit": 0.5679,
+       "reel": 1.0
       },
       {
        "tranche": "60-70",
-       "n": 1,
-       "predit": 0.616,
-       "reel": 1.0
+       "n": 2,
+       "predit": 0.6321,
+       "reel": 0.5
       }
      ],
      "top": {
       "n": 10,
-      "hits": 7,
-      "attendu": 3.4531
+      "hits": 4,
+      "attendu": 4.9824
      },
      "soirs": [
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 7,
-       "attendu": 3.4531
+       "hits": 4,
+       "attendu": 4.9824
       }
      ]
     },
@@ -139552,67 +141347,67 @@
      "n": 0
     },
     "v0": {
-     "n": 5774,
-     "base": 0.2161413231728438,
-     "brier": 0.15465272060096985,
-     "bss": 0.08718663857355169,
-     "precision": 0.786802909594735,
-     "note": 54.359331928677584,
-     "logloss": 0.4997401344185803,
+     "n": 5808,
+     "base": 0.21573691460055097,
+     "brier": 0.15452917550619835,
+     "bss": 0.08667730288007436,
+     "precision": 0.7871900826446281,
+     "note": 54.33386514400372,
+     "logloss": 0.4993852759611468,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 1893,
-       "predit": 0.046451558372952985,
-       "reel": 0.10142630744849446
+       "n": 1902,
+       "predit": 0.046497371188222926,
+       "reel": 0.10147213459516298
       },
       {
        "tranche": "10-20",
-       "n": 1409,
-       "predit": 0.145685805535841,
-       "reel": 0.1547196593328602
+       "n": 1417,
+       "predit": 0.14568362738179252,
+       "reel": 0.15384615384615385
       },
       {
        "tranche": "20-30",
-       "n": 870,
-       "predit": 0.24818344827586208,
-       "reel": 0.22758620689655173
+       "n": 873,
+       "predit": 0.24814959908361972,
+       "reel": 0.2268041237113402
       },
       {
        "tranche": "30-40",
-       "n": 566,
-       "predit": 0.34615759717314487,
-       "reel": 0.2826855123674912
+       "n": 571,
+       "predit": 0.34628844133099823,
+       "reel": 0.2819614711033275
       },
       {
        "tranche": "40-50",
-       "n": 437,
-       "predit": 0.4508881006864988,
-       "reel": 0.39359267734553777
+       "n": 440,
+       "predit": 0.4509809090909091,
+       "reel": 0.39090909090909093
       },
       {
        "tranche": "50-60",
-       "n": 295,
-       "predit": 0.5469159322033899,
-       "reel": 0.4576271186440678
+       "n": 297,
+       "predit": 0.5470070707070707,
+       "reel": 0.45791245791245794
       },
       {
        "tranche": "60-70",
-       "n": 165,
-       "predit": 0.6494727272727272,
-       "reel": 0.5333333333333333
+       "n": 167,
+       "predit": 0.6495365269461078,
+       "reel": 0.5329341317365269
       },
       {
        "tranche": "70-80",
-       "n": 90,
-       "predit": 0.7384088888888889,
-       "reel": 0.5888888888888889
+       "n": 91,
+       "predit": 0.7381472527472528,
+       "reel": 0.5824175824175825
       },
       {
        "tranche": "80-90",
-       "n": 37,
-       "predit": 0.8322945945945945,
-       "reel": 0.6486486486486487
+       "n": 38,
+       "predit": 0.8315131578947369,
+       "reel": 0.6578947368421053
       },
       {
        "tranche": "90-100",
@@ -139623,8 +141418,8 @@
      ],
      "top": {
       "n": 260,
-      "hits": 146,
-      "attendu": 174.7062
+      "hits": 144,
+      "attendu": 177.38
      },
      "soirs": [
       {
@@ -139708,61 +141503,61 @@
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 6,
-       "attendu": 3.3659
+       "hits": 4,
+       "attendu": 6.0397
       }
      ]
     },
     "v1": {
-     "n": 5774,
-     "base": 0.2161413231728438,
-     "brier": 0.14667967849151367,
-     "bss": 0.13424626572039977,
-     "precision": 0.8013508832698303,
-     "note": 56.71231328601999,
-     "logloss": 0.45922170504113946,
+     "n": 5808,
+     "base": 0.21573691460055097,
+     "brier": 0.146564559571281,
+     "bss": 0.13375103173014036,
+     "precision": 0.8016528925619835,
+     "note": 56.68755158650702,
+     "logloss": 0.4589441390586563,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 1411,
-       "predit": 0.06402515946137491,
-       "reel": 0.06803685329553508
+       "n": 1419,
+       "predit": 0.06406673713883017,
+       "reel": 0.06835799859055673
       },
       {
        "tranche": "10-20",
-       "n": 1800,
-       "predit": 0.14693416666666664,
-       "reel": 0.14666666666666667
+       "n": 1810,
+       "predit": 0.14704867403314917,
+       "reel": 0.14585635359116023
       },
       {
        "tranche": "20-30",
-       "n": 1078,
-       "predit": 0.24580046382189238,
-       "reel": 0.23376623376623376
+       "n": 1081,
+       "predit": 0.24580425531914896,
+       "reel": 0.23311748381128586
       },
       {
        "tranche": "30-40",
-       "n": 696,
-       "predit": 0.34826250000000003,
-       "reel": 0.3232758620689655
+       "n": 701,
+       "predit": 0.34847246790299574,
+       "reel": 0.3223965763195435
       },
       {
        "tranche": "40-50",
-       "n": 416,
-       "predit": 0.44818485576923073,
-       "reel": 0.4182692307692308
+       "n": 422,
+       "predit": 0.44818767772511847,
+       "reel": 0.41706161137440756
       },
       {
        "tranche": "50-60",
-       "n": 239,
-       "predit": 0.5455372384937238,
-       "reel": 0.5732217573221757
+       "n": 240,
+       "predit": 0.5456304166666667,
+       "reel": 0.575
       },
       {
        "tranche": "60-70",
-       "n": 104,
-       "predit": 0.6446673076923077,
-       "reel": 0.75
+       "n": 105,
+       "predit": 0.6447009523809524,
+       "reel": 0.7428571428571429
       },
       {
        "tranche": "70-80",
@@ -139773,8 +141568,8 @@
      ],
      "top": {
       "n": 260,
-      "hits": 157,
-      "attendu": 149.4385
+      "hits": 154,
+      "attendu": 150.9678
      },
      "soirs": [
       {
@@ -139858,8 +141653,8 @@
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 7,
-       "attendu": 3.4531
+       "hits": 4,
+       "attendu": 4.9824
       }
      ]
     },
@@ -139872,50 +141667,56 @@
    },
    "tirs4": {
     "combo": {
-     "n": 32,
-     "base": 0.0625,
-     "brier": 0.044503311875,
-     "bss": 0.2404768106666667,
-     "precision": 0.9375,
-     "note": 62.023840533333335,
-     "logloss": 0.1740107819715639,
+     "n": 66,
+     "base": 0.07575757575757576,
+     "brier": 0.0688888912121212,
+     "bss": 0.01613111436065595,
+     "precision": 0.9242424242424242,
+     "note": 50.8065557180328,
+     "logloss": 0.25516434562675955,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 21,
-       "predit": 0.04467619047619048,
-       "reel": 0.0
+       "n": 41,
+       "predit": 0.045304878048780486,
+       "reel": 0.024390243902439025
       },
       {
        "tranche": "10-20",
-       "n": 9,
-       "predit": 0.1332111111111111,
-       "reel": 0.1111111111111111
+       "n": 13,
+       "predit": 0.14567692307692306,
+       "reel": 0.15384615384615385
       },
       {
        "tranche": "20-30",
+       "n": 9,
+       "predit": 0.24336666666666668,
+       "reel": 0.1111111111111111
+      },
+      {
+       "tranche": "30-40",
        "n": 1,
-       "predit": 0.2618,
+       "predit": 0.3637,
        "reel": 0.0
       },
       {
        "tranche": "40-50",
-       "n": 1,
-       "predit": 0.4141,
-       "reel": 1.0
+       "n": 2,
+       "predit": 0.43195,
+       "reel": 0.5
       }
      ],
      "top": {
       "n": 10,
       "hits": 2,
-      "attendu": 1.7739
+      "attendu": 3.0044
      },
      "soirs": [
       {
        "date": "2026-10-24",
        "n": 10,
        "hits": 2,
-       "attendu": 1.7739
+       "attendu": 3.0044
       }
      ]
     },
@@ -139923,55 +141724,55 @@
      "n": 0
     },
     "v0": {
-     "n": 5774,
-     "base": 0.09975753377208174,
-     "brier": 0.08400661212157949,
-     "bss": 0.06457651112344898,
-     "precision": 0.8967786629719432,
-     "note": 53.22882555617245,
-     "logloss": 0.30680667061141376,
+     "n": 5808,
+     "base": 0.0996900826446281,
+     "brier": 0.08413691637913223,
+     "bss": 0.06256189901587106,
+     "precision": 0.8965220385674931,
+     "note": 53.12809495079355,
+     "logloss": 0.3073149831020793,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 3774,
-       "predit": 0.0323371489136195,
-       "reel": 0.051669316375198726
+       "n": 3792,
+       "predit": 0.03232679324894515,
+       "reel": 0.05168776371308017
       },
       {
        "tranche": "10-20",
-       "n": 979,
-       "predit": 0.13990898876404495,
-       "reel": 0.1041879468845761
+       "n": 986,
+       "predit": 0.13997849898580123,
+       "reel": 0.10446247464503043
       },
       {
        "tranche": "20-30",
-       "n": 501,
-       "predit": 0.24847884231536926,
-       "reel": 0.2275449101796407
+       "n": 504,
+       "predit": 0.24848650793650795,
+       "reel": 0.2261904761904762
       },
       {
        "tranche": "30-40",
-       "n": 252,
-       "predit": 0.3430059523809524,
-       "reel": 0.24206349206349206
+       "n": 254,
+       "predit": 0.3429570866141732,
+       "reel": 0.2440944881889764
       },
       {
        "tranche": "40-50",
-       "n": 142,
-       "predit": 0.4468964788732394,
-       "reel": 0.3591549295774648
+       "n": 144,
+       "predit": 0.4467451388888889,
+       "reel": 0.3541666666666667
       },
       {
        "tranche": "50-60",
-       "n": 71,
-       "predit": 0.5373408450704226,
-       "reel": 0.43661971830985913
+       "n": 72,
+       "predit": 0.5369027777777777,
+       "reel": 0.4305555555555556
       },
       {
        "tranche": "60-70",
-       "n": 38,
-       "predit": 0.6490078947368422,
-       "reel": 0.42105263157894735
+       "n": 39,
+       "predit": 0.6483358974358975,
+       "reel": 0.41025641025641024
       },
       {
        "tranche": "70-80",
@@ -139989,7 +141790,7 @@
      "top": {
       "n": 260,
       "hits": 86,
-      "attendu": 122.8361
+      "attendu": 125.1054
      },
      "soirs": [
       {
@@ -140074,48 +141875,48 @@
        "date": "2026-10-24",
        "n": 10,
        "hits": 2,
-       "attendu": 1.6239
+       "attendu": 3.8932
       }
      ]
     },
     "v1": {
-     "n": 5774,
-     "base": 0.09975753377208174,
-     "brier": 0.07884058940768963,
-     "bss": 0.12210078056605644,
-     "precision": 0.9012816072047107,
-     "note": 56.10503902830282,
-     "logloss": 0.2767869847885954,
+     "n": 5808,
+     "base": 0.0996900826446281,
+     "brier": 0.07891668803030302,
+     "bss": 0.12072472647175936,
+     "precision": 0.9013429752066116,
+     "note": 56.03623632358797,
+     "logloss": 0.27710753305055547,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 3715,
-       "predit": 0.041977711978465684,
-       "reel": 0.04333781965006729
+       "n": 3735,
+       "predit": 0.041999062918340026,
+       "reel": 0.043373493975903614
       },
       {
        "tranche": "10-20",
-       "n": 1182,
-       "predit": 0.14290499153976313,
-       "reel": 0.12436548223350254
+       "n": 1186,
+       "predit": 0.1430089376053963,
+       "reel": 0.12478920741989882
       },
       {
        "tranche": "20-30",
-       "n": 511,
-       "predit": 0.24455812133072408,
-       "reel": 0.2191780821917808
+       "n": 519,
+       "predit": 0.24450423892100193,
+       "reel": 0.21772639691714837
       },
       {
        "tranche": "30-40",
-       "n": 236,
-       "predit": 0.34407372881355935,
-       "reel": 0.3601694915254237
+       "n": 237,
+       "predit": 0.3441565400843882,
+       "reel": 0.35864978902953587
       },
       {
        "tranche": "40-50",
-       "n": 96,
-       "predit": 0.44595520833333335,
-       "reel": 0.53125
+       "n": 97,
+       "predit": 0.44599484536082473,
+       "reel": 0.5257731958762887
       },
       {
        "tranche": "50-60",
@@ -140133,7 +141934,7 @@
      "top": {
       "n": 260,
       "hits": 100,
-      "attendu": 98.5147
+      "attendu": 99.7452
      },
      "soirs": [
       {
@@ -140218,7 +142019,7 @@
        "date": "2026-10-24",
        "n": 10,
        "hits": 2,
-       "attendu": 1.7739
+       "attendu": 3.0044
       }
      ]
     },
@@ -140231,50 +142032,50 @@
    },
    "buts": {
     "combo": {
-     "n": 32,
-     "base": 0.21875,
-     "brier": 0.157443501875,
-     "bss": 0.07873059474285715,
-     "precision": 0.78125,
-     "note": 53.936529737142855,
-     "logloss": 0.4887420282446765,
+     "n": 66,
+     "base": 0.16666666666666666,
+     "brier": 0.1326313556060606,
+     "bss": 0.04505423963636379,
+     "precision": 0.8333333333333334,
+     "note": 52.25271198181819,
+     "logloss": 0.4317984827595137,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 10,
-       "predit": 0.06569,
-       "reel": 0.1
+       "n": 18,
+       "predit": 0.05918333333333333,
+       "reel": 0.1111111111111111
       },
       {
        "tranche": "10-20",
-       "n": 12,
-       "predit": 0.15581666666666666,
-       "reel": 0.08333333333333333
+       "n": 27,
+       "predit": 0.1562888888888889,
+       "reel": 0.07407407407407407
       },
       {
        "tranche": "20-30",
-       "n": 9,
-       "predit": 0.2448222222222222,
-       "reel": 0.5555555555555556
+       "n": 17,
+       "predit": 0.24397647058823527,
+       "reel": 0.4117647058823529
       },
       {
        "tranche": "30-40",
-       "n": 1,
-       "predit": 0.3353,
+       "n": 4,
+       "predit": 0.3331,
        "reel": 0.0
       }
      ],
      "top": {
       "n": 10,
-      "hits": 5,
-      "attendu": 2.5387
+      "hits": 4,
+      "attendu": 2.9572
      },
      "soirs": [
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 5,
-       "attendu": 2.5387
+       "hits": 4,
+       "attendu": 2.9572
       }
      ]
     },
@@ -140282,37 +142083,37 @@
      "n": 0
     },
     "v0": {
-     "n": 5602,
-     "base": 0.15244555515887184,
-     "brier": 0.1331316081345948,
-     "bss": -0.030383287638315437,
-     "precision": 0.8379150303463049,
-     "note": 48.48083561808423,
-     "logloss": 0.4760534302945994,
+     "n": 5636,
+     "base": 0.15223562810503904,
+     "brier": 0.13303780322569198,
+     "bss": -0.030821814535365366,
+     "precision": 0.8380056777856636,
+     "note": 48.45890927323173,
+     "logloss": 0.4757760965494713,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 2402,
-       "predit": 0.02374825145711907,
-       "reel": 0.10283097418817652
+       "n": 2416,
+       "predit": 0.02377437913907285,
+       "reel": 0.10264900662251655
       },
       {
        "tranche": "10-20",
-       "n": 1366,
-       "predit": 0.15080988286969252,
-       "reel": 0.15446559297218154
+       "n": 1375,
+       "predit": 0.15075723636363636,
+       "reel": 0.1549090909090909
       },
       {
        "tranche": "20-30",
-       "n": 1052,
-       "predit": 0.2472059885931559,
-       "reel": 0.16634980988593157
+       "n": 1057,
+       "predit": 0.24714749290444654,
+       "reel": 0.16556291390728478
       },
       {
        "tranche": "30-40",
-       "n": 459,
-       "predit": 0.353716339869281,
-       "reel": 0.2636165577342048
+       "n": 464,
+       "predit": 0.3537,
+       "reel": 0.2629310344827586
       },
       {
        "tranche": "40-50",
@@ -140322,9 +142123,9 @@
       },
       {
        "tranche": "50-60",
-       "n": 75,
-       "predit": 0.5346906666666666,
-       "reel": 0.24
+       "n": 76,
+       "predit": 0.5345973684210525,
+       "reel": 0.23684210526315788
       },
       {
        "tranche": "60-70",
@@ -140342,7 +142143,7 @@
      "top": {
       "n": 260,
       "hits": 83,
-      "attendu": 124.5023
+      "attendu": 125.6612
      },
      "soirs": [
       {
@@ -140427,42 +142228,42 @@
        "date": "2026-10-24",
        "n": 10,
        "hits": 3,
-       "attendu": 2.4351
+       "attendu": 3.594
       }
      ]
     },
     "v1": {
-     "n": 5602,
-     "base": 0.15244555515887184,
-     "brier": 0.1214396849161014,
-     "bss": 0.06010733629004883,
-     "precision": 0.8473759371652981,
-     "note": 53.005366814502445,
-     "logloss": 0.39677219121026974,
+     "n": 5636,
+     "base": 0.15223562810503904,
+     "brier": 0.12136632226933995,
+     "bss": 0.059612760345064575,
+     "precision": 0.8475869410929737,
+     "note": 52.98063801725323,
+     "logloss": 0.3966601792260875,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 1733,
-       "predit": 0.06242394691286786,
-       "reel": 0.05654933641084824
+       "n": 1741,
+       "predit": 0.0623716829408386,
+       "reel": 0.05686387133831131
       },
       {
        "tranche": "10-20",
-       "n": 2216,
-       "predit": 0.14935604693140794,
-       "reel": 0.14891696750902528
+       "n": 2231,
+       "predit": 0.1494051994621246,
+       "reel": 0.14836396234872254
       },
       {
        "tranche": "20-30",
-       "n": 1193,
-       "predit": 0.24109991617770327,
-       "reel": 0.2196144174350377
+       "n": 1201,
+       "predit": 0.24111273938384678,
+       "reel": 0.21981681931723562
       },
       {
        "tranche": "30-40",
-       "n": 383,
-       "predit": 0.33781018276762403,
-       "reel": 0.34464751958224543
+       "n": 386,
+       "predit": 0.3377678756476684,
+       "reel": 0.34196891191709844
       },
       {
        "tranche": "40-50",
@@ -140479,8 +142280,8 @@
      ],
      "top": {
       "n": 260,
-      "hits": 88,
-      "attendu": 94.1538
+      "hits": 87,
+      "attendu": 94.5723
      },
      "soirs": [
       {
@@ -140564,13 +142365,58 @@
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 5,
-       "attendu": 2.5387
+       "hits": 4,
+       "attendu": 2.9572
       }
      ]
     },
     "but_v5": {
-     "n": 0
+     "n": 66,
+     "base": 0.16666666666666666,
+     "brier": 0.13271045606060605,
+     "bss": 0.04448471636363649,
+     "precision": 0.8333333333333334,
+     "note": 52.224235818181825,
+     "logloss": 0.43044012716854135,
+     "calib": [
+      {
+       "tranche": "0-10",
+       "n": 18,
+       "predit": 0.058472222222222224,
+       "reel": 0.1111111111111111
+      },
+      {
+       "tranche": "10-20",
+       "n": 27,
+       "predit": 0.1476814814814815,
+       "reel": 0.07407407407407407
+      },
+      {
+       "tranche": "20-30",
+       "n": 17,
+       "predit": 0.24107058823529415,
+       "reel": 0.4117647058823529
+      },
+      {
+       "tranche": "30-40",
+       "n": 4,
+       "predit": 0.324325,
+       "reel": 0.0
+      }
+     ],
+     "top": {
+      "n": 10,
+      "hits": 3,
+      "attendu": 2.9044
+     },
+     "soirs": [
+      {
+       "date": "2026-10-24",
+       "n": 10,
+       "hits": 3,
+       "attendu": 2.9044
+      }
+     ]
     },
     "passe_v5": {
      "n": 0
@@ -140578,44 +142424,56 @@
    },
    "passes": {
     "combo": {
-     "n": 32,
-     "base": 0.375,
-     "brier": 0.24463456249999999,
-     "bss": -0.04377413333333324,
-     "precision": 0.625,
-     "note": 47.81129333333334,
-     "logloss": 0.6890028291618867,
+     "n": 66,
+     "base": 0.30303030303030304,
+     "brier": 0.1979698656060606,
+     "bss": 0.06265572328260871,
+     "precision": 0.7121212121212122,
+     "note": 53.13278616413044,
+     "logloss": 0.5825383243857057,
      "calib": [
       {
        "tranche": "10-20",
-       "n": 16,
-       "predit": 0.17215,
-       "reel": 0.25
+       "n": 30,
+       "predit": 0.16487000000000002,
+       "reel": 0.2
       },
       {
        "tranche": "20-30",
-       "n": 10,
-       "predit": 0.24613999999999997,
-       "reel": 0.5
+       "n": 22,
+       "predit": 0.25677727272727274,
+       "reel": 0.3181818181818182
       },
       {
        "tranche": "30-40",
-       "n": 6,
-       "predit": 0.3509,
-       "reel": 0.5
+       "n": 12,
+       "predit": 0.3433083333333333,
+       "reel": 0.4166666666666667
+      },
+      {
+       "tranche": "40-50",
+       "n": 1,
+       "predit": 0.441,
+       "reel": 1.0
+      },
+      {
+       "tranche": "50-60",
+       "n": 1,
+       "predit": 0.5216,
+       "reel": 1.0
       }
      ],
      "top": {
       "n": 10,
-      "hits": 3,
-      "attendu": 3.2224999999999997
+      "hits": 6,
+      "attendu": 3.8357
      },
      "soirs": [
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 3,
-       "attendu": 3.2224999999999997
+       "hits": 6,
+       "attendu": 3.8357
       }
      ]
     },
@@ -140623,49 +142481,49 @@
      "n": 0
     },
     "v0": {
-     "n": 5602,
-     "base": 0.24634059264548375,
-     "brier": 0.19099657699214567,
-     "bss": -0.028760965986416975,
-     "precision": 0.7461620849696537,
-     "note": 48.56195170067915,
-     "logloss": 0.6299466454852274,
+     "n": 5636,
+     "base": 0.24627395315826828,
+     "brier": 0.19082491401525906,
+     "bss": -0.028023565240743897,
+     "precision": 0.7466288147622427,
+     "note": 48.59882173796281,
+     "logloss": 0.629444911668057,
      "calib": [
       {
        "tranche": "0-10",
-       "n": 1268,
-       "predit": 0.021957965299684544,
-       "reel": 0.17823343848580442
+       "n": 1277,
+       "predit": 0.022007126076742364,
+       "reel": 0.17776037588097102
       },
       {
        "tranche": "10-20",
-       "n": 1276,
-       "predit": 0.15607045454545454,
-       "reel": 0.21316614420062696
+       "n": 1289,
+       "predit": 0.15598952676493408,
+       "reel": 0.21334367726920092
       },
       {
        "tranche": "20-30",
-       "n": 1305,
-       "predit": 0.25248865900383144,
-       "reel": 0.21992337164750958
+       "n": 1308,
+       "predit": 0.25252262996941893,
+       "reel": 0.21941896024464833
       },
       {
        "tranche": "30-40",
-       "n": 876,
-       "predit": 0.3540799086757991,
-       "reel": 0.2762557077625571
+       "n": 881,
+       "predit": 0.35399682179341657,
+       "reel": 0.27695800227014755
       },
       {
        "tranche": "40-50",
-       "n": 423,
-       "predit": 0.4592281323877069,
-       "reel": 0.3475177304964539
+       "n": 425,
+       "predit": 0.4592538823529412,
+       "reel": 0.3458823529411765
       },
       {
        "tranche": "50-60",
-       "n": 260,
-       "predit": 0.545216923076923,
-       "reel": 0.45
+       "n": 262,
+       "predit": 0.5450782442748091,
+       "reel": 0.4541984732824427
       },
       {
        "tranche": "60-70",
@@ -140694,8 +142552,8 @@
      ],
      "top": {
       "n": 260,
-      "hits": 117,
-      "attendu": 158.11169999999998
+      "hits": 118,
+      "attendu": 158.9741
      },
      "soirs": [
       {
@@ -140779,19 +142637,19 @@
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 4,
-       "attendu": 4.2166999999999994
+       "hits": 5,
+       "attendu": 5.0790999999999995
       }
      ]
     },
     "v1": {
-     "n": 5602,
-     "base": 0.24634059264548375,
-     "brier": 0.1748921488039986,
-     "bss": 0.05798198700471635,
-     "precision": 0.7586576222777579,
-     "note": 52.899099350235815,
-     "logloss": 0.5309985347206414,
+     "n": 5636,
+     "base": 0.24627395315826828,
+     "brier": 0.17476641638218596,
+     "bss": 0.05848774841215665,
+     "precision": 0.7588715400993612,
+     "note": 52.92438742060783,
+     "logloss": 0.5307049734530357,
      "calib": [
       {
        "tranche": "0-10",
@@ -140801,33 +142659,33 @@
       },
       {
        "tranche": "10-20",
-       "n": 1674,
-       "predit": 0.16282968936678616,
-       "reel": 0.15651135005973715
+       "n": 1688,
+       "predit": 0.1627776066350711,
+       "reel": 0.15639810426540285
       },
       {
        "tranche": "20-30",
-       "n": 2343,
-       "predit": 0.24587464788732394,
-       "reel": 0.22492530943235167
+       "n": 2355,
+       "predit": 0.24597537154989385,
+       "reel": 0.22462845010615712
       },
       {
        "tranche": "30-40",
-       "n": 1088,
-       "predit": 0.3426704044117647,
-       "reel": 0.33088235294117646
+       "n": 1094,
+       "predit": 0.3426322669104205,
+       "reel": 0.33089579524680074
       },
       {
        "tranche": "40-50",
-       "n": 326,
-       "predit": 0.44132269938650304,
-       "reel": 0.44171779141104295
+       "n": 327,
+       "predit": 0.4413217125382263,
+       "reel": 0.4434250764525994
       },
       {
        "tranche": "50-60",
-       "n": 111,
-       "predit": 0.5330414414414414,
-       "reel": 0.5675675675675675
+       "n": 112,
+       "predit": 0.5329392857142857,
+       "reel": 0.5714285714285714
       },
       {
        "tranche": "60-70",
@@ -140844,8 +142702,8 @@
      ],
      "top": {
       "n": 260,
-      "hits": 132,
-      "attendu": 127.7273
+      "hits": 135,
+      "attendu": 128.3405
      },
      "soirs": [
       {
@@ -140929,8 +142787,8 @@
       {
        "date": "2026-10-24",
        "n": 10,
-       "hits": 3,
-       "attendu": 3.2224999999999997
+       "hits": 6,
+       "attendu": 3.8357
       }
      ]
     },
@@ -140938,39 +142796,102 @@
      "n": 0
     },
     "passe_v5": {
-     "n": 0
+     "n": 66,
+     "base": 0.30303030303030304,
+     "brier": 0.19839028606060605,
+     "bss": 0.06066512382608713,
+     "precision": 0.7121212121212122,
+     "note": 53.03325619130435,
+     "logloss": 0.5847297332530133,
+     "calib": [
+      {
+       "tranche": "0-10",
+       "n": 1,
+       "predit": 0.0917,
+       "reel": 0.0
+      },
+      {
+       "tranche": "10-20",
+       "n": 30,
+       "predit": 0.15510333333333334,
+       "reel": 0.2
+      },
+      {
+       "tranche": "20-30",
+       "n": 22,
+       "predit": 0.2535136363636364,
+       "reel": 0.3181818181818182
+      },
+      {
+       "tranche": "30-40",
+       "n": 10,
+       "predit": 0.34262000000000004,
+       "reel": 0.4
+      },
+      {
+       "tranche": "40-50",
+       "n": 2,
+       "predit": 0.42385,
+       "reel": 1.0
+      },
+      {
+       "tranche": "50-60",
+       "n": 1,
+       "predit": 0.5282,
+       "reel": 1.0
+      }
+     ],
+     "top": {
+      "n": 10,
+      "hits": 6,
+      "attendu": 3.8624
+     },
+     "soirs": [
+      {
+       "date": "2026-10-24",
+       "n": 10,
+       "hits": 6,
+       "attendu": 3.8624
+      }
+     ]
     }
    }
   },
   "matchs": {
    "victoire": {
     "combo": {
-     "n": 1,
-     "base": 0.0,
-     "brier": 0.34668544,
-     "bss": -346685439.0,
-     "precision": 0.0,
-     "note": 0.0,
-     "logloss": 0.8886755648411817,
+     "n": 2,
+     "base": 0.5,
+     "brier": 0.23121074,
+     "bss": 0.07515704000000001,
+     "precision": 0.5,
+     "note": 53.757852,
+     "logloss": 0.6522470425144188,
      "calib": [
       {
        "tranche": "50-60",
        "n": 1,
        "predit": 0.5888,
        "reel": 0.0
+      },
+      {
+       "tranche": "60-70",
+       "n": 1,
+       "predit": 0.6598,
+       "reel": 1.0
       }
      ],
      "top": {
-      "n": 1,
-      "hits": 0,
-      "attendu": 0.5888
+      "n": 2,
+      "hits": 1,
+      "attendu": 1.2486000000000002
      },
      "soirs": [
       {
        "date": "2026-10-24",
-       "n": 1,
-       "hits": 0,
-       "attendu": 0.5888
+       "n": 2,
+       "hits": 1,
+       "attendu": 1.2486000000000002
       }
      ]
     },
@@ -140978,13 +142899,13 @@
      "n": 0
     },
     "v0": {
-     "n": 168,
-     "base": 0.5833333333333334,
-     "brier": 0.2514291117261905,
-     "bss": -0.03445120253061229,
-     "precision": 0.5535714285714286,
-     "note": 48.27743987346938,
-     "logloss": 0.6970033086593395,
+     "n": 169,
+     "base": 0.5857988165680473,
+     "brier": 0.2508767842011834,
+     "bss": -0.033952645536796444,
+     "precision": 0.5562130177514792,
+     "note": 48.30236772316018,
+     "logloss": 0.6958780441258313,
      "calib": [
       {
        "tranche": "0-10",
@@ -141024,9 +142945,9 @@
       },
       {
        "tranche": "60-70",
-       "n": 22,
-       "predit": 0.6261272727272728,
-       "reel": 0.5909090909090909
+       "n": 23,
+       "predit": 0.625095652173913,
+       "reel": 0.6086956521739131
       },
       {
        "tranche": "70-80",
@@ -141042,9 +142963,9 @@
       }
      ],
      "top": {
-      "n": 168,
-      "hits": 98,
-      "attendu": 82.2389
+      "n": 169,
+      "hits": 99,
+      "attendu": 82.8413
      },
      "soirs": [
       {
@@ -141127,20 +143048,20 @@
       },
       {
        "date": "2026-10-24",
-       "n": 1,
-       "hits": 0,
-       "attendu": 0.4317
+       "n": 2,
+       "hits": 1,
+       "attendu": 1.0341
       }
      ]
     },
     "v1": {
-     "n": 168,
-     "base": 0.5833333333333334,
-     "brier": 0.2327108761904762,
-     "bss": 0.04256096653061214,
-     "precision": 0.6190476190476191,
-     "note": 52.12804832653061,
-     "logloss": 0.6575558847504587,
+     "n": 169,
+     "base": 0.5857988165680473,
+     "brier": 0.2320187173964497,
+     "bss": 0.04376816918326121,
+     "precision": 0.621301775147929,
+     "note": 52.18840845916306,
+     "logloss": 0.6561254861435781,
      "calib": [
       {
        "tranche": "20-30",
@@ -141168,9 +143089,9 @@
       },
       {
        "tranche": "60-70",
-       "n": 38,
-       "predit": 0.6428105263157895,
-       "reel": 0.6578947368421053
+       "n": 39,
+       "predit": 0.6432461538461539,
+       "reel": 0.6666666666666666
       },
       {
        "tranche": "70-80",
@@ -141180,9 +143101,9 @@
       }
      ],
      "top": {
-      "n": 168,
-      "hits": 98,
-      "attendu": 89.5024
+      "n": 169,
+      "hits": 99,
+      "attendu": 90.1622
      },
      "soirs": [
       {
@@ -141265,9 +143186,9 @@
       },
       {
        "date": "2026-10-24",
-       "n": 1,
-       "hits": 0,
-       "attendu": 0.5888
+       "n": 2,
+       "hits": 1,
+       "attendu": 1.2486000000000002
       }
      ]
     },
@@ -141280,47 +143201,47 @@
    },
    "total55": {
     "combo": {
-     "n": 1,
-     "base": 1.0,
-     "brier": 0.22477080999999996,
-     "bss": -224770808.99999994,
-     "precision": 1.0,
-     "note": 0.0,
-     "logloss": 0.6426441983868385,
+     "n": 2,
+     "base": 0.5,
+     "brier": 0.28584590499999996,
+     "bss": -0.14338361999999982,
+     "precision": 0.5,
+     "note": 42.830819000000005,
+     "logloss": 0.7659031314363705,
      "calib": [
       {
        "tranche": "50-60",
-       "n": 1,
-       "predit": 0.5259,
-       "reel": 1.0
+       "n": 2,
+       "predit": 0.55745,
+       "reel": 0.5
       }
      ],
      "top": {
-      "n": 1,
+      "n": 2,
       "hits": 1,
-      "attendu": 0.5259
+      "attendu": 1.1149
      },
      "soirs": [
       {
        "date": "2026-10-24",
-       "n": 1,
+       "n": 2,
        "hits": 1,
-       "attendu": 0.5259
+       "attendu": 1.1149
       }
      ],
-     "mae_total": 3.1742999999999997
+     "mae_total": 2.6971499999999997
     },
     "soir": {
      "n": 0
     },
     "v0": {
-     "n": 168,
-     "base": 0.5654761904761905,
-     "brier": 0.24836655339285715,
-     "bss": -0.010799942748377811,
-     "precision": 0.5595238095238095,
-     "note": 49.460002862581106,
-     "logloss": 0.6923785252584311,
+     "n": 169,
+     "base": 0.5621301775147929,
+     "brier": 0.24899527349112427,
+     "bss": -0.011600854364153701,
+     "precision": 0.5562130177514792,
+     "note": 49.419957281792314,
+     "logloss": 0.693637253171006,
      "calib": [
       {
        "tranche": "20-30",
@@ -141342,9 +143263,9 @@
       },
       {
        "tranche": "50-60",
-       "n": 68,
-       "predit": 0.5580382352941176,
-       "reel": 0.5294117647058824
+       "n": 69,
+       "predit": 0.5585811594202899,
+       "reel": 0.5217391304347826
       },
       {
        "tranche": "60-70",
@@ -141366,9 +143287,9 @@
       }
      ],
      "top": {
-      "n": 168,
+      "n": 169,
       "hits": 95,
-      "attendu": 97.6401
+      "attendu": 98.2356
      },
      "soirs": [
       {
@@ -141451,21 +143372,21 @@
       },
       {
        "date": "2026-10-24",
-       "n": 1,
+       "n": 2,
        "hits": 1,
-       "attendu": 0.4495
+       "attendu": 1.045
       }
      ],
-     "mae_total": 1.7844964285714287
+     "mae_total": 1.787324852071006
     },
     "v1": {
-     "n": 168,
-     "base": 0.5654761904761905,
-     "brier": 0.24326089059523812,
-     "bss": 0.009979037323720186,
-     "precision": 0.5714285714285714,
-     "note": 50.49895186618601,
-     "logloss": 0.6796330715854685,
+     "n": 169,
+     "base": 0.5621301775147929,
+     "brier": 0.24387426402366863,
+     "bss": 0.00920443033001428,
+     "precision": 0.5680473372781065,
+     "note": 50.46022151650072,
+     "logloss": 0.6808728881115066,
      "calib": [
       {
        "tranche": "30-40",
@@ -141481,9 +143402,9 @@
       },
       {
        "tranche": "50-60",
-       "n": 74,
-       "predit": 0.5537,
-       "reel": 0.5135135135135135
+       "n": 75,
+       "predit": 0.5541706666666667,
+       "reel": 0.5066666666666667
       },
       {
        "tranche": "60-70",
@@ -141505,9 +143426,9 @@
       }
      ],
      "top": {
-      "n": 168,
+      "n": 169,
       "hits": 95,
-      "attendu": 100.1338
+      "attendu": 100.72279999999999
      },
      "soirs": [
       {
@@ -141590,12 +143511,12 @@
       },
       {
        "date": "2026-10-24",
-       "n": 1,
+       "n": 2,
        "hits": 1,
-       "attendu": 0.5259
+       "attendu": 1.1149
       }
      ],
-     "mae_total": 1.7486309523809522
+     "mae_total": 1.7514201183431952
     },
     "but_v5": {
      "n": 0
@@ -141606,32 +143527,38 @@
    },
    "total65": {
     "combo": {
-     "n": 1,
-     "base": 1.0,
-     "brier": 0.40233649,
-     "bss": -402336488.99999994,
-     "precision": 0.0,
-     "note": 0.0,
-     "logloss": 1.0059419538268015,
+     "n": 2,
+     "base": 0.5,
+     "brier": 0.293188745,
+     "bss": -0.1727549799999999,
+     "precision": 0.5,
+     "note": 41.36225100000001,
+     "logloss": 0.7831540115764641,
      "calib": [
       {
        "tranche": "30-40",
        "n": 1,
        "predit": 0.3657,
        "reel": 1.0
+      },
+      {
+       "tranche": "40-50",
+       "n": 1,
+       "predit": 0.429,
+       "reel": 0.0
       }
      ],
      "top": {
-      "n": 1,
+      "n": 2,
       "hits": 1,
-      "attendu": 0.3657
+      "attendu": 0.7947
      },
      "soirs": [
       {
        "date": "2026-10-24",
-       "n": 1,
+       "n": 2,
        "hits": 1,
-       "attendu": 0.3657
+       "attendu": 0.7947
       }
      ]
     },
@@ -141639,13 +143566,13 @@
      "n": 0
     },
     "v0": {
-     "n": 168,
-     "base": 0.4642857142857143,
-     "brier": 0.2501597227380953,
-     "bss": -0.005770372444444671,
-     "precision": 0.5476190476190477,
-     "note": 49.711481377777766,
-     "logloss": 0.6939549152366989,
+     "n": 169,
+     "base": 0.46153846153846156,
+     "brier": 0.24980328437869825,
+     "bss": -0.005160834761904987,
+     "precision": 0.5502958579881657,
+     "note": 49.74195826190475,
+     "logloss": 0.693235338699288,
      "calib": [
       {
        "tranche": "10-20",
@@ -141667,9 +143594,9 @@
       },
       {
        "tranche": "40-50",
-       "n": 80,
-       "predit": 0.44793625,
-       "reel": 0.475
+       "n": 81,
+       "predit": 0.4477864197530864,
+       "reel": 0.4691358024691358
       },
       {
        "tranche": "50-60",
@@ -141691,9 +143618,9 @@
       }
      ],
      "top": {
-      "n": 168,
+      "n": 169,
       "hits": 78,
-      "attendu": 71.5398
+      "attendu": 71.9756
      },
      "soirs": [
       {
@@ -141776,20 +143703,20 @@
       },
       {
        "date": "2026-10-24",
-       "n": 1,
+       "n": 2,
        "hits": 1,
-       "attendu": 0.2944
+       "attendu": 0.7302
       }
      ]
     },
     "v1": {
-     "n": 168,
-     "base": 0.4642857142857143,
-     "brier": 0.24516862827380953,
-     "bss": 0.014296386837606812,
-     "precision": 0.5773809523809523,
-     "note": 50.71481934188034,
-     "logloss": 0.6836722618748026,
+     "n": 169,
+     "base": 0.46153846153846156,
+     "brier": 0.24480692633136095,
+     "bss": 0.014943558333333273,
+     "precision": 0.5798816568047337,
+     "note": 50.747177916666665,
+     "logloss": 0.6829426394336862,
      "calib": [
       {
        "tranche": "20-30",
@@ -141805,9 +143732,9 @@
       },
       {
        "tranche": "40-50",
-       "n": 62,
-       "predit": 0.4425483870967742,
-       "reel": 0.4032258064516129
+       "n": 63,
+       "predit": 0.44233333333333336,
+       "reel": 0.3968253968253968
       },
       {
        "tranche": "50-60",
@@ -141823,9 +143750,9 @@
       }
      ],
      "top": {
-      "n": 168,
+      "n": 169,
       "hits": 78,
-      "attendu": 73.9307
+      "attendu": 74.3597
      },
      "soirs": [
       {
@@ -141908,9 +143835,9 @@
       },
       {
        "date": "2026-10-24",
-       "n": 1,
+       "n": 2,
        "hits": 1,
-       "attendu": 0.3657
+       "attendu": 0.7947
       }
      ]
     },
@@ -141924,40 +143851,40 @@
   },
   "global": {
    "combo": {
-    "n": 99,
-    "note": 51.26540491250188
+    "n": 204,
+    "note": 53.12022191052749
    },
    "soir": {
     "n": 0,
     "note": null
    },
    "v0": {
-    "n": 17482,
-    "note": 50.01341839311302
+    "n": 17587,
+    "note": 50.0122654554477
    },
    "v1": {
-    "n": 17482,
-    "note": 53.863342886271575
+    "n": 17587,
+    "note": 53.856744993420364
    },
    "but_v5": {
-    "n": 0,
-    "note": null
+    "n": 66,
+    "note": 52.224235818181825
    },
    "passe_v5": {
-    "n": 0,
-    "note": null
+    "n": 66,
+    "note": 53.03325619130435
    }
   },
   "soirs_retro": 18,
   "soirs_direct": 8
  },
  "cotes_quota": {
-  "restants": "356",
-  "utilises": "144",
+  "restants": "344",
+  "utilises": "156",
   "erreur": null,
   "source": "The Odds API",
   "test": null,
-  "quand": "2026-10-24T21:26+00:00"
+  "quand": "2026-10-24T22:06+00:00"
  },
  "labo": {
   "journal": [
@@ -142018,16 +143945,16 @@
    {
     "marche": "passes",
     "segment": "Début de saison (moins de 5 matchs)",
-    "n": 3036,
-    "predit": 0.2525493741765481,
-    "reel": 0.23089591567852438,
-    "z": -2.809427924559005,
+    "n": 3038,
+    "predit": 0.2525359117840685,
+    "reel": 0.23074391046741277,
+    "z": -2.828377718707589,
     "sens": "surestimé"
    }
   ],
   "donnees": {
-   "joueurs": 5774,
-   "matchs": 168
+   "joueurs": 5808,
+   "matchs": 169
   },
   "principales": {
    "tirs1": "v1",
