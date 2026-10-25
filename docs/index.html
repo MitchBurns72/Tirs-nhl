@@ -768,7 +768,8 @@ function liste(){
         <span>Indiscipline ${j.opp} : <b>×${det.f_pen.toFixed(2)}</b></span>
         <span>État de match : <b>×${det.f_score.toFixed(2)}</b></span>` : ""}${det.f_rink != null ? `
         <span>Patinoire (marqueur) : <b>×${det.f_rink.toFixed(2)}</b></span>` : ""}${det.f_role != null ? `
-        <span>Prior selon le rôle : <b>×${det.f_role.toFixed(2)}</b></span>` : ""}`;
+        <span>Prior selon le rôle : <b>×${det.f_role.toFixed(2)}</b></span>` : ""}${det.f_phys != null ? `
+        <span>Robustesse de ${j.opp} : <b>×${det.f_phys.toFixed(2)}</b></span>` : ""}`;
     const detB = STAT[m] === "buts" ? (pred(j, v, "buts")?.detail || det) : null;
     if (detB && m !== "buts") fx = `<span>Buts attendus : <b>${pred(j, v, m).lam.toFixed(2)}</b> (même calcul que « But », lu à ${SEUIL[m]}+)</span>`;
     if (STAT[m] === "passes" && m !== "passes") fx = `<span>Passes attendues : <b>${pred(j, v, m).lam.toFixed(2)}</b> (lu à ${SEUIL[m]}+)</span>`;
@@ -960,6 +961,9 @@ function blocAlignement(g){
     </details>`;
 }
 
+// Indice de robustesse : mises en échec par match vs la moyenne de la ligue
+const robHTML = (x) => x == null ? "" : `<span class="xg" title="Mises en échec par match vs la moyenne de la ligue">Robustesse ${x >= 1 ? "+" : ""}${Math.round((x - 1) * 100)} %</span>`;
+
 // ---- Matchs --------------------------------------------------------------------
 function matchs(){
   const v = versionsDispo("p-matchs").some(x => x.id === S.ver) ? S.ver : D.principale;
@@ -1046,9 +1050,9 @@ function matchs(){
     return `<div class="m ${cls}" style="--ca:${coul(g.away)};--ch:${coul(g.home)}">
       <div class="m-top"><span class="lbl">${heure(g.start)}${g.retro ? " · rétro" : ""}${g.b2b_away ? ` · ${g.away} B2B` : ""}${g.b2b_home ? ` · ${g.home} B2B` : ""}</span>${res}</div>
       <div class="duel">
-        <div class="eq"><span class="ligne"><img class="logo" src="${LOGO(g.away)}" alt="" loading="lazy" onerror="this.remove()"><span class="ab">${g.away}</span></span><span class="wp ${pa > ph ? "fav" : ""}">${pct(pa)} %</span><span class="xg">${p.lam_away.toFixed(1)} buts att.</span></div>
+        <div class="eq"><span class="ligne"><img class="logo" src="${LOGO(g.away)}" alt="" loading="lazy" onerror="this.remove()"><span class="ab">${g.away}</span></span><span class="wp ${pa > ph ? "fav" : ""}">${pct(pa)} %</span><span class="xg">${p.lam_away.toFixed(1)} buts att.</span>${robHTML(g.phys?.away)}</div>
         <span class="vs">@</span>
-        <div class="eq d"><span class="ligne"><img class="logo" src="${LOGO(g.home)}" alt="" loading="lazy" onerror="this.remove()"><span class="ab">${g.home}</span></span><span class="wp ${ph >= pa ? "fav" : ""}">${pct(ph)} %</span><span class="xg">${p.lam_home.toFixed(1)} buts att.</span></div>
+        <div class="eq d"><span class="ligne"><img class="logo" src="${LOGO(g.home)}" alt="" loading="lazy" onerror="this.remove()"><span class="ab">${g.home}</span></span><span class="wp ${ph >= pa ? "fav" : ""}">${pct(ph)} %</span><span class="xg">${p.lam_home.toFixed(1)} buts att.</span>${robHTML(g.phys?.home)}</div>
       </div>
       <div class="wbar" aria-hidden="true"><span class="a" style="width:${pct(pa)}%"></span><span class="h" style="width:${pct(ph)}%"></span></div>
       ${blocAlignement(g)}

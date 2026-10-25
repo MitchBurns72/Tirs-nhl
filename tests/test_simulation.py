@@ -51,6 +51,7 @@ K_PP_VRAI = 1.2                                   # une minute de PP vaut 2.2 mi
 indisc = {t: rng.uniform(0.7, 1.4) for t in EQUIPES}   # >1 : donne plus de PP à l'adversaire
 attaque = {t: rng.uniform(0.85, 1.15) for t in EQUIPES}
 defense = {t: rng.uniform(0.85, 1.15) for t in EQUIPES}
+robuste = {t: 0.75 + 0.07 * i for i, t in enumerate(EQUIPES)}   # mises en échec (fixe : ne change pas les autres tirages)
 
 
 def poisson(lam):
@@ -142,7 +143,10 @@ def faux_stats(path):
     rows = []
     if cay.startswith("gameId="):
         for p, (att, ppm, team) in stats_sim.get(int(cay.split("=")[1]), {}).items():
-            rows.append({"playerId": p, "teamAbbrev": team, "totalShotAttempts": att, "ppTimeOnIce": int(ppm * 60), "shTimeOnIce": 0})
+            import zlib
+            hits = int(robuste[team] * 2 + (zlib.crc32(f"{p}-{cay}".encode()) % 3))
+            rows.append({"playerId": p, "teamAbbrev": team, "totalShotAttempts": att, "ppTimeOnIce": int(ppm * 60),
+                         "shTimeOnIce": 0, "hits": hits})
     elif cay.startswith(f"seasonId={PREV}"):
         tot = {}
         for g, a, h in cal_prev:
@@ -403,6 +407,12 @@ def main():
     pv1 = e3["preds"]["v1"]
     assert pv1["buts"]["p"] >= pv1["buts2"]["p"] >= pv1["buts3"]["p"] and pv1["pts1"]["p"] >= pv1["pts2"]["p"]
     assert set(e3["preds"].get(P["pts2"], {"pts2": 0})) == {"pts2"}
+    # Robustesse : l'indice suit le vrai trait caché des équipes, et chaque joueur a son "ph"
+    import statistics as stt0
+    phs = [(g1["phys"]["home"], robuste[g1["home"]]) for g1 in d["games"] if g1.get("phys", {}).get("home")]
+    assert len(phs) >= 2 and stt0.correlation([a for a, b in phs], [b for a, b in phs]) > 0.8, phs
+    assert all(len(e["f"]["x"]["ph"]) == 3 for e in vieux["entries"] if (e.get("f") or {}).get("x")), "robustesse pas rétro-remplie"
+    print("robustesse OK :", phs[:3])
     print("nouveaux marchés OK :", {m: round(st_r["joueurs"][m]["v1"]["note"], 1) for m in ("buts2", "buts3", "passes2", "pts1", "pts2")})
     print("recettes par catégorie : un marché chacune, rejouées, notées à partir de leur création OK")
 

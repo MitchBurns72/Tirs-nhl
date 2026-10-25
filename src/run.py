@@ -459,7 +459,25 @@ def preparer_v2(jour, saison, feuilles):
         connus = [x["ppa"] for x in lst if x["ppa"] is not None]
         osh[t] = (sum(connus) + 10 * lpp) / (len(connus) + 10)   # régressé : 10 matchs à la moyenne
     return {"jeux": jeux, "prev": joueurs_prev, "blocs": blocs, "osh": osh, "lpp": lpp, "lg": [lg_sf, lg_sh],
-            "rink": facteurs_rink(feuilles, jour)}
+            "rink": facteurs_rink(feuilles, jour), "phys": robustesse(feuilles, jeux, jour)}
+
+
+def robustesse(feuilles, jeux, jour, k=5):
+    """Indice de robustesse de chaque équipe AVANT `jour` : ses mises en échec par match ÷
+    la moyenne de la ligue, régressé vers 1 avec k matchs fictifs. 1.15 = frappe 15 % de plus."""
+    par = {}
+    for gid, fb in feuilles.items():
+        h = (jeux.get(gid) or {}).get("h")
+        if fb["date"] >= jour or not h:
+            continue
+        for t in (fb["home"], fb["away"]):
+            if t in h:
+                x = par.setdefault(t, [0, 0]); x[0] += h[t]; x[1] += 1
+    tot = sum(x[0] for x in par.values()); n = sum(x[1] for x in par.values())
+    if not n:
+        return {}
+    lg = tot / n
+    return {t: round((s + k * lg) / (m + k) / lg, 4) for t, (s, m) in par.items()}
 
 
 def features_x_joueur(ctx, v2, pw, ratio_pos):
@@ -489,7 +507,22 @@ def features_x_joueur(ctx, v2, pw, ratio_pos):
         "pw": pw, "lr": ratio_pos.get(ctx["pos"], 0.53),
         # Facteur de patinoire de l'aréna de CE SOIR (celle de l'équipe à domicile)
         "rk": v2.get("rink", {}).get(ctx["team"] if ctx["home"] else ctx["opp"]["abbrev"], 1.0),
+        # Robustesse : [indice de l'adversaire, son rythme de tirs contre les équipes robustes
+        # ÷ son rythme général, nombre de ces matchs]
+        "ph": robustesse_joueur(ctx, v2.get("phys") or {}),
     }
+
+
+def robustesse_joueur(ctx, phys, seuil=1.05):
+    """Est-ce que CE joueur tire plus ou moins contre les équipes qui frappent beaucoup ?
+    Taux de tirs par minute dans ses matchs contre une équipe robuste (indice >= 1.05) ÷ son
+    taux dans tous ses matchs. Le modèle régresse ce ratio selon le nombre de matchs."""
+    opp = phys.get(ctx["opp"]["abbrev"], 1.0)
+    s_all = sum(g["shots"] for g in ctx["cur"]); t_all = sum(g["toi"] for g in ctx["cur"])
+    rob = [g for g in ctx["cur"] if phys.get(g["opp"], 1.0) >= seuil]
+    s_r = sum(g["shots"] for g in rob); t_r = sum(g["toi"] for g in rob)
+    ratio = (s_r / t_r) / (s_all / t_all) if t_r > 0 and s_all > 0 and t_all > 0 else 1.0
+    return [round(opp, 4), round(ratio, 4), len(rob)]
 
 
 def implicites_joueur(cotes_j):
@@ -641,6 +674,7 @@ def predire(jour, matchs_ouverts, saison):
         l10 = lambda c: cm[c]["cur"][-10:]
         games.append({
             "gameId": m["id"], "home": m["home"], "away": m["away"], "start": m["start"],
+            "phys": {"home": (v2 or {}).get("phys", {}).get(m["home"]), "away": (v2 or {}).get("phys", {}).get(m["away"])},
             "b2b_home": cm["home"]["b2b"], "b2b_away": cm["away"]["b2b"],
             "forme": {c: {"gf": sum(g["gf"] for g in l10(c)), "ga": sum(g["ga"] for g in l10(c)),
                           "n": len(l10(c)),
@@ -784,7 +818,7 @@ def completer_features(saison):
         # Toutes les versions paramétriques, auto comprises : elles se rejouent à partir des
         # features, sans réseau. Une prédiction déjà là n'est jamais recalculée.
         a_rejouer = [v for v, sp in VERSIONS.items() if "params" in sp]
-        marque = "x|rk|" + ",".join(a_rejouer)
+        marque = "x|rk|ph|" + ",".join(a_rejouer)
         # Facteur de patinoire ajouté le 23 octobre : on le colle aux vieilles lignes
         # (calculé avec les feuilles d'AVANT ce soir-là, donc pas de triche) pour que le
         # tuner puisse apprendre s'il sert. Aucune prédiction n'est modifiée.
@@ -813,7 +847,11 @@ def completer_features(saison):
         # ont déjà leurs features, on rejoue les versions manquantes SANS aucun appel
         # réseau (c'est le cas quand on ajoute v2.1 à v2.5 : tout est déjà là).
         sans_f = lambda x: not x.get("f") or "x" not in x["f"]
-        if any(sans_f(x) for x in manque_j + manque_g):
+        # Robustesse (25 oct.) : les vieilles lignes n'ont pas "ph" -> on recalcule le contexte
+        # du soir (données d'AVANT ce soir-là) et on colle seulement ce morceau.
+        sans_ph = [e for e in data["entries"] if (e.get("f") or {}).get("x") and "ph" not in e["f"]["x"]]
+        manque_j = manque_j + [e for e in sans_ph if e not in manque_j]
+        if any(sans_f(x) for x in manque_j + manque_g) or sans_ph:
             # Reconstituer les matchs du soir à partir des joueurs (domicile = équipe du joueur si home)
             matchs = {}
             for e in data["entries"]:
@@ -832,6 +870,9 @@ def completer_features(saison):
             for e in manque_j:
                 if sans_f(e):
                     e["f"] = f_j.get((e["gameId"], e["pid"])) or e.get("f")
+                elif "ph" not in e["f"]["x"]:
+                    nf = f_j.get((e["gameId"], e["pid"]))
+                    e["f"]["x"]["ph"] = (nf or {}).get("x", {}).get("ph") or [1.0, 1.0, 0]
             for g in manque_g:
                 if sans_f(g):
                     g["f"] = f_g.get(g["gameId"]) or g.get("f")

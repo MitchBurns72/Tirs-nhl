@@ -656,6 +656,10 @@ V2 = {
     # d'autres d'un match à l'autre (souvent 0-1 tir, ou 4+). On mélange la dispersion de la
     # ligue avec celle de SES 10 derniers matchs. 0 = même dispersion pour tous.
     "w_disp": 0.0,
+    # Robustesse de l'adversaire (25 oct., idée de Mitch) : certaines équipes frappent beaucoup.
+    # w_phys : effet moyen sur tout le monde, λ × indice^w_phys (négatif = on tire moins contre eux).
+    # w_phys_j : effet propre au joueur, selon SON rythme passé contre les équipes robustes.
+    "w_phys": 0.0, "w_phys_j": 0.0,
 }
 
 
@@ -755,7 +759,15 @@ def modele_joueur_v2(f, P):
         echelle = g("scale_tirs") * (g("scale_tirs_D") if f["pos"] == "D" else 1.0)
         # Patinoire : change les tirs COMPTÉS, pas les buts. Les buts partent donc du λ sans ce facteur.
         f_rink = x.get("rk", 1.0) ** g("w_rink", 0.0) if x.get("rk") else 1.0
-        lam_t0 = max(rate * em_proj * f_opp * f_lieu * f_b2b * f_vs * f_score * echelle, 0.05)
+        ph = x.get("ph")
+        f_phys = 1.0
+        if ph and (g("w_phys", 0.0) or g("w_phys_j", 0.0)):
+            oi, ratio_r, n_r = ph
+            f_phys = oi ** g("w_phys", 0.0)
+            if oi > 1.0:   # ce soir contre une équipe robuste : son historique contre ce genre d'équipe
+                f_phys *= 1 + g("w_phys_j", 0.0) * n_r / (n_r + 8) * (ratio_r - 1) * min(1.0, (oi - 1) / 0.10)
+            f_phys = min(1.3, max(0.7, f_phys))
+        lam_t0 = max(rate * em_proj * f_opp * f_lieu * f_b2b * f_vs * f_score * echelle * f_phys, 0.05)
         lam_t = lam_t0 * f_rink
 
         sh = (l10[1] + rs[1] + 0.5 * pv[1] + P["sh_pseudo_tirs"] * lg[3]) / (l10[0] + rs[0] + 0.5 * pv[0] + P["sh_pseudo_tirs"])
@@ -788,6 +800,8 @@ def modele_joueur_v2(f, P):
             out["tirs"]["detail"]["f_rink"] = f_rink
         if f_role != 1.0:
             out["tirs"]["detail"]["f_role"] = f_role
+        if f_phys != 1.0:
+            out["tirs"]["detail"]["f_phys"] = f_phys
         out["buts"]["detail"] = {"sh": sh, "f_gardien": f_g, "pp": pp_proj}
         out["passes"]["detail"] = {"f_equipe": f_eq, "pp": pp_proj, "k_pp": kp}
 

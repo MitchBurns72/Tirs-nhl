@@ -3,6 +3,7 @@ Données supplémentaires pour la v2 (api.nhle.com/stats/rest, gratuit, sans cl�
 
 Deux rapports par match, vérifiés le 2026-10-20 :
   - skater/realtime : totalShotAttempts (tirs cadrés + ratés + bloqués), missedShots...
+    (+ hits, les mises en échec, pour l'indice de robustesse des équipes, 25 oct.)
   - skater/timeonice : ppTimeOnIce, shTimeOnIce, evTimeOnIce (en secondes), teamAbbrev
 
 POURQUOI les tentatives : un tir cadré dépend en partie de la chance (le tir qui
@@ -70,9 +71,13 @@ def stats_d_un_match(gid):
     ti = _toutes_pages("timeonice", f"gameId={gid}", True)
     if not rt and not ti:
         return None
-    j, pp_eq = {}, {}
+    j, pp_eq, mises = {}, {}, {}
     for r in rt:
         j.setdefault(str(r["playerId"]), [None, 0.0, 0.0])[0] = r.get("totalShotAttempts")
+        # Mises en échec données par l'équipe (robustesse). Champ « hits » du rapport realtime :
+        # s'il est absent, l'équipe n'a juste pas d'indice (neutre).
+        if r.get("hits") is not None and r.get("teamAbbrev"):
+            mises[r["teamAbbrev"]] = mises.get(r["teamAbbrev"], 0) + r["hits"]
     for r in ti:
         e = j.setdefault(str(r["playerId"]), [None, 0.0, 0.0])
         e[1] = round((r.get("ppTimeOnIce") or 0) / 60, 2)
@@ -80,7 +85,7 @@ def stats_d_un_match(gid):
         t = r.get("teamAbbrev")
         if t:
             pp_eq[t] = max(pp_eq.get(t, 0.0), e[1])
-    return {"j": j, "pp": pp_eq}
+    return {"j": j, "pp": pp_eq, "h": mises}
 
 
 def cache_stats_jeux(dossier, saison, ids, max_nouveaux=400):
@@ -88,7 +93,8 @@ def cache_stats_jeux(dossier, saison, ids, max_nouveaux=400):
     téléchargés par exécution (le reste au prochain calcul)."""
     f = Path(dossier) / f"stats_jeux_{saison}.json"
     cache = _lire(f, {})
-    manquants = [str(i) for i in ids if str(i) not in cache][:max_nouveaux]
+    # Les matchs en cache d'avant le 25 oct. n'ont pas les mises en échec ("h") : on les reprend
+    manquants = [str(i) for i in ids if str(i) not in cache or "h" not in cache[str(i)]][:max_nouveaux]
     if manquants:
         chemins = {}
         for gid in manquants:

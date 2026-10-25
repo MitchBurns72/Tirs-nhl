@@ -193,6 +193,8 @@ def _signaler(agg, marche, n_min):
 # =================================================================================
 
 def _candidats(val, lo, hi, pas):
+    if pas == "lin":   # exposants qui peuvent être négatifs : grands pas linéaires
+        return sorted({round(min(max(val + d, lo), hi), 4) for d in (-0.3, -0.15, -0.05, 0.05, 0.15, 0.3)} - {val})
     if pas == "mult":
         vals = [val * k for k in (0.6, 0.8, 0.9, 1.1, 1.25, 1.6)] if val else [lo + (hi - lo) * k for k in (0.1, 0.25, 0.5)]
     else:
@@ -314,10 +316,10 @@ def _val(r, stat):
     return r.get(stat)
 
 # Paramètres scannés pour chaque catégorie (ceux qui la touchent vraiment)
-_DISP = [("w_disp", 0.0, 1.0, "mult")]
+_DISP = [("w_disp", 0.0, 1.0, "mult"), ("w_phys", -1.0, 1.0, "lin"), ("w_phys_j", -1.0, 1.5, "lin")]
 ESPACE_CAT = {
     "tirs": ESPACE["tirs"] + ESPACE_V2["tirs"] + _DISP,
-    "but": ESPACE["tirs"] + ESPACE_V2["tirs"] + ESPACE["buts"] + ESPACE_V2["buts"],
+    "but": ESPACE["tirs"] + ESPACE_V2["tirs"] + _DISP[1:] + ESPACE["buts"] + ESPACE_V2["buts"],
     "passe": [e for e in ESPACE["tirs"] if e[0] in ("w_l10", "w_prev", "toi_recent", "pseudo_min")]
              + ESPACE["passes"] + ESPACE_V2["passes"] + [e for e in ESPACE_V2["tirs"] if e[0] in ("k_pp", "w_mod_joueur", "prior_toi_exp")],
     "match": ESPACE["match"] + ESPACE_V2["match"],
