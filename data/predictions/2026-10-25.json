@@ -19451,7 +19451,7 @@
    },
    "blesse": {
     "statut": "Day-To-Day",
-    "detail": "Undisclosed",
+    "detail": "Lower Body",
     "retour": "2026-10-25"
    }
   },
@@ -50978,7 +50978,7 @@
    "cotes": null,
    "soir_info": {
     "slot": "f2",
-    "pp": "aucune",
+    "pp": "pp2",
     "f_t": 1.0958,
     "f_a": 1.0958,
     "f_g": 0.9194,
@@ -64078,5 +64078,6 @@
   "but_v5",
   "passe_v5"
  ],
- "maj": "2026-10-25T14:25+00:00"
+ "maj": "2026-10-25T18:29+00:00",
+ "complete": "x|rk|but_v5,passe_v5"
 }

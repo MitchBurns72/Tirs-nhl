@@ -1,5 +1,5 @@
 {
- "genere": "2026-10-25T14:25+00:00",
+ "genere": "2026-10-25T18:29+00:00",
  "date": "2026-10-25",
  "versions": [
   {
@@ -51,7 +51,7 @@
   "tot": "v1"
  },
  "alignements": {
-  "maj": "2026-10-25T14:25+00:00",
+  "maj": "2026-10-25T18:29+00:00",
   "equipes": {
    "CHI": {
     "maj": "2026-10-24T16:42:42.456Z",
@@ -991,8 +991,8 @@
     }
    },
    "MIN": {
-    "maj": "2026-10-25T01:43:04.059Z",
-    "source": "Joe Smith",
+    "maj": "2026-10-25T14:59:59.122Z",
+    "source": "Last Game (2026-10-24)",
     "joueurs": {
      "Kirill Kaprizov": {
       "no": 97,
@@ -1211,7 +1211,7 @@
       "Blake Coleman",
       "Ryan Hartman",
       "Danila Yurov",
-      "Quinn Hughes",
+      "Bobby Brink",
       "Jared Spurgeon"
      ],
      "pk1": [
@@ -1471,8 +1471,8 @@
     }
    },
    "NSH": {
-    "maj": "2026-10-24T22:47:50.729Z",
-    "source": "Brooks Bratten",
+    "maj": "2026-10-25T14:32:32.549Z",
+    "source": "Last Game (2026-10-24)",
     "joueurs": {
      "Steven Stamkos": {
       "no": 91,
@@ -1935,8 +1935,8 @@
     }
    },
    "VAN": {
-    "maj": "2026-10-24T18:36:26.072Z",
-    "source": "Jeff Paterson",
+    "maj": "2026-10-25T17:34:08.987Z",
+    "source": "Ben Kuzma",
     "joueurs": {
      "Drew O'Connor": {
       "no": 18,
@@ -2413,12 +2413,12 @@
    },
    "NYI": {
     "nom": "Ilya Sorokin",
-    "statut": null,
+    "statut": "Likely",
     "sv": "0.934",
     "gaa": "1.72",
     "fiche": "5-2-0",
     "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/e/e160c984-786b-49dc-9aa4-1c312b487af8.jpg",
-    "maj": null
+    "maj": "2026-10-25T15:46:08.660Z"
    },
    "WPG": {
     "nom": "Stuart Skinner",
@@ -2440,30 +2440,30 @@
    },
    "NSH": {
     "nom": "Justus Annunen",
-    "statut": null,
+    "statut": "Likely",
     "sv": "0.806",
     "gaa": "6.0",
     "fiche": "0-1-0",
     "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/0/0bc4a24a-7cf0-46d6-8c9c-d771873adf92.jpg",
-    "maj": null
+    "maj": "2026-10-25T17:24:44.442Z"
    },
    "COL": {
     "nom": "Scott Wedgewood",
-    "statut": null,
+    "statut": "Likely",
     "sv": "0.912",
     "gaa": "2.64",
     "fiche": "1-1-1",
     "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/8/837592f3-a555-478d-a4bd-0940c948a984.jpg",
-    "maj": null
+    "maj": "2026-10-25T17:08:32.671Z"
    },
    "VAN": {
     "nom": "Leevi Merilainen",
-    "statut": null,
+    "statut": "Likely",
     "sv": "0.918",
     "gaa": "3.04",
     "fiche": "1-2-1",
     "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/8/84e9ad88-62ee-4408-91bc-6eab03acef3b.jpg",
-    "maj": null
+    "maj": "2026-10-25T17:18:56.266Z"
    },
    "MIN": {
     "nom": "Calvin Pickard",
@@ -16449,7 +16449,7 @@
    },
    "blesse": {
     "statut": "Day-To-Day",
-    "detail": "Undisclosed",
+    "detail": "Lower Body",
     "retour": "2026-10-25"
    }
   },
@@ -38317,7 +38317,7 @@
    "cotes": null,
    "soir_info": {
     "slot": "f2",
-    "pp": "aucune",
+    "pp": "pp2",
     "f_t": 1.096,
     "f_a": 1.096,
     "f_g": 0.919,
