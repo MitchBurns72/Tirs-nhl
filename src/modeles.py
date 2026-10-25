@@ -98,6 +98,40 @@ def ajouter_seuils(pv, k):
         if m != "tirs" and m not in pv:
             pv[m] = {"p": round(p_seuil(lam, seuil, k), 4), "lam": round(lam, 4)}
             ajoute = True
+    return ajouter_marches(pv) or ajoute
+
+
+def _au_moins_poisson(lam, s):
+    """P(X >= s) pour une loi de Poisson de moyenne lam."""
+    p, cumul = math.exp(-lam), 0.0
+    for n in range(s):
+        cumul += p
+        p *= lam / (n + 1)
+    return max(0.0, 1 - cumul)
+
+
+# Marchés dérivés (24 oct.) : 2+ et 3+ buts, 2+ passes, 1+ et 2+ points.
+# Même principe que les seuils de tirs : d'autres lectures des buts et passes attendus
+# (λ sauvés AVANT le match), donc honnête même sur les vieilles prédictions.
+# Points = buts + passes : λ_points = λ_buts + λ_passes (Poisson). Limite : buts et
+# passes d'un même joueur montent ensemble les bons soirs, donc 2+ points est un peu sous-estimé.
+def ajouter_marches(pv):
+    ajoute = False
+    lb = (pv.get("buts") or {}).get("lam")
+    la = (pv.get("passes") or {}).get("lam")
+    nouveaux = {}
+    if lb is not None:
+        nouveaux["buts2"] = (_au_moins_poisson(lb, 2), lb)
+        nouveaux["buts3"] = (_au_moins_poisson(lb, 3), lb)
+    if la is not None:
+        nouveaux["passes2"] = (_au_moins_poisson(la, 2), la)
+    if lb is not None and la is not None:
+        nouveaux["pts1"] = (_au_moins_poisson(lb + la, 1), lb + la)
+        nouveaux["pts2"] = (_au_moins_poisson(lb + la, 2), lb + la)
+    for m, (p, lam) in nouveaux.items():
+        if m not in pv:
+            pv[m] = {"p": round(p, 4), "lam": round(lam, 4)}
+            ajoute = True
     return ajoute
 
 
@@ -777,6 +811,7 @@ def modele_joueur_v2(f, P):
             out[m]["mkt"], out[m]["w"] = p_mkt, P["w_mod_joueur"]
             if m == "tirs" and "detail" in out[m]:
                 out[m]["detail"]["mkt"] = p_mkt
+    ajouter_marches(out)
     return out
 
 

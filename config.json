@@ -1,0 +1,6 @@
+{
+ "_note": "Marchés de cotes US joueur. Plan gratuit (500 crédits/mois) : tirs seulement. Plan payant : ajouter player_goals_alternate, player_assists_alternate, player_points_alternate.",
+ "odds_props": [
+  "player_shots_on_goal_alternate"
+ ]
+}

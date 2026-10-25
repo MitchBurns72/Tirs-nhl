@@ -266,9 +266,231 @@
     "msg": "passe_v5 remplace v1 : +1.77 % sur les soirs jamais vus, +1.10 % sur toute la saison (optimiste)"
    },
    "desc": "Passe : scan du 2026-10-24 sur toute la saison. +1.77 % vs v1 sur des soirs jamais vus pendant le scan."
+  },
+  {
+   "id": "but2_v5",
+   "cat": "but2",
+   "famille": "v2",
+   "cree": "2026-10-25",
+   "juge_depuis": "2026-10-25",
+   "base": "v1",
+   "params": {
+    "w_l10": 1.3824,
+    "w_prev": 0.5376,
+    "pseudo_min": 76.032,
+    "toi_recent": 0.5599999999999999,
+    "opp_reg_gp": 60,
+    "home": 1.09,
+    "away": 0.9299999999999999,
+    "b2b": 0.9299999999999999,
+    "vs_reg_gp": 12.288000000000004,
+    "sh_pseudo_tirs": 76.8,
+    "sv_reg_gp": 38.400000000000006,
+    "k_pp": 0.36,
+    "w_att": 0.32000000000000006,
+    "pen_exp": 0.0,
+    "score_s": 0.0,
+    "k_pp_passes": 0.0,
+    "w_mod_joueur": 1.0,
+    "w_mod_match": 1.0,
+    "prior_toi_exp": 1.5,
+    "scale_tirs": 1.05,
+    "scale_tirs_D": 1.04
+   },
+   "retiree": false,
+   "rapport": {
+    "cat": "but2",
+    "champion": "v1",
+    "gain_honnete": 0.03142717210975708,
+    "n_val": 1852,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.016924146770425724,
+    "msg": "but2_v5 remplace v1 : +3.14 % sur les soirs jamais vus, +1.69 % sur toute la saison (optimiste)"
+   },
+   "desc": "2+ buts : scan du 2026-10-25 sur toute la saison. +3.14 % vs v1 sur des soirs jamais vus pendant le scan."
+  },
+  {
+   "id": "but3_v5",
+   "cat": "but3",
+   "famille": "v2",
+   "cree": "2026-10-25",
+   "juge_depuis": "2026-10-25",
+   "base": "v1",
+   "params": {
+    "w_l10": 0.5,
+    "w_prev": 1.4336,
+    "pseudo_min": 43.199999999999996,
+    "opp_reg_gp": 38.400000000000006,
+    "home": 1.1,
+    "away": 0.9,
+    "b2b": 0.9199999999999999,
+    "vs_reg_gp": 19.200000000000003,
+    "sh_pseudo_tirs": 400,
+    "sv_reg_gp": 5.3999999999999995,
+    "k_pp": 2.0,
+    "w_att": 0.0,
+    "pen_exp": 0.0,
+    "score_s": 0.0,
+    "k_pp_passes": 0.0,
+    "w_mod_joueur": 1.0,
+    "w_mod_match": 1.0,
+    "scale_tirs_D": 1.08,
+    "scale_buts": 1.04
+   },
+   "retiree": false,
+   "rapport": {
+    "cat": "but3",
+    "champion": "v1",
+    "gain_honnete": 0.07989983306984057,
+    "n_val": 1852,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.03367926056016338,
+    "msg": "but3_v5 remplace v1 : +7.99 % sur les soirs jamais vus, +3.37 % sur toute la saison (optimiste)"
+   },
+   "desc": "3+ buts : scan du 2026-10-25 sur toute la saison. +7.99 % vs v1 sur des soirs jamais vus pendant le scan."
+  },
+  {
+   "id": "passe2_v5",
+   "cat": "passe2",
+   "famille": "v2",
+   "cree": "2026-10-25",
+   "juge_depuis": "2026-10-25",
+   "base": "v1",
+   "params": {
+    "w_l10": 0.5,
+    "w_prev": 1.5,
+    "toi_recent": 0.7600000000000001,
+    "pa_pseudo_min": 92.16000000000001,
+    "k_pp": 0.0,
+    "w_att": 0.0,
+    "pen_exp": 0.0,
+    "score_s": 0.0,
+    "k_pp_passes": 0.0,
+    "w_mod_joueur": 1.0,
+    "w_mod_match": 1.0,
+    "scale_passes": 0.96
+   },
+   "retiree": false,
+   "rapport": {
+    "cat": "passe2",
+    "champion": "v1",
+    "gain_honnete": 0.023237169997081756,
+    "n_val": 1852,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.019107101930318518,
+    "msg": "passe2_v5 remplace v1 : +2.32 % sur les soirs jamais vus, +1.91 % sur toute la saison (optimiste)"
+   },
+   "desc": "2+ passes : scan du 2026-10-25 sur toute la saison. +2.32 % vs v1 sur des soirs jamais vus pendant le scan."
+  },
+  {
+   "id": "pts1_v5",
+   "cat": "pts1",
+   "famille": "v2",
+   "cree": "2026-10-25",
+   "juge_depuis": "2026-10-25",
+   "base": "v1",
+   "params": {
+    "w_l10": 0.5,
+    "w_prev": 0.7168,
+    "pseudo_min": 294.91200000000003,
+    "toi_recent": 0.64,
+    "opp_reg_gp": 5.183999999999999,
+    "away": 0.9199999999999999,
+    "b2b": 0.85,
+    "vs_reg_gp": 11.059199999999999,
+    "sh_pseudo_tirs": 400,
+    "sv_reg_gp": 60,
+    "pa_pseudo_min": 144.0,
+    "k_pp": 0.216,
+    "w_att": 0.0,
+    "pen_exp": 0.108,
+    "score_s": 0.32000000000000006,
+    "k_pp_passes": 0.8800000000000002,
+    "w_mod_joueur": 1.0,
+    "w_mod_match": 1.0,
+    "prior_toi_exp": 1.1880000000000004,
+    "scale_tirs": 0.99,
+    "scale_tirs_D": 0.8999999999999999,
+    "scale_passes": 0.94
+   },
+   "retiree": false,
+   "rapport": {
+    "cat": "pts1",
+    "champion": "v1",
+    "gain_honnete": 0.014081567739581616,
+    "n_val": 1852,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.011820426051700398,
+    "msg": "pts1_v5 remplace v1 : +1.41 % sur les soirs jamais vus, +1.18 % sur toute la saison (optimiste)"
+   },
+   "desc": "1+ point : scan du 2026-10-25 sur toute la saison. +1.41 % vs v1 sur des soirs jamais vus pendant le scan."
+  },
+  {
+   "id": "pts2_v5",
+   "cat": "pts2",
+   "famille": "v2",
+   "cree": "2026-10-25",
+   "juge_depuis": "2026-10-25",
+   "base": "v1",
+   "params": {
+    "w_l10": 0.5,
+    "w_prev": 1.5,
+    "pseudo_min": 20.736,
+    "toi_recent": 0.7600000000000001,
+    "opp_reg_gp": 60,
+    "home": 1.1,
+    "away": 0.9,
+    "b2b": 0.85,
+    "vs_reg_gp": 8.64,
+    "sh_pseudo_tirs": 96.0,
+    "sv_reg_gp": 60,
+    "pa_pseudo_min": 129.6,
+    "k_pp": 0.44999999999999996,
+    "w_att": 0.0,
+    "pen_exp": 0.576,
+    "score_s": 0.0,
+    "k_pp_passes": 0.0,
+    "w_mod_joueur": 1.0,
+    "w_mod_match": 1.0,
+    "prior_toi_exp": 1.5,
+    "scale_tirs": 1.04,
+    "scale_buts": 1.04,
+    "scale_passes": 0.95
+   },
+   "retiree": false,
+   "rapport": {
+    "cat": "pts2",
+    "champion": "v1",
+    "gain_honnete": 0.023283789927879647,
+    "n_val": 1852,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.016993784573299635,
+    "msg": "pts2_v5 remplace v1 : +2.33 % sur les soirs jamais vus, +1.70 % sur toute la saison (optimiste)"
+   },
+   "desc": "2+ points : scan du 2026-10-25 sur toute la saison. +2.33 % vs v1 sur des soirs jamais vus pendant le scan."
   }
  ],
  "journal": [
+  {
+   "date": "2026-10-25",
+   "msg": "2+ points : pts2_v5 remplace v1 : +2.33 % sur les soirs jamais vus, +1.70 % sur toute la saison (optimiste)"
+  },
+  {
+   "date": "2026-10-25",
+   "msg": "1+ point : pts1_v5 remplace v1 : +1.41 % sur les soirs jamais vus, +1.18 % sur toute la saison (optimiste)"
+  },
+  {
+   "date": "2026-10-25",
+   "msg": "2+ passes : passe2_v5 remplace v1 : +2.32 % sur les soirs jamais vus, +1.91 % sur toute la saison (optimiste)"
+  },
+  {
+   "date": "2026-10-25",
+   "msg": "3+ buts : but3_v5 remplace v1 : +7.99 % sur les soirs jamais vus, +3.37 % sur toute la saison (optimiste)"
+  },
+  {
+   "date": "2026-10-25",
+   "msg": "2+ buts : but2_v5 remplace v1 : +3.14 % sur les soirs jamais vus, +1.69 % sur toute la saison (optimiste)"
+  },
   {
    "date": "2026-10-24",
    "msg": "Totaux 5.5 / 6.5 : v1 reste : la meilleure recette trouvée fait -7.88 % sur les soirs jamais vus"
@@ -339,7 +561,7 @@
   "matchs": 179
  },
  "dernier_tuning": "2026-10-21",
- "maj": "2026-10-25T18:29+00:00",
+ "maj": "2026-10-25T21:44+00:00",
  "retirees": [
   "v2.1",
   "v2.2",
@@ -357,11 +579,16 @@
   "but": "but_v5",
   "passe": "passe_v5",
   "vic": "v1",
-  "tot": "v1"
+  "tot": "v1",
+  "but2": "but2_v5",
+  "but3": "but3_v5",
+  "passe2": "passe2_v5",
+  "pts1": "pts1_v5",
+  "pts2": "pts2_v5"
  },
  "dernier_recalcul": "2026-10-24",
  "recalcul": {
-  "date": "2026-10-24",
+  "date": "2026-10-25",
   "rapports": [
    {
     "cat": "tirs1",
@@ -428,6 +655,51 @@
     "n_val": 96,
     "coupe": "2026-10-17",
     "msg": "v1 reste : la meilleure recette trouvée fait -7.88 % sur les soirs jamais vus"
+   },
+   {
+    "cat": "but2",
+    "champion": "v1",
+    "gain_honnete": 0.03142717210975708,
+    "n_val": 1852,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.016924146770425724,
+    "msg": "but2_v5 remplace v1 : +3.14 % sur les soirs jamais vus, +1.69 % sur toute la saison (optimiste)"
+   },
+   {
+    "cat": "but3",
+    "champion": "v1",
+    "gain_honnete": 0.07989983306984057,
+    "n_val": 1852,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.03367926056016338,
+    "msg": "but3_v5 remplace v1 : +7.99 % sur les soirs jamais vus, +3.37 % sur toute la saison (optimiste)"
+   },
+   {
+    "cat": "passe2",
+    "champion": "v1",
+    "gain_honnete": 0.023237169997081756,
+    "n_val": 1852,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.019107101930318518,
+    "msg": "passe2_v5 remplace v1 : +2.32 % sur les soirs jamais vus, +1.91 % sur toute la saison (optimiste)"
+   },
+   {
+    "cat": "pts1",
+    "champion": "v1",
+    "gain_honnete": 0.014081567739581616,
+    "n_val": 1852,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.011820426051700398,
+    "msg": "pts1_v5 remplace v1 : +1.41 % sur les soirs jamais vus, +1.18 % sur toute la saison (optimiste)"
+   },
+   {
+    "cat": "pts2",
+    "champion": "v1",
+    "gain_honnete": 0.023283789927879647,
+    "n_val": 1852,
+    "coupe": "2026-10-17",
+    "gain_saison": 0.016993784573299635,
+    "msg": "pts2_v5 remplace v1 : +2.33 % sur les soirs jamais vus, +1.70 % sur toute la saison (optimiste)"
    }
   ]
  },

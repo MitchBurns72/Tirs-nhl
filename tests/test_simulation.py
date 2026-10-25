@@ -367,7 +367,7 @@ def main():
     hist = [json.loads(f.read_text()) for f in sorted(run.DIR_PRED.glob("*.json"))]
     labo, _ = auto.cycle(hist, run.ETAT_AUTO, list(run.VERSIONS), jours[-1], force=True)
     raps = labo["recalcul"]["rapports"]
-    assert [r["cat"] for r in raps] == list(auto.CATS), "les 8 catégories doivent être recalculées"
+    assert [r["cat"] for r in raps] == list(auto.CATS), "toutes les catégories doivent être recalculées"
     for r in raps:
         print(f"  recalcul {r['cat']:6} : {r['msg']}")
     # Pour tester la mécanique au complet, on accepte toute recette (sinon le test dépendrait du hasard)
@@ -375,7 +375,7 @@ def main():
     labo, nouvelle = auto.cycle(hist, run.ETAT_AUTO, list(run.VERSIONS), jours[-1], force=True)
     auto.GAIN_HEBDO = 0.001
     nv = [v for v in labo["versions"] if v.get("cat") and not v.get("retiree")]
-    assert nouvelle and len(nv) == 8, f"8 recettes attendues, {len(nv)} trouvées"
+    assert nouvelle and len(nv) == len(auto.CATS), f"{len(auto.CATS)} recettes attendues, {len(nv)} trouvées"
     for v in nv:
         assert v["id"].startswith(v["cat"] + "_v") and v["juge_depuis"] == jours[-1] and labo["principales"][v["cat"]] == v["id"]
     print("recettes en service :", labo["principales"])
@@ -396,6 +396,14 @@ def main():
     st_r = json.loads(run.SORTIE.read_text())["stats"]
     assert st_r["joueurs"]["passes"][P["passe"]]["n"] < st_r["joueurs"]["passes"]["v1"]["n"], "notée sur les soirs qu'elle a vus"
     assert not st_r["joueurs"]["tirs"].get(P["passe"], {}).get("n"), "une recette de passe ne doit pas être notée aux tirs"
+    # Nouveaux marchés : 2+/3+ buts, 2+ passes, 1+/2+ points, notés au Suivi (v1 sur toute la saison)
+    for m in ("buts2", "buts3", "passes2", "pts1", "pts2"):
+        assert st_r["joueurs"][m]["v1"]["n"] > 300, f"{m} pas gradé"
+    e3 = next(e for e in d["entries"] if "v1" in e["preds"])
+    pv1 = e3["preds"]["v1"]
+    assert pv1["buts"]["p"] >= pv1["buts2"]["p"] >= pv1["buts3"]["p"] and pv1["pts1"]["p"] >= pv1["pts2"]["p"]
+    assert set(e3["preds"].get(P["pts2"], {"pts2": 0})) == {"pts2"}
+    print("nouveaux marchés OK :", {m: round(st_r["joueurs"][m]["v1"]["note"], 1) for m in ("buts2", "buts3", "passes2", "pts1", "pts2")})
     print("recettes par catégorie : un marché chacune, rejouées, notées à partir de leur création OK")
 
     # --- Seuils de tirs 1+ à 4+ ---

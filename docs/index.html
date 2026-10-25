@@ -318,14 +318,9 @@ details.aln summary{cursor:pointer;font-size:12.5px;color:var(--muted);font-weig
         <button class="chip big" data-v="tirs" aria-pressed="true">Tirs</button>
         <button class="chip big" data-v="buts" aria-pressed="false">But</button>
         <button class="chip big" data-v="passes" aria-pressed="false">Passe</button>
+        <button class="chip big" data-v="pts" aria-pressed="false">Points</button>
       </div>
-      <div class="row" id="f-seuil">
-        <span class="lbl">Au moins</span>
-        <button class="chip" data-v="tirs1" aria-pressed="false">1 tir</button>
-        <button class="chip" data-v="tirs" aria-pressed="true">2 tirs</button>
-        <button class="chip" data-v="tirs3" aria-pressed="false">3 tirs</button>
-        <button class="chip" data-v="tirs4" aria-pressed="false">4 tirs</button>
-      </div>
+      <div class="row" id="f-seuil"></div>
       <div class="row">
         <select id="f-match" aria-label="Filtrer par match"></select>
         <span class="row" id="f-pos">
@@ -392,7 +387,12 @@ details.aln summary{cursor:pointer;font-size:12.5px;color:var(--muted);font-weig
         <button class="chip" data-v="tirs3" aria-pressed="false">Tirs 3+</button>
         <button class="chip" data-v="tirs4" aria-pressed="false">Tirs 4+</button>
         <button class="chip" data-v="buts" aria-pressed="false">But</button>
+        <button class="chip" data-v="buts2" aria-pressed="false">2+ buts</button>
+        <button class="chip" data-v="buts3" aria-pressed="false">3+ buts</button>
         <button class="chip" data-v="passes" aria-pressed="false">Passe</button>
+        <button class="chip" data-v="passes2" aria-pressed="false">2+ passes</button>
+        <button class="chip" data-v="pts1" aria-pressed="false">1+ point</button>
+        <button class="chip" data-v="pts2" aria-pressed="false">2+ points</button>
         <button class="chip" data-v="victoire" aria-pressed="false">Victoire</button>
         <button class="chip" data-v="total55" aria-pressed="false">+5.5 buts</button>
         <button class="chip" data-v="total65" aria-pressed="false">+6.5 buts</button>
@@ -440,14 +440,28 @@ details.aln summary{cursor:pointer;font-size:12.5px;color:var(--muted);font-weig
 let D = null;
 // famille = TIRS / BUT / PASSE ; seuil = quel marché de tirs (tirs1 = 1+, tirs = 2+, ...)
 const S = { famille: "tirs", seuil: "tirs", match: "all", pos: "all", tri: "p", ver: null, smarche: "tirs" };
-const marcheCourant = () => S.famille === "tirs" ? S.seuil : S.famille;
-const SEUIL = { tirs1: 1, tirs: 2, tirs3: 3, tirs4: 4, buts: 1, passes: 1 };
-const STAT = { tirs1: "tirs", tirs: "tirs", tirs3: "tirs", tirs4: "tirs", buts: "buts", passes: "passes" };
+// Le seuil choisi est retenu pour chaque famille (2+ tirs, 1+ but, 2+ passes...)
+const SEUILS_UI = { tirs: [["tirs1", "1 tir"], ["tirs", "2 tirs"], ["tirs3", "3 tirs"], ["tirs4", "4 tirs"]],
+                    buts: [["buts", "1 but"], ["buts2", "2 buts"], ["buts3", "3 buts"]],
+                    passes: [["passes", "1 passe"], ["passes2", "2 passes"]],
+                    pts: [["pts1", "1 point"], ["pts2", "2 points"]] };
+const CHOIX = { tirs: "tirs", buts: "buts", passes: "passes", pts: "pts1" };
+const marcheCourant = () => CHOIX[S.famille];
+const SEUIL = { tirs1: 1, tirs: 2, tirs3: 3, tirs4: 4, buts: 1, buts2: 2, buts3: 3, passes: 1, passes2: 2, pts1: 1, pts2: 2 };
+const STAT = { tirs1: "tirs", tirs: "tirs", tirs3: "tirs", tirs4: "tirs", buts: "buts", buts2: "buts", buts3: "buts",
+               passes: "passes", passes2: "passes", pts1: "pts", pts2: "pts" };
+function dessinerSeuils(){
+  $("#f-seuil").innerHTML = `<span class="lbl">Au moins</span>` + SEUILS_UI[S.famille].map(([v, t]) =>
+    `<button class="chip" data-v="${v}" aria-pressed="${v === CHOIX[S.famille]}">${t}</button>`).join("");
+}
 const estTirs = (m) => STAT[m] === "tirs";
 const L10 = { tirs: "l10_shots", buts: "l10_goals", passes: "l10_assists" };
 const MOT_TIRS = ["tir", "tirs", "tirs att."];
-const MOT = { tirs1: MOT_TIRS, tirs: MOT_TIRS, tirs3: MOT_TIRS, tirs4: MOT_TIRS, buts: ["but", "buts", "buts att."], passes: ["passe", "passes", "passes att."] };
-const NOM_MARCHE = { tirs1: "Tirs 1+", tirs: "Tirs 2+", tirs3: "Tirs 3+", tirs4: "Tirs 4+", buts: "But", passes: "Passe",
+const MOT_B = ["but", "buts", "buts att."], MOT_P = ["passe", "passes", "passes att."], MOT_PT = ["point", "points", "points att."];
+const MOT = { tirs1: MOT_TIRS, tirs: MOT_TIRS, tirs3: MOT_TIRS, tirs4: MOT_TIRS, buts: MOT_B, buts2: MOT_B, buts3: MOT_B,
+              passes: MOT_P, passes2: MOT_P, pts1: MOT_PT, pts2: MOT_PT };
+const NOM_MARCHE = { tirs1: "Tirs 1+", tirs: "Tirs 2+", tirs3: "Tirs 3+", tirs4: "Tirs 4+", buts: "But", buts2: "2+ buts", buts3: "3+ buts",
+                     passes: "Passe", passes2: "2+ passes", pts1: "1+ point", pts2: "2+ points",
                      victoire: "Victoire", total55: "+5.5 buts", total65: "+6.5 buts", "victoire (domicile)": "Victoire" };
 
 const $ = (s) => document.querySelector(s);
@@ -526,8 +540,11 @@ function soirJoueur(j){
   const fG = sv ? Math.min(1.15, Math.max(0.85, Math.sqrt((1 - sv) / (1 - SV_LIGUE)))) : 1;
   const out = { slot, unite, fT, fA, fG, gardien: g?.nom, sv, toiSoir };
   for (const m of ["tirs1", "tirs", "tirs3", "tirs4"]) out[m] = nbAuMoins(t.lam * fT, SEUIL[m]);
-  if (b) out.buts = 1 - Math.exp(-b.lam * fT * fG);
-  if (a) out.passes = 1 - Math.exp(-a.lam * fA);
+  const auMoins = (lam, s) => { let p = Math.exp(-lam), c = 0; for (let n = 0; n < s; n++){ c += p; p *= lam / (n + 1); } return Math.max(0, 1 - c); };
+  const lb = b ? b.lam * fT * fG : null, la = a ? a.lam * fA : null;
+  if (lb != null){ out.buts = auMoins(lb, 1); out.buts2 = auMoins(lb, 2); out.buts3 = auMoins(lb, 3); }
+  if (la != null){ out.passes = auMoins(la, 1); out.passes2 = auMoins(la, 2); }
+  if (lb != null && la != null){ out.pts1 = auMoins(lb + la, 1); out.pts2 = auMoins(lb + la, 2); }
   return out;
 }
 // Alignement « confirmé » : publié aujourd'hui par un journaliste (pas le trio du dernier match)
@@ -545,7 +562,7 @@ function soirHTML(j, m){
   if (p == null) return "";
   const d = Math.round(p * 100) - pct(j.pr.p);
   const raisons = [NOM_GROUPE[s.slot], s.unite !== "aucune" ? s.unite.toUpperCase() : "pas de PP",
-                   m === "buts" && s.gardien ? `${s.gardien} ${s.sv ? s.sv.toFixed(3).replace(/^0/, "") : ""}` : ""].filter(Boolean);
+                   STAT[m] === "buts" && s.gardien ? `${s.gardien} ${s.sv ? s.sv.toFixed(3).replace(/^0/, "") : ""}` : ""].filter(Boolean);
   const conf = alignConfirme(j.team);
   return `<div class="soir ${d > 0 ? "haut" : d < 0 ? "bas" : ""}" title="Ajusté à l'alignement DailyFaceoff : temps de glace ${s.toiSoir.toFixed(1)} min, PP, gardien adverse">
     <em class="${conf ? "conf" : ""}">${conf ? "Alignement confirmé" : "Avant l'alignement"}</em>Soir <b>${pct(p)}%</b> <small>${d > 0 ? "+" : ""}${d}</small><span>${raisons.join(" · ")}</span></div>`;
@@ -564,6 +581,7 @@ function pred(j, v, m){
 function resultat(j, m){
   if (j.result == null) return null;
   if (typeof j.result === "number") return estTirs(m) ? j.result : null;
+  if (STAT[m] === "pts") return j.result.buts != null && j.result.passes != null ? j.result.buts + j.result.passes : null;
   return j.result[STAT[m]] ?? null;
 }
 
@@ -584,7 +602,9 @@ function heure(iso){
 //  1. directement l'API NHL depuis ton navigateur (temps réel), si elle l'accepte
 //  2. sinon docs/live.json, mis à jour par GitHub aux ~5 minutes pendant les matchs
 let LIVE = null, directOK = true, minuterie = null, sourceLive = "";
-const IDX = { tirs1: 0, tirs: 0, tirs3: 0, tirs4: 0, buts: 1, passes: 2 };
+const IDX = { tirs1: 0, tirs: 0, tirs3: 0, tirs4: 0, buts: 1, buts2: 1, buts3: 1, passes: 2, passes2: 2 };
+// Stat live d'un joueur ([tirs, buts, passes]) pour un marché ; points = buts + passes
+const valLive = (arr, m) => arr == null ? null : STAT[m] === "pts" ? arr[1] + arr[2] : arr[IDX[m]];
 const FINIS = ["OFF", "FINAL"];
 
 function etatMatch(box){
@@ -660,7 +680,7 @@ function statut(j, m){
     : { cls: "st-ko", badge: `<span class="lv ko">${r} ${mot(r)} · raté</span>` };
   const L = LIVE?.games?.[j.gameId];
   if (!L) return { cls: "", badge: "" };
-  const val = L.joueurs?.[String(j.pid)]?.[IDX[m]];
+  const val = valLive(L.joueurs?.[String(j.pid)], m);
   const fini = FINIS.includes(L.state);
   if (val == null) return { cls: "", badge: `<span class="res">${fini ? "N'a pas joué" : "Pas dans l'alignement"}</span>` };
   if (val >= SEUIL[m]) return { cls: "st-ok", badge: `<span class="lv ok">${val} ${mot(val)} · réussi</span>` };
@@ -727,7 +747,7 @@ function liste(){
   const [un, plusieurs, att] = MOT[m];
   const bandeau = v !== D.principale ? `<div class="bandeau">Tu regardes <b>${v}</b>, une version en essai. La principale (la plus fiable à date) est <b>${D.principale}</b>.</div>` : "";
   $("#liste").innerHTML = bandeau + js.map((j, i) => {
-    const serie = j[L10[STAT[m]]] || [];
+    const serie = STAT[m] === "pts" ? (j.l10_goals || []).map((b, i) => b + ((j.l10_assists || [])[i] || 0)) : (j[L10[STAT[m]]] || []);
     const hits = serie.filter(x => x >= SEUIL[m]).length;
     const echelle = estTirs(m) ? 4 : 8;
     const barres = serie.map(x => `<i class="${x >= SEUIL[m] ? "ok" : ""}" style="height:${Math.min(22, 4 + x * echelle)}px"></i>`).join("");
@@ -749,6 +769,10 @@ function liste(){
         <span>État de match : <b>×${det.f_score.toFixed(2)}</b></span>` : ""}${det.f_rink != null ? `
         <span>Patinoire (marqueur) : <b>×${det.f_rink.toFixed(2)}</b></span>` : ""}${det.f_role != null ? `
         <span>Prior selon le rôle : <b>×${det.f_role.toFixed(2)}</b></span>` : ""}`;
+    const detB = STAT[m] === "buts" ? (pred(j, v, "buts")?.detail || det) : null;
+    if (detB && m !== "buts") fx = `<span>Buts attendus : <b>${pred(j, v, m).lam.toFixed(2)}</b> (même calcul que « But », lu à ${SEUIL[m]}+)</span>`;
+    if (STAT[m] === "passes" && m !== "passes") fx = `<span>Passes attendues : <b>${pred(j, v, m).lam.toFixed(2)}</b> (lu à ${SEUIL[m]}+)</span>`;
+    if (STAT[m] === "pts") fx = `<span>Points attendus : <b>${pred(j, v, m).lam.toFixed(2)}</b> = buts attendus + passes attendues</span>`;
     if (det && m === "buts") fx = `
         ${pred(j, v, "tirs") ? `<span>Tirs attendus : <b>${pred(j, v, "tirs").lam.toFixed(1)}</b></span>` : ""}
         <span>% de tir régressé : <b>${(det.sh * 100).toFixed(1)} %</b></span>
@@ -882,7 +906,7 @@ function scores(la, lh){
   return { top: cases.slice(0, 3), victoireDom: vh + 0.52 * eg };
 }
 
-const OUVERTS = new Set();   // alignements ouverts : restent ouverts quand la page se redessine en live
+const FERMES = new Set();   // alignements ouverts par défaut ; ceux que tu fermes restent fermés en live
 function blocAlignement(g){
   const A = alignDuSoir();
   const eqA = joueursEquipe(g, g.away, A), eqH = joueursEquipe(g, g.home, A);
@@ -930,7 +954,7 @@ function blocAlignement(g){
       <p class="aide">Calculé joueur par joueur avec ${D.principale} : ${prA.n + prH.n} joueurs de l'alignement${prA.manquants + prH.manquants ? `, dont ${prA.manquants + prH.manquants} sans prédiction (moyenne de leur position)` : ""}.</p>
     </div>
     <div class="gards">${gard(g.away)}${gard(g.home)}</div>
-    <details class="aln" data-gid="${g.gameId}" ${OUVERTS.has(String(g.gameId)) ? "open" : ""}>
+    <details class="aln" data-gid="${g.gameId}" ${FERMES.has(String(g.gameId)) ? "" : "open"}>
       <summary>Alignements · ${g.away} : ${src(eqA)} · ${g.home} : ${src(eqH)}</summary>
       ${equipe(g.away, eqA)}${equipe(g.home, eqH)}
     </details>`;
@@ -1062,9 +1086,11 @@ function blocStats(v){
 }
 
 // Marché du Suivi -> catégorie de l'algo
-const CAT_DU_MARCHE = { tirs1: "tirs1", tirs: "tirs2", tirs3: "tirs3", tirs4: "tirs4", buts: "but", passes: "passe",
+const CAT_DU_MARCHE = { tirs1: "tirs1", tirs: "tirs2", tirs3: "tirs3", tirs4: "tirs4", buts: "but", buts2: "but2", buts3: "but3",
+                        passes: "passe", passes2: "passe2", pts1: "pts1", pts2: "pts2",
                         victoire: "vic", total55: "tot", total65: "tot" };
-const NOMS_CAT = { tirs1: "Tirs 1+", tirs2: "Tirs 2+", tirs3: "Tirs 3+", tirs4: "Tirs 4+", but: "But", passe: "Passe",
+const NOMS_CAT = { tirs1: "Tirs 1+", tirs2: "Tirs 2+", tirs3: "Tirs 3+", tirs4: "Tirs 4+", but: "But", but2: "2+ buts", but3: "3+ buts",
+                   passe: "Passe", passe2: "2+ passes", pts1: "1+ point", pts2: "2+ points",
                    vic: "Victoire", tot: "Totaux 5.5 / 6.5" };
 function suivi(){
   const st = D.stats || {};
@@ -1279,7 +1305,13 @@ function soir(date){
 }
 
 // Statut d'un bet : etat = avenir | cours | gagne | perdu | annule
+// Un bet sur un marché que cette version de la page ne connaît pas encore ne doit JAMAIS
+// bloquer les autres (c'est ce qui a gelé tes bets du 24 octobre).
 function statutBet(b){
+  try { return statutBet0(b); }
+  catch (e) { return { etat: "avenir", texte: "Marché pas encore reconnu par la page" }; }
+}
+function statutBet0(b){
   if (b.final) return b.final;
   const L = soir(b.date)[b.gameId];
   if (!L) return { etat: "avenir", texte: b.date < D.date ? "En attente du résultat" : "Pas commencé" };
@@ -1287,7 +1319,7 @@ function statutBet(b){
   const quand = fini ? "final" : periode(L);
   let r;
   if (b.type === "joueur"){
-    const val = L.joueurs?.[String(b.pid)]?.[IDX[b.marche]];
+    const val = valLive(L.joueurs?.[String(b.pid)], b.marche);
     const [un, plusieurs] = MOT[b.marche];
     if (val == null) r = fini ? { etat: "annule", texte: "N'a pas joué · remboursé" } : { etat: "cours", texte: `Pas encore dans l'alignement · ${quand}` };
     else if (val >= SEUIL[b.marche]) r = { etat: "gagne", texte: `${val} ${val > 1 ? plusieurs : un} · ${quand}` };
@@ -1617,8 +1649,12 @@ function chips(sel, cleS, apres){
 function tout(){ liste(); matchs(); suivi(); labo(); bets(); }
 
 function brancher(){
-  chips("#f-marche", "famille", () => { $("#f-seuil").hidden = S.famille !== "tirs"; liste(); });
-  chips("#f-seuil", "seuil", liste);
+  dessinerSeuils();
+  chips("#f-marche", "famille", () => { dessinerSeuils(); liste(); });
+  $("#f-seuil").addEventListener("click", (ev) => {
+    const b = ev.target.closest("button[data-v]"); if (!b) return;
+    CHOIX[S.famille] = b.dataset.v; dessinerSeuils(); liste();
+  });
   chips("#f-pos", "pos", liste);
   chips("#f-tri", "tri", liste);
   chips(".f-ver", "ver", tout);
@@ -1639,7 +1675,7 @@ function brancher(){
 
 document.addEventListener("toggle", (e) => {
   const d = e.target;
-  if (d.classList?.contains("aln")) d.open ? OUVERTS.add(d.dataset.gid) : OUVERTS.delete(d.dataset.gid);
+  if (d.classList?.contains("aln")) d.open ? FERMES.delete(d.dataset.gid) : FERMES.add(d.dataset.gid);
 }, true);
 
 async function init(){

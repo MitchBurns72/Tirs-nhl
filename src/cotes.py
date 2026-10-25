@@ -37,11 +37,21 @@ REGION = "us"
 # Tirs : ligne None -> on lit TOUTES les lignes alternatives du même appel
 # (0.5, 1.5, 2.5, 3.5 = 1+, 2+, 3+, 4+). Zéro crédit de plus.
 TIRS_PAR_LIGNE = {0.5: "tirs1", 1.5: "tirs", 2.5: "tirs3", 3.5: "tirs4"}
+# Lignes alternatives (plan payant pour tout prendre) : ligne « plus de » -> notre marché
+PAR_LIGNE = {"tirs": TIRS_PAR_LIGNE,
+             "buts": {0.5: "buts", 1.5: "buts2", 2.5: "buts3"},
+             "passes": {0.5: "passes", 1.5: "passes2"},
+             "pts": {0.5: "pts1", 1.5: "pts2"}}
 PROPS = {
     "player_shots_on_goal_alternate": ("tirs", None),
     "player_shots_on_goal": ("tirs", None),
-    "player_goal_scorer_anytime": ("buts", None),
-    "player_assists": ("passes", 0.5),
+    "player_goal_scorer_anytime": ("buts", "oui"),
+    "player_goals": ("buts", None),
+    "player_goals_alternate": ("buts", None),
+    "player_assists": ("passes", None),
+    "player_assists_alternate": ("passes", None),
+    "player_points": ("pts", None),
+    "player_points_alternate": ("pts", None),
 }
 
 etat = {"restants": None, "utilises": None, "erreur": None, "source": None, "test": None}
@@ -128,16 +138,16 @@ def recuperer_theoddsapi(matchs, noms_equipes, marches_props):
                         marche, ligne = PROPS[mk["key"]]
                         for o in mk["outcomes"]:
                             nom = o.get("description") or o.get("name")
-                            oui = o["name"] in ("Over", "Yes") or marche == "buts" and o["name"] not in ("No", "Under")
-                            if not oui:
-                                continue
-                            cible = marche
-                            if marche == "tirs":
-                                cible = TIRS_PAR_LIGNE.get(o.get("point"))
+                            if ligne == "oui":    # buteur : Yes / No, sans ligne
+                                if o["name"] in ("No", "Under"):
+                                    continue
+                                cible = "buts"
+                            else:
+                                if o["name"] not in ("Over", "Yes"):
+                                    continue
+                                cible = PAR_LIGNE[marche].get(o.get("point"))
                                 if not cible:
                                     continue
-                            elif ligne is not None and o.get("point") != ligne:
-                                continue
                             prix.setdefault((gid, norm(nom)), {}).setdefault(cible, []).append(o["price"])
                 for k, d in prix.items():
                     cotes_j[k] = {mk: {"prix": _mediane(v), "n": len(v)} for mk, v in d.items()}

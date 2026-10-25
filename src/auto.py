@@ -295,12 +295,23 @@ PREMIERE_VERSION = 5        # les versions par catégorie commencent à v5 (apr�
 
 # Catégorie -> (type, marchés)
 CATS = {"tirs1": ("joueur", ("tirs1",)), "tirs2": ("joueur", ("tirs",)), "tirs3": ("joueur", ("tirs3",)),
-        "tirs4": ("joueur", ("tirs4",)), "but": ("joueur", ("buts",)), "passe": ("joueur", ("passes",)),
+        "tirs4": ("joueur", ("tirs4",)), "but": ("joueur", ("buts",)), "but2": ("joueur", ("buts2",)),
+        "but3": ("joueur", ("buts3",)), "passe": ("joueur", ("passes",)), "passe2": ("joueur", ("passes2",)),
+        "pts1": ("joueur", ("pts1",)), "pts2": ("joueur", ("pts2",)),
         "vic": ("match", ("victoire",)), "tot": ("match", ("5.5", "6.5"))}
 NOMS_CAT = {"tirs1": "Tirs 1+", "tirs2": "Tirs 2+", "tirs3": "Tirs 3+", "tirs4": "Tirs 4+", "but": "But",
-            "passe": "Passe", "vic": "Victoire", "tot": "Totaux 5.5 / 6.5"}
+            "but2": "2+ buts", "but3": "3+ buts", "passe": "Passe", "passe2": "2+ passes",
+            "pts1": "1+ point", "pts2": "2+ points", "vic": "Victoire", "tot": "Totaux 5.5 / 6.5"}
 MARCHES_L = {"tirs1": ("tirs", 1), "tirs": ("tirs", 2), "tirs3": ("tirs", 3), "tirs4": ("tirs", 4),
-             "buts": ("buts", 1), "passes": ("passes", 1)}
+             "buts": ("buts", 1), "buts2": ("buts", 2), "buts3": ("buts", 3),
+             "passes": ("passes", 1), "passes2": ("passes", 2), "pts1": ("pts", 1), "pts2": ("pts", 2)}
+
+
+def _val(r, stat):
+    """Stat réelle d'un joueur (points = buts + passes)."""
+    if stat == "pts":
+        return r["buts"] + r["passes"] if "buts" in r and "passes" in r else None
+    return r.get(stat)
 
 # Paramètres scannés pour chaque catégorie (ceux qui la touchent vraiment)
 _DISP = [("w_disp", 0.0, 1.0, "mult")]
@@ -316,7 +327,13 @@ ESPACE_CAT = {
 def _espace_cat(cat):
     if cat.startswith("tirs"):
         return ESPACE_CAT["tirs"]
-    return ESPACE_CAT.get(cat) or ESPACE_CAT["match"]
+    if cat.startswith("but"):
+        return ESPACE_CAT["but"]
+    if cat.startswith("passe"):
+        return ESPACE_CAT["passe"]
+    if cat.startswith("pts"):   # points = buts + passes : les deux familles de paramètres
+        return ESPACE_CAT["but"] + [e for e in ESPACE_CAT["passe"] if e not in ESPACE_CAT["but"]]
+    return ESPACE_CAT["match"]
 
 
 def _pertes_match(pv, h, a):
@@ -341,8 +358,9 @@ def _perte_cat(cat, rows, P):
             o = fam["joueur"](f, P)
             for m in marches:
                 stat, seuil = MARCHES_L[m]
-                if stat in r and m in o:
-                    s += (o[m]["p"] - (1 if r[stat] >= seuil else 0)) ** 2; n += 1
+                y = _val(r, stat)
+                if y is not None and m in o:
+                    s += (o[m]["p"] - (1 if y >= seuil else 0)) ** 2; n += 1
     else:
         for _, f, (h, a), _ in rows:
             q = _pertes_match(fam["match"](f, P), h, a)
@@ -364,8 +382,9 @@ def _perte_stockee(cat, rows, vid):
             r = row[2]
             for m in marches:
                 stat, seuil = MARCHES_L[m]
-                if stat in r and m in pv:
-                    s += (pv[m]["p"] - (1 if r[stat] >= seuil else 0)) ** 2; n += 1
+                y = _val(r, stat)
+                if y is not None and m in pv:
+                    s += (pv[m]["p"] - (1 if y >= seuil else 0)) ** 2; n += 1
         else:
             h, a = row[2]
             q = _pertes_match(pv, h, a)
@@ -488,9 +507,12 @@ def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=Fals
 
     derniere = etat.get("dernier_recalcul")
     jours = (date.fromisoformat(aujourdhui) - date.fromisoformat(derniere)).days if derniere else 999
-    if force or jours >= JOURS_RECALCUL:
-        rapports = []
-        for cat in CATS:
+    faites = {r["cat"] for r in (etat.get("recalcul") or {}).get("rapports", [])}
+    nouvelles_cats = [c for c in CATS if c not in faites] if etat.get("recalcul") else []
+    if force or jours >= JOURS_RECALCUL or nouvelles_cats:
+        a_faire = list(CATS) if (force or jours >= JOURS_RECALCUL) else nouvelles_cats
+        rapports = [r for r in (etat.get("recalcul") or {}).get("rapports", []) if r["cat"] not in a_faire]
+        for cat in a_faire:
             numeros = [int(v["id"].split("_v")[1]) for v in etat["versions"]
                        if v.get("cat") == cat and "_v" in v["id"] and v["id"].split("_v")[1].isdigit()]
             numero = max(numeros, default=PREMIERE_VERSION - 1) + 1
@@ -508,7 +530,8 @@ def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=Fals
                 principales[cat] = version["id"]
                 nouvelle = True
             etat["journal"].insert(0, {"date": aujourdhui, "msg": f"{NOMS_CAT[cat]} : {rapport['msg']}"})
-        etat["dernier_recalcul"] = aujourdhui
+        if a_faire == list(CATS):
+            etat["dernier_recalcul"] = aujourdhui
         etat["recalcul"] = {"date": aujourdhui, "rapports": rapports}
 
     etat["principales"] = principales

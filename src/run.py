@@ -26,7 +26,7 @@ import cotes
 import donnees_v2
 import live
 import nhl_api as api
-from modeles import (DISPERSION, FAMILLES, SEUILS_TIRS, VERSIONS, ajouter_seuils, charger_auto,
+from modeles import (DISPERSION, FAMILLES, SEUILS_TIRS, VERSIONS, ajouter_marches, ajouter_seuils, charger_auto,
                      features_joueur, features_match, p_seuil)
 from score import resumer
 
@@ -47,6 +47,12 @@ AVEC_COTES = os.environ.get("ODDS", "").lower() == "true"
 # Blessures ESPN + sondes DailyFaceoff (les tests le coupent : pas d'internet)
 AVEC_ALIGNEMENTS = os.environ.get("ALIGNEMENTS", "1") == "1"
 MARCHES_PROPS = [m for m in os.environ.get("ODDS_PROPS", "player_shots_on_goal_alternate").split(",") if m]
+# config.json à la racine (livré dans la zip) : choisir les marchés de cotes sans toucher au workflow
+try:
+    _CONFIG = json.loads((Path(__file__).resolve().parent.parent / "config.json").read_text(encoding="utf-8"))
+    MARCHES_PROPS = _CONFIG.get("odds_props") or MARCHES_PROPS
+except (FileNotFoundError, ValueError):
+    _CONFIG = {}
 
 
 # --- Utilitaires -----------------------------------------------------------------
@@ -519,7 +525,8 @@ def predire_version(spec, quoi, f, ctx=None, jeu=None, cm=None):
 # Une version de catégorie (tirs3_v5, vic_v6...) ne sert qu'à SON marché : on ne garde que
 # celui-là (data.json reste léger et le Suivi ne la note pas ailleurs).
 MARCHES_CAT = {"tirs1": ("tirs1",), "tirs2": ("tirs",), "tirs3": ("tirs3",), "tirs4": ("tirs4",),
-               "but": ("buts",), "passe": ("passes",)}
+               "but": ("buts",), "but2": ("buts2",), "but3": ("buts3",), "passe": ("passes",),
+               "passe2": ("passes2",), "pts1": ("pts1",), "pts2": ("pts2",)}
 
 
 def pertinent(spec, quoi):
@@ -864,7 +871,7 @@ def completer_seuils():
         modifie = False
         for e in data["entries"]:
             for v, pv in e.get("preds", {}).items():
-                if v in DISPERSION and ajouter_seuils(pv, DISPERSION[v]):
+                if v in DISPERSION and "_v" not in v and ajouter_seuils(pv, DISPERSION[v]):
                     modifie = True
         if modifie:
             ecrire_json(fic, data)
@@ -906,7 +913,10 @@ def archiver_soirs(jour, n=3, garder=21):
 
 
 # La version « combo » : pour chaque marché, le % du champion de sa catégorie.
-CAT_DE = {"tirs1": "tirs1", "tirs": "tirs2", "tirs3": "tirs3", "tirs4": "tirs4", "buts": "but", "passes": "passe"}
+CAT_DE = {"tirs1": "tirs1", "tirs": "tirs2", "tirs3": "tirs3", "tirs4": "tirs4", "buts": "but", "buts2": "but2",
+          "buts3": "but3", "passes": "passe", "passes2": "passe2", "pts1": "pts1", "pts2": "pts2"}
+# Les seuils d'un même stat doivent rester dans l'ordre (1+ >= 2+ >= 3+...)
+ORDRES = [("tirs1", "tirs", "tirs3", "tirs4"), ("buts", "buts2", "buts3"), ("passes", "passes2"), ("pts1", "pts2")]
 COMBO = "combo"
 
 
@@ -923,12 +933,13 @@ def ajouter_combo(entries, games, principales):
             pv = e["preds"].get(principales.get(cat), {}).get(m)
             if pv:
                 combo[m] = {**pv, "src": principales[cat]}
-        precedent = 1.0
-        for m in ("tirs1", "tirs", "tirs3", "tirs4"):
-            if m in combo:
-                if combo[m]["p"] > precedent:
-                    combo[m] = dict(combo[m], p=precedent, borne=True)
-                precedent = combo[m]["p"]
+        for ordre in ORDRES:
+            precedent = 1.0
+            for m in ordre:
+                if m in combo:
+                    if combo[m]["p"] > precedent:
+                        combo[m] = dict(combo[m], p=precedent, borne=True)
+                    precedent = combo[m]["p"]
         if combo:
             e["preds"][COMBO] = combo
     for g in games:
@@ -998,6 +1009,7 @@ def ajouter_soir(entries, align, vp):
         if "passes" in base:
             la = base["passes"]["lam"] * f_a
             soir["passes"] = {"p": 1 - exp(-la), "lam": la}
+        ajouter_marches(soir)
         e["preds"][SOIR] = arrondir(soir)
         e["soir_info"] = arrondir({"slot": slot, "pp": unite, "f_t": f_t, "f_a": f_a, "f_g": f_g, "base": vp})
         n += 1

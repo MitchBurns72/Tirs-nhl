@@ -31,7 +31,8 @@ TRANCHES = [(0.0, 0.1), (0.1, 0.2), (0.2, 0.3), (0.3, 0.4), (0.4, 0.5),
             (0.5, 0.6), (0.6, 0.7), (0.7, 0.8), (0.8, 0.9), (0.9, 1.01)]
 # Marché -> (stat de la feuille de match, seuil)
 MARCHES_J = {"tirs1": ("tirs", 1), "tirs": ("tirs", 2), "tirs3": ("tirs", 3), "tirs4": ("tirs", 4),
-             "buts": ("buts", 1), "passes": ("passes", 1)}
+             "buts": ("buts", 1), "buts2": ("buts", 2), "buts3": ("buts", 3),
+             "passes": ("passes", 1), "passes2": ("passes", 2), "pts1": ("pts", 1), "pts2": ("pts", 2)}
 SEUILS = {m: s for m, (_, s) in MARCHES_J.items()}   # compat
 MARCHES_MATCH = {
     "victoire": lambda p: p["p_home"],
@@ -56,6 +57,8 @@ def r_joueur(e, m):
     stat = MARCHES_J[m][0]
     r = e.get("result")
     if isinstance(r, dict):
+        if stat == "pts":
+            return r["buts"] + r["passes"] if r.get("buts") is not None and r.get("passes") is not None else None
         return r.get(stat)
     return r if stat == "tirs" else None   # ancien format : un nombre = tirs
 
