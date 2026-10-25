@@ -1688,5 +1688,105 @@
   "hsog": 26,
   "asog": 13,
   "fin": "REG"
+ },
+ "2026020170": {
+  "date": "2026-10-24",
+  "home": "BOS",
+  "away": "SJS",
+  "hg": 6,
+  "ag": 4,
+  "hsog": 35,
+  "asog": 27,
+  "fin": "REG"
+ },
+ "2026020171": {
+  "date": "2026-10-24",
+  "home": "OTT",
+  "away": "NYR",
+  "hg": 7,
+  "ag": 4,
+  "hsog": 24,
+  "asog": 28,
+  "fin": "REG"
+ },
+ "2026020172": {
+  "date": "2026-10-24",
+  "home": "PIT",
+  "away": "NSH",
+  "hg": 3,
+  "ag": 2,
+  "hsog": 37,
+  "asog": 26,
+  "fin": "OT"
+ },
+ "2026020173": {
+  "date": "2026-10-24",
+  "home": "WSH",
+  "away": "BUF",
+  "hg": 4,
+  "ag": 3,
+  "hsog": 34,
+  "asog": 21,
+  "fin": "OT"
+ },
+ "2026020174": {
+  "date": "2026-10-24",
+  "home": "CBJ",
+  "away": "VGK",
+  "hg": 2,
+  "ag": 1,
+  "hsog": 20,
+  "asog": 27,
+  "fin": "OT"
+ },
+ "2026020175": {
+  "date": "2026-10-24",
+  "home": "STL",
+  "away": "CAR",
+  "hg": 0,
+  "ag": 4,
+  "hsog": 24,
+  "asog": 39,
+  "fin": "REG"
+ },
+ "2026020176": {
+  "date": "2026-10-24",
+  "home": "EDM",
+  "away": "TOR",
+  "hg": 2,
+  "ag": 7,
+  "hsog": 32,
+  "asog": 31,
+  "fin": "REG"
+ },
+ "2026020177": {
+  "date": "2026-10-24",
+  "home": "UTA",
+  "away": "TBL",
+  "hg": 5,
+  "ag": 4,
+  "hsog": 28,
+  "asog": 32,
+  "fin": "OT"
+ },
+ "2026020178": {
+  "date": "2026-10-24",
+  "home": "CGY",
+  "away": "DET",
+  "hg": 4,
+  "ag": 1,
+  "hsog": 25,
+  "asog": 29,
+  "fin": "REG"
+ },
+ "2026020179": {
+  "date": "2026-10-24",
+  "home": "SEA",
+  "away": "MIN",
+  "hg": 1,
+  "ag": 5,
+  "hsog": 24,
+  "asog": 36,
+  "fin": "REG"
  }
 }
