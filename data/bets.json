@@ -403,5 +403,58 @@
    "etat": "perdu",
    "texte": "1 tir · final"
   }
+ },
+ {
+  "date": "2026-10-25",
+  "gameId": 2026020184,
+  "version": "combo",
+  "cree": "2026-10-25T22:25:00.000Z",
+  "id": "moj1025a",
+  "type": "match",
+  "k": "a",
+  "p": 0.699,
+  "cote": 1.53,
+  "mise": 2,
+  "reel": true,
+  "label": "MIN @ VAN · MIN gagne (prol. incluse)",
+  "sous": "22 h 00 · prolongation incluse, paiement hâtif si 3 buts d'avance",
+  "maj": "2026-10-25T22:26:53.927Z"
+ },
+ {
+  "date": "2026-10-25",
+  "gameId": 2026020182,
+  "version": "combo",
+  "cree": "2026-10-25T22:25:00.000Z",
+  "id": "moj1025b",
+  "type": "match",
+  "k": "a",
+  "p": 0.5854,
+  "cote": 1.9,
+  "mise": 2,
+  "reel": true,
+  "label": "MTL @ WPG · MTL gagne (prol. incluse)",
+  "sous": "19 h 00 · prolongation incluse, cote boostée 1.87 → 1.90",
+  "maj": "2026-10-25T22:26:53.928Z"
+ },
+ {
+  "date": "2026-10-25",
+  "gameId": 2026020184,
+  "version": "combo",
+  "cree": "2026-10-25T22:25:00.000Z",
+  "id": "moj1025c",
+  "type": "joueur",
+  "pid": 8481557,
+  "name": "Matt Boldy",
+  "team": "MIN",
+  "opp": "VAN",
+  "home": false,
+  "marche": "tirs3",
+  "p": 0.8,
+  "cote": 1.36,
+  "mise": 3,
+  "reel": true,
+  "label": "Matt Boldy · Tirs 3+",
+  "sous": "MIN @ VAN",
+  "maj": "2026-10-25T22:26:53.928Z"
  }
 ]
