@@ -348,7 +348,11 @@
   "reel": true,
   "label": "NSH @ PIT · PIT gagne (prol. incluse)",
   "sous": "19 h 00 · prolongation incluse, paiement hâtif si 3 buts d'avance",
-  "maj": "2026-10-25T00:11:42.567Z"
+  "maj": "2026-10-25T21:48:53.794Z",
+  "final": {
+   "etat": "gagne",
+   "texte": "2 – 3 · final"
+  }
  },
  {
   "date": "2026-10-24",
@@ -369,7 +373,11 @@
   "reel": true,
   "label": "Connor McDavid · 2+ passes",
   "sous": "EDM vs TOR",
-  "maj": "2026-10-25T00:11:42.575Z"
+  "maj": "2026-10-25T21:48:53.794Z",
+  "final": {
+   "etat": "gagne",
+   "texte": "2 passes · final"
+  }
  },
  {
   "date": "2026-10-24",
@@ -390,6 +398,10 @@
   "reel": true,
   "label": "Macklin Celebrini · Tirs 3+",
   "sous": "SJS @ BOS",
-  "maj": "2026-10-25T00:11:42.575Z"
+  "maj": "2026-10-25T21:48:53.794Z",
+  "final": {
+   "etat": "perdu",
+   "texte": "1 tir · final"
+  }
  }
 ]
