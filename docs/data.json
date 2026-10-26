@@ -1,5 +1,5 @@
 {
- "genere": "2026-10-26T15:36+00:00",
+ "genere": "2026-10-26T18:45+00:00",
  "date": "2026-10-26",
  "versions": [
   {
@@ -156,11 +156,11 @@
   "pts2": "pts2_v5"
  },
  "alignements": {
-  "maj": "2026-10-26T15:36+00:00",
+  "maj": "2026-10-26T18:45+00:00",
   "equipes": {
    "CGY": {
-    "maj": "2026-10-25T14:57:58.092Z",
-    "source": "Last Game (2026-10-24)",
+    "maj": "2026-10-26T16:46:34.460Z",
+    "source": "Projected",
     "joueurs": {
      "Joel Farabee": {
       "no": 86,
@@ -169,12 +169,12 @@
       "inj": null,
       "gtd": false
      },
-     "Ben Jones": {
-      "no": 39,
+     "Mikael Backlund": {
+      "no": 11,
       "pos": "c",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/9/9eeabec1-e652-4ecd-9e0d-d7a4a1ee5f8a.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/429a2e26-0f24-11e2-8525-18a905767e44.jpg",
       "inj": null,
-      "gtd": false
+      "gtd": true
      },
      "Matt Coronato": {
       "no": 27,
@@ -225,10 +225,10 @@
       "inj": null,
       "gtd": false
      },
-     "Brennan Othmann": {
-      "no": 78,
+     "Maxim Tsyplakov": {
+      "no": 72,
       "pos": "lw",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/3/3699f4c2-fece-4690-9eff-065a3df9eb73.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/5/567519b3-6757-46a2-ada0-b87c6dfe24ff.jpg",
       "inj": null,
       "gtd": false
      },
@@ -315,19 +315,12 @@
       "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/0/0fc1e1f5-4ed2-480c-9c90-dd128a0b1268.jpg",
       "inj": "out",
       "gtd": false
-     },
-     "Mikael Backlund": {
-      "no": 11,
-      "pos": "ir3",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/429a2e26-0f24-11e2-8525-18a905767e44.jpg",
-      "inj": "dtd",
-      "gtd": false
      }
     },
     "groupes": {
      "f1": [
       "Joel Farabee",
-      "Ben Jones",
+      "Mikael Backlund",
       "Matt Coronato"
      ],
      "f2": [
@@ -341,7 +334,7 @@
       "Ryan Strome"
      ],
      "f4": [
-      "Brennan Othmann",
+      "Maxim Tsyplakov",
       "Jonathan Castagna",
       "Adam Klapka"
      ],
@@ -376,14 +369,14 @@
       "Yegor Sharangovich"
      ],
      "pk1": [
-      "Yegor Sharangovich",
+      "Mikael Backlund",
       "Joel Farabee",
       "Jacob Middleton",
       "Zach Whitecloud"
      ],
      "pk2": [
       "Martin Pospisil",
-      "Jonathan Castagna",
+      "Yegor Sharangovich",
       "Yan Kuznetsov",
       "Kevin Bahl"
      ],
@@ -638,8 +631,8 @@
     }
    },
    "EDM": {
-    "maj": "2026-10-25T14:54:23.825Z",
-    "source": "Last Game (2026-10-24)",
+    "maj": "2026-10-26T16:49:48.376Z",
+    "source": "Bob Stauffer",
     "joueurs": {
      "Vasily Podkolzin": {
       "no": 92,
@@ -704,10 +697,10 @@
       "inj": null,
       "gtd": false
      },
-     "Max Jones": {
-      "no": 46,
+     "Trent Frederic": {
+      "no": 10,
       "pos": "lw",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/5/552c4e73-a73a-46b3-82c1-0d5c8928c977.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/41acc046-28ad-430f-94e5-604d7f35daff.jpg",
       "inj": null,
       "gtd": false
      },
@@ -718,17 +711,17 @@
       "inj": null,
       "gtd": false
      },
-     "Filip Hallander": {
-      "no": 19,
+     "Isaac Howard": {
+      "no": 53,
       "pos": "rw",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/5/583d26f2-2efa-49a2-ad1f-7e64fc34c99e.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/1/11beeba8-3703-4d5c-9c11-b904559d7039.jpg",
       "inj": null,
       "gtd": false
      },
-     "Ryan Shea": {
-      "no": 6,
+     "Shakir Mukhamadullin": {
+      "no": 85,
       "pos": "ld",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/0/063abdbc-25dd-442c-a26e-af44ba79506d.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/a/ae0cae96-253b-4f25-9c04-7db10ee8108d.jpg",
       "inj": null,
       "gtd": false
      },
@@ -739,10 +732,10 @@
       "inj": null,
       "gtd": false
      },
-     "Jake Walman": {
-      "no": 96,
+     "Ryan Shea": {
+      "no": 6,
       "pos": "ld",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/d/dc308799-09f6-4710-99b4-6ce630639ca2.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/0/063abdbc-25dd-442c-a26e-af44ba79506d.jpg",
       "inj": null,
       "gtd": false
      },
@@ -753,10 +746,10 @@
       "inj": null,
       "gtd": false
      },
-     "Shakir Mukhamadullin": {
-      "no": 85,
+     "Jake Walman": {
+      "no": 96,
       "pos": "ld",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/a/ae0cae96-253b-4f25-9c04-7db10ee8108d.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/d/dc308799-09f6-4710-99b4-6ce630639ca2.jpg",
       "inj": null,
       "gtd": false
      },
@@ -848,20 +841,20 @@
       "Mathieu Joseph"
      ],
      "f4": [
-      "Max Jones",
+      "Trent Frederic",
       "Colton Dach",
-      "Filip Hallander"
+      "Isaac Howard"
      ],
      "d1": [
-      "Ryan Shea",
+      "Shakir Mukhamadullin",
       "Evan Bouchard"
      ],
      "d2": [
-      "Jake Walman",
+      "Ryan Shea",
       "Connor Murphy"
      ],
      "d3": [
-      "Shakir Mukhamadullin",
+      "Jake Walman",
       "Ty Emberson"
      ],
      "g": [
@@ -878,7 +871,7 @@
      "pp2": [
       "Vasily Podkolzin",
       "Colton Dach",
-      "Filip Hallander",
+      "Isaac Howard",
       "Ryan Shea",
       "Kasperi Kapanen"
      ],
@@ -906,8 +899,8 @@
     }
    },
    "LAK": {
-    "maj": "2026-10-25T14:13:48.106Z",
-    "source": "Last Game (2026-10-24)",
+    "maj": "2026-10-26T16:39:58.307Z",
+    "source": "Zach Dooley",
     "joueurs": {
      "Artemi Panarin": {
       "no": 10,
@@ -930,31 +923,31 @@
       "inj": null,
       "gtd": false
      },
-     "Andre Lee": {
-      "no": null,
-      "pos": "lw",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/c/c1e3b20a-0280-4efb-bb65-977a8024665a.jpg",
-      "inj": null,
-      "gtd": false
-     },
-     "Erik Haula": {
-      "no": 56,
-      "pos": "c",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/1/1e2dfac4-9f24-4d83-a6f0-ba1a75dd97dc.jpg",
-      "inj": null,
-      "gtd": false
-     },
-     "Mats Zuccarello": {
-      "no": 36,
-      "pos": "rw",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/433057ff-0f24-11e2-8525-18a905767e44.jpg",
-      "inj": null,
-      "gtd": false
-     },
      "Trevor Moore": {
       "no": 12,
       "pos": "lw",
       "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/421f9f71-d1ee-4917-afc6-ca11f6b761b0.jpg",
+      "inj": null,
+      "gtd": false
+     },
+     "Quinton Byfield": {
+      "no": 55,
+      "pos": "c",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/5/59a7f500-cc98-4dd4-bc25-5ad948f4577e.jpg",
+      "inj": null,
+      "gtd": true
+     },
+     "Erik Haula": {
+      "no": 56,
+      "pos": "rw",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/1/1e2dfac4-9f24-4d83-a6f0-ba1a75dd97dc.jpg",
+      "inj": null,
+      "gtd": false
+     },
+     "Taylor Ward": {
+      "no": 17,
+      "pos": "lw",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/c/c2b43938-bca0-4627-adb6-27f61bd6517e.jpg",
       "inj": null,
       "gtd": false
      },
@@ -972,10 +965,10 @@
       "inj": null,
       "gtd": false
      },
-     "Jared Wright": {
-      "no": 25,
+     "Andre Lee": {
+      "no": null,
       "pos": "lw",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/7/76faf3ea-dc4c-410a-b8ff-793a6619c42c.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/c/c1e3b20a-0280-4efb-bb65-977a8024665a.jpg",
       "inj": null,
       "gtd": false
      },
@@ -993,10 +986,10 @@
       "inj": null,
       "gtd": false
      },
-     "Joel Edmundson": {
-      "no": 6,
+     "Erik Gustafsson": {
+      "no": 64,
       "pos": "ld",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/1/16d46661-808a-4dbe-b5e5-4374f49d9b4d.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/7/71c5cd9e-a126-481c-b849-c323e27e74e6.jpg",
       "inj": null,
       "gtd": false
      },
@@ -1007,10 +1000,10 @@
       "inj": null,
       "gtd": false
      },
-     "Erik Gustafsson": {
-      "no": 64,
+     "Joel Edmundson": {
+      "no": 6,
       "pos": "ld",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/7/71c5cd9e-a126-481c-b849-c323e27e74e6.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/1/16d46661-808a-4dbe-b5e5-4374f49d9b4d.jpg",
       "inj": null,
       "gtd": false
      },
@@ -1063,10 +1056,10 @@
       "inj": "ir",
       "gtd": false
      },
-     "Quinton Byfield": {
-      "no": 55,
+     "Mats Zuccarello": {
+      "no": 36,
       "pos": "ir3",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/5/59a7f500-cc98-4dd4-bc25-5ad948f4577e.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/433057ff-0f24-11e2-8525-18a905767e44.jpg",
       "inj": "dtd",
       "gtd": false
      }
@@ -1078,26 +1071,26 @@
       "Adrian Kempe"
      ],
      "f2": [
-      "Andre Lee",
-      "Erik Haula",
-      "Mats Zuccarello"
+      "Trevor Moore",
+      "Quinton Byfield",
+      "Erik Haula"
      ],
      "f3": [
-      "Trevor Moore",
+      "Taylor Ward",
       "Scott Laughton",
       "Joel Armia"
      ],
      "f4": [
-      "Jared Wright",
+      "Andre Lee",
       "Samuel Helenius",
       "Corey Perry"
      ],
      "d1": [
-      "Joel Edmundson",
+      "Erik Gustafsson",
       "Brandt Clarke"
      ],
      "d2": [
-      "Erik Gustafsson",
+      "Joel Edmundson",
       "Drew Doughty"
      ],
      "d3": [
@@ -1110,16 +1103,16 @@
      ],
      "pp1": [
       "Adrian Kempe",
+      "Quinton Byfield",
       "Alex Laferriere",
-      "Mats Zuccarello",
       "Artemi Panarin",
-      "Brandt Clarke"
+      "Erik Gustafsson"
      ],
      "pp2": [
       "Corey Perry",
       "Erik Haula",
-      "Andre Lee",
-      "Erik Gustafsson",
+      "Trevor Moore",
+      "Brandt Clarke",
       "Drew Doughty"
      ],
      "pk1": [
@@ -1137,13 +1130,14 @@
      "ir": [
       "Alex Turcotte",
       "Kevin Fiala",
+      "Mats Zuccarello",
       "Quinton Byfield"
      ]
     }
    },
    "NYR": {
-    "maj": "2026-10-25T14:24:21.435Z",
-    "source": "Last Game (2026-10-24)",
+    "maj": "2026-10-26T15:58:31.457Z",
+    "source": "Vince Mercogliano",
     "joueurs": {
      "Gabriel Perreault": {
       "no": 94,
@@ -1386,8 +1380,8 @@
     }
    },
    "TOR": {
-    "maj": "2026-10-25T14:53:28.913Z",
-    "source": "Last Game (2026-10-24)",
+    "maj": "2026-10-26T16:50:21.033Z",
+    "source": "David Alter",
     "joueurs": {
      "Easton Cowan": {
       "no": 53,
@@ -1649,21 +1643,21 @@
   "gardiens": {
    "NYR": {
     "nom": "James Reimer",
-    "statut": "Likely",
+    "statut": "Confirmed",
     "sv": "0.0",
     "gaa": "0.0",
     "fiche": "0-0-0",
     "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/431addc5-0f24-11e2-8525-18a905767e44.jpg",
-    "maj": "2026-10-26T14:57:18.613Z"
+    "maj": "2026-10-26T15:40:54.179Z"
    },
    "LAK": {
     "nom": "Darcy Kuemper",
-    "statut": null,
+    "statut": "Likely",
     "sv": "0.889",
     "gaa": "3.54",
     "fiche": "2-3-1",
     "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/42befb61-0f24-11e2-8525-18a905767e44.jpg",
-    "maj": null
+    "maj": "2026-10-26T16:40:17.191Z"
    },
    "CGY": {
     "nom": "Devin Cooley",
@@ -1676,30 +1670,30 @@
    },
    "TOR": {
     "nom": "Sergei Bobrovsky",
-    "statut": null,
+    "statut": "Likely",
     "sv": "0.895",
     "gaa": "3.09",
     "fiche": "3-3-2",
     "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/433d0416-0f24-11e2-8525-18a905767e44.jpg",
-    "maj": null
+    "maj": "2026-10-26T16:37:16.555Z"
    },
    "EDM": {
     "nom": "Tristan Jarry",
-    "statut": null,
+    "statut": "Confirmed",
     "sv": "0.851",
     "gaa": "3.72",
     "fiche": "2-1-1",
     "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/453cb83d-bdd1-4862-aa4e-e9f32f458f82.jpg",
-    "maj": null
+    "maj": "2026-10-26T17:49:54.879Z"
    },
    "DET": {
-    "nom": "John Gibson",
-    "statut": null,
-    "sv": "0.867",
-    "gaa": "3.44",
-    "fiche": "3-4-1",
-    "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/468c9cd9-782e-40e1-a7da-9fe91acdafd9.jpg",
-    "maj": null
+    "nom": "Michal Postava",
+    "statut": "Confirmed",
+    "sv": "0.875",
+    "gaa": "3.0",
+    "fiche": "0-0-0",
+    "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/c/ce8b7151-c884-4cdb-a2c0-b09c9657c2f0.jpg",
+    "maj": "2026-10-26T17:42:20.698Z"
    }
   }
  },
@@ -2436,11 +2430,11 @@
      },
      "pts1": {
       "p": 0.269,
-      "lam": 0.314
+      "lam": 0.313
      },
      "pts2": {
       "p": 0.04,
-      "lam": 0.314
+      "lam": 0.313
      }
     }
    },
@@ -3227,7 +3221,7 @@
       "p": 0.027
      },
      "buts": {
-      "p": 0.095,
+      "p": 0.094,
       "lam": 0.099
      },
      "passes": {
@@ -3248,11 +3242,11 @@
      },
      "pts1": {
       "p": 0.198,
-      "lam": 0.221
+      "lam": 0.22
      },
      "pts2": {
       "p": 0.021,
-      "lam": 0.221
+      "lam": 0.22
      }
     }
    },
@@ -3436,7 +3430,7 @@
     },
     "but_v5": {
      "buts": {
-      "p": 0.301,
+      "p": 0.3,
       "lam": 0.357,
       "detail": {
        "sh": 0.135,
@@ -3476,7 +3470,7 @@
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.527,
+      "p": 0.526,
       "lam": 0.748
      }
     },
@@ -3576,7 +3570,7 @@
       "src": "v1"
      },
      "buts": {
-      "p": 0.301,
+      "p": 0.3,
       "lam": 0.357,
       "detail": {
        "sh": 0.135,
@@ -3611,7 +3605,7 @@
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.527,
+      "p": 0.526,
       "lam": 0.748,
       "src": "pts1_v5"
      },
@@ -3803,7 +3797,7 @@
       "p": 0.636,
       "lam": 2.247,
       "detail": {
-       "rate60": 7.062,
+       "rate60": 7.063,
        "toi": 20.021,
        "f_opp": 1.0,
        "f_lieu": 0.97,
@@ -3858,7 +3852,7 @@
     },
     "but_v5": {
      "buts": {
-      "p": 0.23,
+      "p": 0.229,
       "lam": 0.261,
       "detail": {
        "sh": 0.118,
@@ -3905,7 +3899,7 @@
     "pts2_v5": {
      "pts2": {
       "p": 0.105,
-      "lam": 0.549
+      "lam": 0.548
      }
     },
     "tirs1_ml": {
@@ -3980,7 +3974,7 @@
       "p": 0.636,
       "lam": 2.247,
       "detail": {
-       "rate60": 7.062,
+       "rate60": 7.063,
        "toi": 20.021,
        "f_opp": 1.0,
        "f_lieu": 0.97,
@@ -3998,7 +3992,7 @@
       "src": "v1"
      },
      "buts": {
-      "p": 0.23,
+      "p": 0.229,
       "lam": 0.261,
       "detail": {
        "sh": 0.118,
@@ -4039,13 +4033,13 @@
      },
      "pts2": {
       "p": 0.105,
-      "lam": 0.549,
+      "lam": 0.548,
       "src": "pts2_v5"
      }
     },
     "soir": {
      "tirs1": {
-      "p": 0.87
+      "p": 0.871
      },
      "tirs": {
       "p": 0.623,
@@ -4059,7 +4053,7 @@
      },
      "buts": {
       "p": 0.225,
-      "lam": 0.255
+      "lam": 0.254
      },
      "passes": {
       "p": 0.263,
@@ -4067,11 +4061,11 @@
      },
      "buts2": {
       "p": 0.027,
-      "lam": 0.255
+      "lam": 0.254
      },
      "buts3": {
       "p": 0.002,
-      "lam": 0.255
+      "lam": 0.254
      },
      "passes2": {
       "p": 0.038,
@@ -4079,11 +4073,11 @@
      },
      "pts1": {
       "p": 0.428,
-      "lam": 0.56
+      "lam": 0.559
      },
      "pts2": {
       "p": 0.109,
-      "lam": 0.56
+      "lam": 0.559
      }
     }
    },
@@ -4225,7 +4219,7 @@
       "p": 0.455,
       "lam": 1.566,
       "detail": {
-       "rate60": 6.529,
+       "rate60": 6.53,
        "toi": 14.667,
        "f_opp": 1.0,
        "f_lieu": 0.97,
@@ -4309,7 +4303,7 @@
     "but3_v5": {
      "buts3": {
       "p": 0.001,
-      "lam": 0.169
+      "lam": 0.168
      }
     },
     "passe2_v5": {
@@ -4402,7 +4396,7 @@
       "p": 0.455,
       "lam": 1.566,
       "detail": {
-       "rate60": 6.529,
+       "rate60": 6.53,
        "toi": 14.667,
        "f_opp": 1.0,
        "f_lieu": 0.97,
@@ -4436,7 +4430,7 @@
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.169,
+      "lam": 0.168,
       "src": "but3_v5"
      },
      "passes": {
@@ -4480,7 +4474,7 @@
       "p": 0.079
      },
      "buts": {
-      "p": 0.157,
+      "p": 0.156,
       "lam": 0.17
      },
      "passes": {
@@ -4501,11 +4495,11 @@
      },
      "pts1": {
       "p": 0.266,
-      "lam": 0.309
+      "lam": 0.308
      },
      "pts2": {
       "p": 0.039,
-      "lam": 0.309
+      "lam": 0.308
      }
     }
    },
@@ -4870,45 +4864,45 @@
     },
     "soir": {
      "tirs1": {
-      "p": 0.705
+      "p": 0.628
      },
      "tirs": {
-      "p": 0.359,
-      "lam": 1.27
+      "p": 0.273,
+      "lam": 1.024
      },
      "tirs3": {
-      "p": 0.142
+      "p": 0.091
      },
      "tirs4": {
-      "p": 0.047
+      "p": 0.025
      },
      "buts": {
-      "p": 0.125,
-      "lam": 0.133
+      "p": 0.102,
+      "lam": 0.107
      },
      "passes": {
-      "p": 0.2,
-      "lam": 0.223
+      "p": 0.165,
+      "lam": 0.18
      },
      "buts2": {
-      "p": 0.008,
-      "lam": 0.133
+      "p": 0.005,
+      "lam": 0.107
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.133
+      "lam": 0.107
      },
      "passes2": {
-      "p": 0.021,
-      "lam": 0.223
+      "p": 0.014,
+      "lam": 0.18
      },
      "pts1": {
-      "p": 0.3,
-      "lam": 0.356
+      "p": 0.25,
+      "lam": 0.287
      },
      "pts2": {
-      "p": 0.05,
-      "lam": 0.356
+      "p": 0.034,
+      "lam": 0.287
      }
     }
    },
@@ -4916,10 +4910,10 @@
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "f2",
-    "pp": "pp2",
-    "f_t": 1.197,
-    "f_a": 1.197,
+    "slot": "f4",
+    "pp": "aucune",
+    "f_t": 0.965,
+    "f_a": 0.965,
     "f_g": 1.0,
     "base": "combo"
    }
@@ -5279,45 +5273,45 @@
     },
     "soir": {
      "tirs1": {
-      "p": 0.828
+      "p": 0.85
      },
      "tirs": {
-      "p": 0.542,
-      "lam": 1.866
+      "p": 0.582,
+      "lam": 2.02
      },
      "tirs3": {
-      "p": 0.289
+      "p": 0.328
      },
      "tirs4": {
-      "p": 0.13
+      "p": 0.157
      },
      "buts": {
-      "p": 0.173,
-      "lam": 0.19
+      "p": 0.185,
+      "lam": 0.205
      },
      "passes": {
-      "p": 0.195,
-      "lam": 0.217
+      "p": 0.209,
+      "lam": 0.234
      },
      "buts2": {
-      "p": 0.016,
-      "lam": 0.19
+      "p": 0.018,
+      "lam": 0.205
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.19
+      "lam": 0.205
      },
      "passes2": {
-      "p": 0.02,
-      "lam": 0.217
+      "p": 0.024,
+      "lam": 0.234
      },
      "pts1": {
-      "p": 0.334,
-      "lam": 0.406
+      "p": 0.356,
+      "lam": 0.44
      },
      "pts2": {
-      "p": 0.063,
-      "lam": 0.406
+      "p": 0.072,
+      "lam": 0.44
      }
     }
    },
@@ -5342,10 +5336,10 @@
     }
    },
    "soir_info": {
-    "slot": "f3",
-    "pp": "aucune",
-    "f_t": 0.928,
-    "f_a": 0.928,
+    "slot": "f2",
+    "pp": "pp2",
+    "f_t": 1.005,
+    "f_a": 1.005,
     "f_g": 1.0,
     "base": "combo"
    }
@@ -5463,7 +5457,7 @@
       "p": 0.759,
       "lam": 2.906,
       "detail": {
-       "rate60": 8.32,
+       "rate60": 8.321,
        "toi": 21.728,
        "f_opp": 1.0,
        "f_lieu": 0.97,
@@ -5640,7 +5634,7 @@
       "p": 0.759,
       "lam": 2.906,
       "detail": {
-       "rate60": 8.32,
+       "rate60": 8.321,
        "toi": 21.728,
        "f_opp": 1.0,
        "f_lieu": 0.97,
@@ -5882,7 +5876,7 @@
       "p": 0.34,
       "lam": 1.216,
       "detail": {
-       "rate60": 6.456,
+       "rate60": 6.457,
        "toi": 11.573,
        "f_opp": 1.0,
        "f_lieu": 0.97,
@@ -6059,7 +6053,7 @@
       "p": 0.34,
       "lam": 1.216,
       "detail": {
-       "rate60": 6.456,
+       "rate60": 6.457,
        "toi": 11.573,
        "f_opp": 1.0,
        "f_lieu": 0.97,
@@ -6273,7 +6267,7 @@
       "p": 0.331,
       "lam": 1.189,
       "detail": {
-       "rate60": 7.979,
+       "rate60": 7.98,
        "toi": 9.5,
        "f_opp": 1.0,
        "f_lieu": 0.97,
@@ -6328,8 +6322,8 @@
     },
     "but_v5": {
      "buts": {
-      "p": 0.097,
-      "lam": 0.103,
+      "p": 0.096,
+      "lam": 0.102,
       "detail": {
        "sh": 0.115,
        "f_gardien": 0.897,
@@ -6357,7 +6351,7 @@
     "but3_v5": {
      "buts3": {
       "p": 0.0,
-      "lam": 0.124
+      "lam": 0.123
      }
     },
     "passe2_v5": {
@@ -6450,7 +6444,7 @@
       "p": 0.331,
       "lam": 1.189,
       "detail": {
-       "rate60": 7.979,
+       "rate60": 7.98,
        "toi": 9.5,
        "f_opp": 1.0,
        "f_lieu": 0.97,
@@ -6468,8 +6462,8 @@
       "src": "v1"
      },
      "buts": {
-      "p": 0.097,
-      "lam": 0.103,
+      "p": 0.096,
+      "lam": 0.102,
       "detail": {
        "sh": 0.115,
        "f_gardien": 0.897,
@@ -6484,7 +6478,7 @@
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.124,
+      "lam": 0.123,
       "src": "but3_v5"
      },
      "passes": {
@@ -6512,61 +6506,13 @@
       "lam": 0.227,
       "src": "pts2_v5"
      }
-    },
-    "soir": {
-     "tirs1": {
-      "p": 0.708
-     },
-     "tirs": {
-      "p": 0.363,
-      "lam": 1.282
-     },
-     "tirs3": {
-      "p": 0.145
-     },
-     "tirs4": {
-      "p": 0.048
-     },
-     "buts": {
-      "p": 0.105,
-      "lam": 0.111
-     },
-     "passes": {
-      "p": 0.14,
-      "lam": 0.15
-     },
-     "buts2": {
-      "p": 0.006,
-      "lam": 0.111
-     },
-     "buts3": {
-      "p": 0.0,
-      "lam": 0.111
-     },
-     "passes2": {
-      "p": 0.01,
-      "lam": 0.15
-     },
-     "pts1": {
-      "p": 0.23,
-      "lam": 0.261
-     },
-     "pts2": {
-      "p": 0.029,
-      "lam": 0.261
-     }
     }
    },
    "result": null,
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "f4",
-    "pp": "aucune",
-    "f_t": 1.079,
-    "f_a": 1.079,
-    "f_g": 1.0,
-    "base": "combo"
+    "absent": true
    }
   },
   {
@@ -6912,61 +6858,13 @@
       "lam": 0.663,
       "src": "pts2_v5"
      }
-    },
-    "soir": {
-     "tirs1": {
-      "p": 0.802
-     },
-     "tirs": {
-      "p": 0.498,
-      "lam": 1.71
-     },
-     "tirs3": {
-      "p": 0.249
-     },
-     "tirs4": {
-      "p": 0.105
-     },
-     "buts": {
-      "p": 0.176,
-      "lam": 0.194
-     },
-     "passes": {
-      "p": 0.332,
-      "lam": 0.403
-     },
-     "buts2": {
-      "p": 0.017,
-      "lam": 0.194
-     },
-     "buts3": {
-      "p": 0.001,
-      "lam": 0.194
-     },
-     "passes2": {
-      "p": 0.062,
-      "lam": 0.403
-     },
-     "pts1": {
-      "p": 0.45,
-      "lam": 0.597
-     },
-     "pts2": {
-      "p": 0.121,
-      "lam": 0.597
-     }
     }
    },
    "result": null,
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "f2",
-    "pp": "pp1",
-    "f_t": 1.01,
-    "f_a": 1.01,
-    "f_g": 1.0,
-    "base": "combo"
+    "absent": true
    },
    "blesse": {
     "statut": "Out",
@@ -7785,7 +7683,7 @@
    "cotes": null,
    "soir_info": {
     "slot": "d1",
-    "pp": "pp1",
+    "pp": "pp2",
     "f_t": 1.076,
     "f_a": 1.076,
     "f_g": 1.0,
@@ -8978,45 +8876,45 @@
     },
     "soir": {
      "tirs1": {
-      "p": 0.706
+      "p": 0.679
      },
      "tirs": {
-      "p": 0.361,
-      "lam": 1.276
+      "p": 0.328,
+      "lam": 1.181
      },
      "tirs3": {
-      "p": 0.144
+      "p": 0.123
      },
      "tirs4": {
-      "p": 0.048
+      "p": 0.038
      },
      "buts": {
-      "p": 0.059,
-      "lam": 0.061
+      "p": 0.055,
+      "lam": 0.056
      },
      "passes": {
-      "p": 0.198,
-      "lam": 0.221
+      "p": 0.185,
+      "lam": 0.205
      },
      "buts2": {
       "p": 0.002,
-      "lam": 0.061
+      "lam": 0.056
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.061
+      "lam": 0.056
      },
      "passes2": {
-      "p": 0.021,
-      "lam": 0.221
+      "p": 0.018,
+      "lam": 0.205
      },
      "pts1": {
-      "p": 0.246,
-      "lam": 0.282
+      "p": 0.23,
+      "lam": 0.261
      },
      "pts2": {
-      "p": 0.033,
-      "lam": 0.282
+      "p": 0.029,
+      "lam": 0.261
      }
     }
    },
@@ -9024,10 +8922,10 @@
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "d1",
+    "slot": "d2",
     "pp": "aucune",
-    "f_t": 1.162,
-    "f_a": 1.162,
+    "f_t": 1.075,
+    "f_a": 1.075,
     "f_g": 1.0,
     "base": "combo"
    }
@@ -9381,45 +9279,45 @@
     },
     "soir": {
      "tirs1": {
-      "p": 0.629
+      "p": 0.655
      },
      "tirs": {
-      "p": 0.273,
-      "lam": 1.024
+      "p": 0.3,
+      "lam": 1.102
      },
      "tirs3": {
-      "p": 0.091
+      "p": 0.106
      },
      "tirs4": {
-      "p": 0.025
+      "p": 0.031
      },
      "buts": {
-      "p": 0.062,
-      "lam": 0.064
+      "p": 0.067,
+      "lam": 0.069
      },
      "passes": {
-      "p": 0.19,
-      "lam": 0.21
+      "p": 0.203,
+      "lam": 0.227
      },
      "buts2": {
       "p": 0.002,
-      "lam": 0.064
+      "lam": 0.069
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.064
+      "lam": 0.069
      },
      "passes2": {
-      "p": 0.019,
-      "lam": 0.21
+      "p": 0.022,
+      "lam": 0.227
      },
      "pts1": {
-      "p": 0.24,
-      "lam": 0.275
+      "p": 0.256,
+      "lam": 0.295
      },
      "pts2": {
-      "p": 0.031,
-      "lam": 0.275
+      "p": 0.036,
+      "lam": 0.295
      }
     }
    },
@@ -9427,10 +9325,10 @@
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "d2",
-    "pp": "pp2",
-    "f_t": 1.02,
-    "f_a": 1.02,
+    "slot": "d1",
+    "pp": "pp1",
+    "f_t": 1.099,
+    "f_a": 1.099,
     "f_g": 1.0,
     "base": "combo"
    }
@@ -9548,11 +9446,11 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.446,
-      "lam": 1.538,
+      "p": 0.447,
+      "lam": 1.541,
       "detail": {
-       "rate60": 7.452,
-       "toi": 10.68,
+       "rate60": 7.449,
+       "toi": 10.703,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -9561,7 +9459,7 @@
      },
      "buts": {
       "p": 0.18,
-      "lam": 0.198,
+      "lam": 0.199,
       "detail": {
        "sh": 0.128,
        "f_gardien": 1.004
@@ -9578,18 +9476,18 @@
       "p": 0.769
      },
      "tirs3": {
-      "p": 0.206
+      "p": 0.207
      },
      "tirs4": {
       "p": 0.08
      },
      "buts2": {
       "p": 0.017,
-      "lam": 0.198
+      "lam": 0.199
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.198
+      "lam": 0.199
      },
      "passes2": {
       "p": 0.015,
@@ -9597,17 +9495,17 @@
      },
      "pts1": {
       "p": 0.318,
-      "lam": 0.382
+      "lam": 0.383
      },
      "pts2": {
       "p": 0.057,
-      "lam": 0.382
+      "lam": 0.383
      }
     },
     "but_v5": {
      "buts": {
       "p": 0.146,
-      "lam": 0.159,
+      "lam": 0.16,
       "detail": {
        "sh": 0.127,
        "f_gardien": 0.957,
@@ -9629,7 +9527,7 @@
     "but2_v5": {
      "buts2": {
       "p": 0.024,
-      "lam": 0.236
+      "lam": 0.237
      }
     },
     "but3_v5": {
@@ -9641,19 +9539,19 @@
     "passe2_v5": {
      "passes2": {
       "p": 0.015,
-      "lam": 0.181
+      "lam": 0.182
      }
     },
     "pts1_v5": {
      "pts1": {
       "p": 0.281,
-      "lam": 0.329
+      "lam": 0.33
      }
     },
     "pts2_v5": {
      "pts2": {
       "p": 0.057,
-      "lam": 0.382
+      "lam": 0.383
      }
     },
     "tirs1_ml": {
@@ -9725,11 +9623,11 @@
       "src": "v1"
      },
      "tirs": {
-      "p": 0.446,
-      "lam": 1.538,
+      "p": 0.447,
+      "lam": 1.541,
       "detail": {
-       "rate60": 7.452,
-       "toi": 10.68,
+       "rate60": 7.449,
+       "toi": 10.703,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -9738,7 +9636,7 @@
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.206,
+      "p": 0.207,
       "src": "v1"
      },
      "tirs4": {
@@ -9747,7 +9645,7 @@
      },
      "buts": {
       "p": 0.146,
-      "lam": 0.159,
+      "lam": 0.16,
       "detail": {
        "sh": 0.127,
        "f_gardien": 0.957,
@@ -9757,7 +9655,7 @@
      },
      "buts2": {
       "p": 0.024,
-      "lam": 0.236,
+      "lam": 0.237,
       "src": "but2_v5"
      },
      "buts3": {
@@ -9777,17 +9675,17 @@
      },
      "passes2": {
       "p": 0.015,
-      "lam": 0.181,
+      "lam": 0.182,
       "src": "passe2_v5"
      },
      "pts1": {
       "p": 0.281,
-      "lam": 0.329,
+      "lam": 0.33,
       "src": "pts1_v5"
      },
      "pts2": {
       "p": 0.057,
-      "lam": 0.382,
+      "lam": 0.383,
       "src": "pts2_v5"
      }
     },
@@ -9797,7 +9695,7 @@
      },
      "tirs": {
       "p": 0.566,
-      "lam": 1.957
+      "lam": 1.958
      },
      "tirs3": {
       "p": 0.312
@@ -9841,8 +9739,8 @@
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
-    "f_t": 1.272,
-    "f_a": 1.272,
+    "f_t": 1.271,
+    "f_a": 1.271,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -9903,7 +9801,7 @@
     "a": 4,
     "tirs": 29,
     "pts": 8,
-    "toi": 16.1,
+    "toi": 16.0,
     "eq_pj": 13,
     "restants": 69,
     "proj": {
@@ -9960,11 +9858,11 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.608,
-      "lam": 2.126,
+      "p": 0.605,
+      "lam": 2.111,
       "detail": {
-       "rate60": 7.349,
-       "toi": 16.483,
+       "rate60": 7.363,
+       "toi": 16.339,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -9972,54 +9870,54 @@
       }
      },
      "buts": {
-      "p": 0.239,
-      "lam": 0.274,
+      "p": 0.238,
+      "lam": 0.272,
       "detail": {
        "sh": 0.128,
        "f_gardien": 1.004
       }
      },
      "passes": {
-      "p": 0.24,
-      "lam": 0.275,
+      "p": 0.239,
+      "lam": 0.273,
       "detail": {
        "f_equipe": 0.964
       }
      },
      "tirs1": {
-      "p": 0.863
+      "p": 0.861
      },
      "tirs3": {
-      "p": 0.355
+      "p": 0.351
      },
      "tirs4": {
-      "p": 0.177
+      "p": 0.174
      },
      "buts2": {
       "p": 0.031,
-      "lam": 0.274
+      "lam": 0.272
      },
      "buts3": {
       "p": 0.003,
-      "lam": 0.274
+      "lam": 0.272
      },
      "passes2": {
-      "p": 0.032,
-      "lam": 0.275
+      "p": 0.031,
+      "lam": 0.273
      },
      "pts1": {
-      "p": 0.422,
-      "lam": 0.549
+      "p": 0.42,
+      "lam": 0.545
      },
      "pts2": {
-      "p": 0.105,
-      "lam": 0.549
+      "p": 0.104,
+      "lam": 0.545
      }
     },
     "but_v5": {
      "buts": {
-      "p": 0.22,
-      "lam": 0.248,
+      "p": 0.218,
+      "lam": 0.246,
       "detail": {
        "sh": 0.127,
        "f_gardien": 0.957,
@@ -10029,8 +9927,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.206,
-      "lam": 0.245,
+      "p": 0.204,
+      "lam": 0.242,
       "detail": {
        "f_equipe": 0.964,
        "pp": 1.291,
@@ -10041,31 +9939,31 @@
     "but2_v5": {
      "buts2": {
       "p": 0.034,
-      "lam": 0.287
+      "lam": 0.284
      }
     },
     "but3_v5": {
      "buts3": {
       "p": 0.003,
-      "lam": 0.293
+      "lam": 0.29
      }
     },
     "passe2_v5": {
      "passes2": {
       "p": 0.02,
-      "lam": 0.214
+      "lam": 0.212
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.381,
-      "lam": 0.48
+      "p": 0.378,
+      "lam": 0.475
      }
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.09,
-      "lam": 0.5
+      "p": 0.089,
+      "lam": 0.495
      }
     },
     "tirs1_ml": {
@@ -10133,15 +10031,15 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.863,
+      "p": 0.861,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.608,
-      "lam": 2.126,
+      "p": 0.605,
+      "lam": 2.111,
       "detail": {
-       "rate60": 7.349,
-       "toi": 16.483,
+       "rate60": 7.363,
+       "toi": 16.339,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -10150,16 +10048,16 @@
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.355,
+      "p": 0.351,
       "src": "v1"
      },
      "tirs4": {
-      "p": 0.177,
+      "p": 0.174,
       "src": "v1"
      },
      "buts": {
-      "p": 0.22,
-      "lam": 0.248,
+      "p": 0.218,
+      "lam": 0.246,
       "detail": {
        "sh": 0.127,
        "f_gardien": 0.957,
@@ -10169,17 +10067,17 @@
      },
      "buts2": {
       "p": 0.034,
-      "lam": 0.287,
+      "lam": 0.284,
       "src": "but2_v5"
      },
      "buts3": {
       "p": 0.003,
-      "lam": 0.293,
+      "lam": 0.29,
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.206,
-      "lam": 0.245,
+      "p": 0.204,
+      "lam": 0.242,
       "detail": {
        "f_equipe": 0.964,
        "pp": 1.291,
@@ -10189,17 +10087,17 @@
      },
      "passes2": {
       "p": 0.02,
-      "lam": 0.214,
+      "lam": 0.212,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.381,
-      "lam": 0.48,
+      "p": 0.378,
+      "lam": 0.475,
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.09,
-      "lam": 0.5,
+      "p": 0.089,
+      "lam": 0.495,
       "src": "pts2_v5"
      }
     },
@@ -10208,42 +10106,42 @@
       "p": 0.842
      },
      "tirs": {
-      "p": 0.568,
-      "lam": 1.966
+      "p": 0.567,
+      "lam": 1.96
      },
      "tirs3": {
-      "p": 0.314
+      "p": 0.313
      },
      "tirs4": {
-      "p": 0.147
+      "p": 0.146
      },
      "buts": {
-      "p": 0.218,
-      "lam": 0.246
+      "p": 0.217,
+      "lam": 0.244
      },
      "passes": {
       "p": 0.202,
-      "lam": 0.226
+      "lam": 0.225
      },
      "buts2": {
-      "p": 0.026,
-      "lam": 0.246
+      "p": 0.025,
+      "lam": 0.244
      },
      "buts3": {
       "p": 0.002,
-      "lam": 0.246
+      "lam": 0.244
      },
      "passes2": {
       "p": 0.022,
-      "lam": 0.226
+      "lam": 0.225
      },
      "pts1": {
-      "p": 0.376,
-      "lam": 0.472
+      "p": 0.375,
+      "lam": 0.47
      },
      "pts2": {
-      "p": 0.082,
-      "lam": 0.472
+      "p": 0.081,
+      "lam": 0.47
      }
     }
    },
@@ -10270,8 +10168,8 @@
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
-    "f_t": 0.925,
-    "f_a": 0.925,
+    "f_t": 0.928,
+    "f_a": 0.928,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -10389,28 +10287,28 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.784,
-      "lam": 3.082,
+      "p": 0.782,
+      "lam": 3.067,
       "detail": {
-       "rate60": 9.509,
-       "toi": 18.137,
+       "rate60": 9.523,
+       "toi": 18.029,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.031
+       "f_vs": 1.03
       }
      },
      "buts": {
-      "p": 0.339,
-      "lam": 0.414,
+      "p": 0.338,
+      "lam": 0.412,
       "detail": {
        "sh": 0.134,
        "f_gardien": 1.004
       }
      },
      "passes": {
-      "p": 0.278,
-      "lam": 0.325,
+      "p": 0.276,
+      "lam": 0.324,
       "detail": {
        "f_equipe": 0.964
       }
@@ -10419,36 +10317,36 @@
       "p": 0.939
      },
      "tirs3": {
-      "p": 0.573
+      "p": 0.57
      },
      "tirs4": {
-      "p": 0.369
+      "p": 0.366
      },
      "buts2": {
       "p": 0.065,
-      "lam": 0.414
+      "lam": 0.412
      },
      "buts3": {
       "p": 0.009,
-      "lam": 0.414
+      "lam": 0.412
      },
      "passes2": {
-      "p": 0.043,
-      "lam": 0.325
+      "p": 0.042,
+      "lam": 0.324
      },
      "pts1": {
-      "p": 0.522,
-      "lam": 0.739
+      "p": 0.521,
+      "lam": 0.735
      },
      "pts2": {
-      "p": 0.169,
-      "lam": 0.739
+      "p": 0.168,
+      "lam": 0.735
      }
     },
     "but_v5": {
      "buts": {
-      "p": 0.311,
-      "lam": 0.372,
+      "p": 0.31,
+      "lam": 0.37,
       "detail": {
        "sh": 0.131,
        "f_gardien": 0.957,
@@ -10458,8 +10356,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.269,
-      "lam": 0.327,
+      "p": 0.268,
+      "lam": 0.325,
       "detail": {
        "f_equipe": 0.964,
        "pp": 3.142,
@@ -10469,32 +10367,32 @@
     },
     "but2_v5": {
      "buts2": {
-      "p": 0.075,
-      "lam": 0.449
+      "p": 0.074,
+      "lam": 0.447
      }
     },
     "but3_v5": {
      "buts3": {
       "p": 0.011,
-      "lam": 0.451
+      "lam": 0.448
      }
     },
     "passe2_v5": {
      "passes2": {
-      "p": 0.041,
-      "lam": 0.317
+      "p": 0.04,
+      "lam": 0.315
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.502,
-      "lam": 0.698
+      "p": 0.5,
+      "lam": 0.693
      }
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.18,
-      "lam": 0.77
+      "p": 0.179,
+      "lam": 0.765
      }
     },
     "tirs1_ml": {
@@ -10566,29 +10464,29 @@
       "src": "v1"
      },
      "tirs": {
-      "p": 0.784,
-      "lam": 3.082,
+      "p": 0.782,
+      "lam": 3.067,
       "detail": {
-       "rate60": 9.509,
-       "toi": 18.137,
+       "rate60": 9.523,
+       "toi": 18.029,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.031
+       "f_vs": 1.03
       },
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.573,
+      "p": 0.57,
       "src": "v1"
      },
      "tirs4": {
-      "p": 0.369,
+      "p": 0.366,
       "src": "v1"
      },
      "buts": {
-      "p": 0.311,
-      "lam": 0.372,
+      "p": 0.31,
+      "lam": 0.37,
       "detail": {
        "sh": 0.131,
        "f_gardien": 0.957,
@@ -10597,18 +10495,18 @@
       "src": "but_v5"
      },
      "buts2": {
-      "p": 0.075,
-      "lam": 0.449,
+      "p": 0.074,
+      "lam": 0.447,
       "src": "but2_v5"
      },
      "buts3": {
       "p": 0.011,
-      "lam": 0.451,
+      "lam": 0.448,
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.269,
-      "lam": 0.327,
+      "p": 0.268,
+      "lam": 0.325,
       "detail": {
        "f_equipe": 0.964,
        "pp": 3.142,
@@ -10617,62 +10515,62 @@
       "src": "passe_v5"
      },
      "passes2": {
-      "p": 0.041,
-      "lam": 0.317,
+      "p": 0.04,
+      "lam": 0.315,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.502,
-      "lam": 0.698,
+      "p": 0.5,
+      "lam": 0.693,
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.18,
-      "lam": 0.77,
+      "p": 0.179,
+      "lam": 0.765,
       "src": "pts2_v5"
      }
     },
     "soir": {
      "tirs1": {
-      "p": 0.919
+      "p": 0.918
      },
      "tirs": {
-      "p": 0.731,
-      "lam": 2.731
+      "p": 0.73,
+      "lam": 2.724
      },
      "tirs3": {
-      "p": 0.499
+      "p": 0.498
      },
      "tirs4": {
-      "p": 0.297
+      "p": 0.296
      },
      "buts": {
-      "p": 0.297,
-      "lam": 0.353
+      "p": 0.296,
+      "lam": 0.352
      },
      "passes": {
       "p": 0.251,
-      "lam": 0.289
+      "lam": 0.288
      },
      "buts2": {
       "p": 0.049,
-      "lam": 0.353
+      "lam": 0.352
      },
      "buts3": {
       "p": 0.006,
-      "lam": 0.353
+      "lam": 0.352
      },
      "passes2": {
-      "p": 0.035,
-      "lam": 0.289
+      "p": 0.034,
+      "lam": 0.288
      },
      "pts1": {
-      "p": 0.474,
-      "lam": 0.642
+      "p": 0.473,
+      "lam": 0.64
      },
      "pts2": {
-      "p": 0.136,
-      "lam": 0.642
+      "p": 0.135,
+      "lam": 0.64
      }
     }
    },
@@ -10695,8 +10593,8 @@
    "soir_info": {
     "slot": "f3",
     "pp": "pp1",
-    "f_t": 0.886,
-    "f_a": 0.886,
+    "f_t": 0.888,
+    "f_a": 0.888,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -11199,11 +11097,11 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.47,
-      "lam": 1.616,
+      "p": 0.471,
+      "lam": 1.619,
       "detail": {
-       "rate60": 5.537,
-       "toi": 15.377,
+       "rate60": 5.534,
+       "toi": 15.42,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -11219,17 +11117,17 @@
       }
      },
      "passes": {
-      "p": 0.266,
+      "p": 0.267,
       "lam": 0.31,
       "detail": {
        "f_equipe": 0.964
       }
      },
      "tirs1": {
-      "p": 0.784
+      "p": 0.785
      },
      "tirs3": {
-      "p": 0.225
+      "p": 0.226
      },
      "tirs4": {
       "p": 0.091
@@ -11247,12 +11145,12 @@
       "lam": 0.31
      },
      "pts1": {
-      "p": 0.41,
-      "lam": 0.527
+      "p": 0.411,
+      "lam": 0.529
      },
      "pts2": {
       "p": 0.099,
-      "lam": 0.527
+      "lam": 0.529
      }
     },
     "but_v5": {
@@ -11268,8 +11166,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.229,
-      "lam": 0.274,
+      "p": 0.23,
+      "lam": 0.275,
       "detail": {
        "f_equipe": 0.964,
        "pp": 0.043,
@@ -11280,7 +11178,7 @@
     "but2_v5": {
      "buts2": {
       "p": 0.021,
-      "lam": 0.219
+      "lam": 0.22
      }
     },
     "but3_v5": {
@@ -11291,20 +11189,20 @@
     },
     "passe2_v5": {
      "passes2": {
-      "p": 0.03,
-      "lam": 0.27
+      "p": 0.031,
+      "lam": 0.271
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.369,
-      "lam": 0.461
+      "p": 0.37,
+      "lam": 0.462
      }
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.08,
-      "lam": 0.467
+      "p": 0.081,
+      "lam": 0.468
      }
     },
     "tirs1_ml": {
@@ -11372,15 +11270,15 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.784,
+      "p": 0.785,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.47,
-      "lam": 1.616,
+      "p": 0.471,
+      "lam": 1.619,
       "detail": {
-       "rate60": 5.537,
-       "toi": 15.377,
+       "rate60": 5.534,
+       "toi": 15.42,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -11389,7 +11287,7 @@
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.225,
+      "p": 0.226,
       "src": "v1"
      },
      "tirs4": {
@@ -11408,7 +11306,7 @@
      },
      "buts2": {
       "p": 0.021,
-      "lam": 0.219,
+      "lam": 0.22,
       "src": "but2_v5"
      },
      "buts3": {
@@ -11417,8 +11315,8 @@
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.229,
-      "lam": 0.274,
+      "p": 0.23,
+      "lam": 0.275,
       "detail": {
        "f_equipe": 0.964,
        "pp": 0.043,
@@ -11427,18 +11325,18 @@
       "src": "passe_v5"
      },
      "passes2": {
-      "p": 0.03,
-      "lam": 0.27,
+      "p": 0.031,
+      "lam": 0.271,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.369,
-      "lam": 0.461,
+      "p": 0.37,
+      "lam": 0.462,
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.08,
-      "lam": 0.467,
+      "p": 0.081,
+      "lam": 0.468,
       "src": "pts2_v5"
      }
     },
@@ -11448,21 +11346,21 @@
      },
      "tirs": {
       "p": 0.488,
-      "lam": 1.675
+      "lam": 1.676
      },
      "tirs3": {
-      "p": 0.24
+      "p": 0.241
      },
      "tirs4": {
-      "p": 0.099
+      "p": 0.1
      },
      "buts": {
       "p": 0.182,
       "lam": 0.201
      },
      "passes": {
-      "p": 0.247,
-      "lam": 0.284
+      "p": 0.248,
+      "lam": 0.285
      },
      "buts2": {
       "p": 0.018,
@@ -11474,15 +11372,15 @@
      },
      "passes2": {
       "p": 0.034,
-      "lam": 0.284
+      "lam": 0.285
      },
      "pts1": {
-      "p": 0.384,
-      "lam": 0.485
+      "p": 0.385,
+      "lam": 0.486
      },
      "pts2": {
       "p": 0.086,
-      "lam": 0.485
+      "lam": 0.486
      }
     }
    },
@@ -11492,8 +11390,8 @@
    "soir_info": {
     "slot": "f2",
     "pp": "aucune",
-    "f_t": 1.036,
-    "f_a": 1.036,
+    "f_t": 1.035,
+    "f_a": 1.035,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -11554,7 +11452,7 @@
     "a": 4,
     "tirs": 11,
     "pts": 4,
-    "toi": 15.1,
+    "toi": 15.0,
     "eq_pj": 13,
     "restants": 69,
     "proj": {
@@ -11611,11 +11509,11 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.297,
-      "lam": 1.093,
+      "p": 0.294,
+      "lam": 1.085,
       "detail": {
-       "rate60": 4.422,
-       "toi": 15.414,
+       "rate60": 4.431,
+       "toi": 15.271,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -11623,54 +11521,54 @@
       }
      },
      "buts": {
-      "p": 0.118,
-      "lam": 0.125,
+      "p": 0.117,
+      "lam": 0.124,
       "detail": {
        "sh": 0.114,
        "f_gardien": 1.004
       }
      },
      "passes": {
-      "p": 0.238,
-      "lam": 0.271,
+      "p": 0.236,
+      "lam": 0.269,
       "detail": {
        "f_equipe": 0.964
       }
      },
      "tirs1": {
-      "p": 0.652
+      "p": 0.649
      },
      "tirs3": {
-      "p": 0.104
+      "p": 0.103
      },
      "tirs4": {
-      "p": 0.03
+      "p": 0.029
      },
      "buts2": {
       "p": 0.007,
-      "lam": 0.125
+      "lam": 0.124
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.125
+      "lam": 0.124
      },
      "passes2": {
-      "p": 0.031,
-      "lam": 0.271
+      "p": 0.03,
+      "lam": 0.269
      },
      "pts1": {
-      "p": 0.327,
-      "lam": 0.397
+      "p": 0.325,
+      "lam": 0.394
      },
      "pts2": {
-      "p": 0.061,
-      "lam": 0.397
+      "p": 0.06,
+      "lam": 0.394
      }
     },
     "but_v5": {
      "buts": {
-      "p": 0.122,
-      "lam": 0.131,
+      "p": 0.121,
+      "lam": 0.13,
       "detail": {
        "sh": 0.12,
        "f_gardien": 0.957,
@@ -11680,8 +11578,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.202,
-      "lam": 0.239,
+      "p": 0.2,
+      "lam": 0.237,
       "detail": {
        "f_equipe": 0.964,
        "pp": 0.109,
@@ -11692,31 +11590,31 @@
     "but2_v5": {
      "buts2": {
       "p": 0.007,
-      "lam": 0.127
+      "lam": 0.126
      }
     },
     "but3_v5": {
      "buts3": {
       "p": 0.001,
-      "lam": 0.148
+      "lam": 0.147
      }
     },
     "passe2_v5": {
      "passes2": {
       "p": 0.022,
-      "lam": 0.226
+      "lam": 0.224
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.307,
-      "lam": 0.367
+      "p": 0.304,
+      "lam": 0.363
      }
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.05,
-      "lam": 0.355
+      "p": 0.049,
+      "lam": 0.351
      }
     },
     "tirs1_ml": {
@@ -11784,15 +11682,15 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.652,
+      "p": 0.649,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.297,
-      "lam": 1.093,
+      "p": 0.294,
+      "lam": 1.085,
       "detail": {
-       "rate60": 4.422,
-       "toi": 15.414,
+       "rate60": 4.431,
+       "toi": 15.271,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -11801,16 +11699,16 @@
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.104,
+      "p": 0.103,
       "src": "v1"
      },
      "tirs4": {
-      "p": 0.03,
+      "p": 0.029,
       "src": "v1"
      },
      "buts": {
-      "p": 0.122,
-      "lam": 0.131,
+      "p": 0.121,
+      "lam": 0.13,
       "detail": {
        "sh": 0.12,
        "f_gardien": 0.957,
@@ -11820,17 +11718,17 @@
      },
      "buts2": {
       "p": 0.007,
-      "lam": 0.127,
+      "lam": 0.126,
       "src": "but2_v5"
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.148,
+      "lam": 0.147,
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.202,
-      "lam": 0.239,
+      "p": 0.2,
+      "lam": 0.237,
       "detail": {
        "f_equipe": 0.964,
        "pp": 0.109,
@@ -11840,27 +11738,27 @@
      },
      "passes2": {
       "p": 0.022,
-      "lam": 0.226,
+      "lam": 0.224,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.307,
-      "lam": 0.367,
+      "p": 0.304,
+      "lam": 0.363,
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.05,
-      "lam": 0.355,
+      "p": 0.049,
+      "lam": 0.351,
       "src": "pts2_v5"
      }
     },
     "soir": {
      "tirs1": {
-      "p": 0.635
+      "p": 0.634
      },
      "tirs": {
-      "p": 0.279,
-      "lam": 1.043
+      "p": 0.278,
+      "lam": 1.04
      },
      "tirs3": {
       "p": 0.094
@@ -11869,32 +11767,32 @@
       "p": 0.026
      },
      "buts": {
-      "p": 0.126,
-      "lam": 0.134
+      "p": 0.125,
+      "lam": 0.133
      },
      "passes": {
-      "p": 0.204,
-      "lam": 0.228
+      "p": 0.203,
+      "lam": 0.227
      },
      "buts2": {
       "p": 0.008,
-      "lam": 0.134
+      "lam": 0.133
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.134
+      "lam": 0.133
      },
      "passes2": {
       "p": 0.022,
-      "lam": 0.228
+      "lam": 0.227
      },
      "pts1": {
-      "p": 0.304,
-      "lam": 0.362
+      "p": 0.303,
+      "lam": 0.36
      },
      "pts2": {
-      "p": 0.052,
-      "lam": 0.362
+      "p": 0.051,
+      "lam": 0.36
      }
     }
    },
@@ -11904,8 +11802,8 @@
    "soir_info": {
     "slot": "f3",
     "pp": "aucune",
-    "f_t": 0.954,
-    "f_a": 0.954,
+    "f_t": 0.958,
+    "f_a": 0.958,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -12023,11 +11921,11 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.678,
-      "lam": 2.447,
+      "p": 0.68,
+      "lam": 2.456,
       "detail": {
-       "rate60": 7.121,
-       "toi": 18.982,
+       "rate60": 7.114,
+       "toi": 19.067,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -12035,54 +11933,54 @@
       }
      },
      "buts": {
-      "p": 0.328,
-      "lam": 0.397,
+      "p": 0.329,
+      "lam": 0.399,
       "detail": {
        "sh": 0.162,
        "f_gardien": 1.004
       }
      },
      "passes": {
-      "p": 0.34,
-      "lam": 0.415,
+      "p": 0.341,
+      "lam": 0.416,
       "detail": {
        "f_equipe": 0.964
       }
      },
      "tirs1": {
-      "p": 0.896
+      "p": 0.897
      },
      "tirs3": {
-      "p": 0.434
+      "p": 0.436
      },
      "tirs4": {
-      "p": 0.239
+      "p": 0.241
      },
      "buts2": {
       "p": 0.061,
-      "lam": 0.397
+      "lam": 0.399
      },
      "buts3": {
       "p": 0.008,
-      "lam": 0.397
+      "lam": 0.399
      },
      "passes2": {
       "p": 0.066,
-      "lam": 0.415
+      "lam": 0.416
      },
      "pts1": {
-      "p": 0.556,
-      "lam": 0.812
+      "p": 0.557,
+      "lam": 0.815
      },
      "pts2": {
-      "p": 0.196,
-      "lam": 0.812
+      "p": 0.197,
+      "lam": 0.815
      }
     },
     "but_v5": {
      "buts": {
-      "p": 0.283,
-      "lam": 0.333,
+      "p": 0.284,
+      "lam": 0.334,
       "detail": {
        "sh": 0.146,
        "f_gardien": 0.957,
@@ -12092,8 +11990,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.317,
-      "lam": 0.392,
+      "p": 0.318,
+      "lam": 0.394,
       "detail": {
        "f_equipe": 0.964,
        "pp": 3.235,
@@ -12103,32 +12001,32 @@
     },
     "but2_v5": {
      "buts2": {
-      "p": 0.071,
-      "lam": 0.435
+      "p": 0.072,
+      "lam": 0.437
      }
     },
     "but3_v5": {
      "buts3": {
       "p": 0.007,
-      "lam": 0.392
+      "lam": 0.393
      }
     },
     "passe2_v5": {
      "passes2": {
       "p": 0.06,
-      "lam": 0.393
+      "lam": 0.395
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.519,
-      "lam": 0.732
+      "p": 0.52,
+      "lam": 0.735
      }
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.194,
-      "lam": 0.807
+      "p": 0.195,
+      "lam": 0.811
      }
     },
     "tirs1_ml": {
@@ -12196,15 +12094,15 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.896,
+      "p": 0.897,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.678,
-      "lam": 2.447,
+      "p": 0.68,
+      "lam": 2.456,
       "detail": {
-       "rate60": 7.121,
-       "toi": 18.982,
+       "rate60": 7.114,
+       "toi": 19.067,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -12213,16 +12111,16 @@
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.434,
+      "p": 0.436,
       "src": "v1"
      },
      "tirs4": {
-      "p": 0.239,
+      "p": 0.241,
       "src": "v1"
      },
      "buts": {
-      "p": 0.283,
-      "lam": 0.333,
+      "p": 0.284,
+      "lam": 0.334,
       "detail": {
        "sh": 0.146,
        "f_gardien": 0.957,
@@ -12231,18 +12129,18 @@
       "src": "but_v5"
      },
      "buts2": {
-      "p": 0.071,
-      "lam": 0.435,
+      "p": 0.072,
+      "lam": 0.437,
       "src": "but2_v5"
      },
      "buts3": {
       "p": 0.007,
-      "lam": 0.392,
+      "lam": 0.393,
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.317,
-      "lam": 0.392,
+      "p": 0.318,
+      "lam": 0.394,
       "detail": {
        "f_equipe": 0.964,
        "pp": 3.235,
@@ -12252,61 +12150,61 @@
      },
      "passes2": {
       "p": 0.06,
-      "lam": 0.393,
+      "lam": 0.395,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.519,
-      "lam": 0.732,
+      "p": 0.52,
+      "lam": 0.735,
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.194,
-      "lam": 0.807,
+      "p": 0.195,
+      "lam": 0.811,
       "src": "pts2_v5"
      }
     },
     "soir": {
      "tirs1": {
-      "p": 0.896
+      "p": 0.897
      },
      "tirs": {
       "p": 0.679,
-      "lam": 2.449
+      "lam": 2.452
      },
      "tirs3": {
-      "p": 0.434
+      "p": 0.435
      },
      "tirs4": {
-      "p": 0.239
+      "p": 0.24
      },
      "buts": {
       "p": 0.3,
-      "lam": 0.356
+      "lam": 0.357
      },
      "passes": {
       "p": 0.325,
-      "lam": 0.392
+      "lam": 0.393
      },
      "buts2": {
       "p": 0.05,
-      "lam": 0.356
+      "lam": 0.357
      },
      "buts3": {
       "p": 0.006,
-      "lam": 0.356
+      "lam": 0.357
      },
      "passes2": {
-      "p": 0.059,
-      "lam": 0.392
+      "p": 0.06,
+      "lam": 0.393
      },
      "pts1": {
       "p": 0.527,
-      "lam": 0.748
+      "lam": 0.75
      },
      "pts2": {
       "p": 0.173,
-      "lam": 0.748
+      "lam": 0.75
      }
     }
    },
@@ -12333,8 +12231,8 @@
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
-    "f_t": 1.0,
-    "f_a": 1.0,
+    "f_t": 0.998,
+    "f_a": 0.998,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -12452,11 +12350,11 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.569,
-      "lam": 1.968,
+      "p": 0.57,
+      "lam": 1.973,
       "detail": {
-       "rate60": 5.329,
-       "toi": 18.527,
+       "rate60": 5.325,
+       "toi": 18.585,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -12473,7 +12371,7 @@
      },
      "passes": {
       "p": 0.348,
-      "lam": 0.427,
+      "lam": 0.428,
       "detail": {
        "f_equipe": 0.964
       }
@@ -12482,10 +12380,10 @@
       "p": 0.843
      },
      "tirs3": {
-      "p": 0.315
+      "p": 0.316
      },
      "tirs4": {
-      "p": 0.148
+      "p": 0.149
      },
      "buts2": {
       "p": 0.027,
@@ -12497,20 +12395,20 @@
      },
      "passes2": {
       "p": 0.069,
-      "lam": 0.427
+      "lam": 0.428
      },
      "pts1": {
-      "p": 0.494,
-      "lam": 0.681
+      "p": 0.495,
+      "lam": 0.683
      },
      "pts2": {
-      "p": 0.149,
-      "lam": 0.681
+      "p": 0.15,
+      "lam": 0.683
      }
     },
     "but_v5": {
      "buts": {
-      "p": 0.228,
+      "p": 0.229,
       "lam": 0.26,
       "detail": {
        "sh": 0.127,
@@ -12521,8 +12419,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.335,
-      "lam": 0.417,
+      "p": 0.336,
+      "lam": 0.419,
       "detail": {
        "f_equipe": 0.964,
        "pp": 3.15,
@@ -12533,7 +12431,7 @@
     "but2_v5": {
      "buts2": {
       "p": 0.035,
-      "lam": 0.291
+      "lam": 0.292
      }
     },
     "but3_v5": {
@@ -12544,20 +12442,20 @@
     },
     "passe2_v5": {
      "passes2": {
-      "p": 0.071,
-      "lam": 0.436
+      "p": 0.072,
+      "lam": 0.438
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.513,
-      "lam": 0.72
+      "p": 0.514,
+      "lam": 0.723
      }
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.172,
-      "lam": 0.748
+      "p": 0.173,
+      "lam": 0.75
      }
     },
     "tirs1_ml": {
@@ -12629,11 +12527,11 @@
       "src": "v1"
      },
      "tirs": {
-      "p": 0.569,
-      "lam": 1.968,
+      "p": 0.57,
+      "lam": 1.973,
       "detail": {
-       "rate60": 5.329,
-       "toi": 18.527,
+       "rate60": 5.325,
+       "toi": 18.585,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -12642,15 +12540,15 @@
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.315,
+      "p": 0.316,
       "src": "v1"
      },
      "tirs4": {
-      "p": 0.148,
+      "p": 0.149,
       "src": "v1"
      },
      "buts": {
-      "p": 0.228,
+      "p": 0.229,
       "lam": 0.26,
       "detail": {
        "sh": 0.127,
@@ -12661,7 +12559,7 @@
      },
      "buts2": {
       "p": 0.035,
-      "lam": 0.291,
+      "lam": 0.292,
       "src": "but2_v5"
      },
      "buts3": {
@@ -12670,8 +12568,8 @@
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.335,
-      "lam": 0.417,
+      "p": 0.336,
+      "lam": 0.419,
       "detail": {
        "f_equipe": 0.964,
        "pp": 3.15,
@@ -12680,18 +12578,18 @@
       "src": "passe_v5"
      },
      "passes2": {
-      "p": 0.071,
-      "lam": 0.436,
+      "p": 0.072,
+      "lam": 0.438,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.513,
-      "lam": 0.72,
+      "p": 0.514,
+      "lam": 0.723,
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.172,
-      "lam": 0.748,
+      "p": 0.173,
+      "lam": 0.75,
       "src": "pts2_v5"
      }
     },
@@ -12700,14 +12598,14 @@
       "p": 0.827
      },
      "tirs": {
-      "p": 0.54,
-      "lam": 1.861
+      "p": 0.541,
+      "lam": 1.863
      },
      "tirs3": {
-      "p": 0.287
+      "p": 0.288
      },
      "tirs4": {
-      "p": 0.129
+      "p": 0.13
      },
      "buts": {
       "p": 0.231,
@@ -12731,11 +12629,11 @@
      },
      "pts1": {
       "p": 0.482,
-      "lam": 0.657
+      "lam": 0.658
      },
      "pts2": {
       "p": 0.141,
-      "lam": 0.657
+      "lam": 0.658
      }
     }
    },
@@ -12762,8 +12660,8 @@
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
-    "f_t": 0.945,
-    "f_a": 0.945,
+    "f_t": 0.944,
+    "f_a": 0.944,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -12881,11 +12779,11 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.549,
-      "lam": 1.892,
+      "p": 0.551,
+      "lam": 1.901,
       "detail": {
-       "rate60": 6.763,
-       "toi": 16.692,
+       "rate60": 6.754,
+       "toi": 16.793,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -12893,54 +12791,54 @@
       }
      },
      "buts": {
-      "p": 0.233,
-      "lam": 0.266,
+      "p": 0.234,
+      "lam": 0.267,
       "detail": {
        "sh": 0.14,
        "f_gardien": 1.004
       }
      },
      "passes": {
-      "p": 0.246,
-      "lam": 0.282,
+      "p": 0.247,
+      "lam": 0.283,
       "detail": {
        "f_equipe": 0.964
       }
      },
      "tirs1": {
-      "p": 0.832
+      "p": 0.833
      },
      "tirs3": {
-      "p": 0.295
+      "p": 0.298
      },
      "tirs4": {
-      "p": 0.135
+      "p": 0.136
      },
      "buts2": {
       "p": 0.03,
-      "lam": 0.266
+      "lam": 0.267
      },
      "buts3": {
       "p": 0.003,
-      "lam": 0.266
+      "lam": 0.267
      },
      "passes2": {
       "p": 0.033,
-      "lam": 0.282
+      "lam": 0.283
      },
      "pts1": {
-      "p": 0.422,
-      "lam": 0.547
+      "p": 0.423,
+      "lam": 0.55
      },
      "pts2": {
-      "p": 0.105,
-      "lam": 0.547
+      "p": 0.106,
+      "lam": 0.55
      }
     },
     "but_v5": {
      "buts": {
-      "p": 0.205,
-      "lam": 0.231,
+      "p": 0.206,
+      "lam": 0.232,
       "detail": {
        "sh": 0.133,
        "f_gardien": 0.957,
@@ -12950,8 +12848,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.247,
-      "lam": 0.297,
+      "p": 0.248,
+      "lam": 0.299,
       "detail": {
        "f_equipe": 0.964,
        "pp": 1.438,
@@ -12962,31 +12860,31 @@
     "but2_v5": {
      "buts2": {
       "p": 0.031,
-      "lam": 0.272
+      "lam": 0.274
      }
     },
     "but3_v5": {
      "buts3": {
       "p": 0.002,
-      "lam": 0.251
+      "lam": 0.252
      }
     },
     "passe2_v5": {
      "passes2": {
-      "p": 0.035,
-      "lam": 0.292
+      "p": 0.036,
+      "lam": 0.294
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.399,
-      "lam": 0.51
+      "p": 0.401,
+      "lam": 0.513
      }
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.101,
-      "lam": 0.536
+      "p": 0.102,
+      "lam": 0.54
      }
     },
     "tirs1_ml": {
@@ -13054,15 +12952,15 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.832,
+      "p": 0.833,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.549,
-      "lam": 1.892,
+      "p": 0.551,
+      "lam": 1.901,
       "detail": {
-       "rate60": 6.763,
-       "toi": 16.692,
+       "rate60": 6.754,
+       "toi": 16.793,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -13071,16 +12969,16 @@
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.295,
+      "p": 0.298,
       "src": "v1"
      },
      "tirs4": {
-      "p": 0.135,
+      "p": 0.136,
       "src": "v1"
      },
      "buts": {
-      "p": 0.205,
-      "lam": 0.231,
+      "p": 0.206,
+      "lam": 0.232,
       "detail": {
        "sh": 0.133,
        "f_gardien": 0.957,
@@ -13090,17 +12988,17 @@
      },
      "buts2": {
       "p": 0.031,
-      "lam": 0.272,
+      "lam": 0.274,
       "src": "but2_v5"
      },
      "buts3": {
       "p": 0.002,
-      "lam": 0.251,
+      "lam": 0.252,
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.247,
-      "lam": 0.297,
+      "p": 0.248,
+      "lam": 0.299,
       "detail": {
        "f_equipe": 0.964,
        "pp": 1.438,
@@ -13109,18 +13007,18 @@
       "src": "passe_v5"
      },
      "passes2": {
-      "p": 0.035,
-      "lam": 0.292,
+      "p": 0.036,
+      "lam": 0.294,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.399,
-      "lam": 0.51,
+      "p": 0.401,
+      "lam": 0.513,
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.101,
-      "lam": 0.536,
+      "p": 0.102,
+      "lam": 0.54,
       "src": "pts2_v5"
      }
     }
@@ -13230,7 +13128,7 @@
       "p": 0.138,
       "lam": 0.642,
       "detail": {
-       "rate60": 4.901,
+       "rate60": 4.902,
        "toi": 7.963,
        "f_opp": 1.01,
        "f_lieu": 1.03,
@@ -13325,8 +13223,8 @@
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.147,
-      "lam": 0.159
+      "p": 0.146,
+      "lam": 0.158
      }
     },
     "pts2_v5": {
@@ -13407,7 +13305,7 @@
       "p": 0.138,
       "lam": 0.642,
       "detail": {
-       "rate60": 4.901,
+       "rate60": 4.902,
        "toi": 7.963,
        "f_opp": 1.01,
        "f_lieu": 1.03,
@@ -13460,8 +13358,8 @@
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.147,
-      "lam": 0.159,
+      "p": 0.146,
+      "lam": 0.158,
       "src": "pts1_v5"
      },
      "pts2": {
@@ -13476,7 +13374,7 @@
      },
      "tirs": {
       "p": 0.18,
-      "lam": 0.764
+      "lam": 0.765
      },
      "tirs3": {
       "p": 0.047
@@ -13486,26 +13384,26 @@
      },
      "buts": {
       "p": 0.082,
-      "lam": 0.086
+      "lam": 0.085
      },
      "passes": {
       "p": 0.124,
       "lam": 0.132
      },
      "buts2": {
-      "p": 0.004,
-      "lam": 0.086
+      "p": 0.003,
+      "lam": 0.085
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.086
+      "lam": 0.085
      },
      "passes2": {
       "p": 0.008,
       "lam": 0.132
      },
      "pts1": {
-      "p": 0.196,
+      "p": 0.195,
       "lam": 0.217
      },
      "pts2": {
@@ -13958,7 +13856,7 @@
     1,
     1,
     3,
-    1
+    2
    ],
    "l10_goals": [
     0,
@@ -13992,15 +13890,15 @@
     "pj": 13,
     "b": 3,
     "a": 8,
-    "tirs": 23,
+    "tirs": 24,
     "pts": 11,
-    "toi": 20.8,
+    "toi": 20.9,
     "eq_pj": 13,
     "restants": 69,
     "proj": {
      "b": 19,
      "a": 50,
-     "tirs": 145,
+     "tirs": 151,
      "pts": 69
     },
     "max_pj": 82
@@ -14008,8 +13906,8 @@
    "preds": {
     "v0": {
      "tirs": {
-      "p": 0.528,
-      "lam": 1.769
+      "p": 0.551,
+      "lam": 1.846
      },
      "buts": {
       "p": 0.206,
@@ -14020,13 +13918,13 @@
       "lam": 0.615
      },
      "tirs1": {
-      "p": 0.83
+      "p": 0.842
      },
      "tirs3": {
-      "p": 0.261
+      "p": 0.282
      },
      "tirs4": {
-      "p": 0.104
+      "p": 0.116
      },
      "buts2": {
       "p": 0.023,
@@ -14051,11 +13949,11 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.568,
-      "lam": 1.966,
+      "p": 0.579,
+      "lam": 2.007,
       "detail": {
-       "rate60": 6.299,
-       "toi": 21.007,
+       "rate60": 6.404,
+       "toi": 21.092,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -14063,56 +13961,56 @@
       }
      },
      "buts": {
-      "p": 0.246,
-      "lam": 0.282,
+      "p": 0.249,
+      "lam": 0.286,
       "detail": {
-       "sh": 0.143,
+       "sh": 0.142,
        "f_gardien": 1.004
       }
      },
      "passes": {
-      "p": 0.4,
-      "lam": 0.51,
+      "p": 0.401,
+      "lam": 0.512,
       "detail": {
        "f_equipe": 0.964
       }
      },
      "tirs1": {
-      "p": 0.842
+      "p": 0.848
      },
      "tirs3": {
-      "p": 0.314
+      "p": 0.325
      },
      "tirs4": {
-      "p": 0.148
+      "p": 0.155
      },
      "buts2": {
-      "p": 0.033,
-      "lam": 0.282
+      "p": 0.034,
+      "lam": 0.286
      },
      "buts3": {
       "p": 0.003,
-      "lam": 0.282
+      "lam": 0.286
      },
      "passes2": {
-      "p": 0.093,
-      "lam": 0.51
+      "p": 0.094,
+      "lam": 0.512
      },
      "pts1": {
-      "p": 0.547,
-      "lam": 0.792
+      "p": 0.55,
+      "lam": 0.798
      },
      "pts2": {
-      "p": 0.188,
-      "lam": 0.792
+      "p": 0.191,
+      "lam": 0.798
      }
     },
     "but_v5": {
      "buts": {
-      "p": 0.256,
-      "lam": 0.295,
+      "p": 0.258,
+      "lam": 0.298,
       "detail": {
-       "sh": 0.136,
+       "sh": 0.135,
        "f_gardien": 0.957,
        "pp": 3.287
       }
@@ -14120,8 +14018,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.378,
-      "lam": 0.481,
+      "p": 0.379,
+      "lam": 0.483,
       "detail": {
        "f_equipe": 0.964,
        "pp": 3.287,
@@ -14131,32 +14029,32 @@
     },
     "but2_v5": {
      "buts2": {
-      "p": 0.043,
-      "lam": 0.328
+      "p": 0.044,
+      "lam": 0.331
      }
     },
     "but3_v5": {
      "buts3": {
-      "p": 0.006,
-      "lam": 0.372
+      "p": 0.007,
+      "lam": 0.373
      }
     },
     "passe2_v5": {
      "passes2": {
       "p": 0.091,
-      "lam": 0.502
+      "lam": 0.504
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.55,
-      "lam": 0.799
+      "p": 0.552,
+      "lam": 0.802
      }
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.208,
-      "lam": 0.847
+      "p": 0.209,
+      "lam": 0.85
      }
     },
     "tirs1_ml": {
@@ -14224,15 +14122,15 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.842,
+      "p": 0.848,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.568,
-      "lam": 1.966,
+      "p": 0.579,
+      "lam": 2.007,
       "detail": {
-       "rate60": 6.299,
-       "toi": 21.007,
+       "rate60": 6.404,
+       "toi": 21.092,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -14241,36 +14139,36 @@
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.314,
+      "p": 0.325,
       "src": "v1"
      },
      "tirs4": {
-      "p": 0.148,
+      "p": 0.155,
       "src": "v1"
      },
      "buts": {
-      "p": 0.256,
-      "lam": 0.295,
+      "p": 0.258,
+      "lam": 0.298,
       "detail": {
-       "sh": 0.136,
+       "sh": 0.135,
        "f_gardien": 0.957,
        "pp": 3.287
       },
       "src": "but_v5"
      },
      "buts2": {
-      "p": 0.043,
-      "lam": 0.328,
+      "p": 0.044,
+      "lam": 0.331,
       "src": "but2_v5"
      },
      "buts3": {
-      "p": 0.006,
-      "lam": 0.372,
+      "p": 0.007,
+      "lam": 0.373,
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.378,
-      "lam": 0.481,
+      "p": 0.379,
+      "lam": 0.483,
       "detail": {
        "f_equipe": 0.964,
        "pp": 3.287,
@@ -14280,61 +14178,61 @@
      },
      "passes2": {
       "p": 0.091,
-      "lam": 0.502,
+      "lam": 0.504,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.55,
-      "lam": 0.799,
+      "p": 0.552,
+      "lam": 0.802,
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.208,
-      "lam": 0.847,
+      "p": 0.209,
+      "lam": 0.85,
       "src": "pts2_v5"
      }
     },
     "soir": {
      "tirs1": {
-      "p": 0.829
+      "p": 0.834
      },
      "tirs": {
-      "p": 0.544,
-      "lam": 1.872
+      "p": 0.553,
+      "lam": 1.907
      },
      "tirs3": {
-      "p": 0.29
+      "p": 0.299
      },
      "tirs4": {
-      "p": 0.131
+      "p": 0.137
      },
      "buts": {
-      "p": 0.26,
-      "lam": 0.301
+      "p": 0.262,
+      "lam": 0.303
      },
      "passes": {
       "p": 0.368,
-      "lam": 0.458
+      "lam": 0.459
      },
      "buts2": {
-      "p": 0.037,
-      "lam": 0.301
+      "p": 0.038,
+      "lam": 0.303
      },
      "buts3": {
       "p": 0.004,
-      "lam": 0.301
+      "lam": 0.303
      },
      "passes2": {
       "p": 0.078,
-      "lam": 0.458
+      "lam": 0.459
      },
      "pts1": {
-      "p": 0.532,
-      "lam": 0.759
+      "p": 0.533,
+      "lam": 0.762
      },
      "pts2": {
-      "p": 0.176,
-      "lam": 0.759
+      "p": 0.178,
+      "lam": 0.762
      }
     }
    },
@@ -14361,8 +14259,8 @@
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
-    "f_t": 0.952,
-    "f_a": 0.952,
+    "f_t": 0.95,
+    "f_a": 0.95,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -14423,7 +14321,7 @@
     "a": 2,
     "tirs": 11,
     "pts": 4,
-    "toi": 20.1,
+    "toi": 20.2,
     "eq_pj": 13,
     "restants": 69,
     "proj": {
@@ -14480,65 +14378,65 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.37,
-      "lam": 1.304,
+      "p": 0.373,
+      "lam": 1.313,
       "detail": {
-       "rate60": 3.432,
-       "toi": 19.901,
+       "rate60": 3.424,
+       "toi": 20.077,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.101
+       "f_vs": 1.102
       }
      },
      "buts": {
       "p": 0.093,
-      "lam": 0.097,
+      "lam": 0.098,
       "detail": {
        "sh": 0.074,
        "f_gardien": 1.004
       }
      },
      "passes": {
-      "p": 0.228,
-      "lam": 0.259,
+      "p": 0.23,
+      "lam": 0.261,
       "detail": {
        "f_equipe": 0.964
       }
      },
      "tirs1": {
-      "p": 0.714
+      "p": 0.716
      },
      "tirs3": {
-      "p": 0.15
+      "p": 0.152
      },
      "tirs4": {
-      "p": 0.051
+      "p": 0.052
      },
      "buts2": {
       "p": 0.004,
-      "lam": 0.097
+      "lam": 0.098
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.097
+      "lam": 0.098
      },
      "passes2": {
-      "p": 0.028,
-      "lam": 0.259
+      "p": 0.029,
+      "lam": 0.261
      },
      "pts1": {
-      "p": 0.3,
-      "lam": 0.356
+      "p": 0.302,
+      "lam": 0.359
      },
      "pts2": {
-      "p": 0.05,
-      "lam": 0.356
+      "p": 0.051,
+      "lam": 0.359
      }
     },
     "but_v5": {
      "buts": {
-      "p": 0.078,
+      "p": 0.079,
       "lam": 0.083,
       "detail": {
        "sh": 0.071,
@@ -14549,8 +14447,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.242,
-      "lam": 0.291,
+      "p": 0.244,
+      "lam": 0.293,
       "detail": {
        "f_equipe": 0.964,
        "pp": 1.292,
@@ -14561,31 +14459,31 @@
     "but2_v5": {
      "buts2": {
       "p": 0.006,
-      "lam": 0.112
+      "lam": 0.113
      }
     },
     "but3_v5": {
      "buts3": {
       "p": 0.0,
-      "lam": 0.128
+      "lam": 0.129
      }
     },
     "passe2_v5": {
      "passes2": {
       "p": 0.042,
-      "lam": 0.32
+      "lam": 0.323
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.315,
-      "lam": 0.378
+      "p": 0.317,
+      "lam": 0.381
      }
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.072,
-      "lam": 0.436
+      "p": 0.073,
+      "lam": 0.441
      }
     },
     "tirs1_ml": {
@@ -14653,32 +14551,32 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.714,
+      "p": 0.716,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.37,
-      "lam": 1.304,
+      "p": 0.373,
+      "lam": 1.313,
       "detail": {
-       "rate60": 3.432,
-       "toi": 19.901,
+       "rate60": 3.424,
+       "toi": 20.077,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.101
+       "f_vs": 1.102
       },
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.15,
+      "p": 0.152,
       "src": "v1"
      },
      "tirs4": {
-      "p": 0.051,
+      "p": 0.052,
       "src": "v1"
      },
      "buts": {
-      "p": 0.078,
+      "p": 0.079,
       "lam": 0.083,
       "detail": {
        "sh": 0.071,
@@ -14689,17 +14587,17 @@
      },
      "buts2": {
       "p": 0.006,
-      "lam": 0.112,
+      "lam": 0.113,
       "src": "but2_v5"
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.128,
+      "lam": 0.129,
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.242,
-      "lam": 0.291,
+      "p": 0.244,
+      "lam": 0.293,
       "detail": {
        "f_equipe": 0.964,
        "pp": 1.292,
@@ -14709,61 +14607,61 @@
      },
      "passes2": {
       "p": 0.042,
-      "lam": 0.32,
+      "lam": 0.323,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.315,
-      "lam": 0.378,
+      "p": 0.317,
+      "lam": 0.381,
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.072,
-      "lam": 0.436,
+      "p": 0.073,
+      "lam": 0.441,
       "src": "pts2_v5"
      }
     },
     "soir": {
      "tirs1": {
-      "p": 0.714
+      "p": 0.715
      },
      "tirs": {
-      "p": 0.371,
-      "lam": 1.307
+      "p": 0.372,
+      "lam": 1.311
      },
      "tirs3": {
-      "p": 0.151
+      "p": 0.152
      },
      "tirs4": {
       "p": 0.051
      },
      "buts": {
       "p": 0.085,
-      "lam": 0.088
+      "lam": 0.089
      },
      "passes": {
-      "p": 0.253,
-      "lam": 0.291
+      "p": 0.254,
+      "lam": 0.293
      },
      "buts2": {
       "p": 0.004,
-      "lam": 0.088
+      "lam": 0.089
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.088
+      "lam": 0.089
      },
      "passes2": {
       "p": 0.035,
-      "lam": 0.291
+      "lam": 0.293
      },
      "pts1": {
-      "p": 0.316,
-      "lam": 0.38
+      "p": 0.317,
+      "lam": 0.382
      },
      "pts2": {
-      "p": 0.056,
-      "lam": 0.38
+      "p": 0.057,
+      "lam": 0.382
      }
     }
    },
@@ -14773,8 +14671,8 @@
    "soir_info": {
     "slot": "d2",
     "pp": "pp2",
-    "f_t": 1.002,
-    "f_a": 1.002,
+    "f_t": 0.998,
+    "f_a": 0.998,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -14892,15 +14790,15 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.398,
-      "lam": 1.389,
+      "p": 0.4,
+      "lam": 1.393,
       "detail": {
-       "rate60": 3.476,
-       "toi": 22.221,
+       "rate60": 3.472,
+       "toi": 22.306,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.037
+       "f_vs": 1.038
       }
      },
      "buts": {
@@ -14912,20 +14810,20 @@
       }
      },
      "passes": {
-      "p": 0.526,
-      "lam": 0.746,
+      "p": 0.527,
+      "lam": 0.748,
       "detail": {
        "f_equipe": 0.964
       }
      },
      "tirs1": {
-      "p": 0.735
+      "p": 0.736
      },
      "tirs3": {
-      "p": 0.17
+      "p": 0.171
      },
      "tirs4": {
-      "p": 0.06
+      "p": 0.061
      },
      "buts2": {
       "p": 0.005,
@@ -14936,16 +14834,16 @@
       "lam": 0.1
      },
      "passes2": {
-      "p": 0.172,
-      "lam": 0.746
+      "p": 0.173,
+      "lam": 0.748
      },
      "pts1": {
-      "p": 0.571,
-      "lam": 0.845
+      "p": 0.572,
+      "lam": 0.848
      },
      "pts2": {
       "p": 0.208,
-      "lam": 0.845
+      "lam": 0.848
      }
     },
     "but_v5": {
@@ -14961,8 +14859,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.474,
-      "lam": 0.641,
+      "p": 0.476,
+      "lam": 0.644,
       "detail": {
        "f_equipe": 0.964,
        "pp": 3.228,
@@ -14984,20 +14882,20 @@
     },
     "passe2_v5": {
      "passes2": {
-      "p": 0.164,
-      "lam": 0.722
+      "p": 0.165,
+      "lam": 0.725
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.553,
-      "lam": 0.806
+      "p": 0.554,
+      "lam": 0.809
      }
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.201,
-      "lam": 0.828
+      "p": 0.203,
+      "lam": 0.832
      }
     },
     "tirs1_ml": {
@@ -15065,28 +14963,28 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.735,
+      "p": 0.736,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.398,
-      "lam": 1.389,
+      "p": 0.4,
+      "lam": 1.393,
       "detail": {
-       "rate60": 3.476,
-       "toi": 22.221,
+       "rate60": 3.472,
+       "toi": 22.306,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
-       "f_vs": 1.037
+       "f_vs": 1.038
       },
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.17,
+      "p": 0.171,
       "src": "v1"
      },
      "tirs4": {
-      "p": 0.06,
+      "p": 0.061,
       "src": "v1"
      },
      "buts": {
@@ -15110,8 +15008,8 @@
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.474,
-      "lam": 0.641,
+      "p": 0.476,
+      "lam": 0.644,
       "detail": {
        "f_equipe": 0.964,
        "pp": 3.228,
@@ -15120,18 +15018,18 @@
       "src": "passe_v5"
      },
      "passes2": {
-      "p": 0.164,
-      "lam": 0.722,
+      "p": 0.165,
+      "lam": 0.725,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.553,
-      "lam": 0.806,
+      "p": 0.554,
+      "lam": 0.809,
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.201,
-      "lam": 0.828,
+      "p": 0.203,
+      "lam": 0.832,
       "src": "pts2_v5"
      }
     },
@@ -15140,22 +15038,22 @@
       "p": 0.741
      },
      "tirs": {
-      "p": 0.406,
-      "lam": 1.414
+      "p": 0.407,
+      "lam": 1.415
      },
      "tirs3": {
       "p": 0.176
      },
      "tirs4": {
-      "p": 0.063
+      "p": 0.064
      },
      "buts": {
       "p": 0.092,
       "lam": 0.097
      },
      "passes": {
-      "p": 0.479,
-      "lam": 0.653
+      "p": 0.48,
+      "lam": 0.654
      },
      "buts2": {
       "p": 0.004,
@@ -15167,15 +15065,15 @@
      },
      "passes2": {
       "p": 0.14,
-      "lam": 0.653
+      "lam": 0.654
      },
      "pts1": {
-      "p": 0.527,
-      "lam": 0.749
+      "p": 0.528,
+      "lam": 0.751
      },
      "pts2": {
-      "p": 0.173,
-      "lam": 0.749
+      "p": 0.174,
+      "lam": 0.751
      }
     }
    },
@@ -15202,8 +15100,8 @@
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
-    "f_t": 1.018,
-    "f_a": 1.018,
+    "f_t": 1.016,
+    "f_a": 1.016,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -15321,11 +15219,11 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.386,
-      "lam": 1.352,
+      "p": 0.387,
+      "lam": 1.356,
       "detail": {
-       "rate60": 4.027,
-       "toi": 21.443,
+       "rate60": 4.023,
+       "toi": 21.529,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -15341,17 +15239,17 @@
       }
      },
      "passes": {
-      "p": 0.266,
-      "lam": 0.31,
+      "p": 0.267,
+      "lam": 0.311,
       "detail": {
        "f_equipe": 0.964
       }
      },
      "tirs1": {
-      "p": 0.726
+      "p": 0.727
      },
      "tirs3": {
-      "p": 0.161
+      "p": 0.162
      },
      "tirs4": {
       "p": 0.056
@@ -15366,21 +15264,21 @@
      },
      "passes2": {
       "p": 0.039,
-      "lam": 0.31
+      "lam": 0.311
      },
      "pts1": {
-      "p": 0.346,
-      "lam": 0.424
+      "p": 0.347,
+      "lam": 0.425
      },
      "pts2": {
-      "p": 0.068,
-      "lam": 0.424
+      "p": 0.069,
+      "lam": 0.425
      }
     },
     "but_v5": {
      "buts": {
       "p": 0.086,
-      "lam": 0.091,
+      "lam": 0.092,
       "detail": {
        "sh": 0.076,
        "f_gardien": 0.957,
@@ -15390,8 +15288,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.2,
-      "lam": 0.238,
+      "p": 0.201,
+      "lam": 0.239,
       "detail": {
        "f_equipe": 0.964,
        "pp": 0.05,
@@ -15402,31 +15300,31 @@
     "but2_v5": {
      "buts2": {
       "p": 0.007,
-      "lam": 0.12
+      "lam": 0.121
      }
     },
     "but3_v5": {
      "buts3": {
       "p": 0.0,
-      "lam": 0.108
+      "lam": 0.109
      }
     },
     "passe2_v5": {
      "passes2": {
       "p": 0.022,
-      "lam": 0.226
+      "lam": 0.227
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.263,
-      "lam": 0.306
+      "p": 0.264,
+      "lam": 0.307
      }
     },
     "pts2_v5": {
      "pts2": {
       "p": 0.044,
-      "lam": 0.331
+      "lam": 0.332
      }
     },
     "tirs1_ml": {
@@ -15494,15 +15392,15 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.726,
+      "p": 0.727,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.386,
-      "lam": 1.352,
+      "p": 0.387,
+      "lam": 1.356,
       "detail": {
-       "rate60": 4.027,
-       "toi": 21.443,
+       "rate60": 4.023,
+       "toi": 21.529,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -15511,7 +15409,7 @@
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.161,
+      "p": 0.162,
       "src": "v1"
      },
      "tirs4": {
@@ -15520,7 +15418,7 @@
      },
      "buts": {
       "p": 0.086,
-      "lam": 0.091,
+      "lam": 0.092,
       "detail": {
        "sh": 0.076,
        "f_gardien": 0.957,
@@ -15530,17 +15428,17 @@
      },
      "buts2": {
       "p": 0.007,
-      "lam": 0.12,
+      "lam": 0.121,
       "src": "but2_v5"
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.108,
+      "lam": 0.109,
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.2,
-      "lam": 0.238,
+      "p": 0.201,
+      "lam": 0.239,
       "detail": {
        "f_equipe": 0.964,
        "pp": 0.05,
@@ -15550,17 +15448,17 @@
      },
      "passes2": {
       "p": 0.022,
-      "lam": 0.226,
+      "lam": 0.227,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.263,
-      "lam": 0.306,
+      "p": 0.264,
+      "lam": 0.307,
       "src": "pts1_v5"
      },
      "pts2": {
       "p": 0.044,
-      "lam": 0.331,
+      "lam": 0.332,
       "src": "pts2_v5"
      }
     },
@@ -15569,8 +15467,8 @@
       "p": 0.738
      },
      "tirs": {
-      "p": 0.402,
-      "lam": 1.401
+      "p": 0.403,
+      "lam": 1.402
      },
      "tirs3": {
       "p": 0.173
@@ -15583,8 +15481,8 @@
       "lam": 0.101
      },
      "passes": {
-      "p": 0.218,
-      "lam": 0.246
+      "p": 0.219,
+      "lam": 0.247
      },
      "buts2": {
       "p": 0.005,
@@ -15596,15 +15494,15 @@
      },
      "passes2": {
       "p": 0.026,
-      "lam": 0.246
+      "lam": 0.247
      },
      "pts1": {
-      "p": 0.293,
-      "lam": 0.347
+      "p": 0.294,
+      "lam": 0.348
      },
      "pts2": {
       "p": 0.048,
-      "lam": 0.347
+      "lam": 0.348
      }
     }
    },
@@ -15614,8 +15512,8 @@
    "soir_info": {
     "slot": "d1",
     "pp": "aucune",
-    "f_t": 1.036,
-    "f_a": 1.036,
+    "f_t": 1.034,
+    "f_a": 1.034,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -15676,7 +15574,7 @@
     "a": 2,
     "tirs": 9,
     "pts": 2,
-    "toi": 20.6,
+    "toi": 20.7,
     "eq_pj": 13,
     "restants": 69,
     "proj": {
@@ -15733,11 +15631,11 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.178,
-      "lam": 0.759,
+      "p": 0.18,
+      "lam": 0.763,
       "detail": {
-       "rate60": 2.349,
-       "toi": 20.601,
+       "rate60": 2.345,
+       "toi": 20.747,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -15753,20 +15651,20 @@
       }
      },
      "passes": {
-      "p": 0.186,
-      "lam": 0.206,
+      "p": 0.187,
+      "lam": 0.207,
       "detail": {
        "f_equipe": 0.964
       }
      },
      "tirs1": {
-      "p": 0.523
+      "p": 0.525
      },
      "tirs3": {
       "p": 0.046
      },
      "tirs4": {
-      "p": 0.009
+      "p": 0.01
      },
      "buts2": {
       "p": 0.001,
@@ -15777,16 +15675,16 @@
       "lam": 0.043
      },
      "passes2": {
-      "p": 0.018,
-      "lam": 0.206
+      "p": 0.019,
+      "lam": 0.207
      },
      "pts1": {
-      "p": 0.22,
-      "lam": 0.249
+      "p": 0.221,
+      "lam": 0.25
      },
      "pts2": {
-      "p": 0.026,
-      "lam": 0.249
+      "p": 0.027,
+      "lam": 0.25
      }
     },
     "but_v5": {
@@ -15802,8 +15700,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.159,
-      "lam": 0.187,
+      "p": 0.16,
+      "lam": 0.189,
       "detail": {
        "f_equipe": 0.964,
        "pp": 0.095,
@@ -15826,19 +15724,19 @@
     "passe2_v5": {
      "passes2": {
       "p": 0.012,
-      "lam": 0.163
+      "lam": 0.165
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.192,
-      "lam": 0.213
+      "p": 0.193,
+      "lam": 0.214
      }
     },
     "pts2_v5": {
      "pts2": {
       "p": 0.019,
-      "lam": 0.209
+      "lam": 0.21
      }
     },
     "tirs1_ml": {
@@ -15906,15 +15804,15 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.523,
+      "p": 0.525,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.178,
-      "lam": 0.759,
+      "p": 0.18,
+      "lam": 0.763,
       "detail": {
-       "rate60": 2.349,
-       "toi": 20.601,
+       "rate60": 2.345,
+       "toi": 20.747,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -15927,7 +15825,7 @@
       "src": "v1"
      },
      "tirs4": {
-      "p": 0.009,
+      "p": 0.01,
       "src": "v1"
      },
      "buts": {
@@ -15951,8 +15849,8 @@
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.159,
-      "lam": 0.187,
+      "p": 0.16,
+      "lam": 0.189,
       "detail": {
        "f_equipe": 0.964,
        "pp": 0.095,
@@ -15962,27 +15860,27 @@
      },
      "passes2": {
       "p": 0.012,
-      "lam": 0.163,
+      "lam": 0.165,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.192,
-      "lam": 0.213,
+      "p": 0.193,
+      "lam": 0.214,
       "src": "pts1_v5"
      },
      "pts2": {
       "p": 0.019,
-      "lam": 0.209,
+      "lam": 0.21,
       "src": "pts2_v5"
      }
     },
     "soir": {
      "tirs1": {
-      "p": 0.518
+      "p": 0.519
      },
      "tirs": {
-      "p": 0.174,
-      "lam": 0.748
+      "p": 0.175,
+      "lam": 0.749
      },
      "tirs3": {
       "p": 0.044
@@ -15991,7 +15889,7 @@
       "p": 0.009
      },
      "buts": {
-      "p": 0.047,
+      "p": 0.048,
       "lam": 0.049
      },
      "passes": {
@@ -16011,12 +15909,12 @@
       "lam": 0.185
      },
      "pts1": {
-      "p": 0.208,
-      "lam": 0.233
+      "p": 0.209,
+      "lam": 0.234
      },
      "pts2": {
       "p": 0.023,
-      "lam": 0.233
+      "lam": 0.234
      }
     }
    },
@@ -16026,8 +15924,8 @@
    "soir_info": {
     "slot": "d2",
     "pp": "aucune",
-    "f_t": 0.985,
-    "f_a": 0.985,
+    "f_t": 0.982,
+    "f_a": 0.982,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -16088,7 +15986,7 @@
     "a": 2,
     "tirs": 20,
     "pts": 2,
-    "toi": 17.4,
+    "toi": 17.2,
     "eq_pj": 13,
     "restants": 69,
     "proj": {
@@ -16145,11 +16043,11 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.373,
-      "lam": 1.312,
+      "p": 0.367,
+      "lam": 1.296,
       "detail": {
-       "rate60": 4.315,
-       "toi": 17.6,
+       "rate60": 4.33,
+       "toi": 17.338,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -16157,54 +16055,54 @@
       }
      },
      "buts": {
-      "p": 0.054,
-      "lam": 0.056,
+      "p": 0.053,
+      "lam": 0.055,
       "detail": {
        "sh": 0.042,
        "f_gardien": 1.004
       }
      },
      "passes": {
-      "p": 0.174,
-      "lam": 0.191,
+      "p": 0.172,
+      "lam": 0.188,
       "detail": {
        "f_equipe": 0.964
       }
      },
      "tirs1": {
-      "p": 0.716
+      "p": 0.712
      },
      "tirs3": {
-      "p": 0.152
+      "p": 0.148
      },
      "tirs4": {
-      "p": 0.051
+      "p": 0.05
      },
      "buts2": {
       "p": 0.002,
-      "lam": 0.056
+      "lam": 0.055
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.056
+      "lam": 0.055
      },
      "passes2": {
       "p": 0.016,
-      "lam": 0.191
+      "lam": 0.188
      },
      "pts1": {
-      "p": 0.218,
-      "lam": 0.246
+      "p": 0.216,
+      "lam": 0.243
      },
      "pts2": {
-      "p": 0.026,
-      "lam": 0.246
+      "p": 0.025,
+      "lam": 0.243
      }
     },
     "but_v5": {
      "buts": {
       "p": 0.057,
-      "lam": 0.06,
+      "lam": 0.059,
       "detail": {
        "sh": 0.054,
        "f_gardien": 0.957,
@@ -16214,8 +16112,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.146,
-      "lam": 0.172,
+      "p": 0.144,
+      "lam": 0.17,
       "detail": {
        "f_equipe": 0.964,
        "pp": 0.058,
@@ -16226,31 +16124,31 @@
     "but2_v5": {
      "buts2": {
       "p": 0.002,
-      "lam": 0.058
+      "lam": 0.057
      }
     },
     "but3_v5": {
      "buts3": {
       "p": 0.0,
-      "lam": 0.085
+      "lam": 0.084
      }
     },
     "passe2_v5": {
      "passes2": {
       "p": 0.011,
-      "lam": 0.157
+      "lam": 0.154
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.194,
-      "lam": 0.216
+      "p": 0.191,
+      "lam": 0.212
      }
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.02,
-      "lam": 0.214
+      "p": 0.019,
+      "lam": 0.211
      }
     },
     "tirs1_ml": {
@@ -16318,15 +16216,15 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.716,
+      "p": 0.712,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.373,
-      "lam": 1.312,
+      "p": 0.367,
+      "lam": 1.296,
       "detail": {
-       "rate60": 4.315,
-       "toi": 17.6,
+       "rate60": 4.33,
+       "toi": 17.338,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -16335,16 +16233,16 @@
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.152,
+      "p": 0.148,
       "src": "v1"
      },
      "tirs4": {
-      "p": 0.051,
+      "p": 0.05,
       "src": "v1"
      },
      "buts": {
       "p": 0.057,
-      "lam": 0.06,
+      "lam": 0.059,
       "detail": {
        "sh": 0.054,
        "f_gardien": 0.957,
@@ -16354,17 +16252,17 @@
      },
      "buts2": {
       "p": 0.002,
-      "lam": 0.058,
+      "lam": 0.057,
       "src": "but2_v5"
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.085,
+      "lam": 0.084,
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.146,
-      "lam": 0.172,
+      "p": 0.144,
+      "lam": 0.17,
       "detail": {
        "f_equipe": 0.964,
        "pp": 0.058,
@@ -16374,41 +16272,41 @@
      },
      "passes2": {
       "p": 0.011,
-      "lam": 0.157,
+      "lam": 0.154,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.194,
-      "lam": 0.216,
+      "p": 0.191,
+      "lam": 0.212,
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.02,
-      "lam": 0.214,
+      "p": 0.019,
+      "lam": 0.211,
       "src": "pts2_v5"
      }
     },
     "soir": {
      "tirs1": {
-      "p": 0.71
+      "p": 0.708
      },
      "tirs": {
-      "p": 0.365,
-      "lam": 1.29
+      "p": 0.363,
+      "lam": 1.284
      },
      "tirs3": {
-      "p": 0.147
+      "p": 0.145
      },
      "tirs4": {
-      "p": 0.049
+      "p": 0.048
      },
      "buts": {
       "p": 0.061,
       "lam": 0.063
      },
      "passes": {
-      "p": 0.156,
-      "lam": 0.169
+      "p": 0.154,
+      "lam": 0.168
      },
      "buts2": {
       "p": 0.002,
@@ -16420,15 +16318,15 @@
      },
      "passes2": {
       "p": 0.013,
-      "lam": 0.169
+      "lam": 0.168
      },
      "pts1": {
-      "p": 0.207,
-      "lam": 0.232
+      "p": 0.206,
+      "lam": 0.231
      },
      "pts2": {
       "p": 0.023,
-      "lam": 0.232
+      "lam": 0.231
      }
     }
    },
@@ -16438,8 +16336,8 @@
    "soir_info": {
     "slot": "d3",
     "pp": "aucune",
-    "f_t": 0.983,
-    "f_a": 0.983,
+    "f_t": 0.99,
+    "f_a": 0.99,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -16500,7 +16398,7 @@
     "a": 0,
     "tirs": 5,
     "pts": 0,
-    "toi": 14.7,
+    "toi": 14.6,
     "eq_pj": 13,
     "restants": 69,
     "proj": {
@@ -16557,11 +16455,11 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.125,
-      "lam": 0.601,
+      "p": 0.123,
+      "lam": 0.595,
       "detail": {
-       "rate60": 2.351,
-       "toi": 14.734,
+       "rate60": 2.365,
+       "toi": 14.503,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -16577,17 +16475,17 @@
       }
      },
      "passes": {
-      "p": 0.112,
-      "lam": 0.118,
+      "p": 0.11,
+      "lam": 0.117,
       "detail": {
        "f_equipe": 0.964
       }
      },
      "tirs1": {
-      "p": 0.445
+      "p": 0.442
      },
      "tirs3": {
-      "p": 0.026
+      "p": 0.025
      },
      "tirs4": {
       "p": 0.004
@@ -16602,20 +16500,20 @@
      },
      "passes2": {
       "p": 0.006,
-      "lam": 0.118
+      "lam": 0.117
      },
      "pts1": {
-      "p": 0.145,
-      "lam": 0.156
+      "p": 0.143,
+      "lam": 0.155
      },
      "pts2": {
       "p": 0.011,
-      "lam": 0.156
+      "lam": 0.155
      }
     },
     "but_v5": {
      "buts": {
-      "p": 0.033,
+      "p": 0.032,
       "lam": 0.034,
       "detail": {
        "sh": 0.066,
@@ -16626,8 +16524,8 @@
     },
     "passe_v5": {
      "passes": {
-      "p": 0.125,
-      "lam": 0.146,
+      "p": 0.123,
+      "lam": 0.144,
       "detail": {
        "f_equipe": 0.964,
        "pp": 0.05,
@@ -16638,31 +16536,31 @@
     "but2_v5": {
      "buts2": {
       "p": 0.001,
-      "lam": 0.036
+      "lam": 0.035
      }
     },
     "but3_v5": {
      "buts3": {
       "p": 0.0,
-      "lam": 0.042
+      "lam": 0.041
      }
     },
     "passe2_v5": {
      "passes2": {
       "p": 0.003,
-      "lam": 0.084
+      "lam": 0.082
      }
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.127,
-      "lam": 0.136
+      "p": 0.125,
+      "lam": 0.134
      }
     },
     "pts2_v5": {
      "pts2": {
       "p": 0.007,
-      "lam": 0.124
+      "lam": 0.122
      }
     },
     "tirs1_ml": {
@@ -16730,15 +16628,15 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.445,
+      "p": 0.442,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.125,
-      "lam": 0.601,
+      "p": 0.123,
+      "lam": 0.595,
       "detail": {
-       "rate60": 2.351,
-       "toi": 14.734,
+       "rate60": 2.365,
+       "toi": 14.503,
        "f_opp": 1.01,
        "f_lieu": 1.03,
        "f_b2b": 1.0,
@@ -16747,7 +16645,7 @@
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.026,
+      "p": 0.025,
       "src": "v1"
      },
      "tirs4": {
@@ -16755,7 +16653,7 @@
       "src": "v1"
      },
      "buts": {
-      "p": 0.033,
+      "p": 0.032,
       "lam": 0.034,
       "detail": {
        "sh": 0.066,
@@ -16766,17 +16664,17 @@
      },
      "buts2": {
       "p": 0.001,
-      "lam": 0.036,
+      "lam": 0.035,
       "src": "but2_v5"
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.042,
+      "lam": 0.041,
       "src": "but3_v5"
      },
      "passes": {
-      "p": 0.125,
-      "lam": 0.146,
+      "p": 0.123,
+      "lam": 0.144,
       "detail": {
        "f_equipe": 0.964,
        "pp": 0.05,
@@ -16786,17 +16684,17 @@
      },
      "passes2": {
       "p": 0.003,
-      "lam": 0.084,
+      "lam": 0.082,
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.127,
-      "lam": 0.136,
+      "p": 0.125,
+      "lam": 0.134,
       "src": "pts1_v5"
      },
      "pts2": {
       "p": 0.007,
-      "lam": 0.124,
+      "lam": 0.122,
       "src": "pts2_v5"
      }
     },
@@ -16806,7 +16704,7 @@
      },
      "tirs": {
       "p": 0.14,
-      "lam": 0.647
+      "lam": 0.646
      },
      "tirs3": {
       "p": 0.031
@@ -16819,8 +16717,8 @@
       "lam": 0.039
      },
      "passes": {
-      "p": 0.146,
-      "lam": 0.158
+      "p": 0.145,
+      "lam": 0.156
      },
      "buts2": {
       "p": 0.001,
@@ -16832,15 +16730,15 @@
      },
      "passes2": {
       "p": 0.011,
-      "lam": 0.158
+      "lam": 0.156
      },
      "pts1": {
-      "p": 0.179,
-      "lam": 0.197
+      "p": 0.177,
+      "lam": 0.195
      },
      "pts2": {
       "p": 0.017,
-      "lam": 0.197
+      "lam": 0.195
      }
     }
    },
@@ -16850,8 +16748,8 @@
    "soir_info": {
     "slot": "d3",
     "pp": "aucune",
-    "f_t": 1.077,
-    "f_a": 1.077,
+    "f_t": 1.086,
+    "f_a": 1.086,
     "f_g": 1.07,
     "base": "combo"
    }
@@ -16969,10 +16867,10 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.442,
+      "p": 0.443,
       "lam": 1.526,
       "detail": {
-       "rate60": 5.453,
+       "rate60": 5.454,
        "toi": 13.845,
        "f_opp": 1.087,
        "f_lieu": 0.97,
@@ -17146,10 +17044,10 @@
       "src": "v1"
      },
      "tirs": {
-      "p": 0.442,
+      "p": 0.443,
       "lam": 1.526,
       "detail": {
-       "rate60": 5.453,
+       "rate60": 5.454,
        "toi": 13.845,
        "f_opp": 1.087,
        "f_lieu": 0.97,
@@ -17228,7 +17126,7 @@
      },
      "buts": {
       "p": 0.133,
-      "lam": 0.143
+      "lam": 0.142
      },
      "passes": {
       "p": 0.196,
@@ -17236,11 +17134,11 @@
      },
      "buts2": {
       "p": 0.009,
-      "lam": 0.143
+      "lam": 0.142
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.143
+      "lam": 0.142
      },
      "passes2": {
       "p": 0.021,
@@ -17248,11 +17146,11 @@
      },
      "pts1": {
       "p": 0.303,
-      "lam": 0.361
+      "lam": 0.36
      },
      "pts2": {
       "p": 0.051,
-      "lam": 0.361
+      "lam": 0.36
      }
     }
    },
@@ -17468,7 +17366,7 @@
     "but3_v5": {
      "buts3": {
       "p": 0.001,
-      "lam": 0.189
+      "lam": 0.188
      }
     },
     "passe2_v5": {
@@ -17595,7 +17493,7 @@
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.189,
+      "lam": 0.188,
       "src": "but3_v5"
      },
      "passes": {
@@ -17796,7 +17694,7 @@
       "p": 0.257,
       "lam": 0.979,
       "detail": {
-       "rate60": 4.761,
+       "rate60": 4.762,
        "toi": 12.372,
        "f_opp": 1.087,
        "f_lieu": 0.97,
@@ -17973,7 +17871,7 @@
       "p": 0.257,
       "lam": 0.979,
       "detail": {
-       "rate60": 4.761,
+       "rate60": 4.762,
        "toi": 12.372,
        "f_opp": 1.087,
        "f_lieu": 0.97,
@@ -18190,7 +18088,7 @@
       "p": 0.372,
       "lam": 1.311,
       "detail": {
-       "rate60": 7.611,
+       "rate60": 7.612,
        "toi": 9.8,
        "f_opp": 1.087,
        "f_lieu": 0.97,
@@ -18367,7 +18265,7 @@
       "p": 0.372,
       "lam": 1.311,
       "detail": {
-       "rate60": 7.611,
+       "rate60": 7.612,
        "toi": 9.8,
        "f_opp": 1.087,
        "f_lieu": 0.97,
@@ -18593,7 +18491,7 @@
       "p": 0.239,
       "lam": 0.929,
       "detail": {
-       "rate60": 7.244,
+       "rate60": 7.245,
        "toi": 7.293,
        "f_opp": 1.087,
        "f_lieu": 0.97,
@@ -18770,7 +18668,7 @@
       "p": 0.239,
       "lam": 0.929,
       "detail": {
-       "rate60": 7.244,
+       "rate60": 7.245,
        "toi": 7.293,
        "f_opp": 1.087,
        "f_lieu": 0.97,
@@ -19061,7 +18959,7 @@
     "but_v5": {
      "buts": {
       "p": 0.281,
-      "lam": 0.33,
+      "lam": 0.329,
       "detail": {
        "sh": 0.13,
        "f_gardien": 0.935,
@@ -19201,7 +19099,7 @@
      },
      "buts": {
       "p": 0.281,
-      "lam": 0.33,
+      "lam": 0.329,
       "detail": {
        "sh": 0.13,
        "f_gardien": 0.935,
@@ -19261,7 +19159,7 @@
      },
      "buts": {
       "p": 0.262,
-      "lam": 0.304
+      "lam": 0.303
      },
      "passes": {
       "p": 0.404,
@@ -19269,11 +19167,11 @@
      },
      "buts2": {
       "p": 0.038,
-      "lam": 0.304
+      "lam": 0.303
      },
      "buts3": {
       "p": 0.004,
-      "lam": 0.304
+      "lam": 0.303
      },
      "passes2": {
       "p": 0.096,
@@ -19709,7 +19607,7 @@
       "lam": 0.894
      },
      "pts2": {
-      "p": 0.226,
+      "p": 0.225,
       "lam": 0.894
      }
     }
@@ -19855,7 +19753,7 @@
       "p": 0.504,
       "lam": 1.732,
       "detail": {
-       "rate60": 7.478,
+       "rate60": 7.479,
        "toi": 13.175,
        "f_opp": 1.087,
        "f_lieu": 0.97,
@@ -19939,7 +19837,7 @@
     "but3_v5": {
      "buts3": {
       "p": 0.002,
-      "lam": 0.24
+      "lam": 0.239
      }
     },
     "passe2_v5": {
@@ -19956,8 +19854,8 @@
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.089,
-      "lam": 0.495
+      "p": 0.088,
+      "lam": 0.494
      }
     },
     "tirs1_ml": {
@@ -20032,7 +19930,7 @@
       "p": 0.504,
       "lam": 1.732,
       "detail": {
-       "rate60": 7.478,
+       "rate60": 7.479,
        "toi": 13.175,
        "f_opp": 1.087,
        "f_lieu": 0.97,
@@ -20066,7 +19964,7 @@
      },
      "buts3": {
       "p": 0.002,
-      "lam": 0.24,
+      "lam": 0.239,
       "src": "but3_v5"
      },
      "passes": {
@@ -20090,8 +19988,8 @@
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.089,
-      "lam": 0.495,
+      "p": 0.088,
+      "lam": 0.494,
       "src": "pts2_v5"
      }
     },
@@ -20696,7 +20594,7 @@
       "p": 0.464,
       "lam": 1.595,
       "detail": {
-       "rate60": 5.069,
+       "rate60": 5.07,
        "toi": 16.542,
        "f_opp": 1.087,
        "f_lieu": 0.97,
@@ -20873,7 +20771,7 @@
       "p": 0.464,
       "lam": 1.595,
       "detail": {
-       "rate60": 5.069,
+       "rate60": 5.07,
        "toi": 16.542,
        "f_opp": 1.087,
        "f_lieu": 0.97,
@@ -20972,11 +20870,11 @@
      },
      "pts1": {
       "p": 0.362,
-      "lam": 0.45
+      "lam": 0.449
      },
      "pts2": {
       "p": 0.075,
-      "lam": 0.45
+      "lam": 0.449
      }
     }
    },
@@ -21203,8 +21101,8 @@
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.425,
-      "lam": 0.553
+      "p": 0.424,
+      "lam": 0.552
      }
     },
     "pts2_v5": {
@@ -21338,8 +21236,8 @@
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.425,
-      "lam": 0.553,
+      "p": 0.424,
+      "lam": 0.552,
       "src": "pts1_v5"
      },
      "pts2": {
@@ -24740,9 +24638,9 @@
     "v1": {
      "tirs": {
       "p": 0.383,
-      "lam": 1.341,
+      "lam": 1.342,
       "detail": {
-       "rate60": 4.922,
+       "rate60": 4.923,
        "toi": 14.038,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -24917,9 +24815,9 @@
      },
      "tirs": {
       "p": 0.383,
-      "lam": 1.341,
+      "lam": 1.342,
       "detail": {
-       "rate60": 4.922,
+       "rate60": 4.923,
        "toi": 14.038,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -24994,7 +24892,7 @@
       "p": 0.126
      },
      "tirs4": {
-      "p": 0.039
+      "p": 0.04
      },
      "buts": {
       "p": 0.143,
@@ -25154,7 +25052,7 @@
       "p": 0.779,
       "lam": 3.044,
       "detail": {
-       "rate60": 8.286,
+       "rate60": 8.287,
        "toi": 17.323,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -25249,7 +25147,7 @@
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.494,
+      "p": 0.493,
       "lam": 0.68
      }
     },
@@ -25331,7 +25229,7 @@
       "p": 0.779,
       "lam": 3.044,
       "detail": {
-       "rate60": 8.286,
+       "rate60": 8.287,
        "toi": 17.323,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -25384,7 +25282,7 @@
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.494,
+      "p": 0.493,
       "lam": 0.68,
       "src": "pts1_v5"
      },
@@ -25579,7 +25477,7 @@
       "p": 0.708,
       "lam": 2.601,
       "detail": {
-       "rate60": 6.897,
+       "rate60": 6.898,
        "toi": 19.192,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -25635,7 +25533,7 @@
     "but_v5": {
      "buts": {
       "p": 0.271,
-      "lam": 0.317,
+      "lam": 0.316,
       "detail": {
        "sh": 0.126,
        "f_gardien": 0.949,
@@ -25657,13 +25555,13 @@
     "but2_v5": {
      "buts2": {
       "p": 0.051,
-      "lam": 0.361
+      "lam": 0.36
      }
     },
     "but3_v5": {
      "buts3": {
       "p": 0.006,
-      "lam": 0.355
+      "lam": 0.354
      }
     },
     "passe2_v5": {
@@ -25756,7 +25654,7 @@
       "p": 0.708,
       "lam": 2.601,
       "detail": {
-       "rate60": 6.897,
+       "rate60": 6.898,
        "toi": 19.192,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -25775,7 +25673,7 @@
      },
      "buts": {
       "p": 0.271,
-      "lam": 0.317,
+      "lam": 0.316,
       "detail": {
        "sh": 0.126,
        "f_gardien": 0.949,
@@ -25785,12 +25683,12 @@
      },
      "buts2": {
       "p": 0.051,
-      "lam": 0.361,
+      "lam": 0.36,
       "src": "but2_v5"
      },
      "buts3": {
       "p": 0.006,
-      "lam": 0.355,
+      "lam": 0.354,
       "src": "but3_v5"
      },
      "passes": {
@@ -26008,7 +25906,7 @@
       "p": 0.597,
       "lam": 2.078,
       "detail": {
-       "rate60": 7.232,
+       "rate60": 7.233,
        "toi": 14.582,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -26064,7 +25962,7 @@
     "but_v5": {
      "buts": {
       "p": 0.225,
-      "lam": 0.256,
+      "lam": 0.255,
       "detail": {
        "sh": 0.134,
        "f_gardien": 0.949,
@@ -26185,7 +26083,7 @@
       "p": 0.597,
       "lam": 2.078,
       "detail": {
-       "rate60": 7.232,
+       "rate60": 7.233,
        "toi": 14.582,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -26204,7 +26102,7 @@
      },
      "buts": {
       "p": 0.225,
-      "lam": 0.256,
+      "lam": 0.255,
       "detail": {
        "sh": 0.134,
        "f_gardien": 0.949,
@@ -26263,7 +26161,7 @@
       "p": 0.194
      },
      "buts": {
-      "p": 0.247,
+      "p": 0.246,
       "lam": 0.283
      },
      "passes": {
@@ -26539,7 +26437,7 @@
     "pts2_v5": {
      "pts2": {
       "p": 0.133,
-      "lam": 0.633
+      "lam": 0.632
      }
     },
     "tirs1_ml": {
@@ -26673,7 +26571,7 @@
      },
      "pts2": {
       "p": 0.133,
-      "lam": 0.633,
+      "lam": 0.632,
       "src": "pts2_v5"
      }
     },
@@ -26842,7 +26740,7 @@
       "p": 0.377,
       "lam": 1.323,
       "detail": {
-       "rate60": 5.616,
+       "rate60": 5.617,
        "toi": 10.553,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -27019,7 +26917,7 @@
       "p": 0.377,
       "lam": 1.323,
       "detail": {
-       "rate60": 5.616,
+       "rate60": 5.617,
        "toi": 10.553,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -27081,61 +26979,13 @@
       "lam": 0.281,
       "src": "pts2_v5"
      }
-    },
-    "soir": {
-     "tirs1": {
-      "p": 0.826
-     },
-     "tirs": {
-      "p": 0.538,
-      "lam": 1.853
-     },
-     "tirs3": {
-      "p": 0.285
-     },
-     "tirs4": {
-      "p": 0.128
-     },
-     "buts": {
-      "p": 0.181,
-      "lam": 0.199
-     },
-     "passes": {
-      "p": 0.181,
-      "lam": 0.2
-     },
-     "buts2": {
-      "p": 0.017,
-      "lam": 0.199
-     },
-     "buts3": {
-      "p": 0.001,
-      "lam": 0.199
-     },
-     "passes2": {
-      "p": 0.018,
-      "lam": 0.2
-     },
-     "pts1": {
-      "p": 0.33,
-      "lam": 0.4
-     },
-     "pts2": {
-      "p": 0.061,
-      "lam": 0.4
-     }
     }
    },
    "result": null,
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "f1",
-    "pp": "aucune",
-    "f_t": 1.4,
-    "f_a": 1.4,
-    "f_g": 1.04,
-    "base": "combo"
+    "absent": true
    }
   },
   {
@@ -27254,7 +27104,7 @@
       "p": 0.415,
       "lam": 1.44,
       "detail": {
-       "rate60": 6.641,
+       "rate60": 6.642,
        "toi": 11.307,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -27309,7 +27159,7 @@
     },
     "but_v5": {
      "buts": {
-      "p": 0.14,
+      "p": 0.139,
       "lam": 0.151,
       "detail": {
        "sh": 0.119,
@@ -27332,7 +27182,7 @@
     "but2_v5": {
      "buts2": {
       "p": 0.012,
-      "lam": 0.162
+      "lam": 0.161
      }
     },
     "but3_v5": {
@@ -27431,7 +27281,7 @@
       "p": 0.415,
       "lam": 1.44,
       "detail": {
-       "rate60": 6.641,
+       "rate60": 6.642,
        "toi": 11.307,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -27449,7 +27299,7 @@
       "src": "v1"
      },
      "buts": {
-      "p": 0.14,
+      "p": 0.139,
       "lam": 0.151,
       "detail": {
        "sh": 0.119,
@@ -27460,7 +27310,7 @@
      },
      "buts2": {
       "p": 0.012,
-      "lam": 0.162,
+      "lam": 0.161,
       "src": "but2_v5"
      },
      "buts3": {
@@ -27648,7 +27498,7 @@
       "p": 0.369,
       "lam": 1.302,
       "detail": {
-       "rate60": 5.862,
+       "rate60": 5.863,
        "toi": 11.442,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -27825,7 +27675,7 @@
       "p": 0.369,
       "lam": 1.302,
       "detail": {
-       "rate60": 5.862,
+       "rate60": 5.863,
        "toi": 11.442,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -27887,61 +27737,13 @@
       "lam": 0.235,
       "src": "pts2_v5"
      }
-    },
-    "soir": {
-     "tirs1": {
-      "p": 0.706
-     },
-     "tirs": {
-      "p": 0.361,
-      "lam": 1.277
-     },
-     "tirs3": {
-      "p": 0.144
-     },
-     "tirs4": {
-      "p": 0.048
-     },
-     "buts": {
-      "p": 0.132,
-      "lam": 0.142
-     },
-     "passes": {
-      "p": 0.139,
-      "lam": 0.149
-     },
-     "buts2": {
-      "p": 0.009,
-      "lam": 0.142
-     },
-     "buts3": {
-      "p": 0.0,
-      "lam": 0.142
-     },
-     "passes2": {
-      "p": 0.01,
-      "lam": 0.149
-     },
-     "pts1": {
-      "p": 0.253,
-      "lam": 0.291
-     },
-     "pts2": {
-      "p": 0.035,
-      "lam": 0.291
-     }
     }
    },
    "result": null,
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "f4",
-    "pp": "aucune",
-    "f_t": 0.981,
-    "f_a": 0.981,
-    "f_g": 1.04,
-    "base": "combo"
+    "absent": true
    }
   },
   {
@@ -28060,7 +27862,7 @@
       "p": 0.485,
       "lam": 1.667,
       "detail": {
-       "rate60": 6.604,
+       "rate60": 6.605,
        "toi": 14.081,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -28116,7 +27918,7 @@
     "but_v5": {
      "buts": {
       "p": 0.169,
-      "lam": 0.187,
+      "lam": 0.186,
       "detail": {
        "sh": 0.119,
        "f_gardien": 0.949,
@@ -28144,7 +27946,7 @@
     "but3_v5": {
      "buts3": {
       "p": 0.001,
-      "lam": 0.189
+      "lam": 0.188
      }
     },
     "passe2_v5": {
@@ -28237,7 +28039,7 @@
       "p": 0.485,
       "lam": 1.667,
       "detail": {
-       "rate60": 6.604,
+       "rate60": 6.605,
        "toi": 14.081,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -28256,7 +28058,7 @@
      },
      "buts": {
       "p": 0.169,
-      "lam": 0.187,
+      "lam": 0.186,
       "detail": {
        "sh": 0.119,
        "f_gardien": 0.949,
@@ -28271,7 +28073,7 @@
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.189,
+      "lam": 0.188,
       "src": "but3_v5"
      },
      "passes": {
@@ -28312,11 +28114,11 @@
       "p": 0.237
      },
      "tirs4": {
-      "p": 0.097
+      "p": 0.098
      },
      "buts": {
       "p": 0.176,
-      "lam": 0.194
+      "lam": 0.193
      },
      "passes": {
       "p": 0.174,
@@ -28324,11 +28126,11 @@
      },
      "buts2": {
       "p": 0.017,
-      "lam": 0.194
+      "lam": 0.193
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.194
+      "lam": 0.193
      },
      "passes2": {
       "p": 0.016,
@@ -28527,7 +28329,7 @@
     },
     "but_v5": {
      "buts": {
-      "p": 0.21,
+      "p": 0.209,
       "lam": 0.236,
       "detail": {
        "sh": 0.121,
@@ -28667,7 +28469,7 @@
       "src": "v1"
      },
      "buts": {
-      "p": 0.21,
+      "p": 0.209,
       "lam": 0.236,
       "detail": {
        "sh": 0.121,
@@ -28728,7 +28530,7 @@
      },
      "buts": {
       "p": 0.222,
-      "lam": 0.252
+      "lam": 0.251
      },
      "passes": {
       "p": 0.179,
@@ -28736,11 +28538,11 @@
      },
      "buts2": {
       "p": 0.027,
-      "lam": 0.252
+      "lam": 0.251
      },
      "buts3": {
       "p": 0.002,
-      "lam": 0.252
+      "lam": 0.251
      },
      "passes2": {
       "p": 0.017,
@@ -29160,11 +28962,11 @@
      },
      "pts1": {
       "p": 0.359,
-      "lam": 0.445
+      "lam": 0.444
      },
      "pts2": {
       "p": 0.074,
-      "lam": 0.445
+      "lam": 0.444
      }
     }
    },
@@ -29287,7 +29089,7 @@
       "p": 0.498,
       "lam": 1.711,
       "detail": {
-       "rate60": 6.752,
+       "rate60": 6.753,
        "toi": 13.05,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -29333,17 +29135,17 @@
      },
      "pts1": {
       "p": 0.35,
-      "lam": 0.431
+      "lam": 0.43
      },
      "pts2": {
       "p": 0.07,
-      "lam": 0.431
+      "lam": 0.43
      }
     },
     "but_v5": {
      "buts": {
       "p": 0.184,
-      "lam": 0.205,
+      "lam": 0.204,
       "detail": {
        "sh": 0.131,
        "f_gardien": 0.949,
@@ -29365,7 +29167,7 @@
     "but2_v5": {
      "buts2": {
       "p": 0.025,
-      "lam": 0.242
+      "lam": 0.241
      }
     },
     "but3_v5": {
@@ -29464,7 +29266,7 @@
       "p": 0.498,
       "lam": 1.711,
       "detail": {
-       "rate60": 6.752,
+       "rate60": 6.753,
        "toi": 13.05,
        "f_opp": 1.131,
        "f_lieu": 1.03,
@@ -29483,7 +29285,7 @@
      },
      "buts": {
       "p": 0.184,
-      "lam": 0.205,
+      "lam": 0.204,
       "detail": {
        "sh": 0.131,
        "f_gardien": 0.949,
@@ -29493,7 +29295,7 @@
      },
      "buts2": {
       "p": 0.025,
-      "lam": 0.242,
+      "lam": 0.241,
       "src": "but2_v5"
      },
      "buts3": {
@@ -32176,7 +31978,7 @@
     "but_v5": {
      "buts": {
       "p": 0.317,
-      "lam": 0.381,
+      "lam": 0.38,
       "detail": {
        "sh": 0.132,
        "f_gardien": 1.095,
@@ -32316,7 +32118,7 @@
      },
      "buts": {
       "p": 0.317,
-      "lam": 0.381,
+      "lam": 0.38,
       "detail": {
        "sh": 0.132,
        "f_gardien": 1.095,
@@ -32375,7 +32177,7 @@
       "p": 0.236
      },
      "buts": {
-      "p": 0.354,
+      "p": 0.353,
       "lam": 0.436
      },
      "passes": {
@@ -32383,7 +32185,7 @@
       "lam": 0.44
      },
      "buts2": {
-      "p": 0.072,
+      "p": 0.071,
       "lam": 0.436
      },
      "buts3": {
@@ -32555,7 +32357,7 @@
      },
      "buts": {
       "p": 0.207,
-      "lam": 0.233,
+      "lam": 0.232,
       "detail": {
        "sh": 0.103,
        "f_gardien": 1.131
@@ -32579,11 +32381,11 @@
      },
      "buts2": {
       "p": 0.023,
-      "lam": 0.233
+      "lam": 0.232
      },
      "buts3": {
       "p": 0.002,
-      "lam": 0.233
+      "lam": 0.232
      },
      "passes2": {
       "p": 0.049,
@@ -32640,7 +32442,7 @@
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.394,
+      "p": 0.393,
       "lam": 0.5
      }
     },
@@ -32775,7 +32577,7 @@
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.394,
+      "p": 0.393,
       "lam": 0.5,
       "src": "pts1_v5"
      },
@@ -32821,11 +32623,11 @@
      },
      "pts1": {
       "p": 0.434,
-      "lam": 0.569
+      "lam": 0.568
      },
      "pts2": {
       "p": 0.112,
-      "lam": 0.569
+      "lam": 0.568
      }
     }
    },
@@ -33035,7 +32837,7 @@
     "pts1_v5": {
      "pts1": {
       "p": 0.275,
-      "lam": 0.322
+      "lam": 0.321
      }
     },
     "pts2_v5": {
@@ -33170,7 +32972,7 @@
      },
      "pts1": {
       "p": 0.275,
-      "lam": 0.322,
+      "lam": 0.321,
       "src": "pts1_v5"
      },
      "pts2": {
@@ -33607,7 +33409,7 @@
      },
      "buts": {
       "p": 0.19,
-      "lam": 0.211
+      "lam": 0.21
      },
      "passes": {
       "p": 0.263,
@@ -33615,11 +33417,11 @@
      },
      "buts2": {
       "p": 0.019,
-      "lam": 0.211
+      "lam": 0.21
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.211
+      "lam": 0.21
      },
      "passes2": {
       "p": 0.038,
@@ -33816,7 +33618,7 @@
     "but_v5": {
      "buts": {
       "p": 0.102,
-      "lam": 0.109,
+      "lam": 0.108,
       "detail": {
        "sh": 0.119,
        "f_gardien": 1.095,
@@ -33956,7 +33758,7 @@
      },
      "buts": {
       "p": 0.102,
-      "lam": 0.109,
+      "lam": 0.108,
       "detail": {
        "sh": 0.119,
        "f_gardien": 1.095,
@@ -34035,7 +33837,7 @@
       "lam": 0.176
      },
      "pts1": {
-      "p": 0.26,
+      "p": 0.259,
       "lam": 0.3
      },
      "pts2": {
@@ -34230,7 +34032,7 @@
       "p": 0.397,
       "lam": 0.504,
       "detail": {
-       "sh": 0.134,
+       "sh": 0.133,
        "f_gardien": 1.095,
        "pp": 3.821
       }
@@ -34256,7 +34058,7 @@
     "but3_v5": {
      "buts3": {
       "p": 0.018,
-      "lam": 0.545
+      "lam": 0.544
      }
     },
     "passe2_v5": {
@@ -34370,7 +34172,7 @@
       "p": 0.397,
       "lam": 0.504,
       "detail": {
-       "sh": 0.134,
+       "sh": 0.133,
        "f_gardien": 1.095,
        "pp": 3.821
       },
@@ -34383,7 +34185,7 @@
      },
      "buts3": {
       "p": 0.018,
-      "lam": 0.545,
+      "lam": 0.544,
       "src": "but3_v5"
      },
      "passes": {
@@ -34448,11 +34250,11 @@
      },
      "pts1": {
       "p": 0.639,
-      "lam": 1.019
+      "lam": 1.018
      },
      "pts2": {
       "p": 0.271,
-      "lam": 1.019
+      "lam": 1.018
      }
     }
    },
@@ -35009,7 +34811,7 @@
       "p": 0.102,
       "lam": 0.53,
       "detail": {
-       "rate60": 4.147,
+       "rate60": 4.148,
        "toi": 9.571,
        "f_opp": 0.972,
        "f_lieu": 0.97,
@@ -35186,7 +34988,7 @@
       "p": 0.102,
       "lam": 0.53,
       "detail": {
-       "rate60": 4.147,
+       "rate60": 4.148,
        "toi": 9.571,
        "f_opp": 0.972,
        "f_lieu": 0.97,
@@ -35473,8 +35275,8 @@
     },
     "but_v5": {
      "buts": {
-      "p": 0.342,
-      "lam": 0.417,
+      "p": 0.341,
+      "lam": 0.416,
       "detail": {
        "sh": 0.126,
        "f_gardien": 1.095,
@@ -35513,8 +35315,8 @@
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.578,
-      "lam": 0.862
+      "p": 0.577,
+      "lam": 0.861
      }
     },
     "pts2_v5": {
@@ -35613,8 +35415,8 @@
       "src": "v1"
      },
      "buts": {
-      "p": 0.342,
-      "lam": 0.417,
+      "p": 0.341,
+      "lam": 0.416,
       "detail": {
        "sh": 0.126,
        "f_gardien": 1.095,
@@ -35648,8 +35450,8 @@
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.578,
-      "lam": 0.862,
+      "p": 0.577,
+      "lam": 0.861,
       "src": "pts1_v5"
      },
      "pts2": {
@@ -35667,7 +35469,7 @@
       "lam": 2.557
      },
      "tirs3": {
-      "p": 0.459
+      "p": 0.46
      },
      "tirs4": {
       "p": 0.261
@@ -35828,7 +35630,7 @@
       "p": 0.258,
       "lam": 0.983,
       "detail": {
-       "rate60": 6.367,
+       "rate60": 6.368,
        "toi": 9.823,
        "f_opp": 0.972,
        "f_lieu": 0.97,
@@ -35874,17 +35676,17 @@
      },
      "pts1": {
       "p": 0.255,
-      "lam": 0.295
+      "lam": 0.294
      },
      "pts2": {
       "p": 0.036,
-      "lam": 0.295
+      "lam": 0.294
      }
     },
     "but_v5": {
      "buts": {
       "p": 0.097,
-      "lam": 0.104,
+      "lam": 0.103,
       "detail": {
        "sh": 0.122,
        "f_gardien": 1.095,
@@ -36005,7 +35807,7 @@
       "p": 0.258,
       "lam": 0.983,
       "detail": {
-       "rate60": 6.367,
+       "rate60": 6.368,
        "toi": 9.823,
        "f_opp": 0.972,
        "f_lieu": 0.97,
@@ -36024,7 +35826,7 @@
      },
      "buts": {
       "p": 0.097,
-      "lam": 0.104,
+      "lam": 0.103,
       "detail": {
        "sh": 0.122,
        "f_gardien": 1.095,
@@ -36248,7 +36050,7 @@
     "but_v5": {
      "buts": {
       "p": 0.147,
-      "lam": 0.161,
+      "lam": 0.16,
       "detail": {
        "sh": 0.12,
        "f_gardien": 1.095,
@@ -36276,7 +36078,7 @@
     "but3_v5": {
      "buts3": {
       "p": 0.001,
-      "lam": 0.179
+      "lam": 0.178
      }
     },
     "passe2_v5": {
@@ -36388,7 +36190,7 @@
      },
      "buts": {
       "p": 0.147,
-      "lam": 0.161,
+      "lam": 0.16,
       "detail": {
        "sh": 0.12,
        "f_gardien": 1.095,
@@ -36403,7 +36205,7 @@
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.179,
+      "lam": 0.178,
       "src": "but3_v5"
      },
      "passes": {
@@ -36467,7 +36269,7 @@
       "lam": 0.184
      },
      "pts1": {
-      "p": 0.301,
+      "p": 0.3,
       "lam": 0.357
      },
      "pts2": {
@@ -36508,7 +36310,7 @@
     2,
     4,
     5,
-    2
+    3
    ],
    "l10_goals": [
     0,
@@ -36542,7 +36344,7 @@
     "pj": 11,
     "b": 3,
     "a": 6,
-    "tirs": 34,
+    "tirs": 35,
     "pts": 9,
     "toi": 20.6,
     "eq_pj": 11,
@@ -36550,7 +36352,7 @@
     "proj": {
      "b": 22,
      "a": 45,
-     "tirs": 253,
+     "tirs": 261,
      "pts": 67
     },
     "max_pj": 82
@@ -36558,8 +36360,8 @@
    "preds": {
     "v0": {
      "tirs": {
-      "p": 0.814,
-      "lam": 3.091
+      "p": 0.826,
+      "lam": 3.182
      },
      "buts": {
       "p": 0.239,
@@ -36570,13 +36372,13 @@
       "lam": 0.545
      },
      "tirs1": {
-      "p": 0.955
+      "p": 0.959
      },
      "tirs3": {
-      "p": 0.597
+      "p": 0.616
      },
      "tirs4": {
-      "p": 0.373
+      "p": 0.393
      },
      "buts2": {
       "p": 0.031,
@@ -36601,22 +36403,22 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.657,
-      "lam": 2.341,
+      "p": 0.663,
+      "lam": 2.374,
       "detail": {
-       "rate60": 7.843,
+       "rate60": 7.961,
        "toi": 20.755,
        "f_opp": 0.972,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.915
+       "f_vs": 0.914
       }
      },
      "buts": {
-      "p": 0.286,
-      "lam": 0.338,
+      "p": 0.289,
+      "lam": 0.341,
       "detail": {
-       "sh": 0.128,
+       "sh": 0.127,
        "f_gardien": 1.131
       }
      },
@@ -36628,41 +36430,41 @@
       }
      },
      "tirs1": {
-      "p": 0.886
+      "p": 0.89
      },
      "tirs3": {
-      "p": 0.408
+      "p": 0.416
      },
      "tirs4": {
-      "p": 0.218
+      "p": 0.225
      },
      "buts2": {
       "p": 0.046,
-      "lam": 0.338
+      "lam": 0.341
      },
      "buts3": {
       "p": 0.005,
-      "lam": 0.338
+      "lam": 0.341
      },
      "passes2": {
       "p": 0.091,
       "lam": 0.501
      },
      "pts1": {
-      "p": 0.568,
-      "lam": 0.839
+      "p": 0.569,
+      "lam": 0.842
      },
      "pts2": {
-      "p": 0.205,
-      "lam": 0.839
+      "p": 0.206,
+      "lam": 0.842
      }
     },
     "but_v5": {
      "buts": {
-      "p": 0.285,
-      "lam": 0.335,
+      "p": 0.286,
+      "lam": 0.337,
       "detail": {
-       "sh": 0.127,
+       "sh": 0.126,
        "f_gardien": 1.095,
        "pp": 4.089
       }
@@ -36681,8 +36483,8 @@
     },
     "but2_v5": {
      "buts2": {
-      "p": 0.047,
-      "lam": 0.344
+      "p": 0.048,
+      "lam": 0.345
      }
     },
     "but3_v5": {
@@ -36774,43 +36576,43 @@
     },
     "combo": {
      "tirs1": {
-      "p": 0.886,
+      "p": 0.89,
       "src": "v1"
      },
      "tirs": {
-      "p": 0.657,
-      "lam": 2.341,
+      "p": 0.663,
+      "lam": 2.374,
       "detail": {
-       "rate60": 7.843,
+       "rate60": 7.961,
        "toi": 20.755,
        "f_opp": 0.972,
        "f_lieu": 0.97,
        "f_b2b": 1.0,
-       "f_vs": 0.915
+       "f_vs": 0.914
       },
       "src": "v1"
      },
      "tirs3": {
-      "p": 0.408,
+      "p": 0.416,
       "src": "v1"
      },
      "tirs4": {
-      "p": 0.218,
+      "p": 0.225,
       "src": "v1"
      },
      "buts": {
-      "p": 0.285,
-      "lam": 0.335,
+      "p": 0.286,
+      "lam": 0.337,
       "detail": {
-       "sh": 0.127,
+       "sh": 0.126,
        "f_gardien": 1.095,
        "pp": 4.089
       },
       "src": "but_v5"
      },
      "buts2": {
-      "p": 0.047,
-      "lam": 0.344,
+      "p": 0.048,
+      "lam": 0.345,
       "src": "but2_v5"
      },
      "buts3": {
@@ -36846,21 +36648,21 @@
     },
     "soir": {
      "tirs1": {
-      "p": 0.86
+      "p": 0.864
      },
      "tirs": {
-      "p": 0.602,
-      "lam": 2.102
+      "p": 0.609,
+      "lam": 2.131
      },
      "tirs3": {
-      "p": 0.349
+      "p": 0.356
      },
      "tirs4": {
-      "p": 0.172
+      "p": 0.178
      },
      "buts": {
-      "p": 0.292,
-      "lam": 0.346
+      "p": 0.294,
+      "lam": 0.348
      },
      "passes": {
       "p": 0.385,
@@ -36868,23 +36670,23 @@
      },
      "buts2": {
       "p": 0.048,
-      "lam": 0.346
+      "lam": 0.348
      },
      "buts3": {
       "p": 0.005,
-      "lam": 0.346
+      "lam": 0.348
      },
      "passes2": {
       "p": 0.086,
       "lam": 0.485
      },
      "pts1": {
-      "p": 0.564,
-      "lam": 0.831
+      "p": 0.565,
+      "lam": 0.833
      },
      "pts2": {
-      "p": 0.202,
-      "lam": 0.831
+      "p": 0.203,
+      "lam": 0.833
      }
     }
    },
@@ -39853,7 +39655,7 @@
       "p": 0.447,
       "lam": 1.541,
       "detail": {
-       "rate60": 6.165,
+       "rate60": 6.166,
        "toi": 13.318,
        "f_opp": 0.97,
        "f_lieu": 1.03,
@@ -40030,7 +39832,7 @@
       "p": 0.447,
       "lam": 1.541,
       "detail": {
-       "rate60": 6.165,
+       "rate60": 6.166,
        "toi": 13.318,
        "f_opp": 0.97,
        "f_lieu": 1.03,
@@ -40108,8 +39910,8 @@
       "p": 0.062
      },
      "buts": {
-      "p": 0.152,
-      "lam": 0.164
+      "p": 0.15,
+      "lam": 0.162
      },
      "passes": {
       "p": 0.179,
@@ -40117,23 +39919,23 @@
      },
      "buts2": {
       "p": 0.012,
-      "lam": 0.164
+      "lam": 0.162
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.164
+      "lam": 0.162
      },
      "passes2": {
       "p": 0.017,
       "lam": 0.197
      },
      "pts1": {
-      "p": 0.303,
-      "lam": 0.361
+      "p": 0.302,
+      "lam": 0.359
      },
      "pts2": {
       "p": 0.051,
-      "lam": 0.361
+      "lam": 0.359
      }
     }
    },
@@ -40145,7 +39947,7 @@
     "pp": "pp2",
     "f_t": 0.913,
     "f_a": 0.913,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -40343,13 +40145,13 @@
     "but2_v5": {
      "buts2": {
       "p": 0.131,
-      "lam": 0.629
+      "lam": 0.628
      }
     },
     "but3_v5": {
      "buts3": {
       "p": 0.013,
-      "lam": 0.479
+      "lam": 0.478
      }
     },
     "passe2_v5": {
@@ -40360,7 +40162,7 @@
     },
     "pts1_v5": {
      "pts1": {
-      "p": 0.756,
+      "p": 0.755,
       "lam": 1.409
      }
     },
@@ -40471,12 +40273,12 @@
      },
      "buts2": {
       "p": 0.131,
-      "lam": 0.629,
+      "lam": 0.628,
       "src": "but2_v5"
      },
      "buts3": {
       "p": 0.013,
-      "lam": 0.479,
+      "lam": 0.478,
       "src": "but3_v5"
      },
      "passes": {
@@ -40495,7 +40297,7 @@
       "src": "passe2_v5"
      },
      "pts1": {
-      "p": 0.756,
+      "p": 0.755,
       "lam": 1.409,
       "src": "pts1_v5"
      },
@@ -40520,32 +40322,32 @@
       "p": 0.307
      },
      "buts": {
-      "p": 0.407,
-      "lam": 0.523
+      "p": 0.403,
+      "lam": 0.516
      },
      "passes": {
       "p": 0.578,
       "lam": 0.862
      },
      "buts2": {
-      "p": 0.097,
-      "lam": 0.523
+      "p": 0.095,
+      "lam": 0.516
      },
      "buts3": {
       "p": 0.016,
-      "lam": 0.523
+      "lam": 0.516
      },
      "passes2": {
       "p": 0.214,
       "lam": 0.862
      },
      "pts1": {
-      "p": 0.75,
-      "lam": 1.386
+      "p": 0.748,
+      "lam": 1.379
      },
      "pts2": {
-      "p": 0.403,
-      "lam": 1.386
+      "p": 0.401,
+      "lam": 1.379
      }
     }
    },
@@ -40570,7 +40372,7 @@
     "pp": "pp1",
     "f_t": 0.932,
     "f_a": 0.932,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -40690,7 +40492,7 @@
       "p": 0.322,
       "lam": 1.163,
       "detail": {
-       "rate60": 5.365,
+       "rate60": 5.366,
        "toi": 13.014,
        "f_opp": 0.97,
        "f_lieu": 1.03,
@@ -40867,7 +40669,7 @@
       "p": 0.322,
       "lam": 1.163,
       "detail": {
-       "rate60": 5.365,
+       "rate60": 5.366,
        "toi": 13.014,
        "f_opp": 0.97,
        "f_lieu": 1.03,
@@ -40945,8 +40747,8 @@
       "p": 0.041
      },
      "buts": {
-      "p": 0.156,
-      "lam": 0.169
+      "p": 0.154,
+      "lam": 0.167
      },
      "passes": {
       "p": 0.26,
@@ -40954,23 +40756,23 @@
      },
      "buts2": {
       "p": 0.013,
-      "lam": 0.169
+      "lam": 0.167
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.169
+      "lam": 0.167
      },
      "passes2": {
       "p": 0.037,
       "lam": 0.301
      },
      "pts1": {
-      "p": 0.375,
-      "lam": 0.47
+      "p": 0.374,
+      "lam": 0.468
      },
      "pts2": {
       "p": 0.081,
-      "lam": 0.47
+      "lam": 0.468
      }
     }
    },
@@ -40982,7 +40784,7 @@
     "pp": "aucune",
     "f_t": 1.038,
     "f_a": 1.038,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -41160,7 +40962,7 @@
       "p": 0.088,
       "lam": 0.093,
       "detail": {
-       "sh": 0.115,
+       "sh": 0.114,
        "f_gardien": 0.98,
        "pp": 0.843
       }
@@ -41180,7 +40982,7 @@
     "but2_v5": {
      "buts2": {
       "p": 0.003,
-      "lam": 0.086
+      "lam": 0.085
      }
     },
     "but3_v5": {
@@ -41300,7 +41102,7 @@
       "p": 0.088,
       "lam": 0.093,
       "detail": {
-       "sh": 0.115,
+       "sh": 0.114,
        "f_gardien": 0.98,
        "pp": 0.843
       },
@@ -41308,7 +41110,7 @@
      },
      "buts2": {
       "p": 0.003,
-      "lam": 0.086,
+      "lam": 0.085,
       "src": "but2_v5"
      },
      "buts3": {
@@ -41341,13 +41143,61 @@
       "lam": 0.146,
       "src": "pts2_v5"
      }
+    },
+    "soir": {
+     "tirs1": {
+      "p": 0.577
+     },
+     "tirs": {
+      "p": 0.223,
+      "lam": 0.885
+     },
+     "tirs3": {
+      "p": 0.065
+     },
+     "tirs4": {
+      "p": 0.016
+     },
+     "buts": {
+      "p": 0.108,
+      "lam": 0.114
+     },
+     "passes": {
+      "p": 0.108,
+      "lam": 0.114
+     },
+     "buts2": {
+      "p": 0.006,
+      "lam": 0.114
+     },
+     "buts3": {
+      "p": 0.0,
+      "lam": 0.114
+     },
+     "passes2": {
+      "p": 0.006,
+      "lam": 0.114
+     },
+     "pts1": {
+      "p": 0.204,
+      "lam": 0.228
+     },
+     "pts2": {
+      "p": 0.022,
+      "lam": 0.228
+     }
     }
    },
    "result": null,
    "played": null,
    "cotes": null,
    "soir_info": {
-    "absent": true
+    "slot": "f4",
+    "pp": "aucune",
+    "f_t": 1.081,
+    "f_a": 1.081,
+    "f_g": 1.135,
+    "base": "combo"
    }
   },
   {
@@ -41457,10 +41307,10 @@
     },
     "v1": {
      "tirs": {
-      "p": 0.289,
+      "p": 0.29,
       "lam": 1.072,
       "detail": {
-       "rate60": 6.625,
+       "rate60": 6.626,
        "toi": 9.713,
        "f_opp": 0.97,
        "f_lieu": 1.03,
@@ -41634,10 +41484,10 @@
       "src": "v1"
      },
      "tirs": {
-      "p": 0.289,
+      "p": 0.29,
       "lam": 1.072,
       "detail": {
-       "rate60": 6.625,
+       "rate60": 6.626,
        "toi": 9.713,
        "f_opp": 0.97,
        "f_lieu": 1.03,
@@ -41699,61 +41549,13 @@
       "lam": 0.36,
       "src": "pts2_v5"
      }
-    },
-    "soir": {
-     "tirs1": {
-      "p": 0.667
-     },
-     "tirs": {
-      "p": 0.315,
-      "lam": 1.143
-     },
-     "tirs3": {
-      "p": 0.115
-     },
-     "tirs4": {
-      "p": 0.034
-     },
-     "buts": {
-      "p": 0.132,
-      "lam": 0.142
-     },
-     "passes": {
-      "p": 0.205,
-      "lam": 0.229
-     },
-     "buts2": {
-      "p": 0.009,
-      "lam": 0.142
-     },
-     "buts3": {
-      "p": 0.0,
-      "lam": 0.142
-     },
-     "passes2": {
-      "p": 0.023,
-      "lam": 0.229
-     },
-     "pts1": {
-      "p": 0.31,
-      "lam": 0.371
-     },
-     "pts2": {
-      "p": 0.054,
-      "lam": 0.371
-     }
     }
    },
    "result": null,
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "f4",
-    "pp": "pp2",
-    "f_t": 1.066,
-    "f_a": 1.066,
-    "f_g": 1.15,
-    "base": "combo"
+    "absent": true
    }
   },
   {
@@ -41956,7 +41758,7 @@
     "but3_v5": {
      "buts3": {
       "p": 0.001,
-      "lam": 0.175
+      "lam": 0.174
      }
     },
     "passe2_v5": {
@@ -41968,7 +41770,7 @@
     "pts1_v5": {
      "pts1": {
       "p": 0.228,
-      "lam": 0.259
+      "lam": 0.258
      }
     },
     "pts2_v5": {
@@ -42083,7 +41885,7 @@
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.175,
+      "lam": 0.174,
       "src": "but3_v5"
      },
      "passes": {
@@ -42103,7 +41905,7 @@
      },
      "pts1": {
       "p": 0.228,
-      "lam": 0.259,
+      "lam": 0.258,
       "src": "pts1_v5"
      },
      "pts2": {
@@ -42111,13 +41913,61 @@
       "lam": 0.277,
       "src": "pts2_v5"
      }
+    },
+    "soir": {
+     "tirs1": {
+      "p": 0.669
+     },
+     "tirs": {
+      "p": 0.316,
+      "lam": 1.147
+     },
+     "tirs3": {
+      "p": 0.116
+     },
+     "tirs4": {
+      "p": 0.035
+     },
+     "buts": {
+      "p": 0.127,
+      "lam": 0.135
+     },
+     "passes": {
+      "p": 0.181,
+      "lam": 0.2
+     },
+     "buts2": {
+      "p": 0.008,
+      "lam": 0.135
+     },
+     "buts3": {
+      "p": 0.0,
+      "lam": 0.135
+     },
+     "passes2": {
+      "p": 0.018,
+      "lam": 0.2
+     },
+     "pts1": {
+      "p": 0.285,
+      "lam": 0.336
+     },
+     "pts2": {
+      "p": 0.045,
+      "lam": 0.336
+     }
     }
    },
    "result": null,
    "played": null,
    "cotes": null,
    "soir_info": {
-    "absent": true
+    "slot": "f4",
+    "pp": "pp2",
+    "f_t": 1.084,
+    "f_a": 1.084,
+    "f_g": 1.135,
+    "base": "combo"
    }
   },
   {
@@ -42267,11 +42117,11 @@
      },
      "pts1": {
       "p": 0.553,
-      "lam": 0.806
+      "lam": 0.805
      },
      "pts2": {
       "p": 0.193,
-      "lam": 0.806
+      "lam": 0.805
      }
     },
     "but_v5": {
@@ -42305,7 +42155,7 @@
     "but3_v5": {
      "buts3": {
       "p": 0.012,
-      "lam": 0.466
+      "lam": 0.465
      }
     },
     "passe2_v5": {
@@ -42322,8 +42172,8 @@
     },
     "pts2_v5": {
      "pts2": {
-      "p": 0.245,
-      "lam": 0.947
+      "p": 0.244,
+      "lam": 0.946
      }
     },
     "tirs1_ml": {
@@ -42432,7 +42282,7 @@
      },
      "buts3": {
       "p": 0.012,
-      "lam": 0.466,
+      "lam": 0.465,
       "src": "but3_v5"
      },
      "passes": {
@@ -42456,8 +42306,8 @@
       "src": "pts1_v5"
      },
      "pts2": {
-      "p": 0.245,
-      "lam": 0.947,
+      "p": 0.244,
+      "lam": 0.946,
       "src": "pts2_v5"
      }
     },
@@ -42476,32 +42326,32 @@
       "p": 0.263
      },
      "buts": {
-      "p": 0.339,
-      "lam": 0.414
+      "p": 0.335,
+      "lam": 0.409
      },
      "passes": {
       "p": 0.318,
       "lam": 0.382
      },
      "buts2": {
-      "p": 0.065,
-      "lam": 0.414
+      "p": 0.064,
+      "lam": 0.409
      },
      "buts3": {
-      "p": 0.009,
-      "lam": 0.414
+      "p": 0.008,
+      "lam": 0.409
      },
      "passes2": {
       "p": 0.057,
       "lam": 0.382
      },
      "pts1": {
-      "p": 0.549,
-      "lam": 0.796
+      "p": 0.547,
+      "lam": 0.791
      },
      "pts2": {
-      "p": 0.19,
-      "lam": 0.796
+      "p": 0.188,
+      "lam": 0.791
      }
     }
    },
@@ -42530,7 +42380,7 @@
     "pp": "pp1",
     "f_t": 0.916,
     "f_a": 0.916,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -42877,61 +42727,13 @@
       "lam": 0.303,
       "src": "pts2_v5"
      }
-    },
-    "soir": {
-     "tirs1": {
-      "p": 0.655
-     },
-     "tirs": {
-      "p": 0.301,
-      "lam": 1.103
-     },
-     "tirs3": {
-      "p": 0.106
-     },
-     "tirs4": {
-      "p": 0.031
-     },
-     "buts": {
-      "p": 0.129,
-      "lam": 0.139
-     },
-     "passes": {
-      "p": 0.177,
-      "lam": 0.195
-     },
-     "buts2": {
-      "p": 0.009,
-      "lam": 0.139
-     },
-     "buts3": {
-      "p": 0.0,
-      "lam": 0.139
-     },
-     "passes2": {
-      "p": 0.017,
-      "lam": 0.195
-     },
-     "pts1": {
-      "p": 0.283,
-      "lam": 0.333
-     },
-     "pts2": {
-      "p": 0.045,
-      "lam": 0.333
-     }
     }
    },
    "result": null,
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "f4",
-    "pp": "aucune",
-    "f_t": 1.061,
-    "f_a": 1.061,
-    "f_g": 1.15,
-    "base": "combo"
+    "absent": true
    }
   },
   {
@@ -43292,7 +43094,7 @@
     },
     "soir": {
      "tirs1": {
-      "p": 0.662
+      "p": 0.663
      },
      "tirs": {
       "p": 0.309,
@@ -43305,32 +43107,32 @@
       "p": 0.033
      },
      "buts": {
-      "p": 0.136,
-      "lam": 0.146
+      "p": 0.134,
+      "lam": 0.144
      },
      "passes": {
       "p": 0.226,
       "lam": 0.256
      },
      "buts2": {
-      "p": 0.01,
-      "lam": 0.146
+      "p": 0.009,
+      "lam": 0.144
      },
      "buts3": {
-      "p": 0.001,
-      "lam": 0.146
+      "p": 0.0,
+      "lam": 0.144
      },
      "passes2": {
       "p": 0.028,
       "lam": 0.256
      },
      "pts1": {
-      "p": 0.331,
-      "lam": 0.402
+      "p": 0.33,
+      "lam": 0.4
      },
      "pts2": {
       "p": 0.062,
-      "lam": 0.402
+      "lam": 0.4
      }
     }
    },
@@ -43342,7 +43144,7 @@
     "pp": "aucune",
     "f_t": 1.03,
     "f_a": 1.03,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -43462,7 +43264,7 @@
       "p": 0.458,
       "lam": 1.576,
       "detail": {
-       "rate60": 5.766,
+       "rate60": 5.767,
        "toi": 17.779,
        "f_opp": 0.97,
        "f_lieu": 1.03,
@@ -43639,7 +43441,7 @@
       "p": 0.458,
       "lam": 1.576,
       "detail": {
-       "rate60": 5.766,
+       "rate60": 5.767,
        "toi": 17.779,
        "f_opp": 0.97,
        "f_lieu": 1.03,
@@ -43711,38 +43513,38 @@
       "lam": 1.519
      },
      "tirs3": {
-      "p": 0.201
+      "p": 0.202
      },
      "tirs4": {
       "p": 0.077
      },
      "buts": {
-      "p": 0.222,
-      "lam": 0.251
+      "p": 0.22,
+      "lam": 0.248
      },
      "passes": {
       "p": 0.273,
       "lam": 0.319
      },
      "buts2": {
-      "p": 0.027,
-      "lam": 0.251
+      "p": 0.026,
+      "lam": 0.248
      },
      "buts3": {
       "p": 0.002,
-      "lam": 0.251
+      "lam": 0.248
      },
      "passes2": {
       "p": 0.041,
       "lam": 0.319
      },
      "pts1": {
-      "p": 0.435,
-      "lam": 0.57
+      "p": 0.433,
+      "lam": 0.567
      },
      "pts2": {
-      "p": 0.112,
-      "lam": 0.57
+      "p": 0.111,
+      "lam": 0.567
      }
     }
    },
@@ -43754,7 +43556,7 @@
     "pp": "pp2",
     "f_t": 0.964,
     "f_a": 0.964,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -43930,7 +43732,7 @@
     "but_v5": {
      "buts": {
       "p": 0.39,
-      "lam": 0.492,
+      "lam": 0.491,
       "detail": {
        "sh": 0.148,
        "f_gardien": 0.98,
@@ -43957,7 +43759,7 @@
     },
     "but3_v5": {
      "buts3": {
-      "p": 0.022,
+      "p": 0.021,
       "lam": 0.584
      }
     },
@@ -44070,7 +43872,7 @@
      },
      "buts": {
       "p": 0.39,
-      "lam": 0.492,
+      "lam": 0.491,
       "detail": {
        "sh": 0.148,
        "f_gardien": 0.98,
@@ -44084,7 +43886,7 @@
       "src": "but2_v5"
      },
      "buts3": {
-      "p": 0.022,
+      "p": 0.021,
       "lam": 0.584,
       "src": "but3_v5"
      },
@@ -44129,32 +43931,32 @@
       "p": 0.318
      },
      "buts": {
-      "p": 0.399,
-      "lam": 0.509
+      "p": 0.395,
+      "lam": 0.502
      },
      "passes": {
       "p": 0.66,
       "lam": 1.078
      },
      "buts2": {
-      "p": 0.093,
-      "lam": 0.509
+      "p": 0.091,
+      "lam": 0.502
      },
      "buts3": {
       "p": 0.015,
-      "lam": 0.509
+      "lam": 0.502
      },
      "passes2": {
       "p": 0.293,
       "lam": 1.078
      },
      "pts1": {
-      "p": 0.795,
-      "lam": 1.587
+      "p": 0.794,
+      "lam": 1.58
      },
      "pts2": {
-      "p": 0.471,
-      "lam": 1.587
+      "p": 0.469,
+      "lam": 1.58
      }
     }
    },
@@ -44179,7 +43981,7 @@
     "pp": "pp1",
     "f_t": 0.901,
     "f_a": 0.901,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -44354,7 +44156,7 @@
     },
     "but_v5": {
      "buts": {
-      "p": 0.122,
+      "p": 0.121,
       "lam": 0.131,
       "detail": {
        "sh": 0.13,
@@ -44494,7 +44296,7 @@
       "src": "v1"
      },
      "buts": {
-      "p": 0.122,
+      "p": 0.121,
       "lam": 0.131,
       "detail": {
        "sh": 0.13,
@@ -44548,14 +44350,14 @@
       "lam": 1.039
      },
      "tirs3": {
-      "p": 0.093
+      "p": 0.094
      },
      "tirs4": {
       "p": 0.026
      },
      "buts": {
-      "p": 0.145,
-      "lam": 0.157
+      "p": 0.143,
+      "lam": 0.155
      },
      "passes": {
       "p": 0.244,
@@ -44563,23 +44365,23 @@
      },
      "buts2": {
       "p": 0.011,
-      "lam": 0.157
+      "lam": 0.155
      },
      "buts3": {
       "p": 0.001,
-      "lam": 0.157
+      "lam": 0.155
      },
      "passes2": {
       "p": 0.033,
       "lam": 0.28
      },
      "pts1": {
-      "p": 0.354,
-      "lam": 0.437
+      "p": 0.352,
+      "lam": 0.434
      },
      "pts2": {
-      "p": 0.072,
-      "lam": 0.437
+      "p": 0.071,
+      "lam": 0.434
      }
     }
    },
@@ -44591,7 +44393,7 @@
     "pp": "aucune",
     "f_t": 1.042,
     "f_a": 1.042,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -44742,8 +44544,8 @@
     },
     "but_v5": {
      "buts": {
-      "p": 0.231,
-      "lam": 0.263,
+      "p": 0.23,
+      "lam": 0.262,
       "detail": {
        "sh": 0.133,
        "f_gardien": 0.98,
@@ -44882,8 +44684,8 @@
       "src": "v1"
      },
      "buts": {
-      "p": 0.231,
-      "lam": 0.263,
+      "p": 0.23,
+      "lam": 0.262,
       "detail": {
        "sh": 0.133,
        "f_gardien": 0.98,
@@ -44942,8 +44744,8 @@
       "p": 0.101
      },
      "buts": {
-      "p": 0.243,
-      "lam": 0.279
+      "p": 0.24,
+      "lam": 0.275
      },
      "passes": {
       "p": 0.396,
@@ -44951,23 +44753,23 @@
      },
      "buts2": {
       "p": 0.032,
-      "lam": 0.279
+      "lam": 0.275
      },
      "buts3": {
       "p": 0.003,
-      "lam": 0.279
+      "lam": 0.275
      },
      "passes2": {
       "p": 0.092,
       "lam": 0.505
      },
      "pts1": {
-      "p": 0.543,
-      "lam": 0.783
+      "p": 0.541,
+      "lam": 0.78
      },
      "pts2": {
-      "p": 0.185,
-      "lam": 0.783
+      "p": 0.184,
+      "lam": 0.78
      }
     }
    },
@@ -44996,7 +44798,7 @@
     "pp": "pp1",
     "f_t": 0.923,
     "f_a": 0.923,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -45116,7 +44918,7 @@
       "p": 0.553,
       "lam": 1.908,
       "detail": {
-       "rate60": 6.823,
+       "rate60": 6.824,
        "toi": 18.817,
        "f_opp": 0.97,
        "f_lieu": 1.03,
@@ -45293,7 +45095,7 @@
       "p": 0.553,
       "lam": 1.908,
       "detail": {
-       "rate60": 6.823,
+       "rate60": 6.824,
        "toi": 18.817,
        "f_opp": 0.97,
        "f_lieu": 1.03,
@@ -45371,32 +45173,32 @@
       "p": 0.139
      },
      "buts": {
-      "p": 0.286,
-      "lam": 0.337
+      "p": 0.283,
+      "lam": 0.332
      },
      "passes": {
       "p": 0.314,
       "lam": 0.378
      },
      "buts2": {
-      "p": 0.045,
-      "lam": 0.337
+      "p": 0.044,
+      "lam": 0.332
      },
      "buts3": {
       "p": 0.005,
-      "lam": 0.337
+      "lam": 0.332
      },
      "passes2": {
       "p": 0.056,
       "lam": 0.378
      },
      "pts1": {
-      "p": 0.51,
-      "lam": 0.714
+      "p": 0.508,
+      "lam": 0.71
      },
      "pts2": {
-      "p": 0.161,
-      "lam": 0.714
+      "p": 0.159,
+      "lam": 0.71
      }
     }
    },
@@ -45425,7 +45227,7 @@
     "pp": "pp2",
     "f_t": 1.005,
     "f_a": 1.005,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -45800,8 +45602,8 @@
       "p": 0.252
      },
      "buts": {
-      "p": 0.216,
-      "lam": 0.243
+      "p": 0.214,
+      "lam": 0.24
      },
      "passes": {
       "p": 0.589,
@@ -45809,23 +45611,23 @@
      },
      "buts2": {
       "p": 0.025,
-      "lam": 0.243
+      "lam": 0.24
      },
      "buts3": {
       "p": 0.002,
-      "lam": 0.243
+      "lam": 0.24
      },
      "passes2": {
       "p": 0.224,
       "lam": 0.89
      },
      "pts1": {
-      "p": 0.678,
-      "lam": 1.133
+      "p": 0.677,
+      "lam": 1.13
      },
      "pts2": {
-      "p": 0.313,
-      "lam": 1.133
+      "p": 0.312,
+      "lam": 1.13
      }
     }
    },
@@ -45850,7 +45652,7 @@
     "pp": "pp1",
     "f_t": 0.931,
     "f_a": 0.931,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -46612,11 +46414,11 @@
      },
      "pts1": {
       "p": 0.201,
-      "lam": 0.225
+      "lam": 0.224
      },
      "pts2": {
       "p": 0.022,
-      "lam": 0.225
+      "lam": 0.224
      }
     }
    },
@@ -46628,7 +46430,7 @@
     "pp": "aucune",
     "f_t": 1.186,
     "f_a": 1.186,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -46978,45 +46780,45 @@
     },
     "soir": {
      "tirs1": {
-      "p": 0.552
+      "p": 0.617
      },
      "tirs": {
-      "p": 0.202,
-      "lam": 0.825
+      "p": 0.261,
+      "lam": 0.991
      },
      "tirs3": {
-      "p": 0.056
+      "p": 0.084
      },
      "tirs4": {
-      "p": 0.013
+      "p": 0.022
      },
      "buts": {
-      "p": 0.06,
-      "lam": 0.062
+      "p": 0.071,
+      "lam": 0.073
      },
      "passes": {
-      "p": 0.155,
-      "lam": 0.168
+      "p": 0.183,
+      "lam": 0.202
      },
      "buts2": {
-      "p": 0.002,
-      "lam": 0.062
+      "p": 0.003,
+      "lam": 0.073
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.062
+      "lam": 0.073
      },
      "passes2": {
-      "p": 0.013,
-      "lam": 0.168
+      "p": 0.018,
+      "lam": 0.202
      },
      "pts1": {
-      "p": 0.205,
-      "lam": 0.23
+      "p": 0.241,
+      "lam": 0.275
      },
      "pts2": {
-      "p": 0.023,
-      "lam": 0.23
+      "p": 0.032,
+      "lam": 0.275
      }
     }
    },
@@ -47024,11 +46826,11 @@
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "d3",
+    "slot": "d1",
     "pp": "aucune",
-    "f_t": 1.166,
-    "f_a": 1.166,
-    "f_g": 1.15,
+    "f_t": 1.401,
+    "f_a": 1.401,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -47404,31 +47206,31 @@
      },
      "buts": {
       "p": 0.069,
-      "lam": 0.072
+      "lam": 0.071
      },
      "passes": {
       "p": 0.2,
       "lam": 0.224
      },
      "buts2": {
-      "p": 0.003,
-      "lam": 0.072
+      "p": 0.002,
+      "lam": 0.071
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.072
+      "lam": 0.071
      },
      "passes2": {
       "p": 0.022,
       "lam": 0.224
      },
      "pts1": {
-      "p": 0.256,
-      "lam": 0.296
+      "p": 0.255,
+      "lam": 0.295
      },
      "pts2": {
       "p": 0.036,
-      "lam": 0.296
+      "lam": 0.295
      }
     }
    },
@@ -47440,7 +47242,7 @@
     "pp": "aucune",
     "f_t": 0.983,
     "f_a": 0.983,
-    "f_g": 1.15,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -47802,45 +47604,45 @@
     },
     "soir": {
      "tirs1": {
-      "p": 0.592
+      "p": 0.569
      },
      "tirs": {
-      "p": 0.237,
-      "lam": 0.924
+      "p": 0.216,
+      "lam": 0.865
      },
      "tirs3": {
-      "p": 0.072
+      "p": 0.062
      },
      "tirs4": {
-      "p": 0.018
+      "p": 0.015
      },
      "buts": {
-      "p": 0.075,
-      "lam": 0.078
+      "p": 0.07,
+      "lam": 0.072
      },
      "passes": {
-      "p": 0.361,
-      "lam": 0.448
+      "p": 0.343,
+      "lam": 0.42
      },
      "buts2": {
       "p": 0.003,
-      "lam": 0.078
+      "lam": 0.072
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.078
+      "lam": 0.072
      },
      "passes2": {
-      "p": 0.075,
-      "lam": 0.448
+      "p": 0.067,
+      "lam": 0.42
      },
      "pts1": {
-      "p": 0.409,
-      "lam": 0.527
+      "p": 0.389,
+      "lam": 0.492
      },
      "pts2": {
-      "p": 0.098,
-      "lam": 0.527
+      "p": 0.088,
+      "lam": 0.492
      }
     }
    },
@@ -47848,11 +47650,11 @@
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "d1",
+    "slot": "d2",
     "pp": "pp2",
-    "f_t": 0.978,
-    "f_a": 0.978,
-    "f_g": 1.15,
+    "f_t": 0.916,
+    "f_a": 0.916,
+    "f_g": 1.135,
     "base": "combo"
    }
   },
@@ -48208,45 +48010,45 @@
     },
     "soir": {
      "tirs1": {
-      "p": 0.764
+      "p": 0.734
      },
      "tirs": {
-      "p": 0.439,
-      "lam": 1.515
+      "p": 0.397,
+      "lam": 1.386
      },
      "tirs3": {
-      "p": 0.2
+      "p": 0.169
      },
      "tirs4": {
-      "p": 0.076
+      "p": 0.06
      },
      "buts": {
-      "p": 0.101,
-      "lam": 0.107
+      "p": 0.092,
+      "lam": 0.097
      },
      "passes": {
-      "p": 0.223,
-      "lam": 0.252
+      "p": 0.206,
+      "lam": 0.23
      },
      "buts2": {
-      "p": 0.005,
-      "lam": 0.107
+      "p": 0.004,
+      "lam": 0.097
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.107
+      "lam": 0.097
      },
      "passes2": {
-      "p": 0.027,
-      "lam": 0.252
+      "p": 0.023,
+      "lam": 0.23
      },
      "pts1": {
-      "p": 0.301,
-      "lam": 0.359
+      "p": 0.279,
+      "lam": 0.327
      },
      "pts2": {
-      "p": 0.051,
-      "lam": 0.359
+      "p": 0.043,
+      "lam": 0.327
      }
     }
    },
@@ -48254,11 +48056,11 @@
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "d2",
+    "slot": "d3",
     "pp": "aucune",
-    "f_t": 1.162,
-    "f_a": 1.162,
-    "f_g": 1.15,
+    "f_t": 1.063,
+    "f_a": 1.063,
+    "f_g": 1.135,
     "base": "combo"
    }
   }
@@ -57854,12 +57656,12 @@
    },
    "ratios_encours": null,
    "temps": {
-    "depuis_debut_calcul": 36,
+    "depuis_debut_calcul": 35,
     "ratios": 0,
-    "production": 38,
+    "production": 40,
     "retro": 0,
     "juge": 0,
-    "total_ml": 38
+    "total_ml": 40
    }
   },
   "versions": [
