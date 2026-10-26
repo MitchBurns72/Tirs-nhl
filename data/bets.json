@@ -487,18 +487,9 @@
   }
  },
  {
-  "date": "2026-10-25",
-  "gameId": 2026020182,
-  "version": "combo",
-  "cree": "2026-10-26T01:55:00.000Z",
   "id": "moj1025e",
-  "type": "manuel",
-  "p": null,
-  "cote": 1.29,
-  "mise": 0.75,
-  "reel": true,
-  "label": "MTL @ WPG · WPG moins de 0.5 but en 3e période",
-  "sous": "pari de période, réglé à la main",
-  "maj": "2026-10-26T02:01:34.926Z"
+  "cree": "2026-10-26T01:55:00.000Z",
+  "supprime": true,
+  "maj": "2026-10-26T02:05:36.643Z"
  }
 ]
