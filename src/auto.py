@@ -507,7 +507,9 @@ def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=Fals
     # sur les soirs récents qu'il n'a jamais vus (juge hebdo, voir ml.py) ---
     if ml:
         etat["ml"] = {"date": aujourdhui, "n_lignes": ml.get("n_lignes"), "n_matchs": ml.get("n_matchs"),
-                      "msg": ml.get("msg"), "rapports": ml.get("rapports") or (etat.get("ml") or {}).get("rapports")}
+                      "msg": ml.get("msg"), "rapports": ml.get("rapports") or (etat.get("ml") or {}).get("rapports"),
+                      "ratios": ml.get("ratios") or (etat.get("ml") or {}).get("ratios"),
+                      "ratios_encours": ml.get("ratios_encours"), "temps": ml.get("temps")}
         if ml.get("juge"):
             etat["ml_juge"] = aujourdhui
             for cat, r in ml["rapports"].items():

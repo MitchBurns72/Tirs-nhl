@@ -237,6 +237,31 @@ FEATS_M = ["h_bf10", "h_ba10", "h_tf10", "h_ta10", "h_bf_sa", "h_ba_sa", "h_sv_s
            "a_bf10", "a_ba10", "a_tf10", "a_ta10", "a_bf_sa", "a_ba_sa", "a_sv_sa", "a_repos", "a_b2b", "a_km",
            "h_mee10", "a_mee10", "h_pim_sa", "a_pim_sa", "rink", "meteo", "mois", "h_pj", "a_pj"]
 NAN = float("nan")
+# Noms lisibles pour le Labo (les expressions trouvées sont affichées avec ces noms)
+LISIBLE = {"def": "défenseur", "dom": "à domicile", "pj": "PJ saison", "pj_prev": "PJ saison passée",
+           "t5": "tirs 5 derniers", "t10": "tirs 10 derniers", "t20": "tirs 20 derniers", "t_sa": "tirs/match saison",
+           "t_prev": "tirs/match saison passée", "toi5": "TOI 5 derniers", "toi10": "TOI 10 derniers",
+           "toi_sa": "TOI saison", "toi_prev": "TOI saison passée", "t60_10": "tirs/60 10 derniers",
+           "t60_sa": "tirs/60 saison", "t60_prev": "tirs/60 saison passée", "att10": "tentatives 10 derniers",
+           "att60_10": "tentatives/60 10 derniers", "att60_sa": "tentatives/60 saison", "pp10": "min PP 10 derniers",
+           "pp_sa": "min PP saison", "b10": "buts 10 derniers", "b_sa": "buts/match saison", "b_prev": "buts/match saison passée",
+           "a10": "passes 10 derniers", "a_sa": "passes/match saison", "a_prev": "passes/match saison passée",
+           "sh_pct": "% de tir", "t_std10": "irrégularité des tirs", "mee10": "mises en échec 10 derniers",
+           "pim10": "pénalités 10 derniers", "repos": "jours de repos", "b2b": "back-to-back", "km": "km voyagés",
+           "fuseau": "décalage horaire", "o_ta10": "tirs accordés adv. 10 derniers", "o_ta_sa": "tirs accordés adv. saison",
+           "o_ba_sa": "buts accordés adv. saison", "o_sv_sa": "% arrêts adv. saison", "o_mee10": "mises en échec adv.",
+           "o_pim_sa": "pénalités adv. saison", "o_repos": "repos adv.", "o_b2b": "back-to-back adv.",
+           "e_tf10": "tirs de son équipe 10 derniers", "e_bf_sa": "buts de son équipe saison",
+           "vs_t": "tirs/match vs cet adv.", "vs_n": "matchs vs cet adv.", "rink": "effet aréna",
+           "meteo": "température dehors", "mois": "mois",
+           "h_bf10": "buts pour loc. 10", "h_ba10": "buts contre loc. 10", "h_tf10": "tirs pour loc. 10",
+           "h_ta10": "tirs contre loc. 10", "h_bf_sa": "buts pour loc. saison", "h_ba_sa": "buts contre loc. saison",
+           "h_sv_sa": "% arrêts loc.", "h_repos": "repos loc.", "h_b2b": "b2b loc.", "h_km": "km loc.",
+           "a_bf10": "buts pour vis. 10", "a_ba10": "buts contre vis. 10", "a_tf10": "tirs pour vis. 10",
+           "a_ta10": "tirs contre vis. 10", "a_bf_sa": "buts pour vis. saison", "a_ba_sa": "buts contre vis. saison",
+           "a_sv_sa": "% arrêts vis.", "a_repos": "repos vis.", "a_b2b": "b2b vis.", "a_km": "km vis.",
+           "h_mee10": "mises en échec loc.", "a_mee10": "mises en échec vis.", "h_pim_sa": "pénalités loc.",
+           "a_pim_sa": "pénalités vis.", "h_pj": "PJ loc.", "a_pj": "PJ vis."}
 
 
 def _moy(xs):
@@ -401,7 +426,348 @@ def construire(saisons_pretes, saison_courante, jour, stats_jeux_courant):
 
 
 # =================================================================================
-# 3. Entraîner, valider honnêtement, prédire
+# 3. Chercheur de ratios (Mitch, 25 oct. : « tu fais un ratio avec toutes les données,
+#    même une expression complexe, pis tu run toutes les possibilités »)
+# =================================================================================
+#
+# Niveau 1 : chaque paire de données (a, b) en a/b, a×b et a−b. Avec 50 données joueur,
+#            ça fait 1225 paires × 3 = 3675 expressions.
+# Niveau 2 : 40 expressions du niveau 1 (les 20 meilleures au crible + les 20 les plus liées
+#            au résultat brut) recombinées avec chaque donnée de base
+#            (ex. (tirs/60 ÷ arrêts adverses) × TOI) : environ 6000 de plus.
+# Pas de log, racine, carré, etc. : un arbre de décision coupe à un seuil, donc
+#   « x > 4 » et « log x > 1.39 » c'est la même question. Ça ne testerait rien de nouveau.
+#   (Même chose pour b/a vs a/b et b−a vs a−b : même ordre, même coupure.)
+#
+# Comment on note une expression sans entraîner 7000 modèles :
+#   1. Le modèle de base (sans ratios) prédit chaque ligne d'entraînement SANS l'avoir vue
+#      (2 plis par semaines alternées). Résidu = ce qui est arrivé − ce qu'il prédisait.
+#   2. À proba égale du modèle, est-ce que les tranches de l'expression séparent ceux qui
+#      ont réussi de ceux qui ont manqué ? Si oui, elle sait quelque chose que le modèle ne
+#      savait PAS. Mesuré hors échantillon (appris sur une moitié des semaines, vérifié sur
+#      l'autre). Détails dans _Crible.
+#   3. Les 25 meilleures par catégorie sont ajoutées au modèle. Test final sur les soirs
+#      récents jamais vus : on les garde seulement si le modèle fait mieux avec qu'avant.
+#      Sinon le ML continue sans elles (et le Labo montre quand même ce qui a été trouvé).
+# Tout ça sur les soirs AVANT la coupe : les soirs de test n'ont jamais servi à choisir.
+# Refait chaque semaine, et dès qu'une nouvelle saison passée est récoltée.
+
+OPS = ("/", "*", "-")
+TOP_RATIOS = 25            # expressions gardées par catégorie
+GRAINES_N2 = 20            # expressions du niveau 1 recombinées au niveau 2 (+ autant en lien brut)
+GRAINES_BRUT = 10
+MAX_LIGNES_CRIBLE = 100000 # échantillon pour noter (testé : retrouve un ratio caché dès 6000 lignes)
+T0 = time.time()           # début du calcul (le module est importé au départ de run.py)
+FIN_RATIOS_S = 13 * 60     # on ne lance pas la recherche si le calcul roule déjà depuis 13 min
+BUDGET_RATIOS_S = 360      # max par calcul ; le reste continue au prochain (3 calculs par jour)
+
+
+def _tuple(e):
+    return e if isinstance(e, int) else (e[0], _tuple(e[1]), _tuple(e[2]))
+
+
+def _liste(e):
+    return e if isinstance(e, int) else [e[0], _liste(e[1]), _liste(e[2])]
+
+
+def _eval(X, e, cache):
+    """Valeur d'une expression sur toutes les lignes. Division par ~0 ou infini -> manquant."""
+    import numpy as np
+    if isinstance(e, int):
+        return X[:, e]
+    if e in cache:
+        return cache[e]
+    op, a, b = e
+    v = _op(op, _eval(X, a, cache), _eval(X, b, cache))
+    if not isinstance(a, int) or not isinstance(b, int):
+        cache[e] = v          # à la prédiction : quelques expressions, on garde les morceaux
+    return v
+
+
+def _op(op, va, vb):
+    import numpy as np
+    with np.errstate(all="ignore"):
+        if op == "/":
+            v = np.where(np.abs(vb) > 1e-9, va / np.where(np.abs(vb) > 1e-9, vb, 1.0), np.nan)
+        elif op == "*":
+            v = va * vb
+        else:
+            v = va - vb
+    return np.where(np.isfinite(v), v, np.nan)
+
+
+def _nom(e, noms):
+    if isinstance(e, int):
+        return noms[e]
+    op, a, b = e
+    return f"({_nom(a, noms)} {'÷' if op == '/' else '×' if op == '*' else '−'} {_nom(b, noms)})"
+
+
+N_TR, N_TP, K_RETR = 10, 6, 50   # tranches de l'expression, tranches de la proba du modèle, rétrécissement
+
+
+class _Crible:
+    """Note une expression : est-ce qu'elle explique des erreurs du modèle de base, À PROBA ÉGALE ?
+
+    Pour chaque cible, on coupe les lignes en 10 tranches de l'expression × 6 tranches de la
+    proba que le modèle de base donnait. On compare l'erreur restante avec et sans les tranches
+    de l'expression, MESURÉE HORS ÉCHANTILLON : moyennes apprises sur une moitié des semaines,
+    vérifiées sur l'autre, et vice versa.
+      - « À proba égale » : si le modèle disait 40 % pour deux joueurs, est-ce que celui qui a
+        la valeur haute de l'expression a réussi plus souvent ? Si oui, c'est de l'info que le
+        modèle n'avait pas. (Testé : une simple tranche de l'expression seule ne voyait rien
+        quand le modèle avait déjà appris une partie du ratio.)
+      - Hors échantillon : une expression bidon donne un score négatif (elle « explique » du
+        bruit qui ne revient pas). Avec 7000 essais, c'est ce qui empêche de garder les chanceuses.
+    Sans P (P=None) : même chose contre la simple moyenne = lien brut avec le résultat."""
+
+    def __init__(self, R, P, na):
+        """Les lignes doivent être triées : moitié A = [:na], moitié B = [na:] (vues, pas de copies)."""
+        import numpy as np
+        n, nc = R.shape
+        self.nc, self.na = nc, na
+        self.ech = np.random.default_rng(0).integers(0, 1 << 40, 4000)
+        self.np_ = N_TP + 1 if P is not None else 1
+        ip = np.zeros((n, nc), dtype=np.int64)
+        if P is not None:
+            for c in range(nc):
+                qp = np.unique(np.quantile(P[:, c], np.linspace(0, 1, N_TP + 1)[1:-1]))
+                ip[:, c] = np.searchsorted(qp, P[:, c], side="right")
+        self.ip = ip
+        self.plis = []
+        for a, b in ((slice(0, na), slice(na, n)), (slice(na, n), slice(0, na))):
+            off = np.arange(nc) * self.np_
+            cnt = np.bincount((ip[a] + off).ravel(), minlength=nc * self.np_).reshape(nc, self.np_)
+            s0 = np.bincount((ip[a] + off).ravel(), weights=R[a].ravel(), minlength=nc * self.np_).reshape(nc, self.np_)
+            m0 = s0 / (cnt + K_RETR)
+            e0 = ((R[b] - m0[np.arange(nc), ip[b]]) ** 2).sum(0)
+            self.plis.append((a, b, np.ascontiguousarray(R[a]).ravel(), np.ascontiguousarray(R[b]), e0))
+
+    def score(self, v):
+        import numpy as np
+        nc = self.nc
+        ok = ~np.isnan(v)
+        n_ok = int(ok.sum())
+        if n_ok < 200:
+            return np.zeros(nc)
+        vo = v[ok] if n_ok < len(v) else v
+        # Coupures de tranches sur un échantillon de 4000 valeurs : même résultat, bien plus vite
+        q = np.unique(np.quantile(vo[self.ech % len(vo)] if len(vo) > 4000 else vo, np.linspace(0, 1, N_TR + 1)[1:-1]))
+        if len(q) == 0:
+            return np.zeros(nc)
+        iv = np.searchsorted(q, v, side="right")
+        if n_ok < len(v):
+            iv[~ok] = len(q) + 1               # les manquants ont leur propre tranche
+        nb = (len(q) + 2) * self.np_
+        idx = (iv * self.np_)[:, None] + self.ip + np.arange(nc) * nb   # une case par (cible, tranche)
+        g = np.zeros(nc)
+        for a, b, Ra, Rb, e0 in self.plis:
+            ia = idx[a].ravel()
+            m = np.bincount(ia, weights=Ra, minlength=nc * nb) / (np.bincount(ia, minlength=nc * nb) + K_RETR)
+            e1 = ((Rb - m[idx[b]]) ** 2).sum(0)
+            g += (e0 - e1) / (e0 + 1e-12)
+        return g / 2
+
+
+def _residus_hors_pli(Clf, X, Y, dates):
+    """Résidus du modèle de base sur des lignes qu'il n'a pas vues (2 plis, semaines alternées)."""
+    import numpy as np
+    pli = np.array([(date.fromisoformat(d).toordinal() // 7) % 2 for d in dates])
+    R = np.zeros((len(X), len(Y)))
+    for c, (cle, y) in enumerate(Y.items()):
+        p = np.full(len(X), float(y.mean()))
+        for k in (0, 1):
+            a, b = pli != k, pli == k
+            if a.sum() >= 100 and b.sum() and len(set(y[a])) > 1:
+                p[b] = _Ajuste(_modele(Clf, int(a.sum())), X[a], y[a]).predict_proba(X[b])[:, 1]
+        R[:, c] = y - p
+    return R
+
+
+def _top_json(top):
+    return {c: [[sc_, _liste(e)] for sc_, e in t] for c, t in top.items()}
+
+
+def _top_tuple(top, cles):
+    return {c: [(sc_, _tuple(e)) for sc_, e in (top or {}).get(c, [])] for c in cles}
+
+
+def chercher_ratios(Clf, X, Y, noms, dates, saisons, coupe, sc, fin_s, etat=None):
+    """Toutes les expressions niveau 1 + niveau 2, notées sur les soirs avant `coupe`.
+    Reprend là où le calcul précédent s'est arrêté (`etat`) : si le temps manque, on sauve la
+    progression et le prochain calcul continue. Les soirs avant la coupe ne changent pas d'un
+    jour à l'autre et tout est déterministe : la reprise donne exactement le même résultat.
+    Retourne (résultat ou None si pas fini, état de progression)."""
+    import numpy as np
+    cles = list(Y)
+    if not etat or etat.get("coupe") != coupe:
+        etat = {"coupe": coupe, "i": 0, "g": 0, "top": {}, "top_brut": {}, "graines": None, "teste": 0, "fin": {}}
+    rng = np.random.default_rng(0)
+    tr_all = np.where(np.array([d < coupe for d in dates]))[0]
+    va = np.where(np.array([d >= coupe and s == sc for d, s in zip(dates, saisons)]))[0]
+    if len(tr_all) < 300 or not len(va):
+        return None, None
+    tr = np.sort(rng.choice(tr_all, MAX_LIGNES_CRIBLE, replace=False)) if len(tr_all) > MAX_LIGNES_CRIBLE else tr_all
+    # Moitiés = semaines paires / impaires ; on range la moitié A d'abord (calcul plus rapide)
+    moit = np.array([(date.fromisoformat(dates[i]).toordinal() // 7) % 2 == 0 for i in tr])
+    tr = np.concatenate([tr[moit], tr[~moit]])
+    na = int(moit.sum())
+    Xt = np.ascontiguousarray(X[tr].T)       # une expression = 2 colonnes contiguës
+    nbase = X.shape[1]
+    top = _top_tuple(etat["top"], cles)               # cible -> [(score, expr)]
+    top_brut = _top_tuple(etat["top_brut"], cles)
+
+    def sauver():
+        etat["top"], etat["top_brut"] = _top_json(top), _top_json(top_brut)
+        return None, etat
+
+    if etat["graines"] is None or etat["g"] < len(etat["graines"]):
+        R = _residus_hors_pli(Clf, X[tr], {c: Y[c][tr] for c in cles}, [dates[i] for i in tr])
+        P = np.stack([Y[c][tr] for c in cles], 1) - R          # proba du modèle de base, hors pli
+        crible = _Crible(R, P, na)
+        Yc = np.stack([Y[c][tr] for c in cles], 1).astype(float)
+        brut = _Crible(Yc - Yc.mean(0), None, na)
+
+        def noter(e, v, parent=None):
+            sc_ = crible.score(v)
+            etat["teste"] += 1
+            if parent is not None:
+                # Niveau 2 : doit battre clairement son parent, sinon c'est le parent + du bruit
+                sc_ = np.where(sc_ > np.maximum(parent, 0) * 1.15, sc_, 0.0)
+            for ci, c in enumerate(cles):
+                t = top[c]
+                if sc_[ci] > 0 and (len(t) < TOP_RATIOS or sc_[ci] > t[-1][0]):
+                    t.append((float(sc_[ci]), e)); t.sort(key=lambda x: -x[0]); del t[TOP_RATIOS:]
+
+        def noter_brut(e, v):
+            sb = brut.score(v)
+            for ci, c in enumerate(cles):
+                t = top_brut[c]
+                if sb[ci] > 0 and (len(t) < GRAINES_BRUT or sb[ci] > t[-1][0]):
+                    t.append((float(sb[ci]), e)); t.sort(key=lambda x: -x[0]); del t[GRAINES_BRUT:]
+
+        # Niveau 1 : toutes les paires
+        while etat["i"] < nbase:
+            i = etat["i"]
+            for j in range(i + 1, nbase):
+                for op in OPS:
+                    e = (op, i, j)
+                    v = _op(op, Xt[i], Xt[j])
+                    noter(e, v)
+                    noter_brut(e, v)
+            etat["i"] += 1
+            if time.time() > fin_s:
+                return sauver()
+        if etat["graines"] is None:
+            # Graines du niveau 2 : les meilleures au crible de chaque cible...
+            graines = []
+            for rang in range(TOP_RATIOS):
+                for c in cles:
+                    if rang < len(top[c]) and top[c][rang][1] not in graines and isinstance(top[c][rang][1], tuple):
+                        graines.append(top[c][rang][1])
+                if len(graines) >= GRAINES_N2:
+                    break
+            graines = graines[:GRAINES_N2]
+            # ... + les paires les plus liées au résultat brut : une paire que le modèle connaît
+            #   déjà (score 0 au crible) peut devenir payante combinée avec une 3e donnée
+            for rang in range(GRAINES_BRUT):
+                for c in cles:
+                    if rang < len(top_brut[c]) and top_brut[c][rang][1] not in graines:
+                        graines.append(top_brut[c][rang][1])
+                if len(graines) >= GRAINES_N2 * 2:
+                    break
+            etat["graines"] = [_liste(g) for g in graines[:GRAINES_N2 * 2]]
+        # Niveau 2 : chaque graine recombinée avec chaque donnée de base
+        while etat["g"] < len(etat["graines"]):
+            g = _tuple(etat["graines"][etat["g"]])
+            vg = _eval(Xt.T, g, {})
+            par = crible.score(vg)
+            for i in range(nbase):
+                for op in OPS:
+                    noter((op, g, i), _op(op, vg, Xt[i]), par)
+            etat["g"] += 1
+            if time.time() > fin_s:
+                return sauver()
+    # Choix (sur l'entraînement seulement) puis test final sur les soirs jamais vus
+    trf = tr_all
+    dt = [dates[i] for i in tr]
+    fait_ici = False
+    for c in cles:
+        if c in etat["fin"]:
+            continue
+        if fait_ici and time.time() > fin_s:
+            return sauver()
+        fait_ici = True
+        y = Y[c]
+        exprs = _choisir(Clf, Xt.T, y[tr], dt, [e for _, e in top[c]]) if top[c] else []
+        r = {"exprs": [_liste(e) for e in exprs], "choisies": [_nom(e, noms) for e in exprs],
+             "noms": [_nom(e, noms) for _, e in top[c]],
+             "scores": [round(s_, 5) for s_, _ in top[c]], "utile": False, "gain_vs_ml": None,
+             "n_va": int(len(va)), "pos_va": int(y[va].sum())}
+        if exprs and len(set(y[trf])) > 1:
+            pb = _Ajuste(_modele(Clf, len(trf)), X[trf], y[trf]).predict_proba(X[va])[:, 1]
+            pr = _Ajuste(_modele(Clf, len(trf)), X[trf], y[trf], exprs).predict_proba(X[va])[:, 1]
+            yv = y[va].tolist()
+            bb, br = _brier(pb.tolist(), yv), _brier(pr.tolist(), yv)
+            r["gain_vs_ml"] = float((bb - br) / bb) if bb else None
+            r["utile"] = bool(r["gain_vs_ml"] and r["gain_vs_ml"] > 0 and r["pos_va"] >= 20)
+        etat["fin"][c] = r
+    sauver()
+    return etat["fin"], etat
+
+
+ESSAIS_CHOIX = 8
+
+
+def _choisir(Clf, Xt, yt, dt, cands):
+    """Ajout une à une des meilleures expressions : on en garde une seulement si le modèle fait
+    mieux AVEC elle sur le dernier quart des soirs d'entraînement. Pourquoi pas les 25 d'un coup :
+    plusieurs se ressemblent (variantes du même ratio) et 25 colonnes de bruit noient le signal.
+    Les soirs de test final ne servent PAS ici (sinon on choisirait sur l'examen)."""
+    import numpy as np
+    jours = sorted(set(dt))
+    if len(jours) < 8:
+        return []
+    c = jours[int(len(jours) * 0.75)]
+    a = np.array([d < c for d in dt]); b = ~a
+    if yt[b].sum() < 20 or len(set(yt[a])) < 2:
+        return []
+    yb = yt[b].tolist()
+    def brier(ex):
+        return _brier(_Ajuste(_modele(Clf, int(a.sum())), Xt[a], yt[a], ex).predict_proba(Xt[b])[:, 1].tolist(), yb)
+    base, choisies, rejets = brier([]), [], 0
+    for e in cands[:ESSAIS_CHOIX]:
+        bri = brier(choisies + [e])
+        if bri < base * (1 - 0.0005):
+            choisies.append(e); base = bri; rejets = 0
+        else:
+            rejets += 1
+            if rejets >= 3:
+                break
+    return choisies
+
+
+def _ratios_a_faire(sel, jour, saisons_pretes):
+    if not sel:
+        return True
+    if sorted(sel.get("saisons", [])) != sorted(saisons_pretes):
+        return True          # une saison passée de plus récoltée : on recherche avec
+    return (date.fromisoformat(jour) - date.fromisoformat(sel["date"])).days >= 7
+
+
+def exprs_de(sel, groupe, cle, depuis=None):
+    """Expressions à utiliser pour une cible. `depuis` : semaine prédite (walk-forward) ;
+    avant la coupe de la recherche, on n'en met pas (elles ont été choisies sur ces soirs-là)."""
+    r = ((sel or {}).get(groupe) or {}).get(cle) or {}
+    if not r.get("utile"):
+        return None
+    if depuis is not None and depuis < sel.get("coupe", "9999"):
+        return None
+    return r["exprs"]
+
+
+# =================================================================================
+# 4. Entraîner, valider honnêtement, prédire
 # =================================================================================
 
 def _cible(cat, tirs, b, a):
@@ -418,16 +784,28 @@ def _modele(Clf, n):
 
 class _Ajuste:
     """Un modèle + les colonnes vides à l'entraînement (ex. la météo pas encore récoltée).
-    scikit-learn plante sur une colonne 100 % vide : on la met à 0, et pareil à la prédiction."""
+    scikit-learn plante sur une colonne 100 % vide : on la met à 0, et pareil à la prédiction.
+    `exprs` : les ratios trouvés par le chercheur (section 4), ajoutés comme colonnes en plus.
+    Ils sont recalculés à la prédiction à partir des mêmes données de base, donc rien d'autre
+    à changer ailleurs."""
 
-    def __init__(self, modele, X, y):
+    def __init__(self, modele, X, y, exprs=None):
         import numpy as np
-        self.vides = np.all(np.isnan(X), axis=0)
-        Xc = X.copy(); Xc[:, self.vides] = 0
+        self.exprs = [_tuple(e) for e in (exprs or [])]
+        Xc = self._augmenter(X)
+        self.vides = np.all(np.isnan(Xc), axis=0)
+        Xc[:, self.vides] = 0
         self.m = modele.fit(Xc, y)
 
+    def _augmenter(self, X):
+        import numpy as np
+        if not self.exprs:
+            return X.copy()
+        cache = {}
+        return np.hstack([X] + [_eval(X, e, cache)[:, None] for e in self.exprs])
+
     def _prep(self, X):
-        Xc = X.copy(); Xc[:, self.vides] = 0
+        Xc = self._augmenter(X); Xc[:, self.vides] = 0
         return Xc
 
     def predict_proba(self, X):
@@ -446,7 +824,8 @@ def _semaine(d):
     return (x - timedelta(days=x.weekday())).isoformat()
 
 
-def entrainer(LJ, LM, saison_courante, historique, principales, juger=True, retro_max_semaines=2):
+def entrainer(LJ, LM, saison_courante, historique, principales, juger=True, retro_max_semaines=2,
+              jour=None, pretes=None):
     """Entraîne les modèles de production (toutes les données), écrit les prédictions honnêtes
     des soirs passés (semaine par semaine) et, si `juger`, mesure chaque catégorie contre la
     recette en service sur les 30 % de soirs les plus récents, jamais vus."""
@@ -467,20 +846,65 @@ def entrainer(LJ, LM, saison_courante, historique, principales, juger=True, retr
           "o55": np.array([1 if r[4] + r[5] > 5.5 else 0 for r in LM]),
           "o65": np.array([1 if r[4] + r[5] > 6.5 else 0 for r in LM])} if LM else {}
 
+    jours_sc = sorted({r[0] for r in LJ if r[1] == sc})
+
+    # --- Chercheur de ratios (hebdo, et dès qu'une saison passée s'ajoute) ---
+    # La sélection en service (ratios.json) reste utilisée tant que la nouvelle recherche
+    # n'est pas finie ; la recherche en cours (ratios_encours.json) avance à chaque calcul.
+    sel = _lire(DIR_HIST / "ratios.json", None)
+    pretes = sorted(pretes or {r[1] for r in LJ})
+    t_r = time.time()
+    if (jour and len(jours_sc) >= 6 and _ratios_a_faire(sel, jour, pretes)
+            and t_r - T0 < FIN_RATIOS_S):
+        f_enc = DIR_HIST / "ratios_encours.json"
+        enc = _lire(f_enc, None)
+        if (not enc or enc.get("saisons") != pretes
+                or (date.fromisoformat(jour) - date.fromisoformat(enc["debut"])).days >= 7):
+            enc = {"debut": jour, "saisons": pretes, "coupe": jours_sc[int(len(jours_sc) * 0.7)],
+                   "j": None, "m": None, "secondes": 0, "calculs": 0}
+        fin_s = t_r + min(BUDGET_RATIOS_S, FIN_RATIOS_S + BUDGET_RATIOS_S - (t_r - T0))
+        coupe_r = enc["coupe"]
+        rj, enc["j"] = chercher_ratios(Clf, X, ys, [LISIBLE.get(f, f) for f in FEATS_J], dates, [r[1] for r in LJ],
+                                       coupe_r, sc, fin_s, enc["j"])
+        rm = None
+        if rj is not None and XM is not None and len(XM) >= MIN_MATCHS:
+            rm, enc["m"] = chercher_ratios(Clf, XM, yM, [LISIBLE.get(f, f) for f in FEATS_M], dM, [r[1] for r in LM],
+                                           coupe_r, sc, fin_s, enc["m"])
+        # (None, None) = pas assez de soirs de matchs pour chercher : rien à attendre de ce côté
+        fini_m = rm is not None or XM is None or len(XM) < MIN_MATCHS or (rj is not None and enc["m"] is None)
+        enc["secondes"] += round(time.time() - t_r); enc["calculs"] += 1
+        teste = (enc["j"] or {}).get("teste", 0) + (enc["m"] or {}).get("teste", 0)
+        if rj is not None and fini_m:
+            sel = {"date": jour, "debut": enc["debut"], "coupe": coupe_r, "saisons": pretes, "j": rj, "m": rm or {},
+                   "graines_j": len((enc["j"] or {}).get("graines") or []),
+                   "testees": teste, "secondes": enc["secondes"], "calculs": enc["calculs"]}
+            _ecrire(DIR_HIST / "ratios.json", sel)
+            f_enc.unlink(missing_ok=True)
+            print(f"  ratios : {teste} expressions testées en {enc['secondes']} s ({enc['calculs']} calcul(s))")
+        elif rj is None and enc["j"] is None:
+            print("  ratios : pas assez de soirs pour chercher")
+        else:
+            _ecrire(f_enc, enc)
+            out["ratios_encours"] = {"testees": teste, "debut": enc["debut"], "secondes": enc["secondes"]}
+            print(f"  ratios : {teste} expressions testées jusqu'ici, on continue au prochain calcul")
+    out["ratios"] = _resume_ratios(sel)
+    out["temps"] = {"depuis_debut_calcul": round(t_r - T0), "ratios": round(time.time() - t_r)}
+    t_p = time.time()
+
     # --- Production : tout ce qui précède ce soir ---
     mods = {"clf": {}, "reg": {}, "m": {}}
     for stat in ("tirs", "buts", "passes"):
         mods["reg"][stat] = _Ajuste(Reg(loss="poisson", learning_rate=0.05, max_iter=300, max_leaf_nodes=24,
                                         min_samples_leaf=60, early_stopping=True, random_state=0), X, cnt[stat])
     for cat in CATS_J:
-        mods["clf"][cat] = _Ajuste(_modele(Clf, len(X)), X, ys[cat])
+        mods["clf"][cat] = _Ajuste(_modele(Clf, len(X)), X, ys[cat], exprs_de(sel, "j", cat))
     if XM is not None and len(XM) >= MIN_MATCHS:
         for k in yM:
-            mods["m"][k] = _Ajuste(_modele(Clf, len(XM)), XM, yM[k])
+            mods["m"][k] = _Ajuste(_modele(Clf, len(XM)), XM, yM[k], exprs_de(sel, "m", k))
     out["modeles"] = mods
+    out["temps"]["production"] = round(time.time() - t_p); t_p = time.time()
 
     # --- Walk-forward : semaine par semaine, modèle entraîné seulement sur l'avant ---
-    jours_sc = sorted({r[0] for r in LJ if r[1] == sc})
     deja = {h.get("ml_semaine") for h in historique if h.get("ml_semaine")}
     semaines = sorted({_semaine(d) for d in jours_sc})
     for w in [w for w in semaines if w not in deja][:retro_max_semaines]:
@@ -489,19 +913,21 @@ def entrainer(LJ, LM, saison_courante, historique, principales, juger=True, retr
         preds_w, preds_m = {}, {}
         if tr.sum() >= MIN_LIGNES and len(va):
             for cat in CATS_J:
-                ps = _Ajuste(_modele(Clf, int(tr.sum())), X[tr], ys[cat][tr]).predict_proba(X[va])[:, 1]
+                ps = _Ajuste(_modele(Clf, int(tr.sum())), X[tr], ys[cat][tr], exprs_de(sel, "j", cat, w)).predict_proba(X[va])[:, 1]
                 for i, ri in enumerate(va):
                     preds_w.setdefault((LJ[ri][0], LJ[ri][3]), {})[f"{cat}_ml"] = {MARCHE_DE[cat]: {"p": round(float(ps[i]), 4)}}
             if XM is not None:
                 trm = np.array([d < w for d in dM]); vam = np.where(np.array([w <= d < fin for d in dM]))[0]
                 if trm.sum() >= MIN_MATCHS and len(vam):
-                    pm = {k: _Ajuste(_modele(Clf, int(trm.sum())), XM[trm], yM[k][trm]).predict_proba(XM[vam])[:, 1] for k in yM}
+                    pm = {k: _Ajuste(_modele(Clf, int(trm.sum())), XM[trm], yM[k][trm], exprs_de(sel, "m", k, w)).predict_proba(XM[vam])[:, 1] for k in yM}
                     for i, ri in enumerate(vam):
                         preds_m[(LM[ri][0], LM[ri][2])] = {
                             "vic_ml": {"p_home": round(float(pm["vic"][i]), 4)},
                             "tot_ml": {"p_over": {"5.5": round(float(pm["o55"][i]), 4), "6.5": round(float(pm["o65"][i]), 4)}}}
         out["retro"][w] = preds_w
         out["retro_m"][w] = preds_m
+
+    out["temps"]["retro"] = round(time.time() - t_p); t_p = time.time()
 
     # --- Juge honnête (hebdo) ---
     if juger and len(jours_sc) >= 6:
@@ -518,7 +944,7 @@ def entrainer(LJ, LM, saison_courante, historique, principales, juger=True, retr
                     stock_m[(h["date"], str(g["gameId"]))] = g.get("preds", {})
         for cat in CATS_J:
             champ = principales.get(cat, "v1")
-            ps = _Ajuste(_modele(Clf, int(tr.sum())), X[tr], ys[cat][tr]).predict_proba(X[va_i])[:, 1]
+            ps = _Ajuste(_modele(Clf, int(tr.sum())), X[tr], ys[cat][tr], exprs_de(sel, "j", cat)).predict_proba(X[va_i])[:, 1]
             a, b, y = [], [], []
             for i, ri in enumerate(va_i):
                 pv = (stock.get((LJ[ri][0], LJ[ri][3])) or {}).get(champ, {}).get(MARCHE_DE[cat])
@@ -530,7 +956,7 @@ def entrainer(LJ, LM, saison_courante, historique, principales, juger=True, retr
         if XM is not None:
             trm = np.array([d < coupe for d in dM]); vam = [i for i, d in enumerate(dM) if d >= coupe and LM[i][1] == sc]
             if trm.sum() >= MIN_MATCHS and vam:
-                pm = {k: _Ajuste(_modele(Clf, int(trm.sum())), XM[trm], yM[k][trm]).predict_proba(XM[vam])[:, 1] for k in yM}
+                pm = {k: _Ajuste(_modele(Clf, int(trm.sum())), XM[trm], yM[k][trm], exprs_de(sel, "m", k)).predict_proba(XM[vam])[:, 1] for k in yM}
                 for cat, cles in (("vic", ("vic",)), ("tot", ("o55", "o65"))):
                     champ = principales.get(cat, "v1")
                     a, b, y = [], [], []
@@ -545,7 +971,26 @@ def entrainer(LJ, LM, saison_courante, historique, principales, juger=True, retr
                     b_ml, b_ch = _brier(a, y), _brier(b, y)
                     out["rapports"][cat] = {"champion": champ, "n": len(y), "pos": int(sum(y)), "coupe": coupe,
                                             "gain": (b_ch - b_ml) / b_ch if b_ch and b_ml is not None else None}
+    out["temps"]["juge"] = round(time.time() - t_p)
+    out["temps"]["total_ml"] = round(time.time() - t_r)
     return out
+
+
+def _resume_ratios(sel):
+    """Ce que le Labo affiche : les 5 meilleures expressions par cible et si elles servent."""
+    if not sel:
+        return None
+    noms_m = {"vic": "Victoire", "o55": "Total 5.5", "o65": "Total 6.5"}
+    cibles = {}
+    for grp in ("j", "m"):
+        for c, r in (sel.get(grp) or {}).items():
+            cibles[c if grp == "j" else f"m_{c}"] = {
+                "nom": noms_m.get(c) if grp == "m" else None,
+                "top": [[n, s_] for n, s_ in zip(r["noms"][:5], r["scores"][:5])],
+                "choisies": r.get("choisies") or [],
+                "utile": r["utile"], "gain_vs_ml": r["gain_vs_ml"], "pos_va": r.get("pos_va")}
+    return {"date": sel["date"], "testees": sel.get("testees"), "calculs": sel.get("calculs"),
+            "secondes": sel.get("secondes"), "coupe": sel.get("coupe"), "cibles": cibles}
 
 
 def predire_soir(res, E, jour, entrees, games, meteo_soir):

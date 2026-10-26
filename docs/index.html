@@ -1165,7 +1165,27 @@ function mlHTML(ml){
       : `<tr><td>${NOMS_CAT[cat] || cat}</td><td class="${(r.gain ?? 0) > 0 ? "ok" : "ko"}">${sg(r.gain)}</td><td>${r.n}</td><td>${r.champion}</td></tr>`).join("");
   return `<div><span class="lbl">Machine learning</span>
     <p class="aide">${(ml.n_lignes || 0).toLocaleString("fr-CA")} lignes joueur-match et ${(ml.n_matchs || 0).toLocaleString("fr-CA")} matchs (saison + saisons passées récoltées)${ml.msg ? ` · ${ml.msg}` : ""}. Le modèle prend une catégorie seulement s'il bat la recette en service sur des soirs qu'il n'a jamais vus.</p>
-    ${raps ? `<div class="tbl"><table class="classement"><thead><tr><th>Catégorie</th><th>ML vs service</th><th>Prédictions</th><th>En service</th></tr></thead><tbody>${raps}</tbody></table></div>` : ""}</div>`;
+    ${raps ? `<div class="tbl"><table class="classement"><thead><tr><th>Catégorie</th><th>ML vs service</th><th>Prédictions</th><th>En service</th></tr></thead><tbody>${raps}</tbody></table></div>` : ""}</div>
+    ${ratiosHTML(ml.ratios, ml.ratios_encours)}`;
+}
+
+// Chercheur de ratios : toutes les paires de données (a÷b, a×b, a−b) + recombinaisons
+function ratiosHTML(r, enc){
+  const encours = enc ? `<p class="aide">Nouvelle recherche en cours depuis le ${enc.debut} : ${(enc.testees || 0).toLocaleString("fr-CA")} expressions testées jusqu'ici, continue au prochain calcul.</p>` : "";
+  if (!r) return `<div><span class="lbl">Chercheur de ratios</span>${encours || `<p class="aide">Pas encore lancé : il part quand il y a assez de soirs dans la saison.</p>`}</div>`;
+  const lignes = Object.entries(r.cibles || {}).map(([c, x]) => {
+    const nom = x.nom || NOMS_CAT[c] || c;
+    const top = (x.top || []).slice(0, 3).map(([n, s]) => `${n} <span class="aide">${(s * 100).toFixed(2)} %</span>`).join("<br>")
+      + ((x.choisies || []).length ? `<br><span class="aide">Gardées dans le modèle :</span> ${x.choisies.join(" · ")}` : "");
+    const verdict = x.gain_vs_ml == null ? "–"
+      : x.utile ? `<span class="ok">utilisés (${sg(x.gain_vs_ml)})</span>`
+      : (x.pos_va ?? 99) < 20 ? "trop rare pour juger" : `<span class="ko">pas utilisés (${sg(x.gain_vs_ml)})</span>`;
+    return `<tr><td>${nom}</td><td style="text-align:left">${top}</td><td>${verdict}</td></tr>`;
+  }).join("");
+  return `<div><span class="lbl">Chercheur de ratios</span>
+    <p class="aide">${(r.testees || 0).toLocaleString("fr-CA")} expressions testées le ${r.date}${r.secondes != null ? ` en ${Math.round(r.secondes / 60)} min` : ""}${r.calculs > 1 ? ` sur ${r.calculs} calculs` : ""}. Le % = part de l'erreur restante du modèle que l'expression explique. Ajoutées une à une seulement si elles aident, puis gardées seulement si le modèle fait mieux avec, sur les soirs depuis le ${r.coupe} qu'il n'a jamais vus.</p>
+    ${encours}
+    <div class="tbl"><table class="classement"><thead><tr><th>Catégorie</th><th>Meilleures expressions trouvées</th><th>Verdict</th></tr></thead><tbody>${lignes}</tbody></table></div></div>`;
 }
 
 // ---- Labo : patterns + journal du recalcul hebdo ----------------------------------

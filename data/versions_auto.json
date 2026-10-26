@@ -549,19 +549,19 @@
   {
    "marche": "passes",
    "segment": "Début de saison (moins de 5 matchs)",
-   "n": 3066,
-   "predit": 0.25217847358121337,
-   "reel": 0.23059360730593606,
-   "z": -2.815776087367566,
+   "n": 3069,
+   "predit": 0.25202724014336925,
+   "reel": 0.2303681981101336,
+   "z": -2.8275421519788297,
    "sens": "surestimé"
   }
  ],
  "donnees": {
-  "joueurs": 6188,
-  "matchs": 180
+  "joueurs": 6222,
+  "matchs": 181
  },
  "dernier_tuning": "2026-10-21",
- "maj": "2026-10-26T00:12+00:00",
+ "maj": "2026-10-26T01:49+00:00",
  "retirees": [
   "v2.1",
   "v2.2",
@@ -706,8 +706,8 @@
  "prochain_recalcul": "2026-10-31",
  "ml": {
   "date": "2026-10-25",
-  "n_lignes": 100897,
-  "n_matchs": 2803,
+  "n_lignes": 148118,
+  "n_matchs": 4115,
   "msg": null,
   "rapports": {
    "tirs1": {
@@ -801,6 +801,462 @@
     "coupe": "2026-10-17",
     "gain": -0.14627173973473237
    }
+  },
+  "ratios": {
+   "date": "2026-10-25",
+   "testees": 14373,
+   "calculs": 1,
+   "secondes": 317,
+   "coupe": "2026-10-17",
+   "cibles": {
+    "tirs1": {
+     "nom": null,
+     "top": [
+      [
+       "((TOI 5 derniers × tirs/60 saison passée) × tirs accordés adv. saison)",
+       0.00042
+      ],
+      [
+       "((tirs/match saison passée ÷ décalage horaire) × tirs accordés adv. 10 derniers)",
+       0.00029
+      ],
+      [
+       "((TOI 5 derniers × tirs/60 saison passée) − jours de repos)",
+       0.00027
+      ],
+      [
+       "((tirs/match saison passée ÷ décalage horaire) − buts/match saison passée)",
+       0.00023
+      ],
+      [
+       "((tirs/match saison passée ÷ décalage horaire) − % de tir)",
+       0.00022
+      ]
+     ],
+     "choisies": [
+      "((TOI 5 derniers × tirs/60 saison passée) × tirs accordés adv. saison)"
+     ],
+     "utile": true,
+     "gain_vs_ml": 0.0013564545131450442,
+     "pos_va": 1577
+    },
+    "tirs2": {
+     "nom": null,
+     "top": [
+      [
+       "((défenseur × repos adv.) − jours de repos)",
+       0.0004
+      ],
+      [
+       "((back-to-back ÷ repos adv.) × mois)",
+       0.00032
+      ],
+      [
+       "((back-to-back ÷ repos adv.) ÷ buts 10 derniers)",
+       0.00032
+      ],
+      [
+       "(défenseur − jours de repos)",
+       0.00032
+      ],
+      [
+       "((défenseur × repos adv.) − à domicile)",
+       0.00028
+      ]
+     ],
+     "choisies": [
+      "((défenseur × repos adv.) − jours de repos)"
+     ],
+     "utile": false,
+     "gain_vs_ml": -0.0015503517766746286,
+     "pos_va": 908
+    },
+    "tirs3": {
+     "nom": null,
+     "top": [
+      [
+       "((TOI 5 derniers × tirs/60 saison passée) − mises en échec adv.)",
+       0.00057
+      ],
+      [
+       "((TOI 5 derniers × tirs/60 saison passée) ÷ % arrêts adv. saison)",
+       0.00054
+      ],
+      [
+       "((TOI 5 derniers × tirs/60 saison passée) − mois)",
+       0.00045
+      ],
+      [
+       "((TOI 5 derniers × tirs/60 saison passée) × tirs/match saison passée)",
+       0.00039
+      ],
+      [
+       "((TOI 5 derniers × tirs/60 saison passée) × tirs/match saison)",
+       0.00038
+      ]
+     ],
+     "choisies": [
+      "((TOI 5 derniers × tirs/60 saison passée) − mises en échec adv.)"
+     ],
+     "utile": false,
+     "gain_vs_ml": -0.0018780686608837556,
+     "pos_va": 462
+    },
+    "tirs4": {
+     "nom": null,
+     "top": [
+      [
+       "((TOI 5 derniers × tirs/60 saison) − tentatives/60 saison)",
+       0.0006
+      ],
+      [
+       "((TOI 5 derniers × tirs/60 saison) − tirs/match vs cet adv.)",
+       0.00056
+      ],
+      [
+       "((TOI 5 derniers × tirs/60 saison) − irrégularité des tirs)",
+       0.00046
+      ],
+      [
+       "((TOI 5 derniers × tirs/60 saison passée) ÷ buts de son équipe saison)",
+       0.00044
+      ],
+      [
+       "((TOI 5 derniers × tirs/60 saison passée) × à domicile)",
+       0.00042
+      ]
+     ],
+     "choisies": [
+      "((TOI 5 derniers × tirs/60 saison) − tentatives/60 saison)"
+     ],
+     "utile": false,
+     "gain_vs_ml": -0.003339827896260839,
+     "pos_va": 211
+    },
+    "but": {
+     "nom": null,
+     "top": [
+      [
+       "((tirs/match saison × % de tir) ÷ à domicile)",
+       0.00043
+      ],
+      [
+       "((tirs 20 derniers × % de tir) ÷ à domicile)",
+       0.00043
+      ],
+      [
+       "(buts/match saison ÷ back-to-back)",
+       0.00032
+      ],
+      [
+       "(à domicile ÷ jours de repos)",
+       0.00031
+      ],
+      [
+       "(défenseur − à domicile)",
+       0.0003
+      ]
+     ],
+     "choisies": [
+      "((tirs/match saison × % de tir) ÷ à domicile)"
+     ],
+     "utile": true,
+     "gain_vs_ml": 0.000535699338094209,
+     "pos_va": 330
+    },
+    "but2": {
+     "nom": null,
+     "top": [
+      [
+       "((TOI 5 derniers × tirs/60 saison passée) × % de tir)",
+       0.0003
+      ],
+      [
+       "((TOI 5 derniers × % de tir) × tirs/60 saison passée)",
+       0.0003
+      ],
+      [
+       "(back-to-back adv. × matchs vs cet adv.)",
+       0.00027
+      ],
+      [
+       "((tirs 20 derniers × % de tir) × % de tir)",
+       0.00023
+      ],
+      [
+       "(buts/match saison passée × passes 10 derniers)",
+       0.00022
+      ]
+     ],
+     "choisies": [],
+     "utile": false,
+     "gain_vs_ml": null,
+     "pos_va": 38
+    },
+    "but3": {
+     "nom": null,
+     "top": [
+      [
+       "((tirs/match saison − % arrêts adv. saison) − défenseur)",
+       0.00065
+      ],
+      [
+       "((défenseur − tirs/match saison) ÷ % arrêts adv. saison)",
+       0.00059
+      ],
+      [
+       "((TOI 5 derniers × tirs/60 saison) − mois)",
+       0.00055
+      ],
+      [
+       "((défenseur − tirs/match saison) × tirs 10 derniers)",
+       0.00054
+      ],
+      [
+       "((défenseur − tirs 20 derniers) × TOI 5 derniers)",
+       0.00053
+      ]
+     ],
+     "choisies": [
+      "((TOI 5 derniers × tirs/60 saison) − mois)"
+     ],
+     "utile": false,
+     "gain_vs_ml": -0.0005457501891996373,
+     "pos_va": 4
+    },
+    "passe": {
+     "nom": null,
+     "top": [
+      [
+       "((TOI 5 derniers × % de tir) × TOI 10 derniers)",
+       0.00046
+      ],
+      [
+       "((défenseur − à domicile) ÷ TOI 10 derniers)",
+       0.00044
+      ],
+      [
+       "((TOI 5 derniers × passes/match saison) − buts de son équipe saison)",
+       0.00039
+      ],
+      [
+       "((TOI saison × passes/match saison) × tirs 20 derniers)",
+       0.00036
+      ],
+      [
+       "((tirs 20 derniers × passes/match saison) × TOI saison)",
+       0.00036
+      ]
+     ],
+     "choisies": [
+      "((TOI 5 derniers × % de tir) × TOI 10 derniers)",
+      "((TOI saison × passes/match saison) × tirs 20 derniers)"
+     ],
+     "utile": false,
+     "gain_vs_ml": -0.0038156740519550494,
+     "pos_va": 509
+    },
+    "passe2": {
+     "nom": null,
+     "top": [
+      [
+       "((TOI 10 derniers × passes/match saison) × % de tir)",
+       0.00081
+      ],
+      [
+       "((passes/match saison passée × tirs/match vs cet adv.) × TOI saison passée)",
+       0.00075
+      ],
+      [
+       "((TOI 5 derniers × % de tir) × passes/match saison)",
+       0.00071
+      ],
+      [
+       "(TOI 5 derniers × passes/match saison)",
+       0.0007
+      ],
+      [
+       "((TOI saison × passes/match saison) × % de tir)",
+       0.00067
+      ]
+     ],
+     "choisies": [
+      "((TOI 10 derniers × passes/match saison) × % de tir)",
+      "((passes/match saison passée × tirs/match vs cet adv.) × TOI saison passée)"
+     ],
+     "utile": true,
+     "gain_vs_ml": 0.001808008632816545,
+     "pos_va": 81
+    },
+    "pts1": {
+     "nom": null,
+     "top": [
+      [
+       "((tirs/match saison × passes/match saison) × effet aréna)",
+       0.00076
+      ],
+      [
+       "((tirs 20 derniers × passes/match saison) × effet aréna)",
+       0.00068
+      ],
+      [
+       "((tirs/60 saison × passes/match saison) × effet aréna)",
+       0.00054
+      ],
+      [
+       "((tirs 20 derniers × passes/match saison) ÷ effet aréna)",
+       0.00053
+      ],
+      [
+       "((tirs 20 derniers × passes/match saison) − effet aréna)",
+       0.00052
+      ]
+     ],
+     "choisies": [],
+     "utile": false,
+     "gain_vs_ml": null,
+     "pos_va": 745
+    },
+    "pts2": {
+     "nom": null,
+     "top": [
+      [
+       "((tentatives/60 saison × back-to-back adv.) ÷ décalage horaire)",
+       0.00041
+      ],
+      [
+       "((tirs/match saison × TOI 5 derniers) ÷ défenseur)",
+       0.00011
+      ],
+      [
+       "((défenseur − tirs 20 derniers) × tentatives/60 10 derniers)",
+       0.0001
+      ],
+      [
+       "((décalage horaire ÷ mois) × jours de repos)",
+       9e-05
+      ],
+      [
+       "((tirs 20 derniers × tirs/match saison) ÷ décalage horaire)",
+       6e-05
+      ]
+     ],
+     "choisies": [
+      "((tentatives/60 saison × back-to-back adv.) ÷ décalage horaire)",
+      "((tirs/match saison × TOI 5 derniers) ÷ défenseur)",
+      "((défenseur − tirs 20 derniers) × tentatives/60 10 derniers)",
+      "((tirs 20 derniers × tirs/match saison) ÷ décalage horaire)"
+     ],
+     "utile": false,
+     "gain_vs_ml": -0.00327058629500936,
+     "pos_va": 183
+    },
+    "m_vic": {
+     "nom": "Victoire",
+     "top": [
+      [
+       "((tirs contre loc. 10 − tirs contre vis. 10) − buts pour vis. 10)",
+       0.00838
+      ],
+      [
+       "((buts pour loc. saison ÷ buts pour vis. saison) × buts contre vis. 10)",
+       0.0083
+      ],
+      [
+       "((tirs contre loc. 10 − tirs contre vis. 10) − buts contre vis. saison)",
+       0.00793
+      ],
+      [
+       "((buts pour loc. saison − buts pour vis. 10) ÷ repos vis.)",
+       0.00777
+      ],
+      [
+       "((buts pour loc. saison ÷ buts pour vis. saison) × effet aréna)",
+       0.00757
+      ]
+     ],
+     "choisies": [
+      "((buts pour loc. saison ÷ buts pour vis. saison) × buts contre vis. 10)",
+      "((buts pour loc. saison − buts pour vis. 10) ÷ repos vis.)",
+      "((buts pour loc. saison ÷ buts pour vis. saison) × effet aréna)",
+      "((tirs contre loc. 10 ÷ tirs contre vis. 10) × % arrêts vis.)"
+     ],
+     "utile": true,
+     "gain_vs_ml": 0.010682095946081412,
+     "pos_va": 40
+    },
+    "m_o55": {
+     "nom": "Total 5.5",
+     "top": [
+      [
+       "((km loc. × PJ vis.) ÷ km loc.)",
+       0.00552
+      ],
+      [
+       "((repos loc. ÷ tirs contre vis. 10) ÷ tirs contre vis. 10)",
+       0.00446
+      ],
+      [
+       "((km loc. ÷ mois) ÷ repos loc.)",
+       0.00444
+      ],
+      [
+       "((km loc. × PJ vis.) × buts pour vis. 10)",
+       0.00425
+      ],
+      [
+       "((km loc. × PJ loc.) × buts pour vis. 10)",
+       0.004
+      ]
+     ],
+     "choisies": [],
+     "utile": false,
+     "gain_vs_ml": null,
+     "pos_va": 34
+    },
+    "m_o65": {
+     "nom": "Total 6.5",
+     "top": [
+      [
+       "((% arrêts loc. ÷ température dehors) × % arrêts loc.)",
+       0.00753
+      ],
+      [
+       "((repos loc. − km vis.) − pénalités vis.)",
+       0.00711
+      ],
+      [
+       "((% arrêts vis. ÷ température dehors) × % arrêts loc.)",
+       0.007
+      ],
+      [
+       "((buts pour vis. saison ÷ % arrêts vis.) ÷ repos loc.)",
+       0.00688
+      ],
+      [
+       "((tirs contre vis. 10 ÷ % arrêts vis.) × repos loc.)",
+       0.00658
+      ]
+     ],
+     "choisies": [
+      "((% arrêts loc. ÷ température dehors) × % arrêts loc.)",
+      "((% arrêts vis. ÷ température dehors) × % arrêts loc.)",
+      "((buts pour vis. saison ÷ % arrêts vis.) ÷ repos loc.)"
+     ],
+     "utile": false,
+     "gain_vs_ml": -0.010674936655817134,
+     "pos_va": 29
+    }
+   }
+  },
+  "ratios_encours": null,
+  "temps": {
+   "depuis_debut_calcul": 161,
+   "ratios": 317,
+   "production": 37,
+   "retro": 58,
+   "juge": 0,
+   "total_ml": 412
   }
  },
  "ml_juge": "2026-10-25"

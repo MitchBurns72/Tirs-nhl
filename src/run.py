@@ -1136,7 +1136,8 @@ def main():
                 etat_auto = lire_json(ETAT_AUTO, {})
                 dj = etat_auto.get("ml_juge")
                 juger = not dj or (date.fromisoformat(jour) - date.fromisoformat(dj)).days >= 7
-                ml_res = ml.entrainer(LJ, LM, saison, historique, etat_auto.get("principales") or {}, juger=juger)
+                ml_res = ml.entrainer(LJ, LM, saison, historique, etat_auto.get("principales") or {}, juger=juger,
+                                     jour=jour, pretes=pretes)
                 ml_res["juge"] = juger and bool(ml_res.get("rapports"))
                 n_r = ml.ecrire_retro(ml_res, sorted(DIR_PRED.glob("*.json")), lire_json, ecrire_json)
                 ml_meteo = lire_json(ml.DIR_HIST / str(saison) / "meteo.json", {})

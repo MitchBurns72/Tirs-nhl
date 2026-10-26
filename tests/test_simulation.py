@@ -17,6 +17,7 @@ import random
 import shutil
 import sys
 import tempfile
+import time
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -425,6 +426,41 @@ def main():
     assert any("but_ml" in e["preds"] for f2 in sorted(run.DIR_PRED.glob("*.json"))[5:-1]
                for e in json.loads(f2.read_text())["entries"]), "soirs passés pas remplis par le ML"
     ml_st = st_r["joueurs"]["tirs"].get("tirs2_ml", {})
+    lab_ml = json.loads(run.SORTIE.read_text())["labo"].get("ml") or {}
+    rat = lab_ml.get("ratios")
+    assert rat and rat["testees"] >= 3675, rat
+    assert "tirs2" in rat["cibles"], rat["cibles"].keys()
+    print("  cibles avec au moins une expression positive :", sum(1 for x in rat["cibles"].values() if x["top"]), "/", len(rat["cibles"]))
+    assert (ml.DIR_HIST / "ratios.json").exists()
+    print("ratios OK :", rat["testees"], "expressions,", rat["secondes"], "s · tirs2 :", rat["cibles"]["tirs2"]["top"][:2])
+    _sel = json.loads((ml.DIR_HIST / "ratios.json").read_text())
+    print("  brut tirs2 :", [x for x in _sel["j"]["tirs2"]["noms"][:2]])
+    # Le chercheur retrouve un ratio caché : y dépend de x3 ÷ x7 (bruit partout ailleurs)
+    import numpy as np
+    rng = np.random.default_rng(1)
+    Xs = rng.uniform(0.5, 2, (6000, 12))
+    vrai = Xs[:, 3] / Xs[:, 7]
+    ys_ = {"c": (rng.random(6000) < 1 / (1 + np.exp(-4 * (vrai - 1)))).astype(int)}
+    ds = [(date(2026, 10, 1) + timedelta(days=i // 120)).isoformat() for i in range(6000)]
+    Clf_, _ = ml._sklearn()
+    r_, e_ = ml.chercher_ratios(Clf_, Xs, ys_, [f"x{i}" for i in range(12)], ds, ["s"] * 6000, ds[4200], "s", time.time() + 120)
+    print("ratio caché (x3 ÷ x7) :", r_["c"]["noms"][:3], "gardées", r_["c"]["choisies"], "gain", r_["c"]["gain_vs_ml"])
+    assert any("x3" in n and "x7" in n for n in r_["c"]["noms"][:2]), r_["c"]["noms"][:5]
+    # Ratio caché à 3 données (x3 × x7 ÷ x9) : seul le niveau 2 peut le trouver
+    Xs = rng.lognormal(0, 0.6, (6000, 12))
+    ys_ = {"c": (rng.random(6000) < 1 / (1 + np.exp(-2.5 * np.log(Xs[:, 3] * Xs[:, 7] / Xs[:, 9])))).astype(int)}
+    r_, e_ = ml.chercher_ratios(Clf_, Xs, ys_, [f"x{i}" for i in range(12)], ds, ["s"] * 6000, ds[4200], "s", time.time() + 120)
+    print("ratio caché (x3 × x7 ÷ x9) :", r_["c"]["noms"][:2], "gardées", r_["c"]["choisies"], "utile", r_["c"]["utile"], round(r_["c"]["gain_vs_ml"], 4))
+    assert r_["c"]["utile"] and all(f"x{k}" in r_["c"]["choisies"][0] for k in (3, 7, 9)), r_["c"]
+    # Reprise : coupé en plein travail (budget 0), puis repris -> même résultat
+    r0, e0 = ml.chercher_ratios(Clf_, Xs, ys_, [f"x{i}" for i in range(12)], ds, ["s"] * 6000, ds[4200], "s", 0)
+    assert r0 is None and e0["i"] == 1
+    for _k in range(60):
+        r0, e0 = ml.chercher_ratios(Clf_, Xs, ys_, [f"x{i}" for i in range(12)], ds, ["s"] * 6000, ds[4200], "s", 0, json.loads(json.dumps(e0)))
+        if r0 is not None:
+            break
+    assert r0 is not None and r0["c"]["noms"] == r_["c"]["noms"] and r0["c"]["choisies"] == r_["c"]["choisies"], (r0, _k)
+    print(f"reprise OK : fini en {_k + 2} calculs, même résultat")
     print("ML OK :", {m: (st_r["joueurs"][m].get(c + "_ml", {}).get("n"), round(st_r["joueurs"][m].get(c + "_ml", {}).get("note") or 0, 1),
                           round(st_r["joueurs"][m]["v1"]["note"], 1))
                       for m, c in (("tirs", "tirs2"), ("tirs3", "tirs3"), ("buts", "but"), ("passes", "passe"))},
