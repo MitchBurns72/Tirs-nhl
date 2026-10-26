@@ -32053,8 +32053,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -32464,8 +32468,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "f": {
     "pos": "F",
     "home": false,
@@ -32862,8 +32866,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -33313,8 +33321,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 2
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -33791,8 +33803,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -34247,8 +34263,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -34703,8 +34723,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -35138,8 +35162,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -35609,8 +35637,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -36087,8 +36119,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -36550,8 +36586,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -36979,8 +37019,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "f": {
     "pos": "F",
     "home": false,
@@ -37434,8 +37474,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -37897,8 +37941,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -38353,8 +38401,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -38770,8 +38822,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "f": {
     "pos": "D",
     "home": false,
@@ -39204,8 +39256,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -39656,8 +39712,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -40122,8 +40182,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -40581,8 +40645,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -41037,8 +41105,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -41493,8 +41565,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -41956,8 +42032,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 5,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -42434,8 +42514,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -42888,8 +42972,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -43292,8 +43380,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "f": {
     "pos": "F",
     "home": true,
@@ -43742,8 +43830,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -44198,8 +44290,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -44667,8 +44763,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -45120,8 +45220,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 5,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -45598,8 +45702,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -46054,8 +46162,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 7,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -46532,8 +46644,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -46952,8 +47068,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "f": {
     "pos": "D",
     "home": true,
@@ -47399,8 +47515,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -47855,8 +47975,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -48299,8 +48423,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -48751,8 +48879,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -49229,8 +49361,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -70643,19 +70779,19 @@
      5
     ],
     "mkt": {
-     "tirs4": 0.5390835579514824,
-     "tirs": 0.9049773755656109,
+     "tirs4": 0.5464480874316939,
+     "tirs": 0.9009009009009008,
      "tirs3": 0.7352941176470588,
      "tirs1": 0.9803921568627451
     }
    },
    "cotes": {
     "tirs4": {
-     "prix": 1.855,
-     "n": 4
+     "prix": 1.83,
+     "n": 3
     },
     "tirs": {
-     "prix": 1.105,
+     "prix": 1.11,
      "n": 2
     },
     "tirs3": {
@@ -71186,16 +71322,9 @@
      2,
      0
     ],
-    "mkt": {
-     "tirs": 0.4716981132075471
-    }
+    "mkt": null
    },
-   "cotes": {
-    "tirs": {
-     "prix": 2.12,
-     "n": 1
-    }
-   },
+   "cotes": null,
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -71716,15 +71845,15 @@
      5
     ],
     "mkt": {
-     "tirs4": 0.23255813953488372,
+     "tirs4": 0.2173913043478261,
      "tirs": 0.6802721088435374,
-     "tirs3": 0.42105263157894735,
-     "tirs1": 0.9174311926605504
+     "tirs3": 0.3968253968253968,
+     "tirs1": 0.9049773755656109
     }
    },
    "cotes": {
     "tirs4": {
-     "prix": 4.3,
+     "prix": 4.6,
      "n": 3
     },
     "tirs": {
@@ -71732,11 +71861,11 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 2.375,
-     "n": 4
+     "prix": 2.52,
+     "n": 3
     },
     "tirs1": {
-     "prix": 1.09,
+     "prix": 1.105,
      "n": 2
     }
    },
@@ -72262,7 +72391,7 @@
     "mkt": {
      "tirs4": 0.38910505836575876,
      "tirs": 0.819672131147541,
-     "tirs3": 0.5988023952095809,
+     "tirs3": 0.5952380952380952,
      "tirs1": 0.9615384615384615
     }
    },
@@ -72276,8 +72405,8 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 1.67,
-     "n": 4
+     "prix": 1.68,
+     "n": 3
     },
     "tirs1": {
      "prix": 1.04,
@@ -72804,19 +72933,19 @@
      1
     ],
     "mkt": {
-     "tirs": 0.5633802816901409,
-     "tirs3": 0.31746031746031744,
+     "tirs": 0.5747126436781609,
+     "tirs3": 0.3278688524590164,
      "tirs1": 0.8620689655172414,
      "tirs4": 0.18181818181818182
     }
    },
    "cotes": {
     "tirs": {
-     "prix": 1.775,
-     "n": 4
+     "prix": 1.74,
+     "n": 3
     },
     "tirs3": {
-     "prix": 3.15,
+     "prix": 3.05,
      "n": 3
     },
     "tirs1": {
@@ -73348,19 +73477,19 @@
      4
     ],
     "mkt": {
-     "tirs4": 0.49504950495049505,
-     "tirs": 0.8849557522123894,
+     "tirs4": 0.48780487804878053,
+     "tirs": 0.8810572687224669,
      "tirs3": 0.7042253521126761,
      "tirs1": 0.9803921568627451
     }
    },
    "cotes": {
     "tirs4": {
-     "prix": 2.02,
-     "n": 4
+     "prix": 2.05,
+     "n": 3
     },
     "tirs": {
-     "prix": 1.13,
+     "prix": 1.135,
      "n": 2
     },
     "tirs3": {
@@ -75374,16 +75503,9 @@
      1,
      1
     ],
-    "mkt": {
-     "tirs": 0.4807692307692307
-    }
+    "mkt": null
    },
-   "cotes": {
-    "tirs": {
-     "prix": 2.08,
-     "n": 1
-    }
-   },
+   "cotes": null,
    "soir_info": {
     "slot": "f3",
     "pp": "pp1",
@@ -76934,25 +77056,25 @@
     "mkt": {
      "tirs": 0.5235602094240838,
      "tirs3": 0.25641025641025644,
-     "tirs1": 0.8438818565400843,
-     "tirs4": 0.11764705882352941
+     "tirs1": 0.8298755186721991,
+     "tirs4": 0.11428571428571428
     }
    },
    "cotes": {
     "tirs": {
      "prix": 1.91,
-     "n": 4
+     "n": 3
     },
     "tirs3": {
      "prix": 3.9,
      "n": 3
     },
     "tirs1": {
-     "prix": 1.185,
+     "prix": 1.205,
      "n": 2
     },
     "tirs4": {
-     "prix": 8.5,
+     "prix": 8.75,
      "n": 2
     }
    },
@@ -77997,16 +78119,9 @@
      1,
      1
     ],
-    "mkt": {
-     "tirs": 0.47619047619047616
-    }
+    "mkt": null
    },
-   "cotes": {
-    "tirs": {
-     "prix": 2.1,
-     "n": 1
-    }
-   },
+   "cotes": null,
    "soir_info": {
     "slot": "d2",
     "pp": "aucune",
@@ -78527,15 +78642,15 @@
      1
     ],
     "mkt": {
-     "tirs4": 0.2777777777777778,
+     "tirs4": 0.2857142857142857,
      "tirs": 0.7462686567164178,
-     "tirs3": 0.49140049140049136,
+     "tirs3": 0.4854368932038835,
      "tirs1": 0.9433962264150942
     }
    },
    "cotes": {
     "tirs4": {
-     "prix": 3.6,
+     "prix": 3.5,
      "n": 3
     },
     "tirs": {
@@ -78543,8 +78658,8 @@
      "n": 3
     },
     "tirs3": {
-     "prix": 2.035,
-     "n": 4
+     "prix": 2.06,
+     "n": 3
     },
     "tirs1": {
      "prix": 1.06,
@@ -80074,16 +80189,9 @@
      4,
      1
     ],
-    "mkt": {
-     "tirs": 0.4716981132075471
-    }
+    "mkt": null
    },
-   "cotes": {
-    "tirs": {
-     "prix": 2.12,
-     "n": 1
-    }
-   },
+   "cotes": null,
    "soir_info": {
     "slot": "d1",
     "pp": "pp2",
@@ -81126,23 +81234,23 @@
      1
     ],
     "mkt": {
-     "tirs": 0.5747126436781609,
+     "tirs": 0.5780346820809249,
      "tirs3": 0.3125,
-     "tirs1": 0.8695652173913044,
+     "tirs1": 0.8620689655172414,
      "tirs4": 0.17857142857142858
     }
    },
    "cotes": {
     "tirs": {
-     "prix": 1.74,
-     "n": 4
+     "prix": 1.73,
+     "n": 3
     },
     "tirs3": {
      "prix": 3.2,
      "n": 3
     },
     "tirs1": {
-     "prix": 1.15,
+     "prix": 1.16,
      "n": 2
     },
     "tirs4": {
@@ -81647,9 +81755,9 @@
     ],
     "mkt": {
      "tirs4": 0.19047619047619047,
-     "tirs": 0.6329113924050632,
+     "tirs": 0.6289308176100629,
      "tirs3": 0.37037037037037035,
-     "tirs1": 0.8928571428571428
+     "tirs1": 0.8888888888888888
     }
    },
    "cotes": {
@@ -81658,15 +81766,15 @@
      "n": 3
     },
     "tirs": {
-     "prix": 1.58,
-     "n": 4
+     "prix": 1.59,
+     "n": 3
     },
     "tirs3": {
      "prix": 2.7,
      "n": 3
     },
     "tirs1": {
-     "prix": 1.12,
+     "prix": 1.125,
      "n": 2
     }
    },
@@ -82661,27 +82769,27 @@
      2
     ],
     "mkt": {
-     "tirs4": 0.26666666666666666,
-     "tirs": 0.6993006993006994,
-     "tirs3": 0.44052863436123346,
-     "tirs1": 0.9259259259259258
+     "tirs4": 0.2597402597402597,
+     "tirs": 0.6944444444444444,
+     "tirs3": 0.4424778761061947,
+     "tirs1": 0.9216589861751152
     }
    },
    "cotes": {
     "tirs4": {
-     "prix": 3.75,
+     "prix": 3.85,
      "n": 3
     },
     "tirs": {
-     "prix": 1.43,
+     "prix": 1.44,
      "n": 3
     },
     "tirs3": {
-     "prix": 2.27,
-     "n": 4
+     "prix": 2.26,
+     "n": 3
     },
     "tirs1": {
-     "prix": 1.08,
+     "prix": 1.085,
      "n": 2
     }
    },
@@ -83726,16 +83834,9 @@
      2,
      0
     ],
-    "mkt": {
-     "tirs": 0.48780487804878053
-    }
+    "mkt": null
    },
-   "cotes": {
-    "tirs": {
-     "prix": 2.05,
-     "n": 1
-    }
-   },
+   "cotes": null,
    "soir_info": {
     "slot": "f4",
     "pp": "pp2",
@@ -84256,27 +84357,27 @@
      2
     ],
     "mkt": {
-     "tirs": 0.48426150121065376,
-     "tirs3": 0.23529411764705882,
-     "tirs1": 0.8,
-     "tirs4": 0.0975609756097561
+     "tirs": 0.48309178743961356,
+     "tirs3": 0.23809523809523808,
+     "tirs1": 0.8032128514056224,
+     "tirs4": 0.09523809523809523
     }
    },
    "cotes": {
     "tirs": {
-     "prix": 2.065,
-     "n": 4
+     "prix": 2.07,
+     "n": 3
     },
     "tirs3": {
-     "prix": 4.25,
+     "prix": 4.2,
      "n": 3
     },
     "tirs1": {
-     "prix": 1.25,
+     "prix": 1.245,
      "n": 2
     },
     "tirs4": {
-     "prix": 10.25,
+     "prix": 10.5,
      "n": 2
     }
    },
@@ -84799,16 +84900,9 @@
      2,
      1
     ],
-    "mkt": {
-     "tirs": 0.4672897196261682
-    }
+    "mkt": null
    },
-   "cotes": {
-    "tirs": {
-     "prix": 2.14,
-     "n": 1
-    }
-   },
+   "cotes": null,
    "soir_info": {
     "slot": "f1",
     "pp": "aucune",
@@ -85328,16 +85422,9 @@
      1,
      0
     ],
-    "mkt": {
-     "tirs": 0.37037037037037035
-    }
+    "mkt": null
    },
-   "cotes": {
-    "tirs": {
-     "prix": 2.7,
-     "n": 1
-    }
-   },
+   "cotes": null,
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -85861,13 +85948,13 @@
      "tirs": 0.5617977528089888,
      "tirs3": 0.29411764705882354,
      "tirs1": 0.8547008547008548,
-     "tirs4": 0.16129032258064516
+     "tirs4": 0.1680672268907563
     }
    },
    "cotes": {
     "tirs": {
      "prix": 1.78,
-     "n": 4
+     "n": 3
     },
     "tirs3": {
      "prix": 3.4,
@@ -85878,7 +85965,7 @@
      "n": 2
     },
     "tirs4": {
-     "prix": 6.2,
+     "prix": 5.95,
      "n": 2
     }
    },
@@ -86401,16 +86488,9 @@
      1,
      0
     ],
-    "mkt": {
-     "tirs": 0.4484304932735426
-    }
+    "mkt": null
    },
-   "cotes": {
-    "tirs": {
-     "prix": 2.23,
-     "n": 1
-    }
-   },
+   "cotes": null,
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -87452,16 +87532,9 @@
      0,
      2
     ],
-    "mkt": {
-     "tirs": 0.4385964912280702
-    }
+    "mkt": null
    },
-   "cotes": {
-    "tirs": {
-     "prix": 2.28,
-     "n": 1
-    }
-   },
+   "cotes": null,
    "soir_info": {
     "slot": "d2",
     "pp": "pp2",
@@ -87984,25 +88057,25 @@
     "mkt": {
      "tirs": 0.5128205128205129,
      "tirs3": 0.2597402597402597,
-     "tirs1": 0.8333333333333334,
-     "tirs4": 0.14285714285714285
+     "tirs1": 0.8298755186721991,
+     "tirs4": 0.14814814814814814
     }
    },
    "cotes": {
     "tirs": {
      "prix": 1.95,
-     "n": 4
+     "n": 3
     },
     "tirs3": {
      "prix": 3.85,
      "n": 3
     },
     "tirs1": {
-     "prix": 1.2,
+     "prix": 1.205,
      "n": 2
     },
     "tirs4": {
-     "prix": 7.0,
+     "prix": 6.75,
      "n": 2
     }
    },
@@ -89447,13 +89520,13 @@
      "tirs": 0.5617977528089888,
      "tirs3": 0.29411764705882354,
      "tirs1": 0.8547008547008548,
-     "tirs4": 0.16129032258064516
+     "tirs4": 0.1680672268907563
     }
    },
    "cotes": {
     "tirs": {
      "prix": 1.78,
-     "n": 4
+     "n": 3
     },
     "tirs3": {
      "prix": 3.4,
@@ -89464,7 +89537,7 @@
      "n": 2
     },
     "tirs4": {
-     "prix": 6.2,
+     "prix": 5.95,
      "n": 2
     }
    },
@@ -90985,7 +91058,10 @@
      "src_vic": "v1"
     }
    },
-   "result": null,
+   "result": {
+    "home": 1,
+    "away": 2
+   },
    "f": {
     "mu": 3.1383,
     "h": {
@@ -91501,17 +91577,17 @@
     },
     "mkt": {
      "home": 0.3571,
-     "o6.5": 0.5104712041884817
+     "o6.5": 0.5091623036649214
     }
    },
    "cotes": {
     "home": 2.7,
     "away": 1.5,
-    "n": 9,
+    "n": 8,
     "p_home_marche": 0.3571,
     "ligne": 6.5,
-    "over": 1.87,
-    "under": 1.95
+    "over": 1.875,
+    "under": 1.945
    }
   }
  ],
@@ -91526,7 +91602,7 @@
   "pts1_v5",
   "pts2_v5"
  ],
- "maj": "2026-10-26T01:49+00:00",
+ "maj": "2026-10-26T02:04+00:00",
  "complete": "x|rk|ph|but_v5,passe_v5,but2_v5,but3_v5,passe2_v5,pts1_v5,pts2_v5",
  "ml_semaine": "2026-10-19"
 }
