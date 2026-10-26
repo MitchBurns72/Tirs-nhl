@@ -418,7 +418,11 @@
   "reel": true,
   "label": "MIN @ VAN · MIN gagne (prol. incluse)",
   "sous": "22 h 00 · prolongation incluse, paiement hâtif si 3 buts d'avance",
-  "maj": "2026-10-25T22:26:53.927Z"
+  "maj": "2026-10-26T04:43:47.115Z",
+  "final": {
+   "etat": "gagne",
+   "texte": "4 – 2 · final"
+  }
  },
  {
   "date": "2026-10-25",
@@ -459,7 +463,11 @@
   "reel": true,
   "label": "Matt Boldy · Tirs 3+",
   "sous": "MIN @ VAN",
-  "maj": "2026-10-25T22:26:53.928Z"
+  "maj": "2026-10-26T04:43:47.115Z",
+  "final": {
+   "etat": "gagne",
+   "texte": "3 tirs · final"
+  }
  },
  {
   "date": "2026-10-25",
