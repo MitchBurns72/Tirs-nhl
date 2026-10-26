@@ -111,7 +111,8 @@ def jouer(d, matchs=None, cible_logs=None, cible_box=None, cible_scores=None, ci
                             "toi": f"{int(l['toi'])}:{int((l['toi'] % 1) * 60):02d}", "opponentAbbrev": l["opp"]})
             cote = "awayTeam" if l["team"] == away else "homeTeam"
             stats[cote]["defense" if joueurs[p]["pos"] == "D" else "forwards"].append(
-                {"playerId": p, "sog": l["shots"], "goals": l["goals"], "assists": l["assists"]})
+                {"playerId": p, "sog": l["shots"], "goals": l["goals"], "assists": l["assists"],
+                 "toi": f"{int(l['toi'])}:{int((l['toi'] % 1) * 60):02d}", "hits": p % 3, "pim": 0})
         if sc[away] == sc[home]:
             sc[home if rng.random() < 0.52 else away] += 1   # prolongation/fusillade
         cible_scores[gid] = sc
@@ -298,6 +299,9 @@ def main():
     os.environ["ODDS_API_KEY"] = "test"
 
     auto.JOURS_RECALCUL = 999   # le test force le recalcul hebdo lui-même (plus bas)
+    import ml
+    ml.MIN_LIGNES, ml.MIN_MATCHS = 600, 20   # petite fausse ligue
+    ml.DIR_HIST = tmp / "data" / "hist"
     jours = sorted(calendrier)
     for d in jours:
         api._cache.clear()
@@ -413,6 +417,18 @@ def main():
     assert len(phs) >= 2 and stt0.correlation([a for a, b in phs], [b for a, b in phs]) > 0.8, phs
     assert all(len(e["f"]["x"]["ph"]) == 3 for e in vieux["entries"] if (e.get("f") or {}).get("x")), "robustesse pas rétro-remplie"
     print("robustesse OK :", phs[:3])
+    # Machine learning : prédit ce soir, a rempli les soirs passés (walk-forward), noté au Suivi
+    e_ml = [e for e in d["entries"] if not e.get("retro") and "tirs2_ml" in e["preds"]]
+    assert e_ml, "pas de prédictions ML ce soir"
+    assert set(e_ml[0]["preds"]["tirs2_ml"]) == {"tirs"} and 0 < e_ml[0]["preds"]["tirs2_ml"]["tirs"]["p"] < 1
+    assert any("vic_ml" in g1["preds"] for g1 in d["games"]), "pas de ML sur les matchs"
+    assert any("but_ml" in e["preds"] for f2 in sorted(run.DIR_PRED.glob("*.json"))[5:-1]
+               for e in json.loads(f2.read_text())["entries"]), "soirs passés pas remplis par le ML"
+    ml_st = st_r["joueurs"]["tirs"].get("tirs2_ml", {})
+    print("ML OK :", {m: (st_r["joueurs"][m].get(c + "_ml", {}).get("n"), round(st_r["joueurs"][m].get(c + "_ml", {}).get("note") or 0, 1),
+                          round(st_r["joueurs"][m]["v1"]["note"], 1))
+                      for m, c in (("tirs", "tirs2"), ("tirs3", "tirs3"), ("buts", "but"), ("passes", "passe"))},
+          "| labo :", json.loads(run.SORTIE.read_text())["labo"].get("ml"))
     print("nouveaux marchés OK :", {m: round(st_r["joueurs"][m]["v1"]["note"], 1) for m in ("buts2", "buts3", "passes2", "pts1", "pts2")})
     print("recettes par catégorie : un marché chacune, rejouées, notées à partir de leur création OK")
 

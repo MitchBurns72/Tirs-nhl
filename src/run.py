@@ -22,6 +22,7 @@ from zoneinfo import ZoneInfo
 
 import alignements
 import auto
+import ml
 import cotes
 import donnees_v2
 import live
@@ -46,6 +47,9 @@ TOI_DEFAUT = {"F": 14.0, "D": 19.0}
 AVEC_COTES = os.environ.get("ODDS", "").lower() == "true"
 # Blessures ESPN + sondes DailyFaceoff (les tests le coupent : pas d'internet)
 AVEC_ALIGNEMENTS = os.environ.get("ALIGNEMENTS", "1") == "1"
+AVEC_ML = os.environ.get("ML", "1") == "1"
+# Les versions machine learning (une par catégorie), voir src/ml.py
+ML_IDS = [f"{c}_ml" for c in ml.CATS_J] + ["vic_ml", "tot_ml"]
 MARCHES_PROPS = [m for m in os.environ.get("ODDS_PROPS", "player_shots_on_goal_alternate").split(",") if m]
 # config.json à la racine (livré dans la zip) : choisir les marchés de cotes sans toucher au workflow
 try:
@@ -1118,7 +1122,33 @@ def main():
     # Labo : patterns + tuning hebdo + promotion. Si une nouvelle version naît,
     # elle est chargée tout de suite et prédit déjà les matchs de ce soir.
     historique = [h for h in (lire_json(f, None) for f in sorted(DIR_PRED.glob("*.json"))) if h]
-    labo, nouvelle = auto.cycle(historique, ETAT_AUTO, list(VERSIONS), jour)
+
+    # Machine learning : récolte (incrémentale), entraînement sur toutes les données, prédictions
+    # honnêtes des soirs passés (semaine par semaine), juge hebdo contre les recettes en service.
+    ml_res = ml_E = ml_meteo = None
+    if AVEC_ML and saison:
+        try:
+            feuilles = lire_json(DIR_CACHE / f"feuilles_{saison}.json", {})
+            pretes = ml.recolter(saison, jour, feuilles)
+            print(f"  ML : saisons prêtes {pretes}")
+            if str(saison) in pretes:
+                LJ, LM, ml_E = ml.construire(pretes, saison, jour, lire_json(DIR_CACHE / f"stats_jeux_{saison}.json", {}))
+                etat_auto = lire_json(ETAT_AUTO, {})
+                dj = etat_auto.get("ml_juge")
+                juger = not dj or (date.fromisoformat(jour) - date.fromisoformat(dj)).days >= 7
+                ml_res = ml.entrainer(LJ, LM, saison, historique, etat_auto.get("principales") or {}, juger=juger)
+                ml_res["juge"] = juger and bool(ml_res.get("rapports"))
+                n_r = ml.ecrire_retro(ml_res, sorted(DIR_PRED.glob("*.json")), lire_json, ecrire_json)
+                ml_meteo = lire_json(ml.DIR_HIST / str(saison) / "meteo.json", {})
+                print(f"  ML : {len(LJ)} lignes joueur, {len(LM)} matchs, {n_r} prédictions passées ajoutées"
+                      + (f", {ml_res['msg']}" if ml_res.get("msg") else ""))
+                historique = [h for h in (lire_json(f, None) for f in sorted(DIR_PRED.glob("*.json"))) if h]
+        except Exception as ex:  # noqa: BLE001  (le ML est un ajout : il ne doit jamais bloquer le calcul)
+            import traceback
+            print("  ML : erreur", str(ex)[:200]); traceback.print_exc(limit=3)
+            ml_res = None
+
+    labo, nouvelle = auto.cycle(historique, ETAT_AUTO, list(VERSIONS) + ML_IDS, jour, ml=ml_res)
     # Toujours recharger : le cycle a pu faire naître des versions, en retirer, ou
     # changer leurs dates de jugement (juge_depuis).
     charger_auto(ETAT_AUTO)
@@ -1176,6 +1206,11 @@ def main():
                 e["cotes"] = anciennes_j.get((e["gameId"], e["pid"]))
         # v2 : mélange avec le marché maintenant que les cotes sont connues
         appliquer_marche(entries, games)
+        if ml_res and ml_E is not None:
+            try:
+                ml.predire_soir(ml_res, ml_E, jour, entries + entries_retro, games + games_retro, ml_meteo)
+            except Exception as ex:  # noqa: BLE001
+                print("  ML ce soir : erreur", str(ex)[:200])
         # Combo : le champion de chaque catégorie (ce soir et les matchs de ce soir déjà partis)
         ajouter_combo(entries + entries_retro, games + games_retro, labo.get("principales"))
         # % du soir : la principale ajustée à l'alignement (noté au Suivi comme une version)
@@ -1212,17 +1247,20 @@ def main():
                      {"id": SOIR, "desc": "La principale ajustée à l'alignement DailyFaceoff du soir : temps de glace "
                                           "selon le trio, unité de PP, gardien adverse (poids fixés d'avance)"}] +
                     [{"id": v, "desc": s["desc"], "cree": s.get("cree"), "juge_depuis": s.get("juge_depuis"),
-                      "cat": s.get("cat")} for v, s in VERSIONS.items()],
+                      "cat": s.get("cat")} for v, s in VERSIONS.items()] +
+                    [{"id": v, "cat": v[:-3], "desc": "Machine learning : entraîné chaque calcul sur toutes les données "
+                      "(saison + 3 saisons passées). Soirs passés prédits par un modèle qui ne les avait jamais vus."}
+                     for v in ML_IDS],
         "principale": COMBO if labo.get("principales") else principale,
         "principales": labo.get("principales"),
         "alignements": align,
         "matchs": matchs,
         "games": sans_features(existant["games"]),
         "joueurs": allege(existant["entries"]),
-        "stats": resumer(historique, [COMBO, SOIR] + list(VERSIONS), {v: s.get("juge_depuis") for v, s in VERSIONS.items()}),
+        "stats": resumer(historique, [COMBO, SOIR] + list(VERSIONS) + ML_IDS, {v: s.get("juge_depuis") for v, s in VERSIONS.items()}),
         "cotes_quota": quota,
         "labo": {k: labo.get(k) for k in ("journal", "patterns", "donnees", "principales", "recalcul",
-                                          "prochain_recalcul", "dernier_recalcul")} | {
+                                          "prochain_recalcul", "dernier_recalcul", "ml")} | {
             "versions": [{k: v.get(k) for k in ("id", "cat", "cree", "desc", "retiree", "base", "rapport")}
                          for v in labo.get("versions", []) if v.get("cat")]},
     })

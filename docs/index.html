@@ -1156,6 +1156,18 @@ function recettes(){
 }
 
 
+// Machine learning : données utilisées et dernier juge (soirs jamais vus vs recette en service)
+function mlHTML(ml){
+  if (!ml) return "";
+  const raps = Object.entries(ml.rapports || {}).map(([cat, r]) =>
+    (r.pos ?? 99) < 20
+      ? `<tr><td>${NOMS_CAT[cat] || cat}</td><td>trop rare pour juger (${r.pos} réussis)</td><td>${r.n}</td><td>${r.champion}</td></tr>`
+      : `<tr><td>${NOMS_CAT[cat] || cat}</td><td class="${(r.gain ?? 0) > 0 ? "ok" : "ko"}">${sg(r.gain)}</td><td>${r.n}</td><td>${r.champion}</td></tr>`).join("");
+  return `<div><span class="lbl">Machine learning</span>
+    <p class="aide">${(ml.n_lignes || 0).toLocaleString("fr-CA")} lignes joueur-match et ${(ml.n_matchs || 0).toLocaleString("fr-CA")} matchs (saison + saisons passées récoltées)${ml.msg ? ` · ${ml.msg}` : ""}. Le modèle prend une catégorie seulement s'il bat la recette en service sur des soirs qu'il n'a jamais vus.</p>
+    ${raps ? `<div class="tbl"><table class="classement"><thead><tr><th>Catégorie</th><th>ML vs service</th><th>Prédictions</th><th>En service</th></tr></thead><tbody>${raps}</tbody></table></div>` : ""}</div>`;
+}
+
 // ---- Labo : patterns + journal du recalcul hebdo ----------------------------------
 const sg = (x, d = 2) => x == null ? "–" : `${x >= 0 ? "+" : ""}${(x * 100).toFixed(d)} %`;
 function labo(){
@@ -1172,6 +1184,7 @@ function labo(){
     <h2>Labo <span>recalcul hebdo</span></h2>
     <p style="margin:-6px 0 0;font-size:13px;color:var(--muted)">Données de la saison : ${dn.joueurs ?? 0} prédictions de joueurs et ${dn.matchs ?? 0} matchs gradés.
       Chaque semaine, chaque catégorie est rescannée avec toute la saison${L.dernier_recalcul ? ` (dernier : ${L.dernier_recalcul}, prochain : ${L.prochain_recalcul})` : ""}.</p>
+    ${mlHTML(L.ml)}
     <div><span class="lbl">Patterns détectés · tirs 2+</span>${pats}</div>
     <div><span class="lbl">Journal</span><ul>${journal}</ul></div>`;
 }

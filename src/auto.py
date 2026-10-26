@@ -470,7 +470,7 @@ def recalculer(cat, J, M, champion, aujourdhui, numero):
     return version, rapport
 
 
-def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=False):
+def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=False, ml=None):
     """Patterns + recalcul hebdo par catégorie. Met à jour data/versions_auto.json.
     Retourne (état, True si une version a changé)."""
     aujourdhui = aujourdhui or date.today().isoformat()
@@ -503,6 +503,24 @@ def cycle(historique, chemin_etat, versions_actives, aujourdhui=None, force=Fals
     for c in CATS:
         if principales.get(c) not in versions_actives and principales.get(c) not in [v["id"] for v in etat["versions"] if not v.get("retiree")]:
             principales[c] = REFERENCE
+    # --- Machine learning : il prend une catégorie seulement s'il bat la recette en service
+    # sur les soirs récents qu'il n'a jamais vus (juge hebdo, voir ml.py) ---
+    if ml:
+        etat["ml"] = {"date": aujourdhui, "n_lignes": ml.get("n_lignes"), "n_matchs": ml.get("n_matchs"),
+                      "msg": ml.get("msg"), "rapports": ml.get("rapports") or (etat.get("ml") or {}).get("rapports")}
+        if ml.get("juge"):
+            etat["ml_juge"] = aujourdhui
+            for cat, r in ml["rapports"].items():
+                vid = f"{cat}_ml"
+                mini = 60 if cat in ("vic", "tot") else 1000
+                # Assez de cas réussis pour juger (un 3+ buts n'arrive presque jamais)
+                if (r.get("gain") is not None and r["gain"] >= GAIN_HEBDO and r["n"] >= mini
+                        and r.get("pos", 0) >= 20 and principales.get(cat) != vid):
+                    etat["journal"].insert(0, {"date": aujourdhui, "msg":
+                        f"{NOMS_CAT.get(cat, cat)} : le machine learning ({vid}) remplace {principales.get(cat)} : "
+                        f"{r['gain'] * 100:+.2f} % sur {r['n']} prédictions jamais vues."})
+                    principales[cat] = vid
+                    nouvelle = True
     J, M = donnees(historique)
     etat["patterns"] = patterns(J, M, principales.get("tirs2", REFERENCE))
     etat["donnees"] = {"joueurs": len(J), "matchs": len(M)}

@@ -78,6 +78,18 @@ gardien adverse), poids fixés d'avance, noté au Suivi comme les autres. Étiqu
 l'alignement » / « Alignement confirmé ».
 Patterns : segments où la recette des tirs 2+ se trompe systématiquement (z >= 2.5).
 
+## Machine learning (`{cat}_ml`)
+
+But : trouver tout seul les ratios et les combinaisons de données qui donnent le meilleur %, sans qu'on les devine à la main.
+
+- **Données** : saison en cours + 3 saisons passées (box scores joueur par joueur, temps de glace, mises en échec, punitions, tirs bloqués, gardiens partants, calendrier, voyagement, fuseaux, météo extérieure à l'aréna). Récoltées petit à petit dans `data/hist/` (environ 8 min par calcul) : la saison en cours d'abord, puis une saison passée à la fois. Ça prend quelques calculs avant que tout soit là.
+- **Features** : 50 par joueur (forme 5/10/20 matchs, saison, saison passée, TOI, par 60, tentatives, PP, % de tir, régularité, repos, back-to-back, km, fuseau, défense/gardien/physique adverse, historique vs l'équipe, aréna, météo, mois) et 29 par match. Toujours calculées avec ce qui était connu AVANT le match (pas de triche).
+- **Modèle** : gradient boosting (des milliers d'arbres de décision qui testent eux-mêmes les seuils et les interactions entre données). Un modèle par catégorie (tirs 1+ à 4+, but, 2+/3+ buts, passe, 2+ passes, 1+/2+ pts, victoire, total 5.5/6.5).
+- **Honnête** : les soirs passés sont prédits semaine par semaine avec seulement ce qui existait avant (walk-forward). Les versions `tirs2_ml`, `but_ml`, etc. apparaissent dans les puces et dans le Suivi de leur catégorie.
+- **Juge hebdo** : le ML prend une catégorie seulement s'il bat la recette en service sur les 30 % de soirs les plus récents qu'il n'a jamais vus (minimum 1000 prédictions et 20 réussites ; 3+ buts est souvent trop rare pour juger). Sinon la recette reste.
+- **Limites** : pas d'historique gratuit des alignements DailyFaceoff ni des cotes, donc le ML ne les voit pas. Les données qui ne servent à rien (la météo, probablement) finissent juste avec un poids de zéro.
+- Fermer le ML : variable `ML=0`.
+
 ## Live
 
 Bouton **LIVE** en haut de la page : rafraîchit aux 30 secondes.
