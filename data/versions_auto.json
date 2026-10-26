@@ -561,7 +561,7 @@
   "matchs": 184
  },
  "dernier_tuning": "2026-10-21",
- "maj": "2026-10-26T18:45+00:00",
+ "maj": "2026-10-26T22:14+00:00",
  "retirees": [
   "v2.1",
   "v2.2",
@@ -1251,12 +1251,12 @@
   },
   "ratios_encours": null,
   "temps": {
-   "depuis_debut_calcul": 35,
+   "depuis_debut_calcul": 39,
    "ratios": 0,
-   "production": 40,
+   "production": 39,
    "retro": 0,
    "juge": 0,
-   "total_ml": 40
+   "total_ml": 39
   }
  },
  "ml_juge": "2026-10-25"
