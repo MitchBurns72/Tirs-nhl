@@ -549,19 +549,19 @@
   {
    "marche": "passes",
    "segment": "Début de saison (moins de 5 matchs)",
-   "n": 3074,
-   "predit": 0.25195042290175673,
-   "reel": 0.22999349381912818,
-   "z": -2.869008662591319,
+   "n": 3081,
+   "predit": 0.251823076923077,
+   "reel": 0.22979552093476144,
+   "z": -2.8820759958483615,
    "sens": "surestimé"
   }
  ],
  "donnees": {
-  "joueurs": 6327,
-  "matchs": 184
+  "joueurs": 6432,
+  "matchs": 187
  },
  "dernier_tuning": "2026-10-21",
- "maj": "2026-10-26T22:14+00:00",
+ "maj": "2026-10-27T14:49+00:00",
  "retirees": [
   "v2.1",
   "v2.2",
@@ -705,7 +705,7 @@
  },
  "prochain_recalcul": "2026-10-31",
  "ml": {
-  "date": "2026-10-26",
+  "date": "2026-10-27",
   "n_lignes": 148298,
   "n_matchs": 4120,
   "msg": null,
@@ -1251,7 +1251,7 @@
   },
   "ratios_encours": null,
   "temps": {
-   "depuis_debut_calcul": 39,
+   "depuis_debut_calcul": 157,
    "ratios": 0,
    "production": 39,
    "retro": 0,
