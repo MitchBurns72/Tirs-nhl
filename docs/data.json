@@ -1,5 +1,5 @@
 {
- "genere": "2026-10-27T18:44+00:00",
+ "genere": "2026-10-27T22:18+00:00",
  "date": "2026-10-27",
  "versions": [
   {
@@ -156,7 +156,7 @@
   "pts2": "pts2_v5"
  },
  "alignements": {
-  "maj": "2026-10-27T18:43+00:00",
+  "maj": "2026-10-27T22:18+00:00",
   "equipes": {
    "ANA": {
     "maj": "2026-10-27T17:22:25.785Z",
@@ -613,7 +613,7 @@
     }
    },
    "BUF": {
-    "maj": "2026-10-26T22:29:44.207Z",
+    "maj": "2026-10-27T19:24:29.717Z",
     "source": "Rachel Lenzi",
     "joueurs": {
      "Zach Benson": {
@@ -700,17 +700,17 @@
       "inj": null,
       "gtd": false
      },
-     "Rasmus Dahlin": {
-      "no": 26,
+     "Mattias Samuelsson": {
+      "no": 23,
       "pos": "ld",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/a/a719751e-58f4-44e6-a8a3-b0fcfe5add7c.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/b/b2265192-8a74-4401-955e-629899f5292b.jpg",
       "inj": null,
       "gtd": false
      },
-     "Mattias Samuelsson": {
-      "no": 23,
+     "Rasmus Dahlin": {
+      "no": 26,
       "pos": "rd",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/b/b2265192-8a74-4401-955e-629899f5292b.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/a/a719751e-58f4-44e6-a8a3-b0fcfe5add7c.jpg",
       "inj": null,
       "gtd": false
      },
@@ -807,8 +807,8 @@
       "Beck Malenstyn"
      ],
      "d1": [
-      "Rasmus Dahlin",
-      "Mattias Samuelsson"
+      "Mattias Samuelsson",
+      "Rasmus Dahlin"
      ],
      "d2": [
       "Olen Zellweger",
@@ -857,7 +857,7 @@
     }
    },
    "CAR": {
-    "maj": "2026-10-27T14:34:51.129Z",
+    "maj": "2026-10-27T19:29:00.777Z",
     "source": "Walt Ruff",
     "joueurs": {
      "William Carrier": {
@@ -902,19 +902,19 @@
       "inj": null,
       "gtd": false
      },
-     "Taylor Hall": {
-      "no": 71,
-      "pos": "lw",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/42b1269a-0f24-11e2-8525-18a905767e44.jpg",
-      "inj": null,
-      "gtd": true
-     },
      "Jordan Martinook": {
       "no": 48,
-      "pos": "c",
+      "pos": "lw",
       "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/2/21050a80-e999-47ee-825d-074608dae259.jpg",
       "inj": null,
       "gtd": false
+     },
+     "Mark Jankowski": {
+      "no": 77,
+      "pos": "c",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/b/b7ac4600-0947-4465-beab-c1cb0e73e79b.jpg",
+      "inj": null,
+      "gtd": true
      },
      "Seth Jarvis": {
       "no": 24,
@@ -923,12 +923,12 @@
       "inj": null,
       "gtd": false
      },
-     "Eric Robinson": {
-      "no": 50,
+     "Taylor Hall": {
+      "no": 71,
       "pos": "lw",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/f/fd514a4e-e92b-446e-8a0a-c185254fafbd.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/42b1269a-0f24-11e2-8525-18a905767e44.jpg",
       "inj": null,
-      "gtd": false
+      "gtd": true
      },
      "Jesperi Kotkaniemi": {
       "no": 82,
@@ -937,10 +937,10 @@
       "inj": null,
       "gtd": false
      },
-     "Nicolas Deslauriers": {
-      "no": 44,
+     "Eric Robinson": {
+      "no": 50,
       "pos": "rw",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/4281840a-0f24-11e2-8525-18a905767e44.jpg",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/f/fd514a4e-e92b-446e-8a0a-c185254fafbd.jpg",
       "inj": null,
       "gtd": false
      },
@@ -1006,13 +1006,6 @@
       "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/433ee768-0f24-11e2-8525-18a905767e44.jpg",
       "inj": "ir",
       "gtd": false
-     },
-     "Mark Jankowski": {
-      "no": 77,
-      "pos": "ir2",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/b/b7ac4600-0947-4465-beab-c1cb0e73e79b.jpg",
-      "inj": "out",
-      "gtd": false
      }
     },
     "groupes": {
@@ -1027,14 +1020,14 @@
       "Jackson Blake"
      ],
      "f3": [
-      "Taylor Hall",
       "Jordan Martinook",
+      "Mark Jankowski",
       "Seth Jarvis"
      ],
      "f4": [
-      "Eric Robinson",
+      "Taylor Hall",
       "Jesperi Kotkaniemi",
-      "Nicolas Deslauriers"
+      "Eric Robinson"
      ],
      "d1": [
       "Jaccob Slavin",
@@ -1061,7 +1054,7 @@
      ],
      "pp2": [
       "Taylor Hall",
-      "Jesperi Kotkaniemi",
+      "Mark Jankowski",
       "Seth Jarvis",
       "Logan Stankoven",
       "K'Andre Miller"
@@ -4822,8 +4815,8 @@
     }
    },
    "VGK": {
-    "maj": "2026-10-26T18:09:15.316Z",
-    "source": "Danny Webster",
+    "maj": "2026-10-27T19:27:11.990Z",
+    "source": "Jesse Granger",
     "joueurs": {
      "Ivan Barbashev": {
       "no": 49,
@@ -4923,20 +4916,6 @@
       "inj": null,
       "gtd": false
      },
-     "Ville Heinola": {
-      "no": 34,
-      "pos": "ld",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/6/6ca6fd4f-e15a-48e8-9d0f-5fc057811c64.jpg",
-      "inj": null,
-      "gtd": false
-     },
-     "Rasmus Andersson": {
-      "no": 4,
-      "pos": "rd",
-      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/1/19ba927d-c4fe-4501-8c74-9a0e07c521de.jpg",
-      "inj": null,
-      "gtd": false
-     },
      "Jeremy Lauzon": {
       "no": 3,
       "pos": "ld",
@@ -4948,6 +4927,20 @@
       "no": 15,
       "pos": "rd",
       "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/0/034bac71-8296-4b27-9ab8-00fd0e24d67f.jpg",
+      "inj": null,
+      "gtd": false
+     },
+     "Ville Heinola": {
+      "no": 34,
+      "pos": "ld",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/6/6ca6fd4f-e15a-48e8-9d0f-5fc057811c64.jpg",
+      "inj": null,
+      "gtd": false
+     },
+     "Rasmus Andersson": {
+      "no": 4,
+      "pos": "rd",
+      "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/1/19ba927d-c4fe-4501-8c74-9a0e07c521de.jpg",
       "inj": null,
       "gtd": false
      },
@@ -4963,7 +4956,7 @@
       "pos": "g2",
       "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/1/104295a8-ec3a-46c2-bd03-b252d119a5b7.jpg",
       "inj": null,
-      "gtd": false
+      "gtd": true
      },
      "Parker Wotherspoon": {
       "no": 29,
@@ -5006,12 +4999,12 @@
       "Shea Theodore"
      ],
      "d2": [
-      "Ville Heinola",
-      "Rasmus Andersson"
-     ],
-     "d3": [
       "Jeremy Lauzon",
       "Noah Hanifin"
+     ],
+     "d3": [
+      "Ville Heinola",
+      "Rasmus Andersson"
      ],
      "g": [
       "Adin Hill",
@@ -5045,7 +5038,8 @@
      ],
      "ir": [
       "Parker Wotherspoon",
-      "Victor Olofsson"
+      "Victor Olofsson",
+      "Carter Hart"
      ]
     }
    },
@@ -5370,12 +5364,12 @@
    },
    "NYI": {
     "nom": "Semyon Varlamov",
-    "statut": "Likely",
+    "statut": "Confirmed",
     "sv": "0.897",
     "gaa": "2.25",
     "fiche": "0-1-2",
     "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/4/42adc2bc-0f24-11e2-8525-18a905767e44.jpg",
-    "maj": "2026-10-27T16:29:34.092Z"
+    "maj": "2026-10-27T19:01:57.637Z"
    },
    "DAL": {
     "nom": "Casey DeSmith",
@@ -5433,12 +5427,12 @@
    },
    "VGK": {
     "nom": "Adin Hill",
-    "statut": null,
+    "statut": "Confirmed",
     "sv": "0.881",
     "gaa": "2.95",
     "fiche": "4-1-0",
     "face": "https://bctn-data.s3.amazonaws.com/headshots/nhl/200x200/5/5bf557c9-0bb7-400a-be80-b0214e30c1c1.jpg",
-    "maj": null
+    "maj": "2026-10-27T18:47:43.886Z"
    },
    "OTT": {
     "nom": "Jonas Johansson",
@@ -5673,7 +5667,15 @@
     }
    },
    "result": null,
-   "cotes": null
+   "cotes": {
+    "home": 2.01,
+    "away": 1.85,
+    "n": 9,
+    "p_home_marche": 0.4793,
+    "ligne": 5.5,
+    "over": 1.87,
+    "under": 1.96
+   }
   },
   {
    "gameId": 2026020189,
@@ -5770,7 +5772,15 @@
     }
    },
    "result": null,
-   "cotes": null
+   "cotes": {
+    "home": 1.53,
+    "away": 2.6,
+    "n": 9,
+    "p_home_marche": 0.6295,
+    "ligne": 6.5,
+    "over": 2.015,
+    "under": 1.815
+   }
   },
   {
    "gameId": 2026020190,
@@ -5867,7 +5877,15 @@
     }
    },
    "result": null,
-   "cotes": null
+   "cotes": {
+    "home": 1.9,
+    "away": 1.93,
+    "n": 9,
+    "p_home_marche": 0.5039,
+    "ligne": 5.5,
+    "over": 1.77,
+    "under": 2.115
+   }
   },
   {
    "gameId": 2026020191,
@@ -5964,7 +5982,15 @@
     }
    },
    "result": null,
-   "cotes": null
+   "cotes": {
+    "home": 1.95,
+    "away": 1.87,
+    "n": 9,
+    "p_home_marche": 0.4895,
+    "ligne": 6.5,
+    "over": 2.02,
+    "under": 1.81
+   }
   },
   {
    "gameId": 2026020192,
@@ -6061,7 +6087,15 @@
     }
    },
    "result": null,
-   "cotes": null
+   "cotes": {
+    "home": 1.83,
+    "away": 2.02,
+    "n": 9,
+    "p_home_marche": 0.5247,
+    "ligne": 5.5,
+    "over": 1.83,
+    "under": 2.0
+   }
   },
   {
    "gameId": 2026020193,
@@ -6158,7 +6192,15 @@
     }
    },
    "result": null,
-   "cotes": null
+   "cotes": {
+    "home": 1.87,
+    "away": 1.96,
+    "n": 9,
+    "p_home_marche": 0.5117,
+    "ligne": 5.5,
+    "over": 1.87,
+    "under": 1.97
+   }
   },
   {
    "gameId": 2026020194,
@@ -6255,7 +6297,15 @@
     }
    },
    "result": null,
-   "cotes": null
+   "cotes": {
+    "home": 2.1,
+    "away": 1.77,
+    "n": 9,
+    "p_home_marche": 0.4574,
+    "ligne": 6.0,
+    "over": 1.875,
+    "under": 1.96
+   }
   },
   {
    "gameId": 2026020195,
@@ -6352,7 +6402,15 @@
     }
    },
    "result": null,
-   "cotes": null
+   "cotes": {
+    "home": 1.83,
+    "away": 2.02,
+    "n": 9,
+    "p_home_marche": 0.5247,
+    "ligne": 6.5,
+    "over": 2.0,
+    "under": 1.83
+   }
   },
   {
    "gameId": 2026020196,
@@ -6449,7 +6507,15 @@
     }
    },
    "result": null,
-   "cotes": null
+   "cotes": {
+    "home": 1.62,
+    "away": 2.36,
+    "n": 9,
+    "p_home_marche": 0.593,
+    "ligne": 6.5,
+    "over": 1.87,
+    "under": 1.95
+   }
   },
   {
    "gameId": 2026020197,
@@ -6546,7 +6612,15 @@
     }
    },
    "result": null,
-   "cotes": null
+   "cotes": {
+    "home": 1.47,
+    "away": 2.8,
+    "n": 9,
+    "p_home_marche": 0.6557,
+    "ligne": 6.5,
+    "over": 1.79,
+    "under": 2.05
+   }
   },
   {
    "gameId": 2026020198,
@@ -6643,7 +6717,15 @@
     }
    },
    "result": null,
-   "cotes": null
+   "cotes": {
+    "home": 2.22,
+    "away": 1.69,
+    "n": 9,
+    "p_home_marche": 0.4322,
+    "ligne": 6.5,
+    "over": 1.77,
+    "under": 2.1
+   }
   }
  ],
  "joueurs": [
@@ -7046,7 +7128,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.9,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.75,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.14,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 4.9,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -7849,7 +7948,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 3.12,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.0,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.335,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.06,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp2",
@@ -8258,7 +8374,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 4.15,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 2.15,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.25,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 8.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -8667,7 +8800,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.915,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.69,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.15,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -9076,7 +9226,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.6,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.94,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.21,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 7.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -9894,7 +10061,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.65,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.98,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.22,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -10303,7 +10487,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.77,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.64,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.12,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 4.6,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -10712,7 +10913,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.525,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.95,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.2,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 7.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "aucune",
@@ -11121,7 +11339,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.75,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 2.05,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.22,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "aucune",
@@ -13097,7 +13332,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 4.05,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 2.03,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.22,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 9.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "pp2",
@@ -13500,7 +13752,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.265,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.1,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.9,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 12.0,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -14264,7 +14533,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 2.15,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 1.48,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.15,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.02,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -15088,7 +15374,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 4.8,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.3,
+     "n": 1
+    },
+    "tirs1": {
+     "prix": 1.31,
+     "n": 1
+    },
+    "tirs4": {
+     "prix": 10.5,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "pp1",
@@ -15488,7 +15791,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.065,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.82,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.18,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -16312,7 +16632,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 4.1,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 2.14,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.23,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 8.0,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "aucune",
@@ -16724,7 +17061,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.45,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.87,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.17,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp2",
@@ -17136,7 +17490,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.25,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.43,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.49,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.08,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -18282,7 +18653,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.5,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.635,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.56,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.11,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -18694,7 +19082,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.05,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.35,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.45,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.08,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -19106,7 +19511,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.975,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.625,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.62,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.11,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -20285,7 +20707,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.255,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.19,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 4.33,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 9.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "pp1",
@@ -21439,7 +21878,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 4.225,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 2.06,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.22,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 9.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "aucune",
@@ -22263,7 +22719,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.83,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.35,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.19,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.875,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -22675,7 +23148,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.95,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.8,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.24,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 8.5,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -23499,7 +23989,20 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.95,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.8,
+     "n": 1
+    },
+    "tirs1": {
+     "prix": 1.45,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "aucune",
@@ -24323,7 +24826,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.14,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 4.05,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.23,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 9.0,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp1",
@@ -24735,7 +25255,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.92,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.45,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.19,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 7.625,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -25559,7 +26096,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.215,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 1.68,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 2.7,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -25971,7 +26525,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.8,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.275,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.17,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.875,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp2",
@@ -26792,7 +27363,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.95,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.5,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.2,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 7.375,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -28025,7 +28613,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.42,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.75,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 4.4,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 9.5,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "aucune",
@@ -28837,7 +29442,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.1,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 4.15,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.25,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 9.75,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -29661,7 +30283,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.275,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 1.85,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 3.0,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.06,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -30073,7 +30712,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.325,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.0,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 3.3,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -30485,7 +31141,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.23,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.095,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.8,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 9.25,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "aucune",
@@ -30844,61 +31517,26 @@
       "lam": 0.213,
       "src": "pts2_v5"
      }
-    },
-    "soir": {
-     "tirs1": {
-      "p": 0.665
-     },
-     "tirs": {
-      "p": 0.312,
-      "lam": 1.134
-     },
-     "tirs3": {
-      "p": 0.113
-     },
-     "tirs4": {
-      "p": 0.034
-     },
-     "buts": {
-      "p": 0.091,
-      "lam": 0.096
-     },
-     "passes": {
-      "p": 0.151,
-      "lam": 0.163
-     },
-     "buts2": {
-      "p": 0.004,
-      "lam": 0.096
-     },
-     "buts3": {
-      "p": 0.0,
-      "lam": 0.096
-     },
-     "passes2": {
-      "p": 0.012,
-      "lam": 0.163
-     },
-     "pts1": {
-      "p": 0.228,
-      "lam": 0.259
-     },
-     "pts2": {
-      "p": 0.028,
-      "lam": 0.259
-     }
     }
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.75,
+     "n": 1
+    },
+    "tirs1": {
+     "prix": 1.44,
+     "n": 1
+    },
+    "tirs3": {
+     "prix": 2.9,
+     "n": 1
+    }
+   },
    "soir_info": {
-    "slot": "f4",
-    "pp": "aucune",
-    "f_t": 1.083,
-    "f_a": 1.083,
-    "f_g": 0.908,
-    "base": "combo"
+    "absent": true
    }
   },
   {
@@ -31303,7 +31941,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.325,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 1.98,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 3.4,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -31691,7 +32346,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.325,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.0,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.06,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 3.45,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -32103,10 +32775,23 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.54,
+     "n": 2
+    },
+    "tirs1": {
+     "prix": 1.4,
+     "n": 1
+    },
+    "tirs3": {
+     "prix": 2.9,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f4",
-    "pp": "pp2",
+    "pp": "aucune",
     "f_t": 0.925,
     "f_a": 0.925,
     "f_g": 0.908,
@@ -32515,7 +33200,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.21,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.1,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.4,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 8.125,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "aucune",
@@ -32927,7 +33629,20 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.9,
+     "n": 1
+    },
+    "tirs3": {
+     "prix": 2.88,
+     "n": 1
+    },
+    "tirs1": {
+     "prix": 1.16,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "aucune",
@@ -33339,7 +34054,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.36,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.07,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.06,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 3.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -33751,7 +34483,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.29,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 1.88,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 3.15,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.07,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -34163,7 +34912,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.285,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.25,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 4.2,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 11.0,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "aucune",
@@ -34575,7 +35341,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.71,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 2.93,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.13,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.9,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d3",
     "pp": "pp1",
@@ -34987,7 +35770,20 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.22,
+     "n": 1
+    },
+    "tirs3": {
+     "prix": 2.88,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.075,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "pp2",
@@ -35399,7 +36195,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.07,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.8,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.22,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 10.0,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "aucune",
@@ -36202,7 +37015,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.65,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 2.8,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.13,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.125,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "aucune",
@@ -37020,7 +37850,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.15,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.305,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 3.375,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -37432,7 +38279,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.6,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.19,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.87,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 7.125,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -38250,7 +39114,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 1.8,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.23,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 2.815,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.06,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -38662,7 +39543,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 1.87,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.255,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 3.125,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.04,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -39892,7 +40790,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.54,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.11,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.58,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 4.675,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -40304,7 +41219,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 1.75,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.195,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 2.76,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -40713,7 +41645,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.2,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "pp2",
@@ -42622,7 +43559,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.25,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.16,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.705,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 5.95,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp2",
@@ -44264,7 +45218,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.31,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.28,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 4.425,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 10.5,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -44661,7 +45632,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 1.71,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.215,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 2.65,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.035,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -45073,7 +46061,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.07,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.17,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.77,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 5.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp1",
@@ -45485,7 +46490,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 4.1,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.23,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.09,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 8.5,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -45897,7 +46919,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.8,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.11,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.62,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 5.0,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -47133,7 +48172,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.1,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.345,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 3.575,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -47545,7 +48601,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.725,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.14,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.62,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 4.7,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -48297,7 +49370,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.43,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "aucune",
@@ -48706,7 +49784,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.05,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.17,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.82,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 5.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -49527,7 +50622,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.29,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.275,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 4.5,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 9.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "pp1",
@@ -51497,7 +52609,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.3,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.355,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 4.75,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 12.0,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "aucune",
@@ -51909,7 +53038,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.18,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "d3",
     "pp": "pp2",
@@ -52733,7 +53867,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.985,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.2,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 3.45,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 7.625,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "aucune",
@@ -53852,7 +55003,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 2.25,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.15,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 1.48,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.03,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -55482,7 +56650,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.67,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.14,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 2.9,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 5.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -55894,7 +57079,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.3,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.27,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 4.4,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 10.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -56306,7 +57508,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.19,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.94,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.8,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 8.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -56718,7 +57937,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 3.6,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.39,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.06,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 2.2,
+     "n": 5
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -57130,7 +58366,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.12,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -58345,7 +59586,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.375,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.46,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.1,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 2.36,
+     "n": 5
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -59160,7 +60418,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.0,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.21,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.875,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 7.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -59563,7 +60838,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.93,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.21,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.625,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 8.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "pp2",
@@ -60339,7 +61631,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.25,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.155,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 3.85,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 8.25,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -60751,7 +62060,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.87,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.17,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.425,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 6.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -61575,7 +62901,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 3.2,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.305,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 1.96,
+     "n": 5
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -62378,7 +63721,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.91,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.19,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.475,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 6.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -62790,7 +64150,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.1,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.465,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.1,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 2.3,
+     "n": 5
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -63202,7 +64579,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.255,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.15,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 4.2,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 10.0,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp1",
@@ -63614,7 +65008,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 3.45,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.35,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 2.05,
+     "n": 5
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -64781,7 +66192,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.83,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.17,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.4,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 6.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -65599,7 +67027,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.78,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.16,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.275,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 6.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -66835,7 +68280,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.29,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.26,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 4.15,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 9.0,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d3",
     "pp": "aucune",
@@ -67247,7 +68709,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.245,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.005,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.75,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 7.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "aucune",
@@ -68462,7 +69941,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.18,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -68874,7 +70358,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.17,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.87,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.4,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 6.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -69286,7 +70787,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.18,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.825,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.45,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.8,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -69698,7 +71216,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.16,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.85,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.35,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 6.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -70110,7 +71645,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.18,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 2.335,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 1.57,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.025,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -70865,7 +72417,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.0,
+     "n": 1
+    },
+    "tirs3": {
+     "prix": 3.8,
+     "n": 1
+    },
+    "tirs1": {
+     "prix": 1.22,
+     "n": 1
+    },
+    "tirs4": {
+     "prix": 7.75,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "aucune",
@@ -71689,7 +73258,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.08,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.435,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 4.05,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.35,
+     "n": 5
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -72101,7 +73687,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.15,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.76,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.04,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 5.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -72513,7 +74116,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.9,
+     "n": 2
+    },
+    "tirs1": {
+     "prix": 1.2,
+     "n": 1
+    },
+    "tirs3": {
+     "prix": 3.8,
+     "n": 1
+    },
+    "tirs4": {
+     "prix": 7.75,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "d3",
     "pp": "pp2",
@@ -74149,7 +75769,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.18,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 2.41,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 1.58,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.02,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -74964,7 +76601,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.15,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.74,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.12,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 5.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -75376,7 +77030,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.2,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.935,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.6,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.625,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "aucune",
@@ -76612,7 +78283,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.16,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 2.32,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 1.59,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.04,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -77024,7 +78712,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.34,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.56,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 5.15,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 12.5,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -77800,7 +79505,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.09,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.44,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 4.15,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.35,
+     "n": 5
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp1",
@@ -78212,7 +79934,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.11,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.55,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 4.475,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.58,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -78973,7 +80712,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.315,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 3.5,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.09,
+     "n": 5
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -79385,7 +81141,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.22,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 2.08,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 4.05,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 9.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -80573,7 +82346,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.275,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 3.175,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 1.94,
+     "n": 5
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -81397,7 +83187,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.265,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.31,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 4.4,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 10.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d3",
     "pp": "pp2",
@@ -83042,7 +84849,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.95,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.16,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.76,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 5.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -83839,7 +85663,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.68,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.12,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.62,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 4.7,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -84663,7 +86504,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.15,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.17,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.74,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 6.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp2",
@@ -85075,7 +86933,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.8,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.12,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.64,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 4.9,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -85487,7 +87362,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 1.67,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.19,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 2.44,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.04,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -86308,7 +88200,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.33,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -86720,7 +88617,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 1.91,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.31,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 2.96,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.04,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -87132,7 +89046,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.475,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.2,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.95,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 5.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -88308,7 +90239,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.485,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.1,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.54,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 4.65,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "pp2",
@@ -88720,7 +90668,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.475,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.1,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.5,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 4.35,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -90356,7 +92321,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 4.9,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.29,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 2.35,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 11.0,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -91546,7 +93528,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.6,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.13,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.635,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 4.1,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -93164,7 +95163,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.03,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.33,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 3.425,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -93567,7 +95583,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.26,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.19,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 4.15,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 9.375,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "aucune",
@@ -93979,7 +96012,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.25,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.07,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.43,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 3.8,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -94391,7 +96441,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 1.625,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.195,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 2.39,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.025,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -94803,7 +96870,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.95,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.15,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.69,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 5.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -96775,7 +98859,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.96,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.15,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.71,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 5.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp2",
@@ -97187,7 +99288,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.475,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.11,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.57,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 4.7,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -98423,7 +100541,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.15,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 3.775,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.39,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.07,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp2",
@@ -100071,7 +102206,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.095,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.535,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.36,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 4.1,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -100483,7 +102635,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.2,
+     "n": 1
+    },
+    "tirs3": {
+     "prix": 3.8,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 1.985,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 7.75,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -101232,7 +103401,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.0,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 3.17,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.305,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -102035,7 +104221,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 1.485,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 2.15,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.14,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.03,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -102447,7 +104650,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 1.83,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 3.125,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.295,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.045,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -102859,7 +105079,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.2,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 3.725,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.395,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.06,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -104038,7 +106275,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.8,
+     "n": 1
+    },
+    "tirs1": {
+     "prix": 1.2,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 1.975,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 8.0,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp2",
@@ -104450,7 +106704,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.185,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.975,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.8,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 8.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "aucune",
@@ -105268,7 +107539,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.975,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.72,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.13,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 4.4,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "pp1",
@@ -107328,7 +109616,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 1.445,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 2.16,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.16,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.03,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -109379,7 +111684,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.24,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 1.98,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.8,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 8.5,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -110149,7 +112471,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.05,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 3.725,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.36,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -110973,7 +113312,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.625,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 5.05,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.59,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.12,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -111385,7 +113741,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.145,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.68,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.95,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -113376,7 +115749,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.95,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.68,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.14,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -113761,7 +116151,20 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.28,
+     "n": 1
+    },
+    "tirs4": {
+     "prix": 6.0,
+     "n": 1
+    },
+    "tirs3": {
+     "prix": 3.4,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "pp2",
@@ -114173,7 +116576,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.25,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "aucune",
@@ -114585,7 +116993,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 2.145,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.155,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 1.45,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.03,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -114997,7 +117422,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.25,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -115409,7 +117839,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.68,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 2.925,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.13,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.4,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -115821,7 +118268,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 2.98,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.26,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 1.855,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.06,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -116233,7 +118697,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.97,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "pp2",
@@ -116645,7 +119114,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 2.25,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.16,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 1.5,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.03,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -117872,7 +120358,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.28,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp1",
@@ -119099,7 +121590,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.17,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -120335,7 +122831,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.1,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.43,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 2.3,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.085,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -121550,7 +124063,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.36,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.5,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 6.0,
+     "n": 1
+    },
+    "tirs4": {
+     "prix": 16.0,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "aucune",
@@ -122326,7 +124856,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.65,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.53,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.46,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.08,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -122738,7 +125285,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.22,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 1.91,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.4,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 7.125,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "aucune",
@@ -123150,7 +125714,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 2.395,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.19,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 1.53,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.04,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -123562,7 +126143,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.18,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 1.77,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.045,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 6.125,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -123974,7 +126572,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 3.65,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.37,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 2.09,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.065,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -124386,7 +127001,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.9,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.565,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.55,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.115,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -125210,7 +127842,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.0,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.4,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 2.24,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.08,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -126034,7 +128683,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.91,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.3,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.18,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.75,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -126437,7 +129103,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.28,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.22,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 4.1,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 9.125,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -128064,7 +130747,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.6,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.5,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.48,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.08,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -128888,7 +131588,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 5.6,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.65,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 2.785,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.12,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp2",
@@ -129712,7 +132429,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.435,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 4.4,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.49,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.09,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -130936,7 +133670,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.25,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 4.0,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.415,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.06,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -131348,7 +134099,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.14,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "aucune",
@@ -131760,7 +134516,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.575,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.91,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.19,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 7.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp2",
@@ -132172,7 +134945,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 1.95,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "aucune",
@@ -132584,7 +135362,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 4.8,
+     "n": 1
+    },
+    "tirs1": {
+     "prix": 1.31,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.35,
+     "n": 1
+    },
+    "tirs4": {
+     "prix": 9.75,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "pp1",
@@ -133342,7 +136137,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.9,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 5.825,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.67,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.13,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -133754,7 +136566,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.81,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 5.5,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.61,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.12,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -134166,7 +136995,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.185,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.765,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.15,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp2",
@@ -135384,7 +138230,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.9,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.67,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.13,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -135796,7 +138659,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.4,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "aucune",
@@ -136208,7 +139076,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 4.1,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.11,
+     "n": 2
+    },
+    "tirs1": {
+     "prix": 1.22,
+     "n": 1
+    },
+    "tirs4": {
+     "prix": 8.75,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "d3",
     "pp": "pp2",
@@ -137017,7 +139902,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.215,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.965,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.5,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 7.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp2",
@@ -137429,7 +140331,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.26,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.16,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 4.2,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 9.5,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -137841,7 +140760,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.145,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.675,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.8,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp1",
@@ -138665,7 +141601,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 1.75,
+     "n": 5
+    },
+    "tirs4": {
+     "prix": 2.7,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.235,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.025,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -139489,7 +142442,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.09,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.46,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.3,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 4.0,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp1",
@@ -139901,7 +142871,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.2,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.05,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.525,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 7.25,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "aucune",
@@ -140313,7 +143300,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.125,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.625,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.8,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -141086,7 +144090,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.47,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 4.6,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.53,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.11,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -141454,56 +144475,73 @@
     },
     "soir": {
      "tirs1": {
-      "p": 0.785
+      "p": 0.76
      },
      "tirs": {
-      "p": 0.472,
-      "lam": 1.621
+      "p": 0.433,
+      "lam": 1.498
      },
      "tirs3": {
-      "p": 0.227
+      "p": 0.196
      },
      "tirs4": {
-      "p": 0.091
+      "p": 0.074
      },
      "buts": {
-      "p": 0.12,
-      "lam": 0.128
+      "p": 0.112,
+      "lam": 0.118
      },
      "passes": {
-      "p": 0.235,
-      "lam": 0.268
+      "p": 0.219,
+      "lam": 0.247
      },
      "buts2": {
-      "p": 0.007,
-      "lam": 0.128
+      "p": 0.006,
+      "lam": 0.118
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.128
+      "lam": 0.118
      },
      "passes2": {
-      "p": 0.03,
-      "lam": 0.268
+      "p": 0.026,
+      "lam": 0.247
      },
      "pts1": {
-      "p": 0.327,
-      "lam": 0.396
+      "p": 0.306,
+      "lam": 0.366
      },
      "pts2": {
-      "p": 0.06,
-      "lam": 0.396
+      "p": 0.053,
+      "lam": 0.366
      }
     }
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.2,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 1.83,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.425,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 7.25,
+     "n": 2
+    }
+   },
    "soir_info": {
-    "slot": "d2",
+    "slot": "d3",
     "pp": "pp2",
-    "f_t": 1.012,
-    "f_a": 1.012,
+    "f_t": 0.935,
+    "f_a": 0.935,
     "f_g": 1.15,
     "base": "combo"
    }
@@ -142221,56 +145259,73 @@
     },
     "soir": {
      "tirs1": {
-      "p": 0.673
+      "p": 0.7
      },
      "tirs": {
-      "p": 0.321,
-      "lam": 1.161
+      "p": 0.353,
+      "lam": 1.255
      },
      "tirs3": {
-      "p": 0.118
+      "p": 0.139
      },
      "tirs4": {
-      "p": 0.036
+      "p": 0.045
      },
      "buts": {
-      "p": 0.072,
-      "lam": 0.075
+      "p": 0.078,
+      "lam": 0.081
      },
      "passes": {
-      "p": 0.212,
-      "lam": 0.239
+      "p": 0.228,
+      "lam": 0.258
      },
      "buts2": {
       "p": 0.003,
-      "lam": 0.075
+      "lam": 0.081
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.075
+      "lam": 0.081
      },
      "passes2": {
-      "p": 0.024,
-      "lam": 0.239
+      "p": 0.028,
+      "lam": 0.258
      },
      "pts1": {
-      "p": 0.269,
-      "lam": 0.314
+      "p": 0.288,
+      "lam": 0.339
      },
      "pts2": {
-      "p": 0.04,
-      "lam": 0.314
+      "p": 0.046,
+      "lam": 0.339
      }
     }
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.24,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.25,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 4.25,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 9.875,
+     "n": 2
+    }
+   },
    "soir_info": {
-    "slot": "d3",
+    "slot": "d2",
     "pp": "aucune",
-    "f_t": 0.928,
-    "f_a": 0.928,
+    "f_t": 1.003,
+    "f_a": 1.003,
     "f_g": 1.15,
     "base": "combo"
    }
@@ -142633,45 +145688,45 @@
     },
     "soir": {
      "tirs1": {
-      "p": 0.636
+      "p": 0.665
      },
      "tirs": {
-      "p": 0.281,
-      "lam": 1.046
+      "p": 0.312,
+      "lam": 1.135
      },
      "tirs3": {
-      "p": 0.095
+      "p": 0.113
      },
      "tirs4": {
-      "p": 0.026
+      "p": 0.034
      },
      "buts": {
-      "p": 0.057,
-      "lam": 0.059
+      "p": 0.062,
+      "lam": 0.064
      },
      "passes": {
-      "p": 0.155,
-      "lam": 0.169
+      "p": 0.168,
+      "lam": 0.183
      },
      "buts2": {
       "p": 0.002,
-      "lam": 0.059
+      "lam": 0.064
      },
      "buts3": {
       "p": 0.0,
-      "lam": 0.059
+      "lam": 0.064
      },
      "passes2": {
-      "p": 0.013,
-      "lam": 0.169
+      "p": 0.015,
+      "lam": 0.183
      },
      "pts1": {
-      "p": 0.203,
-      "lam": 0.228
+      "p": 0.219,
+      "lam": 0.247
      },
      "pts2": {
-      "p": 0.022,
-      "lam": 0.228
+      "p": 0.026,
+      "lam": 0.247
      }
     }
    },
@@ -142679,10 +145734,10 @@
    "played": null,
    "cotes": null,
    "soir_info": {
-    "slot": "d3",
+    "slot": "d2",
     "pp": "aucune",
-    "f_t": 0.968,
-    "f_a": 0.968,
+    "f_t": 1.051,
+    "f_a": 1.051,
     "f_g": 1.15,
     "base": "combo"
    }
@@ -143089,7 +146144,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.37,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.56,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 4.9,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 12.625,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "aucune",
@@ -143501,7 +146573,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.3,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.75,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.16,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp2",
@@ -144325,7 +147414,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.13,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.66,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.0,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 6.5,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -144722,7 +147828,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.08,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.525,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.45,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 4.2,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -145546,7 +148669,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 3.35,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.37,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.1,
+     "n": 5
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -145958,7 +149098,20 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.17,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 1.87,
+     "n": 1
+    },
+    "tirs3": {
+     "prix": 2.85,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "aucune",
@@ -146734,7 +149887,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.24,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.0,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 4.0,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 10.0,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -147146,7 +150316,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.29,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.15,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 4.15,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 9.5,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "aucune",
@@ -147558,7 +150745,20 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.25,
+     "n": 1
+    },
+    "tirs3": {
+     "prix": 2.9,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.175,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "pp2",
@@ -147970,7 +151170,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.15,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.68,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.125,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 6.5,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -148382,7 +151599,20 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.9,
+     "n": 1
+    },
+    "tirs1": {
+     "prix": 1.27,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.25,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "pp2",
@@ -148794,7 +152024,20 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.35,
+     "n": 1
+    },
+    "tirs3": {
+     "prix": 2.9,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.5,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "aucune",
@@ -149546,7 +152789,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.55,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp2",
@@ -149958,7 +153206,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.22,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 2.06,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.825,
+     "n": 4
+    },
+    "tirs4": {
+     "prix": 8.5,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -151176,7 +154441,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.15,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.68,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 3.125,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 6.5,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -152361,7 +155643,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 3.05,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.305,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 1.87,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.06,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -152770,7 +156069,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.125,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.83,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.45,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 9.0,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp2",
@@ -153173,7 +156489,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.24,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.085,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 3.75,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 7.875,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "pp2",
@@ -153585,7 +156918,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 1.705,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.07,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 1.275,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.01,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -153997,7 +157347,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.6,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.08,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.57,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 2.515,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -154409,7 +157776,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.195,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.99,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 4.0,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 10.0,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "aucune",
@@ -154821,7 +158205,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.105,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.705,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.0,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.75,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -155991,7 +159392,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.24,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.05,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 3.875,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 8.625,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -156403,7 +159821,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 2.65,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.2,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 1.67,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.04,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -157170,7 +160605,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.38,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.6,
+     "n": 1
+    },
+    "tirs3": {
+     "prix": 6.0,
+     "n": 1
+    },
+    "tirs4": {
+     "prix": 17.0,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f4",
     "pp": "aucune",
@@ -157931,7 +161383,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.27,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.175,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 4.0,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 8.625,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "aucune",
@@ -158731,7 +162200,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 6.5,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.11,
+     "n": 3
+    },
+    "tirs": {
+     "prix": 1.74,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 3.1,
+     "n": 4
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -159143,7 +162629,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.29,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.32,
+     "n": 2
+    },
+    "tirs3": {
+     "prix": 4.25,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 9.5,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "pp2",
@@ -159967,7 +163470,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 4.15,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.35,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.42,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.07,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -160379,7 +163899,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.5,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.82,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.16,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 7.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -160791,7 +164328,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.215,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.0,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.8,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 7.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "aucune",
@@ -162781,7 +166335,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 5.5,
+     "n": 1
+    },
+    "tirs": {
+     "prix": 2.55,
+     "n": 1
+    },
+    "tirs1": {
+     "prix": 1.35,
+     "n": 1
+    },
+    "tirs4": {
+     "prix": 12.5,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -163193,7 +166764,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.195,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.0,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 4.0,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 9.0,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -163605,7 +167193,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.18,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.82,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.3,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -164017,7 +167622,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 3.25,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 1.93,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.28,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -164429,7 +168051,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 1.91,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 1.375,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.12,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.02,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -164817,7 +168456,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.18,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.88,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 3.2,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -165635,7 +169291,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 2.94,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 1.82,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.255,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.04,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "pp1",
@@ -166805,7 +170478,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 4.0,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.97,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.2,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 9.0,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "pp2",
@@ -167217,7 +170907,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.295,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.17,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 5.35,
+     "n": 2
+    },
+    "tirs4": {
+     "prix": 12.875,
+     "n": 2
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "aucune",
@@ -167629,7 +171336,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.935,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.71,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.12,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d2",
     "pp": "aucune",
@@ -168041,7 +171765,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 1.96,
+     "n": 5
+    },
+    "tirs3": {
+     "prix": 1.385,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.13,
+     "n": 3
+    },
+    "tirs1": {
+     "prix": 1.02,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -170016,7 +173757,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.9,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 2.0,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.22,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 9.0,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "aucune",
@@ -170428,7 +174186,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.13,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 1.675,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 2.85,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -170840,7 +174615,12 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs": {
+     "prix": 2.08,
+     "n": 1
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp2",
@@ -171664,7 +175444,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.95,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.71,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.16,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -172076,7 +175873,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs4": {
+     "prix": 3.275,
+     "n": 4
+    },
+    "tirs3": {
+     "prix": 1.95,
+     "n": 5
+    },
+    "tirs": {
+     "prix": 1.31,
+     "n": 4
+    },
+    "tirs1": {
+     "prix": 1.05,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f2",
     "pp": "pp1",
@@ -172488,7 +176302,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.1,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.65,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.14,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.75,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f1",
     "pp": "pp1",
@@ -172900,7 +176731,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 2.86,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.69,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.15,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 5.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "f3",
     "pp": "pp2",
@@ -174491,7 +178339,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.175,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.78,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.15,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 6.25,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "aucune",
@@ -174903,7 +178768,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs1": {
+     "prix": 1.305,
+     "n": 2
+    },
+    "tirs": {
+     "prix": 2.35,
+     "n": 3
+    },
+    "tirs3": {
+     "prix": 4.9,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 11.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d3",
     "pp": "pp1",
@@ -175315,7 +179197,24 @@
    },
    "result": null,
    "played": null,
-   "cotes": null,
+   "cotes": {
+    "tirs3": {
+     "prix": 3.375,
+     "n": 4
+    },
+    "tirs": {
+     "prix": 1.82,
+     "n": 5
+    },
+    "tirs1": {
+     "prix": 1.16,
+     "n": 3
+    },
+    "tirs4": {
+     "prix": 7.5,
+     "n": 3
+    }
+   },
    "soir_info": {
     "slot": "d1",
     "pp": "aucune",
@@ -184374,12 +188273,12 @@
   "soirs_direct": 11
  },
  "cotes_quota": {
-  "restants": "302",
-  "utilises": "198",
+  "restants": "289",
+  "utilises": "211",
   "erreur": null,
   "source": "The Odds API",
   "test": null,
-  "quand": "2026-10-26T22:14+00:00"
+  "quand": "2026-10-27T22:18+00:00"
  },
  "labo": {
   "journal": [
@@ -185151,12 +189050,12 @@
    },
    "ratios_encours": null,
    "temps": {
-    "depuis_debut_calcul": 33,
+    "depuis_debut_calcul": 32,
     "ratios": 0,
-    "production": 40,
-    "retro": 32,
+    "production": 36,
+    "retro": 0,
     "juge": 0,
-    "total_ml": 72
+    "total_ml": 36
    }
   },
   "versions": [
