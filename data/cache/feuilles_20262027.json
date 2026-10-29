@@ -1978,5 +1978,45 @@
   "hsog": 23,
   "asog": 40,
   "fin": "REG"
+ },
+ "2026020199": {
+  "date": "2026-10-28",
+  "home": "WSH",
+  "away": "PHI",
+  "hg": 5,
+  "ag": 2,
+  "hsog": 30,
+  "asog": 25,
+  "fin": "REG"
+ },
+ "2026020200": {
+  "date": "2026-10-28",
+  "home": "EDM",
+  "away": "CGY",
+  "hg": 4,
+  "ag": 0,
+  "hsog": 32,
+  "asog": 24,
+  "fin": "REG"
+ },
+ "2026020201": {
+  "date": "2026-10-28",
+  "home": "COL",
+  "away": "NJD",
+  "hg": 5,
+  "ag": 2,
+  "hsog": 45,
+  "asog": 22,
+  "fin": "REG"
+ },
+ "2026020202": {
+  "date": "2026-10-28",
+  "home": "SEA",
+  "away": "TOR",
+  "hg": 5,
+  "ag": 4,
+  "hsog": 17,
+  "asog": 21,
+  "fin": "REG"
  }
 }
