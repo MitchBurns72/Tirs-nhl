@@ -588,7 +588,7 @@
   "matchs": 213
  },
  "dernier_tuning": "2026-10-21",
- "maj": "2026-10-30T14:56+00:00",
+ "maj": "2026-10-30T18:44+00:00",
  "retirees": [
   "v2.1",
   "v2.2",
@@ -733,8 +733,8 @@
  "prochain_recalcul": "2026-10-31",
  "ml": {
   "date": "2026-10-30",
-  "n_lignes": 148946,
-  "n_matchs": 4138,
+  "n_lignes": 149342,
+  "n_matchs": 4149,
   "msg": null,
   "rapports": {
    "tirs1": {
@@ -1278,12 +1278,12 @@
   },
   "ratios_encours": null,
   "temps": {
-   "depuis_debut_calcul": 183,
+   "depuis_debut_calcul": 27,
    "ratios": 0,
-   "production": 45,
+   "production": 23,
    "retro": 0,
    "juge": 0,
-   "total_ml": 45
+   "total_ml": 23
   }
  },
  "ml_juge": "2026-10-25"
