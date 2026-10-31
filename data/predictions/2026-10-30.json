@@ -416,8 +416,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -938,8 +942,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -1445,8 +1453,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -1962,8 +1974,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -2484,8 +2500,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -3006,8 +3026,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 8,
+    "buts": 2,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -3528,8 +3552,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -4050,8 +4078,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 7,
+    "buts": 2,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -4572,8 +4604,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -5094,8 +5130,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -5616,8 +5656,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -6138,8 +6182,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -6660,8 +6708,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -7176,8 +7228,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "f": {
     "pos": "D",
     "home": false,
@@ -7696,8 +7748,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -8218,8 +8274,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -8685,8 +8745,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -9199,8 +9263,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -9721,8 +9789,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -10243,8 +10315,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -10765,8 +10841,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -11287,8 +11367,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -11809,8 +11893,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -12331,8 +12419,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -12853,8 +12945,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -13375,8 +13471,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -13897,8 +13997,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -14419,8 +14523,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -14941,8 +15049,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "f": {
     "pos": "F",
     "home": true,
@@ -15463,8 +15571,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 2
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -15985,8 +16097,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -16507,8 +16623,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -16974,8 +17094,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "f": {
     "pos": "D",
     "home": true,
@@ -17488,8 +17608,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -17983,8 +18107,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -18496,8 +18624,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -19018,8 +19150,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -19540,8 +19676,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -20062,8 +20202,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -20584,8 +20728,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -21106,8 +21254,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -21650,8 +21802,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -22179,8 +22335,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -22701,8 +22861,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "f": {
     "pos": "F",
     "home": false,
@@ -23223,8 +23383,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -23745,8 +23909,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -24289,8 +24457,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -24833,8 +25005,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -25355,8 +25531,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -25899,8 +26079,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -26388,8 +26572,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -26902,8 +27090,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -27424,8 +27616,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -27940,8 +28136,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -28460,8 +28660,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 4,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -28983,8 +29187,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -29505,8 +29713,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -30034,8 +30246,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -30578,8 +30794,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -31100,8 +31320,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -31622,8 +31846,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -32144,8 +32372,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 8,
+    "buts": 3,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -32688,8 +32920,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 2
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -33217,8 +33453,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 4,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -33743,8 +33983,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -34259,8 +34503,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 6,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -34803,8 +35051,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -35347,8 +35599,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -35891,8 +36147,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -36413,8 +36673,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -36942,8 +37206,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -37483,8 +37751,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -38004,8 +38276,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 2
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -38548,8 +38824,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -39070,8 +39350,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -39592,8 +39876,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -40136,8 +40424,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -40613,8 +40905,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -41123,8 +41419,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -41667,8 +41967,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -42189,8 +42493,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -42718,8 +43026,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -43262,8 +43574,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -43757,8 +44073,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "f": {
     "pos": "F",
     "home": false,
@@ -44270,8 +44586,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 4,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -44814,8 +45134,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -45336,8 +45660,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -45858,8 +46186,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": false,
@@ -46402,8 +46734,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -46946,8 +47282,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -47453,8 +47793,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -47970,8 +48314,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -48468,8 +48816,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -48985,8 +49337,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": false,
@@ -49529,8 +49885,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -50070,8 +50430,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -50591,8 +50955,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 3
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -51135,8 +51503,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 2
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -51679,8 +52051,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -52223,8 +52599,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 5,
+    "buts": 1,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -52767,8 +53147,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -53253,8 +53637,8 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {},
+   "played": false,
    "f": {
     "pos": "F",
     "home": true,
@@ -53771,8 +54155,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -54293,8 +54681,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -54822,8 +55214,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -55363,8 +55759,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 2,
+    "buts": 1,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "F",
     "home": true,
@@ -55891,8 +56291,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -56413,8 +56817,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 1,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -56889,8 +57297,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -57406,8 +57818,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -57950,8 +58366,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 3,
+    "buts": 0,
+    "passes": 0
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -58494,8 +58914,12 @@
      }
     }
    },
-   "result": null,
-   "played": null,
+   "result": {
+    "tirs": 0,
+    "buts": 0,
+    "passes": 1
+   },
+   "played": true,
    "f": {
     "pos": "D",
     "home": true,
@@ -58697,7 +59121,10 @@
      "src_vic": "v1"
     }
    },
-   "result": null,
+   "result": {
+    "home": 2,
+    "away": 5
+   },
    "f": {
     "mu": 3.1445,
     "h": {
@@ -58894,7 +59321,10 @@
      "src_vic": "v1"
     }
    },
-   "result": null,
+   "result": {
+    "home": 5,
+    "away": 2
+   },
    "f": {
     "mu": 3.1445,
     "h": {
@@ -59101,7 +59531,10 @@
      "src_vic": "v1"
     }
    },
-   "result": null,
+   "result": {
+    "home": 6,
+    "away": 2
+   },
    "f": {
     "mu": 3.1445,
     "h": {

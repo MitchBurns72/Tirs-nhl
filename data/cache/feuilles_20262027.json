@@ -2128,5 +2128,35 @@
   "hsog": 24,
   "asog": 25,
   "fin": "REG"
+ },
+ "2026020214": {
+  "date": "2026-10-30",
+  "home": "VGK",
+  "away": "NJD",
+  "hg": 2,
+  "ag": 5,
+  "hsog": 21,
+  "asog": 32,
+  "fin": "REG"
+ },
+ "2026020215": {
+  "date": "2026-10-30",
+  "home": "FLA",
+  "away": "WPG",
+  "hg": 5,
+  "ag": 2,
+  "hsog": 38,
+  "asog": 24,
+  "fin": "REG"
+ },
+ "2026020216": {
+  "date": "2026-10-30",
+  "home": "CGY",
+  "away": "SEA",
+  "hg": 6,
+  "ag": 2,
+  "hsog": 27,
+  "asog": 22,
+  "fin": "REG"
  }
 }
