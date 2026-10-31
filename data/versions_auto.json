@@ -898,50 +898,13 @@
   }
  ],
  "principale": "tirs2_v5",
- "patterns": [
-  {
-   "marche": "passes",
-   "segment": "Début de saison (moins de 5 matchs)",
-   "n": 3136,
-   "predit": 0.2504955676020409,
-   "reel": 0.22735969387755103,
-   "z": -3.060055995377119,
-   "sens": "surestimé"
-  },
-  {
-   "marche": "buts",
-   "segment": "Temps de glace moins de 12 min",
-   "n": 901,
-   "predit": 0.11283695893451719,
-   "reel": 0.08546059933407325,
-   "z": -2.617546788302366,
-   "sens": "surestimé"
-  },
-  {
-   "marche": "buts",
-   "segment": "Début de saison (moins de 5 matchs)",
-   "n": 3136,
-   "predit": 0.15455197704081647,
-   "reel": 0.13839285714285715,
-   "z": -2.5824335352772825,
-   "sens": "surestimé"
-  },
-  {
-   "marche": "passes",
-   "segment": "Temps de glace 12-16 min",
-   "n": 2384,
-   "predit": 0.22043422818791952,
-   "reel": 0.19924496644295303,
-   "z": -2.5193849590104485,
-   "sens": "surestimé"
-  }
- ],
+ "patterns": [],
  "donnees": {
   "joueurs": 7435,
   "matchs": 216
  },
  "dernier_tuning": "2026-10-21",
- "maj": "2026-10-31T14:44+00:00",
+ "maj": "2026-10-31T18:41+00:00",
  "retirees": [
   "v2.1",
   "v2.2",
@@ -1086,8 +1049,8 @@
  "prochain_recalcul": "2026-11-07",
  "ml": {
   "date": "2026-10-31",
-  "n_lignes": 149342,
-  "n_matchs": 4149,
+  "n_lignes": 149450,
+  "n_matchs": 4152,
   "msg": null,
   "rapports": {
    "tirs1": {
@@ -1631,12 +1594,12 @@
   },
   "ratios_encours": null,
   "temps": {
-   "depuis_debut_calcul": 123,
+   "depuis_debut_calcul": 76,
    "ratios": 0,
-   "production": 36,
+   "production": 38,
    "retro": 0,
    "juge": 0,
-   "total_ml": 36
+   "total_ml": 38
   }
  },
  "ml_juge": "2026-10-25"
